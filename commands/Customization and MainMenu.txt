@@ -1,0 +1,1213 @@
+CreateModPackage 1 Large
+ReachTest
+Welcome to RAMP, a community effort to transform Eldewrito into Halo Reach while keeping ED main features and adding new ones. Featuring extensive bug fixes, quality of life improvements, and plenty of new content to play with. We hope you enjoy this labor of love.
+AMP Collective
+0.95
+MainMenu Multiplayer Character
+
+OpenModPackage F:\Github\Ramp-3\pak\Preliminary[1.5.9526.357].pak
+ApplyModPackage
+ExitModPackage
+
+# ------------------------------------------------------------------------------------------
+# | SPARTAN CUSTOMIZATION <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# ------------------------------------------------------------------------------------------
+# Will consume 2.5Gb of ram
+
+# | REACH ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | REACH ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | REACH ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+
+# Glove bitmap with less noise (using mcc blurred texture)
+GenerateBitmap objects\characters\spartans\fp\bitmaps\spartan_arms_diffuse F:\Github\Ramp-3\bitmaps\Spartan\spartan_arms_diffuse.dds
+EditTag *
+GenerateMipmaps
+SaveTagChanges
+Exit
+
+OpenCacheFile F:\reachmaps\m10.map
+PortTag !ReachMisc objects\characters\spartans\fp\shaders\spartan_rubber_suit.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shield_display.shader
+PortTag !ReachMisc objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+PortTag !ReachMisc objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_armor.shader
+PortTag !ReachMisc objects\characters\spartans\fp\shaders\spartan_fp_armor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_interior.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_fred_flair.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_grenade_belt_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_grenades_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_anton.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_knife.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_jai.shader
+PortTag !ReachMisc objects\characters\marine\shaders\marine_packs.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_story\spartan_jun_hood.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_harness_jun.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_kurt_flair.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_joshua.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_malcolm.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_kelly.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_nicole.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_chest_ammopack.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_neck_joshua.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kurt.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_kurt.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jai.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jai_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_vinh.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_vinh.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_linda.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_linda_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_john117.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_john117_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_will.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_will_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jun.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_jun.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_malcolm.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_malcolm_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kelly.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_kelly.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_carter.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_carter.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_rosenda.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_rosenda.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_li.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_isaac.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_isaac.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_nicole.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_visor_nicole.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_sam.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_sam_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_armor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_rubber.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna_visor.shader
+PortTag !ReachMisc objects\characters\spartan_jorge\shaders\spartan_jorge_helmet.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_joshua_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_base.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_rubber.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_visor.shader
+PortTag !ReachMisc objects\weapons\multiplayer\skull\shaders\skull_port.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_bungie_visor.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_fred_flair.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kat.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_sam_flair.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_will.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_carter.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kurt.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_sniper_li.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_adrianna.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_small.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_joshua.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_jai.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_large.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_small_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kelly.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_malcolm.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_nicole_flair.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_anton_shoulders.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_knife_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_kelly.shader
+PortTag !ReachMisc objects\characters\spartan_jorge\shaders\spartan_jorge_gauntlets.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tricorder.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tracker_jun.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_shotgun_reloader_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_toolbox_kat.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_joshua.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_adrianna.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_medpack.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_pouch_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_story\spartan_kat_robotarm.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_knee_carter.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_knee_adrianna.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_thigh\spartan_knee_joshua.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_adrianna.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna_aug.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_carter.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_kat.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_emile.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_aug_jai.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_aug_nicole.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_flare.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_aug_jun.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_flare_carter.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_aug_isaac.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default_aug.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_aug_vinh.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_flair.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_backpack_jun.shader
+PortTag !ReachMisc objects\characters\spartan_jorge\shaders\spartan_jorge_gear.shader
+PortTag !ReachMisc objects\characters\spartans\shaders\spartan_story\spartan_backpack_carter.shader
+PortTag !ReachMisc objects\characters\marine\shaders\marine_trooper_set.shader
+Exit
+
+OpenCacheFile F:\reachmaps\m70.map
+PortTag !ReachMisc objects\cinematics\package\shaders\package.shader
+PortTag !ReachMisc objects\cinematics\package\shaders\package_glass.shader
+PortTag !ReachMisc objects\equipment\jet_pack\shaders\jet_pack_unsc.shader
+PortTag !ReachMisc objects\characters\marine\shaders\marine_odst_set.shader
+Exit
+
+OpenCacheFile F:\reachmaps\m45.map
+PortTag !ReachMisc objects\props\human\unsc\bitmaps\re_entry_pack.shader
+PortTag !ReachMisc objects\props\human\unsc\bitmaps\re_entry_pack_decals.shader_decal
+Exit
+
+OpenCacheFile F:\reachmaps\condemned.map
+PortTag !ReachMisc objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_chest.shader
+Exit
+
+# | ODST RAVEN BITMAPS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | ODST RAVEN BITMAPS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | ODST RAVEN BITMAPS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# Importing Raven bitmap b4 the shaders (lower quality to save some resources but it shouldn't be noticeable)
+
+# RAVEN 1
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_cc F:\Github\Ramp-3\bitmaps\ODST\Raven1\odst_raven_1_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_diff F:\Github\Ramp-3\bitmaps\ODST\Raven1\odst_raven_1_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_illum F:\Github\Ramp-3\bitmaps\ODST\Raven1\odst_raven_1_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_illum GenerateMipmaps
+
+GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_c F:\Github\Ramp-3\bitmaps\ODST\Raven1\raven1_helm_c.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_d F:\Github\Ramp-3\bitmaps\ODST\Raven1\raven1_helm_d.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_m F:\Github\Ramp-3\bitmaps\ODST\Raven1\raven1_helm_m.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_n F:\Github\Ramp-3\bitmaps\ODST\Raven1\raven1_helm_n.dds
+ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_d GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_m GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_n GenerateMipmaps
+
+# RAVEN 2
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_cc F:\Github\Ramp-3\bitmaps\ODST\Raven2\odst_raven_2_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_diff F:\Github\Ramp-3\bitmaps\ODST\Raven2\odst_raven_2_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_illum F:\Github\Ramp-3\bitmaps\ODST\Raven2\odst_raven_2_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_illum GenerateMipmaps
+
+GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_c F:\Github\Ramp-3\bitmaps\ODST\Raven2\raven2_helm_c.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_d F:\Github\Ramp-3\bitmaps\ODST\Raven2\raven2_helm_d.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_m F:\Github\Ramp-3\bitmaps\ODST\Raven2\raven2_helm_m.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_n F:\Github\Ramp-3\bitmaps\ODST\Raven2\raven2_helm_n.dds
+ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_d GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_m GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_n GenerateMipmaps
+
+# RAVEN 3
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_cc F:\Github\Ramp-3\bitmaps\ODST\Raven3\odst_raven_3_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_diff F:\Github\Ramp-3\bitmaps\ODST\Raven3\odst_raven_3_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_illum F:\Github\Ramp-3\bitmaps\ODST\Raven3\odst_raven_3_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_illum GenerateMipmaps
+
+GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_c F:\Github\Ramp-3\bitmaps\ODST\Raven3\raven3_helm_c.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_d F:\Github\Ramp-3\bitmaps\ODST\Raven3\raven3_helm_d.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_m F:\Github\Ramp-3\bitmaps\ODST\Raven3\raven3_helm_m.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_n F:\Github\Ramp-3\bitmaps\ODST\Raven3\raven3_helm_n.dds
+ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_d GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_m GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_n GenerateMipmaps
+
+# RAVEN 4
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_cc F:\Github\Ramp-3\bitmaps\ODST\Raven4\odst_raven_4_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_diff F:\Github\Ramp-3\bitmaps\ODST\Raven4\odst_raven_4_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_illum F:\Github\Ramp-3\bitmaps\ODST\Raven4\odst_raven_4_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_illum GenerateMipmaps
+
+GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_c F:\Github\Ramp-3\bitmaps\ODST\Raven4\raven4_helm_c.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_d F:\Github\Ramp-3\bitmaps\ODST\Raven4\raven4_helm_d.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_m F:\Github\Ramp-3\bitmaps\ODST\Raven4\raven4_helm_m.dds
+GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_n F:\Github\Ramp-3\bitmaps\ODST\Raven4\raven4_helm_n.dds
+ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_d GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_m GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_n GenerateMipmaps
+
+# | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+
+OpenCacheFile "F:\SteamLibrary\steamapps\common\Halo The Master Chief Collection\halo3\maps\midship.map"
+PortTag objects\characters\masterchief\shaders\odst_raven_1.shader
+PortTag objects\characters\masterchief\shaders\odst_raven_2.shader
+PortTag objects\characters\masterchief\shaders\odst_raven_3.shader
+PortTag objects\characters\masterchief\shaders\odst_raven_4.shader
+
+PortTag objects\characters\masterchief\shaders\spartan_torso_s9_spi.shader
+PortTag objects\characters\masterchief\shaders\spartan_helmet_s9_spi.shader
+PortTag objects\characters\masterchief\shaders\spartan_shoulder_s9_spi.shader
+PortTag objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
+Exit
+
+# | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+
+# Raven ODST fixup <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<| <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven1_helm
+EditTag objects\characters\masterchief\shaders\raven1_helm.shader
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\masterchief\shaders\raven1_helm_d.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\masterchief\shaders\raven1_helm_c.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\masterchief\shaders\raven1_helm_n.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap objects\characters\masterchief\shaders\raven1_helm_m.bitmap
+SetField ShaderProperties[0].BooleanConstants 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven2_helm
+EditTag objects\characters\masterchief\shaders\raven2_helm.shader
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\masterchief\shaders\raven2_helm_d.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\masterchief\shaders\raven2_helm_c.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\masterchief\shaders\raven2_helm_n.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap objects\characters\masterchief\shaders\raven2_helm_m.bitmap
+SetField ShaderProperties[0].BooleanConstants 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven3_helm
+EditTag objects\characters\masterchief\shaders\raven3_helm.shader
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\masterchief\shaders\raven3_helm_d.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\masterchief\shaders\raven3_helm_c.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\masterchief\shaders\raven3_helm_n.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap objects\characters\masterchief\shaders\raven3_helm_m.bitmap
+SetField ShaderProperties[0].BooleanConstants 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven4_helm
+EditTag objects\characters\masterchief\shaders\raven4_helm.shader
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\masterchief\shaders\raven4_helm_d.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\masterchief\shaders\raven4_helm_c.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\masterchief\shaders\raven4_helm_n.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap objects\characters\masterchief\shaders\raven4_helm_m.bitmap
+SetField ShaderProperties[0].BooleanConstants 1
+SaveTagChanges
+Exit
+
+# REACH RUBBER SUIT (BLACKED EDITION) <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<| <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse F:\Github\Ramp-3\bitmaps\Spartan\Rubber_Suit\spartan_rubber_suit_diffuse_black.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit.shader objects\characters\spartans\shaders\spartan_rubber_suit_black
+EditTag objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse.bitmap
+SetArgument diffuse_coefficient 0.4
+SaveTagChanges
+Exit
+
+# REACH RUBBER SUIT (GAY EDITION) <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<| <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse F:\Github\Ramp-3\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_diffuse_colored.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse GenerateMipmaps
+
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_primary_cc F:\Github\Ramp-3\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_cc_colored.dds
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_secondary_cc F:\Github\Ramp-3\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_cc_colored_secondary.dds
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\spartans\shaders\spartan_rubber_suit_colored
+EditTag objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse.bitmap
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_rubber_detail.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_primary_cc.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_zbump.bitmap
+SetArgument specular_coefficient 0.2
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary
+EditTag objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_secondary_cc.bitmap
+SaveTagChanges
+Exit
+
+# SPARTAN ARMOR CAMO (BRAVO SIX GOING DARK) <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<| <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail F:\Github\Ramp-3\bitmaps\Spartan\Rubber_Suit\Camo\spartan_camo_detail.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\fp\shaders\spartan_fp_armor.shader objects\characters\spartans\fp\shaders\spartan_fp_armor_camo
+EditTag objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail.bitmap
+SetArgument detail_map 0.8 0.8 0 0
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\spartans\shaders\spartan_armor_camo
+EditTag objects\characters\spartans\shaders\spartan_armor_camo.shader
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail.bitmap
+SetArgument detail_map 1.5 1.5 0 0
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit.shader objects\characters\spartans\shaders\spartan_camo_suit
+EditTag objects\characters\spartans\shaders\spartan_camo_suit.shader
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse.bitmap
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail.bitmap
+SetArgument detail_map 0.99 0.99 0 0
+SaveTagChanges
+Exit
+
+# MARK IV SHADER (WHAT THE FUCK) <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<| <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+CreateTag rmsh objects\characters\spartans\custom\shaders\markiv_chest
+ImportTag * F:\Github\Ramp-3\tags\shaders\markiv\markiv_chest.shader
+
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_cc F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\chest\mark4_chest_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\chest\mark4_chest_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse GenerateMipmaps
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_zbump F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\chest\mark4_chest_zbump.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_zbump GenerateMipmaps
+
+GenerateShader Shader two_change_color standard none specular_mask_from_diffuse cook_torrance dynamic off opaque off first_person_sometimes off off
+EditTag objects\characters\spartans\custom\shaders\markiv_chest.shader
+SetField BaseRenderMethod shaders\shader.render_method_definition
+SetField ShaderProperties[0].Template shaders\shader_templates\_3_1_0_1_10_2_0_0_0_1_0_0_0_0_0.render_method_template
+
+AddBlockElements Options 3
+
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse.bitmap
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_metal_detail.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\spartans\custom\bitmaps\mark4_chest_cc.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\spartans\custom\bitmaps\mark4_chest_zbump.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 5 5 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 0.9 0.9 0.9 0.9
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.3 0.3 0.3 0.3
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 0.29999998 0.29999998 0.29999998 0.29999998
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.9 0.9 0.9 0.9
+SetArgument analytical_anti_shadow_control 0 0 0 0
+SetArgument env_tint_color 0.77647066 0.77647066 0.77647066 1
+SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+SaveTagChanges
+Exit
+
+CreateTag rmsh objects\characters\spartans\custom\shaders\markiv_shoulders
+ImportTag * F:\Github\Ramp-3\tags\shaders\markiv\markiv_shoulders.shader
+
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_cc F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse GenerateMipmaps
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_zbump.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump GenerateMipmaps
+
+GenerateShader Shader two_change_color standard none specular_mask_from_diffuse cook_torrance dynamic simple opaque off first_person_sometimes off off
+EditTag objects\characters\spartans\custom\shaders\markiv_shoulders.shader
+SetField BaseRenderMethod shaders\shader.render_method_definition
+SetField ShaderProperties[0].Template shaders\shader_templates\_3_1_0_1_10_2_1_0_0_1_0_0_0_0_0.render_method_template
+
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse.bitmap
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_metal_detail.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_cc.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetField ShaderProperties[0].TextureConstants[5].Bitmap shaders\default_bitmaps\bitmaps\alpha_black.bitmap
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 5 5 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 0.9 0.9 0.9 0.9
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.3 0.3 0.3 0.3
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 0.29999998 0.29999998 0.29999998 0.29999998
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.9 0.9 0.9 0.9
+SetArgument analytical_anti_shadow_control 0 0 0 0
+SetArgument env_tint_color 0.77647066 0.77647066 0.77647066 1
+# SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.63529414 0.8078432 0.9960785 1
+SetArgument self_illum_intensity 1 1 1 1
+
+SaveTagChanges
+Exit
+
+CreateTag rmsh objects\characters\spartans\custom\shaders\markiv_helmet
+ImportTag * F:\Github\Ramp-3\tags\shaders\markiv\markiv_helmet.shader
+
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_cc F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse GenerateMipmaps
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump F:\Github\Ramp-3\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_zbump.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump GenerateMipmaps
+
+GenerateShader Shader four_change_color standard none specular_mask_from_diffuse cook_torrance dynamic off opaque off first_person_sometimes off off
+EditTag objects\characters\spartans\custom\shaders\markiv_helmet.shader
+SetField BaseRenderMethod shaders\shader.render_method_definition
+SetField ShaderProperties[0].Template shaders\shader_templates\_4_1_0_1_10_2_0_0_0_1_0_0_0_0_0.render_method_template
+
+AddBlockElements Options 3
+
+SetField ShaderProperties[0].TextureConstants[0].Bitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse.bitmap
+SetField ShaderProperties[0].TextureConstants[1].Bitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_metal_detail.bitmap
+SetField ShaderProperties[0].TextureConstants[2].Bitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_cc.bitmap
+SetField ShaderProperties[0].TextureConstants[3].Bitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump.bitmap
+SetField ShaderProperties[0].TextureConstants[4].Bitmap shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 14 14 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 0.9 0.9 0.9 0.9
+SetArgument specular_coefficient 0.5 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.3 0.3 0.3 0.3
+SetArgument area_specular_contribution 0.22 0.22 0.22 0.22
+SetArgument analytical_specular_contribution 0.29999998 0.29999998 0.29999998 0.29999998
+SetArgument environment_map_specular_contribution 0 0 0 0
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.9 0.9 0.9 0.9
+SetArgument analytical_anti_shadow_control 0 0 0 0
+SetArgument env_tint_color 0.63529414 0.63529414 0.63529414 1
+# SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\custom\shaders\markiv_helmet.shader objects\characters\spartans\custom\shaders\markiv_visor
+EditTag objects\characters\spartans\custom\shaders\markiv_visor.shader
+SetField ShaderProperties[0].TextureConstants[1].Bitmap shaders\default_bitmaps\bitmaps\default_detail.bitmap
+
+AddBlockElements Options 3
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 3 3 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 1 1 1 1
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.04 0.04 0.04 0.04
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 1.25 1.25 1.25 1.25
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 1 1 1 1
+SetArgument analytical_anti_shadow_control 0 0 0 0
+SetArgument env_tint_color 0.9803922 0.9568628 0.7843138 1
+# SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+
+SaveTagChanges
+Exit
+
+# ORION SHADER <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<| <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+
+
+# UNK SHADER, DUNNO WHERE THEY COME FROM (MOST LIKELY MCC OR CUSTOM MADE) -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_camo_suit.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_armor_camo.shader
+# PortTag !ReachMisc objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
+
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_helmet.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_visor.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_chest.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_shoulders.shader
+
+# UP ABOVE IS DONE
+
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_legs.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_shoulder.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_helmet.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_visor.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_chest.shader
+
+# PortTag !ReachMisc objects\characters\masterchief\shaders\marine_chest.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned_2.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_condemned_2.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_2.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_3.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\h2aodst_helm.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\h2aodst_visor.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_visor_ce.shader
+
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
+
+# PortTag !ReachMisc objects\characters\marine\shaders\marine_badlands_set.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan\scarf2.shader
+
+# RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS  
+EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.render_model
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 176
+SetField Materials[0].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit.shader
+SetField Materials[1].RenderMethod objects\characters\spartans\shaders\spartan_shield_display.shader
+SetField Materials[2].RenderMethod objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+SetField Materials[3].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+SetField Materials[4].RenderMethod objects\characters\spartans\shaders\spartan_armor.shader
+SetField Materials[5].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_armor.shader
+SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+SetField Materials[9].RenderMethod objects\characters\spartans\shaders\spartan_camo_suit.shader
+SetField Materials[10].RenderMethod objects\characters\spartans\shaders\spartan_armor_camo.shader
+SetField Materials[11].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
+SetField Materials[12].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_interior.shader
+SetField Materials[13].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_fred_flair.shader
+SetField Materials[14].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_grenade_belt_emile.shader
+SetField Materials[15].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_grenades_emile.shader
+SetField Materials[16].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_anton.shader
+SetField Materials[17].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_knife.shader
+SetField Materials[18].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_jai.shader
+SetField Materials[19].RenderMethod objects\characters\marine\shaders\marine_packs.shader
+SetField Materials[20].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_jun_hood.shader
+SetField Materials[21].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_harness_jun.shader
+SetField Materials[22].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_kurt_flair.shader
+SetField Materials[23].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_joshua.shader
+SetField Materials[24].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_malcolm.shader
+SetField Materials[25].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_kelly.shader
+SetField Materials[26].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_nicole.shader
+SetField Materials[27].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_carter_chesttech.shader
+SetField Materials[28].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_ammopack.shader
+SetField Materials[29].RenderMethod objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_chest.shader
+SetField Materials[30].RenderMethod objects\characters\spartans\custom\shaders\markiv_chest.shader
+SetField Materials[31].RenderMethod objects\characters\masterchief\shaders\odst_raven_1.shader
+SetField Materials[32].RenderMethod objects\characters\masterchief\shaders\odst_raven_2.shader
+SetField Materials[33].RenderMethod objects\characters\masterchief\shaders\odst_raven_3.shader
+SetField Materials[34].RenderMethod objects\characters\masterchief\shaders\odst_raven_4.shader
+SetField Materials[35].RenderMethod objects\characters\masterchief\shaders\spartan_torso_s9_spi.shader
+SetField Materials[36].RenderMethod objects\characters\masterchief\shaders\orion_chest.shader
+SetField Materials[37].RenderMethod levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_armor.shader
+SetField Materials[38].RenderMethod levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_gear_standard.shader
+SetField Materials[39].RenderMethod objects\characters\masterchief\shaders\marine_chest.shader
+SetField Materials[40].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_neck_joshua.shader
+SetField Materials[41].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader
+SetField Materials[42].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader
+SetField Materials[43].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kurt.shader
+SetField Materials[44].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_kurt.shader
+SetField Materials[45].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_emile.shader
+SetField Materials[46].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_emile.shader
+SetField Materials[47].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jai.shader
+SetField Materials[48].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jai_visor.shader
+SetField Materials[49].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_vinh.shader
+SetField Materials[50].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_vinh.shader
+SetField Materials[51].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
+SetField Materials[52].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai.shader
+SetField Materials[53].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_linda.shader
+SetField Materials[54].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_linda_visor.shader
+SetField Materials[55].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_john117.shader
+SetField Materials[56].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_john117_visor.shader
+SetField Materials[57].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_will.shader
+SetField Materials[58].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_will_visor.shader
+SetField Materials[59].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jun.shader
+SetField Materials[60].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_jun.shader
+SetField Materials[61].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_malcolm.shader
+SetField Materials[62].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_malcolm_visor.shader
+SetField Materials[63].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kelly.shader
+SetField Materials[64].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_kelly.shader
+SetField Materials[65].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_carter.shader
+SetField Materials[66].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_carter.shader
+SetField Materials[67].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_rosenda.shader
+SetField Materials[68].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_rosenda.shader
+SetField Materials[69].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_emile.shader
+SetField Materials[70].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_li.shader
+SetField Materials[71].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_isaac.shader
+SetField Materials[72].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_isaac.shader
+SetField Materials[73].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_nicole.shader
+SetField Materials[74].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_visor_nicole.shader
+SetField Materials[75].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_sam.shader
+SetField Materials[76].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_sam_visor.shader
+SetField Materials[77].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_armor.shader
+SetField Materials[78].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_rubber.shader
+SetField Materials[79].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_visor.shader
+SetField Materials[80].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna.shader
+SetField Materials[81].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna_visor.shader
+SetField Materials[82].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_helmet.shader
+SetField Materials[83].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_joshua_visor.shader
+SetField Materials[84].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_base.shader
+SetField Materials[85].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_rubber.shader
+SetField Materials[86].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_visor.shader
+SetField Materials[87].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned.shader
+SetField Materials[88].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned_2.shader
+SetField Materials[89].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_condemned_2.shader
+SetField Materials[90].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd.shader
+SetField Materials[91].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_2.shader
+SetField Materials[92].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_3.shader
+SetField Materials[93].RenderMethod objects\weapons\multiplayer\skull\shaders\skull_port.shader
+SetField Materials[94].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_bungie_visor.shader
+SetField Materials[95].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
+SetField Materials[96].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
+SetField Materials[97].RenderMethod objects\characters\spartans\custom\shaders\markiv_helmet.shader
+SetField Materials[98].RenderMethod objects\characters\spartans\custom\shaders\markiv_visor.shader
+SetField Materials[99].RenderMethod objects\characters\masterchief\shaders\raven1_visor.shader
+SetField Materials[100].RenderMethod objects\characters\masterchief\shaders\raven2_visor.shader
+SetField Materials[101].RenderMethod objects\characters\masterchief\shaders\raven3_visor.shader
+SetField Materials[102].RenderMethod objects\characters\masterchief\shaders\raven4_visor.shader
+SetField Materials[103].RenderMethod objects\characters\masterchief\shaders\h2aodst_helm.shader
+SetField Materials[104].RenderMethod objects\characters\masterchief\shaders\h2aodst_visor.shader
+SetField Materials[105].RenderMethod objects\characters\masterchief\shaders\spartan_helmet_s9_spi.shader
+SetField Materials[106].RenderMethod objects\characters\masterchief\shaders\spi_visor.shader
+SetField Materials[107].RenderMethod objects\characters\masterchief\shaders\orion_helmet.shader
+SetField Materials[108].RenderMethod objects\characters\masterchief\shaders\orion_visor.shader
+SetField Materials[109].RenderMethod objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
+SetField Materials[110].RenderMethod objects\characters\spartans\custom\shaders\mp_visor_ce.shader
+SetField Materials[111].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_fred_flair.shader
+SetField Materials[112].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kat.shader
+SetField Materials[113].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_sam_flair.shader
+SetField Materials[114].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_will.shader
+SetField Materials[115].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_carter.shader
+SetField Materials[116].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kurt.shader
+SetField Materials[117].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_sniper_li.shader
+SetField Materials[118].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_adrianna.shader
+SetField Materials[119].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_small.shader
+SetField Materials[120].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_joshua.shader
+SetField Materials[121].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_jai.shader
+SetField Materials[122].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_large.shader
+SetField Materials[123].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_small_emile.shader
+SetField Materials[124].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kelly.shader
+SetField Materials[125].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_malcolm.shader
+SetField Materials[126].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_nicole_flair.shader
+SetField Materials[127].RenderMethod objects\characters\spartans\custom\shaders\markiv_shoulders.shader
+SetField Materials[128].RenderMethod objects\characters\masterchief\shaders\spartan_shoulder_s9_spi.shader
+SetField Materials[129].RenderMethod objects\characters\masterchief\shaders\orion_shoulder.shader
+SetField Materials[130].RenderMethod objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
+SetField Materials[131].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_anton_shoulders.shader
+SetField Materials[132].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_knife_emile.shader
+SetField Materials[133].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_kelly.shader
+SetField Materials[134].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_gauntlets.shader
+SetField Materials[135].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tricorder.shader
+SetField Materials[136].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tracker_jun.shader
+SetField Materials[137].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_shotgun_reloader_emile.shader
+SetField Materials[138].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_toolbox_kat.shader
+SetField Materials[139].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_joshua.shader
+SetField Materials[140].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_adrianna.shader
+SetField Materials[141].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_medpack.shader
+SetField Materials[142].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_pouch_emile.shader
+SetField Materials[143].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_kat_robotarm.shader
+SetField Materials[144].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_carter.shader
+SetField Materials[145].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_adrianna.shader
+SetField Materials[146].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_joshua.shader
+SetField Materials[147].RenderMethod objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
+SetField Materials[148].RenderMethod objects\characters\masterchief\shaders\orion_legs.shader
+SetField Materials[149].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_adrianna.shader
+SetField Materials[150].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna_aug.shader
+SetField Materials[151].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_carter.shader
+SetField Materials[152].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_kat.shader
+SetField Materials[153].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_emile.shader
+SetField Materials[154].RenderMethod objects\characters\odst\shaders\gear_light.shader
+SetField Materials[155].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_jai.shader
+SetField Materials[156].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_nicole.shader
+SetField Materials[157].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_flare.shader
+SetField Materials[158].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_jun.shader
+SetField Materials[159].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_flare_carter.shader
+SetField Materials[160].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_isaac.shader
+SetField Materials[161].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default_aug.shader
+SetField Materials[162].RenderMethod objects\characters\marine\shaders\marine_badlands_set.shader
+SetField Materials[163].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_vinh.shader
+SetField Materials[164].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_flair.shader
+SetField Materials[165].RenderMethod objects\characters\spartans\shaders\spartan\scarf2.shader
+SetField Materials[166].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_backpack_jun.shader
+SetField Materials[167].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_gear.shader
+SetField Materials[168].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_backpack_carter.shader
+SetField Materials[169].RenderMethod objects\characters\marine\shaders\marine_trooper_set.shader
+SetField Materials[170].RenderMethod objects\equipment\jet_pack\shaders\jet_pack_unsc.shader
+SetField Materials[171].RenderMethod objects\props\human\unsc\bitmaps\re_entry_pack.shader
+SetField Materials[172].RenderMethod objects\props\human\unsc\bitmaps\re_entry_pack_decals.shader_decal
+SetField Materials[173].RenderMethod objects\cinematics\package\shaders\package.shader
+SetField Materials[174].RenderMethod objects\cinematics\package\shaders\package_glass.shader
+SetField Materials[175].RenderMethod objects\characters\marine\shaders\marine_odst_set.shader
+ReplaceRenderGeometry F:\Github\Ramp-3\Models\mp_masterchief\mp_masterchief_3p.fbx updatenodes markers
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\fp_body\fp_body.render_model
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 25
+SetField Materials[0].RenderMethod objects\characters\spartans\fp\shaders\spartan_rubber_suit.shader
+SetField Materials[1].RenderMethod objects\characters\spartans\shaders\spartan_shield_display.shader
+SetField Materials[2].RenderMethod objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+SetField Materials[3].RenderMethod objects\characters\spartans\shaders\spartan_armor.shader
+SetField Materials[4].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+SetField Materials[5].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_camo_suit.shader
+SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_armor_camo.shader
+SetField Materials[9].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_kat_robotarm.shader
+SetField Materials[10].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_joshua.shader
+SetField Materials[11].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_adrianna.shader
+SetField Materials[12].RenderMethod objects\characters\masterchief\shaders\orion_legs.shader
+SetField Materials[13].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_carter.shader
+SetField Materials[14].RenderMethod objects\characters\masterchief\shaders\odst_raven_1.shader
+SetField Materials[15].RenderMethod objects\characters\masterchief\shaders\odst_raven_2.shader
+SetField Materials[16].RenderMethod objects\characters\masterchief\shaders\odst_raven_3.shader
+SetField Materials[17].RenderMethod objects\characters\masterchief\shaders\odst_raven_4.shader
+SetField Materials[18].RenderMethod objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
+SetField Materials[19].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_joshua.shader
+SetField Materials[20].RenderMethod levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_gear_standard.shader
+SetField Materials[21].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_toolbox_kat.shader
+SetField Materials[22].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_adrianna.shader
+SetField Materials[23].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_pouch_emile.shader
+SetField Materials[24].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_medpack.shader
+ReplaceRenderGeometry F:\Github\Ramp-3\Models\mp_masterchief\mp_masterchief_fp_body.fbx updatenodes markers
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\fp\fp.render_model
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 9
+SetField Materials[0].RenderMethod objects\characters\spartans\shaders\spartan_armor.shader
+SetField Materials[1].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_armor.shader
+SetField Materials[2].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+SetField Materials[3].RenderMethod objects\characters\spartans\fp\shaders\spartan_rubber_suit.shader
+SetField Materials[4].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_kelly.shader
+SetField Materials[5].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_gauntlets.shader
+SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tricorder.shader
+SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tracker_jun.shader
+SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_shotgun_reloader_emile.shader
+ReplaceRenderGeometry F:\Github\Ramp-3\Models\mp_masterchief\mp_masterchief_fp_arms.fbx updatenodes markers
+SaveTagChanges
+Exit
+
+# Fix gloves not being wet
+GenerateShader Shader default detail none specular_mask_from_diffuse cook_torrance none off opaque off first_person_sometimes off off
+
+EditTag objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_2_0_1_10_0_0_0_0_1_0_0_0_0_0.render_method_template
+
+SetField Options[4].OptionIndex 10
+SetField Options[9].OptionIndex 1
+SaveTagChanges
+Exit
+
+EditTag objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+SetArgument analytical_anti_shadow_control 0
+SetArgument albedo_blend 0.7
+SetArgument material_texture 1 1 0 0
+SetArgument Booleans order3_area_specular
+SetArgument environment_map_specular_contribution 0
+SetArgument analytical_specular_contribution 0.2
+SetArgument area_specular_contribution 0.1
+SetArgument roughness 0.2
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765
+SetArgument specular_tint 0.5372549 0.5411765 0.49411765
+SetArgument specular_coefficient 1
+
+SaveTagChanges
+Exit
+
+
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
+# ------------------------------------------------------------------------------------------
+# | MAIN MENU PORT <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-|
+# ------------------------------------------------------------------------------------------
+
+NameTag levels\ui\mainmenu\mainmenu.scenario levels\ui\mainmenu\mainmenu_old
+
+CreateTag nclt player_light
+
+EditTag player_light.nclt
+AddBlockElements ShLights 1
+SetField ShLights[*].Direction 0
+SetField ShLights[*].FrontBack 50
+SetField ShLights[*].Intensity 1
+SetField ShLights[*].Diffusion 0.2
+SetField ShLights[*].Color 0.4078 0.6118 1
+SaveTagChanges
+Exit
+
+# Generating New Bitmap before Porting
+GenerateBitmap levels\ui\mainmenu\bitmaps\campaign_act3_background F:\Github\Ramp-3\Bitmaps\MainMenu\customization_background.dds
+
+OpenCacheFile F:\ReachMaps\mainmenu.map
+IgnoreBlamTag objects\characters\elite\elite.biped
+IgnoreBlamTag objects\characters\spartans\spartans.biped
+IgnoreBlamTag objects\equipment\hologram\bipeds\hologram_elite.biped
+IgnoreBlamTag objects\equipment\hologram\bipeds\hologram_spartan.biped
+IgnoreBlamTag levels\ui\mainmenu\lights\appearance_elite.new_cinematic_lighting
+IgnoreBlamTag levels\ui\mainmenu\lights\appearance_spartan.new_cinematic_lighting
+IgnoreBlamTag objects\weapons\rifle\needle_rifle\needle_rifle.weapon
+IgnoreBlamTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+
+PortTag !ReachMisc !scripts *.scnr
+PortTag !ReachMisc ui\cui\main_menu\halo3_logo_ui.bitmap
+PortTag !ReachMisc sound\music\alpha_main_menu\alpha_main_menu.lsnd
+Exit
+
+EditTag ui\ui_shared_globals.wigl
+SetField MainMenuMusic sound\music\alpha_main_menu\alpha_main_menu.lsnd
+SaveTagChanges
+Exit
+
+EditTag levels\ui\mainmenu\mainmenu.scenario
+SetField CinematicLighting[0].CinematicLight player_light.nclt
+SetField CinematicLighting[1].CinematicLight player_light.nclt
+
+SetField ObjectNames[0].Name "elite"
+SetField ObjectNames[1].Name "chief"
+SetField ObjectNames[2].Name "chief_armory"
+SetField ObjectNames[3].Name "chief_exit"
+SetField ObjectNames[4].Name "elite_exit"
+SetField ObjectNames[5].Name "elite_armory"
+SetField ObjectNames[6].Name "chief_screenshot"
+SetField ObjectNames[7].Name "chief_pgcr"
+SetField ObjectNames[8].Name "elite_pgcr"
+SetField ObjectNames[9].Name "appearance_ar"
+SetField ObjectNames[10].Name "appearance_pr"
+SetField ObjectNames[11].Name "campaign_ar"
+SetField ObjectNames[12].Name "campaign_pr"
+SetField ObjectNames[13].Name "custom_ar_01"
+SetField ObjectNames[14].Name "custom_pr_01"
+SetField ObjectNames[15].Name "custom_pr_02"
+SetField ObjectNames[16].Name "custom_flag"
+SetField ObjectNames[17].Name "sky"
+
+# CUSTOMIZATION CAMERA POINTS!!
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name settings_cam
+SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+# Won't you strip just a little for me?
+# This is not the answer! Your maps aren't up to landscape
+# They won't solve it all y'dknow.
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_helmet_wide
+SetField CutsceneCameraPoints[*].Position 15.0291 647.98 9.6333
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_body_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.331  +0.129  -0.072
+SetField CutsceneCameraPoints[*].Position 15.0601 648.247 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_leftshoulder_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.024  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 648.094 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_rightshoulder_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.131  -0.100  -0.072
+SetField CutsceneCameraPoints[*].Position 14.8601 648.018 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_helmet_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.070  -0.102
+SetField CutsceneCameraPoints[*].Position 14.9601 648.048 9.37133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_body_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.331  -0.100  +0.022
+SetField CutsceneCameraPoints[*].Position 15.0601 648.018 9.49533
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_leftshoulder_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.084  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 648.034 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_rightshoulder_wide
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.181  -0.184  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9101 647.934 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_helmet_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.331  -0.184  +0.172
+SetField CutsceneCameraPoints[*].Position 15.0601 647.934 9.64533
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_body_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.149  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 647.969 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_leftshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.084  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 648.034 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_rightshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.131  -0.174  -0.072
+SetField CutsceneCameraPoints[*].Position 14.8601 647.944 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_helmet_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.124  -0.102
+SetField CutsceneCameraPoints[*].Position 14.9601 647.994 9.37133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_body_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.381  -0.204  +0.022
+SetField CutsceneCameraPoints[*].Position 15.1101 647.914 9.49533
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_leftshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.174  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 647.944 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_rightshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.181  -0.214  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9101 647.904 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+# HAVE YOU HEARD? BOYS TEND TO GET RAPED NEAR THE OCEAN!
+
+AddBlockElements BipedPalette 1
+SetField BipedPalette[*].Object objects\characters\masterchief\mp_masterchief\mp_masterchief.biped
+AddBlockElements BipedPalette 1
+SetField BipedPalette[*].Object objects\characters\elite\mp_elite\mp_elite.biped
+
+# SPARTANS
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 1
+SetField Bipeds[*].Position -31.84521 -23.43278 -34.6908
+SetField Bipeds[*].Rotation -0.3951688 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 42040 26
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 3
+SetField Bipeds[*].Position -31.8452 -23.4328 -29.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37960 45
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 7
+SetField Bipeds[*].Position -48 -23.4328 -29.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 60848 52
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 2
+SetField Bipeds[*].Position -31.8452 -23.4328 -24.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37960 44
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 6
+SetField Bipeds[*].Position -48 -23.4328 -24.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 60568 48
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+# ELITES
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 0
+SetField Bipeds[*].Position -31.90887 -10.38469 -34.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 42040 27
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 4
+SetField Bipeds[*].Position -31.9089 -10.3847 -29.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37960 46
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 8
+SetField Bipeds[*].Position -48 -10.3847 -29.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 60848 53
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 5
+SetField Bipeds[*].Position -31.9089 -10.3847 -24.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37964 47
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+# Server Browser Background
+# Actually no clue why the customization menu also enabled this background but eh
+# Oh this is probably for widescreen user?
+# TLDR this gets called in the script
+AddBlockElements BackgroundBitmapReferences 1
+SetField BackgroundBitmapReferences[*].BackgroundBitmapGroupReference levels\ui\mainmenu\bitmaps\reach_background.bitmap
+
+# CUBEMAP!? WHO NEED IT ANYWAY!
+SetField StructureBsps[0].Cubemap null
+SetField StructureBsps[1].Cubemap null
+SaveTagChanges
+Exit
+
+EditTag levels\ui\mainmenu\mainmenu.scenario
+CompileScripts "F:\Github\Ramp-3\HCS\mainmenu.hsc"
+SaveTagChanges
+Exit
+
+EditTag ui\halox\main_menu\main_menu.gui_screen_widget_definition
+SetField ScriptIndex 10
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.Bitmap ui\cui\main_menu\halo3_logo_ui.bitmap
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds720p 410 450 475 1150
+SetField GroupWidgets[0].Definition.BitmapWidgets[0].Definition.Bitmap null
+SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Flags DoNotApplyOldContentUpscaling,ScaleToFitBounds
+SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Bitmap null
+SetField GroupWidgets[0].Definition.BitmapWidgets[1].Definition.Bitmap null
+#SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds480i 408 297 516 810
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_campaign.gui_screen_widget_definition
+SetField ScriptIndex 11
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_mapeditor.gui_screen_widget_definition
+SetField ScriptIndex 14
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_matchmaking.gui_screen_widget_definition
+SetField ScriptIndex 12
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_multiplayer.gui_screen_widget_definition
+SetField ScriptIndex 13
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_survival.gui_screen_widget_definition
+SetField ScriptIndex 17
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_theater.gui_screen_widget_definition
+SetField ScriptIndex 15
+SaveTagChanges
+Exit
+
+EditTag multiplayer\mod_globals.mod_globals
+# INDEX IS IN THE SCNR TAG
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.BipedNameIndex 1
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.BipedNameIndex 0
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.SettingsCameraIndex 44
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.SettingsCameraIndex 44
+SaveTagChanges
+Exit
+
+SaveTagNames

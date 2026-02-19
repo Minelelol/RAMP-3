@@ -1,0 +1,161 @@
+# ---------------------------------------------------
+# |               C-01 IDENTIFICATION               |
+# ---------------------------------------------------
+# MALE SEX
+EditTag sound\dialog\combat\masterchief\ass_grabbed.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\ass_grabbed
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\ass_grabber.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\ass_grabber
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\dth_ass.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\dth_ass
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\dth.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\dth
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\dth.sound sound\dialog\combat\masterchief\dth_mjr
+EditTag sound\dialog\combat\masterchief\dth_mjr.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\dth_mjr
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\dth_fall.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\dth_fall
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\kill_ass.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\kill_ass
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\pain.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\pain
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\pain.sound sound\dialog\combat\masterchief\pain_fall
+EditTag sound\dialog\combat\masterchief\pain_fall.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\pain_fall
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\pain.sound sound\dialog\combat\masterchief\pain_mjr
+EditTag sound\dialog\combat\masterchief\pain_mjr.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\pain_mjr
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\pain.sound sound\dialog\combat\masterchief\pain_shld
+EditTag sound\dialog\combat\masterchief\pain_shld.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\pain_shld
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief\thrwn.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleMale\thrwn
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\masterchief.dialogue
+SetField Vocalizations[4].Sound sound\dialog\combat\masterchief\dth_mjr.sound
+SetField Vocalizations[10].Sound sound\dialog\combat\masterchief\pain_fall.sound
+# THIS IS CORRECT BTW, PAIN MEDIUM DOES NOT EXIST, Plays when you take damage that kills your shield
+SetField Vocalizations[11].Sound sound\dialog\combat\masterchief\pain_mjr.sound
+SetField Vocalizations[12].Sound sound\dialog\combat\masterchief\pain_mjr.sound
+SetField Vocalizations[13].Sound sound\dialog\combat\masterchief\pain_shld.sound
+SaveTagChanges
+Exit
+
+# GAY SEX
+EditTag sound\dialog\combat\female_cyborg\dth.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\dth
+SaveTagChanges
+Exit
+
+# H3 SOUNDS BETTER LOL
+# EditTag sound\udlg\fall0.sound
+# ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\dth_fall
+# SaveTagChanges
+# Exit
+
+DuplicateTag sound\dialog\combat\female_cyborg\dth.sound sound\dialog\combat\female_cyborg\dth_mjr
+EditTag sound\dialog\combat\female_cyborg\dth_mjr.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\dth_mjr
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\female_cyborg\dth.sound sound\dialog\combat\female_cyborg\dth_ass
+EditTag sound\dialog\combat\female_cyborg\dth_ass.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\dth_ass
+SaveTagChanges
+Exit
+
+EditTag sound\udlg\pain0.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\pain
+SaveTagChanges
+Exit
+
+DuplicateTag sound\udlg\pain0.sound sound\dialog\combat\female_cyborg\pain_fall
+EditTag sound\dialog\combat\female_cyborg\pain_fall.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\pain_fall
+SaveTagChanges
+Exit
+
+DuplicateTag sound\udlg\pain0.sound sound\dialog\combat\female_cyborg\pain_mjr
+EditTag sound\dialog\combat\female_cyborg\pain_mjr.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\pain_mjr
+SaveTagChanges
+Exit
+
+DuplicateTag sound\udlg\pain0.sound sound\dialog\combat\female_cyborg\pain_shld
+EditTag sound\dialog\combat\female_cyborg\pain_shld.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\pain_shld
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\kill_ass.sound sound\dialog\combat\female_cyborg\kill_ass
+EditTag sound\dialog\combat\female_cyborg\kill_ass.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\kill_ass
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\ass_grabber.sound sound\dialog\combat\female_cyborg\ass_grabber
+EditTag sound\dialog\combat\female_cyborg\ass_grabber.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\ass_grabber
+SaveTagChanges
+Exit
+
+DuplicateTag sound\dialog\combat\masterchief\ass_grabbed.sound sound\dialog\combat\female_cyborg\ass_grabbed
+EditTag sound\dialog\combat\female_cyborg\ass_grabbed.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\ass_grabbed
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\female_cyborg\thrwn.sound
+ImportSound workingdir\sounds\bipeds\spartan\NobleFemale\thrwn
+SaveTagChanges
+Exit
+
+EditTag sound\dialog\combat\female_cyborg_mp.dialogue
+SetField Vocalizations[4].Sound sound\dialog\combat\female_cyborg\dth_mjr.sound
+SetField Vocalizations[8].Sound sound\dialog\combat\female_cyborg\dth_ass.sound
+SetField Vocalizations[10].Sound sound\dialog\combat\female_cyborg\pain_fall.sound
+# DITTO
+SetField Vocalizations[11].Sound sound\dialog\combat\female_cyborg\pain_mjr.sound
+SetField Vocalizations[12].Sound sound\dialog\combat\female_cyborg\pain_mjr.sound
+SetField Vocalizations[13].Sound sound\dialog\combat\female_cyborg\pain_shld.sound
+SetField Vocalizations[19].Sound sound\dialog\combat\female_cyborg\kill_ass.sound
+SetField Vocalizations[20].Sound sound\dialog\combat\female_cyborg\ass_grabber.sound
+SetField Vocalizations[21].Sound sound\dialog\combat\female_cyborg\ass_grabbed.sound
+SaveTagChanges
+Exit

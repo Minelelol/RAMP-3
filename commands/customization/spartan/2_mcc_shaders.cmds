@@ -1,0 +1,84 @@
+# | ODST RAVEN BITMAPS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | ODST RAVEN BITMAPS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | ODST RAVEN BITMAPS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# Importing Raven bitmap b4 the shaders (lower quality to save some resources but it shouldn't be noticeable)
+
+# RAVEN 1
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_cc workingdir\bitmaps\ODST\Raven1\odst_raven_1_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_diff workingdir\bitmaps\ODST\Raven1\odst_raven_1_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_illum workingdir\bitmaps\ODST\Raven1\odst_raven_1_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_illum GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_1_zbump
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven1\odst_raven_1_zbump.dds linear
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_zbump GenerateMipmaps
+
+# RAVEN 2
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_cc workingdir\bitmaps\ODST\Raven2\odst_raven_2_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_diff workingdir\bitmaps\ODST\Raven2\odst_raven_2_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_illum workingdir\bitmaps\ODST\Raven2\odst_raven_2_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_illum GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_2_zbump
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven2\odst_raven_2_zbump.dds linear
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_zbump GenerateMipmaps
+
+# RAVEN 3
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_cc workingdir\bitmaps\ODST\Raven3\odst_raven_3_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_diff workingdir\bitmaps\ODST\Raven3\odst_raven_3_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_illum workingdir\bitmaps\ODST\Raven3\odst_raven_3_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_illum GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_3_zbump
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven3\odst_raven_3_zbump.dds linear
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_zbump GenerateMipmaps
+
+# RAVEN 4
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_cc workingdir\bitmaps\ODST\Raven4\odst_raven_4_cc.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_diff workingdir\bitmaps\ODST\Raven4\odst_raven_4_diff.dds
+GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_illum workingdir\bitmaps\ODST\Raven4\odst_raven_4_illum.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_illum GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_4_zbump
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven4\odst_raven_4_zbump.dds linear
+ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_zbump GenerateMipmaps
+
+# SPI
+GenerateBitmap objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi_diff workingdir\bitmaps\Spartan\SPI\spartan_helmet_s9_spi_diff.dds
+ForEach bitm named: objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi_diff GenerateMipmaps
+
+# | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+
+OpenCacheFile "MCC\halo3\maps\midship.map"
+# NameBlamTag objects\characters\masterchief\shaders\odst_raven_1_visor.shader objects\characters\masterchief\shaders\raven1_visor
+# NameBlamTag objects\characters\masterchief\shaders\odst_raven_2_visor.shader objects\characters\masterchief\shaders\raven2_visor
+# NameBlamTag objects\characters\masterchief\shaders\odst_raven_3_visor.shader objects\characters\masterchief\shaders\raven3_visor
+# NameBlamTag objects\characters\masterchief\shaders\odst_raven_4_visor.shader objects\characters\masterchief\shaders\raven4_visor
+
+# PortTag objects\characters\masterchief\shaders\raven1_visor.shader
+# PortTag objects\characters\masterchief\shaders\raven2_visor.shader
+# PortTag objects\characters\masterchief\shaders\raven3_visor.shader
+# PortTag objects\characters\masterchief\shaders\raven4_visor.shader
+
+PortTag objects\characters\masterchief\shaders\odst_raven_1.shader
+PortTag objects\characters\masterchief\shaders\odst_raven_2.shader
+PortTag objects\characters\masterchief\shaders\odst_raven_3.shader
+PortTag objects\characters\masterchief\shaders\odst_raven_4.shader
+
+# NameBlamTag objects\characters\masterchief\shaders\spartan_helmet_s9_spi_visor.shader objects\characters\masterchief\shaders\spi_visor
+# PortTag objects\characters\masterchief\shaders\spi_visor.shader
+
+PortTag objects\characters\masterchief\shaders\spartan_torso_s9_spi.shader
+PortTag objects\characters\masterchief\shaders\spartan_helmet_s9_spi.shader
+PortTag objects\characters\masterchief\shaders\spartan_shoulder_s9_spi.shader
+PortTag objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
+Exit
+
+# Shader Adjustment
+ForEach shader startingwith: objects\characters\masterchief\shaders\odst_raven SetArgument diffuse_coefficient 2

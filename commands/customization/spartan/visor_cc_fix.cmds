@@ -1,0 +1,51 @@
+# SCRIPTS GETS CALLED IN THE "1_reach_shaders.cmds"
+SetField Options[0].OptionIndex 0
+SetField Options[4].OptionIndex 1
+
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_1_0_1_1_2_0_0_0_5_0_0_0_0_0.render_method_template
+SwapBlockElements ShaderProperties[0].TextureConstants 2 4
+RemoveBlockElements ShaderProperties[0].TextureConstants 4 *
+
+AddBlockElements ShaderProperties[0].RealConstants 3
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 3 3 0 0
+SetArgument albedo_color 1 1 1 1
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 1 1 1 1
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 1 1 1 0
+SetArgument fresnel_color 0.5019608 0.5019608 0.5019608 0.003921569
+SetArgument use_fresnel_color_environment 0 0 0 0
+SetArgument fresnel_color_environment 0.5019608 0.5019608 0.5019608 0
+SetArgument fresnel_power 1 1 1 1
+SetArgument roughness 0.04 0.04 0.04 0.04
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 1.25 1.25 1.25 1.25
+SetArgument order3_area_specular 1 1 0 0
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 0.3 0.3 0.3 0.3
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend_with_specular_tint 0 0 0 0
+SetArgument albedo_blend 1 1 1 0
+SetArgument analytical_anti_shadow_control 2 2 2 2
+SetArgument rim_fresnel_coefficient 0 0 0 0
+SetArgument rim_fresnel_color 0.9803922 0.9568628 0.7843138 1
+SetArgument rim_fresnel_power 1 1 1 1
+SetArgument env_roughness_scale 1
+SetArgument env_roughness_offset 0.1
+SetArgument wet_material_dim_tint 0 0 0
+SetArgument wet_material_dim_coefficient 1
+
+RemoveBlockElements ShaderProperties[0].EntryPoints 0 *
+RemoveBlockElements ShaderProperties[0].Passes 0 *
+RemoveBlockElements ShaderProperties[0].Functions 0 *
+RemoveBlockElements ShaderProperties[0].RoutingInfo 0 *
+
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[0].Type ChangeColorTertiary
+SetField ShaderProperties[0].Functions[0].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+AddFunction albedo_color Real 0
+AddFunction rim_fresnel_color Real 0
+SaveTagChanges

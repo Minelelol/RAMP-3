@@ -1,0 +1,30 @@
+CreateModPackage 1 Large
+ReachTest
+Welcome to RAMP, a community effort to transform Eldewrito into Halo Reach while keeping ED main features and adding new ones. Featuring extensive bug fixes, quality of life improvements, and plenty of new content to play with. We hope you enjoy this labor of love.
+AMP Collective
+0.95
+MainMenu Multiplayer Character
+
+# REMOVE THE APPLY PAK SCRIPT ONCE WE'RE DONE USING THE PAK
+# RunCommands workingdir\commands\RecompileShaders.cmds
+
+OpenModPackage F:\Github\Ramp-3\paks\RecompShaders[1.5.9540.25495].pak
+ApplyModPackage
+ExitModPackage
+
+# -----------------------------------------
+# |             REACH SPARTAN             |
+# -----------------------------------------
+# WILL USE 3.8Gb OF DEDICATED WAM
+RunCommands workingdir\commands\customization\spartan\1_reach_shaders.cmds
+RunCommands workingdir\commands\customization\spartan\2_mcc_shaders.cmds
+RunCommands workingdir\commands\customization\spartan\3_custom_shaders.cmds
+RunCommands workingdir\commands\customization\spartan\4_render_model.cmds
+RunCommands workingdir\commands\customization\spartan\5_customization_globals.cmds
+RunCommands workingdir\commands\customization\spartan\6_noble_dialogue_voice.cmds
+
+# -----------------------------------------
+# |              REACH ELITE              |
+# -----------------------------------------
+
+SaveModPackage

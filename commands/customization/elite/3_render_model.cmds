@@ -1,0 +1,170 @@
+EditTag objects\characters\elite\mp_elite\mp_elite.render_model
+RemoveBlockElements Regions 0 *
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 93
+SetField Materials[0].RenderMethod objects\characters\elite\shaders\elite_base\body.shader
+SetField Materials[1].RenderMethod objects\characters\elite\shaders\elite_base\elite_fp_armor.shader
+SetField Materials[2].RenderMethod objects\characters\elite\shaders\elite_base\elite_fp_skin.shader
+SetField Materials[3].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_minor_helmet.shader
+SetField Materials[4].RenderMethod objects\characters\elite\shaders\elite_base\eyes.shader
+SetField Materials[5].RenderMethod objects\characters\elite\shaders\elite_base\head.shader
+SetField Materials[6].RenderMethod objects\characters\elite\shaders\elite_base\teeth.shader
+SetField Materials[7].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader
+SetField Materials[8].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_general_helmet_metal.shader
+SetField Materials[9].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_general_illum_cards.shader
+SetField Materials[10].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_general_stripes.shader_halogram
+SetField Materials[11].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_officer_helmet.shader
+SetField Materials[12].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_officer_helmet_metal.shader
+SetField Materials[13].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_officer_illum_cards.shader
+SetField Materials[14].RenderMethod objects\characters\elite\shaders\elite_chest\elite_space_chest_metal.shader
+SetField Materials[15].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_space_helmet.shader
+SetField Materials[16].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_space_helmet_metal.shader
+SetField Materials[17].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor.shader
+SetField Materials[18].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor_interior.shader
+SetField Materials[19].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_space_illum_cards.shader
+SetField Materials[20].RenderMethod objects\characters\elite\shaders\elite_chest\elite_spec_ops_chest_metal.shader
+SetField Materials[21].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_spec_ops_helmet.shader
+SetField Materials[22].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_spec_ops_helmet_metal.shader
+SetField Materials[23].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_spec_ops_illum_cards.shader
+SetField Materials[24].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_storyelite_helmet.shader
+SetField Materials[25].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_storyelite_helmet_metal.shader
+SetField Materials[26].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_zealot_helmet.shader
+SetField Materials[27].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_zealot_helmet_metal.shader
+SetField Materials[28].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_zealot_illum_cards.shader
+SetField Materials[29].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_zealot_stripes.shader_halogram
+SetField Materials[30].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_ultra_helmet.shader
+SetField Materials[31].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_ultra_helmet_metal.shader
+SetField Materials[32].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_ultra_illum_cards.shader
+SetField Materials[33].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shader
+SetField Materials[34].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_helmet.shader
+SetField Materials[35].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
+SetField Materials[36].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_council_helmet.shader
+SetField Materials[37].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_upper.shader
+SetField Materials[38].RenderMethod objects\characters\elite\shaders\elite_chest\elite_minor_chest.shader
+SetField Materials[39].RenderMethod objects\characters\elite\shaders\elite_chest\elite_minor_chest_metal.shader
+SetField Materials[40].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_minor_illum_cards.shader
+SetField Materials[41].RenderMethod objects\characters\elite\shaders\elite_chest\elite_general_chest.shader
+SetField Materials[42].RenderMethod objects\characters\elite\shaders\elite_chest\elite_general_chest_metal.shader
+SetField Materials[43].RenderMethod objects\characters\elite\shaders\elite_chest\elite_officer_chest.shader
+SetField Materials[44].RenderMethod objects\characters\elite\shaders\elite_chest\elite_officer_chest_metal.shader
+SetField Materials[45].RenderMethod objects\characters\elite\shaders\elite_chest\elite_space_chest.shader
+SetField Materials[46].RenderMethod objects\characters\elite\shaders\elite_chest\elite_spec_ops_chest.shader
+SetField Materials[47].RenderMethod objects\characters\elite\shaders\elite_chest\elite_zealot_chest.shader
+SetField Materials[48].RenderMethod objects\characters\elite\shaders\elite_chest\elite_zealot_chest_metal.shader
+SetField Materials[49].RenderMethod objects\characters\elite\shaders\elite_chest\elite_ultra_chest.shader
+SetField Materials[50].RenderMethod objects\characters\elite\shaders\elite_chest\elite_ultra_chest_metal.shader
+SetField Materials[51].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_minor_shoulder.shader
+SetField Materials[52].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_minor_shoulder_metal.shader
+SetField Materials[53].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_general_shoulder.shader
+SetField Materials[54].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_general_shoulder_metal.shader
+SetField Materials[55].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_officer_shoulder.shader
+SetField Materials[56].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_officer_shoulder_metal.shader
+SetField Materials[57].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_space_shoulder.shader
+SetField Materials[58].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_spec_ops_shoulder.shader
+SetField Materials[59].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_spec_ops_shoulder_metal.shader
+SetField Materials[60].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_ultra_shoulder.shader
+SetField Materials[61].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_ultra_shoulder_metal.shader
+SetField Materials[62].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_zealot_shoulder.shader
+SetField Materials[63].RenderMethod objects\characters\elite\shaders\elite_shoulder\elite_zealot_shoulder_metal.shader
+SetField Materials[64].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_minor_gauntlet.shader
+SetField Materials[65].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet.shader
+SetField Materials[66].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet_metal.shader
+SetField Materials[67].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_officer_gauntlet.shader
+SetField Materials[68].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet.shader
+SetField Materials[69].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet_metal.shader
+SetField Materials[70].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_space_thigh_metal.shader
+SetField Materials[71].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_spec_ops_gauntlet.shader
+SetField Materials[72].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet.shader
+SetField Materials[73].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet_metal.shader
+SetField Materials[74].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet.shader
+SetField Materials[75].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet_metal.shader
+SetField Materials[76].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_arms.shader
+SetField Materials[77].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_lower.shader
+SetField Materials[78].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_lower_metal.shader
+SetField Materials[79].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_minor_thigh.shader
+SetField Materials[80].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_minor_thigh_metal.shader
+SetField Materials[81].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_general_thigh.shader
+SetField Materials[82].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_general_thigh_metal.shader
+SetField Materials[83].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_officer_thigh.shader
+SetField Materials[84].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_officer_thigh_metal.shader
+SetField Materials[85].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_space_thigh.shader
+SetField Materials[86].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh.shader
+SetField Materials[87].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh_metal.shader
+SetField Materials[88].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh.shader
+SetField Materials[89].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh_metal.shader
+SetField Materials[90].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh.shader
+SetField Materials[91].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh_metal.shader
+SetField Materials[92].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
+ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_3p.dae TriangleList
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\mp_elite\fp_body\fp_body.render_model
+RemoveBlockElements Regions 0 *
+RemoveBLockElements Materials 0 *
+AddBlockElements Materials 26
+SetField Materials[0].RenderMethod objects\characters\elite\shaders\elite_base\body.shader
+SetField Materials[1].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_lower.shader
+SetField Materials[2].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_lower_metal.shader
+SetField Materials[3].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_minor_illum_cards.shader
+SetField Materials[4].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_minor_thigh.shader
+SetField Materials[5].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_minor_thigh_metal.shader
+SetField Materials[6].RenderMethod objects\characters\elite\fp\shaders\elite_fp_skin.shader
+SetField Materials[7].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_general_stripes.shader_halogram
+SetField Materials[8].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_general_thigh.shader
+SetField Materials[9].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_general_thigh_metal.shader
+SetField Materials[10].RenderMethod shaders\invalid.shader
+SetField Materials[11].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_officer_thigh.shader
+SetField Materials[12].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_officer_thigh_metal.shader
+SetField Materials[13].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_space_thigh.shader
+SetField Materials[14].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_space_thigh_metal.shader
+SetField Materials[15].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh.shader
+SetField Materials[16].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh_metal.shader
+SetField Materials[17].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_zealot_stripes.shader_halogram
+SetField Materials[18].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh.shader
+SetField Materials[19].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh_metal.shader
+SetField Materials[20].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh.shader
+SetField Materials[21].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh_metal.shader
+SetField Materials[22].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shader
+SetField Materials[23].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
+SetField Materials[24].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
+SetField Materials[25].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_upper.shader
+ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_body.fbx Markers TriangleList
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\fp_arms\fp_arms.render_model
+RemoveBlockElements Regions 0 *
+RemoveBLockElements Materials 0 *
+AddBlockElements Materials 23
+SetField Materials[0].RenderMethod objects\characters\elite\shaders\elite_base\body.shader
+SetField Materials[1].RenderMethod objects\characters\elite\fp\shaders\elite_fp_skin.shader
+SetField Materials[2].RenderMethod objects\characters\elite\shaders\elite_base\elite_fp_armor.shader
+SetField Materials[3].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_minor_gauntlet.shader
+SetField Materials[4].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet.shader
+SetField Materials[5].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet_metal.shader
+SetField Materials[6].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_general_illum_cards.shader
+SetField Materials[7].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_officer_gauntlet.shader
+SetField Materials[8].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_officer_illum_cards.shader
+SetField Materials[9].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet.shader
+SetField Materials[10].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet_metal.shader
+SetField Materials[11].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_spec_ops_gauntlet.shader
+SetField Materials[12].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_spec_ops_gauntlet_metal.shader
+SetField Materials[13].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_spec_ops_illum_cards.shader
+SetField Materials[14].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet.shader
+SetField Materials[15].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet_metal.shader
+SetField Materials[16].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_zealot_illum_cards.shader
+SetField Materials[17].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet.shader
+SetField Materials[18].RenderMethod objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet_metal.shader
+SetField Materials[19].RenderMethod objects\characters\elite\shaders\elite_illum_cards\elite_ultra_illum_cards.shader
+SetField Materials[20].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shader
+SetField Materials[21].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_arms.shader
+SetField Materials[22].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
+ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_arms.fbx Markers TriangleList
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\mp_elite\mp_elite.model
+UpdateModelRegions 0 coll phmo
+SaveTagChanges
+Exit

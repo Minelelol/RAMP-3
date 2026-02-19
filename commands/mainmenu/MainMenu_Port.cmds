@@ -1,0 +1,269 @@
+EditTag levels\ui\mainmenu\mainmenu.scenario
+SaveTagChanges
+Exit
+
+NameTag levels\ui\mainmenu\mainmenu.scenario levels\ui\mainmenu\mainmenu_old
+SaveTagNames
+
+CreateTag nclt player_light
+EditTag player_light.nclt
+AddBlockElements ShLights 1
+SetField ShLights[*].Direction 0
+SetField ShLights[*].FrontBack 50
+SetField ShLights[*].Intensity 1
+SetField ShLights[*].Diffusion 0.2
+SetField ShLights[*].Color 0.4078 0.6118 1
+SaveTagChanges
+Exit
+
+# Generating New Bitmap before Porting
+GenerateBitmap levels\ui\mainmenu\bitmaps\campaign_act3_background workingdir\bitmaps\MainMenu\customization_background.dds
+
+OpenCacheFile F:\ReachMaps\mainmenu.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+
+IgnoreBlamTag objects\characters\elite\elite.biped
+IgnoreBlamTag objects\characters\spartans\spartans.biped
+IgnoreBlamTag objects\equipment\hologram\bipeds\hologram_elite.biped
+IgnoreBlamTag objects\equipment\hologram\bipeds\hologram_spartan.biped
+IgnoreBlamTag levels\ui\mainmenu\lights\appearance_elite.new_cinematic_lighting
+IgnoreBlamTag levels\ui\mainmenu\lights\appearance_spartan.new_cinematic_lighting
+IgnoreBlamTag objects\weapons\rifle\needle_rifle\needle_rifle.weapon
+IgnoreBlamTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+IgnoreBlamTag sound\game_sfx\ui\pda_transition.sound
+IgnoreBlamTag sound\game_sfx\ui\transition_beeps.sound
+IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
+IgnoreBlamTag objects\characters\elite\elite.model_animation_graph
+IgnoreBlamTag objects\characters\spartans\spartans.model_animation_graph
+
+PortTag ReachMisc !Scripts *.scnr
+PortTag ReachMisc ui\cui\main_menu\halo3_logo_ui.bitmap
+PortTag ReachMisc sound\music\alpha_main_menu\alpha_main_menu.lsnd
+Exit
+
+EditTag ui\ui_shared_globals.wigl
+SetField MainMenuMusic sound\music\alpha_main_menu\alpha_main_menu.lsnd
+SaveTagChanges
+Exit
+
+EditTag levels\ui\mainmenu\mainmenu.scenario
+SetField CinematicLighting[0].CinematicLight player_light.nclt
+SetField CinematicLighting[1].CinematicLight player_light.nclt
+
+SetField ObjectNames[0].Name "elite"
+SetField ObjectNames[1].Name "chief"
+SetField ObjectNames[2].Name "chief_armory"
+SetField ObjectNames[3].Name "chief_exit"
+SetField ObjectNames[4].Name "elite_exit"
+SetField ObjectNames[5].Name "elite_armory"
+SetField ObjectNames[6].Name "chief_screenshot"
+SetField ObjectNames[7].Name "chief_pgcr"
+SetField ObjectNames[8].Name "elite_pgcr"
+SetField ObjectNames[9].Name "appearance_ar"
+SetField ObjectNames[10].Name "appearance_pr"
+SetField ObjectNames[11].Name "campaign_ar"
+SetField ObjectNames[12].Name "campaign_pr"
+SetField ObjectNames[13].Name "custom_ar_01"
+SetField ObjectNames[14].Name "custom_pr_01"
+SetField ObjectNames[15].Name "custom_pr_02"
+SetField ObjectNames[16].Name "custom_flag"
+SetField ObjectNames[17].Name "sky"
+
+# CUSTOMIZATION CAMERA POINTS!!
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name settings_cam
+SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+RemoveBlockElements BipedPalette 0 *
+AddBlockElements BipedPalette 1
+SetField BipedPalette[*].Object objects\characters\masterchief\mp_masterchief\mp_masterchief.biped
+AddBlockElements BipedPalette 1
+SetField BipedPalette[*].Object objects\characters\elite\mp_elite\mp_elite.biped
+
+# SPARTANS
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 1
+SetField Bipeds[*].Position -31.84521 -23.43278 -34.6908
+SetField Bipeds[*].Rotation -0.3951688 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 42040 26
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 3
+SetField Bipeds[*].Position -31.8452 -23.4328 -29.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37960 45
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 7
+SetField Bipeds[*].Position -48 -23.4328 -29.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 60848 52
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 2
+SetField Bipeds[*].Position -31.8452 -23.4328 -24.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37960 44
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 0
+SetField Bipeds[*].NameIndex 6
+SetField Bipeds[*].Position -48 -23.4328 -24.6908
+SetField Bipeds[*].Rotation -0.395169 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 60568 48
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+# ELITES
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 0
+SetField Bipeds[*].Position -31.90887 -10.38469 -34.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 42040 27
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 4
+SetField Bipeds[*].Position -31.9089 -10.3847 -29.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37960 46
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 8
+SetField Bipeds[*].Position -48 -10.3847 -29.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 60848 53
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+AddBlockElements Bipeds 1
+SetField Bipeds[*].PaletteIndex 1
+SetField Bipeds[*].NameIndex 5
+SetField Bipeds[*].Position -31.9089 -10.3847 -24.6908
+SetField Bipeds[*].Rotation -1.4241 0 0
+SetField Bipeds[*].ObjectId.Type.Halo3ODST Biped
+SetField Bipeds[*].ObjectId.UniqueId 37964 47
+SetField Bipeds[*].ObjectId.Source Editor
+SetField Bipeds[*].ObjectId.OriginBspIndex -1
+SetField Bipeds[*].EditorFolder -1
+SetField Bipeds[*].CanAttachToBspFlags 2
+SetField Bipeds[*].ParentId.NameIndex -1
+
+# Server Browser Background
+# TLDR this gets called in the script
+AddBlockElements BackgroundReferences
+SetField BackgroundReferences[0].Instance levels\ui\mainmenu\bitmaps\reach_background.bitmap
+
+# CUBEMAP!? WHO NEED IT ANYWAY!
+SetField StructureBsps[0].Cubemap null
+SetField StructureBsps[1].Cubemap null
+SaveTagChanges
+Exit
+
+EditTag levels\ui\mainmenu\mainmenu.scenario
+CompileScripts "workingdir\haloscripts\mainmenu.hsc"
+SaveTagChanges
+Exit
+
+EditTag ui\halox\main_menu\main_menu.gui_screen_widget_definition
+SetField ScriptIndex 10
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.Bitmap ui\cui\main_menu\halo3_logo_ui.bitmap
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds720p 410 450 475 1150
+SetField GroupWidgets[0].Definition.BitmapWidgets[0].Definition.Bitmap null
+SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Flags DoNotApplyOldContentUpscaling,ScaleToFitBounds
+SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Bitmap null
+SetField GroupWidgets[0].Definition.BitmapWidgets[1].Definition.Bitmap null
+#SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds480i 408 297 516 810
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_campaign.gui_screen_widget_definition
+SetField ScriptIndex 11
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_mapeditor.gui_screen_widget_definition
+SetField ScriptIndex 14
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_matchmaking.gui_screen_widget_definition
+SetField ScriptIndex 12
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_multiplayer.gui_screen_widget_definition
+SetField ScriptIndex 13
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_survival.gui_screen_widget_definition
+SetField ScriptIndex 17
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\pregame_lobby_theater.gui_screen_widget_definition
+SetField ScriptIndex 15
+SaveTagChanges
+Exit
+
+EditTag multiplayer\mod_globals.mod_globals
+# INDEX IS IN THE SCNR TAG
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.BipedNameIndex 1
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.BipedNameIndex 0
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.SettingsCameraIndex 44
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.SettingsCameraIndex 44
+# SetField PlayerCharacterSets[0].Characters[0].Name spartan_ramp
+SaveTagChanges
+Exit

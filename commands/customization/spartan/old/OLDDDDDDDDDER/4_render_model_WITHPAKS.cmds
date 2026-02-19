@@ -1,0 +1,236 @@
+# RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS  
+OpenModPackage workingdir\paks\RAMPModels.pak
+ApplyModPackage
+ExitModPackage
+
+EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.render_model
+
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 176
+SetField Materials[0].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit.shader
+SetField Materials[1].RenderMethod objects\characters\spartans\shaders\spartan_shield_display.shader
+SetField Materials[2].RenderMethod objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+SetField Materials[3].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+SetField Materials[4].RenderMethod objects\characters\spartans\shaders\spartan_armor.shader
+SetField Materials[5].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_armor.shader
+SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+SetField Materials[9].RenderMethod objects\characters\spartans\shaders\spartan_camo_suit.shader
+SetField Materials[10].RenderMethod objects\characters\spartans\shaders\spartan_armor_camo.shader
+SetField Materials[11].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
+SetField Materials[12].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_interior.shader
+SetField Materials[13].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_fred_flair.shader
+SetField Materials[14].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_grenade_belt_emile.shader
+SetField Materials[15].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_grenades_emile.shader
+SetField Materials[16].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_anton.shader
+SetField Materials[17].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_knife.shader
+SetField Materials[18].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_jai.shader
+SetField Materials[19].RenderMethod objects\characters\marine\shaders\marine_packs.shader
+SetField Materials[20].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_jun_hood.shader
+SetField Materials[21].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_harness_jun.shader
+SetField Materials[22].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_kurt_flair.shader
+SetField Materials[23].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_joshua.shader
+SetField Materials[24].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_malcolm.shader
+SetField Materials[25].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_kelly.shader
+SetField Materials[26].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_nicole.shader
+SetField Materials[27].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_carter_chesttech.shader
+SetField Materials[28].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_chest_ammopack.shader
+SetField Materials[29].RenderMethod objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_chest.shader
+SetField Materials[30].RenderMethod objects\characters\spartans\custom\shaders\markiv_chest.shader
+SetField Materials[31].RenderMethod objects\characters\masterchief\shaders\odst_raven_1.shader
+SetField Materials[32].RenderMethod objects\characters\masterchief\shaders\odst_raven_2.shader
+SetField Materials[33].RenderMethod objects\characters\masterchief\shaders\odst_raven_3.shader
+SetField Materials[34].RenderMethod objects\characters\masterchief\shaders\odst_raven_4.shader
+SetField Materials[35].RenderMethod objects\characters\masterchief\shaders\spartan_torso_s9_spi.shader
+SetField Materials[36].RenderMethod objects\characters\masterchief\shaders\orion_chest.shader
+SetField Materials[37].RenderMethod levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_armor.shader
+SetField Materials[38].RenderMethod levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_gear_standard.shader
+SetField Materials[39].RenderMethod objects\characters\masterchief\shaders\marine_chest.shader
+SetField Materials[40].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_neck_joshua.shader
+SetField Materials[41].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader
+SetField Materials[42].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader
+SetField Materials[43].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kurt.shader
+SetField Materials[44].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_kurt.shader
+SetField Materials[45].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_emile.shader
+SetField Materials[46].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_emile.shader
+SetField Materials[47].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jai.shader
+SetField Materials[48].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jai_visor.shader
+SetField Materials[49].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_vinh.shader
+SetField Materials[50].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_vinh.shader
+SetField Materials[51].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
+SetField Materials[52].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai.shader
+SetField Materials[53].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_linda.shader
+SetField Materials[54].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_linda_visor.shader
+SetField Materials[55].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_john117.shader
+SetField Materials[56].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_john117_visor.shader
+SetField Materials[57].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_will.shader
+SetField Materials[58].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_will_visor.shader
+SetField Materials[59].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_jun.shader
+SetField Materials[60].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_jun.shader
+SetField Materials[61].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_malcolm.shader
+SetField Materials[62].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_malcolm_visor.shader
+SetField Materials[63].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kelly.shader
+SetField Materials[64].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_kelly.shader
+SetField Materials[65].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_carter.shader
+SetField Materials[66].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_carter.shader
+SetField Materials[67].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_rosenda.shader
+SetField Materials[68].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_rosenda.shader
+SetField Materials[69].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_emile.shader
+SetField Materials[70].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_li.shader
+SetField Materials[71].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_isaac.shader
+SetField Materials[72].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_isaac.shader
+SetField Materials[73].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_nicole.shader
+SetField Materials[74].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_visor_nicole.shader
+SetField Materials[75].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_sam.shader
+SetField Materials[76].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_sam_visor.shader
+SetField Materials[77].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_armor.shader
+SetField Materials[78].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_rubber.shader
+SetField Materials[79].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_visor.shader
+SetField Materials[80].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna.shader
+SetField Materials[81].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna_visor.shader
+SetField Materials[82].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_helmet.shader
+SetField Materials[83].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_joshua_visor.shader
+SetField Materials[84].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_base.shader
+SetField Materials[85].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_rubber.shader
+SetField Materials[86].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_kat_visor.shader
+SetField Materials[87].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned.shader
+SetField Materials[88].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned_2.shader
+SetField Materials[89].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_condemned_2.shader
+SetField Materials[90].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd.shader
+SetField Materials[91].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_2.shader
+SetField Materials[92].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_3.shader
+SetField Materials[93].RenderMethod objects\weapons\multiplayer\skull\shaders\skull_port.shader
+SetField Materials[94].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_bungie_visor.shader
+SetField Materials[95].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
+SetField Materials[96].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
+SetField Materials[97].RenderMethod objects\characters\spartans\custom\shaders\markiv_helmet.shader
+SetField Materials[98].RenderMethod objects\characters\spartans\custom\shaders\markiv_visor.shader
+SetField Materials[99].RenderMethod objects\characters\masterchief\shaders\raven1_visor.shader
+SetField Materials[100].RenderMethod objects\characters\masterchief\shaders\raven2_visor.shader
+SetField Materials[101].RenderMethod objects\characters\masterchief\shaders\raven3_visor.shader
+SetField Materials[102].RenderMethod objects\characters\masterchief\shaders\raven4_visor.shader
+SetField Materials[103].RenderMethod objects\characters\masterchief\shaders\h2aodst_helm.shader
+SetField Materials[104].RenderMethod objects\characters\masterchief\shaders\h2aodst_visor.shader
+SetField Materials[105].RenderMethod objects\characters\masterchief\shaders\spartan_helmet_s9_spi.shader
+SetField Materials[106].RenderMethod objects\characters\masterchief\shaders\spi_visor.shader
+SetField Materials[107].RenderMethod objects\characters\masterchief\shaders\orion_helmet.shader
+SetField Materials[108].RenderMethod objects\characters\masterchief\shaders\orion_visor.shader
+SetField Materials[109].RenderMethod objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
+SetField Materials[110].RenderMethod objects\characters\spartans\custom\shaders\mp_visor_ce.shader
+SetField Materials[111].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_fred_flair.shader
+SetField Materials[112].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kat.shader
+SetField Materials[113].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_sam_flair.shader
+SetField Materials[114].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_will.shader
+SetField Materials[115].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_carter.shader
+SetField Materials[116].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kurt.shader
+SetField Materials[117].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_sniper_li.shader
+SetField Materials[118].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_adrianna.shader
+SetField Materials[119].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_small.shader
+SetField Materials[120].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_joshua.shader
+SetField Materials[121].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_jai.shader
+SetField Materials[122].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_large.shader
+SetField Materials[123].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_small_emile.shader
+SetField Materials[124].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_kelly.shader
+SetField Materials[125].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_malcolm.shader
+SetField Materials[126].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_nicole_flair.shader
+SetField Materials[127].RenderMethod objects\characters\spartans\custom\shaders\markiv_shoulders.shader
+SetField Materials[128].RenderMethod objects\characters\masterchief\shaders\spartan_shoulder_s9_spi.shader
+SetField Materials[129].RenderMethod objects\characters\masterchief\shaders\orion_shoulder.shader
+SetField Materials[130].RenderMethod objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
+SetField Materials[131].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_anton_shoulders.shader
+SetField Materials[132].RenderMethod objects\characters\spartans\shaders\spartan_shoulder\spartan_shoulder_knife_emile.shader
+SetField Materials[133].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_kelly.shader
+SetField Materials[134].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_gauntlets.shader
+SetField Materials[135].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tricorder.shader
+SetField Materials[136].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tracker_jun.shader
+SetField Materials[137].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_shotgun_reloader_emile.shader
+SetField Materials[138].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_toolbox_kat.shader
+SetField Materials[139].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_joshua.shader
+SetField Materials[140].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_adrianna.shader
+SetField Materials[141].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_medpack.shader
+SetField Materials[142].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_pouch_emile.shader
+SetField Materials[143].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_kat_robotarm.shader
+SetField Materials[144].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_carter.shader
+SetField Materials[145].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_adrianna.shader
+SetField Materials[146].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_joshua.shader
+SetField Materials[147].RenderMethod objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
+SetField Materials[148].RenderMethod objects\characters\masterchief\shaders\orion_legs.shader
+SetField Materials[149].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_adrianna.shader
+SetField Materials[150].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_adrianna_aug.shader
+SetField Materials[151].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_carter.shader
+SetField Materials[152].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_kat.shader
+SetField Materials[153].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_ear_piece_emile.shader
+SetField Materials[154].RenderMethod objects\characters\odst\shaders\gear_light.shader
+SetField Materials[155].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_jai.shader
+SetField Materials[156].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_nicole.shader
+SetField Materials[157].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_flare.shader
+SetField Materials[158].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_jun.shader
+SetField Materials[159].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_flare_carter.shader
+SetField Materials[160].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_isaac.shader
+SetField Materials[161].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default_aug.shader
+SetField Materials[162].RenderMethod objects\characters\marine\shaders\marine_badlands_set.shader
+SetField Materials[163].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_aug_vinh.shader
+SetField Materials[164].RenderMethod objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_skull_flair.shader
+SetField Materials[165].RenderMethod objects\characters\spartans\shaders\spartan\scarf2.shader
+SetField Materials[166].RenderMethod objects\characters\spartans\shaders\spartan_chest\spartan_backpack_jun.shader
+SetField Materials[167].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_gear.shader
+SetField Materials[168].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_backpack_carter.shader
+SetField Materials[169].RenderMethod objects\characters\marine\shaders\marine_trooper_set.shader
+SetField Materials[170].RenderMethod objects\equipment\jet_pack\shaders\jet_pack_unsc.shader
+SetField Materials[171].RenderMethod objects\props\human\unsc\bitmaps\re_entry_pack.shader
+SetField Materials[172].RenderMethod objects\props\human\unsc\bitmaps\re_entry_pack_decals.shader_decal
+SetField Materials[173].RenderMethod objects\cinematics\package\shaders\package.shader
+SetField Materials[174].RenderMethod objects\cinematics\package\shaders\package_glass.shader
+SetField Materials[175].RenderMethod objects\characters\marine\shaders\marine_odst_set.shader
+# ReplaceRenderGeometry workingdir\Models\mp_masterchief\mp_masterchief_3p.fbx markers trianglelist
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\fp_body\fp_body.render_model
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 25
+SetField Materials[0].RenderMethod objects\characters\spartans\fp\shaders\spartan_rubber_suit.shader
+SetField Materials[1].RenderMethod objects\characters\spartans\shaders\spartan_shield_display.shader
+SetField Materials[2].RenderMethod objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+SetField Materials[3].RenderMethod objects\characters\spartans\shaders\spartan_armor.shader
+SetField Materials[4].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+SetField Materials[5].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_camo_suit.shader
+SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_armor_camo.shader
+SetField Materials[9].RenderMethod objects\characters\spartans\shaders\spartan_story\spartan_kat_robotarm.shader
+SetField Materials[10].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_joshua.shader
+SetField Materials[11].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_adrianna.shader
+SetField Materials[12].RenderMethod objects\characters\masterchief\shaders\orion_legs.shader
+SetField Materials[13].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_knee_carter.shader
+SetField Materials[14].RenderMethod objects\characters\masterchief\shaders\odst_raven_1.shader
+SetField Materials[15].RenderMethod objects\characters\masterchief\shaders\odst_raven_2.shader
+SetField Materials[16].RenderMethod objects\characters\masterchief\shaders\odst_raven_3.shader
+SetField Materials[17].RenderMethod objects\characters\masterchief\shaders\odst_raven_4.shader
+SetField Materials[18].RenderMethod objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
+SetField Materials[19].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_joshua.shader
+SetField Materials[20].RenderMethod levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_gear_standard.shader
+SetField Materials[21].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_toolbox_kat.shader
+SetField Materials[22].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_adrianna.shader
+SetField Materials[23].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_pouch_emile.shader
+SetField Materials[24].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_medpack.shader
+# ReplaceRenderGeometry workingdir\Models\mp_masterchief\mp_masterchief_fp_body.fbx markers
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\fp\fp.render_model
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 9
+SetField Materials[0].RenderMethod objects\characters\spartans\shaders\spartan_armor.shader
+SetField Materials[1].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_armor.shader
+SetField Materials[2].RenderMethod objects\characters\spartans\fp\shaders\spartan_fp_glove.shader
+SetField Materials[3].RenderMethod objects\characters\spartans\fp\shaders\spartan_rubber_suit.shader
+SetField Materials[4].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_kelly.shader
+SetField Materials[5].RenderMethod objects\characters\spartan_jorge\shaders\spartan_jorge_gauntlets.shader
+SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tricorder.shader
+SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tracker_jun.shader
+SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_shotgun_reloader_emile.shader
+# ReplaceRenderGeometry workingdir\Models\mp_masterchief\mp_masterchief_fp_arms.fbx markers
+SaveTagChanges
+Exit

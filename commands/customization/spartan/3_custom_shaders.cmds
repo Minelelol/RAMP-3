@@ -1,0 +1,804 @@
+# | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+# | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
+
+# -------------------------------------------------------------------------------
+# |                           RAVEN ODST FIXUP                                  |
+# -------------------------------------------------------------------------------
+# NOT NEEDED, WHY IS THIS IN THE OG RAMP BREH, waste of resources
+# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_cc workingdir\bitmaps\ODST\Raven1\raven1_helm_c.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_diff workingdir\bitmaps\ODST\Raven1\raven1_helm_d.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_mask workingdir\bitmaps\ODST\Raven1\raven1_helm_m.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_normal workingdir\bitmaps\ODST\Raven1\raven1_helm_n.dds
+# ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_diff GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_mask GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_normal GenerateMipmaps
+# 
+# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven1_helm
+# EditTag objects\characters\masterchief\shaders\raven1_helm.shader
+# SetBitmap base_map objects\characters\masterchief\shaders\ravsen1_helm_diff.bitmap
+# SetBitmap change_color_map objects\characters\masterchief\shaders\raven1_helm_cc.bitmap
+# SetBitmap bump_map objects\characters\masterchief\shaders\raven1_helm_normal.bitmap
+# SetBitmap material_texture objects\characters\masterchief\shaders\raven1_helm_mask.bitmap
+# SetField ShaderProperties[0].BooleanConstants 2
+# SaveTagChanges
+# Exit
+# 
+# 
+# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_cc workingdir\bitmaps\ODST\Raven2\raven2_helm_c.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_diff workingdir\bitmaps\ODST\Raven2\raven2_helm_d.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_mask workingdir\bitmaps\ODST\Raven2\raven2_helm_m.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_normal workingdir\bitmaps\ODST\Raven2\raven2_helm_n.dds
+# ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_diff GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_mask GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_normal GenerateMipmaps
+# 
+# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven2_helm
+# EditTag objects\characters\masterchief\shaders\raven2_helm.shader
+# SetBitmap base_map objects\characters\masterchief\shaders\raven2_helm_diff.bitmap
+# SetBitmap change_color_map objects\characters\masterchief\shaders\raven2_helm_cc.bitmap
+# SetBitmap bump_map objects\characters\masterchief\shaders\raven2_helm_normal.bitmap
+# SetBitmap material_texture objects\characters\masterchief\shaders\raven2_helm_mask.bitmap
+# SetField ShaderProperties[0].BooleanConstants 2
+# SaveTagChanges
+# Exit
+# 
+# 
+# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_cc workingdir\bitmaps\ODST\Raven3\raven3_helm_c.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_diff workingdir\bitmaps\ODST\Raven3\raven3_helm_d.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_mask workingdir\bitmaps\ODST\Raven3\raven3_helm_m.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_normal workingdir\bitmaps\ODST\Raven3\raven3_helm_n.dds
+# ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_diff GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_mask GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_normal GenerateMipmaps
+# 
+# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven3_helm
+# EditTag objects\characters\masterchief\shaders\raven3_helm.shader
+# SetBitmap base_map objects\characters\masterchief\shaders\raven3_helm_diff.bitmap
+# SetBitmap change_color_map objects\characters\masterchief\shaders\raven3_helm_cc.bitmap
+# SetBitmap bump_map objects\characters\masterchief\shaders\raven3_helm_normal.bitmap
+# SetBitmap material_texture objects\characters\masterchief\shaders\raven3_helm_mask.bitmap
+# SetField ShaderProperties[0].BooleanConstants 2
+# SaveTagChanges
+# Exit
+# 
+# 
+# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_cc workingdir\bitmaps\ODST\Raven4\raven4_helm_c.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_diff workingdir\bitmaps\ODST\Raven4\raven4_helm_d.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_mask workingdir\bitmaps\ODST\Raven4\raven4_helm_m.dds
+# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_normal workingdir\bitmaps\ODST\Raven4\raven4_helm_n.dds
+# ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_diff GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_mask GenerateMipmaps
+# ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_normal GenerateMipmaps
+# 
+# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven4_helm
+# EditTag objects\characters\masterchief\shaders\raven4_helm.shader
+# SetBitmap base_map objects\characters\masterchief\shaders\raven4_helm_diff.bitmap
+# SetBitmap change_color_map objects\characters\masterchief\shaders\raven4_helm_cc.bitmap
+# SetBitmap bump_map objects\characters\masterchief\shaders\raven4_helm_normal.bitmap
+# SetBitmap material_texture objects\characters\masterchief\shaders\raven4_helm_mask.bitmap
+# SetField ShaderProperties[0].BooleanConstants 1
+# SaveTagChanges
+# Exit
+
+# -------------------------------------------------------------------------------
+# |                             RAVEN VISOR                                     |
+# -------------------------------------------------------------------------------
+# THE ONE IN MCC DON'T HAVE COLOR CHANGE
+DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader objects\characters\masterchief\shaders\raven1_visor
+EditTag objects\characters\masterchief\shaders\raven1_visor.shader
+SetBitmap base_map objects\characters\masterchief\bitmaps\odst_raven_1_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\bitmaps\odst_raven_1_zbump.bitmap
+
+SetArgument specular_coefficient 0.5
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\masterchief\shaders\raven1_visor.shader objects\characters\masterchief\shaders\raven2_visor
+EditTag objects\characters\masterchief\shaders\raven2_visor.shader
+SetBitmap base_map objects\characters\masterchief\bitmaps\odst_raven_2_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\bitmaps\odst_raven_2_zbump.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\masterchief\shaders\raven1_visor.shader objects\characters\masterchief\shaders\raven3_visor
+EditTag objects\characters\masterchief\shaders\raven3_visor.shader
+SetBitmap base_map objects\characters\masterchief\bitmaps\odst_raven_3_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\bitmaps\odst_raven_3_zbump.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\masterchief\shaders\raven1_visor.shader objects\characters\masterchief\shaders\raven4_visor
+EditTag objects\characters\masterchief\shaders\raven4_visor.shader
+SetBitmap base_map objects\characters\masterchief\bitmaps\odst_raven_4_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\bitmaps\odst_raven_4_zbump.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                              SPI VISOR                                      |
+# -------------------------------------------------------------------------------
+DuplicateTag objects\characters\masterchief\shaders\raven1_visor.shader objects\characters\masterchief\shaders\spi_visor
+EditTag objects\characters\masterchief\shaders\spi_visor.shader
+SetBitmap base_map objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi_zbump.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                    REACH RUBBER SUIT (BLACKED EDITION)                      |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse workingdir\bitmaps\Spartan\Rubber_Suit\spartan_rubber_suit_diffuse_black.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit.shader objects\characters\spartans\shaders\spartan_rubber_suit_black
+EditTag objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse.bitmap
+SetArgument diffuse_coefficient 0.4
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                      REACH RUBBER SUIT (GAY EDITION)                        |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse workingdir\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_diffuse_colored.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse GenerateMipmaps
+
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_primary_cc workingdir\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_cc_colored.dds
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_secondary_cc workingdir\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_cc_colored_secondary.dds
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\spartans\shaders\spartan_rubber_suit_colored
+EditTag objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse.bitmap
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_rubber_detail.bitmap
+SetBitmap change_color_map objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_primary_cc.bitmap
+SetBitmap bump_map objects\characters\spartans\bitmaps\spartan_rubber_suit_zbump.bitmap
+SetArgument specular_coefficient 0.2
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary
+EditTag objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+SetBitmap change_color_map objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_secondary_cc.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                 SPARTAN ARMOR CAMO (BRAVO SIX GOING DARK)                   |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail workingdir\bitmaps\Spartan\Rubber_Suit\Camo\spartan_camo_detail.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\fp\shaders\spartan_fp_armor.shader objects\characters\spartans\fp\shaders\spartan_fp_armor_camo
+EditTag objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail.bitmap
+SetArgument detail_map 0.8 0.8 0 0
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\spartans\shaders\spartan_armor_camo
+EditTag objects\characters\spartans\shaders\spartan_armor_camo.shader
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail.bitmap
+SetArgument detail_map 1.5 1.5 0 0
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit.shader objects\characters\spartans\shaders\spartan_camo_suit
+EditTag objects\characters\spartans\shaders\spartan_camo_suit.shader
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse.bitmap
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail.bitmap
+SetArgument detail_map 0.99 0.99 0 0
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                      ORION SHADER (BY THE ONION RING)                       |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\masterchief\shaders\orion_chest_cc workingdir\bitmaps\Spartan\Orion\chest\orion_chest_cc.dds
+GenerateBitmap objects\characters\masterchief\shaders\orion_chest_diff workingdir\bitmaps\Spartan\Orion\chest\orion_chest_diff.dds
+ForEach bitm named: objects\characters\masterchief\shaders\orion_chest_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\shaders\orion_chest_normal
+ForEach bitm named: objects\characters\masterchief\shaders\orion_chest_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\chest\orion_chest_normal.dds linear
+ForEach bitm named: objects\characters\masterchief\shaders\orion_chest_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_chest
+EditTag objects\characters\masterchief\shaders\orion_chest.shader
+SetBitmap base_map objects\characters\masterchief\shaders\orion_chest_diff.bitmap
+SetBitmap change_color_map objects\characters\masterchief\shaders\orion_chest_cc.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\orion_chest_normal.bitmap
+
+SetArgument detail_map 5 5 0 0
+SetArgument area_specular_contribution 0.2
+SetArgument analytical_specular_contribution 0.3
+SetArgument environment_map_specular_contribution 0
+SetArgument env_tint_color 0.77647066 0.77647066 0.77647066
+SaveTagChanges
+Exit
+
+GenerateBitmap objects\characters\masterchief\shaders\orion_legs_cc workingdir\bitmaps\Spartan\Orion\legs\orion_legs_cc.dds
+GenerateBitmap objects\characters\masterchief\shaders\orion_legs_diff workingdir\bitmaps\Spartan\Orion\legs\orion_legs_diff.dds
+ForEach bitm named: objects\characters\masterchief\shaders\orion_legs_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\shaders\orion_legs_normal
+ForEach bitm named: objects\characters\masterchief\shaders\orion_legs_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\legs\orion_legs_normal.dds linear
+ForEach bitm named: objects\characters\masterchief\shaders\orion_legs_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_legs
+EditTag objects\characters\masterchief\shaders\orion_legs.shader
+SetBitmap base_map objects\characters\masterchief\shaders\orion_legs_diff.bitmap
+SetBitmap change_color_map objects\characters\masterchief\shaders\orion_legs_cc.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\orion_legs_normal.bitmap
+saveTagChanges
+Exit
+
+GenerateBitmap objects\characters\masterchief\shaders\orion_shoulder_cc workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_cc.dds
+GenerateBitmap objects\characters\masterchief\shaders\orion_shoulder_diff workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_diff.dds
+ForEach bitm named: objects\characters\masterchief\shaders\orion_shoulder_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\shaders\orion_shoulder_normal
+ForEach bitm named: objects\characters\masterchief\shaders\orion_shoulder_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_normal.dds linear
+ForEach bitm named: objects\characters\masterchief\shaders\orion_shoulder_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_shoulder
+EditTag objects\characters\masterchief\shaders\orion_shoulder.shader
+SetBitmap base_map objects\characters\masterchief\shaders\orion_shoulder_diff.bitmap
+SetBitmap change_color_map objects\characters\masterchief\shaders\orion_shoulder_cc.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\orion_shoulder_normal.bitmap
+saveTagChanges
+Exit
+
+GenerateBitmap objects\characters\masterchief\shaders\orion_helmet_cc workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_cc.dds
+GenerateBitmap objects\characters\masterchief\shaders\orion_helmet_diff workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_diff.dds
+ForEach bitm named: objects\characters\masterchief\shaders\orion_helmet_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\shaders\orion_helmet_normal
+ForEach bitm named: objects\characters\masterchief\shaders\orion_helmet_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_normal.dds linear
+ForEach bitm named: objects\characters\masterchief\shaders\orion_helmet_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_helmet
+EditTag objects\characters\masterchief\shaders\orion_helmet.shader
+SetBitmap base_map objects\characters\masterchief\shaders\orion_helmet_diff.bitmap
+SetBitmap change_color_map objects\characters\masterchief\shaders\orion_helmet_cc.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\orion_helmet_normal.bitmap
+
+SetArgument detail_map 14 14 0 0
+SetArgument area_specular_contribution 0.2
+SetArgument analytical_specular_contribution 0.3
+SetArgument diffuse_coefficient 1.9
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader objects\characters\masterchief\shaders\orion_visor
+EditTag objects\characters\masterchief\shaders\orion_visor.shader
+SetBitmap base_map objects\characters\masterchief\shaders\orion_helmet_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\orion_helmet_normal.bitmap
+
+SetArgument specular_coefficient 0.5
+SaVeTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                      MARK IV SHADER (WHAT THE FUCK)                         |
+# -------------------------------------------------------------------------------
+# Once again Toasty/Newbie gigachad comes to the rescue, this thing IS A FUCKING MESS
+# Order of shader command
+# - BaseRenderMethod
+# - Options
+# - Template
+# - RealConstant Block(s)
+# - SetArguement
+# - RealTextureConstant Block(s)
+# - SetBitmap
+# - Functions
+# - Others
+
+# CHEST -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_cc workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse GenerateMipmaps
+
+CreateTag bitm objects\characters\spartans\custom\bitmaps\mark4_chest_zbump
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_zbump.dds linear
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_zbump GenerateMipmaps
+
+GenerateShader Shader two_change_color standard none specular_mask_from_diffuse cook_torrance dynamic off opaque off first_person_sometimes off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\characters\spartans\custom\shaders\markiv_chest
+EditTag objects\characters\spartans\custom\shaders\markiv_chest.shader
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[0].OptionIndex 3
+SetField Options[1].OptionIndex 1
+SetField Options[3].OptionIndex 1
+SetField Options[4].OptionIndex 10
+SetField Options[5].OptionIndex 2
+SetField Options[9].OptionIndex 1
+
+AddBlockElements ShaderProperties 1
+SetField ShaderProperties[0].Template shaders\shader_templates\_3_1_0_1_10_2_0_0_0_1_0_0_0_0_0.render_method_template
+
+AddBlockElements ShaderProperties[0].RealConstants 24
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 5 5 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 2.1
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.3 0.3 0.3 0.3
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 0.29999998 0.29999998 0.29999998 0.29999998
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.9 0.9 0.9 0.9
+SetArgument analytical_anti_shadow_control 0.66
+SetArgument env_tint_color 0.77647066 0.77647066 0.77647066 1
+SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+
+AddBlockElements ShaderProperties[0].TextureConstants 6
+SetBitmap base_map objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse.bitmap
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_metal_detail.bitmap
+SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\mark4_chest_cc.bitmap
+SetBitmap camouflage_change_color_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap bump_map objects\characters\spartans\custom\bitmaps\mark4_chest_zbump.bitmap
+SetBitmap material_texture shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 12
+SetField ShaderProperties[0].BooleanConstants 1
+
+AddBlockElements ShaderProperties[0].Functions 1
+SetField ShaderProperties[0].Functions[0].Type Color
+SetField ShaderProperties[0].Functions[0].TimePeriod 1
+SetField ShaderProperties[0].Functions[0].Function.Data 01350200BD988B000000000000000000808080016F12833A6F12033B00000000
+AddFunction fresnel_color Real 0
+
+SetField ShaderProperties[0].QueryableProperties -1 0 -1 -1 -1 -1 -1 -1
+SetField SortLayer Normal
+SetField PredictionAtomIndex -1
+SetField Material default_material
+SaveTagChanges
+Exit
+
+# SHOULDERS -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_cc workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse GenerateMipmaps
+
+CreateTag bitm objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_zbump.dds linear
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump GenerateMipmaps
+
+GenerateShader Shader two_change_color standard none specular_mask_from_diffuse cook_torrance dynamic simple opaque off first_person_sometimes off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\characters\spartans\custom\shaders\markiv_shoulders
+EditTag objects\characters\spartans\custom\shaders\markiv_shoulders.shader
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[0].OptionIndex 3
+SetField Options[1].OptionIndex 1
+SetField Options[3].OptionIndex 1
+SetField Options[4].OptionIndex 10
+SetField Options[5].OptionIndex 2
+SetField Options[6].OptionIndex 1
+SetField Options[9].OptionIndex 1
+AddBlockElements ShaderProperties 1
+SetField ShaderProperties[0].Template shaders\shader_templates\_3_1_0_1_10_2_1_0_0_1_0_0_0_0_0.render_method_template
+
+AddBlockElements ShaderProperties[0].RealConstants 27
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 5 5 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument camouflage_scale 0 0 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 2.1
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.3 0.3 0.3 0.3
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 0.29999998 0.29999998 0.29999998 0.29999998
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.9 0.9 0.9 0.9
+SetArgument analytical_anti_shadow_control 0.66
+SetArgument env_tint_color 0.77647066 0.77647066 0.77647066 1
+SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+SetArgument env_roughness_offset 0.5 0.5 0.5 0.5
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.63529414 0.8078432 0.9960785 1
+SetArgument self_illum_intensity 1 1 1 1
+SetArgument wet_material_dim_tint 0 216 216 235
+SetArgument wet_material_dim_coefficient 1 1 1 1
+
+AddBlockElements ShaderProperties[0].TextureConstants 7
+SetBitmap base_map objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse.bitmap
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_metal_detail.bitmap
+SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\mark4_shoulder_cc.bitmap
+SetBitmap camouflage_change_color_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap bump_map objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump.bitmap
+SetBitmap material_texture shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\alpha_black.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex -1
+SetField ShaderProperties[0].TextureConstants[4].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 12
+SetField ShaderProperties[0].TextureConstants[6].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex 17
+SetField ShaderProperties[0].BooleanConstants 1
+
+AddBlockElements ShaderProperties[0].Functions 1
+SetField ShaderProperties[0].Functions[0].Type Color
+SetField ShaderProperties[0].Functions[0].TimePeriod 1
+SetField ShaderProperties[0].Functions[0].Function.Data 01350200BD988B000000000000000000808080016F12833A6F12033B00000000
+
+AddFunction fresnel_color Real 0
+
+SetField ShaderProperties[0].QueryableProperties -1 0 -1 -1 -1 -1 -1 -1
+SetField SortLayer Normal
+SetField PredictionAtomIndex -1
+SetField Material default_material
+SaveTagChanges
+Exit
+
+# HELMET -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_cc workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse GenerateMipmaps
+
+CreateTag bitm objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_zbump.dds linear
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump GenerateMipmaps
+
+GenerateShader Shader four_change_color standard none specular_mask_from_diffuse cook_torrance dynamic off opaque off first_person_sometimes off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\characters\spartans\custom\shaders\markiv_helmet
+EditTag objects\characters\spartans\custom\shaders\markiv_helmet.shader
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[0].OptionIndex 4
+SetField Options[1].OptionIndex 1
+SetField Options[3].OptionIndex 1
+SetField Options[4].OptionIndex 10
+SetField Options[5].OptionIndex 2
+SetField Options[9].OptionIndex 1
+AddBlockElements ShaderProperties 1
+SetField ShaderProperties[0].Template shaders\shader_templates\_4_1_0_1_10_2_0_0_0_1_0_0_0_0_0.render_method_template
+
+AddBlockElements ShaderProperties[0].RealConstants 24
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 14 14 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument camouflage_scale 0 0 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 2.1
+SetArgument specular_coefficient 0.5 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.3 0.3 0.3 0.3
+SetArgument area_specular_contribution 0.22 0.22 0.22 0.22
+SetArgument analytical_specular_contribution 0.29999998 0.29999998 0.29999998 0.29999998
+SetArgument environment_map_specular_contribution 0 0 0 0
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.9 0.9 0.9 0.9
+SetArgument analytical_anti_shadow_control 0.66
+SetArgument env_tint_color 0.63529414 0.63529414 0.63529414 1
+SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+SetArgument env_roughness_offset 0.5 0.5 0.5 0.5
+SetArgument wet_material_dim_tint 0 216 216 235
+SetArgument wet_material_dim_coefficient 1 1 1 1
+
+AddBlockElements ShaderProperties[0].TextureConstants 6
+SetBitmap base_map objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse.bitmap
+SetBitmap detail_map objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_metal_detail.bitmap
+SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\mark4_helmet_cc.bitmap
+SetBitmap camouflage_change_color_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap bump_map objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump.bitmap
+SetBitmap material_texture shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex -1
+SetField ShaderProperties[0].TextureConstants[4].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 12
+SetField ShaderProperties[0].BooleanConstants 1
+
+AddBlockElements ShaderProperties[0].Functions 1
+SetField ShaderProperties[0].Functions[0].Type Color
+SetField ShaderProperties[0].Functions[0].TimePeriod 1
+SetField ShaderProperties[0].Functions[0].Function.Data 01350200BD988B000000000000000000808080016F12833A6F12033B00000000
+AddFunction fresnel_color Real 0
+
+SetField ShaderProperties[0].QueryableProperties -1 0 -1 -1 -1 -1 -1 -1
+SetField SortLayer Normal
+SetField PredictionAtomIndex -1
+SetField Material default_material
+
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\custom\shaders\markiv_helmet.shader objects\characters\spartans\custom\shaders\markiv_visor
+EditTag objects\characters\spartans\custom\shaders\markiv_visor.shader
+SetBitmap detail_map shaders\default_bitmaps\bitmaps\default_detail.bitmap
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 3 3 0 0
+SetArgument change_color_map 1 1 0 0
+SetArgument camouflage_scale 0 0 0 0
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 2
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.5372549 0.5411765 0.49411768 1
+SetArgument fresnel_color 0.54509807 0.59607846 0.7411765 1
+SetArgument roughness 0.04 0.04 0.04 0.04
+SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
+SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3
+SetArgument environment_map_specular_contribution 1.25 1.25 1.25 1.25
+SetArgument order3_area_specular 1 1 1 1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 1 1 1 1
+SetArgument analytical_anti_shadow_control 0.66
+SetArgument env_tint_color 0.9803922 0.9568628 0.7843138 1
+SetArgument env_roughness_scale 0.5 0.5 0.5 0.5
+SetArgument env_roughness_offset 0.5 0.5 0.5 0.5
+SetArgument wet_material_dim_tint 0 216 216 235
+SetArgument wet_material_dim_coefficient 1 1 1 1
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                                MARK V CE                                    |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_helmet_cc workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse GenerateMipMaps
+
+CreateTag bitm objects\characters\spartans\custom\bitmaps\ce_helmet_zbump
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_helmet_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_zbump.dds linear
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_helmet_zbump GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\custom\shaders\markiv_helmet.shader objects\characters\spartans\custom\shaders\mp_helmet_ce
+EditTag objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
+
+SetBitmap base_map objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse.bitmap
+SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\ce_helmet_cc.bitmap
+SetBitmap bump_map objects\characters\spartans\custom\bitmaps\ce_helmet_zbump.bitmap
+
+SetArgument specular_coefficient 1
+SetArgument analytical_anti_shadow_control 0
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\custom\shaders\markiv_visor.shader objects\characters\spartans\custom\shaders\mp_visor_ce
+EditTag objects\characters\spartans\custom\shaders\mp_visor_ce.shader
+SetBitmap base_map objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse.bitmap
+SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\ce_helmet_cc.bitmap
+SetBitmap bump_map objects\characters\spartans\custom\bitmaps\ce_helmet_zbump.bitmap
+SaveTagChanges
+Exit
+
+GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_shoulder_cc workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_cc.dds
+GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_shoulder_diffuse workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_diffuse.dds
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_shoulder_diffuse GenerateMipMaps
+
+CreateTag bitm objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_zbump.dds linear
+ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\custom\shaders\markiv_shoulders.shader objects\characters\spartans\custom\shaders\mp_ce_shoulders
+EditTag objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
+SetBitmap base_map objects\characters\spartans\custom\bitmaps\ce_shoulder_diffuse.bitmap
+SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\ce_shoulder_cc.bitmap
+SetBitmap bump_map objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                 MARINE CHEST ARMOR (idk what to comment)                    |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\masterchief\shaders\marine_chest_cc workingdir\bitmaps\Spartan\Marine\marine_chest_cc.dds
+GenerateBitmap objects\characters\masterchief\shaders\marine_chest_diff workingdir\bitmaps\Spartan\Marine\marine_chest_diff.dds
+ForEach bitm named: objects\characters\masterchief\shaders\marine_chest_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\shaders\marine_chest_normal
+ForEach bitm named: objects\characters\masterchief\shaders\marine_chest_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Marine\marine_chest_normal.dds linear
+ForEach bitm named: objects\characters\masterchief\shaders\marine_chest_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\marine_chest
+EditTag objects\characters\masterchief\shaders\marine_chest.shader
+
+SetBitmap base_map objects\characters\masterchief\shaders\marine_chest_diff.bitmap
+SetBitmap change_color_map objects\characters\masterchief\shaders\marine_chest_cc.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\marine_chest_normal.bitmap
+
+SetArgument detail_map 5 5 0 0
+SetArgument specular_coefficient 0.2
+SetArgument area_specular_contribution 0.2
+SetArgument analytical_specular_contribution 0.3
+SetArgument environment_map_specular_contribution 0.3
+SetArgument env_tint_color 0.77647066 0.77647066 0.77647066
+
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                             SAMURAI ARMOR (H)                               |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_cc workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_cc.dds
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_diff workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_diff.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_normal.dds linear
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai
+EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
+
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_diff.bitmap
+SetBitmap change_color_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_cc.bitmap
+SetBitmap bump_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal.bitmap
+
+SetArgument specular_coefficient 0.6
+SetArgument analytical_specular_contribution 0.1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai
+EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai.shader
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_diff.bitmap
+SetBitmap bump_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                                  MARK 7                                     |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_cc workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_cc.dds
+GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_diff.dds
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal ImportBitmap 0 workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_normal.dds linear
+ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7
+EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
+
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff.bitmap
+SetBitmap change_color_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_cc.bitmap
+SetBitmap bump_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal.bitmap
+
+SetArgument diffuse_coefficient 0.9
+SetArgument specular_coefficient 0.7
+SetArgument area_specular_contribution 0.5
+
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_default.shader objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7
+EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
+SetBitmap base_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff.bitmap
+SetBitmap bump_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                                 H2A ODST                                    |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\masterchief\shaders\h2aodst_helm_cc workingdir\bitmaps\ODST\H2A\h2aodst_helm_cc.dds
+GenerateBitmap objects\characters\masterchief\shaders\h2aodst_helm_diff workingdir\bitmaps\ODST\H2A\h2aodst_helm_diff.dds
+GenerateBitmap objects\characters\masterchief\shaders\h2aodst_helm_mask workingdir\bitmaps\ODST\H2A\h2aodst_helm_mask.dds
+ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_diff GenerateMipmaps
+ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_mask GenerateMipmaps
+
+CreateTag bitm objects\characters\masterchief\shaders\h2aodst_helm_normal
+ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_normal ImportBitmap 0 workingdir\bitmaps\ODST\H2A\h2aodst_helm_normal.dds linear
+ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_normal GenerateMipmaps
+
+DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\h2aodst_helm
+EditTag objects\characters\masterchief\shaders\h2aodst_helm.shader
+
+SetBitmap base_map objects\characters\masterchief\shaders\h2aodst_helm_diff.bitmap
+SetBitmap change_color_map objects\characters\masterchief\shaders\h2aodst_helm_cc.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\h2aodst_helm_normal.bitmap
+SetBitmap material_texture objects\characters\masterchief\shaders\h2aodst_helm_mask.bitmap
+
+SetArgument specular_coefficient 0.5
+
+SetArgument Booleans use_material_texture,no_dynamic_lights
+SetField ShaderProperties[0].BooleanConstants 2
+SaveTagChanges
+Exit
+
+DuplicateTag objects\characters\masterchief\shaders\raven1_visor.shader objects\characters\masterchief\shaders\h2aodst_visor
+EditTag objects\characters\masterchief\shaders\h2aodst_visor.shader
+SetBitmap base_map objects\characters\masterchief\shaders\h2aodst_helm_diff.bitmap
+SetBitmap bump_map objects\characters\masterchief\shaders\h2aodst_helm_normal.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                                  SCARF 2                                    |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\spartans\bitmaps\spartan\scarf2 workingdir\bitmaps\Spartan\scarf2.dds
+
+DuplicateTag objects\characters\spartans\shaders\spartan_story\spartan_jun_hood.shader objects\characters\spartans\shaders\spartan\scarf2
+EditTag objects\characters\spartans\shaders\spartan\scarf2.shader
+SetBitmap change_color_map objects\characters\spartans\bitmaps\spartan\scarf2.bitmap
+SaveTagChanges
+Exit
+
+# UNK SHADER, DUNNO WHERE THEY COME FROM (MOST LIKELY MCC OR CUSTOM MADE) -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_camo_suit.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_armor_camo.shader
+# PortTag !ReachMisc objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
+
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_helmet.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_visor.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_chest.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_shoulders.shader
+
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_legs.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_shoulder.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_helmet.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_visor.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_chest.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned_2.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_condemned_2.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_2.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_3.shader
+
+# PortTag !ReachMisc objects\characters\masterchief\shaders\marine_chest.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
+
+# PortTag !ReachMisc objects\characters\masterchief\shaders\h2aodst_helm.shader
+# PortTag !ReachMisc objects\characters\masterchief\shaders\h2aodst_visor.shader
+
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_visor_ce.shader
+# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
+
+# PortTag !ReachMisc objects\characters\spartans\shaders\spartan\scarf2.shader
+
+# UP ABOVE IS DONE

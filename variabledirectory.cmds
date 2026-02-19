@@ -1,0 +1,7 @@
+"E:\Eldewrito"
+SetVariable workingdir "F:\Github\Ramp-3"
+SetVariable reachmaps "F:\reachmaps"
+SetVariable MCC "F:\SteamLibrary\steamapps\common\Halo The Master Chief Collection"
+SetVariable MCCWorkshop "F:\SteamLibrary\steamapps\workshop\content\976730"
+
+RunCommands workingdir\build_script_order.cmds
