@@ -101,6 +101,22 @@ ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_3p.dae TriangleList
 AddBlockElements Regions[9].Permutations 1
 SetField Regions[9].Permutations[*].Name none
 SetField Regions[9].Permutations[*].MeshIndex -1
+
+# RIGHT GLOVE
+AddBlockElements Regions[10].Permutations 1
+SetField Regions[10].Permutations[*].Name base
+SetField Regions[10].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[10].Permutations 0 1
+
+# LEFT GLOVE
+AddBlockElements Regions[11].Permutations 1
+SetField Regions[11].Permutations[*].Name base
+SetField Regions[11].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[11].Permutations 0 1
+
+# HELMET MAJOR
+SetField Geometry.Meshes[4].Parts[2].FlagsNew PreventBackfaceCulling
+
 SaveTagChanges
 Exit
 
@@ -171,6 +187,18 @@ SetField Materials[20].RenderMethod objects\characters\elite\shaders\elite_helme
 SetField Materials[21].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_arms.shader
 SetField Materials[22].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
 ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_arms.fbx Markers TriangleList
+
+# LEFT GLOVE
+AddBlockElements Regions[3].Permutations 1
+SetField Regions[3].Permutations[*].Name base
+SetField Regions[3].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[3].Permutations 0 1
+
+# RIGHT GLOVE
+AddBlockElements Regions[4].Permutations 1
+SetField Regions[4].Permutations[*].Name base
+SetField Regions[4].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[4].Permutations 0 1
 SaveTagChanges
 Exit
 

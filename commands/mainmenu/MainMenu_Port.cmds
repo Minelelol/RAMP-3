@@ -16,12 +16,13 @@ SetField ShLights[*].Color 0.4078 0.6118 1
 SaveTagChanges
 Exit
 
-# Generating New Bitmap before Porting
 GenerateBitmap levels\ui\mainmenu\bitmaps\campaign_act3_background workingdir\bitmaps\MainMenu\customization_background.dds
 
+# -----------------------------------------
+# |                PORTING                |
+# -----------------------------------------
 OpenCacheFile F:\ReachMaps\mainmenu.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
-
 IgnoreBlamTag objects\characters\elite\elite.biped
 IgnoreBlamTag objects\characters\spartans\spartans.biped
 IgnoreBlamTag objects\equipment\hologram\bipeds\hologram_elite.biped
@@ -35,12 +36,16 @@ IgnoreBlamTag sound\game_sfx\ui\transition_beeps.sound
 IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
 IgnoreBlamTag objects\characters\elite\elite.model_animation_graph
 IgnoreBlamTag objects\characters\spartans\spartans.model_animation_graph
-
+IgnoreBlamTag sound\levels\main_menu\stationary_cap_ship\stationary_cap_ship.sound_scenery
 PortTag ReachMisc !Scripts *.scnr
 PortTag ReachMisc ui\cui\main_menu\halo3_logo_ui.bitmap
 PortTag ReachMisc sound\music\alpha_main_menu\alpha_main_menu.lsnd
 Exit
 
+
+# -----------------------------------------
+# |               MAIN MENU               |
+# -----------------------------------------
 EditTag ui\ui_shared_globals.wigl
 SetField MainMenuMusic sound\music\alpha_main_menu\alpha_main_menu.lsnd
 SaveTagChanges
@@ -69,12 +74,95 @@ SetField ObjectNames[15].Name "custom_pr_02"
 SetField ObjectNames[16].Name "custom_flag"
 SetField ObjectNames[17].Name "sky"
 
-# CUSTOMIZATION CAMERA POINTS!!
+# -----------------------------------------
+# |      CUSTOMIZATION CAMERA POINT       |
+# -----------------------------------------
+# SPARTAN
 AddBlockElements CutsceneCameraPoints 1
 SetField CutsceneCameraPoints[*].Name settings_cam
 SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
 SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
 
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_helmet_wide
+SetField CutsceneCameraPoints[*].Position 15.0291 647.98 9.6333
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_leftshoulder_wide
+SetField CutsceneCameraPoints[*].Position 14.9601 648 9.5
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_rightshoulder_wide
+SetField CutsceneCameraPoints[*].Position 14.9601 648 9.5
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+# ELITE
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_helmet_wide
+SetField CutsceneCameraPoints[*].Position 15.0291 648.005 9.63
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_leftshoulder_wide
+SetField CutsceneCameraPoints[*].Position 14.9601 648.034 9.55
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_rightshoulder_wide
+SetField CutsceneCameraPoints[*].Position 14.9601 648.034 9.55
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_helmet_standard
+SetField CutsceneCameraPoints[*].Position 15.0601 648.025 9.64533
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_leftshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.084  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 648.034 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name spartan_rightshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.131  -0.174  -0.072
+SetField CutsceneCameraPoints[*].Position 14.8601 647.944 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_helmet_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.124  -0.102
+SetField CutsceneCameraPoints[*].Position 14.9601 647.994 9.37133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_leftshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.231  -0.174  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9601 647.944 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_rightshoulder_standard
+# SetField CutsceneCameraPoints[*].Position 14.7291 648.118 9.47333
+#                                            +0.181  -0.214  -0.072
+SetField CutsceneCameraPoints[*].Position 14.9101 647.904 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+# NEWWWWWWWWW
+AddBlockElements CutsceneCameraPoints 1
+SetField CutsceneCameraPoints[*].Name elite_leftforearm_wide
+SetField CutsceneCameraPoints[*].Position 14.9601 648.034 9.40133
+SetField CutsceneCameraPoints[*].Orientation 0.0015 -0.0069 0
+
+# -----------------------------------------
+# |                 BIPEDS                |
+# -----------------------------------------
 RemoveBlockElements BipedPalette 0 *
 AddBlockElements BipedPalette 1
 SetField BipedPalette[*].Object objects\characters\masterchief\mp_masterchief\mp_masterchief.biped
@@ -82,6 +170,7 @@ AddBlockElements BipedPalette 1
 SetField BipedPalette[*].Object objects\characters\elite\mp_elite\mp_elite.biped
 
 # SPARTANS
+RemoveBlockElements Bipeds 0 *
 AddBlockElements Bipeds 1
 SetField Bipeds[*].PaletteIndex 0
 SetField Bipeds[*].NameIndex 1
@@ -200,12 +289,13 @@ SetField Bipeds[*].EditorFolder -1
 SetField Bipeds[*].CanAttachToBspFlags 2
 SetField Bipeds[*].ParentId.NameIndex -1
 
-# Server Browser Background
-# TLDR this gets called in the script
+# -----------------------------------------
+# |                  MISC                 |
+# -----------------------------------------
+# this gets called in the script
 AddBlockElements BackgroundReferences
 SetField BackgroundReferences[0].Instance levels\ui\mainmenu\bitmaps\reach_background.bitmap
 
-# CUBEMAP!? WHO NEED IT ANYWAY!
 SetField StructureBsps[0].Cubemap null
 SetField StructureBsps[1].Cubemap null
 SaveTagChanges
@@ -255,15 +345,5 @@ Exit
 
 EditTag ui\halox\pregame_lobby\pregame_lobby_theater.gui_screen_widget_definition
 SetField ScriptIndex 15
-SaveTagChanges
-Exit
-
-EditTag multiplayer\mod_globals.mod_globals
-# INDEX IS IN THE SCNR TAG
-SetField PlayerCharacterCustomizations[0].CharacterPositionData.BipedNameIndex 1
-SetField PlayerCharacterCustomizations[1].CharacterPositionData.BipedNameIndex 0
-SetField PlayerCharacterCustomizations[0].CharacterPositionData.SettingsCameraIndex 44
-SetField PlayerCharacterCustomizations[1].CharacterPositionData.SettingsCameraIndex 44
-# SetField PlayerCharacterSets[0].Characters[0].Name spartan_ramp
 SaveTagChanges
 Exit

@@ -499,6 +499,7 @@ SetString english wrist "Left Wrist"
 SetString english wrist_right "Right Wrist"
 
 # ELITE SHIT I DON'T KNOW
+SetString english none "None"
 SetString english nothing "."
 SetString english elite_arby "Arbiter"
 SetString english elite_arby_description "An Arbiter is a ceremonial, religious, and political rank bestowed upon Covenant Elites"
@@ -568,5 +569,8 @@ SetString english elite_zealot_zealot "zealot"
 SetString english elite_zealot_zealot_description "The Zealots are a military order of high-ranking Sangheili warriors in the Covenant, as well as some of its splinter factions during the Blooding Years. They were supervised and deployed by the Ministry of Fervent Intercession, with their organization divided into multiple chapters."
 SetString english model_elite "Elite"
 SetString english model_elite_description "Sangheili Combat Harness: Regions may be customized in accordance with unit requirements."
+
+SetString english left_glove "Left Glove"
+SetString english right_glove "Right Glove"
 SaveTagChanges
 Exit

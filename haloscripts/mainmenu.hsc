@@ -345,6 +345,66 @@
 	(set currentCharacter (ui_get_player_model_id))
 )
 
+(script static void helmet_camera_wide
+	(print "helmet camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_helmet_wide" 15)
+	)
+	(if (= currentCharacter 1)
+		(camera_set "elite_helmet_wide" 15)
+	)
+)
+
+(script static void helmet_camera_standard
+	(print "helmet camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_helmet_standard" 15)
+	)
+	(if (= currentCharacter 1)
+		(camera_set "elite_helmet_standard" 15)
+	)
+)
+
+(script static void leftshoulder_camera_wide
+	(print "leftshoulder camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_leftshoulder_wide" 15)
+	)
+	(if (= currentCharacter 1)
+		(camera_set "elite_leftshoulder_wide" 15)
+	)
+)
+
+(script static void leftshoulder_camera_standard
+	(print "leftshoulder camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_leftshoulder_standard" 15)
+	)
+	(if (= currentCharacter 1)
+		(camera_set "elite_leftshoulder_standard" 15)
+	)
+)
+
+(script static void rightshoulder_camera_wide
+	(print "rightshoulder camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_rightshoulder_wide" 15)
+	)
+	(if (= currentCharacter 1)
+		(camera_set "elite_rightshoulder_wide" 15)
+	)
+)
+
+(script static void rightshoulder_camera_standard
+	(print "rightshoulder camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_rightshoulder_standard" 15)
+	)
+	(if (= currentCharacter 1)
+		(camera_set "elite_rightshoulder_standard" 15)
+	)
+)
+
 (script static void exit_subcamera
 	(print "exit subcamera")
 	(camera_set "settings_cam" 15)
