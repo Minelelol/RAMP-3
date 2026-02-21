@@ -276,22 +276,14 @@ RemoveBlockElements ShaderProperties[0].RoutingInfo 0 *
 
 SetArgument self_illum_intensity 7
 
-AddBlockElements ShaderProperties[0].Functions 2
+AddBlockElements ShaderProperties[0].Functions 1
 SetField ShaderProperties[0].Functions[0].InputName light_color
 SetField ShaderProperties[0].Functions[0].RangeName light_dim
 SetField ShaderProperties[0].Functions[0].TimePeriod 1
 SetField ShaderProperties[0].Functions[0].Type ChangeColorQuaternary
 SetField ShaderProperties[0].Functions[0].Function.Data 08350300000000FFBC7031FF00000000A9DBFFFF6F12833A6F12033B2800000001000000040000CDFFFF7F7F0000003F0000003F01000000040000CDFFFF7F7F0000000000000000
 
-SetField ShaderProperties[0].Functions[1].Type Value
-SetField ShaderProperties[0].Functions[1].InputName light_frequency
-SetField ShaderProperties[0].Functions[1].TimePeriod 2
-SetField ShaderProperties[0].Functions[1].Function.Data 00340000000000000000404000000000000000006F12833A6F12033B00000000
-
 AddFunction self_illum_color Real 0
-AddFunction self_illum_intensity Real 1
-# YOU HAVE NO IDEA HOW IMPORTANT THIS REGISTERINDEX IS, EVEN I DON'T KNOW, BUT THIS MAKE IT WORK
-SetField ShaderProperties[0].RoutingInfo[5].RegisterIndex 1
 SaveTagChanges
 Exit
 

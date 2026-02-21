@@ -189,66 +189,79 @@ SetField MarkerGroups[17].Name no
 AddBlockElements Regions[1].Permutations 1
 SetField Regions[1].Permutations[*].Name base
 SetField Regions[1].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[1].Permutations 26 0
 
 # LEFT SHOULDER
 AddBlockElements Regions[3].Permutations 1
 SetField Regions[3].Permutations[*].Name base
 SetField Regions[3].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[3].Permutations 27 0
 
 # RIGHT SHOULDER
 AddBlockElements Regions[4].Permutations 1
 SetField Regions[4].Permutations[*].Name base
 SetField Regions[4].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[4].Permutations 27 0
 
 # LEFT WRIST
 AddBlockElements Regions[5].Permutations 1
 SetField Regions[5].Permutations[*].Name base
 SetField Regions[5].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[5].Permutations 5 0
 
-# LEFT WRIST
+# RIGHT WRIST
 AddBlockElements Regions[13].Permutations 1
 SetField Regions[13].Permutations[*].Name base
 SetField Regions[13].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[13].Permutations 5 0
 
 # LEFT THIGH
 AddBlockElements Regions[6].Permutations 1
 SetField Regions[6].Permutations[*].Name base
 SetField Regions[6].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[6].Permutations 8 0
 
 # RIGHT THIGH
 AddBlockElements Regions[14].Permutations 1
 SetField Regions[14].Permutations[*].Name base
 SetField Regions[14].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[14].Permutations 8 0
 
 # LEFT HELMET FLAIR
 AddBlockElements Regions[8].Permutations 1
 SetField Regions[8].Permutations[*].Name base
 SetField Regions[8].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[8].Permutations 6 0
 
 # RIGHT HELMET FLAIR
 AddBlockElements Regions[9].Permutations 1
 SetField Regions[9].Permutations[*].Name base
 SetField Regions[9].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[9].Permutations 6 0
 
 # TOP HELMET FLAIR
 AddBlockElements Regions[10].Permutations 1
 SetField Regions[10].Permutations[*].Name base
 SetField Regions[10].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[10].Permutations 9 0
 
 # BOTTOM HELMET FLAIR
 AddBlockElements Regions[11].Permutations 1
 SetField Regions[11].Permutations[*].Name base
 SetField Regions[11].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[11].Permutations 4 0
 
 # BACKPACK
 AddBlockElements Regions[12].Permutations 1
 SetField Regions[12].Permutations[*].Name base
 SetField Regions[12].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[12].Permutations 16 0
 
 # WAIST
 AddBlockElements Regions[15].Permutations 1
 SetField Regions[15].Permutations[*].Name base
 SetField Regions[15].Permutations[*].MeshIndex -1
+SwapBlockElements Regions[15].Permutations 9 0
 SaveTagChanges
 Exit
 
@@ -329,6 +342,10 @@ Exit
 EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.model
 UpdateModelRegions 0 coll phmo
 
+# HELMET
+SetField CollisionRegions[2].CollisionRegionIndex 2
+ForEach CollisionRegions[2].Permutations SetField CollisionPermutationIndex 0
+
 # WRIST
 SetField CollisionRegions[5].CollisionRegionIndex 0
 SetField CollisionRegions[5].PhysicsRegionIndex 0
@@ -341,6 +358,25 @@ SetField CollisionRegions[6].PhysicsRegionIndex 0
 ForEach CollisionRegions[6].Permutations SetField CollisionPermutationIndex 0
 ForEach CollisionRegions[6].Permutations SetField PhysicsPermutationIndex 0
 
+SaveTagChanges
+Exit
+
+# HOLOGRAM
+EditTag objects\equipment\hologram\bipeds\masterchief_hologram.model
+SetField RenderModel objects\characters\masterchief\mp_masterchief\mp_masterchief.render_model
+UpdateModelRegions 0 coll
+
+# WRIST
+SetField CollisionRegions[5].CollisionRegionIndex 0
+SetField CollisionRegions[5].PhysicsRegionIndex 0
+ForEach CollisionRegions[5].Permutations SetField CollisionPermutationIndex 0
+ForEach CollisionRegions[5].Permutations SetField PhysicsPermutationIndex 0
+
+# THIGH
+SetField CollisionRegions[6].CollisionRegionIndex 3
+SetField CollisionRegions[6].PhysicsRegionIndex 0
+ForEach CollisionRegions[6].Permutations SetField CollisionPermutationIndex 0
+ForEach CollisionRegions[6].Permutations SetField PhysicsPermutationIndex 0
 SaveTagChanges
 Exit
 

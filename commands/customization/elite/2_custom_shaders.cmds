@@ -2,10 +2,140 @@
 # | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 # | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 
+# -------------------------------------------------------------------------------
+# |                             HERETIC HELMET                                  |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_heretic_cc workingdir\bitmaps\Elite\heretic\elite_heretic_cc.dds
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_heretic_diff workingdir\bitmaps\Elite\heretic\elite_heretic_diff.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_heretic_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\elite\bitmaps\elite_helmet\elite_heretic_normal
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_heretic_normal ImportBitmap 0 workingdir\bitmaps\Elite\heretic\elite_heretic_normal.dds linear
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_heretic_normal GenerateMipmaps
+
+DuplicateTag objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet
+EditTag objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shader
+SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_heretic_diff.bitmap
+SetBitmap change_color_map objects\characters\elite\bitmaps\elite_helmet\elite_heretic_cc.bitmap
+SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_heretic_normal.bitmap
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                              HONOR HELMET                                   |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_honor_cc workingdir\bitmaps\Elite\honor\elite_honor_cc.dds
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_honor_diff workingdir\bitmaps\Elite\honor\elite_honor_diff.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_honor_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\elite\bitmaps\elite_helmet\elite_honor_normal
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_honor_normal ImportBitmap 0 workingdir\bitmaps\Elite\honor\elite_honor_normal.dds linear
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_honor_normal GenerateMipmaps
+
+DuplicateTag objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader objects\characters\elite\shaders\elite_helmet\elite_honor_helmet
+EditTag objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
+SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_honor_diff.bitmap
+SetBitmap change_color_map objects\characters\elite\bitmaps\elite_helmet\elite_honor_cc.bitmap
+SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_honor_normal.bitmap
+
+SetArgument diffuse_coefficient 0.8
+SetArgument specular_coefficient 0.25
+SetArgument environment_map_specular_contribution 0.25
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                             COUNCIL HELMET                                  |
+# -------------------------------------------------------------------------------
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_council_cc workingdir\bitmaps\Elite\council\elite_council_cc.dds
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_council_diff workingdir\bitmaps\Elite\council\elite_council_diff.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_council_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\elite\bitmaps\elite_helmet\elite_council_normal
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_council_normal ImportBitmap 0 workingdir\bitmaps\Elite\council\elite_council_normal.dds linear
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_council_normal GenerateMipmaps
+
+DuplicateTag objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader objects\characters\elite\shaders\elite_helmet\elite_council_helmet
+EditTag objects\characters\elite\shaders\elite_helmet\elite_council_helmet.shader
+SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_council_diff.bitmap
+SetBitmap change_color_map objects\characters\elite\bitmaps\elite_helmet\elite_council_cc.bitmap
+SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_council_normal.bitmap
+
+SetArgument specular_coefficient 0.25
+SetArgument environment_map_specular_contribution 0.25
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------------------------------
+# |                             ARBITER SHADER                                  |
+# -------------------------------------------------------------------------------
+# Helmet
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_arby_diff workingdir\bitmaps\Elite\arby\helmet\elite_arby_diff.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\elite\bitmaps\elite_helmet\elite_arby_normal
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_normal ImportBitmap 0 workingdir\bitmaps\Elite\arby\helmet\elite_arby_normal.dds linear
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_normal GenerateMipmaps
+
+DuplicateTag objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader objects\characters\elite\shaders\elite_helmet\elite_arby_helmet
+EditTag objects\characters\elite\shaders\elite_helmet\elite_arby_helmet.shader
+SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_diff.bitmap
+SetBitmap change_color_map shaders\default_bitmaps\bitmaps\color_red.bitmap
+SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_normal.bitmap
+
+SetArgument diffuse_coefficient 4
+SetArgument specular_coefficient 0.25
+SetArgument environment_map_specular_contribution 0.1
+SaveTagChanges
+Exit
+
+# Arms
+# GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_cc workingdir\bitmaps\Elite\arby\arms\elite_arby_arms_cc.dds
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_diff workingdir\bitmaps\Elite\arby\arms\elite_arby_arms_diff.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_normal
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_normal ImportBitmap 0 workingdir\bitmaps\Elite\arby\arms\elite_arby_arms_normal.dds linear
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_normal GenerateMipmaps
+
+DuplicateTag objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader objects\characters\elite\shaders\elite_helmet\elite_arby_arms
+EditTag objects\characters\elite\shaders\elite_helmet\elite_arby_arms.shader
+SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_diff.bitmap
+# SetBitmap change_color_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_cc.bitmap
+SetBitmap change_color_map shaders\default_bitmaps\bitmaps\color_red.bitmap
+SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_arms_normal.bitmap
+
+SetArgument diffuse_coefficient 4
+SetArgument specular_coefficient 0.25
+SetArgument environment_map_specular_contribution 0.1
+SaveTagChanges
+Exit
+
+# Thighs
+# GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_cc workingdir\bitmaps\Elite\arby\thighs\elite_arby_thighs_cc.dds
+GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_diff workingdir\bitmaps\Elite\arby\thighs\elite_arby_thighs_diff.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_diff GenerateMipmaps
+
+CreateTag bitm objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_normal
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_normal ImportBitmap 0 workingdir\bitmaps\Elite\arby\thighs\elite_arby_thighs_normal.dds linear
+ForEach bitm named: objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_normal GenerateMipmaps
+
+DuplicateTag objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader objects\characters\elite\shaders\elite_helmet\elite_arby_thighs
+EditTag objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
+SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_diff.bitmap
+# SetBitmap change_color_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_cc.bitmap
+SetBitmap change_color_map shaders\default_bitmaps\bitmaps\color_red.bitmap
+SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_arby_thighs_normal.bitmap
+
+SetArgument diffuse_coefficient 4
+SetArgument specular_coefficient 0.25
+SetArgument environment_map_specular_contribution 0.1
+SaveTagChanges
+Exit
+
 # PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shader
 # PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
 # PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_council_helmet.shader
-
 # PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_arby_helmet.shader
 # PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_arby_arms.shader
 # PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader

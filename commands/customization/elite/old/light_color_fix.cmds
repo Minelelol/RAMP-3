@@ -1,0 +1,31 @@
+# SCRIPT GETS CALLED IN "1_reach_shaders.cmds"
+SetArgument albedo_color 1 1 1 1
+SetArgument self_illum_color 0.19215688 0.43921572 0.7372549
+SetArgument self_illum_intensity 5
+
+RemoveBlockElements ShaderProperties[0].EntryPoints 0 *
+RemoveBlockElements ShaderProperties[0].Passes 0 *
+RemoveBlockElements ShaderProperties[0].RoutingInfo 0 *
+RemoveBlockElements ShaderProperties[0].Functions 0 *
+AddBlockElements ShaderProperties[0].Functions 3
+
+SetField ShaderProperties[0].Functions[0].Type TranslationY
+SetField ShaderProperties[0].Functions[0].TimePeriod 4
+SetField ShaderProperties[0].Functions[0].Function.Data 033400000000803F0000000000000000000000006F12833A6F12033B1400000006CDCDCD0000803F00000000000000000000803F
+
+SetField ShaderProperties[0].Functions[1].Type ChangeColorQuaternary
+SetField ShaderProperties[0].Functions[1].InputName light_color
+SetField ShaderProperties[0].Functions[1].RangeName light_dim
+SetField ShaderProperties[0].Functions[1].TimePeriod 1
+SetField ShaderProperties[0].Functions[1].Function.Data 08350300000000FFBC7031FF00000000A9DBFFFF6F12833A6F12033B2800000001000000040000CDFFFF7F7F0000003F0000003F01000000040000CDFFFF7F7F0000000000000000
+
+SetField ShaderProperties[0].Functions[2].Type Value
+SetField ShaderProperties[0].Functions[2].InputName light_frequency
+SetField ShaderProperties[0].Functions[2].TimePeriod 2
+SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000404000000000000000006F12833A6F12033B00000000
+
+AddFunction self_illum_detail_map Real 0
+AddFunction self_illum_color Real 1
+AddFunction self_illum_intensity Real 2
+SetField ShaderProperties[0].RoutingInfo[8].RegisterIndex 1
+SaveTagChanges

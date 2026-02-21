@@ -2,6 +2,9 @@
 # | REACH ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 # | REACH ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 
+GenerateBitmap objects\characters\elite\bitmaps\elite_base\elite_bodysuit_diffuse workingdir\bitmaps\Elite\elite_bodysuit_diffuse.dds
+ForEach bitm named: objects\characters\elite\bitmaps\elite_base\elite_bodysuit_diffuse GenerateMipmaps
+
 OpenCacheFile reachmaps\forge_halo.map
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\body.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_fp_armor.shader
@@ -12,109 +15,128 @@ PortTag ReachMisc objects\characters\elite\shaders\elite_base\eyes.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\head.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\teeth.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_general_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_general_helmet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_general_illum_cards.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_general_stripes.shader_halogram
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_officer_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_officer_helmet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_officer_illum_cards.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_space_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet_metal.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor_interior.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_space_illum_cards.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_spec_ops_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_spec_ops_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_spec_ops_helmet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_spec_ops_illum_cards.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_storyelite_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_storyelite_helmet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_zealot_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_zealot_helmet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_zealot_illum_cards.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_zealot_stripes.shader_halogram
 PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_ultra_helmet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_ultra_helmet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_ultra_illum_cards.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_base_upper.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_minor_chest.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_minor_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_illum_cards\elite_minor_illum_cards.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_general_chest.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_general_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_officer_chest.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_officer_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_space_chest.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_spec_ops_chest.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_zealot_chest.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_zealot_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_ultra_chest.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_ultra_chest_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_minor_shoulder.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_minor_shoulder_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_general_shoulder.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_general_shoulder_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_officer_shoulder.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_officer_shoulder_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_space_shoulder.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_spec_ops_shoulder.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_spec_ops_shoulder_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_ultra_shoulder.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_ultra_shoulder_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_zealot_shoulder.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_zealot_shoulder_metal.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_spec_ops_gauntlet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_minor_gauntlet.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_officer_gauntlet.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet_metal.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_space_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_spec_ops_gauntlet.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_base_lower.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_base_lower_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_minor_thigh.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_minor_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_general_thigh.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_general_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_officer_thigh.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_officer_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_space_thigh.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh.shader
-PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh.shader
+Exit
+
+GenerateShader Shader two_change_color detail none specular_mask_from_diffuse cook_torrance_reach dynamic off opaque off default off off off default from_albedo_alpha_without_fresnel
+ForEach shader named: objects\characters\elite\shaders\elite_helmet RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+ForEach shader named: objects\characters\elite\shaders\elite_chest RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+ForEach shader named: objects\characters\elite\shaders\elite_gauntlet RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+ForEach shader named: objects\characters\elite\shaders\elite_shoulder RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+ForEach shader named: objects\characters\elite\shaders\elite_thigh RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+ForEach shader named: objects\characters\elite\shaders\elite_base\elite_base RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+ForEach shader named: objects\characters\elite\shaders\elite_base\elite_fp_armor RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
+
+OpenCacheFile reachmaps\forge_halo.map
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_minor_thigh_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_base_lower_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_ultra_gauntlet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_zealot_gauntlet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_space_gauntlet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_general_gauntlet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_gauntlet\elite_spec_ops_gauntlet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_zealot_shoulder_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_ultra_shoulder_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_spec_ops_shoulder_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_officer_shoulder_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_general_shoulder_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_shoulder\elite_minor_shoulder_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_ultra_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_zealot_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_officer_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_general_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_minor_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_ultra_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_zealot_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_storyelite_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_spec_ops_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor_interior.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_space_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_space_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_officer_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_helmet\elite_general_helmet_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_chest\elite_spec_ops_chest_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_space_thigh_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_general_thigh_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_officer_thigh_metal.shader
+PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_spec_ops_thigh_metal.shader
 Exit
 
 EditTag objects\characters\elite\shaders\elite_base\head.shader
 SetArgument diffuse_tint 1 1 1
-
-# SetArgument rim_coefficient 1
-SetArgument rim_tint 1 1 1
+SetArgument rim_coefficient 0.15
+SetArgument rim_tint 0.7803922 0.5764706 0.5411765
 SetArgument rim_power 0.85
 # Maybe set the start to 1.4?
 SetArgument rim_start 0.7
 SetArgument subsurface_coefficient 1
-SetArgument transparence_coefficient 0.4
-SetArgument transparence_tint 0.75 0.75 0.75
 SetArgument final_tint 1 1 1
 SaveTagChanges
 Exit
 
 EditTag objects\characters\elite\shaders\elite_base\teeth.shader
 SetArgument diffuse_tint 1 1 1
+SetArgument rim_coefficient 0.25
 SetArgument rim_tint 1 1 1
 SetArgument subsurface_coefficient 1
-SetArgument transparence_coefficient 0.35
-SetArgument transparence_tint 0.75 0.75 0.75
 SetArgument final_tint 1 1 1
+SaveTagChanges
+Exit
+
+# -------------------------------------------------------
+# |                 LIGHT COLOR FIX                     |
+# -------------------------------------------------------
+ForEach shader named: elite_illum_cards RunCommands workingdir\commands\customization\elite\light_color_fix.cmds
+ForEach shader_halogram named: elite_illum_cards RunCommands workingdir\commands\customization\elite\halogram_light_color_fix.cmds
+
+EditTag objects\characters\elite\shaders\elite_helmet\elite_space_helmet_visor.shader
+SetField SortLayer PostPass
 SaveTagChanges
 Exit

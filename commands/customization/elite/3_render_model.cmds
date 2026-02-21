@@ -96,6 +96,11 @@ SetField Materials[90].RenderMethod objects\characters\elite\shaders\elite_thigh
 SetField Materials[91].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh_metal.shader
 SetField Materials[92].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
 ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_3p.dae TriangleList
+
+# HIPS
+AddBlockElements Regions[9].Permutations 1
+SetField Regions[9].Permutations[*].Name none
+SetField Regions[9].Permutations[*].MeshIndex -1
 SaveTagChanges
 Exit
 
@@ -130,6 +135,11 @@ SetField Materials[23].RenderMethod objects\characters\elite\shaders\elite_helme
 SetField Materials[24].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
 SetField Materials[25].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_upper.shader
 ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_body.fbx Markers TriangleList
+
+# HIPS
+AddBlockElements Regions[3].Permutations 1
+SetField Regions[3].Permutations[*].Name none
+SetField Regions[3].Permutations[*].MeshIndex -1
 SaveTagChanges
 Exit
 
@@ -166,5 +176,11 @@ Exit
 
 EditTag objects\characters\elite\mp_elite\mp_elite.model
 UpdateModelRegions 0 coll phmo
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\hologram\bipeds\mp_elite_hologram.model
+SetField RenderModel objects\characters\elite\mp_elite\mp_elite.render_model
+UpdateModelRegions 0 coll
 SaveTagChanges
 Exit
