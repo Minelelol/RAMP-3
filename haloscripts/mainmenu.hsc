@@ -102,6 +102,7 @@
 	)
 	 -1)
 	(sleep_forever)
+	(set currentCharacter (ui_get_player_model_id))
 )
 
 (script static void campaign_cam
