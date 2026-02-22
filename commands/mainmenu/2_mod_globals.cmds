@@ -1,0 +1,174 @@
+EditTag multiplayer\mod_globals.mod_globals
+# INDEX IS IN THE SCNR TAG
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.BipedNameIndex 1
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.BipedNameIndex 0
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.SettingsCameraIndex 44
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.SettingsCameraIndex 44
+SetField PlayerCharacterSets[0].Characters[0].Name spartan_ramp
+SetField PlayerCharacterSets[0].Characters[1].Name elite_ramp
+
+# Default Color Spartan
+SetField PlayerCharacterCustomizations[0].CharacterColors.Colors[0].Default 0 32 32 32
+SetField PlayerCharacterCustomizations[0].CharacterColors.Colors[1].Default 0 32 32 32
+SetField PlayerCharacterCustomizations[0].CharacterColors.Colors[2].Default 0 177 175 131
+SetField PlayerCharacterCustomizations[0].CharacterColors.Colors[3].Default 0 115 122 222
+
+# Default Color Elite
+SetField PlayerCharacterCustomizations[1].CharacterColors.Colors[1].Default 0 0 24 80
+SetField PlayerCharacterCustomizations[1].CharacterColors.Colors[3].Default 0 11 33 86
+
+# ---------------------------------
+# |     CUSTOMIZATION SPARTAN     |
+# ---------------------------------
+SetField PlayerCharacterCustomizations[0].CharacterPositionData.RelativeBipedRotation -60
+
+# Helmet
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[0].BipedRotation 130
+
+# Shoulder L/R
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[2].BipedRotation 90
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[3].BipedRotation 250
+
+# Backpack
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName backpack
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen backpack_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard backpack_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 340
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+# Wrist L/R
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName wrist
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 90
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName wrist_right
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 250
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+# Waist
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName waist
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen waist_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard waist_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 150
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+# Thigh L/R
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName thigh
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen waist_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard waist_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 45
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName thigh_right
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen waist_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard waist_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 270
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+# Knees
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName knee
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen knees_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard knees_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 130
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+# Headgear T/B/L/R
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName top_helmet_flair
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen helmet_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard helmet_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 130
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName bottom_helmet_flair
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen helmet_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard helmet_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 130
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName left_helmet_flair
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen helmet_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard helmet_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 130
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[0].RegionCameraScripts
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RegionName right_helmet_flair
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameWidescreen helmet_camera_wide
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].ScriptNameStandard helmet_camera_standard
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].BipedRotation 200
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[*].RotationDuration 0.5
+
+# ---------------------------------
+# |      CUSTOMIZATION ELITE      |
+# ---------------------------------
+SetField PlayerCharacterCustomizations[1].CharacterPositionData.RelativeBipedPosition 0.3 0.1 0
+
+# Head
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[0].RegionName "head"
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[0].BipedRotation 135
+
+# ASS, cough cough uh I mean Body Type
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[1].BipedRotation 30
+
+# Shoulder L/R
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[2].RegionName l_shoulder
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[3].RegionName r_shoulder
+
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[2].BipedRotation 120
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[3].BipedRotation 230
+
+# Forearm L/R
+AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName l_forearm
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 120
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName r_forearm
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 230
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
+
+# Gloves L/R
+AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
+# It use the region names in the multiplayer global tag
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName left_glove
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 120
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
+
+AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName right_glove
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 230
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
+
+# Feet
+AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName feet
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen feet_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard feet_camera_standard
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 145
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
+
+SaveTagChanges
+Exit

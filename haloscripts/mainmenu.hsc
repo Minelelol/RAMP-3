@@ -50,6 +50,7 @@
 	(fade_out 0 0 0 0)
 	(set ui_location -1)
 	(wake appearance_characters)
+	(set currentCharacter (ui_get_player_model_id))
 	(sleep 8)
 	(fade_in 0 0 0 22)
 	(camera_control true)
@@ -102,7 +103,6 @@
 	)
 	 -1)
 	(sleep_forever)
-	(set currentCharacter (ui_get_player_model_id))
 )
 
 (script static void campaign_cam
@@ -403,6 +403,76 @@
 	)
 	(if (= currentCharacter 1)
 		(camera_set "elite_rightshoulder_standard" 15)
+	)
+)
+
+(script static void body_camera_wide
+	(print "body camera")
+	(if (= currentCharacter 1)
+		(camera_set "elite_body_wide" 15)
+	)
+)
+
+(script static void body_camera_standard
+	(print "body camera")
+	(if (= currentCharacter 1)
+		(camera_set "elite_body_standard" 15)
+	)
+)
+
+(script static void backpack_camera_wide
+	(print "backpack camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_backpack_wide" 15)
+	)
+)
+
+(script static void backpack_camera_standard
+	(print "backpack camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_backpack_standard" 15)
+	)
+)
+
+(script static void waist_camera_wide
+	(print "waist camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_waist_wide" 15)
+	)
+)
+
+(script static void waist_camera_standard
+	(print "waist camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_waist_standard" 15)
+	)
+)
+
+(script static void knees_camera_wide
+	(print "knees camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_knees_wide" 15)
+	)
+)
+
+(script static void knees_camera_standard
+	(print "knees camera")
+	(if (= currentCharacter 0)
+		(camera_set "spartan_knees_standard" 15)
+	)
+)
+
+(script static void feet_camera_wide
+	(print "knees camera")
+	(if (= currentCharacter 1)
+		(camera_set "elite_feet_wide" 15)
+	)
+)
+
+(script static void feet_camera_standard
+	(print "knees camera")
+	(if (= currentCharacter 1)
+		(camera_set "elite_feet_standard" 15)
 	)
 )
 

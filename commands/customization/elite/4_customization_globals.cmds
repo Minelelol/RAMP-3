@@ -499,11 +499,13 @@ SetField Universal[0].CustomizableCharacters[1].Regions[*].Name body
 AddBlockElements Universal[0].CustomizableCharacters[1].Regions[*].Permutations 2
 
 SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[0].Name male
+SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[0].Description nothing
 AddBlockElements Universal[0].CustomizableCharacters[1].Regions[*].Permutations[0].Variant 1
 SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[0].Variant[0].Region body
 SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[0].Variant[0].Permutation male
 
 SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[1].Name female
+SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[1].Description nothing
 AddBlockElements Universal[0].CustomizableCharacters[1].Regions[*].Permutations[1].Variant 1
 SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[1].Variant[0].Region body
 SetField Universal[0].CustomizableCharacters[1].Regions[*].Permutations[1].Variant[0].Permutation female

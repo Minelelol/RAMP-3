@@ -33,4 +33,13 @@ RunCommands workingdir\commands\customization\elite\3_render_model.cmds
 RunCommands workingdir\commands\customization\elite\4_customization_globals.cmds
 # RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice.cmds
 
+# -----------------------------------------
+# |            REACH MAIN MENU            |
+# -----------------------------------------
+# WILL USE 200Mb OF DEDICATED WAM
+RunCommands workingdir\commands\mainmenu\1_mainmenu_port.cmds
+RunCommands workingdir\commands\mainmenu\2_mod_globals.cmds
+
+
+AddModFiles workingdir\assets
 SaveModPackage
