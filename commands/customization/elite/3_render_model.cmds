@@ -204,6 +204,7 @@ Exit
 
 EditTag objects\characters\elite\mp_elite\mp_elite.model
 UpdateModelRegions 0 coll phmo
+SetField SecondaryDialogue sound\dialog\combat\elite_mp.dialogue
 SaveTagChanges
 Exit
 
