@@ -185,6 +185,9 @@ ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_3p.fbx Mar
 # Flaming Ninja effect
 SetField MarkerGroups[17].Name no
 
+# Weapon Back
+SetField MarkerGroups[12].Markers[0].Translation 0.07424942 -0.099999994 -4.9993176E-08
+
 # CHEST
 AddBlockElements Regions[1].Permutations 1
 SetField Regions[1].Permutations[*].Name base

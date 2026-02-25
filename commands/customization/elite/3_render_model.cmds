@@ -97,6 +97,9 @@ SetField Materials[91].RenderMethod objects\characters\elite\shaders\elite_thigh
 SetField Materials[92].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
 ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_3p.dae TriangleList
 
+# WEAPON BACK
+SetField MarkerGroups[48].Markers[0].Translation 0.0725 -0.16 0.015
+
 # HIPS
 AddBlockElements Regions[9].Permutations 1
 SetField Regions[9].Permutations[*].Name none
