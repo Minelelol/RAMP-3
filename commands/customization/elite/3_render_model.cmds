@@ -155,6 +155,11 @@ SetField Materials[24].RenderMethod objects\characters\elite\shaders\elite_helme
 SetField Materials[25].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_upper.shader
 ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_body.fbx Markers TriangleList
 
+# Removing Ilumn on the legs
+SetField Materials[8].RenderMethod objects\multi\shaders\invisible.shader
+SetField Materials[10].RenderMethod objects\multi\shaders\invisible.shader
+SetField Materials[21].RenderMethod objects\multi\shaders\invisible.shader
+
 # HIPS
 AddBlockElements Regions[3].Permutations 1
 SetField Regions[3].Permutations[*].Name none

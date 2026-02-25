@@ -31,7 +31,7 @@ RunCommands workingdir\commands\customization\elite\1_reach_shaders.cmds
 RunCommands workingdir\commands\customization\elite\2_custom_shaders.cmds
 RunCommands workingdir\commands\customization\elite\3_render_model.cmds
 RunCommands workingdir\commands\customization\elite\4_customization_globals.cmds
-# RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice.cmds
+RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice.cmds
 
 # -----------------------------------------
 # |              REACH MENU               |

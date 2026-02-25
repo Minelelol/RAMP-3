@@ -1,0 +1,40 @@
+ForEach sound named: sound\dialog\combat\elite_mp\dth ImportSound workingdir\sounds\bipeds\elite\dth
+
+ForEach sound named: sound\dialog\combat\elite_mp\dth_fall ImportSound workingdir\sounds\bipeds\elite\dth_fall
+
+DuplicateTag sound\dialog\combat\elite_mp\dth.sound sound\dialog\combat\elite_mp\dth_mjr
+ForEach sound named: sound\dialog\combat\elite_mp\dth_mjr ImportSound workingdir\sounds\bipeds\elite\dth_mjr
+
+DuplicateTag sound\dialog\combat\elite_mp\dth.sound sound\dialog\combat\elite_mp\dth_ass
+ForEach sound named: sound\dialog\combat\elite_mp\dth_ass ImportSound workingdir\sounds\bipeds\elite\dth_ass
+
+ForEach sound named: sound\dialog\combat\elite_mp\pain ImportSound workingdir\sounds\bipeds\elite\pain
+
+DuplicateTag sound\dialog\combat\elite_mp\pain.sound sound\dialog\combat\elite_mp\pain_fall
+ForEach sound named: sound\dialog\combat\elite_mp\pain_fall ImportSound workingdir\sounds\bipeds\elite\pain_fall
+
+DuplicateTag sound\dialog\combat\elite_mp\pain.sound sound\dialog\combat\elite_mp\pain_mjr
+ForEach sound named: sound\dialog\combat\elite_mp\pain_mjr ImportSound workingdir\sounds\bipeds\elite\pain_mjr
+
+DuplicateTag sound\dialog\combat\elite_mp\pain.sound sound\dialog\combat\elite_mp\pain_shld
+ForEach sound named: sound\dialog\combat\elite_mp\pain_shld ImportSound workingdir\sounds\bipeds\elite\pain_shld
+
+DuplicateTag sound\dialog\combat\masterchief\ass_grabber.sound sound\dialog\combat\elite_mp\ass_grabber
+ForEach sound named: sound\dialog\combat\elite_mp\ass_grabber ImportSound workingdir\sounds\bipeds\elite\ass_grabber
+
+DuplicateTag sound\dialog\combat\masterchief\ass_grabber.sound sound\dialog\combat\elite_mp\ass_grabbed
+ForEach sound named: sound\dialog\combat\elite_mp\ass_grabbed ImportSound workingdir\sounds\bipeds\elite\ass_grabbed
+
+ForEach sound named: sound\dialog\combat\elite_mp\thrwn ImportSound workingdir\sounds\bipeds\elite\thrwn
+
+EditTag sound\dialog\combat\elite_mp.dialogue
+SetField Vocalizations[4].Sound sound\dialog\combat\elite_mp\dth_mjr.sound
+SetField Vocalizations[8].Sound sound\dialog\combat\elite_mp\dth_ass.sound
+SetField Vocalizations[10].Sound sound\dialog\combat\elite_mp\pain_fall.sound
+SetField Vocalizations[11].Sound sound\dialog\combat\elite_mp\pain_mjr.sound
+SetField Vocalizations[12].Sound sound\dialog\combat\elite_mp\pain_mjr.sound
+SetField Vocalizations[13].Sound sound\dialog\combat\elite_mp\pain_shld.sound
+SetField Vocalizations[20].Sound sound\dialog\combat\elite_mp\ass_grabber.sound
+SetField Vocalizations[21].Sound sound\dialog\combat\elite_mp\ass_grabbed.sound
+SaveTagChanges
+Exit
