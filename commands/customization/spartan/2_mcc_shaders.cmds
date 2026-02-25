@@ -55,7 +55,7 @@ ForEach bitm named: objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi
 # | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 # | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 
-OpenCacheFile "MCC\halo3\maps\midship.map"
+OpenCacheFile "MCCdir\halo3\maps\midship.map"
 # NameBlamTag objects\characters\masterchief\shaders\odst_raven_1_visor.shader objects\characters\masterchief\shaders\raven1_visor
 # NameBlamTag objects\characters\masterchief\shaders\odst_raven_2_visor.shader objects\characters\masterchief\shaders\raven2_visor
 # NameBlamTag objects\characters\masterchief\shaders\odst_raven_3_visor.shader objects\characters\masterchief\shaders\raven3_visor
@@ -81,4 +81,4 @@ PortTag objects\characters\masterchief\shaders\spartan_leg_s9_spi.shader
 Exit
 
 # Shader Adjustment
-ForEach shader startingwith: objects\characters\masterchief\shaders\odst_raven SetArgument diffuse_coefficient 2
+ForEach shader startingwith: objects\characters\masterchief\shaders\odst_raven SetArgument diffuse_coefficient 1.5

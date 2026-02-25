@@ -3,7 +3,7 @@
 # | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 
 # -------------------------------------------------------------------------------
-# |                             HERETIC HELMET                                  |
+# |                             HERETIC SHADER                                  |
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_heretic_cc workingdir\bitmaps\Elite\heretic\elite_heretic_cc.dds
 GenerateBitmap objects\characters\elite\bitmaps\elite_helmet\elite_heretic_diff workingdir\bitmaps\Elite\heretic\elite_heretic_diff.dds
@@ -18,6 +18,8 @@ EditTag objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shade
 SetBitmap base_map objects\characters\elite\bitmaps\elite_helmet\elite_heretic_diff.bitmap
 SetBitmap change_color_map objects\characters\elite\bitmaps\elite_helmet\elite_heretic_cc.bitmap
 SetBitmap bump_map objects\characters\elite\bitmaps\elite_helmet\elite_heretic_normal.bitmap
+
+SetArgument specular_coefficient 0.25
 SaveTagChanges
 Exit
 

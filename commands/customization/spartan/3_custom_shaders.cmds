@@ -90,7 +90,7 @@ EditTag objects\characters\masterchief\shaders\raven1_visor.shader
 SetBitmap base_map objects\characters\masterchief\bitmaps\odst_raven_1_diff.bitmap
 SetBitmap bump_map objects\characters\masterchief\bitmaps\odst_raven_1_zbump.bitmap
 
-SetArgument specular_coefficient 0.5
+SetArgument specular_coefficient 0.25
 SaveTagChanges
 Exit
 
@@ -601,6 +601,9 @@ EditTag objects\characters\spartans\custom\shaders\mp_visor_ce.shader
 SetBitmap base_map objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse.bitmap
 SetBitmap change_color_map objects\characters\spartans\custom\bitmaps\ce_helmet_cc.bitmap
 SetBitmap bump_map objects\characters\spartans\custom\bitmaps\ce_helmet_zbump.bitmap
+
+SetArgument diffuse_coefficient 1
+SetArgument specular_coefficient 0.5
 SaveTagChanges
 Exit
 
@@ -639,9 +642,9 @@ SetBitmap change_color_map objects\characters\masterchief\shaders\marine_chest_c
 SetBitmap bump_map objects\characters\masterchief\shaders\marine_chest_normal.bitmap
 
 SetArgument detail_map 5 5 0 0
-SetArgument specular_coefficient 0.2
-SetArgument area_specular_contribution 0.2
-SetArgument analytical_specular_contribution 0.3
+SetArgument diffuse_coefficient 1.5
+SetArgument specular_coefficient 0.5
+SetArgument area_specular_contribution 0.6
 SetArgument environment_map_specular_contribution 0.3
 SetArgument env_tint_color 0.77647066 0.77647066 0.77647066
 
@@ -707,6 +710,7 @@ DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_d
 EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
 SetBitmap base_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff.bitmap
 SetBitmap bump_map objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal.bitmap
+SetArgument specular_coefficient 0.5
 SaveTagChanges
 Exit
 
@@ -753,6 +757,15 @@ GenerateBitmap objects\characters\spartans\bitmaps\spartan\scarf2 workingdir\bit
 DuplicateTag objects\characters\spartans\shaders\spartan_story\spartan_jun_hood.shader objects\characters\spartans\shaders\spartan\scarf2
 EditTag objects\characters\spartans\shaders\spartan\scarf2.shader
 SetBitmap change_color_map objects\characters\spartans\bitmaps\spartan\scarf2.bitmap
+SaveTagChanges
+Exit
+
+# Editting base shader
+
+# ODST
+
+EditTag levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_armor.shader
+SetArgument diffuse_coefficient 2
 SaveTagChanges
 Exit
 

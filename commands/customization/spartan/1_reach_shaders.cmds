@@ -10,7 +10,7 @@
 # Exit
 
 # YES IT'S AN MCC MAP BUT IT'S REACH FFS
-OpenCacheFile "MCC\haloreach\maps\condemned.map"
+OpenCacheFile "MCCdir\haloreach\maps\condemned.map"
 PortTag objects\characters\spartans\fp\bitmaps\spartan_arms_diffuse.bitmap
 
 NameBlamTag objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_helmet_1.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned
@@ -32,7 +32,7 @@ PortTag ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_he
 PortTag ReachMisc objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_chest.shader
 Exit
 
-OpenCacheFile reachmaps\m10.map
+OpenCacheFile reachmapsdir\m10.map
 PortTag ReachMisc objects\characters\spartans\fp\shaders\spartan_rubber_suit.shader
 PortTag ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit.shader
 PortTag ReachMisc objects\characters\spartans\shaders\spartan_shield_display.shader
@@ -155,14 +155,14 @@ PortTag ReachMisc objects\characters\spartans\shaders\spartan_story\spartan_back
 PortTag ReachMisc objects\characters\marine\shaders\marine_trooper_set.shader
 Exit
 
-OpenCacheFile reachmaps\m70.map
+OpenCacheFile reachmapsdir\m70.map
 PortTag ReachMisc objects\cinematics\package\shaders\package.shader
 PortTag ReachMisc objects\cinematics\package\shaders\package_glass.shader
 PortTag ReachMisc objects\equipment\jet_pack\shaders\jet_pack_unsc.shader
 PortTag ReachMisc objects\characters\marine\shaders\marine_odst_set.shader
 Exit
 
-OpenCacheFile reachmaps\m45.map
+OpenCacheFile reachmapsdir\m45.map
 PortTag ReachMisc objects\props\human\unsc\bitmaps\re_entry_pack.shader
 PortTag ReachMisc objects\props\human\unsc\bitmaps\re_entry_pack_decals.shader_decal
 PortTag ReachMisc objects\characters\spartans\shaders\spartan_chest\spartan_carter_chesttech.shader

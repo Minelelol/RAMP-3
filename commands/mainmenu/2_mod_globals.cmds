@@ -15,6 +15,7 @@ SetField PlayerCharacterCustomizations[0].CharacterColors.Colors[3].Default 0 11
 
 # Default Color Elite
 SetField PlayerCharacterCustomizations[1].CharacterColors.Colors[1].Default 0 0 24 80
+SetField PlayerCharacterCustomizations[1].CharacterColors.Colors[2].Default 0 29 75 188
 SetField PlayerCharacterCustomizations[1].CharacterColors.Colors[3].Default 0 11 33 86
 
 # ---------------------------------
@@ -24,6 +25,12 @@ SetField PlayerCharacterCustomizations[0].CharacterPositionData.RelativeBipedRot
 
 # Helmet
 SetField PlayerCharacterCustomizations[0].RegionCameraScripts[0].BipedRotation 130
+
+# Emblem
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[4].RegionName "none"
+
+# Visor Color
+SetField PlayerCharacterCustomizations[0].RegionCameraScripts[6].BipedRotation 130
 
 # Shoulder L/R
 SetField PlayerCharacterCustomizations[0].RegionCameraScripts[2].BipedRotation 90
@@ -124,6 +131,9 @@ SetField PlayerCharacterCustomizations[1].RegionCameraScripts[0].BipedRotation 1
 # ASS, cough cough uh I mean Body Type
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[1].BipedRotation 30
 
+# Emblem
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[4].RegionName "none"
+
 # Shoulder L/R
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[2].RegionName l_shoulder
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[3].RegionName r_shoulder
@@ -135,14 +145,14 @@ SetField PlayerCharacterCustomizations[1].RegionCameraScripts[3].BipedRotation 2
 AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName l_forearm
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen leftshoulder_camera_wide
-SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_standard
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 120
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
 
 AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName r_forearm
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen rightshoulder_camera_wide
-SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_standard
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 230
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
 
@@ -151,14 +161,14 @@ AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
 # It use the region names in the multiplayer global tag
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName left_glove
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen leftshoulder_camera_wide
-SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard leftshoulder_camera_standard
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 120
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
 
 AddBlockElements PlayerCharacterCustomizations[1].RegionCameraScripts
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RegionName right_glove
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameWidescreen rightshoulder_camera_wide
-SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_wide
+SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].ScriptNameStandard rightshoulder_camera_standard
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].BipedRotation 230
 SetField PlayerCharacterCustomizations[1].RegionCameraScripts[*].RotationDuration 0.5
 

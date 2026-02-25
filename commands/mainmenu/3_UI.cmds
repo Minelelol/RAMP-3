@@ -1,0 +1,60 @@
+# -----------------------------------------
+# |              UI BITMAPS               |
+# -----------------------------------------
+
+# MAIN MENU UI
+ForEach bitm named: black_bar ImportBitmap 0 workingdir\bitmaps\MainMenu\black_bar.dds
+ForEach bitm named: bottom_gradient_ui ImportBitmap 0 workingdir\bitmaps\MainMenu\bottom_gradient_ui.dds
+ForEach bitm named: mainmenu_bkd ImportBitmap 0 workingdir\bitmaps\MainMenu\mainmenu_bkd.dds
+ForEach bitm named: selection_bkd ImportBitmap 0 workingdir\bitmaps\MainMenu\selection_bkd.dds
+
+EditTag ui\halox\pregame_lobby\channel_campaign_ui.bitmap
+ImportBitmap 0 workingdir\bitmaps\MainMenu\channel_campaign_ui.dds
+SaveTagChanges
+Exit
+
+EditTag ui\halox\pregame_lobby\channel_campaign_ui_custom.bitmap
+ImportBitmap 0 workingdir\bitmaps\MainMenu\channel_campaign_ui_custom.dds
+SaveTagChanges
+Exit
+
+EditTag ui\halox\common\common_bitmaps\third_column.bitmap
+ImportBitmap 0 workingdir\bitmaps\MainMenu\third_column.dds
+SaveTagChanges
+Exit
+
+# SETTINGS MENU UI
+ForEach bitm named: ui\halox\start_menu\common\arrow_ui ImportBitmap 0 workingdir\bitmaps\SettingsMenu\arrow_ui.dds
+ForEach bitm named: ui\halox\start_menu\common\arrow2_ui ImportBitmap 0 workingdir\bitmaps\SettingsMenu\arrow2_ui.dds
+
+ForEach bitm named: start_menu_background ImportBitmap 0 workingdir\bitmaps\SettingsMenu\start_menu_background.dds
+ForEach bitm named: start_menu_top ImportBitmap 0 workingdir\bitmaps\SettingsMenu\start_menu_top.dds
+
+# -----------------------------------------
+# |                   UI                  |
+# -----------------------------------------
+
+EditTag ui\halox\main_menu\main_menu.gui_screen_widget_definition
+SetField ScriptIndex 10
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.Bitmap ui\cui\main_menu\halo3_logo_ui.bitmap
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds720p 410 450 475 1150
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds480i 323 253 367 646
+SetField GroupWidgets[0].Definition.BitmapWidgets[0].Definition.Bitmap null
+SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Flags DoNotApplyOldContentUpscaling,ScaleToFitBounds
+SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Bitmap null
+SetField GroupWidgets[0].Definition.BitmapWidgets[1].Definition.Bitmap null
+SaveTagChanges
+Exit
+
+EditTag ui\ui_shared_globals.user_interface_shared_globals_definition
+SetField MainMenuMusic sound\music\alpha_main_menu\alpha_main_menu.lsnd
+# change the text color to be white pt1
+ForEach ColorPresets SetField Color 1 1 1 1
+SaveTagChanges
+Exit
+
+# Change the text color to be white pt2
+EditTag ui\halox\global_animations\animations\blue.gui_widget_color_animation_definition
+SetField Keyframes[0].Color 1 1 1 1
+SaveTagChanges
+Exit

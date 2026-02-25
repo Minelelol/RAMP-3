@@ -5,7 +5,7 @@
 GenerateBitmap objects\characters\elite\bitmaps\elite_base\elite_bodysuit_diffuse workingdir\bitmaps\Elite\elite_bodysuit_diffuse.dds
 ForEach bitm named: objects\characters\elite\bitmaps\elite_base\elite_bodysuit_diffuse GenerateMipmaps
 
-OpenCacheFile reachmaps\forge_halo.map
+OpenCacheFile reachmapsdir\forge_halo.map
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\body.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_fp_armor.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_base\elite_fp_skin.shader
@@ -71,7 +71,7 @@ ForEach shader named: objects\characters\elite\shaders\elite_thigh RunCommands w
 ForEach shader named: objects\characters\elite\shaders\elite_base\elite_base RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
 ForEach shader named: objects\characters\elite\shaders\elite_base\elite_fp_armor RunCommands workingdir\commands\customization\elite\armor_shader_fix.cmds
 
-OpenCacheFile reachmaps\forge_halo.map
+OpenCacheFile reachmapsdir\forge_halo.map
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_zealot_thigh_metal.shader
 PortTag ReachMisc objects\characters\elite\shaders\elite_thigh\elite_minor_thigh_metal.shader

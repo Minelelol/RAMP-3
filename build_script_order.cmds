@@ -8,7 +8,7 @@ MainMenu Multiplayer Character
 # REMOVE THE APPLY PAK SCRIPT ONCE WE'RE DONE USING THE PAK
 # RunCommands workingdir\commands\RecompileShaders.cmds
 
-OpenModPackage F:\Github\Ramp-3\paks\RecompShaders[1.5.9540.25495].pak
+OpenModPackage workingdir\paks\RecompShaders[1.5.9551.17107].pak
 ApplyModPackage
 ExitModPackage
 
@@ -34,11 +34,12 @@ RunCommands workingdir\commands\customization\elite\4_customization_globals.cmds
 # RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice.cmds
 
 # -----------------------------------------
-# |            REACH MAIN MENU            |
+# |              REACH MENU               |
 # -----------------------------------------
 # WILL USE 200Mb OF DEDICATED WAM
 RunCommands workingdir\commands\mainmenu\1_mainmenu_port.cmds
 RunCommands workingdir\commands\mainmenu\2_mod_globals.cmds
+RunCommands workingdir\commands\mainmenu\3_UI.cmds
 
 
 AddModFiles workingdir\assets
