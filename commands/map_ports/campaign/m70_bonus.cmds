@@ -1,5 +1,7 @@
 OpenCacheFile reachmaps\m70_bonus.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
 IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
 
 IgnoreBlamTag objects\characters\marine\marine.scenery

@@ -180,7 +180,13 @@ SetField Materials[172].RenderMethod objects\props\human\unsc\bitmaps\re_entry_p
 SetField Materials[173].RenderMethod objects\cinematics\package\shaders\package.shader
 SetField Materials[174].RenderMethod objects\cinematics\package\shaders\package_glass.shader
 SetField Materials[175].RenderMethod objects\characters\marine\shaders\marine_odst_set.shader
-ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_3p.fbx Markers TriangleList
+ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_3p.fbx Markers TriangleStrip
+
+# Scarf Jun
+SetField Geometry.Meshes[178].Parts[0].FlagsNew PreventBackfaceCulling
+
+# Scarf Secondary
+SetField Geometry.Meshes[179].Parts[0].FlagsNew PreventBackfaceCulling
 
 # Flaming Ninja effect
 SetField MarkerGroups[17].Name no
@@ -297,7 +303,7 @@ SetField Materials[21].RenderMethod objects\characters\spartans\shaders\spartan_
 SetField Materials[22].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_adrianna.shader
 SetField Materials[23].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_pouch_emile.shader
 SetField Materials[24].RenderMethod objects\characters\spartans\shaders\spartan_thigh\spartan_thigh_medpack.shader
-ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_fp_body.fbx Markers TriangleList
+ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_fp_body.fbx Markers TriangleStrip
 
 # LEFT THIGH
 AddBlockElements Regions[2].Permutations 1
@@ -310,7 +316,8 @@ SetField Regions[3].Permutations[*].Name base
 SetField Regions[3].Permutations[*].MeshIndex -1
 
 # DO NOT DISPLAY ARMOR LIGHT IN FP
-SetField Materials[1].RenderMethod objects\multi\shaders\invisible.shader
+# Using the invisible shader broke active camo
+SetField Materials[1].RenderMethod null
 SaveTagChanges
 Exit
 
@@ -327,7 +334,7 @@ SetField Materials[5].RenderMethod objects\characters\spartan_jorge\shaders\spar
 SetField Materials[6].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tricorder.shader
 SetField Materials[7].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_tracker_jun.shader
 SetField Materials[8].RenderMethod objects\characters\spartans\shaders\spartan_forearm\spartan_forearm_shotgun_reloader_emile.shader
-ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_fp_arms.fbx Markers TriangeList
+ReplaceRenderGeometry workingdir\models\mp_masterchief\mp_masterchief_fp_arms.fbx Markers TriangleStrip
 
 # LEFT WRIST
 AddBlockElements Regions[1].Permutations 1

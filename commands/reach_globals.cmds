@@ -1,0 +1,8 @@
+# Run this script everytime you port from a reach map
+NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
+
+NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_round_fiery.bitmap fx\particles\flare\_bitmaps\muzzle_flash_round_fiery
+NameBlamTag fx\bitmaps\flash\flash_large.bitmap fx\particles\flare\_bitmaps\flash_large
+NameBlamTag fx\bitmaps\flash\glow_soft.bitmap fx\particles\flare\_bitmaps\glow_soft
+NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_long_soft.bitmap fx\particles\flare\_bitmaps\muzzle_flash_long_soft
+NameBlamTag fx\bitmaps\atmospheric\smoke_fiery_large.bitmap fx\particles\atmospheric\_bitmaps\smoke_fiery_large

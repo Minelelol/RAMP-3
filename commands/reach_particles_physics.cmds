@@ -1,0 +1,27 @@
+# Run this script everytime you port a projectile, explosion, or hell anything that emits particle from reach maps
+# ONLY FOR MP MAPS
+NameBlamTag fx\physics_templates\_default.particle_physics reach\fx\physics_templates\default
+NameBlamTag fx\physics_templates\_nil.particle_physics reach\fx\physics_templates\nil
+NameBlamTag fx\physics_templates\bullet_casings.particle_physics reach\fx\physics_templates\bullet_casings
+NameBlamTag fx\physics_templates\damage_smoke.particle_physics reach\fx\physics_templates\damage_smoke
+NameBlamTag fx\physics_templates\ejecta.particle_physics reach\fx\physics_templates\ejecta
+NameBlamTag fx\physics_templates\explosion_fireball.particle_physics reach\fx\physics_templates\explosion_fireball
+NameBlamTag fx\physics_templates\explosion_smoke.particle_physics reach\fx\physics_templates\explosion_smoke
+NameBlamTag fx\physics_templates\fire.particle_physics reach\fx\physics_templates\fire
+NameBlamTag fx\physics_templates\fire_embers.particle_physics reach\fx\physics_templates\fire_embers
+NameBlamTag fx\physics_templates\fire_smoke.particle_physics reach\fx\physics_templates\fire_smoke
+NameBlamTag fx\physics_templates\generic_clumps_small.particle_physics reach\fx\physics_templates\generic_clumps_small
+NameBlamTag fx\physics_templates\generic_fragments_large.particle_physics reach\fx\physics_templates\generic_fragments_large
+NameBlamTag fx\physics_templates\generic_fragments_medium.particle_physics reach\fx\physics_templates\generic_fragments_medium
+NameBlamTag fx\physics_templates\generic_fragments_small.particle_physics reach\fx\physics_templates\generic_fragments_small
+NameBlamTag fx\physics_templates\glass.particle_physics reach\fx\physics_templates\glass
+NameBlamTag fx\physics_templates\impact_smoke.particle_physics reach\fx\physics_templates\impact_smoke
+NameBlamTag fx\physics_templates\impact_sparks.particle_physics reach\fx\physics_templates\impact_sparks
+NameBlamTag fx\physics_templates\small_rocks.particle_physics reach\fx\physics_templates\small_rocks
+NameBlamTag fx\physics_templates\smoke.particle_physics reach\fx\physics_templates\smoke
+NameBlamTag fx\physics_templates\smoke_slow.particle_physics reach\fx\physics_templates\smoke_slow
+NameBlamTag fx\physics_templates\snow_clumps.particle_physics reach\fx\physics_templates\snow_clumps
+NameBlamTag fx\physics_templates\sparks.particle_physics reach\fx\physics_templates\sparks
+
+NameBlamTag fx\particles\models\mesh_fx\blast_radius\blast_radius.particle reach\fx\particles\models\mesh_fx\blast_radius\blast_radius
+NameBlamTag fx\particles\models\mesh_fx\blast_radius\blast_radius.particle_model reach\fx\particles\models\mesh_fx\blast_radius\blast_radius

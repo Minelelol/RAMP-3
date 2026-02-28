@@ -41,6 +41,18 @@ RunCommands workingdir\commands\mainmenu\1_mainmenu_port.cmds
 RunCommands workingdir\commands\mainmenu\2_mod_globals.cmds
 RunCommands workingdir\commands\mainmenu\3_UI.cmds
 
+# -----------------------------------------
+# |             REACH WEAPONS             |
+# -----------------------------------------
+StringId Add mineleloldabest_left_hand_spartan_fp
+StringId Add mineleloldabest_left_hand_elite_fp
+RunCommands workingdir\commands\weapons\port\01_reach_assault_rifle.cmds
+RunCommands workingdir\commands\weapons\port\02_reach_dmr.cmds
+RunCommands workingdir\commands\weapons\port\03_vkmt_br.cmds
+RunCommands workingdir\commands\weapons\port\04_reach_magnum.cmds
+RunCommands workingdir\commands\weapons\port\05_reach_plasma_pistol.cmds
+RunCommands workingdir\commands\weapons\port\06_reach_plasma_rifle.cmds
+RunCommands workingdir\commands\weapons\port\07_reach_energy_sword.cmds
 
 AddModFiles workingdir\assets
 SaveModPackage

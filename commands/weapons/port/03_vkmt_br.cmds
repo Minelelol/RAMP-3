@@ -1,0 +1,100 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap sequence objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate workingdir\bitmaps\Weapons\VKMT\BR\numbers
+ForEach bitm named: objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate GenerateMipmaps
+
+GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_diffuse workingdir\bitmaps\Weapons\VKMT\BR\br_carry_diffuse.dds
+ForEach bitm named: objects\weapons\rifle\battle_rifle\bitmaps\br_carry_diffuse GenerateMipmaps
+
+GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal workingdir\bitmaps\Weapons\VKMT\BR\br_carry_normal.dds linear dxn
+ForEach bitm named: objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal GenerateMipmaps
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_lens.shader objects\weapons\rifle\battle_rifle\shaders\br_lens
+EditTag objects\weapons\rifle\battle_rifle\shaders\br_lens.shader
+SetArgument albedo_color 0.16078432 0.18039216 0.25490198 1
+SetArgument specular_tint 0.62352943 0.7019608 1
+SetArgument fresnel_color 0.0627451 0.15294118 0.48627454
+SetArgument env_tint_color 0.16078432 0.18039216 0.25490198
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\ones_dmr.shader objects\weapons\rifle\battle_rifle\shaders\ones_br
+ForEach shader named: objects\weapons\rifle\battle_rifle\shaders\ones_br SetBitmap self_illum_map objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate.bitmap
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\tens_dmr.shader objects\weapons\rifle\battle_rifle\shaders\tens_br
+ForEach shader named: objects\weapons\rifle\battle_rifle\shaders\tens_br SetBitmap self_illum_map objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate.bitmap
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader objects\weapons\rifle\battle_rifle\shaders\br_carry
+EditTag objects\weapons\rifle\battle_rifle\shaders\br_carry.shader
+SetBitmap base_map objects\weapons\rifle\battle_rifle\bitmaps\br_carry_diffuse.bitmap
+SetBitmap bump_map objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal.bitmap
+SetArgument albedo_color 0.050980397 0.050980397 0.050980397 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle
+ImportTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.render_model workingdir\tags\weapons\VKMT\battle_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.render_model
+SetField Materials[0].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\battle_rifle\shaders\br_lens.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_metal.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_metal_shiny.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_rubber.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\battle_rifle\shaders\br_carry.shader
+SetField Materials[6].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_lens_glass.shader
+
+SetField Materials[8].RenderMethod objects\weapons\rifle\battle_rifle\shaders\ones_br.shader
+SetField Materials[9].RenderMethod objects\weapons\rifle\battle_rifle\shaders\tens_br.shader
+RemoveBlockElements Materials 10 *
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\BR\battle_rifle.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.096 -0.0048 0.024
+SetField MarkerGroups[*].Markers[*].Rotation -0.62 0.185 -0.44 0.625
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.079 -0.0001 0.0182
+SetField MarkerGroups[*].Markers[*].Rotation -0.598 0.1255 -0.49 0.6
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\rifle\battle_rifle\battle_rifle.weapon objects\weapons\rifle\battle_rifle\battle_rifle_stupiddupe
+NameBlamTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.weapon objects\weapons\rifle\battle_rifle\battle_rifle
+NameBlamTag dw3\r3ach\ui\chud\battle_rifle.chud_definition ui\chud\battle_rifle
+
+PortTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.model
+# PortTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
+# PortTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_elite\fp_elite.model_animation_graph
+
+PortTag Replace Single objects\weapons\rifle\battle_rifle\battle_rifle.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit

@@ -95,7 +95,7 @@ SetField Materials[89].RenderMethod objects\characters\elite\shaders\elite_thigh
 SetField Materials[90].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh.shader
 SetField Materials[91].RenderMethod objects\characters\elite\shaders\elite_thigh\elite_ultra_thigh_metal.shader
 SetField Materials[92].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
-ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_3p.dae TriangleList
+ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_3p.dae TriangleStrip
 
 # WEAPON BACK
 SetField MarkerGroups[48].Markers[0].Translation 0.0725 -0.16 0.015
@@ -153,12 +153,13 @@ SetField Materials[22].RenderMethod objects\characters\elite\shaders\elite_helme
 SetField Materials[23].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_thighs.shader
 SetField Materials[24].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
 SetField Materials[25].RenderMethod objects\characters\elite\shaders\elite_base\elite_base_upper.shader
-ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_body.fbx Markers TriangleList
+ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_body.fbx Markers TriangleStrip
 
 # Removing Ilumn on the legs
-SetField Materials[8].RenderMethod objects\multi\shaders\invisible.shader
-SetField Materials[10].RenderMethod objects\multi\shaders\invisible.shader
-SetField Materials[21].RenderMethod objects\multi\shaders\invisible.shader
+# Using the invisible shader broke active camo
+SetField Materials[8].RenderMethod null
+SetField Materials[10].RenderMethod null
+SetField Materials[21].RenderMethod null
 
 # HIPS
 AddBlockElements Regions[3].Permutations 1
@@ -194,7 +195,7 @@ SetField Materials[19].RenderMethod objects\characters\elite\shaders\elite_illum
 SetField Materials[20].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_heretic_helmet.shader
 SetField Materials[21].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_arby_arms.shader
 SetField Materials[22].RenderMethod objects\characters\elite\shaders\elite_helmet\elite_honor_helmet.shader
-ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_arms.fbx Markers TriangleList
+ReplaceRenderGeometry workingdir\models\mp_elite\mp_elite_fp_arms.fbx Markers TriangleStrip
 
 # LEFT GLOVE
 AddBlockElements Regions[3].Permutations 1

@@ -1,0 +1,99 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\weapons\pistol\magnum\bitmaps\magnum_diffuse workingdir\bitmaps\Weapons\VKMT\MAG\magnum_diffuse.dds
+ForEach bitm named: magnum_diffuse GenerateMipmaps
+
+GenerateBitmap linear objects\weapons\pistol\magnum\bitmaps\magnum_zbump workingdir\bitmaps\Weapons\VKMT\MAG\magnum_zbump.dds
+ForEach bitm named: magnum_zbump GenerateMipmaps
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+NameBlamTag objects\weapons\pistol\magnum\bitmaps\magnum_illum.bitmap reach\objects\weapons\pistol\magnum\bitmaps\magnum_illum
+
+PortTag objects\weapons\pistol\magnum\shaders\magnum_composite.shader
+PortTag objects\weapons\pistol\magnum\shaders\magnum_metal.shader
+PortTag objects\weapons\pistol\magnum\shaders\magnum_metal_shiny.shader
+PortTag objects\weapons\pistol\magnum\shaders\magnum_engraving.shader
+PortTag objects\weapons\pistol\magnum\shaders\magnum_illum.shader
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\pistol\magnum\magnum
+ImportTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.render_model workingdir\tags\weapons\VKMT\magnum.render_model
+EditTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.render_model
+SetField Materials[0].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_metal_shiny.shader
+SetField Materials[3].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_engraving.shader
+SetField Materials[4].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_illum.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\MAG\magnum.fbx TriangleStrip
+SetField Geometry.Meshes[0].Parts[2].FlagsNew PreventBackfaceCulling
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.004 -0.00277 -0.0188
+SetField MarkerGroups[*].Markers[*].Rotation -0.473 -0.02672 -0.3264 0.8179152
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag dw3\r3ach\sound\weapons\magnum\magnum_lod_far.sound
+
+NameBlamTag objects\weapons\pistol\magnum\magnum.weapon objects\weapons\pistol\magnum\magnum_stupiddupe
+NameBlamTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.weapon objects\weapons\pistol\magnum\magnum
+NameBlamTag dw3\r3ach\ui\chud\magnum.chud_definition ui\chud\magnum
+
+PortTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model
+PortTag dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_elite\fp_elite.model_animation_graph
+PortTag objects\powerups\pistol_ammo\pistol_ammo.equipment
+PortTag dw3\r3ach\objects\weapons\pistol\magnum\projectiles\magnum_bullet.projectile
+PortTag dw3\r3ach\objects\weapons\pistol\magnum\firing.effect
+
+PortTag Replace Single objects\weapons\pistol\magnum\magnum.weapon
+Exit
+
+# ------------------------
+# |       LOD FIRE       |
+# ------------------------
+EditTag objects\weapons\pistol\magnum\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag dw3\r3ach\objects\weapons\pistol\magnum\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\magnum\magnum_fire.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      ANIMATION       |
+# ------------------------
+# Third person animation, FP is later in the script
+EditTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model_animation_graph
+AddAnimation Keep workingdir\animations\weapons\magnum
+SaveTagChanges
+Exit

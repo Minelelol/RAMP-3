@@ -1,0 +1,192 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_diffuse workingdir\bitmaps\Weapons\VKMT\PP\plasma_pistol_diffuse.dds
+ForEach bitm named: objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_diffuse GenerateMipmaps
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+# DuplicateTag sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_overheat.sound dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_overheat
+# EditTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_overheat.sound
+# ImportSound workingdir\sounds\weapons\VKMT\PP
+# SaveTagChanges
+# Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+# Yes I'm not kidding
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charging.effect reach\objects\weapons\pistol\plasma_pistol\fx\charging
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\charging_glow.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\charging_glow
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\overheated.effect reach\objects\weapons\pistol\plasma_pistol\fx\overheated
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\overheated_gas.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\overheated_gas
+
+# NameBlamTag objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt.projectile reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt
+
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\projectile.light_volume_system reach\objects\weapons\pistol\plasma_pistol\fx\projectile
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\firing.effect reach\objects\weapons\pistol\plasma_pistol\fx\firing
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\glow_soft.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\glow_soft
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_round.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_round
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\flash_large.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\flash_large
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_long.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_long
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charged\firing.effect reach\objects\weapons\pistol\plasma_pistol\fx\charged\firing
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_long_soft.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_long_soft
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\spark.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\spark
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_long_charged.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\muzzle_flash_long_charged
+NameBlamTag objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_charged_bolt.projectile reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_charged_bolt
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charged\projectile.effect reach\objects\weapons\pistol\plasma_pistol\fx\charged\projectile
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charged\projectile.light_volume_system reach\objects\weapons\pistol\plasma_pistol\fx\charged\projectile
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charged\impact.effect reach\objects\weapons\pistol\plasma_pistol\fx\charged\impact
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charged\impact.decal_system reach\objects\weapons\pistol\plasma_pistol\fx\charged\impact
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\plasma_noise_long_green.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\plasma_noise_long_green
+
+IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_lod_far.sound
+IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_ext.sound
+IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_int.sound
+
+IgnoreBlamTag sound\weapons\plasma_pistol\plasma_charge_lod_far.sound
+IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_ext.sound
+IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_int.sound
+
+# Too quiet
+IgnoreBlamTag sound\weapons\plasma_pistol\charge_fire_reach.sound
+IgnoreBlamTag sound\weapons\plasma_pistol\plas_pistol_fire_reach.sound
+
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_metal.shader
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_rubber.shader
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_shell.shader
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_indicator.shader_halogram
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_display.shader
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_display2.shader
+PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_pilot.shader_halogram
+
+PortTag reach\objects\weapons\pistol\plasma_pistol\fx\charging.effect
+PortTag reach\objects\weapons\pistol\plasma_pistol\fx\overheated.effect
+PortTag reach\objects\weapons\pistol\plasma_pistol\fx\firing.effect
+PortTag reach\objects\weapons\pistol\plasma_pistol\fx\charged\firing.effect
+# PortTag reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt.projectile
+PortTag reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_charged_bolt.projectile
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader
+SetField ShaderProperties[0].Functions[2].InputName illum
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_pilot.shader_halogram
+SetField ShaderProperties[0].Functions[3].InputName pilot
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol
+ImportTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model workingdir\tags\weapons\VKMT\plasma_pistol.render_model
+EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model
+
+SetField Materials[0].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader
+SetField Materials[1].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_rubber.shader
+SetField Materials[3].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_shell.shader
+SetField Materials[4].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_indicator.shader_halogram
+SetField Materials[5].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_display.shader
+SetField Materials[6].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_display2.shader
+SetField Materials[7].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_pilot.shader_halogram
+
+SetField MarkerGroups[0].Name fx_horizontal_flare
+SetField MarkerGroups[0].Markers[0].Flags HasNodeRelativeDirection
+
+SetField MarkerGroups[9].Name fx_vent
+SetField MarkerGroups[9].Markers[0].Flags HasNodeRelativeDirection
+SetField MarkerGroups[9].Markers[0].Rotation 0.31392574 -0.6333469 0.31415364 0.63374263
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\PP\plasma_pistol.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.0475 0.0046 -0.0282
+SetField MarkerGroups[*].Markers[*].Rotation -0.4714 0.07865 -0.5158 0.7109
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon objects\weapons\pistol\plasma_pistol\plasma_pistol_stupiddupe
+NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon objects\weapons\pistol\plasma_pistol\plasma_pistol
+NameBlamTag dw3\r3ach\ui\chud\plasma_pistol.chud_definition ui\chud\plasma_pistol
+# NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt.projectile reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt
+NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\firing.effect reach\objects\weapons\pistol\plasma_pistol\fx\firing
+NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_charged_bolt.projectile reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_charged_bolt
+NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\firing_charged.effect reach\objects\weapons\pistol\plasma_pistol\fx\charged\firing
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charging.effect reach\objects\weapons\pistol\plasma_pistol\fx\charging
+NameBlamTag objects\weapons\pistol\plasma_pistol\fx\overheated.effect reach\objects\weapons\pistol\plasma_pistol\fx\overheated
+
+PortTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.model
+PortTag dw3\r3ach\sound\weapons\plasma_pistol\plasmapistol_charging_reach\plasmapistol_charging_reach.sound_looping
+PortTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt.projectile
+
+PortTag dw3\r3ach\sound\weapons\plasma_pistol\plas_pistol_fire_reach.sound
+PortTag dw3\r3ach\sound\weapons\plasma_pistol\charge_fire_reach.sound
+
+PortTag Replace Single objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon
+Exit
+
+# ------------------------
+# |       LOD FIRE       |
+# ------------------------
+EditTag objects\weapons\pistol\plasma_pistol\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag reach\objects\weapons\pistol\plasma_pistol\fx\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\plasma_pistol\plas_pistol_fire_reach.sound
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol\fx\charged\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag reach\objects\weapons\pistol\plasma_pistol\fx\charged\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\plasma_pistol\charge_fire_reach.sound
+SetField Events[0].Parts[3].Type null
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon
+SetField Functions[4].TurnOffWith battery
+SaveTagChanges
+Exit

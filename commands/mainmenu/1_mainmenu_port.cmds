@@ -11,6 +11,8 @@ GenerateBitmap levels\ui\mainmenu\bitmaps\campaign_act3_background workingdir\bi
 # |                PORTING                |
 # -----------------------------------------
 OpenCacheFile reachmapsdir\mainmenu.map
+RunCommands workingdir\commands\reach_globals.cmds
+
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 IgnoreBlamTag objects\characters\elite\elite.biped
 IgnoreBlamTag objects\characters\spartans\spartans.biped

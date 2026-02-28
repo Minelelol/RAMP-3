@@ -1,5 +1,6 @@
 OpenCacheFile reachmaps\m45.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
 
 IgnoreBlamTag objects\characters\marine\marine.scenery
 IgnoreBlamTag objects\levels\shared\pathfinding_helper_railing\pathfinding_helper_railing.scenery

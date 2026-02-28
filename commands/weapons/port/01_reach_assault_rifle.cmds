@@ -1,0 +1,114 @@
+# I realllllly do want to put 2k diffuse texture but unfortnuately optimization goes brrr first
+# GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_diffuse workingdir\bitmaps\Weapons\VKMT\AR\assault_rifle_diffuse.dds
+# ForEach bitm named: objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_diffuse GenerateMipmaps
+
+# While the visual difference between 1k diffuse and 2k diffuse are noticeable, 2k normals are not. like legit I could not find a difference AT ALL
+# GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_normal workingdir\bitmaps\Weapons\VKMT\AR\assault_rifle_normal.dds linear
+# ForEach bitm named: objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_normal GenerateMipmaps
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+PortTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\compass.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\display.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\item.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\ones.shader
+PortTag objects\weapons\rifle\assault_rifle\shaders\tens.shader
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle
+ImportTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.render_model workingdir\tags\weapons\VKMT\assault_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.render_model
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\assault_rifle\shaders\display.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\assault_rifle\shaders\item.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\assault_rifle\shaders\ones.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\assault_rifle\shaders\tens.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\assault_rifle\shaders\compass.shader
+SetField Materials[8].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[9].RenderMethod objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\AR\assault_rifle.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.098 -0.00226 0.0147
+SetField MarkerGroups[*].Markers[*].Rotation -0.6241 0.16707 -0.45504 0.61277
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.106 0 0.0125
+SetField MarkerGroups[*].Markers[*].Rotation -0.67 0.208 -0.48 0.6
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag dw3\r3ach\sound\weapons\assault_rifle\assault_rifle_lod_far.sound
+
+NameBlamTag objects\weapons\rifle\assault_rifle\assault_rifle.weapon objects\weapons\rifle\assault_rifle\assault_rifle_stupid_dupe_wannabe
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.weapon objects\weapons\rifle\assault_rifle\assault_rifle
+NameBlamTag dw3\r3ach\ui\chud\assault_rifle.chud_definition ui\chud\assault_rifle
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny.shader objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\unsc_decals_fp.shader objects\bitmaps\decals\shaders\unsc_decals_fp
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\compass.shader objects\weapons\rifle\assault_rifle\shaders\compass
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\display.shader objects\weapons\rifle\assault_rifle\shaders\display
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\item.shader objects\weapons\rifle\assault_rifle\shaders\item
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\ones.shader objects\weapons\rifle\assault_rifle\shaders\ones
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\shaders\tens.shader objects\weapons\rifle\assault_rifle\shaders\tens
+
+PortTag dw3\r3ach\objects\weapons\rifle\assault_rifle\projectiles\assault_rifle_bullet.projectile
+PortTag dw3\r3ach\objects\weapons\rifle\assault_rifle\firing.effect
+PortTag dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.model
+
+PortTag Replace Single objects\weapons\rifle\assault_rifle\assault_rifle.weapon
+Exit
+
+# ------------------------
+# |       LOD FIRE       |
+# ------------------------
+EditTag objects\weapons\rifle\assault_rifle\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\assault_rifle\ar_fire.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit

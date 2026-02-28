@@ -1,0 +1,140 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\weapons\plasma_rifle\plas_rif_fire_reach.sound
+IgnoreBlamTag sound\weapons\plasma_rifle\plasma_rifle_lod_far.sound
+IgnoreBlamTag sound\weapons\plasma_rifle\plasma_rifle_tails_ext.sound
+IgnoreBlamTag sound\weapons\plasma_rifle\plasma_rifle_tails_int.sound
+
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\overheated.effect reach\objects\weapons\rifle\plasma_rifle\fx\overheated
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\overheated_gas.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\overheated_gas
+
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\firing.effect reach\objects\weapons\rifle\plasma_rifle\fx\firing
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_round.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_rounds
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\flash_large.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\flash_large
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\glow_soft.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\glow_soft
+# NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_plasma.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_plasma
+# NameBlamTag fx\particles\plasma\plasma_blue_small.particle reach\fx\particles\plasma\plasma_blue_small
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_long_soft.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_long_soft
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_long.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\muzzle_flash_long
+
+PortTag reach\objects\weapons\rifle\plasma_rifle\fx\overheated.effect
+PortTag reach\objects\weapons\rifle\plasma_rifle\fx\firing.effect
+
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_metal.shader
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_rubber.shader
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_shell.shader
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_display.shader
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_gauge.shader
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_heat.shader
+PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_pilot.shader_halogram
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_pilot.shader_halogram
+# SetField ShaderProperties[0].Functions[2].InputName overheated_2
+
+SetField ShaderProperties[0].Functions[3].InputName pilot
+SetField ShaderProperties[0].Functions[3].Function.Data 00340000000000000000004000000000000000006F12833A6F12033B00000000
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle
+ImPortTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.render_model workingdir\tags\weapons\VKMT\plasma_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.render_model
+SetField Materials[0].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_metal.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_rubber.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_shell.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
+SetField Materials[4].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_display.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_gauge.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_heat.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_pilot.shader_halogram
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\PR\plasma_rifle.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.021 0.0068 -0.047
+SetField MarkerGroups[*].Markers[*].Rotation -0.6 0.205 -0.47 0.6
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag dw3\r3ach\sound\weapons\plasma_rifle\plasma_rifle_lod_far.sound
+
+NameBlamTag objects\weapons\rifle\plasma_rifle\plasma_rifle.weapon objects\weapons\rifle\plasma_rifle\plasma_rifle_stupiddupe
+NameBlamTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.weapon objects\weapons\rifle\plasma_rifle\plasma_rifle
+NameBlamTag dw3\r3ach\ui\chud\plasma_rifle.chud_definition ui\chud\plasma_rifle
+
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\overheated.effect reach\objects\weapons\rifle\plasma_rifle\fx\overheated
+NameBlamTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\firing.effect reach\objects\weapons\rifle\plasma_rifle\fx\firing
+
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.model
+PortTag dw3\r3ach\sound\weapons\plasma_rifle\prifle_heat_loop\prifle_heat_loop.sound_looping
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\projectiles\plasma_rifle_bolt.projectile
+PortTag dw3\r3ach\sound\weapons\plasma_rifle\plas_rif_fire_reach.sound
+
+PortTag Replace Single objects\weapons\rifle\plasma_rifle\plasma_rifle.weapon
+Exit
+
+# ------------------------
+# |       LOD FIRE       |
+# ------------------------
+EditTag objects\weapons\rifle\plasma_rifle\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag reach\objects\weapons\rifle\plasma_rifle\fx\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\plasma_rifle\plas_rif_fire_reach.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\plasma_rifle\plasma_rifle.weapon
+
+# Fix the plasma rifle pilot by adding missing functions
+AddBlockElements Functions
+SetField Functions[*].ImportName age
+SetField Functions[*].ExportName battery
+SetField Functions[*].Flags Invert
+SetField Functions[*].DefaultFunction.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+AddBlockElements Functions
+SetField Functions[*].ImportName overheated
+SetField Functions[*].ExportName pilot
+SetField Functions[*].TurnOffWith battery
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000002400000002000000040000CDCDCC4C3E0000A0C00000803F04000000FFFF7F7F0000000000000000
+SaveTagChanges
+Exit

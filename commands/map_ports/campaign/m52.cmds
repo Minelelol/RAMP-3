@@ -1,5 +1,6 @@
 OpenCacheFile reachmaps\m52.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
 
 IgnoreBlamTag cinematics\052la_airlift\052la_airlift.cinematic
 IgnoreBlamTag cinematics\052lb_reflection\052lb_reflection.cinematic

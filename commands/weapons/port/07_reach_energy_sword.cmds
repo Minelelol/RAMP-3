@@ -1,0 +1,95 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+IgnoreBlamTag objects\weapons\melee\energy_sword\fx\sword_on_1p.light_volume_system
+
+NameBlamTag objects\weapons\melee\energy_sword\energy_sword.render_model dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword
+
+PortTag dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.render_model
+PortTag objects\weapons\melee\energy_sword\fx\sword_activate.effect
+PortTag objects\weapons\melee\energy_sword\fx\sword_on.effect
+
+Exit
+
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag dw3\r3ach\sound\weapons\energy_sword\sword_ready.sound
+
+NameBlamTag objects\weapons\melee\energy_blade\energy_blade.weapon objects\weapons\melee\energy_blade\energy_blade_whymustfatewriteinscarlet
+NameBlamTag dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.weapon objects\weapons\melee\energy_blade\energy_blade
+NameBlamTag dw3\r3ach\ui\chud\energy_sword.chud_definition ui\chud\sword
+NameBlamTag dw3\r3ach\objects\weapons\melee\energy_sword\attachments\blade_on.effect objects\weapons\melee\energy_sword\fx\sword_on
+# NameBlamTag dw3\r3ach\objects\weapons\melee\energy_sword\attachments\blade_activate.effect objects\weapons\melee\energy_sword\fx\sword_activate
+
+PortTag dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.model
+PortTag dw3\r3ach\objects\weapons\melee\energy_sword\attachments\blade_activate.effect
+# PortTag dw3\r3ach\objects\weapons\melee\energy_sword\attachments\blade_on.effect
+PortTag dw3\r3ach\objects\weapons\melee\energy_sword\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\melee\energy_sword\animations\fp_elite\fp_elite.model_animation_graph
+
+PortTag Replace Single objects\weapons\melee\energy_blade\energy_blade.weapon
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\weapons\melee\energy_sword\shaders\energy_sword_blade.shader_halogram
+SetField ShaderProperties[0].Functions[0].InputName camo
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\melee\energy_sword\shaders\energy_sword_blade_activation.shader_halogram
+SetField ShaderProperties[0].Functions[3].InputName camo
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\melee\energy_sword\shaders\energy_sword_blade_plasma.shader_halogram
+SetField ShaderProperties[0].Functions[4].InputName camo
+SetField ShaderProperties[0].Functions[8].InputName camo
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\melee\energy_sword\fx\sword_activate.effect
+SetField Events[2].DelayBounds 0.7 0.7
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.render_model
+SetField Nodes[0].Name handle
+SetField Nodes[1].Name blades
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+# ADDING REACH EFFECTS
+EditTag objects\weapons\melee\energy_blade\energy_blade.weapon
+
+# AddBlockElements Attachments
+# SetField Attachments[*].Type objects\weapons\melee\energy_sword\fx\sword_on.effect
+# SetField Attachments[*].Marker fx_bladebase
+# SetField Attachments[*].PrimaryScale blade_effects
+
+AddBlockElements Attachments
+SetField Attachments[*].Type objects\weapons\melee\energy_sword\fx\sword_activate.effect
+SetField Attachments[*].Marker fx_handle
+SetField Attachments[*].PrimaryScale turning_on_effects
+SaveTagChanges
+Exit
