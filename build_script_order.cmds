@@ -53,6 +53,7 @@ RunCommands workingdir\commands\weapons\port\04_reach_magnum.cmds
 RunCommands workingdir\commands\weapons\port\05_reach_plasma_pistol.cmds
 RunCommands workingdir\commands\weapons\port\06_reach_plasma_rifle.cmds
 RunCommands workingdir\commands\weapons\port\07_reach_energy_sword.cmds
+RunCommands workingdir\commands\weapons\port\08_reach_fuel_rod.cmds
 
 AddModFiles workingdir\assets
 SaveModPackage
