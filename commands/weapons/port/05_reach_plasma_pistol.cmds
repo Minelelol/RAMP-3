@@ -28,6 +28,8 @@ NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\overheated_gas.par
 
 # NameBlamTag objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt.projectile reach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_bolt
 
+NameBlamTag fx\material_effects\weapons\plasma_pistol_charged_bolt.material_effects fx\material_effects\objects\weapons\plasma_pistol_charged_bolt
+
 NameBlamTag objects\weapons\pistol\plasma_pistol\fx\projectile.light_volume_system reach\objects\weapons\pistol\plasma_pistol\fx\projectile
 NameBlamTag objects\weapons\pistol\plasma_pistol\fx\firing.effect reach\objects\weapons\pistol\plasma_pistol\fx\firing
 NameBlamTag objects\weapons\pistol\plasma_pistol\fx\particles\glow_soft.particle reach\objects\weapons\pistol\plasma_pistol\fx\particles\glow_soft
@@ -82,8 +84,23 @@ SetField ShaderProperties[0].Functions[2].InputName illum
 SaveTagChanges
 Exit
 
+# Best I can do for camo sadly :/
 EditTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_pilot.shader_halogram
+SetField ShaderProperties[0].Functions[2].InputName camo
+SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000803F00000000000000006F12833A6F12033B00000000
+
 SetField ShaderProperties[0].Functions[3].InputName pilot
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_indicator.shader_halogram
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[*].Type Value
+SetField ShaderProperties[0].Functions[*].InputName camo
+SetField ShaderProperties[0].Functions[*].TimePeriod 1
+SetField ShaderProperties[0].Functions[*].Function.Data 00340000000000000000803F00000000000000006F12833A6F12033B00000000
+
+AddFunction self_illum_intensity Real 2
 SaveTagChanges
 Exit
 
@@ -136,6 +153,8 @@ NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pi
 NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\firing_charged.effect reach\objects\weapons\pistol\plasma_pistol\fx\charged\firing
 NameBlamTag objects\weapons\pistol\plasma_pistol\fx\charging.effect reach\objects\weapons\pistol\plasma_pistol\fx\charging
 NameBlamTag objects\weapons\pistol\plasma_pistol\fx\overheated.effect reach\objects\weapons\pistol\plasma_pistol\fx\overheated
+NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\projectiles\detonation.damage_effect objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt_aoe
+NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\projectiles\plasma_pistol_overcharge_bolt.damage_effect objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt
 
 PortTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.model
 PortTag dw3\r3ach\sound\weapons\plasma_pistol\plasmapistol_charging_reach\plasmapistol_charging_reach.sound_looping
@@ -147,6 +166,8 @@ PortTag dw3\r3ach\sound\weapons\plasma_pistol\plas_pistol_fire_reach.sound
 PortTag dw3\r3ach\sound\weapons\plasma_pistol\charge_fire_reach.sound
 
 PortTag Replace Single objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon
+PortTag Replace Single objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt_aoe.damage_effect
+PortTag Replace Single objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt.damage_effect
 Exit
 
 # ------------------------
@@ -188,5 +209,36 @@ Exit
 # ------------------------
 EditTag objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon
 SetField Functions[4].TurnOffWith battery
+
+AddBlockElements Functions
+SetField Functions[*].ImportName active_camouflage
+SetField Functions[*].ExportName camo
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag reach\objects\weapons\pistol\plasma_pistol\fx\charged\impact.effect
+ForEach Events[0].ParticleSystems SetField InverseLodFeatherIn 1
+ForEach Events[0].ParticleSystems SetField LodOutDistance 100
+
+ForEach Events[1].ParticleSystems SetField InverseLodFeatherIn 1
+ForEach Events[1].ParticleSystems SetField LodOutDistance 100
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     DAMAGE EFFECT    |
+# ------------------------
+# no emp?
+EditTag objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt_aoe.damage_effect
+SetField SideEffect Emp
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt.damage_effect
+SetField SideEffect None
 SaveTagChanges
 Exit

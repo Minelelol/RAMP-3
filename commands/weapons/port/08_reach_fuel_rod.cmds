@@ -1,0 +1,121 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+NameBlamTag objects\weapons\support_high\flak_cannon\projectiles\flak_bolt.projectile reach\objects\weapons\support_high\flak_cannon\projectiles\flak_bolt
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\projectile.effect reach\objects\weapons\support_high\flak_cannon\fx\projectile
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\projectile_start.contrail_system reach\objects\weapons\support_high\flak_cannon\fx\projectile_start
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\projectile_start.light_volume_system reach\objects\weapons\support_high\flak_cannon\fx\projectile_start
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\projectile.contrail_system reach\objects\weapons\support_high\flak_cannon\fx\projectile
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\projectile.light_volume_system reach\objects\weapons\support_high\flak_cannon\fx\projectile
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\detonation.effect reach\objects\weapons\support_high\flak_cannon\fx\detonation
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\detonation.decal_system reach\objects\weapons\support_high\flak_cannon\fx\detonation
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\firing.effect reach\objects\weapons\support_high\flak_cannon\fx\firing
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\particles\muzzle_flash_round.particle reach\objects\weapons\support_high\flak_cannon\fx\particles\muzzle_flash_round
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\particles\muzzle_flash_long.particle reach\objects\weapons\support_high\flak_cannon\fx\particles\muzzle_flash_long
+NameBlamTag objects\weapons\support_high\flak_cannon\fx\particles\muzzle_flash_long_soft.particle reach\objects\weapons\support_high\flak_cannon\fx\particles\muzzle_flash_long_soft
+
+NameBlamTag fx\material_effects\weapons\flak_cannon.material_effects fx\material_effects\objects\weapons\flak_cannon
+NameBlamTag sound\weapons\flak_cannon\flak_fire_h3.sound sound\effe\flakcannon_fire_01
+NameBlamTag sound\weapons\flak_cannon\flak_cannon_lod_far.sound sound\effe\flakcannon_fire_lod_01
+NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_ext.sound sound\effe\flakcannon_refl_ext_01
+NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\effe\flakcannon_refl_int_01
+
+NameBlamTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha
+
+PortTag reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_glass.shader
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_metal.shader
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_rubber.shader
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_shell.shader
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_indicator.shader_halogram
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_reload_effect.shader_halogram
+PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_ammo_glass.shader
+
+PortTag reach\objects\weapons\support_high\flak_cannon\projectiles\flak_bolt.projectile
+PortTag reach\objects\weapons\support_high\flak_cannon\fx\firing.effect
+
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\support_high\flak_cannon\flak_cannon
+ImportTag dw3\r3ach\objects\weapons\support_high\flak_cannon\flak_cannon.render_model workingdir\tags\weapons\VKMT\flak_cannon.render_model
+EditTag dw3\r3ach\objects\weapons\support_high\flak_cannon\flak_cannon.render_model
+
+SetField Materials[0].RenderMethod reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram
+SetField Materials[1].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_glass.shader
+SetField Materials[2].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_metal.shader
+SetField Materials[3].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_rubber.shader
+SetField Materials[4].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_shell.shader
+SetField Materials[5].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_indicator.shader_halogram
+SetField Materials[6].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_reload_effect.shader_halogram
+SetField Materials[7].RenderMethod objects\weapons\support_high\flak_cannon\shaders\fuel_rod_ammo_glass.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\FL\flak_cannon.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.051 0.005 -0.0166
+SetField MarkerGroups[*].Markers[*].Rotation -0.7284 0.1699 -0.6834 0.989
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\support_high\flak_cannon\flak_cannon.weapon objects\weapons\support_high\flak_cannon\flak_cannon_dupeWAKARANAIii
+NameBlamTag dw3\r3ach\objects\weapons\support_high\flak_cannon\flak_cannon.weapon objects\weapons\support_high\flak_cannon\flak_cannon
+NameBlamTag dw3\r3ach\ui\chud\flak_cannon.chud_definition ui\chud\fuel_rod_cannon
+NameBlamTag dw3\r3ach\objects\weapons\support_high\flak_cannon\projectiles\flak_bolt.projectile reach\objects\weapons\support_high\flak_cannon\projectiles\flak_bolt
+NameBlamTag dw3\r3ach\objects\weapons\support_high\flak_cannon\firing.effect reach\objects\weapons\support_high\flak_cannon\fx\firing
+
+NameBlamTag dw3\r3ach\objects\weapons\support_high\flak_cannon\projectiles\flak_bolt_detonation.damage_effect objects\weapons\support_high\flak_cannon\projectiles\damage_effects\flak_bolt_explosion
+NameBlamTag dw3\r3ach\objects\weapons\support_high\flak_cannon\projectiles\flak_bolt_impact.damage_effect objects\weapons\support_high\flak_cannon\projectiles\damage_effects\flak_bolt_impact
+
+PortTag dw3\r3ach\objects\weapons\support_high\flak_cannon\flak_cannon.model
+PortTag dw3\r3ach\objects\weapons\support_high\flak_cannon\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\support_high\flak_cannon\animations\fp_elite\fp_elite.model_animation_graph
+
+PortTag Replace Single objects\weapons\support_high\flak_cannon\flak_cannon.weapon
+PortTag Replace Single objects\weapons\support_high\flak_cannon\projectiles\damage_effects\flak_bolt_explosion.damage_effect
+PortTag Replace Single objects\weapons\support_high\flak_cannon\projectiles\damage_effects\flak_bolt_impact.damage_effect
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\flak_cannon\flak_cannon.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SEFC         |
+# ------------------------
+EditTag fx\screen_fx\rocket_explosion.area_screen_effect
+SetField ScreenEffects[3].ScreenShake 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag reach\objects\weapons\support_high\flak_cannon\fx\detonation.effect
+ForEach Events[2].ParticleSystems SetField InverseLodFeatherIn 1
+ForEach Events[2].ParticleSystems SetField LodOutDistance 100
+
+ForEach Events[3].ParticleSystems SetField InverseLodFeatherIn 1
+ForEach Events[3].ParticleSystems SetField LodOutDistance 100
+SaveTagChanges
+Exit
+

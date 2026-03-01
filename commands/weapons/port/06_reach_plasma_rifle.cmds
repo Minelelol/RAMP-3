@@ -39,10 +39,22 @@ Exit
 # |        SHADER        |
 # ------------------------
 EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_pilot.shader_halogram
-# SetField ShaderProperties[0].Functions[2].InputName overheated_2
+SetField ShaderProperties[0].Functions[2].InputName camo
+SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000803F00000000000000006F12833A6F12033B00000000
 
 SetField ShaderProperties[0].Functions[3].InputName pilot
 SetField ShaderProperties[0].Functions[3].Function.Data 00340000000000000000004000000000000000006F12833A6F12033B00000000
+SaveTagChanges
+Exit
+
+# VERI VERI VERI HACKY
+# VERI VERI VERI VERI MUCH HACKY TO GET THE ACTIVE CAMO TO WORK
+EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
+SetField ShaderProperties[0].Functions[1].TimePeriod 2
+SetField ShaderProperties[0].Functions[1].Function.Data 03340200988510FF00000000000000000000000000000000000000001400000002CDCDCD0000803F00000000000000009A99193F
+
+SetField ShaderProperties[0].Functions[2].InputName camo
+SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000204000000000000000006F12833A6F12033B00000000
 SaveTagChanges
 Exit
 
@@ -136,5 +148,10 @@ SetField Functions[*].ImportName overheated
 SetField Functions[*].ExportName pilot
 SetField Functions[*].TurnOffWith battery
 SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000002400000002000000040000CDCDCC4C3E0000A0C00000803F04000000FFFF7F7F0000000000000000
+
+AddBlockElements Functions
+SetField Functions[*].ImportName active_camouflage
+SetField Functions[*].ExportName camo
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
 SaveTagChanges
 Exit

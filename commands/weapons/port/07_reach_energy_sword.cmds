@@ -79,9 +79,8 @@ Exit
 # ------------------------
 # |        WEAPON        |
 # ------------------------
-# ADDING REACH EFFECTS
 EditTag objects\weapons\melee\energy_blade\energy_blade.weapon
-
+# Adding reach effect
 # AddBlockElements Attachments
 # SetField Attachments[*].Type objects\weapons\melee\energy_sword\fx\sword_on.effect
 # SetField Attachments[*].Marker fx_bladebase
@@ -91,5 +90,20 @@ AddBlockElements Attachments
 SetField Attachments[*].Type objects\weapons\melee\energy_sword\fx\sword_activate.effect
 SetField Attachments[*].Marker fx_handle
 SetField Attachments[*].PrimaryScale turning_on_effects
+
+# Fix active camo
+# SetField Functions[8].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000000000002C00000002070000CD3E51EB85C22950B642022084C11C4A7A3F800000040000007F7FFFFF0000000000000000
+
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\melee\energy_blade\energy_blade_useless.weapon
+SetField Model dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.model
+
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\melee\energy_sword\animations\fp_spartan\fp_spartan.model_animation_graph
+
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\melee\energy_sword\energy_sword.render_model
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\melee\energy_sword\animations\fp_elite\fp_elite.model_animation_graph
 SaveTagChanges
 Exit

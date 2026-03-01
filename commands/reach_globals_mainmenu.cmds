@@ -1,4 +1,4 @@
-# Run this script everytime you port from a reach map
+# Run this script everytime you port from the reach mainmenu map
 NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
 
 NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_round_fiery.bitmap fx\particles\flare\_bitmaps\muzzle_flash_round_fiery
@@ -7,12 +7,8 @@ NameBlamTag fx\bitmaps\flash\glow_soft.bitmap fx\particles\flare\_bitmaps\glow_s
 NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_long_soft.bitmap fx\particles\flare\_bitmaps\muzzle_flash_long_soft
 NameBlamTag fx\bitmaps\atmospheric\smoke_fiery_large.bitmap fx\particles\atmospheric\_bitmaps\smoke_fiery_large
 NameBlamTag fx\bitmaps\contrails\beam.bitmap fx\contrails\_bitmaps\beam
-NameBlamTag fx\bitmaps\fragments\rocks.bitmap fx\particles\material\_bitmaps\rocks
+# NameBlamTag fx\bitmaps\fragments\rocks.bitmap fx\particles\material\_bitmaps\rocks
 NameBlamTag fx\bitmaps\plasma\plasma_noise_long.bitmap fx\particles\energy\_bitmaps\plasma_noise_long
 NameBlamTag fx\bitmaps\sparks\spark_ember.bitmap fx\particles\energy\_bitmaps\spark_ember
-NameBlamTag fx\bitmaps\sparks\spark_fiery.bitmap fx\particles\energy\_bitmaps\spark_fiery
+# NameBlamTag fx\bitmaps\sparks\spark_fiery.bitmap fx\particles\energy\_bitmaps\spark_fiery
 NameBlamTag fx\bitmaps\sparks\spark_long.bitmap fx\particles\energy\_bitmaps\spark_long
-NameBlamTag fx\bitmaps\flash\flash_soft.bitmap fx\particles\flare\_bitmaps\flash_soft
-NameBlamTag fx\bitmaps\atmospheric\smoke_fiery_small.bitmap fx\particles\atmospheric\_bitmaps\smoke_fiery_small
-NameBlamTag fx\bitmaps\contrails\energy_braids.bitmap fx\contrails\_bitmaps\energy_braids
-NameBlamTag fx\bitmaps\plasma\plasma_noise.bitmap fx\particles\energy\_bitmaps\plasma_noise
