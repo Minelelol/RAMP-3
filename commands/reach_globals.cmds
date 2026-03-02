@@ -1,6 +1,11 @@
 # Run this script everytime you port from a reach map
-NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
 
+# Texture with same tagnames but the texture are different between reach and base cache
+NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
+NameBlamTag rasterizer\diffusetable.bitmap reach\rasterizer\diffusetable
+NameBlamTag rasterizer\diffuse_power_specular\diffuse_power.bitmap reach\rasterizer\diffuse_power_specular\diffuse_power
+
+# Texture that already exist in base cache but with different tagnames
 NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_round_fiery.bitmap fx\particles\flare\_bitmaps\muzzle_flash_round_fiery
 NameBlamTag fx\bitmaps\flash\flash_large.bitmap fx\particles\flare\_bitmaps\flash_large
 NameBlamTag fx\bitmaps\flash\glow_soft.bitmap fx\particles\flare\_bitmaps\glow_soft

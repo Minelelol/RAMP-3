@@ -1,0 +1,112 @@
+# ------------------------
+# |        BITMAPS       |
+# ------------------------
+GenerateBitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer workingdir\bitmaps\Weapons\VKMT\HAMMER\gravity_hammer.dds
+GenerateBitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_bump workingdir\bitmaps\Weapons\VKMT\HAMMER\gravity_hammer_bump.dds Linear
+ForEach bitm named: reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer GenerateMipmaps
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+NameBlamTag objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer.bitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer
+NameBlamTag objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_bump.bitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_bump
+NameBlamTag objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_illum.bitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_illum
+NameBlamTag objects\weapons\melee\gravity_hammer\shaders\hammer.shader reach\objects\weapons\melee\gravity_hammer\shaders\hammer
+NameBlamTag objects\weapons\melee\gravity_hammer\shaders\hammer_dull.shader reach\objects\weapons\melee\gravity_hammer\shaders\hammer_dull
+NameBlamTag objects\weapons\melee\gravity_hammer\shaders\hammer_illum.shader reach\objects\weapons\melee\gravity_hammer\shaders\hammer_illum
+NameBlamTag objects\weapons\melee\gravity_hammer\shaders\hammer_shiny.shader reach\objects\weapons\melee\gravity_hammer\shaders\hammer_shiny
+NameBlamTag objects\weapons\melee\gravity_hammer\fx\hammer_on.effect reach\objects\weapons\melee\gravity_hammer\fx\hammer_on
+NameBlamTag objects\weapons\melee\gravity_hammer\fx\particles\plasma_wispy.particle reach\objects\weapons\melee\gravity_hammer\fx\particles\plasma_wispy
+NameBlamTag objects\weapons\melee\gravity_hammer\fx\hammer_on.light_volume_system reach\objects\weapons\melee\gravity_hammer\fx\hammer_on
+
+PortTag reach\objects\weapons\melee\gravity_hammer\shaders\hammer.shader
+PortTag reach\objects\weapons\melee\gravity_hammer\shaders\hammer_dull.shader
+PortTag reach\objects\weapons\melee\gravity_hammer\shaders\hammer_illum.shader
+PortTag reach\objects\weapons\melee\gravity_hammer\shaders\hammer_shiny.shader
+PortTag reach\objects\weapons\melee\gravity_hammer\fx\hammer_on.effect
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer
+ImportTag dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer.render_model workingdir\tags\weapons\VKMT\gravity_hammer.render_model
+EditTag dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer.render_model
+
+SetField Materials[0].RenderMethod reach\objects\weapons\melee\gravity_hammer\shaders\hammer.shader
+SetField Materials[1].RenderMethod reach\objects\weapons\melee\gravity_hammer\shaders\hammer_dull.shader
+SetField Materials[2].RenderMethod reach\objects\weapons\melee\gravity_hammer\shaders\hammer_illum.shader
+SetField Materials[3].RenderMethod reach\objects\weapons\melee\gravity_hammer\shaders\hammer_shiny.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\HAM\gravity_hammer.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation -0.005 0.003 -0.10795
+SetField MarkerGroups[*].Markers[*].Rotation 0.085 0.1152 0.4 -0.763
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation -0.0075 0.0075 -0.1118
+SetField MarkerGroups[*].Markers[*].Rotation 0.05 0.08 0.38 -0.91
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\melee\gravity_hammer\gravity_hammer.weapon objects\weapons\melee\gravity_hammer\gravity_hammer_dupelele
+NameBlamTag dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer.weapon objects\weapons\melee\gravity_hammer\gravity_hammer
+NameBlamTag dw3\r3ach\objects\weapons\melee\gravity_hammer\attachments\hammer_on.effect reach\objects\weapons\melee\gravity_hammer\fx\hammer_on
+NameBlamTag dw3\r3ach\ui\chud\gravity_hammer.chud_definition ui\chud\hammer
+
+PortTag dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer.model
+PortTag dw3\r3ach\objects\weapons\melee\gravity_hammer\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\melee\gravity_hammer\animations\fp_elite\fp_elite.model_animation_graph
+
+PortTag Replace Single objects\weapons\melee\gravity_hammer\gravity_hammer.weapon
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\melee\gravity_hammer\gravity_hammer.weapon
+SetField Functions[0].TurnOffWith batter_empty
+# SetField Functions[2].TurnOffWith null
+
+AddBlockElements Functions
+SetField Functions[*].ImportName active_camouflage
+SetField Functions[*].ExportName fx_camo
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000002C00000002000000070000CD85EB513EB65029C2842002427A4A1CC10000803F04000000FFFF7F7F0000000000000000
+
+SetField Attachments[0].SecondaryScale fx_camo
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag reach\objects\weapons\melee\gravity_hammer\fx\hammer_on.effect
+SetField Events[1].Parts[0].Type null
+SaveTagChanges
+Exit
