@@ -1,23 +1,85 @@
 # Run this script everytime you port from a reach map
+SuppressErrors True
 
 # Texture with same tagnames but the texture are different between reach and base cache
 NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
 NameBlamTag rasterizer\diffusetable.bitmap reach\rasterizer\diffusetable
 NameBlamTag rasterizer\diffuse_power_specular\diffuse_power.bitmap reach\rasterizer\diffuse_power_specular\diffuse_power
 
+NameBlamTag fx\bitmaps\plasma\plasma_clouds_256_a.bitmap reach\fx\bitmaps\plasma\plasma_clouds_256_a
+NameBlamTag fx\bitmaps\plasma\plasma_clouds_256_b.bitmap reach\fx\bitmaps\plasma\plasma_clouds_256_b
+
 # Texture that already exist in base cache but with different tagnames
-NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_round_fiery.bitmap fx\particles\flare\_bitmaps\muzzle_flash_round_fiery
-NameBlamTag fx\bitmaps\flash\flash_large.bitmap fx\particles\flare\_bitmaps\flash_large
-NameBlamTag fx\bitmaps\flash\glow_soft.bitmap fx\particles\flare\_bitmaps\glow_soft
-NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_long_soft.bitmap fx\particles\flare\_bitmaps\muzzle_flash_long_soft
+NameBlamTag fx\bitmaps\atmospheric\smoke_fiery_small.bitmap fx\particles\atmospheric\_bitmaps\smoke_fiery_small
 NameBlamTag fx\bitmaps\atmospheric\smoke_fiery_large.bitmap fx\particles\atmospheric\_bitmaps\smoke_fiery_large
+NameBlamTag fx\bitmaps\atmospheric\smoke_directional_large.bitmap fx\particles\atmospheric\_bitmaps\smoke_directional_large
+
+NameBlamTag fx\bitmaps\contrails\basic_trail.bitmap fx\contrails\_bitmaps\basic_trail
 NameBlamTag fx\bitmaps\contrails\beam.bitmap fx\contrails\_bitmaps\beam
+NameBlamTag fx\bitmaps\contrails\energy_braids.bitmap fx\contrails\_bitmaps\energy_braids
+NameBlamTag fx\bitmaps\contrails\energy_trail.bitmap fx\contrails\_bitmaps\energy_trail
+NameBlamTag fx\bitmaps\contrails\flaming_trail.bitmap fx\contrails\_bitmaps\flaming_trail
+NameBlamTag fx\bitmaps\contrails\hunter_beam.bitmap fx\contrails\_bitmaps\hunter_beam
+NameBlamTag fx\bitmaps\contrails\outer_crackle.bitmap fx\contrails\_bitmaps\outer_crackle
+NameBlamTag fx\bitmaps\contrails\split_beam.bitmap fx\contrails\_bitmaps\split_beam
+
+NameBlamTag fx\bitmaps\distortion\distortion_ring.bitmap fx\particles\distortion\_bitmaps\distortion_ring
+NameBlamTag fx\bitmaps\distortion\distortion_shimmer.bitmap fx\particles\distortion\_bitmaps\distortion_shimmer
+
+NameBlamTag fx\bitmaps\fire\fire_clouds_256.bitmap fx\bitmaps\fire\fire_clouds_256
+NameBlamTag fx\bitmaps\fire\fire_large.bitmap fx\particles\energy\_bitmaps\fire_large
+
+NameBlamTag fx\bitmaps\flash\flash_bounce.bitmap fx\particles\flare\_bitmaps\flash_bounce
+NameBlamTag fx\bitmaps\flash\flash_soft.bitmap fx\particles\flare\_bitmaps\flash_soft
+NameBlamTag fx\bitmaps\flash\flash_large.bitmap fx\particles\flare\_bitmaps\flash_large
+NameBlamTag fx\bitmaps\flash\flash_small_long.bitmap fx\particles\flare\_bitmaps\flash_small_long
+NameBlamTag fx\bitmaps\flash\glow_soft.bitmap fx\particles\flare\_bitmaps\glow_soft
+NameBlamTag fx\bitmaps\flash\glow_hard.bitmap fx\particles\flare\_bitmaps\glow_hard
+NameBlamTag fx\bitmaps\flash\light_beam_wide.bitmap fx\particles\flare\_bitmaps\light_beam_wide
+NameBlamTag fx\bitmaps\flash\light_spike.bitmap fx\particles\flare\_bitmaps\light_spike
+NameBlamTag fx\bitmaps\flash\ring.bitmap fx\particles\flare\_bitmaps\ring
+
+NameBlamTag fx\bitmaps\fragments\concrete_chips.bitmap fx\particles\material\_bitmaps\concrete_chips
+NameBlamTag fx\bitmaps\fragments\dirt_clumps.bitmap fx\particles\material\_bitmaps\dirt_clumps
+NameBlamTag fx\bitmaps\fragments\fragments_chitin.bitmap fx\particles\material\_bitmaps\fragments_chitin
+NameBlamTag fx\bitmaps\fragments\fragments_soft.bitmap fx\particles\material\_bitmaps\fragments_soft
+NameBlamTag fx\bitmaps\fragments\glass_chips.bitmap fx\particles\material\_bitmaps\glass_chips
 NameBlamTag fx\bitmaps\fragments\rocks.bitmap fx\particles\material\_bitmaps\rocks
+NameBlamTag fx\bitmaps\fragments\wood_chips.bitmap fx\particles\material\_bitmaps\wood_chips
+
+NameBlamTag fx\bitmaps\plasma\plasma_impact.bitmap fx\particles\energy\_bitmaps\plasma_impact
+NameBlamTag fx\bitmaps\plasma\plasma_impact_long.bitmap fx\particles\energy\_bitmaps\plasma_impact_long
+NameBlamTag fx\bitmaps\plasma\plasma_noise.bitmap fx\particles\energy\_bitmaps\plasma_noise
 NameBlamTag fx\bitmaps\plasma\plasma_noise_long.bitmap fx\particles\energy\_bitmaps\plasma_noise_long
+
+NameBlamTag fx\bitmaps\sparks\spark_burst_large.bitmap fx\particles\energy\_bitmaps\spark_burst_large
+NameBlamTag fx\bitmaps\sparks\spark_burst_medium.bitmap fx\particles\energy\_bitmaps\spark_burst_medium
+NameBlamTag fx\bitmaps\sparks\spark_clean.bitmap fx\particles\energy\_bitmaps\spark_clean
+# TECHNICALLY THE NO MIP ONE IS MORE ACCURATE BUT, tis look better
 NameBlamTag fx\bitmaps\sparks\spark_ember.bitmap fx\particles\energy\_bitmaps\spark_ember
 NameBlamTag fx\bitmaps\sparks\spark_fiery.bitmap fx\particles\energy\_bitmaps\spark_fiery
+NameBlamTag fx\bitmaps\sparks\spark_hot.bitmap fx\particles\energy\_bitmaps\spark_hot
 NameBlamTag fx\bitmaps\sparks\spark_long.bitmap fx\particles\energy\_bitmaps\spark_long
-NameBlamTag fx\bitmaps\flash\flash_soft.bitmap fx\particles\flare\_bitmaps\flash_soft
-NameBlamTag fx\bitmaps\atmospheric\smoke_fiery_small.bitmap fx\particles\atmospheric\_bitmaps\smoke_fiery_small
-NameBlamTag fx\bitmaps\contrails\energy_braids.bitmap fx\contrails\_bitmaps\energy_braids
-NameBlamTag fx\bitmaps\plasma\plasma_noise.bitmap fx\particles\energy\_bitmaps\plasma_noise
+NameBlamTag fx\bitmaps\sparks\spark_long_no_mip.bitmap fx\particles\energy\_bitmaps\spark_long_no_mip
+
+NameBlamTag fx\bitmaps\material\burst_spray.bitmap fx\particles\material\_bitmaps\burst_spray
+NameBlamTag fx\bitmaps\material\impact_burst_large.bitmap fx\particles\material\_bitmaps\impact_burst_large
+NameBlamTag fx\bitmaps\material\impact_burst_medium.bitmap fx\particles\material\_bitmaps\impact_burst_medium
+NameBlamTag fx\bitmaps\material\impact_chunks_medium.bitmap fx\particles\material\_bitmaps\impact_chunks_medium
+NameBlamTag fx\bitmaps\material\impact_chunks_small.bitmap fx\bitmaps\material\impact_chunks_small
+NameBlamTag fx\bitmaps\material\impact_crest_large.bitmap fx\particles\material\_bitmaps\impact_crest_large
+NameBlamTag fx\bitmaps\material\impact_crest_medium.bitmap fx\particles\material\_bitmaps\impact_crest_medium
+NameBlamTag fx\bitmaps\material\impact_spray_large.bitmap fx\particles\material\_bitmaps\impact_spray_large
+NameBlamTag fx\bitmaps\material\impact_spray_medium.bitmap fx\particles\material\_bitmaps\impact_spray_medium
+NameBlamTag fx\bitmaps\material\impact_xtra_large.bitmap fx\particles\material\_bitmaps\impact_xtra_large
+NameBlamTag fx\bitmaps\material\sand_upspray_medium.bitmap fx\particles\material\_bitmaps\sand_upspray_medium
+
+NameBlamTag fx\bitmaps\nature\bugs.bitmap fx\particles\nature\_bitmaps\bugs
+
+# One in reach has alot of mips
+# NameBlamTag fx\bitmaps\newticles\spark_ember.bitmap fx\particles\energy\_bitmaps\spark_ember
+
+NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_round_fiery.bitmap fx\particles\flare\_bitmaps\muzzle_flash_round_fiery
+NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_long_soft.bitmap fx\particles\flare\_bitmaps\muzzle_flash_long_soft
+
+SuppressErrors False

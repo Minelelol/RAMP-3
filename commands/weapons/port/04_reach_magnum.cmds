@@ -95,5 +95,6 @@ Exit
 # Third person animation, FP is later in the script
 EditTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model_animation_graph
 AddAnimation Keep workingdir\animations\weapons\magnum
+SetField Animations[0].AnimationData.AnimationType Replacement
 SaveTagChanges
 Exit

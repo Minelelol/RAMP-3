@@ -28,7 +28,8 @@ PortTag reach\objects\weapons\rifle\plasma_rifle\fx\firing.effect
 PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_metal.shader
 PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_rubber.shader
 PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_shell.shader
-PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
+# PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
+PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
 PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_display.shader
 PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_gauge.shader
 PortTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_heat.shader
@@ -38,23 +39,74 @@ Exit
 # ------------------------
 # |        SHADER        |
 # ------------------------
+
+# Converting halogram to normal shader (this fix active camo) -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+GenerateShader Shader default off none no_specular_mask diffuse_only none simple additive off first_person_never off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator
+EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader
+
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[6].OptionIndex 1
+SetField Options[7].OptionIndex 1
+
+AddBlockElements ShaderProperties
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_0_0_0_0_0_1_1_0_0_0_0_0_0_0.render_method_template
+AddBlockElements ShaderProperties[0].TextureConstants 3
+AddBlockElements ShaderProperties[0].RealConstants 10
+
+SetBitmap base_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap detail_map reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap self_illum_map objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformOverlayIndices.Integer 1024
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 3
+
+SetArgument base_map 2 2 0 0
+SetArgument detail_map 16 16 0 0
+SetArgument albedo_color 0 0 0 1
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.06666667 0.23529413 0.2901961
+SetArgument self_illum_intensity 1.6
+SetArgument wet_material_dim_tint 0 216 216
+SetArgument wet_material_dim_coefficient 1
+
+AddBlockElements ShaderProperties[0].Functions 3
+SetField ShaderProperties[0].Functions[0].Type TranslationX
+SetField ShaderProperties[0].Functions[0].TimePeriod 5
+SetField ShaderProperties[0].Functions[0].Function.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+SetField ShaderProperties[0].Functions[1].Type Color
+SetField ShaderProperties[0].Functions[1].TimePeriod 3
+SetField ShaderProperties[0].Functions[1].Function.Data 03340200988510FF0000000000000000160C110000000000000000001400000002CDCDCD0000803F00000000000000009A99193F
+
+SetField ShaderProperties[0].Functions[2].Type Value
+SetField ShaderProperties[0].Functions[2].TimePeriod 1
+SetField ShaderProperties[0].Functions[2].Function.Data 03340000000020400000803F00000000000000006F12833A6F12033B1400000002CDCDCD0000803F00000000000000009A99193F
+
+AddFunction detail_map Real 0
+AddFunction self_illum_color Real 1
+AddFunction self_illum_intensity Real 2
+
+SetField ShaderProperties[0].BlendMode Additive
+SetField SortLayer Normal
+SetField Version 9
+SetField PredictionAtomIndex -1
+
+SaveTagChanges
+Exit
+
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
 EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_pilot.shader_halogram
 SetField ShaderProperties[0].Functions[2].InputName camo
 SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000803F00000000000000006F12833A6F12033B00000000
 
 SetField ShaderProperties[0].Functions[3].InputName pilot
 SetField ShaderProperties[0].Functions[3].Function.Data 00340000000000000000004000000000000000006F12833A6F12033B00000000
-SaveTagChanges
-Exit
-
-# VERI VERI VERI HACKY
-# VERI VERI VERI VERI MUCH HACKY TO GET THE ACTIVE CAMO TO WORK
-EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
-SetField ShaderProperties[0].Functions[1].TimePeriod 2
-SetField ShaderProperties[0].Functions[1].Function.Data 03340200988510FF00000000000000000000000000000000000000001400000002CDCDCD0000803F00000000000000009A99193F
-
-SetField ShaderProperties[0].Functions[2].InputName camo
-SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000204000000000000000006F12833A6F12033B00000000
 SaveTagChanges
 Exit
 
@@ -67,7 +119,7 @@ EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.render_model
 SetField Materials[0].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_metal.shader
 SetField Materials[1].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_rubber.shader
 SetField Materials[2].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_shell.shader
-SetField Materials[3].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader_halogram
+SetField Materials[3].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_indicator.shader
 SetField Materials[4].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_display.shader
 SetField Materials[5].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_gauge.shader
 SetField Materials[6].RenderMethod objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_heat.shader
@@ -124,6 +176,17 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plas_rif_fire_reach.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 3
+SetField Playback.DistanceParameters.MaximumDistance 30
+SaveTagChanges
+Exit
+
+# ------------------------
 # |         MODEL        |
 # ------------------------
 EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.model
@@ -138,9 +201,9 @@ EditTag objects\weapons\rifle\plasma_rifle\plasma_rifle.weapon
 
 # Fix the plasma rifle pilot by adding missing functions
 AddBlockElements Functions
+SetField Functions[*].Flags Invert
 SetField Functions[*].ImportName age
 SetField Functions[*].ExportName battery
-SetField Functions[*].Flags Invert
 SetField Functions[*].DefaultFunction.Data 00340000000000000000803F0000000000000000000000000000000000000000
 
 AddBlockElements Functions

@@ -15,7 +15,7 @@ ExitModPackage
 # -----------------------------------------
 # |             REACH SPARTAN             |
 # -----------------------------------------
-# WILL USE 3.8Gb OF DEDICATED WAM
+# PEAKED AT 3.8Gb OF DEDICATED WAM
 RunCommands workingdir\commands\customization\spartan\1_reach_shaders.cmds
 RunCommands workingdir\commands\customization\spartan\2_mcc_shaders.cmds
 RunCommands workingdir\commands\customization\spartan\3_custom_shaders.cmds
@@ -26,7 +26,7 @@ RunCommands workingdir\commands\customization\spartan\6_noble_dialogue_voice.cmd
 # -----------------------------------------
 # |              REACH ELITE              |
 # -----------------------------------------
-# WILL USE 600Mb OF DEDICATED WAM
+# PEAKED AT 600Mb OF DEDICATED WAM
 RunCommands workingdir\commands\customization\elite\1_reach_shaders.cmds
 RunCommands workingdir\commands\customization\elite\2_custom_shaders.cmds
 RunCommands workingdir\commands\customization\elite\3_render_model.cmds
@@ -36,7 +36,7 @@ RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice
 # -----------------------------------------
 # |              REACH MENU               |
 # -----------------------------------------
-# WILL USE 200Mb OF DEDICATED WAM
+# PEAKED AT 200Mb OF DEDICATED WAM
 RunCommands workingdir\commands\mainmenu\1_mainmenu_port.cmds
 RunCommands workingdir\commands\mainmenu\2_mod_globals.cmds
 RunCommands workingdir\commands\mainmenu\3_UI.cmds
@@ -44,6 +44,7 @@ RunCommands workingdir\commands\mainmenu\3_UI.cmds
 # -----------------------------------------
 # |             REACH WEAPONS             |
 # -----------------------------------------
+# PEAKED AT 2.2Gb OF DEDICATED WAM
 StringId Add mineleloldabest_left_hand_spartan_fp
 StringId Add mineleloldabest_left_hand_elite_fp
 RunCommands workingdir\commands\weapons\port\01_reach_assault_rifle.cmds
@@ -55,6 +56,7 @@ RunCommands workingdir\commands\weapons\port\06_reach_plasma_rifle.cmds
 RunCommands workingdir\commands\weapons\port\07_reach_energy_sword.cmds
 RunCommands workingdir\commands\weapons\port\08_reach_fuel_rod.cmds
 RunCommands workingdir\commands\weapons\port\09_reach_gravity_hammer.cmds
+RunCommands workingdir\commands\weapons\port\10_reach_needler.cmds
 
 AddModFiles workingdir\assets
 SaveModPackage
