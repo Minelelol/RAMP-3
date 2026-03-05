@@ -5381,16 +5381,6 @@
             NOTE: For bulk conversion consider using <see cref="M:TagTool.Porting.PortingContext.ConvertTag(System.IO.Stream,System.IO.Stream,TagTool.Cache.CachedTag,System.String,System.Object,TagTool.Porting.PortingContext.ConvertTagOptions@)"/>
             </remarks>
         </member>
-        <member name="P:TagTool.Scripting.Compiler.ScriptSyntaxReader.Reader">
-            <summary>
-            The binary reader which reads from the expression data stream.
-            </summary>
-        </member>
-        <member name="F:TagTool.Scripting.Compiler.ScriptSyntaxReader.Delimiters">
-            <summary>
-            Expression syntax delimiters.
-            </summary>
-        </member>
         <member name="T:TagTool.Serialization.HaloOnlineSerializationContext">
             <summary>
             A serialization context for serializing and deserializing tags.

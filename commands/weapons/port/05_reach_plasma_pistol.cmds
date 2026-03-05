@@ -277,12 +277,8 @@ Exit
 # ------------------------
 # |        EFFECT        |
 # ------------------------
-EditTag reach\objects\weapons\pistol\plasma_pistol\fx\charged\impact.effect
-ForEach Events[0].ParticleSystems SetField InverseLodFeatherIn 1
-ForEach Events[0].ParticleSystems SetField LodOutDistance 100
-
-ForEach Events[1].ParticleSystems SetField InverseLodFeatherIn 1
-ForEach Events[1].ParticleSystems SetField LodOutDistance 100
+EditTag reach\objects\weapons\pistol\plasma_pistol\fx\charging.effect
+ForEach Events[1].ParticleSystems SetField Flags LodAlways10,ParticlesDieWhenEffectEnds
 SaveTagChanges
 Exit
 

@@ -1,0 +1,161 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\weapons\shotgun\shotgun_tails_ext.sound
+IgnoreBlamTag sound\weapons\shotgun\shotgun_tails_int.sound
+
+# Too quiet
+IgnoreBlamTag sound\weapons\shotgun\fire.sound
+
+# It's still mainly gonna use the HO firing effect to keep it inline with the rest of the weapon
+# the only thing that's different is the bullet casing
+# lol nvm it's still red, oh well I'm keeping it ig
+NameBlamTag objects\weapons\rifle\shotgun\fx\firing.effect reach\objects\weapons\rifle\shotgun\fx\firing
+NameBlamTag fx\particles\models\weapons\bullet_casings\shotgun\shotgun.particle reach\fx\particles\models\weapons\bullet_casings\shotgun\shotgun
+NameBlamTag fx\material_effects\weapons\shotgun_casings.material_effects fx\material_effects\objects\weapons\shotgun_casings
+NameBlamTag fx\particles\models\weapons\bullet_casings\_bitmaps\shotgun.bitmap reach\fx\particles\models\weapons\bullet_casings\_bitmaps\shotgun
+NameBlamTag fx\particles\models\weapons\bullet_casings\shotgun\shotgun.particle_model reach\fx\particles\models\weapons\bullet_casings\shotgun\shotgun
+
+PortTag reach\objects\weapons\rifle\shotgun\fx\firing.effect
+
+PortTag objects\weapons\rifle\shotgun\shaders\shotgun_composite.shader
+PortTag objects\weapons\rifle\shotgun\shaders\shotgun_metal.shader
+PortTag objects\weapons\rifle\shotgun\shaders\shotgun_metal_shiny.shader
+PortTag objects\weapons\rifle\shotgun\shaders\shotgun_rubber.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+PortTag objects\weapons\rifle\shotgun\shaders\shotgun_new_aim_illum.shader
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\rifle\shotgun\shotgun
+ImportTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.render_model workingdir\tags\weapons\VKMT\shotgun.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.render_model
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_metal_shiny.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_rubber.shader
+SetField Materials[4].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_new_aim_illum.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\SHOTGUN\shotgun.fbx TriangleStrip
+
+StringId Add primary_ejection_fp
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name primary_ejection_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].NodeIndex 0
+# SetField MarkerGroups[*].Markers[*].Translation 0.02 0 0.085
+# SetField MarkerGroups[*].Markers[*].Translation 0.01 0 0.09
+SetField MarkerGroups[*].Markers[*].Translation 0.0065 0.004 0.09
+SetField MarkerGroups[*].Markers[*].Rotation 0.8070744 -0.44536874 0.15166372 0.3567572
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].NodeIndex 4
+SetField MarkerGroups[*].Markers[*].Translation -0.0275 -0.0003 -0.0105
+SetField MarkerGroups[*].Markers[*].Rotation -0.59 0.068 -0.3 0.5
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].NodeIndex 4
+SetField MarkerGroups[*].Markers[*].Translation -0.002 0.00115 -0.0164
+SetField MarkerGroups[*].Markers[*].Rotation -0.514 0.14 -0.278 0.5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\rifle\shotgun\shotgun.weapon nankadayume
+NameBlamTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.weapon objects\weapons\rifle\shotgun\shotgun
+NameBlamTag dw3\r3ach\ui\chud\shotgun.chud_definition ui\chud\shotgun
+NameBlamTag dw3\r3ach\objects\weapons\rifle\shotgun\firing.effect reach\objects\weapons\rifle\shotgun\fx\firing
+
+PortTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.model
+PortTag dw3\r3ach\objects\weapons\rifle\shotgun\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\shotgun\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\shotgun\projectiles\shotgun_pellet.projectile
+PortTag dw3\r3ach\sound\weapons\shotgun\fire.sound
+
+PortTag Replace Single objects\weapons\rifle\shotgun\shotgun.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag reach\fx\particles\models\weapons\bullet_casings\shotgun\shotgun.particle
+SetField AppearanceFlags TintFromLightmap,Fogged,IsParticleModel,Opaque
+SetField ParticleBillboardStyle WorldParticleModels
+SaveTagChanges
+Exit
+
+EditTag reach\objects\weapons\rifle\shotgun\fx\firing.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\shotgun\fire.sound
+SetField Events[0].Parts[1].Type sound\weapons\shotgun\shotgun_lod_far.sound
+SetField Events[0].Parts[2].Type sound\effe\shotgun_fire_lod_01.sound
+
+AddBlockElements Locations
+SetField Locations[*].MarkerName primary_ejection_fp
+
+CopyBlockElements Events 2 1
+PasteBlockElements Events
+
+SetField Events[2].ParticleSystems[0].CameraMode ThirdPersonOnly
+
+SetField Events[3].ParticleSystems[0].LocationIndex 2
+SetField Events[3].ParticleSystems[0].CameraMode FirstPersonOnly
+SetField Events[3].ParticleSystems[0].Flags ParticlesContinueAsUsualWhenOffscreen,RenderWhenZoomed
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\shotgun\fire.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,Bit4
+SetField Playback.DistanceParameters.MaximumDistance 7
+SaveTagChanges
+Exit
+
+EditTag sound\weapons\shotgun\shotgun_lod_far.sound
+SetField ImportType SingleLayer
+SetField Playback.DistanceParameters.DontPlayDistance 1
+SetField Playback.GainBase -17
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+# The light duration when you fire
+EditTag objects\weapons\rifle\shotgun\shotgun.weapon
+SetField Barrels[0].IlluminationRecoveryTime 0.04
+SetField Barrels[0].IlluminationRecoveryRate 25
+SaveTagChanges
+Exit

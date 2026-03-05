@@ -57,6 +57,11 @@ RunCommands workingdir\commands\weapons\port\07_reach_energy_sword.cmds
 RunCommands workingdir\commands\weapons\port\08_reach_fuel_rod.cmds
 RunCommands workingdir\commands\weapons\port\09_reach_gravity_hammer.cmds
 RunCommands workingdir\commands\weapons\port\10_reach_needler.cmds
+RunCommands workingdir\commands\weapons\port\11_reach_rocket_launcher.cmds
+RunCommands workingdir\commands\weapons\port\12_reach_shotgun.cmds
+
+# Fix reach particle effect lod
+CS < workingdir\fix_inverse_lod_feather.cmds
 
 AddModFiles workingdir\assets
 SaveModPackage

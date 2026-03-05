@@ -3,6 +3,8 @@ SuppressErrors True
 
 # Texture with same tagnames but the texture are different between reach and base cache
 NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
+# Base one has worse quality
+NameBlamTag objects\bitmaps\detail_maps\rubber.bitmap reach\objects\bitmaps\detail_maps\rubber
 NameBlamTag rasterizer\diffusetable.bitmap reach\rasterizer\diffusetable
 NameBlamTag rasterizer\diffuse_power_specular\diffuse_power.bitmap reach\rasterizer\diffuse_power_specular\diffuse_power
 

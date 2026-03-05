@@ -27,12 +27,14 @@ NameBlamTag fx\particles\atmospheric\fiery_smoke\smoke_fiery_small.particle reac
 NameBlamTag fx\particles\atmospheric\fireballs\fireball_fuel_rod_large.particle reach\fx\particles\atmospheric\fireballs\fireball_fuel_rod_large
 NameBlamTag fx\particles\atmospheric\fireballs\glowing_smoke_fuel_rod.particle reach\fx\particles\atmospheric\fireballs\glowing_smoke_fuel_rod
 NameBlamTag fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_large.particle reach\fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_large
+NameBlamTag fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_large.particle reach\fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_large
 
 NameBlamTag fx\particles\models\mesh_fx\blast_radius\blast_radius.particle reach\fx\particles\models\mesh_fx\blast_radius\blast_radius
 NameBlamTag fx\particles\models\mesh_fx\blast_radius\blast_radius.particle_model reach\fx\particles\models\mesh_fx\blast_radius\blast_radius
 
 NameBlamTag fx\particles\flare\explosive_flash.particle reach\fx\particles\flare\explosive_flash
 NameBlamTag fx\particles\flare\flash_large.particle reach\fx\particles\flare\flash_large
+NameBlamTag fx\particles\flare\glow_soft.particle reach\fx\particles\flare\glow_soft
 
 NameBlamTag fx\particles\energy\plasma_noise_green.particle reach\fx\particles\energy\plasma_noise_green
 NameBlamTag fx\particles\plasma\plasma_green_large.particle reach\fx\particles\plasma\plasma_green_large

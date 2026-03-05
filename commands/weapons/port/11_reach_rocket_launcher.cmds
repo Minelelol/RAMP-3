@@ -1,0 +1,109 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+NameBlamTag objects\weapons\support_high\rocket_launcher\bitmaps\rocket_launcher_illum.bitmap reach\objects\weapons\support_high\rocket_launcher\bitmaps\rocket_launcher_illum
+
+NameBlamTag fx\material_effects\weapons\rocket_launcher.material_effects fx\material_effects\objects\weapons\rocket_launcher
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\projectile.effect reach\objects\weapons\support_high\rocket_launcher\fx\projectile
+# NameBlamTag objects\weapons\support_high\rocket_launcher\fx\projectile.light_volume_system reach\objects\weapons\support_high\rocket_launcher\fx\projectile
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\projectile_exhaust.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\projectile_exhaust
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\detonation.effect reach\objects\weapons\support_high\rocket_launcher\fx\detonation
+# NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_lod_far.sound sound\weapons\rocket_launcher\rocket_launcher_lod_far
+# NameBlamTag sound\weapons\surround_tails\indoor\expl_tail_indoor.sound sound\effe\rocket_proj_refl_ext_01
+# NameBlamTag sound\weapons\surround_tails\outdoor\expl_tail_outdoor.sound sound\effe\rocketlauncher_refl_int_01
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\detonation.light reach\objects\weapons\support_high\rocket_launcher\fx\detonation
+
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\firing.effect reach\objects\weapons\support_high\rocket_launcher\fx\firing
+# NameBlamTag sound\weapons\rocket_launcher\rocket_fire_h3.sound sound\effe\rocket_fire_01
+NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_ext.sound sound\effe\rocket_proj_refl_ext_01
+NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\effe\rocketlauncher_refl_int_01
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\muzzle_flash_round.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\muzzle_flash_round
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\firing_smoke.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\firing_smoke
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\backwash_fire.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\backwash_fire
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\burst_spray.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\burst_spray
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\backwash_smoke.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\backwash_smoke
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\particles\muzzle_flash_long.particle reach\objects\weapons\support_high\rocket_launcher\fx\particles\muzzle_flash_long
+
+PortTag objects\weapons\support_high\rocket_launcher\projectiles\rocket_launcher_rocket.projectile
+PortTag reach\objects\weapons\support_high\rocket_launcher\fx\firing.effect
+
+PortTag objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_composite.shader
+PortTag objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_hazard_stripes.shader
+PortTag objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_metal.shader
+PortTag objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_metal_heavy.shader
+PortTag objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_rubber.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+PortTag objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_illum.shader
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher
+ImportTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.render_model workingdir\tags\weapons\VKMT\rocket_launcher.render_model
+EditTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.render_model
+
+SetField Materials[0].RenderMethod objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_hazard_stripes.shader
+SetField Materials[2].RenderMethod objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_metal.shader
+SetField Materials[3].RenderMethod objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_metal_heavy.shader
+SetField Materials[4].RenderMethod objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_rubber.shader
+SetField Materials[5].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[6].RenderMethod objects\weapons\support_high\rocket_launcher\shaders\rocket_launcher_illum.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\RL\rocket_launcher.fbx TriangleStrip
+
+# Why is this called albedo_cc?????
+SetField MarkerGroups[1].Name fx_backwash
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.08 0.0284 0.0039
+SetField MarkerGroups[*].Markers[*].Rotation 0.424 -0.19 -0.015 0.88
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.0795 0.0202 -0.0016
+SetField MarkerGroups[*].Markers[*].Rotation 0.41 -0.136 0.2 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\support_high\rocket_launcher\rocket_launcher.weapon answerseekedyetconflictunsure
+NameBlamTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.weapon objects\weapons\support_high\rocket_launcher\rocket_launcher
+NameBlamTag dw3\r3ach\ui\chud\rocket_launcher.chud_definition ui\chud\rocket
+NameBlamTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\projectiles\rocket_launcher_rocket.projectile objects\weapons\support_high\rocket_launcher\projectiles\rocket_launcher_rocket
+NameBlamTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\firing.effect reach\objects\weapons\support_high\rocket_launcher\fx\firing
+NameBlamTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\projectiles\rocket_launcher_rocket_detonation.damage_effect objects\weapons\support_high\rocket_launcher\projectiles\damage_effects\rocket_launcher_rocket_explosion
+NameBlamTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\projectiles\rocket_launcher_rocket_impact.damage_effect objects\weapons\support_high\rocket_launcher\projectiles\damage_effects\rocket_launcher_rocket_impact
+
+PortTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.model
+PortTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\animations\fp_elite\fp_elite.model_animation_graph
+
+PortTag Replace Single objects\weapons\support_high\rocket_launcher\rocket_launcher.weapon
+PortTag Replace Single objects\weapons\support_high\rocket_launcher\projectiles\damage_effects\rocket_launcher_rocket_explosion.damage_effect
+PortTag Replace Single objects\weapons\support_high\rocket_launcher\projectiles\damage_effects\rocket_launcher_rocket_impact.damage_effect
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit

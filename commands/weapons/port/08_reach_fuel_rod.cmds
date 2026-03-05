@@ -191,18 +191,6 @@ SaveTagChanges
 Exit
 
 # ------------------------
-# |        EFFECT        |
-# ------------------------
-EditTag reach\objects\weapons\support_high\flak_cannon\fx\detonation.effect
-ForEach Events[2].ParticleSystems SetField InverseLodFeatherIn 1
-ForEach Events[2].ParticleSystems SetField LodOutDistance 100
-
-ForEach Events[3].ParticleSystems SetField InverseLodFeatherIn 1
-ForEach Events[3].ParticleSystems SetField LodOutDistance 100
-SaveTagChanges
-Exit
-
-# ------------------------
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\support_high\flak_cannon\flak_cannon.weapon
