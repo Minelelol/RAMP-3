@@ -3,7 +3,6 @@
 # | REACH ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 
 GenerateBitmap objects\characters\elite\bitmaps\elite_base\elite_bodysuit_diffuse workingdir\bitmaps\Elite\elite_bodysuit_diffuse.dds
-ForEach bitm named: objects\characters\elite\bitmaps\elite_base\elite_bodysuit_diffuse GenerateMipmaps
 
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds

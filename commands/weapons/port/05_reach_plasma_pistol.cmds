@@ -2,7 +2,6 @@
 # |        BITMAP        |
 # ------------------------
 GenerateBitmap objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_diffuse workingdir\bitmaps\Weapons\VKMT\PP\plasma_pistol_diffuse.dds
-ForEach bitm named: objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_diffuse GenerateMipmaps
 
 # ------------------------
 # |         SOUND        |

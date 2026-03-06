@@ -2,13 +2,8 @@
 # |        BITMAP        |
 # ------------------------
 GenerateBitmap sequence objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate workingdir\bitmaps\Weapons\VKMT\BR\numbers
-ForEach bitm named: objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate GenerateMipmaps
-
 GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_diffuse workingdir\bitmaps\Weapons\VKMT\BR\br_carry_diffuse.dds
-ForEach bitm named: objects\weapons\rifle\battle_rifle\bitmaps\br_carry_diffuse GenerateMipmaps
-
 GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal workingdir\bitmaps\Weapons\VKMT\BR\br_carry_normal.dds linear dxn
-ForEach bitm named: objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal GenerateMipmaps
 
 # ------------------------
 # |        SHADER        |

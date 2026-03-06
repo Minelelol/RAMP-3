@@ -3,7 +3,6 @@
 # ------------------------
 GenerateBitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer workingdir\bitmaps\Weapons\VKMT\HAMMER\gravity_hammer.dds
 GenerateBitmap reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_bump workingdir\bitmaps\Weapons\VKMT\HAMMER\gravity_hammer_bump.dds Linear
-ForEach bitm named: reach\objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer GenerateMipmaps
 
 # ------------------------
 # |        PORTING       |

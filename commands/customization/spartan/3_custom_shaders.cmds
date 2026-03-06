@@ -3,85 +3,6 @@
 # | CUSTOMS ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 
 # -------------------------------------------------------------------------------
-# |                           RAVEN ODST FIXUP                                  |
-# -------------------------------------------------------------------------------
-# NOT NEEDED, WHY IS THIS IN THE OG RAMP BREH, waste of resources
-# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_cc workingdir\bitmaps\ODST\Raven1\raven1_helm_c.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_diff workingdir\bitmaps\ODST\Raven1\raven1_helm_d.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_mask workingdir\bitmaps\ODST\Raven1\raven1_helm_m.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven1_helm_normal workingdir\bitmaps\ODST\Raven1\raven1_helm_n.dds
-# ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_diff GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_mask GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven1_helm_normal GenerateMipmaps
-# 
-# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven1_helm
-# EditTag objects\characters\masterchief\shaders\raven1_helm.shader
-# SetBitmap base_map objects\characters\masterchief\shaders\ravsen1_helm_diff.bitmap
-# SetBitmap change_color_map objects\characters\masterchief\shaders\raven1_helm_cc.bitmap
-# SetBitmap bump_map objects\characters\masterchief\shaders\raven1_helm_normal.bitmap
-# SetBitmap material_texture objects\characters\masterchief\shaders\raven1_helm_mask.bitmap
-# SetField ShaderProperties[0].BooleanConstants 2
-# SaveTagChanges
-# Exit
-# 
-# 
-# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_cc workingdir\bitmaps\ODST\Raven2\raven2_helm_c.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_diff workingdir\bitmaps\ODST\Raven2\raven2_helm_d.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_mask workingdir\bitmaps\ODST\Raven2\raven2_helm_m.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven2_helm_normal workingdir\bitmaps\ODST\Raven2\raven2_helm_n.dds
-# ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_diff GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_mask GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven2_helm_normal GenerateMipmaps
-# 
-# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven2_helm
-# EditTag objects\characters\masterchief\shaders\raven2_helm.shader
-# SetBitmap base_map objects\characters\masterchief\shaders\raven2_helm_diff.bitmap
-# SetBitmap change_color_map objects\characters\masterchief\shaders\raven2_helm_cc.bitmap
-# SetBitmap bump_map objects\characters\masterchief\shaders\raven2_helm_normal.bitmap
-# SetBitmap material_texture objects\characters\masterchief\shaders\raven2_helm_mask.bitmap
-# SetField ShaderProperties[0].BooleanConstants 2
-# SaveTagChanges
-# Exit
-# 
-# 
-# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_cc workingdir\bitmaps\ODST\Raven3\raven3_helm_c.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_diff workingdir\bitmaps\ODST\Raven3\raven3_helm_d.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_mask workingdir\bitmaps\ODST\Raven3\raven3_helm_m.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven3_helm_normal workingdir\bitmaps\ODST\Raven3\raven3_helm_n.dds
-# ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_diff GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_mask GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven3_helm_normal GenerateMipmaps
-# 
-# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven3_helm
-# EditTag objects\characters\masterchief\shaders\raven3_helm.shader
-# SetBitmap base_map objects\characters\masterchief\shaders\raven3_helm_diff.bitmap
-# SetBitmap change_color_map objects\characters\masterchief\shaders\raven3_helm_cc.bitmap
-# SetBitmap bump_map objects\characters\masterchief\shaders\raven3_helm_normal.bitmap
-# SetBitmap material_texture objects\characters\masterchief\shaders\raven3_helm_mask.bitmap
-# SetField ShaderProperties[0].BooleanConstants 2
-# SaveTagChanges
-# Exit
-# 
-# 
-# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_cc workingdir\bitmaps\ODST\Raven4\raven4_helm_c.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_diff workingdir\bitmaps\ODST\Raven4\raven4_helm_d.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_mask workingdir\bitmaps\ODST\Raven4\raven4_helm_m.dds
-# GenerateBitmap objects\characters\masterchief\shaders\raven4_helm_normal workingdir\bitmaps\ODST\Raven4\raven4_helm_n.dds
-# ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_diff GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_mask GenerateMipmaps
-# ForEach bitm named: objects\characters\masterchief\shaders\raven4_helm_normal GenerateMipmaps
-# 
-# DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\raven4_helm
-# EditTag objects\characters\masterchief\shaders\raven4_helm.shader
-# SetBitmap base_map objects\characters\masterchief\shaders\raven4_helm_diff.bitmap
-# SetBitmap change_color_map objects\characters\masterchief\shaders\raven4_helm_cc.bitmap
-# SetBitmap bump_map objects\characters\masterchief\shaders\raven4_helm_normal.bitmap
-# SetBitmap material_texture objects\characters\masterchief\shaders\raven4_helm_mask.bitmap
-# SetField ShaderProperties[0].BooleanConstants 1
-# SaveTagChanges
-# Exit
-
-# -------------------------------------------------------------------------------
 # |                             RAVEN VISOR                                     |
 # -------------------------------------------------------------------------------
 # THE ONE IN MCC DON'T HAVE COLOR CHANGE
@@ -129,7 +50,6 @@ Exit
 # |                    REACH RUBBER SUIT (BLACKED EDITION)                      |
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse workingdir\bitmaps\Spartan\Rubber_Suit\spartan_rubber_suit_diffuse_black.dds
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_rubber_suit_black_diffuse GenerateMipmaps
 
 DuplicateTag objects\characters\spartans\shaders\spartan_rubber_suit.shader objects\characters\spartans\shaders\spartan_rubber_suit_black
 EditTag objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
@@ -142,8 +62,6 @@ Exit
 # |                      REACH RUBBER SUIT (GAY EDITION)                        |
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse workingdir\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_diffuse_colored.dds
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_diffuse GenerateMipmaps
-
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_primary_cc workingdir\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_cc_colored.dds
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_rubber_suit_colored_secondary_cc workingdir\bitmaps\Spartan\Rubber_Suit\Colored\spartan_rubber_suit_cc_colored_secondary.dds
 
@@ -167,7 +85,6 @@ Exit
 # |                 SPARTAN ARMOR CAMO (BRAVO SIX GOING DARK)                   |
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail workingdir\bitmaps\Spartan\Rubber_Suit\Camo\spartan_camo_detail.dds
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_detail_maps\spartan_camo_detail GenerateMipmaps
 
 DuplicateTag objects\characters\spartans\fp\shaders\spartan_fp_armor.shader objects\characters\spartans\fp\shaders\spartan_fp_armor_camo
 EditTag objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
@@ -196,11 +113,7 @@ Exit
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\masterchief\shaders\orion_chest_cc workingdir\bitmaps\Spartan\Orion\chest\orion_chest_cc.dds
 GenerateBitmap objects\characters\masterchief\shaders\orion_chest_diff workingdir\bitmaps\Spartan\Orion\chest\orion_chest_diff.dds
-ForEach bitm named: objects\characters\masterchief\shaders\orion_chest_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\shaders\orion_chest_normal
-ForEach bitm named: objects\characters\masterchief\shaders\orion_chest_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\chest\orion_chest_normal.dds linear
-ForEach bitm named: objects\characters\masterchief\shaders\orion_chest_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\shaders\orion_chest_normal workingdir\bitmaps\Spartan\Orion\chest\orion_chest_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_chest
 EditTag objects\characters\masterchief\shaders\orion_chest.shader
@@ -218,11 +131,7 @@ Exit
 
 GenerateBitmap objects\characters\masterchief\shaders\orion_legs_cc workingdir\bitmaps\Spartan\Orion\legs\orion_legs_cc.dds
 GenerateBitmap objects\characters\masterchief\shaders\orion_legs_diff workingdir\bitmaps\Spartan\Orion\legs\orion_legs_diff.dds
-ForEach bitm named: objects\characters\masterchief\shaders\orion_legs_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\shaders\orion_legs_normal
-ForEach bitm named: objects\characters\masterchief\shaders\orion_legs_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\legs\orion_legs_normal.dds linear
-ForEach bitm named: objects\characters\masterchief\shaders\orion_legs_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\shaders\orion_legs_normal workingdir\bitmaps\Spartan\Orion\legs\orion_legs_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_legs
 EditTag objects\characters\masterchief\shaders\orion_legs.shader
@@ -234,11 +143,7 @@ Exit
 
 GenerateBitmap objects\characters\masterchief\shaders\orion_shoulder_cc workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_cc.dds
 GenerateBitmap objects\characters\masterchief\shaders\orion_shoulder_diff workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_diff.dds
-ForEach bitm named: objects\characters\masterchief\shaders\orion_shoulder_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\shaders\orion_shoulder_normal
-ForEach bitm named: objects\characters\masterchief\shaders\orion_shoulder_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_normal.dds linear
-ForEach bitm named: objects\characters\masterchief\shaders\orion_shoulder_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\shaders\orion_shoulder_normal workingdir\bitmaps\Spartan\Orion\shoulder\orion_shoulder_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_shoulder
 EditTag objects\characters\masterchief\shaders\orion_shoulder.shader
@@ -250,11 +155,7 @@ Exit
 
 GenerateBitmap objects\characters\masterchief\shaders\orion_helmet_cc workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_cc.dds
 GenerateBitmap objects\characters\masterchief\shaders\orion_helmet_diff workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_diff.dds
-ForEach bitm named: objects\characters\masterchief\shaders\orion_helmet_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\shaders\orion_helmet_normal
-ForEach bitm named: objects\characters\masterchief\shaders\orion_helmet_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_normal.dds linear
-ForEach bitm named: objects\characters\masterchief\shaders\orion_helmet_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\shaders\orion_helmet_normal workingdir\bitmaps\Spartan\Orion\helmet\orion_helmet_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\orion_helmet
 EditTag objects\characters\masterchief\shaders\orion_helmet.shader
@@ -296,11 +197,7 @@ Exit
 # CHEST -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_cc workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_cc.dds
 GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_diffuse.dds
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_diffuse GenerateMipmaps
-
-CreateTag bitm objects\characters\spartans\custom\bitmaps\mark4_chest_zbump
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_zbump.dds linear
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_chest_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\custom\bitmaps\mark4_chest_zbump workingdir\bitmaps\Spartan\MarkIV\chest\mark4_chest_zbump.dds
 
 GenerateShader Shader two_change_color standard none specular_mask_from_diffuse cook_torrance dynamic off opaque off first_person_sometimes off off off default from_albedo_alpha_without_fresnel
 
@@ -373,11 +270,7 @@ Exit
 # SHOULDERS -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_cc workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_cc.dds
 GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_diffuse.dds
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_diffuse GenerateMipmaps
-
-CreateTag bitm objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_zbump.dds linear
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\custom\bitmaps\mark4_shoulder_zbump workingdir\bitmaps\Spartan\MarkIV\shoulder\mark4_shoulder_zbump.dds
 
 GenerateShader Shader two_change_color standard none specular_mask_from_diffuse cook_torrance dynamic simple opaque off first_person_sometimes off off off default from_albedo_alpha_without_fresnel
 
@@ -462,11 +355,7 @@ Exit
 # HELMET -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_cc workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_cc.dds
 GenerateBitmap objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_diffuse.dds
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_diffuse GenerateMipmaps
-
-CreateTag bitm objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_zbump.dds linear
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\custom\bitmaps\mark4_helmet_zbump workingdir\bitmaps\Spartan\MarkIV\helmet\mark4_helmet_zbump.dds
 
 GenerateShader Shader four_change_color standard none specular_mask_from_diffuse cook_torrance dynamic off opaque off first_person_sometimes off off off default from_albedo_alpha_without_fresnel
 
@@ -578,11 +467,7 @@ Exit
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_helmet_cc workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_cc.dds
 GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_diffuse.dds
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_helmet_diffuse GenerateMipMaps
-
-CreateTag bitm objects\characters\spartans\custom\bitmaps\ce_helmet_zbump
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_helmet_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_zbump.dds linear
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_helmet_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\custom\bitmaps\ce_helmet_zbump workingdir\bitmaps\Spartan\CEMarkV\helmet\ce_helmet_zbump.dds
 
 DuplicateTag objects\characters\spartans\custom\shaders\markiv_helmet.shader objects\characters\spartans\custom\shaders\mp_helmet_ce
 EditTag objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
@@ -609,11 +494,7 @@ Exit
 
 GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_shoulder_cc workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_cc.dds
 GenerateBitmap objects\characters\spartans\custom\bitmaps\ce_shoulder_diffuse workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_diffuse.dds
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_shoulder_diffuse GenerateMipMaps
-
-CreateTag bitm objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump ImportBitmap 0 workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_zbump.dds linear
-ForEach bitm named: objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\custom\bitmaps\ce_shoulder_zbump workingdir\bitmaps\Spartan\CEMarkV\shoulder\ce_shoulder_zbump.dds
 
 DuplicateTag objects\characters\spartans\custom\shaders\markiv_shoulders.shader objects\characters\spartans\custom\shaders\mp_ce_shoulders
 EditTag objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
@@ -628,11 +509,7 @@ Exit
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\masterchief\shaders\marine_chest_cc workingdir\bitmaps\Spartan\Marine\marine_chest_cc.dds
 GenerateBitmap objects\characters\masterchief\shaders\marine_chest_diff workingdir\bitmaps\Spartan\Marine\marine_chest_diff.dds
-ForEach bitm named: objects\characters\masterchief\shaders\marine_chest_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\shaders\marine_chest_normal
-ForEach bitm named: objects\characters\masterchief\shaders\marine_chest_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Marine\marine_chest_normal.dds linear
-ForEach bitm named: objects\characters\masterchief\shaders\marine_chest_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\shaders\marine_chest_normal workingdir\bitmaps\Spartan\Marine\marine_chest_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\marine_chest
 EditTag objects\characters\masterchief\shaders\marine_chest.shader
@@ -656,11 +533,7 @@ Exit
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_cc workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_cc.dds
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_diff workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_diff.dds
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal ImportBitmap 0 workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_normal.dds linear
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_samurai_normal workingdir\bitmaps\Spartan\Samurai\spartan_helmet_samurai_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai
 EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
@@ -686,11 +559,7 @@ Exit
 # -------------------------------------------------------------------------------
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_cc workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_cc.dds
 GenerateBitmap objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_diff.dds
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_diff GenerateMipmaps
-
-CreateTag bitm objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal ImportBitmap 0 workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_normal.dds linear
-ForEach bitm named: objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\spartans\bitmaps\spartan_helmets\spartan_helmet_markvii_normal workingdir\bitmaps\Spartan\MarkVII\spartan_helmet_mark7_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_default.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7
 EditTag objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
@@ -720,12 +589,7 @@ Exit
 GenerateBitmap objects\characters\masterchief\shaders\h2aodst_helm_cc workingdir\bitmaps\ODST\H2A\h2aodst_helm_cc.dds
 GenerateBitmap objects\characters\masterchief\shaders\h2aodst_helm_diff workingdir\bitmaps\ODST\H2A\h2aodst_helm_diff.dds
 GenerateBitmap objects\characters\masterchief\shaders\h2aodst_helm_mask workingdir\bitmaps\ODST\H2A\h2aodst_helm_mask.dds
-ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_diff GenerateMipmaps
-ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_mask GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\shaders\h2aodst_helm_normal
-ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_normal ImportBitmap 0 workingdir\bitmaps\ODST\H2A\h2aodst_helm_normal.dds linear
-ForEach bitm named: objects\characters\masterchief\shaders\h2aodst_helm_normal GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\shaders\h2aodst_helm_normal workingdir\bitmaps\ODST\H2A\h2aodst_helm_normal.dds
 
 DuplicateTag objects\characters\spartans\shaders\spartan_armor.shader objects\characters\masterchief\shaders\h2aodst_helm
 EditTag objects\characters\masterchief\shaders\h2aodst_helm.shader
@@ -768,50 +632,3 @@ EditTag levels\ui\mainmenu\objects\odst_recon_cheap\shaders\odst_armor.shader
 SetArgument diffuse_coefficient 2
 SaveTagChanges
 Exit
-
-# UNK SHADER, DUNNO WHERE THEY COME FROM (MOST LIKELY MCC OR CUSTOM MADE) -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_black.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_colored.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_rubber_suit_colored_secondary.shader
-
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_camo_suit.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_armor_camo.shader
-# PortTag !ReachMisc objects\characters\spartans\fp\shaders\spartan_fp_armor_camo.shader
-
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_helmet.shader
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_visor.shader
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_chest.shader
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\markiv_shoulders.shader
-
-# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_legs.shader
-# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_shoulder.shader
-# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_helmet.shader
-# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_visor.shader
-# PortTag !ReachMisc objects\characters\masterchief\shaders\orion_chest.shader
-
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned_2.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_condemned_2.shader
-
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_2.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_grd_3.shader
-
-# PortTag !ReachMisc objects\characters\masterchief\shaders\marine_chest.shader
-
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_samurai.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_samurai.shader
-
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_mark7.shader
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan_helmets\spartan_visor_mark7.shader
-
-# PortTag !ReachMisc objects\characters\masterchief\shaders\h2aodst_helm.shader
-# PortTag !ReachMisc objects\characters\masterchief\shaders\h2aodst_visor.shader
-
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_helmet_ce.shader
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_visor_ce.shader
-# PortTag !ReachMisc objects\characters\spartans\custom\shaders\mp_ce_shoulders.shader
-
-# PortTag !ReachMisc objects\characters\spartans\shaders\spartan\scarf2.shader
-
-# UP ABOVE IS DONE

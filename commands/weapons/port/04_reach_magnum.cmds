@@ -2,10 +2,7 @@
 # |        BITMAP        |
 # ------------------------
 GenerateBitmap objects\weapons\pistol\magnum\bitmaps\magnum_diffuse workingdir\bitmaps\Weapons\VKMT\MAG\magnum_diffuse.dds
-ForEach bitm named: magnum_diffuse GenerateMipmaps
-
 GenerateBitmap linear objects\weapons\pistol\magnum\bitmaps\magnum_zbump workingdir\bitmaps\Weapons\VKMT\MAG\magnum_zbump.dds
-ForEach bitm named: magnum_zbump GenerateMipmaps
 
 # ------------------------
 # |        PORTING       |

@@ -7,49 +7,28 @@
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_cc workingdir\bitmaps\ODST\Raven1\odst_raven_1_cc.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_diff workingdir\bitmaps\ODST\Raven1\odst_raven_1_diff.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_1_illum workingdir\bitmaps\ODST\Raven1\odst_raven_1_illum.dds
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_diff GenerateMipmaps
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_illum GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_1_zbump
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven1\odst_raven_1_zbump.dds linear
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_1_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\bitmaps\odst_raven_1_zbump workingdir\bitmaps\ODST\Raven1\odst_raven_1_zbump.dds
 
 # RAVEN 2
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_cc workingdir\bitmaps\ODST\Raven2\odst_raven_2_cc.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_diff workingdir\bitmaps\ODST\Raven2\odst_raven_2_diff.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_2_illum workingdir\bitmaps\ODST\Raven2\odst_raven_2_illum.dds
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_diff GenerateMipmaps
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_illum GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_2_zbump
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven2\odst_raven_2_zbump.dds linear
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_2_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\bitmaps\odst_raven_2_zbump workingdir\bitmaps\ODST\Raven2\odst_raven_2_zbump.dds
 
 # RAVEN 3
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_cc workingdir\bitmaps\ODST\Raven3\odst_raven_3_cc.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_diff workingdir\bitmaps\ODST\Raven3\odst_raven_3_diff.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_3_illum workingdir\bitmaps\ODST\Raven3\odst_raven_3_illum.dds
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_diff GenerateMipmaps
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_illum GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_3_zbump
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven3\odst_raven_3_zbump.dds linear
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_3_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\bitmaps\odst_raven_3_zbump workingdir\bitmaps\ODST\Raven3\odst_raven_3_zbump.dds
 
 # RAVEN 4
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_cc workingdir\bitmaps\ODST\Raven4\odst_raven_4_cc.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_diff workingdir\bitmaps\ODST\Raven4\odst_raven_4_diff.dds
 GenerateBitmap objects\characters\masterchief\bitmaps\odst_raven_4_illum workingdir\bitmaps\ODST\Raven4\odst_raven_4_illum.dds
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_diff GenerateMipmaps
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_illum GenerateMipmaps
-
-CreateTag bitm objects\characters\masterchief\bitmaps\odst_raven_4_zbump
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_zbump ImportBitmap 0 workingdir\bitmaps\ODST\Raven4\odst_raven_4_zbump.dds linear
-ForEach bitm named: objects\characters\masterchief\bitmaps\odst_raven_4_zbump GenerateMipmaps
+GenerateBitmap Linear objects\characters\masterchief\bitmaps\odst_raven_4_zbump workingdir\bitmaps\ODST\Raven4\odst_raven_4_zbump.dds
 
 # SPI
 GenerateBitmap objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi_diff workingdir\bitmaps\Spartan\SPI\spartan_helmet_s9_spi_diff.dds
-ForEach bitm named: objects\characters\masterchief\bitmaps\spartan_helmet_s9_spi_diff GenerateMipmaps
 
 # | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
 # | MCC ARMOR SHADERS <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<|
