@@ -48,6 +48,9 @@ Exit
 # |               MAIN MENU               |
 # -----------------------------------------
 EditTag levels\ui\mainmenu\mainmenu.scenario
+SetField CampaignId 0
+SetField MapId 0
+
 SetField CinematicLighting[0].CinematicLight player_light.nclt
 SetField CinematicLighting[1].CinematicLight player_light.nclt
 

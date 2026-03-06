@@ -1,0 +1,93 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_scope_alpha.shader_halogram
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_composite.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_metal_chrome.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_metal_shiny.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_metal_unsc.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_compass.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_gradient_illum.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_illum.shader
+PortTag objects\weapons\support_high\spartan_laser\shaders\spartan_laser_screen.shader
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add cover_panel
+CreateTag mode dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser
+ImportTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.render_model workingdir\tags\weapons\VKMT\spartan_laser.render_model
+EditTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.render_model
+SetField Nodes[5].Name cover_panel
+
+SetField Materials[0].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_scope_alpha.shader_halogram
+SetField Materials[1].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_composite.shader
+SetField Materials[2].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_metal_chrome.shader
+SetField Materials[3].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_metal_shiny.shader
+SetField Materials[4].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_metal_unsc.shader
+SetField Materials[5].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[6].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_compass.shader
+SetField Materials[7].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_gradient_illum.shader
+SetField Materials[8].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_illum.shader
+SetField Materials[9].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_screen.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\SPLASER\spartan_laser.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.0705 0.0055 -0.0025
+SetField MarkerGroups[*].Markers[*].Rotation -0.1355 -0.1306 -0.3608 0.955
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.064 0.00505 -0.0006
+SetField MarkerGroups[*].Markers[*].Rotation -0.078 -0.055 -0.285 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\support_high\spartan_laser\spartan_laser.weapon lovethelifeyouliveandlivethelifeyoulove
+NameBlamTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.weapon objects\weapons\support_high\spartan_laser\spartan_laser
+NameBlamTag dw3\r3ach\ui\chud\spartan_laser.chud_definition ui\chud\spartan_laser
+
+PortTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.model
+PortTag dw3\r3ach\objects\weapons\support_high\spartan_laser\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\support_high\spartan_laser\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\support_high\spartan_laser\projectiles\spartan_laser_beam.projectile
+PortTag dw3\r3ach\objects\weapons\support_high\spartan_laser\firing.effect
+
+PortTag Replace Single objects\weapons\support_high\spartan_laser\spartan_laser.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\spartan_laser\spartan_laser_overheat.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceD,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 3
+SaveTagChanges
+Exit

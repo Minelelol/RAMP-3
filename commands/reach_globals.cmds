@@ -7,6 +7,8 @@ NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\
 NameBlamTag objects\bitmaps\detail_maps\rubber.bitmap reach\objects\bitmaps\detail_maps\rubber
 NameBlamTag rasterizer\diffusetable.bitmap reach\rasterizer\diffusetable
 NameBlamTag rasterizer\diffuse_power_specular\diffuse_power.bitmap reach\rasterizer\diffuse_power_specular\diffuse_power
+# Multiple gun use this texture
+NameBlamTag objects\weapons\rifle\assault_rifle\bitmaps\compass.bitmap reach\objects\weapons\rifle\assault_rifle\bitmaps\compass
 
 NameBlamTag fx\bitmaps\plasma\plasma_clouds_256_a.bitmap reach\fx\bitmaps\plasma\plasma_clouds_256_a
 NameBlamTag fx\bitmaps\plasma\plasma_clouds_256_b.bitmap reach\fx\bitmaps\plasma\plasma_clouds_256_b

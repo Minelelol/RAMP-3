@@ -74,6 +74,7 @@ Exit
 EditTag dw3\r3ach\objects\weapons\pistol\magnum\firing.effect
 RemoveBlockElements Events[0].Parts 0 *
 PasteBlockElements Events[0].Parts
+RemoveBlockElements Events[0].Parts 4 *
 SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\magnum\magnum_fire.sound
 SaveTagChanges
 Exit

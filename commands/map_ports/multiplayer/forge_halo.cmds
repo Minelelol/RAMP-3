@@ -1,0 +1,53 @@
+# FORGE WORLD
+# FORGE WORLD
+# FORGE WORLD
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\game_sfx\ui\pda_transition.sound
+IgnoreBlamTag sound\game_sfx\ui\transition_beeps.sound
+IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
+
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\multi\forge_halo\forge_halo.sky_atm_parameters
+SetField AtmosphereSettings[0].SunAnglePitch 20
+SetField AtmosphereSettings[0].SunAngleYaw 268
+SetField AtmosphereSettings[0].Color 0.141263 0.341914 0.603827
+SetField AtmosphereSettings[0].Intensity 3
+SetField AtmosphereSettings[0].SeaLevel -125
+SetField AtmosphereSettings[0].RayleignHeightScale 150
+SetField AtmosphereSettings[0].RayleighMultiplier 0.2
+SetField AtmosphereSettings[0].MieMultiplier 0.05
+SetField AtmosphereSettings[0].Desaturation 1
+SetField AtmosphereSettings[0].MaxFogThickness 2000
+SetField AtmosphereSettings[0].BetaM 0.0024742517 0.0024742517 0.0024742517
+SetField AtmosphereSettings[0].BetaP 0.0039411075 0.0039411075 0.0039411075
+SetField AtmosphereSettings[0].BetaMThetaPrefix 0.00015021097 0.00015021097 0.00015021097
+SetField AtmosphereSettings[0].BetaPThetaPrefix 0.0009277177 0.0009277177 0.0009277177
+SaveTagChanges
+Exit
+
+EditTag levels\multi\forge_halo\post_fx\forge_halo.area_screen_effect
+SetField ScreenEffects[0].GammaEnhance 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag levels\multi\forge_halo\sky_halo\shaders\sky_halo_ring.shader
+# SetField ShaderProperties[0].RealConstants[3].Values 1 1.2 1.5 1
+SetField RenderFlags None
+SaveTagChanges
+Exit

@@ -1,0 +1,72 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_blades.shader
+PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_leather_handle.shader
+PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_metal.shader
+PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_metal_heat.shader
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle
+ImportTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.render_model workingdir\tags\weapons\VKMT\spike_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.render_model
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\spike_rifle\shaders\spike_rifle_blades.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\spike_rifle\shaders\spike_rifle_leather_handle.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\spike_rifle\shaders\spike_rifle_metal.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\spike_rifle\shaders\spike_rifle_metal_heat.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\SPIKER\spike_rifle.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.062 0.0019 0.0029
+SetField MarkerGroups[*].Markers[*].Rotation -0.48 0.2 -0.35 0.68
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag objects\weapons\rifle\spike_rifle\spike_rifle.weapon saratemitakimiwo
+NameBlamTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.weapon objects\weapons\rifle\spike_rifle\spike_rifle
+NameBlamTag dw3\r3ach\ui\chud\spiker.chud_definition ui\chud\spike_rifle
+
+PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.model
+PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\projectiles\spiker_shard.projectile
+PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\firing.effect
+
+PortTag Replace Single objects\weapons\rifle\spike_rifle\spike_rifle.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\spike_rifle\spike_rifle_fire.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 1
+SetField Playback.DistanceParameters.MaximumDistance 15
+SaveTagChanges
+Exit

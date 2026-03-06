@@ -30,6 +30,21 @@ PortTag reach\objects\weapons\melee\gravity_hammer\fx\hammer_on.effect
 Exit
 
 # ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag reach\objects\weapons\melee\gravity_hammer\shaders\hammer_illum.shader
+SetField ShaderProperties[0].Functions[0].InputName null
+SetField ShaderProperties[0].Functions[0].RangeName null
+
+SetField ShaderProperties[0].Functions[1].InputName batter_empty
+SetField ShaderProperties[0].Functions[1].TimePeriod 5
+SetField ShaderProperties[0].Functions[1].Function.Data 08340000000000000000A0410000000000000000000000000000000014000000010000000400003FFFFF7F7F0000803F00000000
+
+SetArgument albedo_color 0 0 0 1
+SaveTagChanges
+Exit
+
+# ------------------------
 # |     RENDER MODEL     |
 # ------------------------
 CreateTag mode dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer
