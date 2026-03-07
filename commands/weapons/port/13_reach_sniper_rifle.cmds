@@ -23,6 +23,11 @@ SetField SortLayer PostPass
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\rifle\sniper_rifle\shaders\scope_alpha.shader_halogram
+SetArgument self_illum_map 0.6 0.6 0.19 0.16
+SaveTagChanges
+Exit
+
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------

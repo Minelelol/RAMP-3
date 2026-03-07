@@ -99,6 +99,17 @@ SetField PredictionAtomIndex -1
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_shell.shader
+SetArgument env_tint_color 0.31965882 0.41219187 0.19347775
+SetArgument environment_map_specular_contribution 0.75
+SaveTagChanges
+Exit
+
+EditTag reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram
+SetArgument self_illum_map 0.6 0.6 0.19 0.17
+SaveTagChanges
+Exit
+
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
 EditTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_reload_effect.shader_halogram

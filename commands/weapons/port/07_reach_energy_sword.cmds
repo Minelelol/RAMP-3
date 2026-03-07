@@ -51,6 +51,12 @@ SetField ShaderProperties[0].Functions[8].InputName camo
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\melee\energy_sword\shaders\energy_sword_shell.shader
+SetArgument environment_map_specular_contribution 0.5
+SetArgument env_tint_color 0.3627451 0.4529412 0.5
+SaveTagChanges
+Exit
+
 # ------------------------
 # |        EFFECT        |
 # ------------------------

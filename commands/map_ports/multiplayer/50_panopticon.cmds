@@ -100,21 +100,32 @@ AddFunction bump_detail_map2 Real 1
 SaveTagChanges
 Exit
 
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a SetArgument specular_coefficient 0.1
+
 ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a_grimey_red SetArgument environment_map_specular_contribution 2.5
 
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_b SetArgument environment_map_specular_contribution 6
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_c SetArgument environment_map_specular_contribution 6
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_d SetArgument environment_map_specular_contribution 6
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_f SetArgument environment_map_specular_contribution 6
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_g SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_b SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_c SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_d SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_f SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_g SetArgument environment_map_specular_contribution 3
 
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h SetArgument environment_map_specular_contribution 6
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_ SetArgument environment_map_specular_contribution 2
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_b SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_c SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_d SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_f SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_g SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_ SetArgument environment_map_specular_contribution 1
 ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_red SetArgument environment_map_specular_contribution 2.5
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_test SetArgument environment_map_specular_contribution 1
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_test SetArgument environment_map_specular_contribution 0.5
 
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_flat_grimey SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_flat_grimey SetArgument environment_map_specular_contribution 3
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_flat_grimey SetArgument specular_coefficient 0.1
 
 ForEach rmsh StartingWith: levels\solo\m50\shaders\glass\glass_rail_wall SetArgument environment_map_specular_contribution 1
 

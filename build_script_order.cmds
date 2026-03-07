@@ -74,6 +74,7 @@ SaveTagNames
 
 RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
 RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
 
 UpdateMapFiles workingdir\mapsinfo
 MapFile Remove 270735729

@@ -99,6 +99,12 @@ SetField PredictionAtomIndex -1
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_shell.shader
+SetArgument albedo_color 1 1 1.25 1
+SetArgument environment_map_specular_contribution 0.25
+SaveTagChanges
+Exit
+
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
 EditTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_pilot.shader_halogram

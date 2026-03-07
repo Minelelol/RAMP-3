@@ -133,6 +133,11 @@ SetField PredictionAtomIndex -1
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_shell.shader
+SetArgument environment_map_specular_contribution 0.5
+SaveTagChanges
+Exit
+
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
 EditTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader

@@ -85,6 +85,11 @@ SetField ShaderProperties[0].Functions[3].InputName pilot
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\pistol\needler\shaders\needler_shell.shader
+SetArgument environment_map_specular_contribution 0.5
+SaveTagChanges
+Exit
+
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
