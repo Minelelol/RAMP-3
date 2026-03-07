@@ -1,0 +1,122 @@
+# BOARDWALK
+# BOARDWALK
+# BOARDWALK
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\50_panopticon.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\game_sfx\ui\pda_transition.sound
+IgnoreBlamTag sound\game_sfx\ui\transition_beeps.sound
+IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
+
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system
+
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\multi\50_panopticon\50_panopticon.sky_atm_parameters
+SetField AtmosphereSettings[0].Color 0.6784314 0.521058 0.36862746
+SetField AtmosphereSettings[0].Intensity 1.5
+SetField AtmosphereSettings[0].SeaLevel 60
+SetField AtmosphereSettings[0].DistanceBias -41
+SetField AtmosphereSettings[0].MaxFogThickness 6000
+SetField AtmosphereSettings[0].BetaM 0.015 0.015 0.015
+SetField AtmosphereSettings[0].BetaP 0.010214623 0.011460077 0.013795268
+SetField AtmosphereSettings[0].BetaMThetaPrefix 0.0001 0.0001 0.0001
+# SetField AtmosphereSettings[0].BetaPThetaPrefix 0.000334733 0.0004336488 0.0006244543
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+GenerateShader Shader default detail_blend none specular_mask_from_diffuse cook_torrance_reach dynamic off alpha_blend interpolated always_calc_albedo off off off default from_opacity_map_alpha
+EditTag levels\solo\m50\shaders\paneling\wall_panel_r_waterfall.shader
+SetField Options[9].OptionIndex 4
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_6_0_1_13_2_0_3_2_4_0_0_0_0_2.render_method_template
+
+AddBlockElements ShaderProperties[0].TextureConstants 8
+AddBlockElements ShaderProperties[0].RealConstants 36
+SetBitmap base_map levels\solo\m50\bitmaps\paneling\wall_panel_r_dif.bitmap
+SetBitmap detail_map shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap bump_map levels\solo\m50\bitmaps\paneling\wall_panel_r_zbump.bitmap
+SetBitmap bump_detail_map levels\shared\bitmaps\water\waterfall_zbump.bitmap
+SetBitmap bump_detail_map2 levels\shared\bitmaps\water\waterfall_zbump.bitmap
+# SetBitmap specular_mask_texture shaders\default_bitmaps\bitmaps\color_white.bitmap
+SetBitmap material_texture shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap height_map levels\solo\m50\bitmaps\nature\fountain_waterfall_height.bitmap
+SetBitmap opacity_texture levels\shared\bitmaps\water\waterfall_macro_alpha.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 4
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformOverlayIndices.Integer 1024
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 5
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformOverlayIndices.Integer 1025
+SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 21
+SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex 8
+SetField ShaderProperties[0].TextureConstants[7].TextureTransformConstantIndex 27
+
+SetArgument base_map 1 0.6 0 0
+SetArgument detail_map 4 4 0 0
+SetArgument albedo_color 0.2627451 0.36862746 0.4666667 1
+SetArgument bump_map 0.6 0.6 0 0
+SetArgument bump_detail_map 2 0.5 0 0
+SetArgument bump_detail_map2 0.5 1.5 0 0
+SetArgument blend_alpha 1
+SetArgument diffuse_coefficient 1
+SetArgument specular_coefficient 1
+SetArgument specular_tint 0.10196079 0.10196079 0.10196079
+SetArgument fresnel_color 1 1 1
+SetArgument fresnel_curve_steepness 2
+SetArgument analytical_specular_contribution 4
+SetArgument environment_map_specular_contribution 0.7
+SetArgument roughness 0.01
+SetArgument analytical_roughness 0.1
+SetArgument material_texture 1 1 0 0
+SetArgument material_texture_black_specular_multiplier 1
+SetArgument material_texture_black_roughness 1
+SetArgument albedo_blend 0.8
+SetArgument approximate_specular_type 0.66
+SetArgument env_tint_color 1 1 1
+SetArgument env_roughness_offset 0.5
+SetArgument height_scale 0.05
+SetArgument height_map 1 1 0 0
+SetArgument opacity_texture 0.5 1 1 0
+SetArgument opacity_fresnel_coefficient 0
+SetArgument opacity_fresnel_curve_steepness 3
+SetArgument opacity_fresnel_curve_bias 0
+
+AddFunction bump_detail_map Real 0
+AddFunction bump_detail_map2 Real 1
+SaveTagChanges
+Exit
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a_grimey_red SetArgument environment_map_specular_contribution 2.5
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_b SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_c SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_d SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_f SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_g SetArgument environment_map_specular_contribution 6
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h SetArgument environment_map_specular_contribution 6
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_ SetArgument environment_map_specular_contribution 2
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_red SetArgument environment_map_specular_contribution 2.5
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_test SetArgument environment_map_specular_contribution 1
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_flat_grimey SetArgument environment_map_specular_contribution 6
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\glass\glass_rail_wall SetArgument environment_map_specular_contribution 1
+
+ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\metal_bldg SetArgument specular_coefficient 0.1
+ForEach rmcs StartingWith: levels\solo\m50\shaders\glass\windowbox_traxus_hq_on SetArgument specular_coefficient 0.1

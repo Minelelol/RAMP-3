@@ -20,6 +20,8 @@ Exit
 # ------------------------
 # |        FOG/FX        |
 # ------------------------
+# Fog values were yoinked from Ryno mods, please check out his port of Forge World in H3 MCC it's pretty good
+# https://steamcommunity.com/sharedfiles/filedetails/?id=3597611181&searchtext=Forge+World
 EditTag levels\multi\forge_halo\forge_halo.sky_atm_parameters
 SetField AtmosphereSettings[0].SunAnglePitch 20
 SetField AtmosphereSettings[0].SunAngleYaw 268
@@ -37,6 +39,8 @@ SetField AtmosphereSettings[0].BetaMThetaPrefix 0.00015021097 0.00015021097 0.00
 SetField AtmosphereSettings[0].BetaPThetaPrefix 0.0009277177 0.0009277177 0.0009277177
 SaveTagChanges
 Exit
+
+# WE DON'T TALK WHAT HAPPENED ON MARCH 2TH FEBRUARY 2026 IN PAIN THREAD
 
 EditTag levels\multi\forge_halo\post_fx\forge_halo.area_screen_effect
 SetField ScreenEffects[0].GammaEnhance 0

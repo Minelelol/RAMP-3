@@ -183,9 +183,28 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag reach\objects\weapons\support_high\flak_cannon\fx\detonation.effect
+SetField Events[2].ParticleSystems[0].Environment AnyEnvironment
+SetField Events[2].ParticleSystems[1].Environment AnyEnvironment
+SetField Events[2].ParticleSystems[2].Environment AirOnly
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         LIGHT        |
+# ------------------------
+EditTag objects\weapons\support_high\flak_cannon\fx\detonation.light
+SetField DestroyLightAfter 0.6
+SaveTagChanges
+Exit
+
+# ------------------------
 # |         SEFC         |
 # ------------------------
 EditTag fx\screen_fx\rocket_explosion.area_screen_effect
+SetField ScreenEffects[0].ExposureBoost 5
 SetField ScreenEffects[3].ScreenShake 0
 SaveTagChanges
 Exit

@@ -1,5 +1,6 @@
 # Run this script everytime you port a projectile, explosion, or hell anything that emits particle from reach maps
-# ONLY FOR MP MAPS
+
+SuppressErrors True
 NameBlamTag fx\physics_templates\_default.particle_physics reach\fx\physics_templates\default
 NameBlamTag fx\physics_templates\_nil.particle_physics reach\fx\physics_templates\nil
 NameBlamTag fx\physics_templates\bullet_casings.particle_physics reach\fx\physics_templates\bullet_casings
@@ -39,3 +40,4 @@ NameBlamTag fx\particles\flare\glow_soft.particle reach\fx\particles\flare\glow_
 NameBlamTag fx\particles\energy\plasma_noise_green.particle reach\fx\particles\energy\plasma_noise_green
 NameBlamTag fx\particles\plasma\plasma_green_large.particle reach\fx\particles\plasma\plasma_green_large
 NameBlamTag fx\particles\sparks\spark_ember.particle reach\fx\particles\sparks\spark_ember
+SuppressErrors False
