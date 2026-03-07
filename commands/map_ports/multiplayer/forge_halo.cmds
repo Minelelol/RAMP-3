@@ -18,6 +18,28 @@ PortTag !Scripts !UpdateMapFiles *.scnr
 Exit
 
 # ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\multi\forge_halo\forge_halo.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position 79.415 176.478 60.383
+SetField CutsceneCameraPoints[0].Orientation 112.588 7.746 -17.951
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position 63.503 232.321 44.665
+SetField CutsceneCameraPoints[1].Orientation -90 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        FOG/FX        |
 # ------------------------
 # Fog values were yoinked from Ryno mods, please check out his port of Forge World in H3 MCC it's pretty good

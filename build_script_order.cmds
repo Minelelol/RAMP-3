@@ -88,5 +88,9 @@ MapFile Remove 0
 # Fix reach particle effect lod
 CS < workingdir\fix_inverse_lod_feather.cmds
 
+# Fix projectile acting like it's in water in some reach maps
+# VERY HACKY
+CS < workingdir\projectile_drop_fix.cmds
+
 AddModFiles workingdir\assets
 SaveModPackage

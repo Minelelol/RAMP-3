@@ -20,6 +20,28 @@ PortTag !Scripts !UpdateMapFiles *.scnr
 Exit
 
 # ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\multi\50_panopticon\50_panopticon.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position 196.540 -16.742 0.232
+SetField CutsceneCameraPoints[0].Orientation -13.706 -7.878 1.914
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position 227.762 -20.792 -2.285
+SetField CutsceneCameraPoints[1].Orientation 0 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        FOG/FX        |
 # ------------------------
 EditTag levels\multi\50_panopticon\50_panopticon.sky_atm_parameters
