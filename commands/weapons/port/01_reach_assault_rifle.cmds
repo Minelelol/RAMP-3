@@ -102,6 +102,7 @@ EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle\firing.effect
 RemoveBlockElements Events[0].Parts 0 *
 PasteBlockElements Events[0].Parts
 SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\assault_rifle\ar_fire.sound
+RemoveBlockElements Events[0].Parts 3 *
 SaveTagChanges
 Exit
 

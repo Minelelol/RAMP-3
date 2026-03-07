@@ -53,6 +53,7 @@ IgnoreBlamTag dw3\r3ach\sound\weapons\magnum\magnum_lod_far.sound
 NameBlamTag objects\weapons\pistol\magnum\magnum.weapon objects\weapons\pistol\magnum\magnum_stupiddupe
 NameBlamTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.weapon objects\weapons\pistol\magnum\magnum
 NameBlamTag dw3\r3ach\ui\chud\magnum.chud_definition ui\chud\magnum
+NameBlamTag globals\damage_responses\trigger_sniper.damage_response_definition globals\damage_responses\trigger_semiauto3
 
 PortTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model
 PortTag dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_spartan\fp_spartan.model_animation_graph

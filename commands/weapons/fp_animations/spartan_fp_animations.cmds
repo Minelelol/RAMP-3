@@ -1,0 +1,437 @@
+# ------------------------------------
+# |           ASSAULT RIFLE          |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation Keep workingdir\animations\spartan_fp\assaultrifle
+SortModes
+
+SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[23].PlaybackFlags DisableWeaponIk
+
+SetField Animations[12].Weight 0.6
+SetField Animations[12].AnimationData.NextAnimation 13
+SetField Animations[13].Weight 1
+SetField Animations[13].AnimationData.ParentAnimation 12
+SetField Animations[13].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |           BATTLE RIFLE           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\battlerifle
+
+SetField Animations[0].Weight 0.34
+SetField Animations[0].AnimationData.NextAnimation 1
+
+SetField Animations[1].Weight 0.67
+SetField Animations[1].AnimationData.NextAnimation 2
+SetField Animations[1].AnimationData.ParentAnimation 0
+
+SetField Animations[2].Weight 1
+SetField Animations[2].AnimationData.ParentAnimation 0
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |                DMR               |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\dmr
+SortModes
+
+SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[23].PlaybackFlags DisableWeaponIk
+
+SetField Animations[12].Weight 0.6
+SetField Animations[12].AnimationData.NextAnimation 13
+SetField Animations[13].Weight 1
+SetField Animations[13].AnimationData.ParentAnimation 12
+SetField Animations[13].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |           ENERGY SWORD           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\melee\energy_sword\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\sword
+SortModes
+
+SetField Animations[14].Weight 0.6
+SetField Animations[14].AnimationData.NextAnimation 15
+SetField Animations[15].Weight 1
+SetField Animations[15].AnimationData.ParentAnimation 14
+
+# Faster swing rate
+SetField Animations[7].AnimationData.FrameEvents[1].Frame 16
+SetField Animations[7].AnimationData.FrameEvents[2].Frame 21
+
+SetField Animations[8].AnimationData.FrameEvents[1].Frame 16
+SetField Animations[8].AnimationData.FrameEvents[2].Frame 21
+
+#Faster Melee Swing Rate
+AddAnimation workingdir\animations\spartan_fp\_swordfastmelee\sword
+SetField Animations[7].AnimationData.FrameCount 24
+SetField Animations[7].AnimationData.NextAnimation 26
+
+SetField Animations[26].Weight 1
+SetField Animations[26].AnimationData.ParentAnimation 7
+AddBlockElements Animations[26].AnimationData.SoundEvents
+AddBlockElements Animations[26].AnimationData.FrameEvents 3
+SetField Animations[26].AnimationData.FrameEvents[0].Frame 5
+SetField Animations[26].AnimationData.FrameEvents[1].TypeED SecondaryKeyframe
+SetField Animations[26].AnimationData.FrameEvents[1].Frame 16
+SetField Animations[26].AnimationData.FrameEvents[2].TypeED AllowInterruption
+SetField Animations[26].AnimationData.FrameEvents[2].Frame 21
+SetField Animations[26].AnimationData.SoundEvents[0].Sound 8
+SetField Animations[26].PlaybackFlags DisableWeaponAim1stPerson
+SetField Animations[26].AnimationData.ProductionFlags VerifySoundEvents
+SetField Animations[26].AnimationData.InternalFlags CompressionDisabled
+
+SetField Animations[8].AnimationData.FrameCount 24
+SetField Animations[8].AnimationData.NextAnimation 27
+
+SetField Animations[27].Weight 1
+SetField Animations[27].AnimationData.ParentAnimation 7
+AddBlockElements Animations[27].AnimationData.SoundEvents
+AddBlockElements Animations[27].AnimationData.FrameEvents 3
+SetField Animations[27].AnimationData.FrameEvents[0].Frame 5
+SetField Animations[27].AnimationData.FrameEvents[1].TypeED SecondaryKeyframe
+SetField Animations[27].AnimationData.FrameEvents[1].Frame 16
+SetField Animations[27].AnimationData.FrameEvents[2].TypeED AllowInterruption
+SetField Animations[27].AnimationData.FrameEvents[2].Frame 21
+SetField Animations[27].AnimationData.SoundEvents[0].Sound 9
+SetField Animations[27].PlaybackFlags DisableWeaponAim1stPerson
+SetField Animations[27].AnimationData.ProductionFlags VerifySoundEvents
+SetField Animations[27].AnimationData.InternalFlags CompressionDisabled
+SortModes
+RemoveBlockElements Modes[0].WeaponClass[0].Weapontype[0].Set.Actions 19 *
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |             FUEL ROD             |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\flak_cannon\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\flakcannon
+SortModes
+
+SetField Animations[4].PlaybackFlags DisableWeaponAim1stPerson
+SetField Animations[5].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[13].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |          GRAVITY HAMMER          |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\melee\gravity_hammer\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\hammer
+SortModes
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |              MAGNUM              |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\magnum
+SortModes
+
+SetField Animations[6].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[7].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[11].PlaybackFlags DisableWeaponIk
+SetField Animations[14].PlaybackFlags ForceWeaponIkOn
+SetField Animations[16].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[17].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[24].PlaybackFlags DisableWeaponIk
+SetField Animations[25].PlaybackFlags DisableWeaponIk
+SetField Animations[26].PlaybackFlags DisableWeaponIk
+SetField Animations[27].PlaybackFlags DisableWeaponIk
+
+# SetField Animations[14].Weight 0.6
+# SetField Animations[14].AnimationData.NextAnimation 15
+# SetField Animations[15].Weight 1
+# SetField Animations[15].AnimationData.ParentAnimation 14
+# SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |             NEEDLER              |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\needler\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\needler
+SortModes
+
+SetField Animations[10].PlaybackFlags DisableWeaponIk
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[16].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[23].PlaybackFlags DisableWeaponIk
+SetField Animations[24].PlaybackFlags DisableWeaponIk
+SetField Animations[25].PlaybackFlags DisableWeaponIk
+SetField Animations[26].PlaybackFlags DisableWeaponIk
+
+SetField Animations[13].Weight 0.6
+SetField Animations[13].AnimationData.NextAnimation 14
+SetField Animations[14].Weight 1
+SetField Animations[14].AnimationData.ParentAnimation 13
+SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |          PLASMA PISTOL           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\plasmapistol
+SortModes
+
+SetField Animations[3].PlaybackFlags DisableWeaponIk
+SetField Animations[6].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[7].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[10].PlaybackFlags DisableWeaponIk
+setfield Animations[11].PlaybackFlags ForceWeaponIkOn
+SetField Animations[12].PlaybackFlags DisableWeaponIk
+SetField Animations[13].PlaybackFlags DisableWeaponIk
+SetField Animations[16].PlaybackFlags DisableWeaponIk
+SetField Animations[17].PlaybackFlags DisableWeaponIk
+SetField Animations[19].PlaybackFlags ForceWeaponIkOn
+SetField Animations[24].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[29].PlaybackFlags DisableWeaponIk
+SetField Animations[30].PlaybackFlags DisableWeaponIk
+SetField Animations[31].PlaybackFlags DisableWeaponIk
+SetField Animations[32].PlaybackFlags DisableWeaponIk
+
+SetField Animations[19].Weight 0.6
+SetField Animations[19].AnimationData.NextAnimation 20
+SetField Animations[20].Weight 1
+SetField Animations[20].AnimationData.ParentAnimation 19
+SetField Animations[20].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |           PLASMA RIFLE           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\plasmarifle
+SortModes
+
+SetField Animations[8].PlaybackFlags DisableWeaponIk
+SetField Animations[9].PlaybackFlags DisableWeaponIk
+SetField Animations[10].PlaybackFlags DisableWeaponIk
+SetField Animations[16].PlaybackFlags ForceWeaponIkOn
+SetField Animations[13].PlaybackFlags DisableWeaponIk
+SetField Animations[14].PlaybackFlags DisableWeaponIk
+SetField Animations[21].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[26].PlaybackFlags ForceWeaponIkOn
+SetField Animations[28].PlaybackFlags ForceWeaponIkOn
+SetField Animations[29].PlaybackFlags ForceWeaponIkOn
+
+SetField Animations[16].Weight 0.6
+SetField Animations[16].AnimationData.NextAnimation 17
+SetField Animations[17].Weight 1
+SetField Animations[17].AnimationData.ParentAnimation 16
+SetField Animations[17].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |         ROCKET LAUNCHER          |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\rocketlauncher
+SortModes
+
+SetField Animations[0].Weight 0.34
+SetField Animations[0].AnimationData.InternalFlags CompressionDisabled,ValidProductionChecksum
+SetField Animations[0].AnimationData.NodeListChecksum -462889827
+SetField Animations[0].AnimationData.ProductionChecksum -910107603
+SetField Animations[0].AnimationData.NextAnimation 1
+AddBlockElements Animations[0].AnimationData.SoundEvents
+
+SetField Animations[1].Weight 0.67
+SetField Animations[1].AnimationData.InternalFlags CompressionDisabled,ValidProductionChecksum
+SetField Animations[1].AnimationData.NodeListChecksum -462889827
+SetField Animations[1].AnimationData.ProductionChecksum -910107603
+SetField Animations[1].AnimationData.ParentAnimation 0
+SetField Animations[1].AnimationData.NextAnimation 2
+AddBlockElements Animations[1].AnimationData.SoundEvents
+
+SetField Animations[5].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[16].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+SetField Animations[13].Weight 0.6
+SetField Animations[13].AnimationData.NextAnimation 14
+SetField Animations[14].Weight 1
+SetField Animations[14].AnimationData.ParentAnimation 13
+SetField Animations[14].PlaybackFlags DisableWeaponIk
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |             SHOTGUN              |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\shotgun\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\shotgun
+SortModes
+
+SetField Animations[0].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[6].PlaybackFlags DisableInterpolationIn,DisableInterpolationOut,DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[16].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[24].PlaybackFlags DisableWeaponIk
+
+SetField Animations[13].Weight 0.6
+SetField Animations[13].AnimationData.NextAnimation 14
+SetField Animations[14].Weight 1
+SetField Animations[14].AnimationData.ParentAnimation 13
+SetField Animations[14].PlaybackFlags DisableWeaponAim1stPerson,ForceWeaponIkOn
+
+SetField Animations[6].AnimationData.ProductionFlags VerifySoundEvents
+SetField Animations[6].AnimationData.InternalFlags CompressionDisabled,ValidProductionChecksum
+SetField Animations[6].AnimationData.NodeListChecksum -461722627
+SetField Animations[6].AnimationData.ProductionChecksum -1650910335
+
+AddBlockElements Animations[6].AnimationData.FrameEvents 3
+SetField Animations[6].AnimationData.FrameEvents[0].TypeED PrimaryKeyframe
+SetField Animations[6].AnimationData.FrameEvents[0].Frame 5
+SetField Animations[6].AnimationData.FrameEvents[1].TypeED PrimaryKeyframe
+SetField Animations[6].AnimationData.FrameEvents[1].Frame 30
+SetField Animations[6].AnimationData.FrameEvents[2].TypeED PrimaryKeyframe
+SetField Animations[6].AnimationData.FrameEvents[2].Frame 35
+
+AddBlockElements Animations[6].AnimationData.SoundEvents 1
+SetField Animations[6].AnimationData.SoundEvents[0].Sound 4
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |           SNIPER RIFLE           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\sniperrifle
+SortModes
+
+SetField Animations[4].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[8].PlaybackFlags DisableWeaponIk
+SetField Animations[11].PlaybackFlags DisableWeaponIk
+SetField Animations[13].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+SetField Animations[11].Weight 0.6
+SetField Animations[11].AnimationData.NextAnimation 12
+SetField Animations[12].Weight 1
+SetField Animations[12].AnimationData.ParentAnimation 11
+SetField Animations[12].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |          SPARTAN LASER           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\spartan_laser\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\spartanlaser
+SortModes
+
+SetField Animations[1].PlaybackFlags ForceWeaponIkOn
+SetField Animations[2].PlaybackFlags ForceWeaponIkOn
+SetField Animations[9].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[12].PlaybackFlags ForceWeaponIkOn
+SetField Animations[13].PlaybackFlags ForceWeaponIkOn
+SetField Animations[20].PlaybackFlags DisableWeaponIk
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |             SPIKER               |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\spike_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+AddAnimation workingdir\animations\spartan_fp\spiker
+SortModes
+
+AddBlockElements Animations[9].AnimationData.FrameEvents 2
+SetField Animations[9].AnimationData.FrameEvents[0].Frame 30
+SetField Animations[9].AnimationData.FrameEvents[1].TypeED AllowInterruption
+SetField Animations[9].AnimationData.FrameEvents[1].Frame 45
+AddBlockElements Animations[9].AnimationData.SoundEvents
+SetField Animations[9].AnimationData.SoundEvents[0].Sound 3
+
+AddBlockElements Animations[10].AnimationData.FrameEvents 2
+SetField Animations[10].AnimationData.FrameEvents[0].Frame 30
+SetField Animations[10].AnimationData.FrameEvents[1].TypeED AllowInterruption
+SetField Animations[10].AnimationData.FrameEvents[1].Frame 45
+AddBlockElements Animations[10].AnimationData.SoundEvents
+SetField Animations[10].AnimationData.SoundEvents[0].Sound 3
+
+SetField Animations[2].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[8].PlaybackFlags DisableWeaponIk
+SetField Animations[9].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[10].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[19].PlaybackFlags ForceWeaponIkOn
+SetField Animations[17].PlaybackFlags ForceWeaponIkOn
+SetField Animations[18].PlaybackFlags ForceWeaponIkOn
+SetField Animations[20].PlaybackFlags ForceWeaponIkOn
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit

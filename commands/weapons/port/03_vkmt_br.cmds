@@ -32,6 +32,12 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |       ANIMATION      |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_spartan\fp_spartan
+DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_elite\fp_elite.model_animation_graph dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_elite\fp_elite
+
+# ------------------------
 # |     RENDER MODEL     |
 # ------------------------
 CreateTag mode dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle
@@ -78,6 +84,8 @@ OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
 NameBlamTag objects\weapons\rifle\battle_rifle\battle_rifle.weapon objects\weapons\rifle\battle_rifle\battle_rifle_stupiddupe
 NameBlamTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.weapon objects\weapons\rifle\battle_rifle\battle_rifle
 NameBlamTag dw3\r3ach\ui\chud\battle_rifle.chud_definition ui\chud\battle_rifle
+NameBlamTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_spartan\fp_spartan
+NameBlamTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_elite\fp_elite.model_animation_graph dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_elite\fp_elite
 
 PortTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.model
 # PortTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
