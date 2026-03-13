@@ -1,0 +1,290 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\carbine.chud_definition ui\chud\needle_rifle
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\weapons\needle_rifle\needle_rifle_fire.sound
+IgnoreBlamTag sound\weapons\needle_rifle\n_rifle_lod_far.sound
+
+PortTag objects\weapons\rifle\needle_rifle\fx\firing.effect
+
+PortTag objects\weapons\pistol\needler\shaders\needler_crystal_solid.shader
+PortTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_glass.shader
+PortTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_metal.shader
+PortTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_shell.shader
+# PortTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_illum_indicator.shader_halogram
+PortTag objects\weapons\rifle\needle_rifle\shaders\needle_holes.shader
+PortTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_display.shader
+PortTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_reload_effect.shader_halogram
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+GenerateShader Shader default off none no_specular_mask diffuse_only none simple additive off first_person_never off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\weapons\rifle\needle_rifle\shaders\needle_rifle_illum_indicator
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_illum_indicator.shader
+
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[6].OptionIndex 1
+SetField Options[7].OptionIndex 1
+
+AddBlockElements ShaderProperties
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_0_0_0_0_0_1_1_0_0_0_0_0_0_0.render_method_template
+AddBlockElements ShaderProperties[0].TextureConstants 3
+AddBlockElements ShaderProperties[0].RealConstants 10
+
+SetBitmap base_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap detail_map reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap self_illum_map objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 3
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 1 1 0 0
+SetArgument albedo_color 0 0 0 1
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.07450981 0.08627451 0.21568629
+SetArgument self_illum_intensity 1.6
+SetArgument wet_material_dim_tint 0 216 216
+SetArgument wet_material_dim_coefficient 1
+
+AddBlockElements ShaderProperties[0].Functions 2
+
+SetField ShaderProperties[0].Functions[0].Type Color
+SetField ShaderProperties[0].Functions[0].TimePeriod 2.5
+SetField ShaderProperties[0].Functions[0].Function.Data 03340200692516FF0000000000000000160C110000000000000000001400000002CDCDCD0000803F00000000000000009A99193F
+
+SetField ShaderProperties[0].Functions[1].Type Value
+SetField ShaderProperties[0].Functions[1].TimePeriod 2.5
+SetField ShaderProperties[0].Functions[1].Function.Data 03340000000020400000803F00000000000000006F12833A6F12033B1400000002CDCDCD0000803F00000000000000009A99193F
+
+AddFunction self_illum_color Real 0
+AddFunction self_illum_intensity Real 1
+
+SetField ShaderProperties[0].BlendMode Additive
+SetField SortLayer Normal
+SetField Version 9
+SetField PredictionAtomIndex -1
+
+SaveTagChanges
+Exit
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_reload_effect.shader_halogram
+SetField ShaderProperties[0].Functions[5].InputName primary_ammunition
+
+AddBlockElements ShaderProperties[0].Functions
+
+SetField ShaderProperties[0].Functions[*].Type Color
+SetField ShaderProperties[0].Functions[*].InputName camo
+SetField ShaderProperties[0].Functions[*].TimePeriod 1
+SetField ShaderProperties[0].Functions[*].Function.Data 00340000000000000000803F00000000000000006F12833A6F12033B00000000
+
+AddFunction edge_fade_center_tint Real 6
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_metal.shader
+SetArgument environment_map_specular_contribution 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_shell.shader
+SetArgument environment_map_specular_contribution 0.5
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_glass.shader
+SetArgument albedo_color 0.078431375 0 1 0.1
+SetArgument env_tint_color 0.05 0.05 0.05
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_holes.shader
+SetField ShaderProperties[0].Functions[0].InputName primary_ammunition
+SetField ShaderProperties[0].Functions[1].InputName primary_ammunition
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_display.shader
+SetField ShaderProperties[0].Functions[0].InputName primary_ammunition
+SetField ShaderProperties[0].Functions[1].InputName primary_ammunition
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add l_needle1
+StringId Add l_needle2
+StringId Add l_needle3
+StringId Add l_needle4
+StringId Add l_needle5
+StringId Add l_needle6
+
+StringId Add r_needle1
+StringId Add r_needle2
+StringId Add r_needle3
+StringId Add r_needle4
+StringId Add r_needle5
+StringId Add r_needle6
+
+StringId Add right_hand_spartan
+
+CreateTag mode dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle
+ImportTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.render_model workingdir\tags\weapons\VKMT\needle_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.render_model
+
+SetField Nodes[1].Name l_needle1
+SetField Nodes[2].Name l_needle2
+SetField Nodes[3].Name l_needle3
+SetField Nodes[4].Name l_needle4
+SetField Nodes[5].Name l_needle5
+SetField Nodes[6].Name l_needle6
+SetField Nodes[7].Name r_needle1
+SetField Nodes[8].Name r_needle2
+SetField Nodes[9].Name r_needle3
+SetField Nodes[10].Name r_needle4
+SetField Nodes[11].Name r_needle5
+SetField Nodes[12].Name r_needle6
+
+# Left Hand IK
+SetField MarkerGroups[2].Markers[0].Translation 0.12625 -0.0015 -0.00875
+
+SetField MarkerGroups[10].Name right_hand_spartan
+
+SetField Materials[0].RenderMethod objects\weapons\pistol\needler\shaders\needler_crystal_solid.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_rifle_glass.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_rifle_metal.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_rifle_shell.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_rifle_illum_indicator.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_holes.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_rifle_display.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\needle_rifle\shaders\needle_rifle_reload_effect.shader_halogram
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\NR\needle_rifle.fbx TriangleStrip
+
+SetField Geometry.Meshes[0].Parts[2].FlagsNew PreventBackfaceCulling
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.1435 0.009 0.0024
+SetField MarkerGroups[*].Markers[*].Rotation -0.6 0.145 -0.49 0.64
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.16 0.0095 0.0075
+SetField MarkerGroups[*].Markers[*].Rotation -0.742 0.1 -0.6 0.8
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.weapon objects\weapons\rifle\needle_rifle\needle_rifle
+NameBlamTag dw3\r3ach\ui\chud\needle_rifle.chud_definition ui\chud\needle_rifle
+NameBlamTag dw3\r3ach\objects\weapons\rifle\needle_rifle\firing.effect objects\weapons\rifle\needle_rifle\fx\firing
+NameBlamTag dw3\r3ach\objects\weapons\pistol\needler\shaders\needler_crystal_solid.shader objects\weapons\pistol\needler\shaders\needler_crystal_solid
+
+PortTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.model
+PortTag dw3\r3ach\objects\weapons\rifle\needle_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\needle_rifle\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\needle_rifle\projectiles\needle_rifle_shard.projectile
+PortTag dw3\r3ach\sound\weapons\needle_rifle\needle_rifle_fire.sound
+PortTag dw3\r3ach\sound\weapons\needle_rifle\n_rifle_lod_far.sound
+
+PortTag Replace Single objects\weapons\rifle\needle_rifle\needle_rifle.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\rifle\needle_rifle\fx\firing.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\needle_rifle\needle_rifle_fire.sound
+SetField Events[0].Parts[1].Type dw3\r3ach\sound\weapons\needle_rifle\n_rifle_lod_far.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\needle_rifle\needle_rifle_fire.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 3
+SetField Playback.DistanceParameters.MaximumDistance 30
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\sound\weapons\needle_rifle\n_rifle_lod_far.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceB,DistanceC,Bit4
+SetField Playback.DistanceParameters.DontPlayDistance 10
+SetField Playback.DistanceParameters.MaximumDistance 200
+SaveTagChanges
+Exit
+
+EditTag sound\weapons\needle_rifle\n_rifle_tails_ext.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,Bit4
+SetField Playback.DistanceParameters.MaximumDistance 200
+SaveTagChanges
+Exit
+
+EditTag sound\weapons\needle_rifle\n_rifle_tails_int.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,Bit4
+SetField Playback.DistanceParameters.MaximumDistance 200
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      PROJECTILE      |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\needle_rifle\projectiles\needle_rifle_shard.projectile
+SetField AirborneDetonationEffect objects\weapons\pistol\needler\fx\airborne_detonation.effect
+SetField GroundDetonationEffect objects\weapons\pistol\needler\fx\detonation.effect
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\needle_rifle\needle_rifle.weapon
+AddBlockElements Functions
+SetField Functions[*].ImportName active_camouflage
+SetField Functions[*].ExportName camo
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+SaveTagChanges
+Exit
+
+# Remove ts once we're done with the weapons port
+AddForgeItem "NEEDLE RIFLE" 1 objects\weapons\rifle\needle_rifle\needle_rifle.weapon

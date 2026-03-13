@@ -76,6 +76,7 @@ SetField PredictionAtomIndex -1
 
 SaveTagChanges
 Exit
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
 EditTag objects\weapons\pistol\needler\shaders\needler_pilot.shader_halogram
 SetField ShaderProperties[0].Functions[2].InputName camo
@@ -89,6 +90,13 @@ EditTag objects\weapons\pistol\needler\shaders\needler_shell.shader
 SetArgument environment_map_specular_contribution 0.5
 SaveTagChanges
 Exit
+
+# Look in 19_reach_needle_rifle.cmds
+# EditTag objects\weapons\rifle\needle_rifle\shaders\needle_holes.shader
+# SetField ShaderProperties[0].Functions[0].InputName primary_ammunition
+# SetField ShaderProperties[0].Functions[1].InputName primary_ammunition
+# SaveTagChanges
+# Exit
 
 # ------------------------
 # |     RENDER MODEL     |

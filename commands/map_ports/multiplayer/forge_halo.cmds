@@ -10,9 +10,7 @@ SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
 
-IgnoreBlamTag sound\game_sfx\ui\pda_transition.sound
-IgnoreBlamTag sound\game_sfx\ui\transition_beeps.sound
-IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
 
 PortTag !Scripts !UpdateMapFiles *.scnr
 Exit
@@ -73,7 +71,6 @@ Exit
 # |        SHADER        |
 # ------------------------
 EditTag levels\multi\forge_halo\sky_halo\shaders\sky_halo_ring.shader
-# SetField ShaderProperties[0].RealConstants[3].Values 1 1.2 1.5 1
 SetField RenderFlags None
 SaveTagChanges
 Exit

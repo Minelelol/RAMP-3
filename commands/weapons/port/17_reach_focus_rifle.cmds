@@ -103,12 +103,24 @@ SetField Options[7].OptionIndex 1
 AddBlockElements ShaderProperties
 SetField ShaderProperties[0].Template shaders\shader_templates\_2_0_0_0_0_0_12_1_0_0_0_0_0_0_0.render_method_template
 AddBlockElements ShaderProperties[0].TextureConstants 4
-AddBlockElements ShaderProperties[0].RealConstants 50
+AddBlockElements ShaderProperties[0].RealConstants 13
 
 SetBitmap noise_map_a fx\bitmaps\plasma\plasma_clouds_128_a.bitmap
 SetBitmap noise_map_b fx\bitmaps\plasma\plasma_clouds_128_b.bitmap
 SetBitmap palette fx\particles\plasma\gradients\soft_plasma_blue.bitmap
 SetBitmap alpha_mask_map objects\vehicles\covenant\phantom\bitmaps\phantom_illum.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[0].TextureTransformOverlayIndices.Integer 2048
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformOverlayIndices.Integer 2050
+
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex -1
+SetField ShaderProperties[0].TextureConstants[2].SamplerAddressMode Clamp Clamp
+
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[3].SamplerAddressMode Clamp Clamp
 
 SetArgument albedo_color 0 0 0 1
 SetArgument noise_map_a 0.5 0.5 0 0

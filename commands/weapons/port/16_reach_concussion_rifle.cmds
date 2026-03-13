@@ -21,6 +21,9 @@ PortTag objects\weapons\rifle\concussion_rifle\fx\firing.effect
 # PortTag objects\weapons\rifle\concussion_rifle\projectiles\concussion_rifle_grenade.projectile
 PortTag objects\weapons\rifle\concussion_rifle\fx\projectile.effect
 
+PortTag fx\bitmaps\atmospheric_rolling\fireball_plate.bitmap
+PortTag fx\particles\_gradients\fireball_red_plasma.bitmap
+
 PortTag objects\weapons\rifle\concussion_rifle\shaders\concussion_rifle_inside.shader
 PortTag objects\weapons\rifle\concussion_rifle\shaders\concussion_rifle_metal.shader
 PortTag objects\weapons\rifle\concussion_rifle\shaders\concussion_rifle_rubber.shader
@@ -165,6 +168,8 @@ NameBlamTag dw3\r3ach\ui\chud\concussion_rifle.chud_definition ui\chud\concussio
 # NameBlamTag dw3\r3ach\objects\weapons\rifle\concussion_rifle\projectiles\grenade.projectile objects\weapons\rifle\concussion_rifle\projectiles\concussion_rifle_grenade
 NameBlamTag dw3\r3ach\objects\weapons\rifle\concussion_rifle\firing.effect objects\weapons\rifle\concussion_rifle\fx\firing
 NameBlamTag dw3\r3ach\objects\weapons\rifle\concussion_rifle\projectiles\attachments\projectile.effect objects\weapons\rifle\concussion_rifle\fx\projectile
+NameBlamTag dw3\r3ach\objects\bitmaps\effects\fireball_plate.bitmap fx\bitmaps\atmospheric_rolling\fireball_plate
+NameBlamTag dw3\r3ach\objects\bitmaps\effects\fireball_red_plasma.bitmap fx\particles\_gradients\fireball_red_plasma
 
 PortTag dw3\r3ach\objects\weapons\rifle\concussion_rifle\concussion_rifle.model
 PortTag dw3\r3ach\objects\weapons\rifle\concussion_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
