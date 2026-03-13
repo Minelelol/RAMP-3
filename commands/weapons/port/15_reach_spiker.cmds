@@ -13,9 +13,13 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.render_model workingdir\tags\weapons\VKMT\spike_rifle.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.render_model
+
+SetField MarkerGroups[9].Name right_hand_spartan
 
 SetField Materials[0].RenderMethod objects\weapons\rifle\spike_rifle\shaders\spike_rifle_blades.shader
 SetField Materials[1].RenderMethod objects\weapons\rifle\spike_rifle\shaders\spike_rifle_leather_handle.shader
@@ -43,6 +47,8 @@ NameBlamTag objects\weapons\rifle\spike_rifle\spike_rifle.weapon saratemitakimiw
 NameBlamTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.weapon objects\weapons\rifle\spike_rifle\spike_rifle
 NameBlamTag dw3\r3ach\ui\chud\spiker.chud_definition ui\chud\spike_rifle
 
+IgnoreBlamTag dw3\r3ach\sound\weapons\spike_rifle\spike_lod_far.sound
+
 PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.model
 PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
 PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\animations\fp_elite\fp_elite.model_animation_graph
@@ -68,5 +74,20 @@ SetField ImportType SingleLayer
 SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
 SetField Playback.DistanceParameters.MinimumDistance 1
 SetField Playback.DistanceParameters.MaximumDistance 15
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       LOD SOUND      |
+# ------------------------
+EditTag objects\weapons\rifle\spike_rifle\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\spike_rifle\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+RemoveBlockElements Events[0].Parts 3 *
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\spike_rifle\spike_rifle_fire.sound
 SaveTagChanges
 Exit

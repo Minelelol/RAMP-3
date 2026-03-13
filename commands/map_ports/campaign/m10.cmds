@@ -1,0 +1,40 @@
+OpenCacheFile reachmapsdir\m10.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
+
+IgnoreBlamTag objects\characters\civilian_male\civilian_male.scenery
+IgnoreBlamTag objects\characters\civilian_female\civilian_female.scenery
+IgnoreBlamTag objects\characters\marine\marine.scenery
+IgnoreBlamTag sound\dialog\levels\m10\m10.ai_mission_dialogue
+
+PortTag !UpdateMapFiles !Scripts *.scnr
+PortTag levels\solo\m10\m10_soft_ceilings.structure_design
+Exit
+
+EditTag levels\solo\m10\m10.scenario
+ForEach StructureBsps SetField Design levels\solo\m10\m10_soft_ceilings.structure_design
+SetField CampaignId -1
+SetField MapId 5010
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+MergePVS
+SaveTagChanges
+Exit
+
+EditTag levels\solo\m10\m10.sky_atm_parameters
+setfield AtmosphereSettings[0].Flags EnableAtmosphere,PatchyFog
+setfield AtmosphereSettings[0].SeaLevel 5000
+SetField AtmosphereSettings[0].MaxFogThickness 150
+setfield AtmosphereSettings[0].Color 0.5775805 0.838799 0.8879231
+setfield AtmosphereSettings[0].Intensity 0.1
+setfield AtmosphereSettings[0].DistanceBias -10
+SaveTagChanges
+Exit

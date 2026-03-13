@@ -86,7 +86,7 @@
 		(begin
 			(set ui_location 0)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 0)
 	)
@@ -112,7 +112,7 @@
 		(begin
 			(set ui_location 1)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 1)
 	)
@@ -140,7 +140,7 @@
 		(begin
 			(set ui_location 8)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 8)
 	)
@@ -164,7 +164,7 @@
 		(begin
 			(set ui_location 3)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 3)
 	)
@@ -188,7 +188,7 @@
 		(begin
 			(set ui_location 4)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 4)
 	)
@@ -211,7 +211,7 @@
 		(begin
 			(set ui_location 5)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 5)
 	)
@@ -235,7 +235,7 @@
 		(begin
 			(set ui_location 9)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 9)
 	)
@@ -264,7 +264,7 @@
 		(begin
 			(set ui_location 2)
 			(kill_camera_scripts)
-			false
+
 		)
 		(set ui_location 2)
 	)

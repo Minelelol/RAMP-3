@@ -21,9 +21,14 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add magazine_marker
+StringId Add right_hand_spartan
 CreateTag mode dw3\r3ach\objects\weapons\pistol\magnum\magnum
 ImportTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.render_model workingdir\tags\weapons\VKMT\magnum.render_model
 EditTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.render_model
+SetField MarkerGroups[2].Name magazine_marker
+SetField MarkerGroups[8].Name right_hand_spartan
+
 SetField Materials[0].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_composite.shader
 SetField Materials[1].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_metal.shader
 SetField Materials[2].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_metal_shiny.shader

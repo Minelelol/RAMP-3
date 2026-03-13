@@ -1,6 +1,7 @@
-OpenCacheFile reachmaps\m52.map
+OpenCacheFile reachmapsdir\m52.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
 
 IgnoreBlamTag cinematics\052la_airlift\052la_airlift.cinematic
 IgnoreBlamTag cinematics\052lb_reflection\052lb_reflection.cinematic
@@ -284,3 +285,13 @@ IgnoreBlamTag objects\vehicles\flocks\flock_falcon\flock_falcon.big_battle_creat
 IgnoreBlamTag objects\vehicles\flocks\flock_banshee\flock_banshee.big_battle_creature
 
 PortTag !updatemapfiles !scripts *.scnr
+
+EditTag levels\solo\m52\m52.scenario
+SetField CampaignId -1
+SetField MapId 5052
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+MergePVS
+SaveTagChanges
+Exit

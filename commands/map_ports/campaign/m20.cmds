@@ -1,0 +1,30 @@
+OpenCacheFile reachmapsdir\m20.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
+
+IgnoreBlamTag objects\characters\marine\marine.scenery
+IgnoreBlamTag sound\dialog\levels\m20\m20.ai_mission_dialogue
+
+PortTag !UpdateMapFiles !Scripts *.scnr
+PortTag levels\solo\m20\m20_soft_ceiling.structure_design
+PortTag levels\solo\m20\m20_interior_water.structure_design
+Exit
+
+EditTag levels\solo\m20\m20.scenario
+ForEach StructureBsps SetField Design levels\solo\m20\m20_soft_ceiling.structure_design
+SetField StructureBsps[2].Design levels\solo\m20\m20_interior_water.structure_design
+SetField CampaignId -1
+SetField MapId 5020
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+MergePVS
+SaveTagChanges
+Exit

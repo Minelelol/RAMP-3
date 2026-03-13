@@ -157,9 +157,21 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol
 ImportTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model workingdir\tags\weapons\VKMT\plasma_pistol.render_model
 EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model
+
+AddBlockElements MarkerGroups[0].Markers
+SetField MarkerGroups[0].Markers[1].RegionIndex -1
+SetField MarkerGroups[0].Markers[1].PermutationIndex -1
+SetField MarkerGroups[0].Markers[1].Flags HasNodeRelativeDirection
+SetField MarkerGroups[0].Markers[1].Translation 0.094 0.022272596 0.020222854
+SetField MarkerGroups[0].Markers[1].Rotation 0 0 0.70710695 0.7071066
+SetField MarkerGroups[0].Markers[1].Scale 0.009999999
+
+SetField MarkerGroups[7].Name right_hand_spartan
 
 SetField Materials[0].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader
 SetField Materials[1].RenderMethod objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_metal.shader

@@ -40,9 +40,14 @@ DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_elite\fp_elite.mo
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.render_model workingdir\tags\weapons\VKMT\battle_rifle.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.render_model
+
+SetField MarkerGroups[8].Name right_hand_spartan
+
 SetField Materials[0].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_composite.shader
 SetField Materials[1].RenderMethod objects\weapons\rifle\battle_rifle\shaders\br_lens.shader
 SetField Materials[2].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_metal.shader

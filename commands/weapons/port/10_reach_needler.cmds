@@ -93,9 +93,20 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\pistol\needler\needler
 ImportTag dw3\r3ach\objects\weapons\pistol\needler\needler.render_model workingdir\tags\weapons\VKMT\needler.render_model
 EditTag dw3\r3ach\objects\weapons\pistol\needler\needler.render_model
+
+AddBlockElements MarkerGroups[2].Markers
+SetField MarkerGroups[2].Markers[1].RegionIndex -1
+SetField MarkerGroups[2].Markers[1].PermutationIndex -1
+SetField MarkerGroups[2].Markers[1].Translation 0.11 -0.009000001 0.00885
+SetField MarkerGroups[2].Markers[1].Rotation 0 0 0 1
+SetField MarkerGroups[2].Markers[1].Scale 0.01
+
+SetField MarkerGroups[10].Name right_hand_spartan
 
 SetField Materials[0].RenderMethod objects\weapons\pistol\needler\shaders\needler_crystal_solid.shader
 SetField Materials[1].RenderMethod objects\weapons\pistol\needler\shaders\needler_metal.shader

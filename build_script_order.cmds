@@ -8,14 +8,14 @@ MainMenu Multiplayer Character
 # REMOVE THE APPLY PAK SCRIPT ONCE WE'RE DONE USING THE PAK
 # RunCommands workingdir\commands\RecompileShaders.cmds
 
-OpenModPackage workingdir\paks\RecompShaders[1.5.9551.17107].pak
+OpenModPackage workingdir\paks\RecompShaders[1.5.9565.22737].pak
 ApplyModPackage
 ExitModPackage
 
 # -----------------------------------------
 # |             REACH SPARTAN             |
 # -----------------------------------------
-# PEAKED AT 3.8Gb OF DEDICATED WAM
+# PEAKED AT 3.2Gb OF DEDICATED WAM
 RunCommands workingdir\commands\customization\spartan\1_reach_shaders.cmds
 RunCommands workingdir\commands\customization\spartan\2_mcc_shaders.cmds
 RunCommands workingdir\commands\customization\spartan\3_custom_shaders.cmds
@@ -62,6 +62,9 @@ RunCommands workingdir\commands\weapons\port\12_reach_shotgun.cmds
 RunCommands workingdir\commands\weapons\port\13_reach_sniper_rifle.cmds
 RunCommands workingdir\commands\weapons\port\14_reach_spartan_laser.cmds
 RunCommands workingdir\commands\weapons\port\15_reach_spiker.cmds
+RunCommands workingdir\commands\weapons\port\16_reach_concussion_rifle.cmds
+RunCommands workingdir\commands\weapons\port\17_reach_focus_rifle.cmds
+RunCommands workingdir\commands\weapons\port\18_reach_grenade_launcher.cmds
 
 RunCommands workingdir\commands\weapons\fp_animations\spartan_fp_animations.cmds
 RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds
@@ -70,16 +73,17 @@ RunCommands workingdir\commands\weapons\weapons_viewmodel.cmds
 # -----------------------------------------
 # |          REACH MP MAP PORTS           |
 # -----------------------------------------
-# Prevent Crashing when porting... certains maps
+# Prevent crashing when porting... certains maps
 # These rmt2 is over the samplers limit
+# m50/50_panopticon/ff50_park
 CreateTag rmt2 shaders\shader_templates\_0_6_0_4_13_2_0_3_2_5_0_0_0_0_2
 CreateTag rmt2 shaders\shader_templates\_7_2_0_1_13_2_5_0_1_5_0_0_0_0_0
 CreateTag rmt2 shaders\shader_templates\_5_7_0_1_13_1_11_0_0_5_0_0_0_0_0
 SaveTagNames
 
-RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
-RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
-RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
+# RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
+# RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
+# RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
 
 UpdateMapFiles workingdir\mapsinfo
 MapFile Remove 270735729

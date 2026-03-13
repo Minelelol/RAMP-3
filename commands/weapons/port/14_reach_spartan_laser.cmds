@@ -28,9 +28,14 @@ Exit
 # |     RENDER MODEL     |
 # ------------------------
 StringId Add cover_panel
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser
 ImportTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.render_model workingdir\tags\weapons\VKMT\spartan_laser.render_model
 EditTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.render_model
+
+SetField MarkerGroups[8].Name right_hand_spartan
+
 SetField Nodes[5].Name cover_panel
 
 SetField Materials[0].RenderMethod objects\weapons\support_high\spartan_laser\shaders\spartan_laser_scope_alpha.shader_halogram

@@ -27,9 +27,15 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add fx_display_light
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.render_model workingdir\tags\weapons\VKMT\assault_rifle.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.render_model
+
+SetField MarkerGroups[1].Name fx_display_light
+SetField MarkerGroups[9].Name right_hand_spartan
 
 SetField Materials[0].RenderMethod objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader
 SetField Materials[1].RenderMethod objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny.shader

@@ -43,6 +43,8 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
+StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher
 ImportTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.render_model workingdir\tags\weapons\VKMT\rocket_launcher.render_model
 EditTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.render_model
@@ -58,8 +60,8 @@ SetField Materials[6].RenderMethod objects\weapons\support_high\rocket_launcher\
 RemoveBlockElements Regions 0 *
 ReplaceRenderGeometry workingdir\models\weapons\RL\rocket_launcher.fbx TriangleStrip
 
-# Why is this called albedo_cc?????
 SetField MarkerGroups[1].Name fx_backwash
+SetField MarkerGroups[7].Name right_hand_spartan
 
 AddBlockElements MarkerGroups
 AddBlockElements MarkerGroups[*].Markers

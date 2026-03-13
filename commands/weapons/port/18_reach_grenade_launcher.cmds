@@ -1,0 +1,162 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\magnum.chud_definition ui\chud\grenade_launcher
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+PortTag fx\particles\plasma\gradients\emp.bitmap
+PortTag fx\bitmaps\plasma\emp_mask.bitmap
+
+PortTag objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_composite.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal_shiny.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_rubber.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\arm_switch.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\arm_switch_projectile.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\display.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\display_status.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_glass.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\hundreds.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\item.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\ones.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\skull_ones.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\skull_switch.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\tens.shader
+
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+StringId Add primary_charged
+EditTag objects\weapons\rifle\grenade_launcher\shaders\arm_switch.shader
+SetField ShaderProperties[0].Functions[1].InputName primary_charged
+SetField ShaderProperties[0].Functions[1].Function.Data 00340300010101FF00FFFFFF000000000000FFFF000000000000000000000000
+SetField ShaderProperties[0].Functions[3].InputName primary_charged
+SetField ShaderProperties[0].Functions[3].Function.Data 00340300010101FF00FFFFFF000000000000FFFF000000000000000000000000
+SaveTagChanges
+Exit
+
+StringId Add grenade_active
+EditTag objects\weapons\rifle\grenade_launcher\shaders\arm_switch_projectile.shader
+SetField ShaderProperties[0].Functions[1].InputName grenade_active
+SetField ShaderProperties[0].Functions[1].Function.Data 003402000E0E0EFF000000000000000000FFFFFF000000000000000000000000
+SetField ShaderProperties[0].Functions[3].InputName grenade_active
+SetField ShaderProperties[0].Functions[3].Function.Data 003402000E0E0EFF000000000000000000FFFFFF000000000000000000000000
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\grenade_launcher\shaders\display_status.shader
+SetField ShaderProperties[0].Functions[1].InputName primary_charged
+SetField ShaderProperties[0].Functions[1].Function.Data 0834000000000000000040400000000000000000000000000000000024000000020000000400003F77BE7F3F000000000000000004000000FFFF7F7FD3007A44D3C079C4
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add chamber
+StringId Add ironsight
+
+StringId Add right_hand_spartan
+
+CreateTag mode dw3\r3ach\objects\weapons\rifle\grenade_launcher\grenade_launcher
+ImportTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\grenade_launcher.render_model workingdir\tags\weapons\VKMT\grenade_launcher.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\grenade_launcher.render_model
+
+SetField MarkerGroups[6].Name right_hand_spartan
+
+SetField Nodes[1].Name chamber
+SetField Nodes[4].Name ironsight
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal_shiny.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_rubber.shader
+SetField Materials[4].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\arm_switch.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\arm_switch_projectile.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\display.shader
+SetField Materials[8].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\display_status.shader
+SetField Materials[9].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_glass.shader
+SetField Materials[10].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\hundreds.shader
+SetField Materials[11].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\item.shader
+SetField Materials[12].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\ones.shader
+SetField Materials[13].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\skull_ones.shader
+SetField Materials[14].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\skull_switch.shader
+SetField Materials[15].RenderMethod objects\weapons\rifle\grenade_launcher\shaders\tens.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\GL\grenade_launcher.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.123 0.0011 0.0319
+SetField MarkerGroups[*].Markers[*].Rotation -0.78 0.234 -0.4 0.6
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.129 0.0044 0.0341
+SetField MarkerGroups[*].Markers[*].Rotation -0.65 0.305 -0.37 0.57
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon objects\weapons\rifle\grenade_launcher\grenade_launcher
+NameBlamTag dw3\r3ach\ui\chud\grenade_launcher.chud_definition ui\chud\grenade_launcher
+NameBlamTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal.shader objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal
+NameBlamTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal_shiny.shader objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal_shiny
+NameBlamTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\shaders\arm_switch_projectile.shader objects\weapons\rifle\grenade_launcher\shaders\arm_switch_projectile
+NameBlamTag dw3\r3ach\objects\bitmaps\effects\emp.bitmap fx\particles\plasma\gradients\emp
+NameBlamTag dw3\r3ach\objects\bitmaps\effects\emp_mask.bitmap fx\bitmaps\plasma\emp_mask
+NameBlamTag dw3\r3ach\objects\bitmaps\effects\plasma_clouds_512_a.bitmap fx\bitmaps\plasma\plasma_clouds_512_a
+NameBlamTag dw3\r3ach\objects\bitmaps\effects\plasma_clouds_512_b.bitmap fx\bitmaps\plasma\plasma_clouds_512_b
+
+PortTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\grenade_launcher.model
+PortTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\primary\grenade.projectile
+PortTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\secondary\grenade.projectile
+PortTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\firing.effect
+
+PortTag Replace Single objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\grenade_launcher.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\primary\detonation.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\grenade_launcher\grenade_launcher_expl.sound
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\secondary\detonation.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\grenade_launcher\grenade_launcher_expl.sound
+SaveTagChanges
+Exit
+
+# Remove ts once we're done with the weapons port
+AddForgeItem "GRENADE LAUNCHER" 1 objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon

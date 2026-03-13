@@ -1,0 +1,308 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\beam_rifle.chud_definition ui\chud\focus_rifle
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+# I WAS ABLE TO GET TO BE IN LINE BUT ONLY ON CENTERED CROSSHAIR
+IgnoreBlamTag objects\weapons\rifle\focus_rifle\fx\firing_1p.light_volume_system
+
+PortTag objects\weapons\rifle\focus_rifle\fx\firing.effect
+PortTag objects\weapons\rifle\focus_rifle\fx\impact.effect
+PortTag objects\weapons\rifle\focus_rifle\fx\overheated.effect
+
+PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_scope_alpha.shader_halogram
+PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_metal.shader
+PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_rubber.shader
+PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_shell.shader
+# PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_illum_plasma.shader_halogram
+PortTag fx\bitmaps\plasma\plasma_clouds_128_b.bitmap
+PortTag objects\vehicles\covenant\phantom\bitmaps\phantom_illum.bitmap
+# PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_indicator.shader_halogram
+PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display.shader
+PortTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display2.shader
+
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+GenerateShader Shader default off none no_specular_mask diffuse_only none simple additive off first_person_never off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\weapons\rifle\focus_rifle\shaders\focus_rifle_indicator
+EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_indicator.shader
+
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[6].OptionIndex 1
+SetField Options[7].OptionIndex 1
+
+AddBlockElements ShaderProperties
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_0_0_0_0_0_1_1_0_0_0_0_0_0_0.render_method_template
+AddBlockElements ShaderProperties[0].TextureConstants 3
+AddBlockElements ShaderProperties[0].RealConstants 10
+
+SetBitmap base_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap detail_map reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap self_illum_map objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformOverlayIndices.Integer 1024
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 3
+
+SetArgument base_map 2 2 0 0
+SetArgument detail_map 16 16 0 0
+SetArgument albedo_color 0 0 0 1
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.06666667 0.2392157 0.43921572
+SetArgument self_illum_intensity 1
+SetArgument wet_material_dim_tint 0 216 216
+SetArgument wet_material_dim_coefficient 1
+
+AddBlockElements ShaderProperties[0].Functions 2
+
+SetField ShaderProperties[0].Functions[0].Type TranslationX
+SetField ShaderProperties[0].Functions[0].TimePeriod 5
+SetField ShaderProperties[0].Functions[0].Function.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+SetField ShaderProperties[0].Functions[1].Type Color
+SetField ShaderProperties[0].Functions[1].TimePeriod 3
+SetField ShaderProperties[0].Functions[1].Function.Data 03340200F78611FF0000000000000000160C110000000000000000001400000002CDCDCD0000803F00000000CDCC4C3E9A99193F
+
+AddFunction detail_map Real 0
+AddFunction self_illum_color Real 1
+
+SetField ShaderProperties[0].BlendMode Additive
+SetField SortLayer Normal
+SetField Version 9
+SetField PredictionAtomIndex -1
+
+SaveTagChanges
+Exit
+
+GenerateShader Shader constant_color off none no_specular_mask diffuse_only none palettized_plasma additive off first_person_never off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\weapons\rifle\focus_rifle\shaders\focus_rifle_illum_plasma
+EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_illum_plasma.shader
+
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[0].OptionIndex 2
+SetField Options[6].OptionIndex 12
+SetField Options[7].OptionIndex 1
+
+AddBlockElements ShaderProperties
+SetField ShaderProperties[0].Template shaders\shader_templates\_2_0_0_0_0_0_12_1_0_0_0_0_0_0_0.render_method_template
+AddBlockElements ShaderProperties[0].TextureConstants 4
+AddBlockElements ShaderProperties[0].RealConstants 50
+
+SetBitmap noise_map_a fx\bitmaps\plasma\plasma_clouds_128_a.bitmap
+SetBitmap noise_map_b fx\bitmaps\plasma\plasma_clouds_128_b.bitmap
+SetBitmap palette fx\particles\plasma\gradients\soft_plasma_blue.bitmap
+SetBitmap alpha_mask_map objects\vehicles\covenant\phantom\bitmaps\phantom_illum.bitmap
+
+SetArgument albedo_color 0 0 0 1
+SetArgument noise_map_a 0.5 0.5 0 0
+SetArgument noise_map_b 0.75 0.75 0 0
+SetArgument alpha_mask_map 1 1 0 0
+SetArgument alpha_modulation_factor 0.1
+SetArgument depth_fade_range 0
+SetArgument self_illum_color 1 1 1
+SetArgument self_illum_intensity 0
+SetArgument v_coordinate 0.5
+SetArgument wet_material_dim_tint 0 216 216
+SetArgument wet_material_dim_coefficient 1
+
+AddBlockElements ShaderProperties[0].Functions 5
+
+SetField ShaderProperties[0].Functions[0].Type TranslationY
+SetField ShaderProperties[0].Functions[0].TimePeriod 0.5
+SetField ShaderProperties[0].Functions[0].Function.Data 0034000000000000000080BF000000000000000048E1FA3E0000003F00000000
+
+SetField ShaderProperties[0].Functions[1].Type TranslationX
+SetField ShaderProperties[0].Functions[1].TimePeriod 0.3
+SetField ShaderProperties[0].Functions[1].Function.Data 00340000000000000000803F000000000000000048E1FA3E0000003F00000000
+
+SetField ShaderProperties[0].Functions[2].Type TranslationY
+SetField ShaderProperties[0].Functions[2].TimePeriod 0.5
+SetField ShaderProperties[0].Functions[2].Function.Data 0034000000000000000080BF000000000000000048E1FA3E0000003F00000000
+
+SetField ShaderProperties[0].Functions[3].Type TranslationX
+SetField ShaderProperties[0].Functions[3].TimePeriod 0.5
+SetField ShaderProperties[0].Functions[3].Function.Data 00340000000000000000803F000000000000000048E1FA3E0000003F00000000
+
+SetField ShaderProperties[0].Functions[4].InputName illumination
+SetField ShaderProperties[0].Functions[4].TimePeriod 5
+SetField ShaderProperties[0].Functions[4].Function.Data 09300000000000000000A0410000000000000000EA4BFC3EFCCEFC3E0C000000000000000000803F00004040
+
+AddFunction noise_map_a Real 0
+AddFunction noise_map_a Real 1
+
+AddFunction noise_map_b Real 2
+AddFunction noise_map_b Real 3
+
+AddFunction self_illum_intensity Real 4
+
+SetField ShaderProperties[0].BlendMode Additive
+SetField SortLayer Normal
+SetField Version 9
+SetField PredictionAtomIndex -1
+SaveTagChanges
+Exit
+
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
+EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display.shader
+SetField ShaderProperties[0].Functions[0].InputName display
+SaveTagChanges
+Exit
+
+StringId Add display2
+EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display2.shader
+SetField ShaderProperties[0].Functions[0].InputName display2
+SetField ShaderProperties[0].Functions[1].InputName display2
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_scope_alpha.shader_halogram
+SetArgument self_illum_map 0.6 0.6 0.07 0.31
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add barrel_bottom
+StringId Add barrel_top
+StringId Add innercharge_cylinder
+StringId Add lower_armjoint01
+StringId Add outercharge_left
+StringId Add outercharge_right
+StringId Add upper_armjoint01
+StringId Add barrel_bottom01
+StringId Add barrel_top01
+StringId Add lower_armjoint02
+StringId Add upper_armjoint02
+StringId Add lower_armjoint03
+StringId Add upper_armjoint03
+
+StringId Add right_hand_spartan
+StringId Add fx_wheel_gas
+
+CreateTag mode dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle
+ImportTag dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle.render_model workingdir\tags\weapons\VKMT\focus_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle.render_model
+
+SetField MarkerGroups[2].Name fx_wheel_gas
+SetField MarkerGroups[11].Name right_hand_spartan
+
+SetField Nodes[1].Name barrel_bottom
+SetField Nodes[2].Name barrel_top
+SetField Nodes[3].Name innercharge_cylinder
+SetField Nodes[4].Name lower_armjoint01
+SetField Nodes[5].Name outercharge_left
+SetField Nodes[6].Name outercharge_right
+SetField Nodes[7].Name upper_armjoint01
+SetField Nodes[8].Name barrel_bottom01
+SetField Nodes[9].Name barrel_top01
+SetField Nodes[10].Name lower_armjoint02
+SetField Nodes[11].Name upper_armjoint02
+SetField Nodes[12].Name lower_armjoint03
+SetField Nodes[13].Name upper_armjoint03
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_scope_alpha.shader_halogram
+SetField Materials[1].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_rubber.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_shell.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_illum_plasma.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_indicator.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display2.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\FR\focus_rifle.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.0972 0.0056 -0.0005
+SetField MarkerGroups[*].Markers[*].Rotation -0.554 0.11 -0.45 0.612
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.1015 0.0041 0.0016
+SetField MarkerGroups[*].Markers[*].Rotation -0.426 0.14 -0.4 0.58
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle.weapon objects\weapons\rifle\focus_rifle\focus_rifle
+NameBlamTag objects\weapons\rifle\beam_rifle\fx\overheated.effect objects\weapons\rifle\focus_rifle\fx\overheated
+NameBlamTag dw3\r3ach\ui\chud\focus_rifle.chud_definition ui\chud\focus_rifle
+NameBlamTag dw3\r3ach\objects\weapons\rifle\focus_rifle\firing.effect objects\weapons\rifle\focus_rifle\fx\firing
+NameBlamTag dw3\r3ach\objects\weapons\rifle\focus_rifle\projectiles\impact.effect objects\weapons\rifle\focus_rifle\fx\impact
+
+PortTag dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle.model
+PortTag dw3\r3ach\objects\weapons\rifle\focus_rifle\firing.light
+PortTag dw3\r3ach\sound\weapons\focus_rifle\focus_rifle_fire\focus_rifle_fire.sound_looping
+PortTag dw3\r3ach\sound\weapons\focus_rifle\focus_rifle_fp\focus_rifle_firing_loop\focus_rifle_firing_loop.sound_looping
+PortTag dw3\r3ach\sound\weapons\focus_rifle\focus_rifle_beep_loop\focus_rifle_beep_loop.sound_looping
+PortTag dw3\r3ach\sound\weapons\focus_rifle\fr_overheat\fr_overheat.sound_looping
+
+PortTag dw3\r3ach\objects\weapons\rifle\focus_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\focus_rifle\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\focus_rifle\projectiles\focus_rifle_beam.projectile
+
+PortTag Replace Single objects\weapons\rifle\focus_rifle\focus_rifle.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\support_low\sentinel_gun\fx\impact.effect
+CopyBlockElements Events[0].Parts 0 1
+Exit
+
+EditTag objects\weapons\rifle\focus_rifle\fx\impact.effect
+AddBlockElements Locations
+SetField Locations[2].MarkerName forward
+
+PasteBlockElements Events[0].Parts
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\focus_rifle\fx\overheated.effect
+SetField Events[0].ParticleSystems[0].CameraMode BothFirstAndThird
+SetField Events[0].ParticleSystems[1].CameraMode BothFirstAndThird
+SetField Events[0].ParticleSystems[2].CameraMode BothFirstAndThird
+SetField Events[0].ParticleSystems[3].CameraMode BothFirstAndThird
+SaveTagChanges
+Exit
+
+# Remove ts once we're done with the weapons port
+AddForgeItem "FOCUS RIFLE" 1 objects\weapons\rifle\focus_rifle\focus_rifle.weapon
