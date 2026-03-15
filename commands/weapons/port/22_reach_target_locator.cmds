@@ -172,20 +172,34 @@ Exit
 # |      PROJECTILE      |
 # ------------------------
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.projectile
-SetField BoundingRadius 1
+SetField BoundingRadius 3
 SetField Model objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
 SaveTagChanges
 Exit
 
-EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_creator.projectile
-SetField BoundingRadius 1
+DuplicateTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.projectile dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker2
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker2.projectile
+SetField BoundingRadius 3
 SetField Model objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
+SetField AirborneDetonationEffect null
+SetField GroundDetonationEffect null
+SetField InitialVelocity 0
+SetField FinalVelocity 0
+SetField ArmingTime 8
+SetField Timer 8 8
 SaveTagChanges
 Exit
 
 # ------------------------
 # |        EFFECT        |
 # ------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.effect
+CopyBlockElements Events[0].Parts 0 1
+PasteBlockElements Events[0].Parts
+SetField Events[0].Parts[1].Type dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker2.projectile
+SaveTagChanges
+Exit
+
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike\airstrike.effect
 ForEach Events SetField Parts[0].RelativeOffset -250 0 0
 SaveTagChanges
