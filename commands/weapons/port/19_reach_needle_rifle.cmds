@@ -102,6 +102,7 @@ SaveTagChanges
 Exit
 
 EditTag objects\weapons\rifle\needle_rifle\shaders\needle_rifle_shell.shader
+SetArgument specular_coefficient 0.5
 SetArgument environment_map_specular_contribution 0.5
 SaveTagChanges
 Exit
