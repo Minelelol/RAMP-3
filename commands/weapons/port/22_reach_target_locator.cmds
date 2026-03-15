@@ -1,0 +1,180 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\spartan_laser.chud_definition ui\chud\target_laser
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\m20.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+PortTag objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
+
+PortTag objects\gear\human\military\missle\shaders\missile.shader
+PortTag objects\weapons\pistol\target_laser\fx\projectile.effect
+PortTag sound\weapons\target_laser\artilary_proj_loop\artilary_proj_loop.sound_looping
+PortTag objects\weapons\pistol\target_laser\fx\detonation.effect
+
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_composite.shader
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_holster.shader
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_lens.shader
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_metal.shader
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_rubber.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+# PortTag objects\weapons\pistol\target_laser\shaders\target_laser_charging.shader
+# PortTag objects\weapons\pistol\target_laser\shaders\target_laser_counter.shader
+PortTag objects\weapons\rifle\dmr\bitmaps\numbers_plate_dmr.bitmap
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_lens_glass.shader
+# PortTag objects\weapons\pistol\target_laser\shaders\target_laser_reticles.shader
+PortTag objects\weapons\pistol\target_laser\bitmaps\target_laser_reticles.bitmap
+# PortTag objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader
+PortTag objects\weapons\pistol\target_laser\bitmaps\target_laser_screens.bitmap
+PortTag objects\weapons\pistol\target_laser\shaders\target_laser_timer.shader
+
+Exit
+
+# HELL
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\bitmaps\numbers_plate_dmr.bitmap objects\weapons\rifle\dmr\bitmaps\numbers_plate_dmr
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\bitmaps\target_laser_reticles.bitmap objects\weapons\pistol\target_laser\bitmaps\target_laser_reticles
+NameBlamTag dw3\r3ach\objects\bitmaps\other\glass_shattered.bitmap objects\bitmaps\detail_maps\glass_shattered
+NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\bitmaps\target_laser_screens.bitmap objects\weapons\pistol\target_laser\bitmaps\target_laser_screens
+
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_charging.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_counter.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_reticles.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_black.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_charge.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_cooldown.shader
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_timer.shader
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+StringId Add show_after_firing
+EditTag objects\weapons\pistol\target_laser\shaders\target_laser_timer.shader
+SetField ShaderProperties[0].Functions[0].InputName show_after_firing
+SetField ShaderProperties[0].Functions[0].TimePeriod 1
+SetField ShaderProperties[0].Functions[0].Function.Data 08340200000000FF5E8C4C00272614000DFF0DFF0000000000000000240000000200000004000000CDCCCC3D000020410000000004000000FFFF7F7F000000000000803F
+
+SetField ShaderProperties[0].Functions[1].InputName show_after_firing
+SetField ShaderProperties[0].Functions[2].InputName heat
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\target_laser\projectiles\airstrike_radius\shaders\airstrike_radius.shader_halogram
+SetArgument depth_fade_range 2
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader
+SetField ShaderProperties[0].Functions[2].Function.Data 0034000000000000605F5F3F0000000000000000000000000000000000000000
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_charge.shader
+SetField ShaderProperties[0].Functions[3].Function.Data 0034000000000000605F5F3F0000000000000000000000000000000000000000
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_cooldown.shader
+SetField ShaderProperties[0].Functions[3].Function.Data 0034000000000000605F5F3F0000000000000000000000000000000000000000
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add right_hand_spartan
+
+CreateTag mode dw3\r3ach\objects\weapons\pistol\target_laser\target_laser
+ImportTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.render_model workingdir\tags\weapons\VKMT\target_laser.render_model
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.render_model
+
+SetField MarkerGroups[6].Name right_hand_spartan
+
+SetField Materials[0].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_holster.shader
+SetField Materials[2].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_lens.shader
+SetField Materials[3].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_metal.shader
+SetField Materials[4].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_rubber.shader
+SetField Materials[5].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[6].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_charging.shader
+SetField Materials[7].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_counter.shader
+SetField Materials[8].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_lens_glass.shader
+SetField Materials[9].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_reticles.shader
+SetField Materials[10].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader
+SetField Materials[11].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_black.shader
+SetField Materials[12].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_charge.shader
+SetField Materials[13].RenderMethod dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_cooldown.shader
+SetField Materials[14].RenderMethod objects\weapons\pistol\target_laser\shaders\target_laser_timer.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\TL\target_laser.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.004 -0.00277 -0.0188
+SetField MarkerGroups[*].Markers[*].Rotation -0.473 -0.02672 -0.3264 0.8179152
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.weapon objects\weapons\pistol\target_laser\target_laser
+NameBlamTag dw3\r3ach\ui\chud\target_locator.chud_definition ui\chud\target_laser
+
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\missile\shaders\missile.shader objects\gear\human\military\missle\shaders\missile
+NameBlamTag objects\weapons\support_high\rocket_launcher\fx\projectile.effect objects\weapons\pistol\target_laser\fx\projectile
+NameBlamTag sound\weapons\rocket_launcher\rocket_proj\rocket_proj.sound_looping sound\weapons\target_laser\artilary_proj_loop\artilary_proj_loop
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\missile\effects\detonation.effect objects\weapons\pistol\target_laser\fx\detonation
+
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.model
+PortTag dw3\r3ach\sound\weapons\target_laser\targetlocator_fire_loop\targetlocator_fire_loop.sound_looping
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\tracer\tracer.projectile
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\tracer\firing_tracer.effect
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.projectile
+PortTag dw3\r3ach\objects\weapons\pistol\target_laser\firing.effect
+
+PortTag Replace Single objects\weapons\pistol\target_laser\target_laser.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      PROJECTILE      |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.projectile
+SetField BoundingRadius 1
+SetField Model objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\pistol\target_laser\target_laser.weapon
+SetField WeaponName hp
+SaveTagChanges
+Exit
+
+# Remove ts once we're done with weapon port
+AddForgeItem "TARGET LOCATOR" 1 objects\weapons\pistol\target_laser\target_laser.weapon

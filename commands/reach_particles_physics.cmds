@@ -24,6 +24,7 @@ NameBlamTag fx\physics_templates\smoke_slow.particle_physics reach\fx\physics_te
 NameBlamTag fx\physics_templates\snow_clumps.particle_physics reach\fx\physics_templates\snow_clumps
 NameBlamTag fx\physics_templates\sparks.particle_physics reach\fx\physics_templates\sparks
 
+NameBlamTag fx\particles\atmospheric\soft_smoke\covenant_explosion_soft_smoke_large.particle reach\fx\particles\atmospheric\soft_smoke\covenant_explosion_soft_smoke_large
 NameBlamTag fx\particles\atmospheric\fiery_smoke\smoke_fiery_small.particle reach\fx\particles\atmospheric\fiery_smoke\smoke_fiery_small
 NameBlamTag fx\particles\atmospheric\fireballs\fireball_fuel_rod_large.particle reach\fx\particles\atmospheric\fireballs\fireball_fuel_rod_large
 NameBlamTag fx\particles\atmospheric\fireballs\glowing_smoke_fuel_rod.particle reach\fx\particles\atmospheric\fireballs\glowing_smoke_fuel_rod

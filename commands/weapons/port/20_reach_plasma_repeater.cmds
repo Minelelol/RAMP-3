@@ -1,0 +1,262 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\plasma_rifle.chud_definition ui\chud\plasma_repeater
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\weapons\plasma_repeater\plas_repeater_fire.sound
+IgnoreBlamTag sound\weapons\plasma_repeater\plas_repeater_lod_far.sound
+
+PortTag objects\weapons\rifle\plasma_repeater\fx\firing.effect
+PortTag objects\weapons\rifle\plasma_repeater\fx\venting.effect
+
+PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_metal.shader
+PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_rubber.shader
+PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_shell.shader
+# PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_indicator.shader_halogram
+PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_display.shader
+PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_gauge.shader
+PortTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_pilot.shader_halogram
+
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+# Converting halogram to normal shader (this fix active camo) -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+GenerateShader Shader default off none no_specular_mask diffuse_only none simple additive off first_person_never off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_indicator
+EditTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_indicator.shader
+
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[6].OptionIndex 1
+SetField Options[7].OptionIndex 1
+
+AddBlockElements ShaderProperties
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_0_0_0_0_0_1_1_0_0_0_0_0_0_0.render_method_template
+AddBlockElements ShaderProperties[0].TextureConstants 3
+AddBlockElements ShaderProperties[0].RealConstants 10
+
+SetBitmap base_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap detail_map reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap self_illum_map objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformOverlayIndices.Integer 1024
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 3
+
+SetArgument base_map 2 2 0 0
+SetArgument detail_map 16 16 0 0
+SetArgument albedo_color 0 0 0 1
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.21960786 0.427451 0.38823533
+SetArgument self_illum_intensity 1
+SetArgument wet_material_dim_tint 0 216 216
+SetArgument wet_material_dim_coefficient 1
+
+AddBlockElements ShaderProperties[0].Functions 2
+
+SetField ShaderProperties[0].Functions[0].Type TranslationX
+SetField ShaderProperties[0].Functions[0].TimePeriod 5
+SetField ShaderProperties[0].Functions[0].Function.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+SetField ShaderProperties[0].Functions[1].Type Color
+SetField ShaderProperties[0].Functions[1].TimePeriod 3
+SetField ShaderProperties[0].Functions[1].Function.Data 03340200D7FF72000000000000000000160C110000000000000000001400000002CDCDCD0000803F00000000CDCC4C3E9A99193F
+
+AddFunction detail_map Real 0
+AddFunction self_illum_color Real 1
+
+SetField ShaderProperties[0].BlendMode Additive
+SetField SortLayer Normal
+SetField Version 9
+SetField PredictionAtomIndex -1
+
+SaveTagChanges
+Exit
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
+EditTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_shell.shader
+SetArgument environment_map_specular_contribution 0.5
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_metal.shader
+SetArgument environment_map_specular_contribution 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_pilot.shader_halogram
+SetField ShaderProperties[0].Functions[2].InputName camo
+SetField ShaderProperties[0].Functions[2].Function.Data 00340000000000000000803F00000000000000006F12833A6F12033B00000000
+
+SetField ShaderProperties[0].Functions[3].InputName pilot
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add cowl
+StringId Add cylinder
+
+StringId Add right_hand_spartan
+
+CreateTag mode dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater
+ImportTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.render_model workingdir\tags\weapons\VKMT\plasma_repeater.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.render_model
+
+SetField Nodes[1].Name cowl
+SetField Nodes[2].Name cylinder
+
+SetField MarkerGroups[7].Name right_hand_spartan
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_metal.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_rubber.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_shell.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_indicator.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_display.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_gauge.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_pilot.shader_halogram
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\PREPEATER\plasma_repeater.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.1084 -0.0017 -0.0158
+SetField MarkerGroups[*].Markers[*].Rotation -0.65 0.185 -0.49 0.7
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.1055 0.0066 -0.019
+SetField MarkerGroups[*].Markers[*].Rotation -0.365 0.205 -0.48 0.57
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon objects\weapons\rifle\plasma_repeater\plasma_repeater
+NameBlamTag dw3\r3ach\ui\chud\plasma_repeater.chud_definition ui\chud\plasma_repeater
+NameBlamTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\firing.effect objects\weapons\rifle\plasma_repeater\fx\firing
+NameBlamTag objects\weapons\rifle\plasma_rifle\fx\overheated.effect objects\weapons\rifle\plasma_repeater\fx\venting
+
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.model
+PortTag dw3\r3ach\sound\weapons\plasma_repeater\plasrepeater_manvent\plasrepeater_manvent.sound_looping
+PortTag dw3\r3ach\sound\weapons\plasma_repeater\plasrepeater_spin\plasrepeater_spin.sound_looping
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\projectiles\plasma_repeater_bolt.projectile
+PortTag dw3\r3ach\sound\weapons\plasma_repeater\plas_repeater_fire.sound
+PortTag dw3\r3ach\sound\weapons\plasma_repeater\plas_repeater_lod_far.sound
+
+PortTag Replace Single objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\rifle\plasma_repeater\fx\firing.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\plasma_repeater\plas_repeater_fire.sound
+SetField Events[0].Parts[1].Type dw3\r3ach\sound\weapons\plasma_repeater\plas_repeater_lod_far.sound
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\plasma_repeater\fx\venting.effect
+SetField Flags DeletedWhenAttachmentDeactivates,RunEventsInParallel
+SetField Events[0].DurationBounds 1.625 1.625
+
+SetField Events[0].ParticleSystems[0].Emitters[0].EmissionShape Line
+SetField Events[0].ParticleSystems[0].Emitters[0].ParticleAlpha.InputVariable SystemAgeEmitterAge
+SetField Events[0].ParticleSystems[0].Emitters[0].RuntimeMGpu.UsedParticleStates Age,SystemAge,Random1,Random3,Random4,SystemLod,Random6,Random7,Random8,SystemRandom3
+SetField Events[0].ParticleSystems[0].Emitters[0].RuntimeMGpu.Properties[1].MInnardsW.FBitfield 131072
+
+SetField Events[0].ParticleSystems[1].Emitters[0].EmissionShape Line
+SetField Events[0].ParticleSystems[1].Emitters[0].ParticleAlpha.InputVariable SystemAgeEmitterAge
+SetField Events[0].ParticleSystems[1].Emitters[0].RuntimeMGpu.UsedParticleStates Age,SystemAge,Random4,SystemLod,Random6,Random7,Random8,SystemRandom3
+SetField Events[0].ParticleSystems[1].Emitters[0].RuntimeMGpu.Properties[1].MInnardsW.FBitfield 131072
+
+SetField Events[1].DurationBounds 1.625 1.625
+
+SetField Events[1].ParticleSystems[0].Emitters[0].EmissionShape Line
+SetField Events[1].ParticleSystems[0].Emitters[0].ParticleAlpha.InputVariable SystemAgeEmitterAge
+SetField Events[1].ParticleSystems[0].Emitters[0].RuntimeMGpu.UsedParticleStates Age,SystemAge,Random1,Random3,Random4,SystemLod,Random6,Random7,Random8,SystemRandom3
+SetField Events[1].ParticleSystems[0].Emitters[0].RuntimeMGpu.Properties[1].MInnardsW.FBitfield 131072
+
+SetField Events[1].ParticleSystems[1].Emitters[0].EmissionShape Line
+SetField Events[1].ParticleSystems[1].Emitters[0].ParticleAlpha.InputVariable SystemAgeEmitterAge
+SetField Events[1].ParticleSystems[1].Emitters[0].RuntimeMGpu.UsedParticleStates Age,SystemAge,Random4,SystemLod,Random6,Random7,Random8,SystemRandom3
+SetField Events[1].ParticleSystems[1].Emitters[0].RuntimeMGpu.Properties[1].MInnardsW.FBitfield 131072
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\plasma_repeater\plas_repeater_fire.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 3
+SetField Playback.DistanceParameters.MaximumDistance 30
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\sound\weapons\plasma_repeater\plas_repeater_lod_far.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceB,DistanceC,Bit4
+SetField Playback.DistanceParameters.DontPlayDistance 10
+SetField Playback.DistanceParameters.MaximumDistance 300
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+
+# Fix the plasma repeater pilot by adding missing functions
+AddBlockElements Functions
+SetField Functions[*].Flags Invert
+SetField Functions[*].ImportName age
+SetField Functions[*].ExportName battery
+SetField Functions[*].DefaultFunction.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+AddBlockElements Functions
+SetField Functions[*].ImportName overheated
+SetField Functions[*].ExportName pilot
+SetField Functions[*].TurnOffWith battery
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000002400000002000000040000CDCDCC4C3E0000A0C00000803F04000000FFFF7F7F0000000000000000
+
+AddBlockElements Functions
+SetField Functions[*].ImportName active_camouflage
+SetField Functions[*].ExportName camo
+SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+SaveTagChanges
+Exit
+
+# Remove ts once we're done with the weapons port
+AddForgeItem "PLASMA REPEATER" 1 objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon

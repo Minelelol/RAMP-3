@@ -1,0 +1,244 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\spartan_laser.chud_definition ui\chud\plasma_launcher
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag sound\weapons\plasma_launcher\plas_launcher_fire.sound
+IgnoreBlamTag sound\weapons\plasma_launcher\pl_lod_far.sound
+
+NameBlamTag objects\weapons\support_high\plasma_launcher\fx\projectile.contrail_system objects\weapons\grenade\plasma_grenade\fx\projectile
+NameBlamTag sound\weapons\plasma_grenade\plasma_expl_lod_far.sound sound\effe\plasgrenade_explode_lod_01
+NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_ext.sound sound\effe\rocket_proj_refl_ext_01
+NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\effe\rocketlauncher_refl_int_01
+
+PortTag objects\weapons\support_high\plasma_launcher\fx\attached.effect
+PortTag objects\weapons\support_high\plasma_launcher\fx\charging.effect
+PortTag objects\weapons\support_high\plasma_launcher\fx\detonation.effect
+PortTag objects\weapons\support_high\plasma_launcher\fx\detonation_airborne.effect
+# PortTag objects\weapons\support_high\plasma_launcher\fx\empty.effect
+PortTag objects\weapons\support_high\plasma_launcher\fx\firing.effect
+PortTag objects\weapons\support_high\plasma_launcher\fx\projectile.effect
+
+PortTag objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_metal.shader
+PortTag objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_shell.shader
+# PortTag objects\weapons\support_high\plasma_launcher\shaders\circular_indicator.shader_halogram
+PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+PortTag objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_display.shader
+
+PortTag objects\weapons\grenade\plasma_grenade\shaders\plasma_nade_metal.shader
+PortTag objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_projectile.shader
+
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+
+# Converting halogram to normal shader (this fix active camo) -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+GenerateShader Shader default off none no_specular_mask diffuse_only none simple additive off first_person_never off off off default from_albedo_alpha_without_fresnel
+
+CreateTag rmsh objects\weapons\support_high\plasma_launcher\shaders\circular_indicator
+EditTag objects\weapons\support_high\plasma_launcher\shaders\circular_indicator.shader
+
+SetField BaseRenderMethod shaders\shader.render_method_definition
+
+AddBlockElements Options 15
+SetField Options[6].OptionIndex 1
+SetField Options[7].OptionIndex 1
+
+AddBlockElements ShaderProperties
+SetField ShaderProperties[0].Template shaders\shader_templates\_0_0_0_0_0_0_1_1_0_0_0_0_0_0_0.render_method_template
+AddBlockElements ShaderProperties[0].TextureConstants 3
+AddBlockElements ShaderProperties[0].RealConstants 10
+
+SetBitmap base_map shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap detail_map reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap self_illum_map objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_holo.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformOverlayIndices.Integer 1024
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 3
+
+SetArgument base_map 2 2 0 0
+SetArgument detail_map 16 16 0 0
+SetArgument albedo_color 0 0 0 1
+SetArgument self_illum_map 1 1 0 0
+SetArgument self_illum_color 0.21960786 0.427451 0.38823533
+SetArgument self_illum_intensity 1
+SetArgument wet_material_dim_tint 0 216 216
+SetArgument wet_material_dim_coefficient 1
+
+AddBlockElements ShaderProperties[0].Functions 2
+
+SetField ShaderProperties[0].Functions[0].Type TranslationX
+SetField ShaderProperties[0].Functions[0].TimePeriod 5
+SetField ShaderProperties[0].Functions[0].Function.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+SetField ShaderProperties[0].Functions[1].Type Color
+SetField ShaderProperties[0].Functions[1].TimePeriod 1
+SetField ShaderProperties[0].Functions[1].Function.Data 03340200D7FF72000000000000000000160C110000000000000000001400000002CDCDCD0000803F00000000CDCC4C3E9A99193F
+
+AddFunction detail_map Real 0
+AddFunction self_illum_color Real 1
+
+SetField ShaderProperties[0].BlendMode Additive
+SetField SortLayer Normal
+SetField Version 9
+SetField PredictionAtomIndex -1
+
+SaveTagChanges
+Exit
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
+EditTag objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_display.shader
+SetField ShaderProperties[0].Functions[2].Function.Data 023400000000000000000000000000000000000000000000000000000C00000001000000000000000000803F
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_shell.shader
+SetArgument environment_map_specular_contribution 0.5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add barrel_main
+StringId Add halogram
+StringId Add header_lower
+StringId Add header_upper
+StringId Add vent_1
+StringId Add vent_2
+StringId Add vent_3
+StringId Add vent_4
+StringId Add barrel_3
+StringId Add barrel_4
+StringId Add barrel_main01
+StringId Add barrel_front_1
+StringId Add barrel_front_2
+StringId Add barrel_front_3
+StringId Add barrel_front_4
+
+StringId Add right_hand_spartan
+
+CreateTag mode dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher
+ImportTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.render_model workingdir\tags\weapons\VKMT\plasma_launcher.render_model
+EditTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.render_model
+
+SetField Nodes[1].Name barrel_main
+SetField Nodes[2].Name halogram
+SetField Nodes[3].Name header_lower
+SetField Nodes[4].Name header_upper
+SetField Nodes[5].Name vent_1
+SetField Nodes[6].Name vent_2
+SetField Nodes[7].Name vent_3
+SetField Nodes[8].Name vent_4
+SetField Nodes[9].Name barrel_1
+SetField Nodes[10].Name barrel_2
+SetField Nodes[11].Name barrel_3
+SetField Nodes[12].Name barrel_4
+SetField Nodes[13].Name barrel_main01
+SetField Nodes[14].Name barrel_front_1
+SetField Nodes[15].Name barrel_front_2
+SetField Nodes[16].Name barrel_front_3
+SetField Nodes[17].Name barrel_front_4
+
+SetField MarkerGroups[6].Name right_hand_spartan
+
+SetField Materials[0].RenderMethod null
+SetField Materials[1].RenderMethod objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_shell.shader
+SetField Materials[3].RenderMethod objects\weapons\support_high\plasma_launcher\shaders\circular_indicator.shader
+SetField Materials[4].RenderMethod objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_display.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\PL\plasma_launcher.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.062 0.0062 -0.004
+SetField MarkerGroups[*].Markers[*].Rotation -0.156 0.003 -0.2 0.83
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon objects\weapons\support_high\plasma_launcher\plasma_launcher
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\attachments\charging.effect objects\weapons\support_high\plasma_launcher\fx\charging
+NameBlamTag dw3\r3ach\ui\chud\plasma_launcher.chud_definition ui\chud\plasma_launcher
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\shaders\plasma_nade_metal.shader objects\weapons\grenade\plasma_grenade\shaders\plasma_nade_metal
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\shaders\plasma_launcher_projectile.shader objects\weapons\support_high\plasma_launcher\shaders\plasma_launcher_projectile
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\attachments\attached.effect objects\weapons\support_high\plasma_launcher\fx\attached
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\attachments\attached.lens_flare objects\weapons\support_high\plasma_launcher\fx\attached
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\projectile.effect objects\weapons\support_high\plasma_launcher\fx\projectile
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\attachments\projectile.lens_flare objects\weapons\support_high\plasma_launcher\fx\projectile
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\attachments\projectile.light objects\weapons\support_high\plasma_launcher\fx\projectile
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect objects\weapons\support_high\plasma_launcher\fx\detonation_airborne
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\detonation.effect objects\weapons\support_high\plasma_launcher\fx\detonation
+NameBlamTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\firing.effect objects\weapons\support_high\plasma_launcher\fx\firing
+
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.model
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\attachments\charging.lens_flare
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\attachments\firing_fp.light
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\attachments\firing_tp.light
+PortTag dw3\r3ach\sound\weapons\plasma_launcher\plas_launcher_charge\plas_launcher_charge.sound_looping
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\animations\fp_spartan\fp_spartan.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\animations\fp_elite\fp_elite.model_animation_graph
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\projectiles\grenade.projectile
+PortTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\empty.effect
+PortTag dw3\r3ach\sound\weapons\plasma_launcher\plas_launcher_fire.sound
+PortTag dw3\r3ach\sound\weapons\plasma_launcher\pl_lod_far.sound
+
+PortTag Replace Single objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\support_high\plasma_launcher\fx\firing.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\plasma_launcher\plas_launcher_fire.sound
+SetField Events[0].Parts[1].Type dw3\r3ach\sound\weapons\plasma_launcher\pl_lod_far.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\plasma_launcher\plas_launcher_fire.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 2
+SetField Playback.DistanceParameters.MaximumDistance 35
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\sound\weapons\plasma_launcher\pl_lod_far.sound
+SetField ImportType SingleLayer
+SetField Playback.FieldDisableFlags DistanceB,Bit4
+SetField Playback.DistanceParameters.DontPlayDistance 10
+SetField Playback.DistanceParameters.MinimumDistance 15
+SetField Playback.DistanceParameters.MaximumDistance 250
+SaveTagChanges
+Exit
+
+AddForgeItem "PLASMA LAUNCHER" 1 objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon

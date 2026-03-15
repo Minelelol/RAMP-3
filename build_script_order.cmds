@@ -66,6 +66,8 @@ RunCommands workingdir\commands\weapons\port\16_reach_concussion_rifle.cmds
 RunCommands workingdir\commands\weapons\port\17_reach_focus_rifle.cmds
 RunCommands workingdir\commands\weapons\port\18_reach_grenade_launcher.cmds
 RunCommands workingdir\commands\weapons\port\19_reach_needle_rifle.cmds
+RunCommands workingdir\commands\weapons\port\20_reach_plasma_repeater.cmds
+RunCommands workingdir\commands\weapons\port\21_reach_plasma_launcher.cmds
 
 RunCommands workingdir\commands\weapons\fp_animations\spartan_fp_animations.cmds
 RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds
