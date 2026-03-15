@@ -213,6 +213,15 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag sound\dialog\target_laser\targeted.sound
+SetField Playback.DistanceParameters.MinimumDistance 1
+SetField Playback.DistanceParameters.MaximumDistance 75
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\pistol\target_laser\target_laser.weapon
