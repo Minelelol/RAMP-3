@@ -1,0 +1,27 @@
+# Trouble some bitmap, levels\shared\decorators\bitmaps\m30_grass_plate.bitmap
+# GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitmaps\Foliage\m30_grass_plate.dds
+
+OpenCacheFile reachmapsdir\m05.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
+
+IgnoreBlamTag sound\dialog\levels\m10\m10.ai_mission_dialogue
+
+PortTag !UpdateMapFiles !Scripts *.scnr
+Exit
+
+EditTag levels\solo\m05\m05.scenario
+SetField CampaignId -1
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+MergePVS
+SaveTagChanges
+Exit

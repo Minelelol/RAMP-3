@@ -21,7 +21,6 @@ EditTag levels\solo\m20\m20.scenario
 ForEach StructureBsps SetField Design levels\solo\m20\m20_soft_ceiling.structure_design
 SetField StructureBsps[2].Design levels\solo\m20\m20_interior_water.structure_design
 SetField CampaignId -1
-SetField MapId 5020
 SetField MapType Multiplayer
 SetField MapSubType none
 Removeblockelements CampaignPlayers 0 *

@@ -19,7 +19,6 @@ Exit
 EditTag levels\solo\m52\m52.scenario
 ForEach StructureBsps SetField Design levels\solo\m52\m52_soft_ceiling_design.structure_design
 SetField CampaignId -1
-SetField MapId 5052
 SetField MapType Multiplayer
 SetField MapSubType none
 Removeblockelements CampaignPlayers 0 *

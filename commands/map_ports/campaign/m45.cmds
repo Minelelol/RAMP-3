@@ -1,268 +1,53 @@
-OpenCacheFile reachmaps\m45.map
+OpenCacheFile reachmapsdir\m45.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
 
 IgnoreBlamTag objects\characters\marine\marine.scenery
 IgnoreBlamTag objects\levels\shared\pathfinding_helper_railing\pathfinding_helper_railing.scenery
-
-IgnoreBlamTag objects\reference\reflection_lighting_test\reflection_lighting_test.biped
-IgnoreBlamTag objects\characters\elite_ai\elite_ai.biped
-IgnoreBlamTag objects\characters\grunt\grunt.biped
-IgnoreBlamTag objects\characters\jackal\jackal.biped
-
-IgnoreBlamTag objects\equipment\sprint\sprint.equipment
-IgnoreBlamTag objects\equipment\jet_pack\jet_pack.equipment
-IgnoreBlamTag objects\equipment\hologram\hologram.equipment
-IgnoreBlamTag objects\equipment\drop_shield\drop_shield.equipment
-IgnoreBlamTag objects\equipment\armor_lockup\armor_lockup.equipment
-
-IgnoreBlamTag ai\squad_templates\sq_camp_brute_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_brute_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_brute_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_brute_captain_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_brute_captain_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_brute_captain_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_bugger_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_bugger_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_3.squad_template
-IgnoreBlamTag ai\squad_templates\blank_label.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_minor_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_minor_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_minor_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_jetpack_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_jetpack_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_jetpack_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_jetpack_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_officer_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_ultra_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_general_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_elite_bob_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_grunt_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_grunt_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_grunt_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_grunt_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_grunt_fc_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_grunt_fc_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_hunters.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_hunter_solo.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackal_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackal_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackal_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackal_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackalsniper_nr_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackalsniper_nr_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackalsniper_nr_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackalsniper_nr_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackalsniper_sr_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_jackalsniper_sr_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_closerange_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_ne_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_ne_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_ne_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_ne_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_nr_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_nr_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_nr_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_nr_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_pp_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_pp_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_pp_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_pp_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_sr_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_skirmisher_sr_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_engineer_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_bc1_g3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_g2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_bc1_j3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_g3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_g3_j2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_g4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_j2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e2_j2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_j3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_s2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e3_g3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_s3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_e1_s4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_g2_j1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_g3_j1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_g3_j2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_cov_js1_j3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_space_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_space_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_space_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_air_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_air_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_banshee_air_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_ghost_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_ghost_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_ghost_elite_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_ghost_elite_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_ghost_grunt_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_ghost_grunt_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_fork.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_phantom.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_phantom_cheap.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_revenant.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_shade.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_shade_anti_air.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_shade_flak.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_wraith.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_marine_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_marine_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_marine_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_marine_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_marine_5.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_space_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_space_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_space_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_trooper_space_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_odst_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_odst_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_odst_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_spartan_carter.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_spartan_emile.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_spartan_jorge.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_spartan_jun.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_spartan_kat.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_crew_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_crew_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_crew_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_no_sideguns_crew_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_flight_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_flight_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_flight_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_falcon_no_sideguns_flight_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_pelican.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_pelican_crew_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_mongoose_rocketcrew.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_warthog.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_warthog_crew_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_warthog_crew_2.squad_template
-IgnoreBlamTag ai\squad_templates\sq_camp_warthog_crew_3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_brute_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_buggers_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_grunt_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_hunter_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_jackal_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_skirmisher_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_elite_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_elite_jetpack_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_elite_specops_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_elite_general_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_elite_ultra_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_chieftain_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_wp_chieftain_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_cov_e1_g3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_cov_e1_j3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_cov_js1_j3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_cov_b1_g3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_cov_b1_j3.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_engineer_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_jackal_sniper_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_jackal_sniper_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_mule_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_skirm_champ_1.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_heretic_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_heretic_heavy_4.squad_template
-IgnoreBlamTag ai\squad_templates\sq_ff_heretic_sniper_4.squad_template
-
-IgnoreBlamTag ai\generic_turret.character
-IgnoreBlamTag ai\generic.character
-IgnoreBlamTag ai\stimuli\generic_night_vision.character
-IgnoreBlamTag ai\stimuli\generic_long_vision.character
-IgnoreBlamTag ai\stimuli\generic_long_vision_m20.character
-IgnoreBlamTag ai\stimuli\generic_turret_short_vision.character
-IgnoreBlamTag ai\stimuli\generic_space_vision.character
-IgnoreBlamTag ai\stimuli\generic_shooting_dangerous.character
-IgnoreBlamTag ai\stimuli\generic_combat_cue_low.character
-IgnoreBlamTag ai\stimuli\generic_playfight.character
-IgnoreBlamTag ai\stimuli\generic_m20_flak.character
-IgnoreBlamTag ai\stimuli\generic_m45_rocket.character
-IgnoreBlamTag ai\stimuli\generic_m35_railride.character
-IgnoreBlamTag ai\stimuli\generic_m52_long_shoot.character
-IgnoreBlamTag ai\stimuli\generic_m70_lower_ammo.character
-IgnoreBlamTag ai\stimuli\generic_m70_phantom.character
-IgnoreBlamTag ai\stimuli\generic_m20_rocket.character
-IgnoreBlamTag ai\stimuli\generic_firefight_phantom.character
-IgnoreBlamTag objects\characters\elite\ai\elite.character
-IgnoreBlamTag objects\characters\elite\ai\elite_officer.character
-IgnoreBlamTag objects\characters\elite\ai\elite_ultra.character
-IgnoreBlamTag objects\characters\elite\ai\stimuli\elite_aggressive.character
-IgnoreBlamTag objects\characters\elite\ai\stimuli\elite_defensive.character
-IgnoreBlamTag objects\characters\elite\ai\stimuli\elite_berserk.character
-IgnoreBlamTag objects\characters\elite\ai\stimuli\elite_m30_assassination.character
-IgnoreBlamTag objects\characters\grunt\ai\grunt.character
-IgnoreBlamTag objects\characters\grunt\ai\grunt_major.character
-IgnoreBlamTag objects\characters\grunt\ai\grunt_ultra.character
-IgnoreBlamTag objects\characters\grunt\ai\stimuli\grunt_aggressive.character
-IgnoreBlamTag objects\characters\grunt\ai\stimuli\grunt_defensive.character
-IgnoreBlamTag objects\characters\grunt\ai\stimuli\grunt_kamikaze.character
-IgnoreBlamTag objects\characters\marine\ai\trooper.character
-IgnoreBlamTag objects\characters\marine\ai\stimuli\marine_fireteam_regroup.character
-IgnoreBlamTag objects\characters\marine\ai\stimuli\trooper_aggressive.character
-IgnoreBlamTag objects\characters\marine\ai\stimuli\trooper_defensive.character
-IgnoreBlamTag objects\characters\marine\ai\stimuli\trooper_stealthy.character
-IgnoreBlamTag objects\characters\marine\ai\stimuli\m60_no_crouch.character
-IgnoreBlamTag objects\characters\jackal\ai\jackal.character
-IgnoreBlamTag objects\characters\jackal\ai\jackal_major.character
-IgnoreBlamTag objects\characters\jackal\ai\stimuli\jackal_aggressive.character
-IgnoreBlamTag objects\characters\jackal\ai\stimuli\jackal_defensive.character
-IgnoreBlamTag objects\characters\jackal\ai\jackal_sniper.character
-IgnoreBlamTag objects\characters\elite\ai\elite_general.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\spartan_jorge.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\spartan_generic.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_aggressive.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_defensive.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_m10_start.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_no_armorlock.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_playfight.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_stealthy.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_speed_5.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_speed_7.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_speed_8.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_speed_9.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\stimuli\spartan_sprint.character
-IgnoreBlamTag objects\characters\spartans_ai\ai\spartan_carter.character
-IgnoreBlamTag objects\characters\spartans_female_ai\ai\spartan_kat.character
-IgnoreBlamTag objects\characters\marine\ai\trooper_pilot.character
-IgnoreBlamTag objects\characters\elite\ai\elite_jetpack.character
-IgnoreBlamTag objects\characters\elite\ai\stimuli\elite_jetpack_nojump.character
-IgnoreBlamTag objects\characters\elite\ai\stimuli\elite_jetpack_jump.character
-IgnoreBlamTag objects\characters\engineer\ai\engineer.character
-IgnoreBlamTag objects\characters\elite\ai\elite_specops.character
-IgnoreBlamTag objects\characters\null\ai\null_cov_default.character
-IgnoreBlamTag objects\characters\null\ai\null_cov_flying.character
-IgnoreBlamTag objects\characters\null\ai\null_human_flying.character
-IgnoreBlamTag objects\characters\null\ai\null_human_default.character
-IgnoreBlamTag objects\characters\null\ai\null_cov_flying_space.character
-IgnoreBlamTag objects\characters\null\ai\null_human_flying_space.character
-IgnoreBlamTag objects\characters\grunt\ai\grunt_heavy.character
-IgnoreBlamTag objects\characters\marine_female\ai\trooper_female.character
-IgnoreBlamTag objects\characters\elite\ai\named\elite_bob.character
-IgnoreBlamTag objects\characters\marine\ai\trooper_sgt.character
-
-IgnoreBlamTag cinematics\transitions\default_intra.cinematic_transition
-IgnoreBlamTag objects\vehicles\human\pelican\pelican.model_animation_graph
-IgnoreBlamTag objects\characters\marine\marine.model_animation_graph
-
 IgnoreBlamTag sound\dialog\levels\m45\m45.ai_mission_dialogue
 
-IgnoreBlamTag cinematics\045la_blastoff\045la_blastoff.cinematic
-IgnoreBlamTag cinematics\045lf_jorge\045lf_jorge.cinematic
-IgnoreBlamTag cinematics\045lb_pitstop\045lb_pitstop.cinematic
-IgnoreBlamTag cinematics\045lc_aftship_landing\045lc_aftship_landing.cinematic
-IgnoreBlamTag cinematics\045le_bomb_delivery\045le_bomb_delivery.cinematic
-IgnoreBlamTag cinematics\045la_katsplan\045la_katsplan.cinematic
-IgnoreBlamTag cinematics\045la_katsplan_v2\045la_katsplan_v2.cinematic
+PortTag !UpdateMapFiles !Scripts *.scnr
+PortTag levels\solo\m45\m45_005_015_structure_design.structure_design
+PortTag levels\solo\m45\m45_space_structure_design.structure_design
+PortTag levels\solo\m45\m45_050_080_structure_design.structure_design
+Exit
 
-PortTag !updatemapfiles !scripts *.scnr
+EditTag levels\solo\m45\m45.scenario
+ForEach StructureBsps SetField Design levels\solo\m45\m45_005_015_structure_design.structure_design
+SetField CampaignId -1
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+# MergePVS
+SaveTagChanges
+Exit
+
+DuplicateTag levels\solo\m45\m45.scenario levels\solo\m45\m45_beach
+EditTag levels\solo\m45\m45_beach.scenario
+SetField MapId 50451
+RemoveBlockElements StructureBsps 5 *
+RemoveBlockElements SkyReferences 1 *
+RemoveBlockElements ZoneSetPvs 14 1
+RemoveBlockElements ZoneSetPvs 12 1
+RemoveBlockElements ZoneSetPvs 11 1
+RemoveBlockElements ZoneSetPvs 10 1
+RemoveBlockElements ZoneSetPvs 9 1
+RemoveBlockElements ZoneSetPvs 8 1
+RemoveBlockElements ZoneSetPvs 7 1
+RemoveBlockElements ZoneSetPvs 6 1
+RemoveBlockElements ZoneSetPvs 5 1
+RemoveBlockElements ZoneSetPvs 4 1
+RemoveBlockElements ZoneSetPvs 3 1
+RemoveBlockElements ZoneSetPvs 2 1
+RemoveBlockElements ZoneSetAudibility 5 *
+RemoveBlockElements ZoneSets 5 *
+MergePvs
+SaveTagChanges
+Exit

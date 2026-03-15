@@ -21,7 +21,6 @@ Exit
 EditTag levels\solo\m10\m10.scenario
 ForEach StructureBsps SetField Design levels\solo\m10\m10_soft_ceilings.structure_design
 SetField CampaignId -1
-SetField MapId 5010
 SetField MapType Multiplayer
 SetField MapSubType none
 Removeblockelements CampaignPlayers 0 *

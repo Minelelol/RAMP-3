@@ -89,6 +89,18 @@ SaveTagNames
 # RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
 # RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
 
+# -----------------------------------------
+# |          REACH SP MAP PORTS           |
+# -----------------------------------------
+# RunCommands workingdir\commands\map_ports\campaign\m05.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m10.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m20.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m45.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m52.cmds
+
+# -----------------------------------------
+# |            MISCELLANEOUS              |
+# -----------------------------------------
 UpdateMapFiles workingdir\mapsinfo
 MapFile Remove 270735729
 MapFile Remove 0
