@@ -226,6 +226,7 @@ Exit
 # ------------------------
 EditTag objects\weapons\pistol\target_laser\target_laser.weapon
 SetField WeaponName hp
+SetField Triggers[0].Charging.ChargedDrainRate 0.0001
 SaveTagChanges
 Exit
 
