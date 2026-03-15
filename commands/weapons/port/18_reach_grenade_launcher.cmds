@@ -58,6 +58,13 @@ SetField ShaderProperties[0].Functions[1].Function.Data 083400000000000000004040
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\rifle\grenade_launcher\shaders\grenade_launcher_metal_shiny.shader
+SetArgument specular_coefficient 0.5
+SetArgument environment_map_specular_contribution 0.1
+SetArgument env_tint_color 0.47136563 0.48237887 0.5
+SaveTagChanges
+Exit
+
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------

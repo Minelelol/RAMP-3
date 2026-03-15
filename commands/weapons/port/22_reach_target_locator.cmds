@@ -88,6 +88,11 @@ SetField ShaderProperties[0].Functions[2].Function.Data 0034000000000000605F5F3F
 SaveTagChanges
 Exit
 
+EditTag objects\weapons\pistol\target_laser\shaders\target_laser_lens_glass.shader
+SetArgument env_tint_color 0.5 0.5 0.5
+SaveTagChanges
+Exit
+
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
@@ -157,6 +162,8 @@ Exit
 # |         MODEL        |
 # ------------------------
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.model
+SetField DisappearDistance 10
+SetField BeginFadeDistance 7
 UpdateModelRegions phmo coll
 SaveTagChanges
 Exit
@@ -167,6 +174,20 @@ Exit
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.projectile
 SetField BoundingRadius 1
 SetField Model objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_creator.projectile
+SetField BoundingRadius 1
+SetField Model objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike\airstrike.effect
+ForEach Events SetField Parts[0].RelativeOffset -250 0 0
 SaveTagChanges
 Exit
 

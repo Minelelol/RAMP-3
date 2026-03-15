@@ -92,7 +92,7 @@ SaveTagChanges
 Exit
 
 EditTag objects\weapons\rifle\plasma_repeater\shaders\plasma_repeater_metal.shader
-SetArgument environment_map_specular_contribution 0.1
+SetArgument specular_coefficient 0.5
 SaveTagChanges
 Exit
 
@@ -232,6 +232,8 @@ SetField ImportType SingleLayer
 SetField Playback.FieldDisableFlags DistanceB,DistanceC,Bit4
 SetField Playback.DistanceParameters.DontPlayDistance 10
 SetField Playback.DistanceParameters.MaximumDistance 300
+SaveTagChanges
+Exit
 
 # ------------------------
 # |        WEAPON        |

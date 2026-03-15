@@ -173,10 +173,10 @@ Exit
 
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
-EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display.shader
-SetField ShaderProperties[0].Functions[0].InputName display
-SaveTagChanges
-Exit
+# EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display.shader
+# SetField ShaderProperties[0].Functions[0].InputName display
+# SaveTagChanges
+# Exit
 
 StringId Add display2
 EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_display2.shader
@@ -187,6 +187,12 @@ Exit
 
 EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_scope_alpha.shader_halogram
 SetArgument self_illum_map 0.6 0.6 0.07 0.31
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\focus_rifle\shaders\focus_rifle_shell.shader
+SetArgument albedo_color 1 1 1 1.5
+SetArgument environment_map_specular_contribution 0.5
 SaveTagChanges
 Exit
 
