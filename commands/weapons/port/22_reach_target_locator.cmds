@@ -12,6 +12,7 @@ RunCommands workingdir\commands\reach_particles_physics.cmds
 
 PortTag objects\weapons\pistol\target_laser\projectiles\airstrike_radius\airstrike_radius.model
 
+PortTag sound\weapons\target_laser\fire_locator.effect
 PortTag objects\gear\human\military\missle\shaders\missile.shader
 PortTag objects\weapons\pistol\target_laser\fx\projectile.effect
 PortTag sound\weapons\target_laser\artilary_proj_loop\artilary_proj_loop.sound_looping
@@ -83,7 +84,7 @@ SaveTagChanges
 Exit
 
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_cooldown.shader
-SetField ShaderProperties[0].Functions[3].Function.Data 0034000000000000605F5F3F0000000000000000000000000000000000000000
+SetField ShaderProperties[0].Functions[2].Function.Data 0034000000000000605F5F3F0000000000000000000000000000000000000000
 SaveTagChanges
 Exit
 
@@ -134,6 +135,7 @@ OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
 NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.weapon objects\weapons\pistol\target_laser\target_laser
 NameBlamTag dw3\r3ach\ui\chud\target_locator.chud_definition ui\chud\target_laser
 
+NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\firing.effect sound\weapons\target_laser\fire_locator
 NameBlamTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\missile\shaders\missile.shader objects\gear\human\military\missle\shaders\missile
 NameBlamTag objects\weapons\support_high\rocket_launcher\fx\projectile.effect objects\weapons\pistol\target_laser\fx\projectile
 NameBlamTag sound\weapons\rocket_launcher\rocket_proj\rocket_proj.sound_looping sound\weapons\target_laser\artilary_proj_loop\artilary_proj_loop
@@ -146,7 +148,7 @@ PortTag dw3\r3ach\objects\weapons\pistol\target_laser\animations\fp_elite\fp_eli
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\tracer\tracer.projectile
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\tracer\firing_tracer.effect
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\projectiles\airstrike_marker.projectile
-PortTag dw3\r3ach\objects\weapons\pistol\target_laser\firing.effect
+# PortTag dw3\r3ach\objects\weapons\pistol\target_laser\firing.effect
 
 PortTag Replace Single objects\weapons\pistol\target_laser\target_laser.weapon
 Exit

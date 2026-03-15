@@ -68,6 +68,7 @@ RunCommands workingdir\commands\weapons\port\18_reach_grenade_launcher.cmds
 RunCommands workingdir\commands\weapons\port\19_reach_needle_rifle.cmds
 RunCommands workingdir\commands\weapons\port\20_reach_plasma_repeater.cmds
 RunCommands workingdir\commands\weapons\port\21_reach_plasma_launcher.cmds
+RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
 
 RunCommands workingdir\commands\weapons\fp_animations\spartan_fp_animations.cmds
 RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds

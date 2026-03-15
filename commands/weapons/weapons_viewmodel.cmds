@@ -1,3 +1,14 @@
+EditTag ui\weapon_type_names.multilingual_unicode_string_list
+SetString english offset_target_laser "TARGET LOCATOR"
+SetString english offset_concussion_rifle "CONCUSSION RIFLE"
+SetString english offset_focus_rifle "FOCUS RIFLE"
+SetString english offset_grenade_launcher "GRENADE LAUNCHER"
+SetString english offset_needle_rifle "NEEDLE RIFLE"
+SetString english offset_plasma_repeater "PLASMA REPEATER"
+SetString english offset_plasma_launcher "PLASMA LAUNCHER"
+SaveTagChanges
+Exit
+
 EditTag objects\weapons\melee\energy_blade\energy_blade.weapon
 SetField WeaponTypeName offset_energy_sword
 SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
@@ -85,62 +96,51 @@ SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
 SaveTagChanges
 Exit
 
-# StringId add offset_target_laser
-# EditTag objects\weapons\pistol\target_laser\target_laser.weapon
-# SetField WeaponTypeName offset_target_laser
-# SetField CenteredFirstPersonWeaponOffset 0 0 -0.02
-# SaveTagChanges
-# Exit
+StringId add offset_target_laser
+EditTag objects\weapons\pistol\target_laser\target_laser.weapon
+SetField WeaponTypeName offset_target_laser
+SetField CenteredFirstPersonWeaponOffset 0 0 -0.02
+SaveTagChanges
+Exit
 
-# StringId add offset_concussion_rifle
-# EditTag objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
-# SetField WeaponTypeName offset_concussion_rifle
-# SetField CenteredFirstPersonWeaponOffset -0.01 0 -0.01
-# SaveTagChanges
-# Exit
+StringId add offset_concussion_rifle
+EditTag objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
+SetField WeaponTypeName offset_concussion_rifle
+SetField CenteredFirstPersonWeaponOffset -0.01 0 -0.01
+SaveTagChanges
+Exit
 
-# StringId add offset_focus_rifle
-# EditTag objects\weapons\rifle\focus_rifle\focus_rifle.weapon
-# SetField WeaponTypeName offset_focus_rifle
-# SetField CenteredFirstPersonWeaponOffset -0.02 0 -0.01
-# SaveTagChanges
-# Exit
+StringId add offset_focus_rifle
+EditTag objects\weapons\rifle\focus_rifle\focus_rifle.weapon
+SetField WeaponTypeName offset_focus_rifle
+SetField CenteredFirstPersonWeaponOffset -0.02 0 -0.01
+SaveTagChanges
+Exit
 
-# StringId add offset_grenade_launcher
-# EditTag objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
-# SetField WeaponTypeName offset_grenade_launcher
-# SetField CenteredFirstPersonWeaponOffset -0.01 0 -0.01
-# SaveTagChanges
-# Exit
+StringId add offset_grenade_launcher
+EditTag objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
+SetField WeaponTypeName offset_grenade_launcher
+SetField CenteredFirstPersonWeaponOffset -0.01 0 -0.01
+SaveTagChanges
+Exit
 
-# StringId add offset_needle_rifle
-# EditTag objects\weapons\rifle\needle_rifle\needle_rifle.weapon
-# SetField WeaponTypeName offset_needle_rifle
-# SetField CenteredFirstPersonWeaponOffset -0.015 -0.003 -0.01
-# SaveTagChanges
-# Exit
+StringId add offset_needle_rifle
+EditTag objects\weapons\rifle\needle_rifle\needle_rifle.weapon
+SetField WeaponTypeName offset_needle_rifle
+SetField CenteredFirstPersonWeaponOffset -0.015 -0.003 -0.01
+SaveTagChanges
+Exit
 
-# StringId add offset_plasma_repeater
-# EditTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
-# SetField WeaponTypeName offset_plasma_repeater
-# SetField CenteredFirstPersonWeaponOffset 0 -0.005 -0.01
-# SaveTagChanges
-# Exit
+StringId add offset_plasma_repeater
+EditTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+SetField WeaponTypeName offset_plasma_repeater
+SetField CenteredFirstPersonWeaponOffset 0 -0.005 -0.01
+SaveTagChanges
+Exit
 
-# StringId add offset_plasma_launcher
-# EditTag objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
-# SetField WeaponTypeName offset_plasma_launcher
-# SetField CenteredFirstPersonWeaponOffset 0 0 -0.005
-# SaveTagChanges
-# Exit
-
-# EditTag ui\weapon_type_names.multilingual_unicode_string_list
-# SetString english offset_target_laser "TARGET LOCATOR"
-# SetString english offset_concussion_rifle "CONCUSSION RIFLE"
-# SetString english offset_focus_rifle "FOCUS RIFLE"
-# SetString english offset_grenade_launcher "GRENADE LAUNCHER"
-# SetString english offset_needle_rifle "NEEDLE RIFLE"
-# SetString english offset_plasma_repeater "PLASMA REPEATER"
-# SetString english offset_plasma_launcher "PLASMA LAUNCHER"
-# SaveTagChanges
-# Exit
+StringId add offset_plasma_launcher
+EditTag objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
+SetField WeaponTypeName offset_plasma_launcher
+SetField CenteredFirstPersonWeaponOffset 0 0 -0.005
+SaveTagChanges
+Exit
