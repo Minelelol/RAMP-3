@@ -43,8 +43,6 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher
 ImportTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.render_model workingdir\tags\weapons\VKMT\rocket_launcher.render_model
 EditTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.render_model

@@ -96,8 +96,6 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\pistol\target_laser\target_laser
 ImportTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.render_model workingdir\tags\weapons\VKMT\target_laser.render_model
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\target_laser.render_model

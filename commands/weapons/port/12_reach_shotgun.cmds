@@ -33,8 +33,6 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\rifle\shotgun\shotgun
 ImportTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.render_model workingdir\tags\weapons\VKMT\shotgun.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\shotgun\shotgun.render_model

@@ -32,8 +32,6 @@ Exit
 # |     RENDER MODEL     |
 # ------------------------
 StringId Add night_vision
-StringId Add right_hand_spartan
-
 
 CreateTag mode dw3\r3ach\objects\weapons\rifle\sniper_rifle\sniper_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\sniper_rifle.render_model workingdir\tags\weapons\VKMT\sniper_rifle.render_model

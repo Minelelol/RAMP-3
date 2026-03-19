@@ -1,0 +1,28 @@
+OpenCacheFile reachmapsdir\m70.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
+
+IgnoreBlamTag objects\characters\marine\marine.scenery
+IgnoreBlamTag objects\characters\spartans\spartans.scenery
+IgnoreBlamTag objects\characters\elite\elite.scenery
+
+IgnoreBlamTag sound\dialog\levels\m70\m70.ai_mission_dialogue
+
+PortTag !UpdateMapFiles !Scripts *.scnr
+Exit
+
+EditTag levels\solo\m70\m70.scenario
+SetField CampaignId -1
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+MergePVS
+SaveTagChanges
+Exit

@@ -114,7 +114,6 @@ StringId Add drum_flap04
 StringId Add drum_flap05
 StringId Add drum_flap06
 StringId Add fx_reload_gas
-StringId Add right_hand_spartan
 
 CreateTag mode dw3\r3ach\objects\weapons\rifle\concussion_rifle\concussion_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\concussion_rifle\concussion_rifle.render_model workingdir\tags\weapons\VKMT\concussion_rifle.render_model

@@ -157,8 +157,6 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol
 ImportTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model workingdir\tags\weapons\VKMT\plasma_pistol.render_model
 EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model

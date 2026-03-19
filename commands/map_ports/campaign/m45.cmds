@@ -13,6 +13,16 @@ IgnoreBlamTag objects\characters\marine\marine.scenery
 IgnoreBlamTag objects\levels\shared\pathfinding_helper_railing\pathfinding_helper_railing.scenery
 IgnoreBlamTag sound\dialog\levels\m45\m45.ai_mission_dialogue
 
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_white.decal_system
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_black.decal_system
+
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_01.decal_system
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_01_gray.decal_system
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_02.decal_system
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_03.decal_system
+IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_04.decal_system
+
 PortTag !UpdateMapFiles !Scripts *.scnr
 PortTag levels\solo\m45\m45_005_015_structure_design.structure_design
 PortTag levels\solo\m45\m45_space_structure_design.structure_design
@@ -29,25 +39,75 @@ Removeblockelements CampaignPlayers 0 *
 SaveTagChanges
 Exit
 
+# -------------------------------
+# | M45 (BEACH)                 |
+# -------------------------------
 DuplicateTag levels\solo\m45\m45.scenario levels\solo\m45\m45_beach
 EditTag levels\solo\m45\m45_beach.scenario
 SetField MapId 50451
-RemoveBlockElements StructureBsps 5 *
-RemoveBlockElements SkyReferences 1 *
-RemoveBlockElements ZoneSetPvs 14 1
-RemoveBlockElements ZoneSetPvs 12 1
-RemoveBlockElements ZoneSetPvs 11 1
-RemoveBlockElements ZoneSetPvs 10 1
-RemoveBlockElements ZoneSetPvs 9 1
-RemoveBlockElements ZoneSetPvs 8 1
-RemoveBlockElements ZoneSetPvs 7 1
-RemoveBlockElements ZoneSetPvs 6 1
-RemoveBlockElements ZoneSetPvs 5 1
-RemoveBlockElements ZoneSetPvs 4 1
-RemoveBlockElements ZoneSetPvs 3 1
-RemoveBlockElements ZoneSetPvs 2 1
-RemoveBlockElements ZoneSetAudibility 5 *
-RemoveBlockElements ZoneSets 5 *
-MergePvs
+
+MergePvs 0 1 2 3 4
+
+ForEach SkyReferences From: 1 To: 7 SetField SkyObject null
+
+ForEach StructureBsps From: 5 To: 15 SetField StructureBsp null
+ForEach StructureBsps From: 5 To: 15 SetField Design null
+ForEach StructureBsps From: 5 To: 15 SetField Lighting null
+ForEach StructureBsps From: 5 To: 15 SetField Cubemap null
+ForEach StructureBsps From: 5 To: 15 SetField Wind null
+SaveTagChanges
+Exit
+
+# -------------------------------
+# | M45 (ANCHOR 9)              |
+# -------------------------------
+DuplicateTag levels\solo\m45\m45.scenario levels\solo\m45\m45_anchor9
+EditTag levels\solo\m45\m45_anchor9.scenario
+SetField MapId 50452
+
+MergePvs 8 9
+
+ForEach SkyReferences From: 0 To: 3 SetField SkyObject null
+ForEach SkyReferences From: 5 To: 7 SetField SkyObject null
+
+ForEach StructureBsps SetField Design levels\solo\m45\m45_space_structure_design.structure_design
+ForEach StructureBsps From: 0 To: 7 SetField StructureBsp null
+ForEach StructureBsps From: 0 To: 7 SetField Design null
+ForEach StructureBsps From: 0 To: 7 SetField Lighting null
+ForEach StructureBsps From: 0 To: 7 SetField Cubemap null
+ForEach StructureBsps From: 0 To: 7 SetField Wind null
+
+ForEach StructureBsps From: 10 To: 15 SetField StructureBsp null
+ForEach StructureBsps From: 10 To: 15 SetField Design null
+ForEach StructureBsps From: 10 To: 15 SetField Lighting null
+ForEach StructureBsps From: 10 To: 15 SetField Cubemap null
+ForEach StructureBsps From: 10 To: 15 SetField Wind null
+SaveTagChanges
+Exit
+
+# -------------------------------
+# | M45 (CORVETTE)              |
+# -------------------------------
+DuplicateTag levels\solo\m45\m45.scenario levels\solo\m45\m45_corvette
+EditTag levels\solo\m45\m45_corvette.scenario
+SetField MapId 50453
+
+MergePvs 10 11 12 13 14
+
+ForEach SkyReferences From: 0 To: 4 SetField SkyObject null
+SetField SkyReferences[6].SkyObject null
+
+ForEach StructureBsps SetField Design levels\solo\m45\m45_050_080_structure_design.structure_design
+ForEach StructureBsps From: 0 To: 9 SetField StructureBsp null
+ForEach StructureBsps From: 0 To: 9 SetField Design null
+ForEach StructureBsps From: 0 To: 9 SetField Lighting null
+ForEach StructureBsps From: 0 To: 9 SetField Cubemap null
+ForEach StructureBsps From: 0 To: 9 SetField Wind null
+
+SetField StructureBsps[15].StructureBsp null
+SetField StructureBsps[15].Design null
+SetField StructureBsps[15].Lighting null
+SetField StructureBsps[15].Cubemap null
+SetField StructureBsps[15].Wind null
 SaveTagChanges
 Exit

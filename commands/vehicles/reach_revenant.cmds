@@ -1,0 +1,551 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\vehicles\covenant\revenant\bitmaps\revenant_diffuse workingdir\bitmaps\Vehicles\revenant\revenant_diffuse.dds
+
+# ------------------------
+# |          HUD         |
+# ------------------------
+DuplicateTag ui\chud\v_scorpionturret.chud_definition ui\chud\v_revenant
+EditTag ui\chud\v_revenant.chud_definition
+SetField HudWidgets[0].BitmapWidgets[0].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
+SetField HudWidgets[0].BitmapWidgets[0].BitmapSequenceIndex 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+IgnoreBlamTag ui\chud\v_boost_meter.chud_definition
+
+NameBlamTag fx\material_effects\vehicles\revenant.material_effects fx\material_effects\objects\vehicles\wraith
+NameBlamTag camera\revenant_d_camera.camera_track camera\mauler_d_camera
+NameBlamTag objects\vehicles\covenant\revenant\feedback\vehicle_revenant_boost.damage_response_definition globals\damage_responses\vehicle_boost
+NameBlamTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\weapon\feedback\revenant_plasma_turret_firing.damage_response_definition globals\damage_responses\trigger_vehicle_tank
+
+NameBlamTag objects\vehicles\covenant\wraith\turrets\wraith_mortar\weapon\projectiles\damage_effects\wraith_mortar_round_shockwave.damage_effect objects\vehicles\wraith\damage_effects\wraith_mortar_shockwave
+NameBlamTag fx\material_effects\weapons\wraith_mortar.material_effects fx\material_effects\objects\weapons\wraith_mortar
+
+NameBlamTag globals\damage_effects\trans_damage_large.damage_effect objects\vehicles\damage_effects\large_trans_damage
+NameBlamTag globals\damage_effects\trans_damage_medium.damage_effect objects\vehicles\damage_effects\med_trans_damage
+NameBlamTag globals\damage_effects\trans_damage_tiny.damage_effect objects\vehicles\damage_effects\small_trans_damage
+
+PortTag objects\vehicles\covenant\revenant\revenant.vehicle
+PortTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle
+Exit
+
+# ------------------------
+# |        LIGHT         |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\fx\destruction\body_destroyed.light
+SetField DistanceDiffusion 5
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\fx\running\boost.light
+SetField Intensity.Function.Data 01300000000000400000004000000000000000006F12033B6F12833B00000000
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\fx\weapon\detonation.light
+SetField Intensity.Function.Data 08340000000000000000A041000000000000000000000000000000001C00000001000000070000CDFFFF7F7FDCD741BFFDF61540068125C00000803F
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SEFC         |
+# ------------------------
+EditTag fx\screen_fx\large_explosion_fast.area_screen_effect
+SetField ScreenEffects[3].ScreenShake 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\shaders\revenant_shell.shader
+SetArgument specular_tint 0.78823537 0.17254902 0.25768965
+SetArgument specular_coefficient 0.75
+SetArgument environment_map_specular_contribution 0.5
+
+# Color Change
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[*].Type ChangeColorPrimary
+SetField ShaderProperties[0].Functions[*].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+AddFunction albedo_color Real 1
+AddFunction specular_tint Real 1
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+# Increase the gain by 14, eg; -14 gain = 0 gain, etc
+EditTag sound\vehicles\revenant\revenant_engine_left\revenant_engine_left.sound_looping
+SetField Tracks[0].Gain 0
+SetField Tracks[0].FadeInDuration 0.5
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\revenant\revenant_engine_right\revenant_engine_right.sound_looping
+SetField Tracks[0].Gain 0
+SetField Tracks[0].FadeInDuration 0.5
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\revenant\revenant_lod\revenant_lod.sound_looping
+SetField LoopTypeHO 1
+SetField Tracks[0].Gain -3
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\spectre\spectre_boost_l\spectre_boost_l.sound_looping
+SetField Tracks[0].Gain 4
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\spectre\spectre_boost_r\spectre_boost_r.sound_looping
+SetField Tracks[0].Gain 4
+SaveTagChanges
+Exit
+
+# Base one is -3 gain
+EditTag sound\vehicles\revenant\rev_fire.sound
+SetField Playback.GainBase 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       ANIMATION      |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\revenant.model_animation_graph
+AddAnimation workingdir\animations\vehicles\revenant
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\revenant.model_animation_graph
+SortModes
+
+AddBlockElements BlendScreens
+SetField BlendScreens[0].Label steering
+SetField BlendScreens[0].RightYawPerFrame 45
+SetField BlendScreens[0].LeftYawPerFrame 45
+SetField BlendScreens[0].RightFrameCount 1
+SetField BlendScreens[0].LeftFrameCount 1
+
+SetField Animations[5].AnimationData.BlendScreen 0
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.model_animation_graph
+AddAnimation workingdir\animations\vehicles\revenant_mortar
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.model_animation_graph
+SortModes
+AddBlockElements BlendScreens
+SetField BlendScreens[0].Label aiming
+SetField BlendScreens[0].LeftYawPerFrame 0
+SetField BlendScreens[0].RightYawPerFrame 0
+SetField BlendScreens[0].RightFrameCount 4
+SetField BlendScreens[0].LeftFrameCount 4
+SetField BlendScreens[0].DownPitchPerFrame 90
+SetField BlendScreens[0].UpPitchPerFrame 90
+SetField BlendScreens[0].DownPitchFrameCount 1
+SetField BlendScreens[0].UpPitchFrameCount 1
+
+SetField Animations[5].AnimationData.BlendScreen 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\revenant.render_model
+# Driver Seat Marker
+SetField MarkerGroups[30].Markers[0].Translation -0.2350073 0.17837021 -0.0098135
+
+SetField MarkerGroups[33].Name left_foot
+SetField MarkerGroups[33].Markers[0].Translation -0.04486303 0.21590649 -0.08449876
+SetField MarkerGroups[33].Markers[0].Rotation 0 -0.13052619 0 0.9914449
+SetField MarkerGroups[34].Name left_hand
+SetField MarkerGroups[35].Name right_foot
+SetField MarkerGroups[35].Markers[0].Translation -0.04486303 0.10538457 -0.08449876
+SetField MarkerGroups[35].Markers[0].Rotation 0 -0.13052619 0 0.9914449
+SetField MarkerGroups[36].Name right_hand
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    PHYSICS MODEL     |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\revenant.physics_model
+SetField RigidBodies[1].MotionType Box
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\revenant.model
+SetField Variants[0].Objects[0].ChildObject objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle
+SetField NewDamageInfo[0].CollisionDamageReportingType.HaloOnline GuardiansUnknown
+SetField NewDamageInfo[0].ResponseDamageReportingType.HaloOnline GenericExplosion
+SetField NewDamageInfo[0].StunTime 2
+SetField NewDamageInfo[0].RechargeTime 10
+SetField NewDamageInfo[0].RechargeFraction 0.35
+
+RemoveBlockElements NewDamageInfo[0].DamageSections[0].InstantResponses 4 1
+
+AddBlockElements NewDamageInfo[0].DamageSections
+SetField NewDamageInfo[0].DamageSections[7].Flags TakesFullDamageWhenObjectDies,CannotDieWithRiders
+SetField NewDamageInfo[0].DamageSections[7].Name death
+SetField NewDamageInfo[0].DamageSections[7].VitalityPercentage 1
+
+AddBlockElements NewDamageInfo[0].DamageSections[7].InstantResponses
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].PrimaryTransitionEffect fx\fx_library\explosions\covenant_explosion_large\covenant_explosion_large.effect
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].SecondaryTransitionEffect objects\vehicles\covenant\revenant\fx\destruction\body_destroyed.effect
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].TransitionDamageEffect objects\vehicles\damage_effects\large_trans_damage.damage_effect
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].Region hull
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].NewState Destroyed
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].RuntimeRegionIndex 4
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].SecondaryRegion interior
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].SecondaryNewState Destroyed
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].SecondaryRuntimeRegionIndex 5
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].DestroyInstanceGroup -1
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].EffectMarkerName fx_explosion
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].DamageEffectMarkerName fx_explosion
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].ResponseDelay 0.25
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].ResponseDelay 0.25
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].DelayEffect fx\fx_library\explosions\covenant_explosion_small\covenant_explosion_small.effect
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].DelayEffectMarkerName fx_engine_damage
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].EjectingSeatLabel revenant_d
+
+AddBlockElements NewDamageInfo[0].DamageSections[7].InstantResponses
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].Region back_left
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].NewState Destroyed
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].RuntimeRegionIndex 0
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].SecondaryRuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].DestroyInstanceGroup -1
+
+AddBlockElements NewDamageInfo[0].DamageSections[7].InstantResponses
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].Region back_right
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].NewState Destroyed
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].RuntimeRegionIndex 1
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].SecondaryRuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[7].InstantResponses[*].DestroyInstanceGroup -1
+
+SwapBlockElements NewDamageInfo[0].DamageSections 7 0
+SwapBlockElements NewDamageInfo[0].DamageSections 7 1
+SwapBlockElements NewDamageInfo[0].DamageSections 7 2
+SwapBlockElements NewDamageInfo[0].DamageSections 7 3
+SwapBlockElements NewDamageInfo[0].DamageSections 7 4
+SwapBlockElements NewDamageInfo[0].DamageSections 7 5
+SwapBlockElements NewDamageInfo[0].DamageSections 7 6
+
+SetField Materials[0].DamageSectionIndex 2
+SetField Materials[1].DamageSectionIndex 3
+SetField Materials[2].DamageSectionIndex 4
+SetField Materials[3].DamageSectionIndex 5
+SetField Materials[4].DamageSectionIndex 1
+
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.model
+SetField NewDamageInfo[0].IndirectDamageSection 1
+
+SetField NewDamageInfo[0].DamageSections[1].Flags TakesFullDamageWhenObjectDies
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[2].DamageEffectMarkerName fx_turret_damage
+
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].DamageThreshold 0
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].Flags KillsObject
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].PrimaryTransitionEffect fx\fx_library\destruction\covenant_mech_break_large\covenant_mech_break_large.effect
+
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].Region default
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].NewState Destroyed
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].RuntimeRegionIndex 0
+
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].SecondaryRegion interior
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].SecondaryNewState Destroyed
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].SecondaryRuntimeRegionIndex 1
+
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[3].EffectMarkerName fx_turret_damage
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     MAIN VEHICLE     |
+# ------------------------
+EditTag objects\vehicles\wraith\wraith.vehicle
+CopyBlockElements Functions 0 *
+Exit
+
+EditTag objects\vehicles\covenant\revenant\revenant.vehicle
+RemoveBlockElements Functions 0 *
+PasteBlockElements Functions
+
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+
+SetField AccelerationScale 1
+SetField VehicleFlags CanTriggerAutomaticOpeningDoors,AiDoesNotRequireDriver,AiDriverFlying
+SetField WaterDensity Default
+SetField EmpRadius 4
+
+#########
+# CAMERA
+#########
+SetField CameraFieldOfView 70
+AddBlockElements UnitCamera.CameraTracks
+SetField UnitCamera.CameraTracks[0].Track camera\wraith_d_camera.camera_track
+
+SetField Seats[0].UnitCamera.SpringVelocity 0
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityI.K 0.2
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityI.Scale 0.7
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityI.Power 1.5
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityI.Maximum 0.7
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityJ.K 1
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityJ.Scale -0.05
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityJ.Power 1.1
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityJ.Maximum 0.05
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityJ.CameraScalePerpendicular 0.25
+SetField Seats[0].UnitCamera.CameraAcceleration[0].MaximumCameraVelocity 0.5
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityK.Scale -0.1
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityK.K 1
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityK.Power 1.1
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityK.Maximum 0.1
+SetField Seats[0].UnitCamera.CameraAcceleration[0].VelocityK.CameraScalePerpendicular 0.25
+SetField Seats[0].Yaw 0 0
+
+#########
+# AIMING
+#########
+SetField AimingVelocityMaximum 180
+SetField AimingAccelerationMaximum 400
+SetField CasualAimingModifier 0
+
+########
+# SEATS
+########
+SetField Seats[0].Flags Driver,Gunner,ThirdPersonCamera,ControlsOpenAndClose,ForwardFromAttachment
+SetField Seats[1].Flags ThirdPersonCamera,AllowsWeapons,ThirdPersonOnEnter,AiFiringDisabledByMaxAcceleration
+
+SetField Seats[0].Label hornet_d
+SetField Seats[1].Label warthog_p
+SetField Seats[2].Label warthog_b_d
+SetField Seats[3].Label warthog_b_p
+
+SetField Seats[0].Acceleration.Range 0.11111111 0.11111111 0.055555556
+SetField Seats[1].Acceleration.Range 0.071428575 0.125 0.071428575
+SetField Seats[2].Acceleration.Range 0.05 0.05 0.035714287
+SetField Seats[3].Acceleration.Range 0.05 0.05 0.035714287
+
+SetField Seats[1].Acceleration.ActionScale 1
+SetField Seats[2].Acceleration.ActionScale 1
+SetField Seats[2].Acceleration.ActionScale 1
+
+SetField Seats[1].UnitCamera.CameraTracks[0].Track camera\mongoose_d_camera.camera_track
+
+########
+# BOOST
+########
+SetField UnitFlags.Flags UnitHasBoost
+SetField Boost.BoostPeakTime 300000
+SetField Boost.BoostDeadTime 0.1
+
+###############
+# PHYSICS TYPE
+###############
+SetField PhysicsTypes.AlienScout[0].SpecificType Ghost
+# SetField PhysicsTypes.AlienScout[0].TorqueScale 1
+
+SetField HavokVehiclePhysics.AntiGravityBankLift 0.2
+SetField HavokVehiclePhysics.SteeringBankReactionScale 6
+SetField HavokVehiclePhysics.Radius 1.4174502
+
+ForEach HavokVehiclePhysics.AntiGravityPoints SetField AntigravOffset 0
+ForEach HavokVehiclePhysics.AntiGravityPoints SetField AntigravHeight 0.35
+SetField HavokVehiclePhysics.AntiGravityPoints[4].AntigravOffset 0
+SetField HavokVehiclePhysics.AntiGravityPoints[4].AntigravHeight 0.5
+SetField HavokVehiclePhysics.AntiGravityPoints[5].AntigravOffset 0
+SetField HavokVehiclePhysics.AntiGravityPoints[5].AntigravHeight 0.5
+ForEach HavokVehiclePhysics.AntiGravityPoints SetField DefaultStateError 0.05
+ForEach HavokVehiclePhysics.AntiGravityPoints SetField MinorDamageError 0.05
+
+AddBlockElements HavokVehiclePhysics.PhantomShapes
+# What the hell is this dude
+// Idk I asked claude wkwkwkwk
+# SetField HavokVehiclePhysics.PhantomShapes[0].ListShape.DisableWelding True
+EditBlock HavokVehiclePhysics.PhantomShapes[0].ListShape
+cs ((TagTool.Havok.HkpShapeCollection)Element).DisableWelding = true  
+ExitTo objects\vehicles\covenant\revenant\revenant.vehicle
+
+SetField HavokVehiclePhysics.PhantomShapes[0].Flags 1
+SetField HavokVehiclePhysics.PhantomShapes[0].X0 -1.3439839
+SetField HavokVehiclePhysics.PhantomShapes[0].X1 1.1586559
+SetField HavokVehiclePhysics.PhantomShapes[0].Y0 -1.07483
+SetField HavokVehiclePhysics.PhantomShapes[0].Y1 1.0748298
+SetField HavokVehiclePhysics.PhantomShapes[0].Z0 -0.551504
+SetField HavokVehiclePhysics.PhantomShapes[0].Z1 0.86849606
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    MORTAR VEHICLE    |
+# ------------------------
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+
+SetField AccelerationScale 1.25
+SetField UnitFlags.Flags ControlledByParentGunner,ParentsPrimaryWeapon
+SetField VehicleFlags CausesCollisionDamage
+
+#########
+# CAMERA
+#########
+SetField CameraFieldOfView 70
+AddBlockElements UnitCamera.CameraTracks
+SetField UnitCamera.CameraTracks[0].Track camera\wraith_d_camera.camera_track
+
+#########
+# AIMING
+#########
+SetField AimingVelocityMaximum 90
+SetField AimingAccelerationMaximum 800
+SetField CasualAimingModifier 0
+
+###############
+# PHYSICS TYPE
+###############
+SetField HavokVehiclePhysics.Radius 0.5633799
+
+AddBlockElements HavokVehiclePhysics.PhantomShapes
+# SetField HavokVehiclePhysics.PhantomShapes[0].ListShape.DisableWelding True
+EditBlock HavokVehiclePhysics.PhantomShapes[0].ListShape
+cs ((TagTool.Havok.HkpShapeCollection)Element).DisableWelding = true  
+ExitTo objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle
+SaveTagChanges
+Exit
+
+// Color Change for Destroyed Objects
+// These don't actually work since they're not attached to revenant color change vehicles properties
+// But if you don't do this, the destroyed object would be black instead of the usual light red color
+EditTag objects\vehicles\covenant\revenant\garbage\hull_back_destroyed\hull_back_destroyed.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\garbage\front_right_destroyed\front_right_destroyed.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\garbage\front_left_destroyed\front_left_destroyed.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\garbage\wing_front_left\wing_front_left.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\garbage\wing_front_right\wing_front_right.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\garbage\wing_back_left\wing_back_left.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\garbage\wing_back_right\wing_back_right.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\garbage\rear_panel\rear_panel.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\garbage\left_panel\left_panel.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\garbage\right_panel\right_panel.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].Weight 1
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SaveTagChanges
+Exit
+
+AddForgeItem "REVENANT" 1 objects\vehicles\covenant\revenant\revenant.vehicle

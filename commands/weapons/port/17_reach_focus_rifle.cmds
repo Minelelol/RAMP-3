@@ -213,7 +213,6 @@ StringId Add upper_armjoint02
 StringId Add lower_armjoint03
 StringId Add upper_armjoint03
 
-StringId Add right_hand_spartan
 StringId Add fx_wheel_gas
 
 CreateTag mode dw3\r3ach\objects\weapons\rifle\focus_rifle\focus_rifle

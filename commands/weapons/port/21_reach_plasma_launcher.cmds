@@ -126,8 +126,6 @@ StringId Add barrel_front_2
 StringId Add barrel_front_3
 StringId Add barrel_front_4
 
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher
 ImportTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.render_model workingdir\tags\weapons\VKMT\plasma_launcher.render_model
 EditTag dw3\r3ach\objects\weapons\support_high\plasma_launcher\plasma_launcher.render_model

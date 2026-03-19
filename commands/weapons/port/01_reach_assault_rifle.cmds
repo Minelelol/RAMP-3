@@ -28,7 +28,6 @@ Exit
 # |     RENDER MODEL     |
 # ------------------------
 StringId Add fx_display_light
-StringId Add right_hand_spartan
 
 CreateTag mode dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.render_model workingdir\tags\weapons\VKMT\assault_rifle.render_model

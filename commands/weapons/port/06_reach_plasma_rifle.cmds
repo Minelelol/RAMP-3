@@ -118,8 +118,6 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle
 ImPortTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.render_model workingdir\tags\weapons\VKMT\plasma_rifle.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.render_model

@@ -110,8 +110,6 @@ Exit
 StringId Add cowl
 StringId Add cylinder
 
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater
 ImportTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.render_model workingdir\tags\weapons\VKMT\plasma_repeater.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\plasma_repeater\plasma_repeater.render_model

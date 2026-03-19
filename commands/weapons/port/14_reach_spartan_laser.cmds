@@ -28,7 +28,6 @@ Exit
 # |     RENDER MODEL     |
 # ------------------------
 StringId Add cover_panel
-StringId Add right_hand_spartan
 
 CreateTag mode dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser
 ImportTag dw3\r3ach\objects\weapons\support_high\spartan_laser\spartan_laser.render_model workingdir\tags\weapons\VKMT\spartan_laser.render_model

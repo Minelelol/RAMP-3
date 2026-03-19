@@ -142,8 +142,6 @@ StringId Add r_needle4
 StringId Add r_needle5
 StringId Add r_needle6
 
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle
 ImportTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.render_model workingdir\tags\weapons\VKMT\needle_rifle.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\needle_rifle\needle_rifle.render_model

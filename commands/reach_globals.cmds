@@ -90,4 +90,8 @@ NameBlamTag fx\bitmaps\nature\bugs.bitmap fx\particles\nature\_bitmaps\bugs
 NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_round_fiery.bitmap fx\particles\flare\_bitmaps\muzzle_flash_round_fiery
 NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_long_soft.bitmap fx\particles\flare\_bitmaps\muzzle_flash_long_soft
 
+NameBlamTag fx\particles\models\debris\concrete_chunks_small\concrete_chunks_small.bitmap fx\particles\models\debris\concrete_chunks_small\_bitmaps\concrete_chunks_small
+
+NameBlamTag objects\vehicles\covenant\banshee\bitmaps\banshee_detail.bitmap objects\vehicles\banshee\bitmaps\banshee_detail
+
 SuppressErrors False

@@ -1,0 +1,21 @@
+OpenCacheFile reachmapsdir\m70_a.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
+CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
+
+PortTag !UpdateMapFiles !Scripts *.scnr
+Exit
+
+EditTag levels\solo\m70_a\m70_a.scenario
+SetField CampaignId -1
+SetField MapType Multiplayer
+SetField MapSubType none
+Removeblockelements CampaignPlayers 0 *
+SaveTagChanges
+Exit 

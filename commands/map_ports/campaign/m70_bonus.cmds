@@ -30,3 +30,5 @@ EditTag levels\solo\m70_bonus\m70_bonus.sky_atm_parameters
 SetField AtmosphereSettings[0].SeaLevel -45
 SetField AtmosphereSettings[0].DistanceBias -5
 SetField AtmosphereSettings[0].BetaP 0.01434321 0.01849472 0.02627869
+SaveTagChanges
+Exit

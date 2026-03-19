@@ -22,7 +22,7 @@ Exit
 # |     RENDER MODEL     |
 # ------------------------
 StringId Add magazine_marker
-StringId Add right_hand_spartan
+
 CreateTag mode dw3\r3ach\objects\weapons\pistol\magnum\magnum
 ImportTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.render_model workingdir\tags\weapons\VKMT\magnum.render_model
 EditTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.render_model

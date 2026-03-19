@@ -47,6 +47,7 @@ RunCommands workingdir\commands\mainmenu\3_UI.cmds
 # PEAKED AT 2.2Gb OF DEDICATED WAM
 StringId Add mineleloldabest_left_hand_spartan_fp
 StringId Add mineleloldabest_left_hand_elite_fp
+StringId Add right_hand_spartan
 RunCommands workingdir\commands\weapons\port\01_reach_assault_rifle.cmds
 RunCommands workingdir\commands\weapons\port\02_reach_dmr.cmds
 RunCommands workingdir\commands\weapons\port\03_vkmt_br.cmds
@@ -75,7 +76,13 @@ RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds
 RunCommands workingdir\commands\weapons\weapons_viewmodel.cmds
 
 # -----------------------------------------
-# |          REACH MP MAP PORTS           |
+# |            REACH VEHICLES             |
+# -----------------------------------------
+GenerateBitmap sequence reach\ui\chud\bitmaps\hud_vehicle_reticles workingdir\bitmaps\HUD\reach_vehicle_hud
+RunCommands workingdir\commands\vehicles\reach_revenant.cmds
+
+# -----------------------------------------
+# |      PRELIMINARY REACH MAP PORTS      |
 # -----------------------------------------
 # Prevent crashing when porting... certains maps
 # These rmt2 is over the samplers limit
@@ -85,6 +92,9 @@ CreateTag rmt2 shaders\shader_templates\_7_2_0_1_13_2_5_0_1_5_0_0_0_0_0
 CreateTag rmt2 shaders\shader_templates\_5_7_0_1_13_1_11_0_0_5_0_0_0_0_0
 SaveTagNames
 
+# -----------------------------------------
+# |          REACH MP MAP PORTS           |
+# -----------------------------------------
 # RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
 # RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
 # RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
@@ -92,11 +102,23 @@ SaveTagNames
 # -----------------------------------------
 # |          REACH SP MAP PORTS           |
 # -----------------------------------------
+// Fix grass alpha in Noble Actual, Nightfall, and Waterfront
+GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitmaps\Decals\foliages\m30_grass_plate.dds
+
 # RunCommands workingdir\commands\map_ports\campaign\m05.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m10.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m20.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m30.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m35.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m45.cmds
+// m50 crashed TagTool :<, it's a not a sampler issue, something is fricked in the scenario tag.
+# RunCommands workingdir\commands\map_ports\campaign\m50.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m52.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m60.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m70.cmds
+// Why not
+# RunCommands workingdir\commands\map_ports\campaign\m70_a.cmds
+# RunCommands workingdir\commands\map_ports\campaign\m70_bonus.cmds
 
 # -----------------------------------------
 # |            MISCELLANEOUS              |

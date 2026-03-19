@@ -18,8 +18,6 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-StringId Add right_hand_spartan
-
 CreateTag mode dw3\r3ach\objects\weapons\rifle\dmr\dmr
 ImportTag dw3\r3ach\objects\weapons\rifle\dmr\dmr.render_model workingdir\tags\weapons\VKMT\dmr.render_model
 EditTag dw3\r3ach\objects\weapons\rifle\dmr\dmr.render_model
