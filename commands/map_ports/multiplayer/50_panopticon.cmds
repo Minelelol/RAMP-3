@@ -68,6 +68,11 @@ SetField Decal[0].Radius 0.14779955 0.14779955
 SaveTagChanges
 Exit
 
+EditTag levels\shared\decals\weathering\damage\melted\melted_plasmasword.decal_system
+SetField Decal[0].Radius 0.91409314 0.91409314
+SaveTagChanges
+Exit
+
 EditTag levels\multi\50_panopticon\bsp01.scenario_structure_bsp
 SetField RuntimeDecals[217].PaletteIndex 97
 SaveTagChanges

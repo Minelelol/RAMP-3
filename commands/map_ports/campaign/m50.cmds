@@ -17,16 +17,23 @@ IgnoreBlamTag objects\characters\civilian_male\civilian_male.scenery
 IgnoreBlamTag objects\characters\marine\marine.scenery
 IgnoreBlamTag sound\dialog\levels\m50\m50.ai_mission_dialogue
 
+IgnoreBlamTag levels\solo\m50\m50_060.scenario_structure_bsp
+IgnoreBlamTag levels\solo\m50\m50_060.scenario_structure_lighting_info
+
 PortTag !UpdateMapFiles !Scripts *.scnr
 PortTag levels\solo\m50\m50_soft_ceilings.structure_design
 Exit
 
 EditTag levels\solo\m50\m50.scenario
 ForEach StructureBsps SetField Design levels\solo\m50\m50_soft_ceilings.structure_design
+
+SetField StructureBsps[6].StructureBsp null
+SetField StructureBsps[6].Lighting null
+
 SetField CampaignId -1
 SetField MapType Multiplayer
 SetField MapSubType none
 Removeblockelements CampaignPlayers 0 *
-MergePVS
+MergePVS 0 1 2 3 4 5 7 8 9 10 11 12
 SaveTagChanges
 Exit 
