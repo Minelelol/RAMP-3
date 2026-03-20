@@ -52,7 +52,7 @@ ForEach StructureBsps From: 7 To: 11 SetField Lighting null
 ForEach StructureBsps From: 7 To: 11 SetField Cubemap null
 ForEach StructureBsps From: 7 To: 11 SetField Wind null
 
-SetField SkyParameters levels\solo\m60\post_fx\m60.sky_atm_parameters
+SetField SkyParameters levels\solo\m60\post_fx\m60_swordbase.sky_atm_parameters
 SaveTagChanges
 Exit
 

@@ -9,7 +9,8 @@ CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
 CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
 CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
 
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system yellowstripe
+IgnoreBlamTag yellowstripe.decal_system
 
 IgnoreBlamTag objects\characters\civilian_female\civilian_female.scenery
 IgnoreBlamTag objects\characters\civilian_male\civilian_male.scenery

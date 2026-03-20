@@ -13,15 +13,25 @@ IgnoreBlamTag objects\characters\marine\marine.scenery
 IgnoreBlamTag objects\levels\shared\pathfinding_helper_railing\pathfinding_helper_railing.scenery
 IgnoreBlamTag sound\dialog\levels\m45\m45.ai_mission_dialogue
 
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_white.decal_system
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_black.decal_system
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system yellowstripe
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_white.decal_system whitestripe
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_black.decal_system blackstripe
 
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_01.decal_system
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_01_gray.decal_system
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_02.decal_system
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_03.decal_system
-IgnoreBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_04.decal_system
+IgnoreBlamTag yellowstripe.decal_system
+IgnoreBlamTag whitestripe.decal_system
+IgnoreBlamTag blackstripe.decal_system
+
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_01.decal_system 01
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_01_gray.decal_system 01_gray
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_02.decal_system 02
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_03.decal_system 03
+NameBlamTag levels\shared\decals\signage\human\industrial\macro\unsc_04.decal_system 04
+
+IgnoreBlamTag 01.decal_system
+IgnoreBlamTag 01_gray.decal_system
+IgnoreBlamTag 02.decal_system
+IgnoreBlamTag 03.decal_system
+IgnoreBlamTag 04.decal_system
 
 PortTag !UpdateMapFiles !Scripts *.scnr
 PortTag levels\solo\m45\m45_005_015_structure_design.structure_design
