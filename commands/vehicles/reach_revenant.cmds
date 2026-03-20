@@ -299,6 +299,8 @@ SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.1725
 SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 
+SetField BoundingRadius 1
+SetField BoundingOffset 0 0 0
 SetField AccelerationScale 1
 SetField VehicleFlags CanTriggerAutomaticOpeningDoors,AiDoesNotRequireDriver,AiDriverFlying
 SetField WaterDensity Default
