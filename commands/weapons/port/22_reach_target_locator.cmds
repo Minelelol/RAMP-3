@@ -48,7 +48,7 @@ PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_charg
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_counter.shader
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_reticles.shader
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader
-PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_black.shader
+# PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_black.shader
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_charge.shader
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_cooldown.shader
 PortTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_timer.shader
@@ -73,8 +73,39 @@ SetArgument depth_fade_range 2
 SaveTagChanges
 Exit
 
+StringId Add hide_when_ammo_depleted
+StringId Add show_when_ammo_depleted
+
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_counter.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[3].TimePeriod 1
+SetField ShaderProperties[0].Functions[3].InputName hide_when_ammo_depleted
+SetField ShaderProperties[0].Functions[3].Function.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+AddFunction self_illum_map Real 3
+SaveTagChanges
+Exit
+
 EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader
 SetField ShaderProperties[0].Functions[2].Function.Data 0034000000000000605F5F3F0000000000000000000000000000000000000000
+
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[3].TimePeriod 1
+SetField ShaderProperties[0].Functions[3].InputName hide_when_ammo_depleted
+SetField ShaderProperties[0].Functions[3].Function.Data 00340000000000000000803F0000000000000000000000000000000000000000
+
+AddFunction self_illum_map Real 3
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen.shader dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_black
+EditTag dw3\r3ach\objects\weapons\pistol\target_laser\shaders\target_laser_screen_black.shader
+SetField ShaderProperties[0].TextureConstants[2].BitmapIndex 6
+SetField ShaderProperties[0].Functions[3].InputName show_when_ammo_depleted
+
+SetArgument base_map 0 0 0 0
+SetArgument detail_map 0 0 0 0
+SetArgument albedo_color 0 0 0 0
 SaveTagChanges
 Exit
 
@@ -223,6 +254,17 @@ Exit
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\pistol\target_laser\target_laser.weapon
+
+AddBlockElements Functions
+SetField Functions[*].ImportName primary_ammunition
+SetField Functions[*].ExportName hide_when_ammo_depleted
+SetField Functions[*].DefaultFunction.Data 083400000000803F00000000000000000000000000000000000000002400000002000000040000CD6F12833AFFFF79C40000803F04000000FFFF7F7F0000000000000000
+
+AddBlockElements Functions
+SetField Functions[*].ImportName primary_ammunition
+SetField Functions[*].ExportName show_when_ammo_depleted
+SetField Functions[*].DefaultFunction.Data 083400000000803F00000000000000000000000000000000000000002400000002000000040000CD6F12833AFFFF79440000000004000000FFFF7F7F000000000000803F
+
 SetField WeaponName hp
 SetField Triggers[0].Charging.ChargedDrainRate 0.0001
 SaveTagChanges

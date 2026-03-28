@@ -20,7 +20,7 @@ EditTag levels\solo\m35\m35.scenario
 SetField CampaignId -1
 SetField MapType Multiplayer
 SetField MapSubType none
-Removeblockelements CampaignPlayers 0 *
+RemoveBlockElements CampaignPlayers 0 *
 MergePVS
 SaveTagChanges
 Exit

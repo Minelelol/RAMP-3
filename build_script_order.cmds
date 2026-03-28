@@ -71,6 +71,17 @@ RunCommands workingdir\commands\weapons\port\20_reach_plasma_repeater.cmds
 RunCommands workingdir\commands\weapons\port\21_reach_plasma_launcher.cmds
 RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
 
+# -----------------------------------------
+# |           WEAPONS VARIANTS            |
+# -----------------------------------------
+
+# Assault Rifle Variants
+RunCommands workingdir\commands\weapons\variants\assault_rifle\preliminary_assault_rifle.cmds
+RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_damage.cmds
+
+# -----------------------------------------
+# |           WEAPONS ANIMATION           |
+# -----------------------------------------
 RunCommands workingdir\commands\weapons\fp_animations\spartan_fp_animations.cmds
 RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds
 RunCommands workingdir\commands\weapons\weapons_viewmodel.cmds
@@ -111,7 +122,6 @@ GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitma
 # RunCommands workingdir\commands\map_ports\campaign\m30.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m35.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m45.cmds
-// m50 crashed TagTool :<, it's a not a sampler issue, something is fricked in the scenario tag.
 # RunCommands workingdir\commands\map_ports\campaign\m50.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m52.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m60.cmds

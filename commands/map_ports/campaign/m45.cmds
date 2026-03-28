@@ -44,7 +44,7 @@ ForEach StructureBsps SetField Design levels\solo\m45\m45_005_015_structure_desi
 SetField CampaignId -1
 SetField MapType Multiplayer
 SetField MapSubType none
-Removeblockelements CampaignPlayers 0 *
+RemoveBlockElements CampaignPlayers 0 *
 # MergePVS
 SaveTagChanges
 Exit

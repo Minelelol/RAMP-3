@@ -23,7 +23,7 @@ SetField StructureBsps[2].Design levels\solo\m20\m20_interior_water.structure_de
 SetField CampaignId -1
 SetField MapType Multiplayer
 SetField MapSubType none
-Removeblockelements CampaignPlayers 0 *
+RemoveBlockElements CampaignPlayers 0 *
 MergePVS
 SaveTagChanges
 Exit

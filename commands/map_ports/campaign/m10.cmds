@@ -23,7 +23,7 @@ ForEach StructureBsps SetField Design levels\solo\m10\m10_soft_ceilings.structur
 SetField CampaignId -1
 SetField MapType Multiplayer
 SetField MapSubType none
-Removeblockelements CampaignPlayers 0 *
+RemoveBlockElements CampaignPlayers 0 *
 MergePVS
 SaveTagChanges
 Exit
