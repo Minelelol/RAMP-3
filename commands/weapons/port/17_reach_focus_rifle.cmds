@@ -13,6 +13,11 @@ RunCommands workingdir\commands\reach_particles_physics.cmds
 # I WAS ABLE TO GET TO BE IN LINE BUT ONLY ON CENTERED CROSSHAIR
 IgnoreBlamTag objects\weapons\rifle\focus_rifle\fx\firing_1p.light_volume_system
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\focus_rifle\bitmaps\focus_rifle_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\weapons\rifle\focus_rifle\fx\firing.effect
 PortTag objects\weapons\rifle\focus_rifle\fx\impact.effect
 PortTag objects\weapons\rifle\focus_rifle\fx\overheated.effect

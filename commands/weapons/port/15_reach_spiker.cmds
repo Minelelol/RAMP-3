@@ -4,6 +4,9 @@
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 
+# Same texture in ms23
+NameBlamTag objects\weapons\rifle\spike_rifle\bitmaps\spike_rifle_illum.bitmap ms23\objects\weapons\rifle\spike_rifle\bitmaps\brute_bolter_illum
+
 PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_blades.shader
 PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_leather_handle.shader
 PortTag objects\weapons\rifle\spike_rifle\shaders\spike_rifle_metal.shader

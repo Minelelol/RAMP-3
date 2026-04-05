@@ -17,6 +17,11 @@ NameBlamTag sound\weapons\needler\needler_lod_far.sound sound\effe\needler_fire_
 NameBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_ext.sound sound\effe\needler_refl_ext_01
 NameBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_int.sound sound\effe\needler_refl_int_01
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\pistol\needler\bitmaps\needler_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag reach\objects\weapons\pistol\needler\fx\firing.effect
 
 PortTag objects\weapons\pistol\needler\shaders\needler_crystal_solid.shader

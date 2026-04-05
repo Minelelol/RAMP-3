@@ -13,6 +13,11 @@ RunCommands workingdir\commands\reach_particles_physics.cmds
 IgnoreBlamTag sound\weapons\needle_rifle\needle_rifle_fire.sound
 IgnoreBlamTag sound\weapons\needle_rifle\n_rifle_lod_far.sound
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\needle_rifle\bitmaps\needle_rifle_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\weapons\rifle\needle_rifle\fx\firing.effect
 
 PortTag objects\weapons\pistol\needler\shaders\needler_crystal_solid.shader

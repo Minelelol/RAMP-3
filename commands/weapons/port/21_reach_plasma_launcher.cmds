@@ -18,6 +18,11 @@ NameBlamTag sound\weapons\plasma_grenade\plasma_expl_lod_far.sound sound\effe\pl
 NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_ext.sound sound\effe\rocket_proj_refl_ext_01
 NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\effe\rocketlauncher_refl_int_01
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\weapons\support_high\plasma_launcher\fx\attached.effect
 PortTag objects\weapons\support_high\plasma_launcher\fx\charging.effect
 PortTag objects\weapons\support_high\plasma_launcher\fx\detonation.effect

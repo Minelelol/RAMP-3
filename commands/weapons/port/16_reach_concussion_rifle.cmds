@@ -16,6 +16,11 @@ NameBlamTag sound\weapons\brute_shot\brute_shot_tails_ext.sound sound\effe\brute
 IgnoreBlamTag sound\weapons\concussion_rifle\concussion_rifle_fire.sound
 IgnoreBlamTag sound\weapons\concussion_rifle\concussion_rifle_lod_far.sound
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\concussion_rifle\bitmaps\concussion_rifle_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\weapons\rifle\concussion_rifle\fx\firing.effect
 # The vkmt one looks better imo
 # PortTag objects\weapons\rifle\concussion_rifle\projectiles\concussion_rifle_grenade.projectile

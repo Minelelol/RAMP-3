@@ -10,6 +10,9 @@ IgnoreBlamTag sound\weapons\plasma_rifle\plasma_rifle_lod_far.sound
 IgnoreBlamTag sound\weapons\plasma_rifle\plasma_rifle_tails_ext.sound
 IgnoreBlamTag sound\weapons\plasma_rifle\plasma_rifle_tails_int.sound
 
+# Use ED normal texture instead
+NameBlamTag objects\weapons\rifle\plasma_rifle\bitmaps\plasma_rifle_normal.bitmap objects\weapons\rifle\plasma_rifle\plasma_rifle_v6\material_10\bump_map
+
 NameBlamTag objects\weapons\rifle\plasma_rifle\fx\overheated.effect reach\objects\weapons\rifle\plasma_rifle\fx\overheated
 NameBlamTag objects\weapons\rifle\plasma_rifle\fx\particles\overheated_gas.particle reach\objects\weapons\rifle\plasma_rifle\fx\particles\overheated_gas
 

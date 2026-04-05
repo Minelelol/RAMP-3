@@ -58,6 +58,11 @@ IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_int.sound
 IgnoreBlamTag sound\weapons\plasma_pistol\charge_fire_reach.sound
 IgnoreBlamTag sound\weapons\plasma_pistol\plas_pistol_fire_reach.sound
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader
 PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_metal.shader
 PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_rubber.shader

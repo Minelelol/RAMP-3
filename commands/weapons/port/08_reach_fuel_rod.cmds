@@ -26,6 +26,11 @@ NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\
 
 NameBlamTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\support_high\flak_cannon\bitmaps\fuel_rod_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram
 PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_glass.shader
 PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_metal.shader

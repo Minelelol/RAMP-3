@@ -13,6 +13,11 @@ RunCommands workingdir\commands\reach_particles_physics.cmds
 IgnoreBlamTag sound\weapons\plasma_repeater\plas_repeater_fire.sound
 IgnoreBlamTag sound\weapons\plasma_repeater\plas_repeater_lod_far.sound
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\plasma_repeater\bitmaps\plasma_repeater_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\weapons\rifle\plasma_repeater\fx\firing.effect
 PortTag objects\weapons\rifle\plasma_repeater\fx\venting.effect
 

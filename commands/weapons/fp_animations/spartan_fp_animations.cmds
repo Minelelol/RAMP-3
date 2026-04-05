@@ -439,6 +439,7 @@ AddBlockElements Animations[10].AnimationData.SoundEvents
 SetField Animations[10].AnimationData.SoundEvents[0].Sound 3
 
 SetField Animations[2].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[6].PlaybackFlags DisableWeaponIk
 SetField Animations[8].PlaybackFlags DisableWeaponIk
 SetField Animations[9].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
 SetField Animations[10].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson

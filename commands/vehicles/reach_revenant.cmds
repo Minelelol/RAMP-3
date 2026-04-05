@@ -34,6 +34,11 @@ NameBlamTag globals\damage_effects\trans_damage_large.damage_effect objects\vehi
 NameBlamTag globals\damage_effects\trans_damage_medium.damage_effect objects\vehicles\damage_effects\med_trans_damage
 NameBlamTag globals\damage_effects\trans_damage_tiny.damage_effect objects\vehicles\damage_effects\small_trans_damage
 
+# High Quality Normal to fix checkerboarded effect
+SetPortingOption HqNormalMapConversion True
+PortTag objects\vehicles\covenant\revenant\bitmaps\revenant_normal.bitmap
+SetPortingOption HqNormalMapConversion False
+
 PortTag objects\vehicles\covenant\revenant\revenant.vehicle
 PortTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle
 Exit
