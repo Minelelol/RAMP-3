@@ -1,4 +1,8 @@
 cd TagTool
-Type ..\variabledirectory.cmds|TagTool.exe
+(
+  Type ..\setvariabledirectory.cmds
+  echo(
+  echo RunCommands workingdir\build_script_order.cmds
+) | TagTool.exe
 
 pause

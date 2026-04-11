@@ -5,10 +5,9 @@ AMP Collective
 0.95
 MainMenu Multiplayer Character
 
-# REMOVE THE APPLY PAK SCRIPT ONCE WE'RE DONE USING THE PAK
-# RunCommands workingdir\commands\RecompileShaders.cmds
-
-OpenModPackage workingdir\paks\RecompShaders[1.5.9565.22737].pak
+# Run build_shader_updates.bat if this errors out
+CS < workingdir\cs\GetTagToolVersion.cs
+OpenModPackage workingdir\paks\RecompShaders[TagToolVersion].pak
 ApplyModPackage
 ExitModPackage
 
@@ -22,6 +21,7 @@ RunCommands workingdir\commands\customization\spartan\3_custom_shaders.cmds
 RunCommands workingdir\commands\customization\spartan\4_render_model.cmds
 RunCommands workingdir\commands\customization\spartan\5_customization_globals.cmds
 RunCommands workingdir\commands\customization\spartan\6_noble_dialogue_voice.cmds
+RunCommands workingdir\commands\customization\spartan\7_animation.cmds
 
 # -----------------------------------------
 # |              REACH ELITE              |
@@ -32,6 +32,7 @@ RunCommands workingdir\commands\customization\elite\2_custom_shaders.cmds
 RunCommands workingdir\commands\customization\elite\3_render_model.cmds
 RunCommands workingdir\commands\customization\elite\4_customization_globals.cmds
 RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice.cmds
+RunCommands workingdir\commands\customization\elite\6_animation.cmds
 
 # -----------------------------------------
 # |              REACH MENU               |
@@ -138,11 +139,11 @@ MapFile Remove 270735729
 MapFile Remove 0
 
 # Fix reach particle effect lod
-CS < workingdir\fix_inverse_lod_feather.cmds
+CS < workingdir\cs\fix_inverse_lod_feather.cs
 
 # Fix projectile acting like it's in water in some reach maps (Forge World)
 # VERY HACKY
-CS < workingdir\projectile_drop_fix.cmds
+CS < workingdir\cs\fix_projectile_drop.cs
 
 AddModFiles workingdir\assets
 SaveModPackage

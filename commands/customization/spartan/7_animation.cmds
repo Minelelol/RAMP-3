@@ -1,0 +1,59 @@
+# Saves 5mb of unnecessary resource
+CreateTag jmad ramp\objects\characters\masterchief\masterchief
+ImportTag ramp\objects\characters\masterchief\masterchief.model_animation_graph workingdir\tags\bipeds\masterchief.model_animation_graph
+
+EditTag ramp\objects\characters\masterchief\masterchief.model_animation_graph
+AddAnimation workingdir\animations\masterchief
+
+# Gravity Hammer Melee Lunge (OG animation index is 220)
+AddBlockElements Animations[2].AnimationData.EffectEvents
+SetField Animations[2].AnimationData.EffectEvents[0].Frame 9
+SetField Animations[2].AnimationData.EffectEvents[0].MarkerName hammer_detonation
+SetField Animations[2].AnimationData.EffectEvents[0].DamageEffectReportingType.HaloOnline Guardians
+AddBlockElements Animations[2].AnimationData.ObjectSpaceParentNodes
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].Flags Rotation
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationX -22365
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationY -8095
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationZ -20136
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationW 10121
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].DefaultTranslation -0.00821 -1.6748E-08 0.3684624
+SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].DefaultScale 1
+
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[6].GraphIndex -1
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[6].Animation 2
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[7].GraphIndex -1
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[7].Animation 2
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[8].GraphIndex -1
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[8].Animation 2
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[9].GraphIndex -1
+SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[9].Animation 2
+
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[8].GraphIndex -1
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[8].Animation 2
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[9].GraphIndex -1
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[9].Animation 2
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[10].GraphIndex -1
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[10].Animation 2
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[11].GraphIndex -1
+SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[11].Animation 2
+
+# Support weapon sprint (OG animation index is 1241)
+AddBlockElements Animations[3].AnimationData.FrameEvents 2
+SetField Animations[3].AnimationData.FrameEvents[0].TypeED LeftFoot
+SetField Animations[3].AnimationData.FrameEvents[0].Frame 1
+SetField Animations[3].AnimationData.FrameEvents[1].TypeED RightFoot
+SetField Animations[3].AnimationData.FrameEvents[1].Frame 8
+SetField Animations[3].AnimationData.Heading 0.9999995 -0.0009953227 0
+SetField Animations[3].AnimationData.AverageTranslationMagnitude 0.1199909
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.model
+SetField Animation ramp\objects\characters\masterchief\masterchief.model_animation_graph
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\hologram\bipeds\masterchief_hologram.model
+SetField Animation ramp\objects\characters\masterchief\masterchief.model_animation_graph
+SaveTagChanges
+Exit

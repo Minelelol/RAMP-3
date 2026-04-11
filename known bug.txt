@@ -1,0 +1,19 @@
+# --------------------------
+# |      CUSTOMIZATION     |
+# --------------------------
+
+Spartan is missing some vertices for illum light in the back
+Spartan is missing emblem
+Spartan new armor permutation has inconsistent lighting with the default armor 
+
+Elite has alot of missing illum light
+Elite Major Head Permutation has broken weight
+Elite Ranger Head Permutation has broken neck
+Elite Special Operation Head Permutation has broken neck
+Elite Silent Shadow visor is a bit scuffed
+Elite new armor permutation has inconsistent lighting with the default armor 
+
+# --------------------------
+# |        VEHICLES        |
+# --------------------------
+Revenant; hitting the left back side of it also transfer damage to the right front hull

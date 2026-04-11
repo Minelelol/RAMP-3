@@ -1,0 +1,8 @@
+"E:\Eldewrito"
+SetVariable workingdir "F:\Github\Ramp-3"
+SetVariable reachmapsdir "F:\reachmaps"
+SetVariable MCCdir "F:\SteamLibrary\steamapps\common\Halo The Master Chief Collection"
+SetVariable Workshopdir "F:\SteamLibrary\steamapps\workshop\content\976730"
+
+# Idiot proofing this shit, I can't be bothered lmao
+CS < ..\cs\checkvariabledirectory.cs

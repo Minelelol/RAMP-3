@@ -1,0 +1,17 @@
+# Script made by MtnDewIt
+
+CS < workingdir\cs\GetTagToolVersion.cs
+
+CreateModPackage 1
+RecompShaders
+RecompShaders
+MtnDewIt
+0.1
+Multiplayer Campaign FireFight MainMenu Character
+
+RunCommands "workingdir\commands\update_shaders\RenderMethodUpdates.cmds"
+# Causes black screen
+# RunCommands "workingdir\commands\update_shaders\ExplicitShaderUpdates.cmds"
+RunCommands "workingdir\commands\update_shaders\ChudShaderUpdates.cmds"
+
+SaveModPackage workingdir\paks\RecompShaders[TagToolVersion]

@@ -371,7 +371,7 @@ ForEach CollisionRegions[6].Permutations SetField PhysicsPermutationIndex 0
 SaveTagChanges
 Exit
 
-# HOLOGRAM
+# HOLOGRAM <-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-
 EditTag objects\equipment\hologram\bipeds\masterchief_hologram.model
 SetField RenderModel objects\characters\masterchief\mp_masterchief\mp_masterchief.render_model
 UpdateModelRegions 0 coll
