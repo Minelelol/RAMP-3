@@ -1,11 +1,10 @@
 # ------------------------
 # |        SHADER        |
 # ------------------------
-# This is pain
 GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
 
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_red.shader
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_green
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_green.shader
 
 SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
 SetField Options[0].OptionIndex 8
@@ -33,7 +32,7 @@ SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -
 SetArgument base_map 1 1 0 0
 SetArgument detail_map 60 60 0 0
 SetArgument color_mask_map 1 1 0 0
-SetArgument albedo_color 1 0 0 0.5
+SetArgument albedo_color 0 1 0 0.5
 SetArgument albedo_color2 1 1 1 0.5
 SetArgument albedo_color3 1 1 1 0.5
 SetArgument neutral_gray 1 1 1
@@ -65,8 +64,8 @@ SetArgument wet_material_dim_coefficient 1 1 1 1
 SaveTagChanges
 Exit
 
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_red.shader
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_green
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_green.shader
 
 SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
 SetField Options[0].OptionIndex 8
@@ -94,7 +93,7 @@ SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -
 SetArgument base_map 1 1 0 0
 SetArgument detail_map 60 60 0 0
 SetArgument color_mask_map 1 1 0 0
-SetArgument albedo_color 1 0 0 0.5
+SetArgument albedo_color 0 1 0 0.5
 SetArgument albedo_color2 1 1 1 0.5
 SetArgument albedo_color3 1 1 1 0.5
 SetArgument neutral_gray 1 1 1
@@ -128,8 +127,8 @@ Exit
 
 GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach none off opaque off default off off off default from_albedo_alpha_without_fresnel
 
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_red.shader
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_green
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_green.shader
 
 SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_0_0_0_0_5_0_0_0_0_0.render_method_template
 SetField Options[0].OptionIndex 8
@@ -156,7 +155,7 @@ SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 1
 SetArgument base_map 1 1 0 0
 SetArgument detail_map 60 60 0 0
 SetArgument color_mask_map 1 1 0 0
-SetArgument albedo_color 1 0 0 0.5
+SetArgument albedo_color 0 1 0 0.5
 SetArgument albedo_color2 1 1 1 0.5
 SetArgument albedo_color3 1 1 1 0.5
 SetArgument neutral_gray 1 1 1
@@ -187,68 +186,30 @@ SaveTagChanges
 Exit
 
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
-
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_barrel_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_barrel_red.shader
-SetBitmap base_map objects\weapons\rifle\assault_rifle\assault_rifle_v6\material_13\base_map.bitmap
-SetBitmap bump_map objects\weapons\rifle\assault_rifle\assault_rifle_v6\material_13\bump_map.bitmap
-
-SetArgument specular_coefficient 0.1
-SaveTagChanges
-Exit
-
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader objects\weapons\rifle\assault_rifle_variants\shaders\display_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\display_red.shader
-SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\display_plate_cc.bitmap
-
-SetArgument albedo_color 0.32 0 0.04 1
-SetArgument self_illum_color 1 0 0 1
-SetArgument self_illum_intensity 4
-saveTagChanges
-Exit
-
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\item.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_display_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_display_red.shader
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\item.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_display_green
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_display_green.shader
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_sight_display.bitmap
 SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic4EXPENSIVE
 
-SetArgument self_illum_color 0.5 0 0 1
+SetArgument self_illum_color 0 0.5 0 1
 SetArgument self_illum_intensity 6
 saveTagChanges
 Exit
 
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\compass.shader objects\weapons\rifle\assault_rifle_variants\shaders\compass_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\compass_red.shader
-SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\compass_cc.bitmap
-
-SetArgument self_illum_color 1 0 0 1
-SetArgument self_illum_intensity 6
-saveTagChanges
-Exit
-
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\item.shader objects\weapons\rifle\assault_rifle_variants\shaders\item_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\item_red.shader
-SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\bullet_plate_cc.bitmap
-
-SetArgument self_illum_color 1 0 0 1
-SetArgument self_illum_intensity 6
-saveTagChanges
-Exit
-
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\ones.shader objects\weapons\rifle\assault_rifle_variants\shaders\ones_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\ones_red.shader
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\ones.shader objects\weapons\rifle\assault_rifle_variants\shaders\ones_green
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\ones_green.shader
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc.bitmap
 
-SetArgument self_illum_color 1 0 0 1
+SetArgument self_illum_color 0 1 0 1
 SetArgument self_illum_intensity 6
 saveTagChanges
 Exit
 
-DuplicateTag objects\weapons\rifle\assault_rifle\shaders\tens.shader objects\weapons\rifle\assault_rifle_variants\shaders\tens_red
-EditTag objects\weapons\rifle\assault_rifle_variants\shaders\tens_red.shader
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\tens.shader objects\weapons\rifle\assault_rifle_variants\shaders\tens_green
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\tens_green.shader
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc.bitmap
 
-SetArgument self_illum_color 1 0 0 1
+SetArgument self_illum_color 0 1 0 1
 SetArgument self_illum_intensity 6
 saveTagChanges
 Exit
@@ -256,34 +217,30 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-CreateTag mode dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage
-ImportTag dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.render_model workingdir\tags\weapons\VKMT\assault_rifle.render_model
-EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.render_model
+CreateTag mode dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy
+ImportTag dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.render_model workingdir\tags\weapons\VKMT\assault_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.render_model
 
 SetField MarkerGroups[1].Name fx_display_light
 SetField MarkerGroups[9].Name right_hand_spartan
 
 RemoveBlockElements Materials 0 *
-AddBlockElements Materials 16
-SetField Materials[0].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_red.shader
+AddBlockElements Materials 12
+SetField Materials[0].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_green.shader
 SetField Materials[1].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_shiny.shader
-SetField Materials[2].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_red.shader
-SetField Materials[3].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\display_red.shader
-SetField Materials[4].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\item_red.shader
-SetField Materials[5].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\ones_red.shader
-SetField Materials[6].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\tens_red.shader
-SetField Materials[7].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\compass_red.shader
-SetField Materials[8].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
-SetField Materials[9].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_red.shader
-SetField Materials[10].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_barrel_red.shader
-SetField Materials[11].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_composite.shader
-SetField Materials[12].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_metal.shader
-SetField Materials[13].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_rubber.shader
-SetField Materials[14].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_composite.shader
-SetField Materials[15].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_display_red.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_green.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\ones_green.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\tens_green.shader
+SetField Materials[5].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_green.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_composite.shader
+SetField Materials[8].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_metal.shader
+SetField Materials[9].RenderMethod objects\weapons\rifle\shotgun\shaders\shotgun_composite.shader
+SetField Materials[10].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_composite.shader
+SetField Materials[11].RenderMethod objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_display_green.shader
 
 RemoveBlockElements Regions 0 *
-ReplaceRenderGeometry workingdir\models\weapons\AR\assault_rifle_damage.fbx TriangleStrip
+ReplaceRenderGeometry workingdir\models\weapons\AR\assault_rifle_accuracy.fbx TriangleStrip
 
 AddBlockElements MarkerGroups
 AddBlockElements MarkerGroups[*].Markers
@@ -306,9 +263,9 @@ Exit
 # ------------------------
 # |         MODEL        |
 # ------------------------
-DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.model dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage
-EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.model
-SetField RenderModel dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.render_model
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.model dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy
+EditTag dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.model
+SetField RenderModel dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.render_model
 UpdateModelRegions phmo coll
 SaveTagChanges
 Exit
@@ -316,11 +273,11 @@ Exit
 # ------------------------
 # |        WEAPON        |
 # ------------------------
-EditTag objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.weapon
-SetField Model dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.model
-SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.render_model
+EditTag objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.weapon
+SetField Model dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.model
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.render_model
 SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
-SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\assault_rifle_damage\assault_rifle_damage.render_model
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\assault_rifle_accuracy\assault_rifle_accuracy.render_model
 SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_elite\fp_elite.model_animation_graph
 SaveTagChanges
 Exit

@@ -78,6 +78,7 @@ RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
 
 # Assault Rifle Variants
 RunCommands workingdir\commands\weapons\variants\assault_rifle\preliminary_assault_rifle.cmds
+RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_accuracy.cmds
 RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_damage.cmds
 
 # -----------------------------------------
