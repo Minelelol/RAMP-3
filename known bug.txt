@@ -21,4 +21,4 @@ Revenant; hitting the left back side of it also transfer damage to the right fro
 # --------------------------
 # |        WEAPONS         |
 # --------------------------
-Assault Rifle Variants model has broken normals
+Assault Rifle Variants model has meshes that gets culled immediately if the wielder is in Active Camo state

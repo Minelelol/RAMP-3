@@ -4,6 +4,7 @@
 GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_diffuse_cc workingdir\bitmaps\Weapons\Variants\AR\assault_rifle_diffuse_cc.dds
 GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\bullet_plate_cc workingdir\bitmaps\Weapons\Variants\AR\bullet_plate.dds
 GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\display_plate_cc workingdir\bitmaps\Weapons\Variants\AR\display_plate.dds
+GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\display2_plate_cc workingdir\bitmaps\Weapons\Variants\AR\display2_plate.dds
 GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_diffuse_color_mask workingdir\bitmaps\Weapons\Variants\AR\assault_rifle_diffuse_color_mask.dds
 GenerateBitmap Sequence objects\weapons\rifle\assault_rifle_variants\bitmaps\compass_cc workingdir\bitmaps\Weapons\Variants\AR\compass
 GenerateBitmap Sequence objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc workingdir\bitmaps\Weapons\Variants\AR\numbers_plate
@@ -11,6 +12,9 @@ GenerateBitmap Sequence objects\weapons\rifle\assault_rifle_variants\bitmaps\num
 GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_sight_diffuse workingdir\bitmaps\Weapons\Variants\AR\reflex_sight\assault_rifle_reflex_diffuse.dds
 GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_sight_display workingdir\bitmaps\Weapons\Variants\AR\reflex_sight\assault_rifle_reflex_display.dds
 GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_sight_normal workingdir\bitmaps\Weapons\Variants\AR\reflex_sight\assault_rifle_reflex_normal.dds
+
+GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_diffuse workingdir\bitmaps\Weapons\Variants\AR\handguard\assault_rifle_handguard_diffuse.dds
+GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_normal workingdir\bitmaps\Weapons\Variants\AR\handguard\assault_rifle_handguard_normal.dds
 
 # ------------------------
 # |    SHARED SHADER     |
@@ -34,3 +38,11 @@ SetBitmap bump_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_
 SaveTagChanges
 Exit
 
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_handguard
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_handguard.shader
+SetBitmap base_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_diffuse.bitmap
+SetBitmap bump_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_normal.bitmap
+
+SetArgument specular_coefficient 0.5
+SaveTagChanges
+Exit
