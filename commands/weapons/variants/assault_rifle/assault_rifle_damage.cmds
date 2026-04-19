@@ -201,7 +201,7 @@ DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader objects\
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\display_red.shader
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\display_plate_cc.bitmap
 
-SetArgument albedo_color 0.32 0 0.02 1
+SetArgument albedo_color 0.24 0 0.015 1
 SetArgument self_illum_color 1 0 0 1
 SetArgument self_illum_intensity 4
 saveTagChanges

@@ -81,6 +81,7 @@ RunCommands workingdir\commands\weapons\variants\assault_rifle\preliminary_assau
 RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_accuracy.cmds
 RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_damage.cmds
 RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_rof.cmds
+RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_power.cmds
 
 # -----------------------------------------
 # |           WEAPONS ANIMATION           |

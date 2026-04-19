@@ -1,4 +1,11 @@
 # ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\display2_plate_cc workingdir\bitmaps\Weapons\Variants\AR\display2_plate.dds
+GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_diffuse workingdir\bitmaps\Weapons\Variants\AR\handguard\assault_rifle_handguard_diffuse.dds
+GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_normal workingdir\bitmaps\Weapons\Variants\AR\handguard\assault_rifle_handguard_normal.dds
+
+# ------------------------
 # |        SHADER        |
 # ------------------------
 # This is pain
@@ -188,11 +195,20 @@ Exit
 
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_handguard
+EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_handguard.shader
+SetBitmap base_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_diffuse.bitmap
+SetBitmap bump_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_handguard_normal.bitmap
+
+SetArgument specular_coefficient 0.5
+SaveTagChanges
+Exit
+
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader objects\weapons\rifle\assault_rifle_variants\shaders\display_orange
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\display_orange.shader
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\display_plate_cc.bitmap
 
-SetArgument albedo_color 0.32 0.1 0.02 1
+SetArgument albedo_color 0.24 0.075 0.015 1
 SetArgument self_illum_color 1 0.2 0 1
 SetArgument self_illum_intensity 4
 saveTagChanges
@@ -202,7 +218,7 @@ DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader objects\
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\display2_orange.shader
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\display2_plate_cc.bitmap
 
-SetArgument albedo_color 0.32 0.1 0.02 1
+SetArgument albedo_color 0.24 0.075 0.015 1
 SetArgument self_illum_color 1 0.2 0 1
 SetArgument self_illum_intensity 4
 saveTagChanges
