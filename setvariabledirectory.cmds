@@ -6,3 +6,11 @@ SetVariable Workshopdir "F:\SteamLibrary\steamapps\workshop\content\976730"
 
 # Idiot proofing this shit, I can't be bothered lmao
 CS < ..\cs\checkvariabledirectory.cs
+
+# reachmapsdir is a folder containing all of reach xbox 360 map files
+
+# Required MCC dlc; Halo 3, Halo 3: ODST, Halo Reach
+
+# Required workshop mod
+# https://steamcommunity.com/sharedfiles/filedetails/?id=3372578060
+# Note: for this mod, make sure to copy the content inside of the 3372578060\halo3\maps and paste them inside of the 3372578060\maps
