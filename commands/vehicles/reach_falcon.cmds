@@ -356,6 +356,19 @@ Exit
 # |     RENDER MODEL     |
 # ------------------------
 EditTag objects\vehicles\human\falcon\falcon.render_model
+
+# Feet (L/R) placement spartan
+SetField MarkerGroups[2].Markers[0].Translation 1.1148508 0.068588875 -0.6864322
+SetField MarkerGroups[8].Markers[0].Translation 1.1148508 -0.06859017 -0.6864322
+
+# Hands (L/R) placement spartan
+# Tried my best getting the left upper arm not to clip the falcon canopy
+SetField MarkerGroups[5].Markers[0].Translation 0.04859031 0.05524773 -0.010752602
+SetField MarkerGroups[5].Markers[0].Rotation 0.061628416 0 -0.70710677 0.704416
+
+SetField MarkerGroups[11].Markers[0].Translation -0.0645887 0.0552477 -0.010752602
+SetField MarkerGroups[11].Markers[0].Rotation 0 0 -0.53729963 0.8433914
+
 SetField Materials[2].RenderMethod objects\vehicles\human\falcon\shaders\falcon_decals.shader
 SaveTagChanges
 Exit
