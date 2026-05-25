@@ -349,7 +349,7 @@ SetField CasualAimingModifier 0
 SetField Seats[0].Flags Driver,Gunner,ThirdPersonCamera,ControlsOpenAndClose,ForwardFromAttachment
 SetField Seats[1].Flags ThirdPersonCamera,AllowsWeapons,ThirdPersonOnEnter,AiFiringDisabledByMaxAcceleration
 
-SetField Seats[0].Label hornet_d
+# SetField Seats[0].Label hornet_d
 SetField Seats[1].Label warthog_p
 SetField Seats[2].Label warthog_b_d
 SetField Seats[3].Label warthog_b_p

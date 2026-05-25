@@ -36,8 +36,8 @@ Exit
 # |        SHADER        |
 # ------------------------
 EditTag reach\objects\weapons\melee\gravity_hammer\shaders\hammer_illum.shader
-SetField ShaderProperties[0].Functions[0].InputName null
-SetField ShaderProperties[0].Functions[0].RangeName null
+SetField ShaderProperties[0].Functions[0].InputName NULL
+SetField ShaderProperties[0].Functions[0].RangeName NULL
 
 SetField ShaderProperties[0].Functions[1].InputName batter_empty
 SetField ShaderProperties[0].Functions[1].TimePeriod 5
@@ -101,7 +101,7 @@ Exit
 # ------------------------
 EditTag objects\weapons\melee\gravity_hammer\gravity_hammer.weapon
 SetField Functions[0].TurnOffWith batter_empty
-# SetField Functions[2].TurnOffWith null
+# SetField Functions[2].TurnOffWith NULL
 
 AddBlockElements Functions
 SetField Functions[*].ImportName active_camouflage

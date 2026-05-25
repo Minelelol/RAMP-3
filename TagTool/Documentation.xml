@@ -17061,16 +17061,6 @@
             particle initial velocity direction relative to the location's forward
             </summary>
         </member>
-        <member name="F:TagTool.Tags.Definitions.Gen2.CacheFileSound.FlagsValue.AlwaysSpatialize">
-            <summary>
-            always play as 3d sound, even in first person
-            </summary>
-        </member>
-        <member name="F:TagTool.Tags.Definitions.Gen2.CacheFileSound.FlagsValue.NeverObstruct">
-            <summary>
-            disable occlusion/obstruction for this sound
-            </summary>
-        </member>
         <member name="F:TagTool.Tags.Definitions.Gen2.CellularAutomata.InfectedCellLifespan">
             <summary>
             the lifespan of a cell once infected
@@ -23809,16 +23799,6 @@
         <member name="F:TagTool.Tags.Definitions.Gen2.Sky.SkyAnimationBlock.AnimationIndex">
             <summary>
             Index of the animation in the animation graph.
-            </summary>
-        </member>
-        <member name="F:TagTool.Tags.Definitions.Gen2.Sound.Gen2SoundFlags.AlwaysSpatialize">
-            <summary>
-            always play as 3d sound, even in first person
-            </summary>
-        </member>
-        <member name="F:TagTool.Tags.Definitions.Gen2.Sound.Gen2SoundFlags.NeverObstruct">
-            <summary>
-            disable occlusion/obstruction for this sound
             </summary>
         </member>
         <member name="F:TagTool.Tags.Definitions.Gen2.SoundCacheFileGestalt.RuntimePermutationFlags">

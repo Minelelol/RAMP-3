@@ -3,6 +3,7 @@ SetVariable workingdir "F:\Github\Ramp-3"
 SetVariable reachmapsdir "F:\reachmaps"
 SetVariable MCCdir "F:\SteamLibrary\steamapps\common\Halo The Master Chief Collection"
 SetVariable Workshopdir "F:\SteamLibrary\steamapps\workshop\content\976730"
+SetVariable HugeGrassOLDDir "F:\SteamLibrary\steamapps\workshop\content\976730\HugeGrass_OLD"
 
 # Idiot proofing this shit, I can't be bothered lmao
 CS < ..\cs\checkvariabledirectory.cs
@@ -14,3 +15,6 @@ CS < ..\cs\checkvariabledirectory.cs
 # Required workshop mod
 # https://steamcommunity.com/sharedfiles/filedetails/?id=3372578060
 # Note: for this mod, make sure to copy the content inside of the 3372578060\halo3\maps and paste them inside of the 3372578060\maps
+
+# Required old version of Hugegrass which can be downloaded from here https://nextcloud.zekken.rocks/s/YjHLFR68x3RAX8H
+# Why old version? RejectedShotgun broke the physics model for the  Falcon lol, that's literally it.

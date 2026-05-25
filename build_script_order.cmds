@@ -95,6 +95,7 @@ RunCommands workingdir\commands\weapons\weapons_viewmodel.cmds
 # -----------------------------------------
 GenerateBitmap sequence reach\ui\chud\bitmaps\hud_vehicle_reticles workingdir\bitmaps\HUD\reach_vehicle_hud
 RunCommands workingdir\commands\vehicles\reach_revenant.cmds
+RunCommands workingdir\commands\vehicles\reach_falcon.cmds
 
 # -----------------------------------------
 # |      PRELIMINARY REACH MAP PORTS      |

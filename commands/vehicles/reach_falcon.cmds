@@ -1,0 +1,677 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+# When compressed the total is 16kb!! instead of 120kb
+// bruh
+GenerateBitmap objects\vehicles\human\falcon\bitmaps\falcon1blades_diffuse workingdir\bitmaps\Vehicles\falcon\falcon1_blades.dds
+
+# ------------------------
+# |          HUD         |
+# ------------------------
+DuplicateTag ui\chud\v_scorpionturret.chud_definition objects\vehicles\falcon\v_falcon_turret
+EditTag objects\vehicles\falcon\v_falcon_turret.chud_definition
+SetField HudWidgets[0].BitmapWidgets[0].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
+SetField HudWidgets[0].BitmapWidgets[0].BitmapSequenceIndex 3
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+# Use ED normal texture instead
+NameBlamTag objects\vehicles\human\turrets\machinegun\bitmaps\mg_turret_zbump.bitmap objects\weapons\turret\machinegun_turret\machinegun_turret_vehicle\garbage\machinegun_turret_tripod_mp\machinegun_turret_tripod_mp\material_1\bump_map
+NameBlamTag objects\vehicles\human\warthog\bitmaps\glass_damage_normal.bitmap objects\vehicles\warthog\warthog_snow\material_15\bump_map
+
+# Render model shaders
+PortTag objects\vehicles\human\falcon\shaders\falcon_hull_2.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_glass.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_decals.shader
+# Porting this shader from hugegrass instead
+# PortTag objects\vehicles\human\falcon\shaders\falcon_blades.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_blades_blur.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_console.shader
+Porttag objects\vehicles\human\falcon\shaders\falcon_hull_1.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_illum.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_cargo_netting.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+PortTag objects\vehicles\human\falcon\shaders\falcon_engine.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_hull_1_damaged.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_hull_2_damaged.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_illum_thruster.shader
+PortTag objects\vehicles\covenant\destruction\shaders\cov_damage_charred_hole_01.shader
+PortTag objects\vehicles\covenant\destruction\shaders\cov_damage_charred_hole_02.shader
+PortTag objects\vehicles\covenant\destruction\shaders\cov_damage_charred_hole_02_noparalax.shader
+PortTag objects\vehicles\human\destruction\shaders\hum_damage_streak.shader
+PortTag objects\vehicles\human\shared\shaders\hum_damage_ripped_open_tech_03.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_illum_green.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_illum_spotlight.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_illum_red.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_glass_damage.shader
+
+# Vehicle attachments
+PortTag objects\vehicles\human\falcon\fx\running\headlight.light_volume_system
+PortTag objects\vehicles\human\falcon\fx\running\thrusters.effect
+PortTag objects\vehicles\human\falcon\fx\running\engine_exhaust.effect
+# PortTag objects\vehicles\human\falcon\fx\running\headlight_large.light
+
+# EMP
+PortTag objects\vehicles\covenant\banshee\fx\destruction\emp_drain.effect
+
+# Special Effect
+PortTag objects\vehicles\human\falcon\fx\running\jet_wash.effect
+
+# Chin gun shaders
+PortTag objects\vehicles\human\falcon\shaders\falcon_hull_1.shader
+
+# Side gun shaders
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_composite.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_metal.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_rubber.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_shiny.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_machinegun_mounted_l_heat.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_machinegun_mounted_r_heat.shader
+
+# Side gun GL shaders
+PortTag objects\vehicles\human\falcon\shaders\falcon_gl.shader
+PortTag objects\vehicles\human\falcon\shaders\falcon_gl_sight.shader
+# The shader fixes are in the grenade_launcher script port
+PortTag objects\weapons\rifle\grenade_launcher\shaders\arm_switch.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\display.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\display_status.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\hundreds.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\item.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\ones.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\skull_switch.shader
+PortTag objects\weapons\rifle\grenade_launcher\shaders\tens.shader
+
+Exit
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile "HugeGrassOLDDir\maps\hugeass_remastered_mcc.map"
+
+# Render model shaders
+NameBlamTag objects\vehicles\falcon\shaders\falcon_hull_2.shader 							objects\vehicles\human\falcon\shaders\falcon_hull_2
+NameBlamTag objects\vehicles\falcon\shaders\falcon_glass.shader 							objects\vehicles\human\falcon\shaders\falcon_glass
+IgnoreBlamTag objects\vehicles\falcon\shaders\falcon_decals.shader_decal
+# NameBlamTag objects\vehicles\falcon\shaders\falcon_decals.shader_decal 					objects\vehicles\human\falcon\shaders\falcon_decals
+NameBlamTag objects\vehicles\falcon\shaders\falcon_blades.shader 							objects\vehicles\human\falcon\shaders\falcon_blades
+NameBlamTag objects\vehicles\falcon\shaders\falcon_blades_blur.shader 						objects\vehicles\human\falcon\shaders\falcon_blades_blur
+NameBlamTag objects\vehicles\falcon\shaders\falcon_console.shader 							objects\vehicles\human\falcon\shaders\falcon_console
+NameBlamTag objects\vehicles\falcon\shaders\falcon_hull_1.shader 							objects\vehicles\human\falcon\shaders\falcon_hull_1
+NameBlamTag objects\vehicles\falcon\shaders\falcon_illum.shader 							objects\vehicles\human\falcon\shaders\falcon_illum
+NameBlamTag objects\vehicles\falcon\shaders\falcon_cargo_netting.shader 					objects\vehicles\human\falcon\shaders\falcon_cargo_netting
+NameBlamTag objects\vehicles\falcon\shaders\unsc_decals.shader_decal 						objects\bitmaps\decals\shaders\unsc_decals
+NameBlamTag objects\vehicles\falcon\shaders\falcon_engine.shader 							objects\vehicles\human\falcon\shaders\falcon_engine
+NameBlamTag objects\vehicles\falcon\shaders\falcon_hull_1_damaged.shader 					objects\vehicles\human\falcon\shaders\falcon_hull_1_damaged
+NameBlamTag objects\vehicles\falcon\shaders\falcon_hull_2_damaged.shader 					objects\vehicles\human\falcon\shaders\falcon_hull_2_damaged
+NameBlamTag objects\vehicles\falcon\shaders\falcon_illum_thruster.shader 					objects\vehicles\human\falcon\shaders\falcon_illum_thruster
+NameBlamTag objects\vehicles\falcon\shaders\cov_damage_charred_hole_01.shader 				objects\vehicles\covenant\destruction\shaders\cov_damage_charred_hole_01
+NameBlamTag objects\vehicles\falcon\shaders\cov_damage_charred_hole_02.shader 				objects\vehicles\covenant\destruction\shaders\cov_damage_charred_hole_02
+NameBlamTag objects\vehicles\falcon\shaders\cov_damage_charred_hole_02_noparalax.shader 	objects\vehicles\covenant\destruction\shaders\cov_damage_charred_hole_02_noparalax
+NameBlamTag objects\vehicles\falcon\shaders\hum_damage_streak.shader 						objects\vehicles\human\destruction\shaders\hum_damage_streak
+NameBlamTag objects\vehicles\falcon\shaders\hum_damage_ripped_open_tech_03.shader 			objects\vehicles\human\shared\shaders\hum_damage_ripped_open_tech_03
+NameBlamTag objects\vehicles\falcon\shaders\falcon_illum_green.shader 						objects\vehicles\human\falcon\shaders\falcon_illum_green
+NameBlamTag objects\vehicles\falcon\shaders\falcon_illum_spotlight.shader 					objects\vehicles\human\falcon\shaders\falcon_illum_spotlight
+NameBlamTag objects\vehicles\falcon\shaders\falcon_illum_red.shader 						objects\vehicles\human\falcon\shaders\falcon_illum_red
+NameBlamTag objects\vehicles\falcon\shaders\falcon_glass_damage.shader 						objects\vehicles\human\falcon\shaders\falcon_glass_damage
+
+# Falcon model
+NameBlamTag objects\vehicles\falcon\falcon.model 					objects\vehicles\human\falcon\falcon
+NameBlamTag objects\vehicles\falcon\falcon.render_model 			objects\vehicles\human\falcon\falcon
+NameBlamTag objects\vehicles\falcon\falcon.collision_model 			objects\vehicles\human\falcon\falcon
+NameBlamTag objects\vehicles\falcon\falcon.model_animation_graph 	objects\vehicles\human\falcon\falcon
+NameBlamTag objects\vehicles\falcon\falcon.physics_model 			objects\vehicles\human\falcon\falcon
+
+# Falcon bitmap
+NameBlamTag objects\vehicles\falcon\bitmaps\falcon1_normal.bitmap objects\vehicles\human\falcon\bitmaps\falcon1_normal
+NameBlamTag objects\vehicles\falcon\bitmaps\falcon1_noalpha_diffuse.bitmap objects\vehicles\human\falcon\bitmaps\falcon1blades_diffuse
+
+# Chin gun shaders
+NameBlamTag objects\vehicles\falcon\chin_gun\shaders\falcon_hull_1.shader objects\vehicles\human\falcon\shaders\falcon_hull_1
+
+# Side gun shaders
+NameBlamTag objects\vehicles\falcon\shaders\machinegun_turret_composite.shader 			objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_composite
+NameBlamTag objects\vehicles\falcon\shaders\machinegun_turret_metal.shader 				objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_metal
+NameBlamTag objects\vehicles\falcon\shaders\machinegun_turret_rubber.shader 			objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_rubber
+NameBlamTag objects\vehicles\falcon\shaders\machinegun_turret_shiny.shader 				objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_shiny
+NameBlamTag objects\vehicles\falcon\shaders\falcon_machinegun_mounted_l_heat.shader 	objects\vehicles\human\falcon\shaders\falcon_machinegun_mounted_l_heat
+NameBlamTag objects\vehicles\falcon\shaders\falcon_machinegun_mounted_r_heat.shader 	objects\vehicles\human\falcon\shaders\falcon_machinegun_mounted_r_heat
+
+# Side gun GL shaders
+NameBlamTag objects\vehicles\falcon\shaders\falcon_gl.shader 		objects\vehicles\human\falcon\shaders\falcon_gl
+NameBlamTag objects\vehicles\falcon\shaders\falcon_gl_sight.shader 	objects\vehicles\human\falcon\shaders\falcon_gl_sight
+NameBlamTag objects\vehicles\falcon\shaders\arm_switch.shader 		objects\weapons\rifle\grenade_launcher\shaders\arm_switch
+NameBlamTag objects\vehicles\falcon\shaders\display.shader 			objects\weapons\rifle\grenade_launcher\shaders\display
+NameBlamTag objects\vehicles\falcon\shaders\display_status.shader 	objects\weapons\rifle\grenade_launcher\shaders\display_status
+NameBlamTag objects\vehicles\falcon\shaders\hundreds.shader 		objects\weapons\rifle\grenade_launcher\shaders\hundreds
+NameBlamTag objects\vehicles\falcon\shaders\item.shader 			objects\weapons\rifle\grenade_launcher\shaders\item
+NameBlamTag objects\vehicles\falcon\shaders\ones.shader 			objects\weapons\rifle\grenade_launcher\shaders\ones
+NameBlamTag objects\vehicles\falcon\shaders\skull_switch.shader 	objects\weapons\rifle\grenade_launcher\shaders\skull_switch
+NameBlamTag objects\vehicles\falcon\shaders\tens.shader 			objects\weapons\rifle\grenade_launcher\shaders\tens
+
+# Vehicle attachments
+NameBlamTag objects\vehicles\falcon\fx\headlights.light_volume_system 	objects\vehicles\human\falcon\fx\running\headlight
+NameBlamTag objects\vehicles\falcon\fx\thrusters.effect 				objects\vehicles\human\falcon\fx\running\thrusters
+NameBlamTag objects\vehicles\falcon\fx\engine_exhaust.effect 			objects\vehicles\human\falcon\fx\running\engine_exhaust
+NameBlamTag objects\vehicles\falcon\fx\headlight_large.light 			objects\vehicles\human\falcon\fx\running\headlight_large
+
+# Vehicle attachments (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\fx\headlights.effect 				objects\vehicles\human\falcon\fx\headlights
+NameBlamTag objects\vehicles\falcon\fx\headlight_beam.light 			objects\vehicles\human\falcon\fx\headlight_beam
+NameBlamTag objects\vehicles\falcon\fx\thrusters.lens_flare 			objects\vehicles\human\falcon\fx\running\thrusters
+
+NameBlamTag objects\vehicles\falcon\fx\running_lights_green.lens_flare 	objects\vehicles\human\falcon\fx\running\running_lights_green
+NameBlamTag objects\vehicles\falcon\fx\running_lights_red.lens_flare 	objects\vehicles\human\falcon\fx\running\running_lights_red
+NameBlamTag objects\vehicles\falcon\fx\screen_shake.effect 				objects\vehicles\human\falcon\fx\screen_shake
+NameBlamTag sound\vehicles\falcon\rotor1\falcon_rotor1.sound_looping 	sound\vehicles\falcon\rotor1\rotor1
+NameBlamTag sound\vehicles\falcon\rotor2\falcon_rotor2.sound_looping 	sound\vehicles\falcon\rotor2\rotor2
+NameBlamTag sound\vehicles\falcon\falcon_lod.sound_looping 				sound\vehicles\falcon\falcon_lod\falcon_lod
+NameBlamTag sound\vehicles\falcon\hornet_boost_right.sound_looping 		objects\vehicles\human\falcon\fx\running\turbo
+
+# EMP
+NameBlamTag fx\scenery_fx\destruction\emp_drain_medium\emp_drain_medium.effect objects\vehicles\covenant\banshee\fx\destruction\emp_drain
+
+# Driver/Passenger Driver Response (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\fx\falcon_boost.damage_response_definition objects\vehicles\human\falcon\fx\falcon_boost
+
+# Model objects (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\chin_gun\chin_gun.vehicle 				objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun
+NameBlamTag objects\vehicles\falcon\side_gun_left\side_gun_left.vehicle 	objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left
+NameBlamTag objects\vehicles\falcon\side_gun_right\side_gun_right.vehicle 	objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right
+
+NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.vehicle 		objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left
+NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.vehicle 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
+
+# Chin gun dependency (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\chin_gun\chin_gun.model 				objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun
+NameBlamTag objects\vehicles\falcon\chin_gun\chin_gun.render_model 			objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun
+NameBlamTag objects\vehicles\falcon\chin_gun\chin_gun.collision_model 		objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun
+NameBlamTag objects\vehicles\falcon\chin_gun\chin_gun.physics_model 		objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun
+NameBlamTag objects\vehicles\falcon\chin_gun\weapon\falcon_turret.weapon 	objects\vehicles\human\falcon\turrets\falcon_chin_gun\weapons\falcon_chin_gun
+
+# Left side gun dependency (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\side_gun_left\side_gun_left.model 				objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left
+NameBlamTag objects\vehicles\falcon\side_gun_left\side_gun_left.render_model 		objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left
+NameBlamTag objects\vehicles\falcon\side_gun_left\side_gun_left.collision_model 	objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left
+NameBlamTag objects\vehicles\falcon\side_gun_left\side_gun_left.physics_model 		objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left
+NameBlamTag objects\vehicles\falcon\side_gun_left\weapon\chaingun_turret.weapon 	objects\vehicles\human\falcon\turrets\falcon_side_gun_left\weapons\falcon_machinegun
+
+# Right side gun dependency (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\side_gun_right\side_gun_right.model 			objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right
+NameBlamTag objects\vehicles\falcon\side_gun_right\side_gun_right.render_model 		objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right
+NameBlamTag objects\vehicles\falcon\side_gun_right\side_gun_right.collision_model 	objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right
+NameBlamTag objects\vehicles\falcon\side_gun_right\side_gun_right.physics_model 	objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right
+
+# Left side gun GL dependency (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.model 			objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left
+NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.render_model 		objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left
+NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.collision_model 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left
+NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.physics_model 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left
+NameBlamTag objects\vehicles\falcon\side_gun_gl_left\grenade_turret.weapon 				objects\vehicles\human\falcon\turrets\falcon_side_gun_left\weapons\falcon_grenade_launcher
+
+# right side gun GL dependency (Didn't port from reach)
+NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.model 			objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
+NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.render_model 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
+NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.collision_model objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
+NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.physics_model 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
+
+# Grenade Launcher projectile dependency (USES VKMT GRENADE LAUNCHER PROJECTILE EFFECT/DAMAGE)
+IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\fx\airborne_detonation.effect
+IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\fx\detonation.effect
+IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\projectile\damage_effect\grenade_explosion.damage_effect
+IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\fx\detonation.effect
+
+// HUD (Remove this when the grenade launcher crosshair is done mine)
+IgnoreBlamTag objects\vehicles\falcon\v_falcon_gl.chud_definition
+
+# Vehicles
+NameBlamTag objects\vehicles\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon
+NameBlamTag objects\vehicles\falcon\falcon_gl.vehicle objects\vehicles\human\falcon\falcon_grenade_launcher
+
+PortTag objects\vehicles\human\falcon\falcon.vehicle
+# PortTag objects\vehicles\human\falcon\falcon_grenade_launcher.vehicle
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\vehicles\human\falcon\shaders\falcon_blades_blur.shader
+SetField ShaderProperties[0].Functions[0].InputName engine_rpm
+SetField ShaderProperties[0].Functions[0].Function.Data 08340000000000000000803F00000000000000000000000000000000240000000200000004000000E17A643F000000000000000004000000FFFF7F7F52D6144152D604C1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\shaders\falcon_illum_thruster.shader
+SetField ShaderProperties[0].Functions[2].InputName engine_exhaust
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\shaders\falcon_machinegun_mounted_l_heat.shader
+SetField ShaderProperties[0].Functions[0].InputName weapon_illumination
+SetField ShaderProperties[0].Functions[1].InputName weapon_illumination
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\shaders\falcon_machinegun_mounted_r_heat.shader
+SetField ShaderProperties[0].Functions[0].InputName weapon_illumination
+SetField ShaderProperties[0].Functions[1].InputName weapon_illumination
+SaveTagChanges
+Exit
+
+# Color Change
+EditTag objects\vehicles\human\falcon\shaders\falcon_hull_1.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[*].Type ChangeColorPrimary
+SetField ShaderProperties[0].Functions[*].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+AddFunction albedo_color Real 1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\shaders\falcon_hull_1_damaged.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[*].Type ChangeColorPrimary
+SetField ShaderProperties[0].Functions[*].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+AddFunction albedo_color Real 1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\shaders\falcon_hull_2.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[*].Type ChangeColorPrimary
+SetField ShaderProperties[0].Functions[*].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+AddFunction albedo_color Real 1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\shaders\falcon_hull_2_damaged.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[*].Type ChangeColorPrimary
+SetField ShaderProperties[0].Functions[*].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+
+AddFunction albedo_color Real 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\vehicles\human\falcon\fx\running\thrusters.effect
+SetField Locations[0].MarkerName replace
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\fx\running\engine_exhaust.effect
+SetField Locations[0].MarkerName replace
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\fx\running\jet_wash.effect
+SetField Locations[0].MarkerName normal
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         LIGHT        |
+# ------------------------
+# Reach light
+# EditTag objects\vehicles\human\falcon\fx\running\headlight_large.light
+# SetField Flags AllowShadowsAndGels,ShadowCasting,NeverPriorityCull
+# SetField DistanceDiffusion 0.0025
+# SetField AngularSmoothness 6
+# SaveTagChanges
+# Exit
+
+# ------------------------
+# |       PROJECTILE     |
+# ------------------------
+EditTag objects\vehicles\falcon\side_gun_gl_left\projectile\grenade.projectile
+SetField Model dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\grenade.model
+SetField MaterialEffects dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\grenade.material_effects
+SetField AirborneDetonationEffect dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\primary\airborne_detonation.effect
+SetField GroundDetonationEffect dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\primary\detonation.effect
+SetField DetonationDamage dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\primary\explosion.damage_effect
+SetField ImpactDamage dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\impact.damage_effect
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\side_gun_gl_left\projectile\grenade_emp.projectile
+SetField Model dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\grenade.model
+SetField MaterialEffects dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\grenade.material_effects
+SetField AirborneDetonationEffect dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\secondary\airborne_detonation.effect
+SetField GroundDetonationEffect dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\secondary\detonation.effect
+SetField ImpactDamage dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\impact.damage_effect
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+EditTag objects\vehicles\human\falcon\falcon.render_model
+SetField Materials[2].RenderMethod objects\vehicles\human\falcon\shaders\falcon_decals.shader
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag objects\vehicles\human\falcon\falcon.model
+
+# Fix tail wings not disappearing
+AddBlockElements Variants[0].Regions[1].Permutations[0].States
+SetField Variants[0].Regions[1].Permutations[0].States[1].Name destroyed
+SetField Variants[0].Regions[1].Permutations[0].States[1].State2 Destroyed
+
+SetField NewDamageInfo[0].MaximumVitality 500
+SetField NewDamageInfo[0].StunTime 0
+SetField NewDamageInfo[0].RechargeTime 1
+SetField NewDamageInfo[0].RechargeFraction 0.1
+SetField NewDamageInfo[0].ShieldStunTime 0
+SetField NewDamageInfo[0].ShieldRechargeTime 0
+SetField NewDamageInfo[0].RuntimeShieldRechargeVelocity 1000
+SetField NewDamageInfo[0].RuntimeHealthRechargeVelocity 10
+SetField NewDamageInfo[0].StunTime 2
+SetField NewDamageInfo[0].DamageSections[0].Flags TakesFullDamageWhenObjectDies
+SetField NewDamageInfo[0].DamageSections[0].StunTime 4
+SetField NewDamageInfo[0].DamageSections[0].RechargeTime 10
+SetField NewDamageInfo[0].DamageSections[0].RuntimeRechargeVelocity 0.1
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].Flags None
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[4].Flags KillsObject,KillsVariantObjects
+SetField AnimationDistance 250
+
+# Falcon variants
+RemoveBlockElements Variants 1 *
+CopyBlockElements Variants 0 1
+
+# Default (MP, no nose gun)
+SetField Variants[0].Objects[0].ChildObject null
+SetField Variants[0].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left.vehicle
+SetField Variants[0].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right.vehicle
+
+# Nose_gun
+StringId Add nose_gun
+PasteBlockElements Variants
+SetField Variants[*].Name nose_gun
+SetField Variants[*].Objects[0].ChildObject objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun.vehicle
+SetField Variants[0].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left.vehicle
+SetField Variants[0].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right.vehicle
+
+# Grenadier
+StringId Add grenadier
+PasteBlockElements Variants
+SetField Variants[*].Name grenadier
+SetField Variants[*].Objects[0].ChildObject null
+SetField Variants[*].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left.vehicle
+SetField Variants[*].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right.vehicle
+
+# Grenadier nose gun
+StringId Add grenadier_nose_gun
+PasteBlockElements Variants
+SetField Variants[*].Name grenadier_nose_gun
+SetField Variants[*].Objects[0].ChildObject objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun.vehicle
+SetField Variants[*].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left.vehicle
+SetField Variants[*].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right.vehicle
+
+# Transport
+StringId Add transport
+PasteBlockElements Variants
+SetField Variants[*].Name transport
+SetField Variants[*].Objects[0].ChildObject null
+SetField Variants[*].Objects[1].ChildObject null
+SetField Variants[*].Objects[2].ChildObject null
+
+# Transport nose gun
+StringId Add transport_nose_gun
+PasteBlockElements Variants
+SetField Variants[*].Name transport_nose_gun
+SetField Variants[*].Objects[0].ChildObject objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun.vehicle
+SetField Variants[*].Objects[1].ChildObject null
+SetField Variants[*].Objects[2].ChildObject null
+
+# Infinite #1 (GL/MG)
+StringId Add infinite_gl_mg
+PasteBlockElements Variants
+SetField Variants[*].Name infinite_gl_mg
+SetField Variants[*].Objects[0].ChildObject null
+SetField Variants[*].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left.vehicle
+SetField Variants[*].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right.vehicle
+
+# Infinite #2 (MG/GL)
+StringId Add infinite_mg_gl
+PasteBlockElements Variants
+SetField Variants[*].Name infinite_mg_gl
+SetField Variants[*].Objects[0].ChildObject null
+SetField Variants[*].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left.vehicle
+SetField Variants[*].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right.vehicle
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        VEHICLE       |
+# ------------------------
+EditTag objects\vehicles\human\falcon\falcon.vehicle
+SetField PhysicsTypes.Vtol[0].LiftAnglesAcceleration 360
+SetField PhysicsTypes.Vtol[0].RenderLiftAnglesAcceleration 360
+SetField PhysicsTypes.Vtol[0].PropellerRotationSpeed 2 4
+# Maximum[Forward/Left]Acceleration = Speed and Turning
+# Left Acceleration is actually turning accelerations dunno how they goofed it up lol
+SetField PhysicsTypes.Vtol[0].SpeedParameters.MaximumForwardAcceleration 6
+SetField PhysicsTypes.Vtol[0].SpeedParameters.MaximumLeftAcceleration 6
+# RotorDamping = Acceleration scale for Turning
+SetField PhysicsTypes.Vtol[0].SpeedParameters.RotorDamping 6
+SetField PhysicsTypes.Vtol[0].SpeedParameters.MagicAngularAccExp 1
+# MagicAngularAccScale = Sensitivity for Turning
+SetField PhysicsTypes.Vtol[0].SpeedParameters.MagicAngularAccScale 12
+SetField PhysicsTypes.Vtol[0].SpeedParameters.MagicAngularAccK 0.7
+SetField PhysicsTypes.Vtol[0].TurnAccelerationGain 30
+SetField PhysicsTypes.Vtol[0].MinimumUpAcceleration 0.3
+SetField PhysicsTypes.Vtol[0].MaximumUpAcceleration 6
+# Alot of this are speculations but it's the closest value I can get to make it feel control like the falcon from reach
+
+# Color Change
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+
+SaveTagChanges
+Exit
+
+# Color change attribute
+EditTag objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun.vehicle
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left.vehicle
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right.vehicle
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left.vehicle
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right.vehicle
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage1\falcon_garbage1.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage2\falcon_garbage2.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage3\falcon_garbage3.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage4\falcon_garbage4.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage5\falcon_garbage5.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage6\falcon_garbage6.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\falcon\garbage\falcon_garbage7\falcon_garbage7.crate
+RemoveBlockElements ChangeColors 0 *
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[*].InitialPermutations
+SetField ChangeColors[*].InitialPermutations[*].Weight 1
+SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
+SetField ChangeColors[*].InitialPermutations[*].VariantName default
+SaveTagChanges
+Exit
+
+# ------------------------
+# |   VEHICLE VARIANTS   |
+# ------------------------
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_nose_gun
+EditTag objects\vehicles\human\falcon\falcon_nose_gun.vehicle
+SetField DefaultModelVariant nose_gun
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_grenadier
+EditTag objects\vehicles\human\falcon\falcon_grenadier.vehicle
+SetField DefaultModelVariant grenadier
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_grenadier_nose_gun
+EditTag objects\vehicles\human\falcon\falcon_grenadier_nose_gun.vehicle
+SetField DefaultModelVariant grenadier_nose_gun
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_transport
+EditTag objects\vehicles\human\falcon\falcon_transport.vehicle
+SetField DefaultModelVariant transport
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_transport_nose_gun
+EditTag objects\vehicles\human\falcon\falcon_transport_nose_gun.vehicle
+SetField DefaultModelVariant transport_nose_gun
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_infinite_gl_mg
+EditTag objects\vehicles\human\falcon\falcon_infinite_gl_mg.vehicle
+SetField DefaultModelVariant infinite_gl_mg
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_infinite_mg_gl
+EditTag objects\vehicles\human\falcon\falcon_infinite_mg_gl.vehicle
+SetField DefaultModelVariant infinite_mg_gl
+SaveTagChanges
+Exit
+
+AddForgeItem "FALCON" 1 							objects\vehicles\human\falcon\falcon.vehicle
+AddForgeItem "FALCON, NOSE GUN" 1 					objects\vehicles\human\falcon\falcon_nose_gun.vehicle
+AddForgeItem "FALCON, GRENADIER" 1 					objects\vehicles\human\falcon\falcon_grenadier.vehicle
+AddForgeItem "FALCON, GRENADIER, NOSE GUN" 1 		objects\vehicles\human\falcon\falcon_grenadier_nose_gun.vehicle
+AddForgeItem "FALCON, TRANSPORT" 1 					objects\vehicles\human\falcon\falcon_transport.vehicle
+AddForgeItem "FALCON, TRANSPORT, NOSE GUN" 1 		objects\vehicles\human\falcon\falcon_transport_nose_gun.vehicle
+AddForgeItem "FALCON, INFINITE #1 [GL/MG]" 1 		objects\vehicles\human\falcon\falcon_infinite_gl_mg.vehicle
+AddForgeItem "FALCON, INFINITE #2 [MG/GL]" 1 		objects\vehicles\human\falcon\falcon_infinite_mg_gl.vehicle

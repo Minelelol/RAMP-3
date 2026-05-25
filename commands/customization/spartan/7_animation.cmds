@@ -3,48 +3,179 @@ CreateTag jmad ramp\objects\characters\masterchief\masterchief
 ImportTag ramp\objects\characters\masterchief\masterchief.model_animation_graph workingdir\tags\bipeds\masterchief.model_animation_graph
 
 EditTag ramp\objects\characters\masterchief\masterchief.model_animation_graph
-AddAnimation workingdir\animations\masterchief
 
-# Gravity Hammer Melee Lunge (OG animation index is 220)
-AddBlockElements Animations[2].AnimationData.EffectEvents
-SetField Animations[2].AnimationData.EffectEvents[0].Frame 9
-SetField Animations[2].AnimationData.EffectEvents[0].MarkerName hammer_detonation
-SetField Animations[2].AnimationData.EffectEvents[0].DamageEffectReportingType.HaloOnline Guardians
-AddBlockElements Animations[2].AnimationData.ObjectSpaceParentNodes
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].Flags Rotation
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationX -22365
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationY -8095
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationZ -20136
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].RotationW 10121
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].DefaultTranslation -0.00821 -1.6748E-08 0.3684624
-SetField Animations[2].AnimationData.ObjectSpaceParentNodes[0].DefaultScale 1
+# ----------------------------------------------
+# |              SPRINT SUPPORT                |
+# ----------------------------------------------
+AddAnimation workingdir\animations\masterchief\sprint
+AddBlockElements Animations[*].AnimationData.FrameEvents 2
+SetField Animations[*].AnimationData.FrameEvents[0].TypeED LeftFoot
+SetField Animations[*].AnimationData.FrameEvents[0].Frame 1
+SetField Animations[*].AnimationData.FrameEvents[1].TypeED RightFoot
+SetField Animations[*].AnimationData.FrameEvents[1].Frame 8
+SetField Animations[*].AnimationData.Heading 0.9999995 -0.0009953227 0
+SetField Animations[*].AnimationData.AverageTranslationMagnitude 0.1199909
 
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[6].GraphIndex -1
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[6].Animation 2
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[7].GraphIndex -1
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[7].Animation 2
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[8].GraphIndex -1
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[8].Animation 2
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[9].GraphIndex -1
-SetField Modes[1].WeaponClass[10].WeaponType[0].Set.Overlays[9].Animation 2
+# ----------------------------------------------
+# |         HAMMER MELEE LUNGE UNAIMED         |
+# ----------------------------------------------
+AddAnimation workingdir\animations\masterchief\hammer_melee_lunge_unaimed
+AddBlockElements Animations[*].AnimationData.EffectEvents
+SetField Animations[*].AnimationData.EffectEvents[0].Frame 9
+SetField Animations[*].AnimationData.EffectEvents[0].MarkerName hammer_detonation
+SetField Animations[*].AnimationData.EffectEvents[0].DamageEffectReportingType.HaloOnline Guardians
+AddBlockElements Animations[*].AnimationData.ObjectSpaceParentNodes
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].Flags Rotation
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].RotationX -22365
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].RotationY -8095
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].RotationZ -20136
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].RotationW 10121
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].DefaultTranslation -0.00821 -1.6748E-08 0.3684624
+SetField Animations[*].AnimationData.ObjectSpaceParentNodes[0].DefaultScale 1
 
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[8].GraphIndex -1
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[8].Animation 2
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[9].GraphIndex -1
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[9].Animation 2
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[10].GraphIndex -1
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[10].Animation 2
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[11].GraphIndex -1
-SetField Modes[0].WeaponClass[11].WeaponType[0].Set.Overlays[11].Animation 2
+SetAnimation combat:hammer:any:melee_lunge_unaimed *
+SetAnimation combat:hammer:any:melee_lunge_unaimed_airborne *
+SetAnimation crouch:hammer:any:melee_lunge_unaimed *
+SetAnimation crouch:hammer:any:melee_lunge_unaimed_airborne *
 
-# Support weapon sprint (OG animation index is 1241)
-AddBlockElements Animations[3].AnimationData.FrameEvents 2
-SetField Animations[3].AnimationData.FrameEvents[0].TypeED LeftFoot
-SetField Animations[3].AnimationData.FrameEvents[0].Frame 1
-SetField Animations[3].AnimationData.FrameEvents[1].TypeED RightFoot
-SetField Animations[3].AnimationData.FrameEvents[1].Frame 8
-SetField Animations[3].AnimationData.Heading 0.9999995 -0.0009953227 0
-SetField Animations[3].AnimationData.AverageTranslationMagnitude 0.1199909
+# ----------------------------------------------
+# |             DUAL NEEDLER RELOAD            |
+# ----------------------------------------------
+AddAnimation "workingdir\animations\masterchief\dual_ne_reload\combat dual ne reload_1.JMO"
+SetAnimation crouch:dual:ne:reload_1 * AddOverlay
+
+AddAnimation "workingdir\animations\masterchief\dual_ne_reload\combat dual ne reload_1_left.JMO"
+SetAnimation crouch:dual:ne:reload_1_left * AddOverlay
+
+# ----------------------------------------------
+# |                   FALCON                   |
+# ----------------------------------------------
+StringId Add falcon_d
+StringId Add falcon_p_l1
+StringId Add falcon_p_r1
+StringId Add falcon_g_l
+StringId Add falcon_g_r
+StringId Add d_left_hand_spartan
+StringId Add d_right_hand_spartan
+StringId Add d_left_foot_spartan
+StringId Add d_right_foot_spartan
+
+# Falcon Driver
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_d\enter\falcon_d any any enter.JMM"
+AddBlockElements Animations[*].AnimationData.SoundEvents
+SetField Animations[*].AnimationData.SoundEvents[0].Sound 57
+
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_d\enter\falcon_d any any enter_a.JMM"
+AddBlockElements Animations[*].AnimationData.SoundEvents
+SetField Animations[*].AnimationData.SoundEvents[0].Sound 57
+
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_d\exit\falcon_d any any exit.JMM"
+AddBlockElements Animations[*].AnimationData.SoundEvents
+SetField Animations[*].AnimationData.SoundEvents[0].Sound 58
+
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_d"
+
+AddBlockElements Modes[*].ModeIk 4
+SetField Modes[*].ModeIk[0].Marker left_hand
+SetField Modes[*].ModeIk[0].AttachToMarker d_left_hand_spartan
+SetField Modes[*].ModeIk[1].Marker right_hand
+SetField Modes[*].ModeIk[1].AttachToMarker d_right_hand_spartan
+SetField Modes[*].ModeIk[2].Marker left_foot
+SetField Modes[*].ModeIk[2].AttachToMarker d_left_foot_spartan
+SetField Modes[*].ModeIk[3].Marker right_foot
+SetField Modes[*].ModeIk[3].AttachToMarker d_right_foot_spartan
+
+# Falcon Gunner Left
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_g_l\overlays\falcon_g_l any any aim_still_up.JMO"
+SetField Animations[*].AnimationData.BlendScreen 10
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_g_l"
+
+AddBlockElements Modes[*].ModeIk 2
+SetField Modes[*].ModeIk[0].Marker left_hand
+SetField Modes[*].ModeIk[0].AttachToMarker left_hand
+SetField Modes[*].ModeIk[1].Marker right_hand
+SetField Modes[*].ModeIk[1].AttachToMarker right_hand
+
+# Falcon Gunner Right
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_g_r\overlays\falcon_g_r any any aim_still_up.JMO"
+SetField Animations[*].AnimationData.BlendScreen 10
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_g_r"
+
+AddBlockElements Modes[*].ModeIk 2
+SetField Modes[*].ModeIk[0].Marker left_hand
+SetField Modes[*].ModeIk[0].AttachToMarker left_hand
+SetField Modes[*].ModeIk[1].Marker right_hand
+SetField Modes[*].ModeIk[1].AttachToMarker right_hand
+
+# Falcon Passenger Left
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_p_l1\overlays\falcon_p_l1 any any aim_still_up.JMO"
+SetField Animations[*].AnimationData.BlendScreen 0
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_p_l1"
+
+# Falcon Passenger Right
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_p_r1\overlays\falcon_p_r1 any any aim_still_up.JMO"
+SetField Animations[*].AnimationData.BlendScreen 0
+AddAnimation "workingdir\animations\masterchief\falcon\falcon_p_r1"
+
+# ----------------------------------------------
+# |                 REVENANT                   |
+# ----------------------------------------------
+StringId Add revenant_d
+
+AddBlockElements Modes
+SetField Modes[*].Name revenant_d
+AddBlockElements Modes[*].WeaponClass 1
+SetField Modes[*].WeaponClass[0].Label any
+AddBlockElements Modes[*].WeaponClass[0].WeaponType 1
+SetField Modes[*].WeaponClass[0].WeaponType[0].Label any
+AddBlockElements Modes[*].WeaponClass[0].WeaponType[0].Set.Actions 4
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[0].Label idle
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[0].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 719
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[1].Label enter
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[1].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[1].Animation 716
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[2].Label exit
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[2].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[2].Animation 718
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[3].Label ejection
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[3].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Actions[3].Animation 715
+
+AddBlockElements Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays 4
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[0].Label acc_front_back
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[0].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[0].Animation 712
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[1].Label acc_left_right
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[1].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[1].Animation 713
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[2].Label acc_up_down
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[2].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[2].Animation 714
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[3].Label look
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[3].GraphIndex 0
+SetField Modes[*].WeaponClass[0].WeaponType[0].Set.Overlays[3].Animation 720
+
+AddBlockElements Modes[*].ModeIk 4
+SetField Modes[*].ModeIk[0].Marker left_hand
+SetField Modes[*].ModeIk[0].AttachToMarker left_hand
+SetField Modes[*].ModeIk[1].Marker right_hand
+SetField Modes[*].ModeIk[1].AttachToMarker right_hand
+SetField Modes[*].ModeIk[2].Marker left_foot
+SetField Modes[*].ModeIk[2].AttachToMarker left_foot
+SetField Modes[*].ModeIk[3].Marker right_foot
+SetField Modes[*].ModeIk[3].AttachToMarker right_foot
+
+SaveTagChanges
+Exit
+
+EditTag ramp\objects\characters\masterchief\masterchief.model_animation_graph
+SortModes
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\masterchief.model
+SetField Animation ramp\objects\characters\masterchief\masterchief.model_animation_graph
 SaveTagChanges
 Exit
 
