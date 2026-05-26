@@ -245,6 +245,7 @@ Exit
 # |         SOUND        |
 # ------------------------
 EditTag sound\dialog\target_laser\targeted.sound
+SetField SoundClass.HaloOnline UnitDialog
 SetField Playback.DistanceParameters.MinimumDistance 1
 SetField Playback.DistanceParameters.MaximumDistance 75
 SaveTagChanges
