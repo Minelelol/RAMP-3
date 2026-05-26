@@ -373,6 +373,12 @@ SetField MarkerGroups[11].Markers[0].Translation -0.0645887 0.0552477 -0.0107526
 SetField MarkerGroups[11].Markers[0].Rotation 0 0 -0.53729963 0.8433914
 
 SetField Materials[2].RenderMethod objects\vehicles\human\falcon\shaders\falcon_decals.shader
+
+# Remove TO FOLD Decals on falcon blades, (it wouldn't appear regardless cause the falcon blades shader is alpha blend)
+AddBlockElements Materials
+SetField Materials[23].RenderMethod null
+SetField Geometry.Meshes[3].Parts[0].MaterialIndex 23
+
 SaveTagChanges
 Exit
 
