@@ -215,7 +215,7 @@ NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.collision_
 NameBlamTag objects\vehicles\falcon\side_gun_gl_left\side_gun_gl_left.physics_model 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_left\falcon_side_grenade_left
 NameBlamTag objects\vehicles\falcon\side_gun_gl_left\grenade_turret.weapon 				objects\vehicles\human\falcon\turrets\falcon_side_gun_left\weapons\falcon_grenade_launcher
 
-# right side gun GL dependency (Didn't port from reach)
+# Right side gun GL dependency (Didn't port from reach)
 NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.model 			objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
 NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.render_model 	objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
 NameBlamTag objects\vehicles\falcon\side_gun_gl_right\side_gun_gl_right.collision_model objects\vehicles\human\falcon\turrets\falcon_side_grenade_right\falcon_side_grenade_right
@@ -226,6 +226,9 @@ IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\fx\airborne_detonation.ef
 IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\fx\detonation.effect
 IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\projectile\damage_effect\grenade_explosion.damage_effect
 IgnoreBlamTag objects\vehicles\falcon\side_gun_gl_left\fx\detonation.effect
+
+# Falcon Grenade Launcher weapon
+NameBlamTag objects\vehicles\warthog\turrets\rocket\fx\firing.effect dw3\r3ach\objects\weapons\rifle\grenade_launcher\firing
 
 // HUD (Remove this when the grenade launcher crosshair is done mine)
 IgnoreBlamTag objects\vehicles\falcon\v_falcon_gl.chud_definition
