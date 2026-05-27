@@ -3,7 +3,7 @@
 # ------------------------
 # When compressed the total is 16kb!! instead of 120kb
 // bruh
-GenerateBitmap objects\vehicles\human\falcon\bitmaps\falcon1blades_diffuse workingdir\bitmaps\Vehicles\falcon\falcon1_blades.dds
+GenerateBitmap objects\vehicles\human\falcon\bitmaps\falcon1_blades_diffuse workingdir\bitmaps\Vehicles\falcon\falcon1_blades.dds
 
 # ------------------------
 # |          HUD         |
@@ -130,7 +130,7 @@ NameBlamTag objects\vehicles\falcon\falcon.physics_model 			objects\vehicles\hum
 
 # Falcon bitmap
 NameBlamTag objects\vehicles\falcon\bitmaps\falcon1_normal.bitmap objects\vehicles\human\falcon\bitmaps\falcon1_normal
-NameBlamTag objects\vehicles\falcon\bitmaps\falcon1_noalpha_diffuse.bitmap objects\vehicles\human\falcon\bitmaps\falcon1blades_diffuse
+NameBlamTag objects\vehicles\falcon\bitmaps\falcon1_noalpha_diffuse.bitmap objects\vehicles\human\falcon\bitmaps\falcon1_blades_diffuse
 
 # Chin gun shaders
 NameBlamTag objects\vehicles\falcon\chin_gun\shaders\falcon_hull_1.shader objects\vehicles\human\falcon\shaders\falcon_hull_1
@@ -247,6 +247,19 @@ Exit
 EditTag objects\vehicles\human\falcon\shaders\falcon_blades_blur.shader
 SetField ShaderProperties[0].Functions[0].InputName engine_rpm
 SetField ShaderProperties[0].Functions[0].Function.Data 08340000000000000000803F00000000000000000000000000000000240000000200000004000000E17A643F000000000000000004000000FFFF7F7F52D6144152D604C1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\vehicles\human\falcon\shaders\falcon_decals.shader objects\vehicles\human\falcon\shaders\falcon_blades_decals
+EditTag objects\vehicles\human\falcon\shaders\falcon_blades_decals.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[0].Type Alpha
+SetField ShaderProperties[0].Functions[0].InputName engine_rpm
+SetField ShaderProperties[0].Functions[0].TimePeriod 1
+SetField ShaderProperties[0].Functions[0].Function.Data 08340000000000000000803F000000000000000000000000000000002400000002000000040000CD6666663F000000000000803F04000000FFFF7F7FFEFF1FC1FEFF1F41
+
+AddFunction albedo_color Real 0
+SetField SortLayer PostPass
 SaveTagChanges
 Exit
 
@@ -374,9 +387,9 @@ SetField MarkerGroups[11].Markers[0].Rotation 0 0 -0.53729963 0.8433914
 
 SetField Materials[2].RenderMethod objects\vehicles\human\falcon\shaders\falcon_decals.shader
 
-# Remove TO FOLD Decals on falcon blades, (it wouldn't appear regardless cause the falcon blades shader is alpha blend)
+# Fix TO FOLD decals on falcon only appearing when the blade is blurred
 AddBlockElements Materials
-SetField Materials[23].RenderMethod null
+SetField Materials[23].RenderMethod objects\vehicles\human\falcon\shaders\falcon_blades_decals.shader
 SetField Geometry.Meshes[3].Parts[0].MaterialIndex 23
 
 SaveTagChanges
