@@ -17,6 +17,7 @@ Elite new armor permutation has inconsistent lighting with the default armor
 # |        VEHICLES        |
 # --------------------------
 Revenant; hitting the left back side of it also transfer damage to the right front hull
+Falcon; please someone make a CC mask for this, the color change is ass for this vehicle
 
 # --------------------------
 # |        WEAPONS         |
