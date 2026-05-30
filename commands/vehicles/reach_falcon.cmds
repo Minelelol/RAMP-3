@@ -584,8 +584,8 @@ SetField HudWidgets[0].TextWidgets[1].Font SplitscreenHudMessage
 SaveTagChanges
 Exit
 
-DuplicateTag ui\chud\v_falcon.chud_definition ui\chud\v_falcon_nose_gun
-EditTag ui\chud\v_falcon_nose_gun.chud_definition
+DuplicateTag ui\chud\v_falcon.chud_definition ui\chud\v_falcon_no_crosshair
+EditTag ui\chud\v_falcon_no_crosshair.chud_definition
 RemoveBlockElements HudWidgets 1 *
 SaveTagChanges
 Exit
@@ -891,7 +891,7 @@ Exit
 DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_nose_gun
 EditTag objects\vehicles\human\falcon\falcon_nose_gun.vehicle
 SetField DefaultModelVariant nose_gun
-SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_nose_gun.chud_definition
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_no_crosshair.chud_definition
 SaveTagChanges
 Exit
 
@@ -904,7 +904,7 @@ Exit
 DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_grenadier_nose_gun
 EditTag objects\vehicles\human\falcon\falcon_grenadier_nose_gun.vehicle
 SetField DefaultModelVariant grenadier_nose_gun
-SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_nose_gun.chud_definition
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_no_crosshair.chud_definition
 SaveTagChanges
 Exit
 
@@ -917,7 +917,7 @@ Exit
 DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_transport_nose_gun
 EditTag objects\vehicles\human\falcon\falcon_transport_nose_gun.vehicle
 SetField DefaultModelVariant transport_nose_gun
-SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_nose_gun.chud_definition
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_no_crosshair.chud_definition
 SaveTagChanges
 Exit
 
