@@ -5,15 +5,50 @@
 // bruh
 GenerateBitmap objects\vehicles\human\falcon\bitmaps\falcon1_blades_diffuse workingdir\bitmaps\Vehicles\falcon\falcon1_blades.dds
 
-# ------------------------
-# |          HUD         |
-# ------------------------
-DuplicateTag ui\chud\v_scorpionturret.chud_definition objects\vehicles\falcon\v_falcon_turret
-EditTag objects\vehicles\falcon\v_falcon_turret.chud_definition
-SetField HudWidgets[0].BitmapWidgets[0].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
-SetField HudWidgets[0].BitmapWidgets[0].BitmapSequenceIndex 3
+# FALCON HUD
+GenerateBitmap Linear ui\chud\bitmaps\falcon\bracket workingdir\bitmaps\HUD\falcon_hud\bracket.dds
+GenerateBitmap Linear ui\chud\bitmaps\falcon\meters workingdir\bitmaps\HUD\falcon_hud\meters.dds
+GenerateBitmap Linear ui\chud\bitmaps\falcon\pitch workingdir\bitmaps\HUD\falcon_hud\pitch.dds
+
+EditTag ui\chud\bitmaps\falcon\meters.bitmap
+SetField SpriteSpacing 4
+SetField BumpMapHeight 5
+SetField FadeFactor 0.5
+
+AddBlockElements Sequences 4
+
+SetField Sequences[0].BitmapCount 1
+AddBlockElements Sequences[0].Sprites 1
+SetField Sequences[0].Sprites[0].Left 0.4375
+SetField Sequences[0].Sprites[0].Right 0.59375
+SetField Sequences[0].Sprites[0].Top 0.6875
+SetField Sequences[0].Sprites[0].Bottom 0.7265625
+SetField Sequences[0].Sprites[0].RegistrationPoint 0.078125 0.01953125
+
+SetField Sequences[1].BitmapCount 1
+AddBlockElements Sequences[1].Sprites 1
+SetField Sequences[1].Sprites[0].Right 0.15625
+SetField Sequences[1].Sprites[0].Bottom 0.6875
+SetField Sequences[1].Sprites[0].RegistrationPoint 0.078125 0.34375
+
+SetField Sequences[2].BitmapCount 1
+AddBlockElements Sequences[2].Sprites 1
+SetField Sequences[2].Sprites[0].Right 0.4375
+SetField Sequences[2].Sprites[0].Top 0.6875
+SetField Sequences[2].Sprites[0].Bottom 0.8515625
+SetField Sequences[2].Sprites[0].RegistrationPoint 0.21875 0.08203125
+
+SetField Sequences[3].BitmapCount 1
+AddBlockElements Sequences[3].Sprites 1
+SetField Sequences[3].Sprites[0].Left 0.1875
+SetField Sequences[3].Sprites[0].Right 0.96875
+SetField Sequences[3].Sprites[0].Bottom 0.203125
+SetField Sequences[3].Sprites[0].RegistrationPoint 0.390625 0.1015625
 SaveTagChanges
 Exit
+
+# Preliminary Stuff
+DuplicateTag ui\chud\v_scorpionturret.chud_definition ui\chud\v_falcon_chingun
 
 # ------------------------
 # |        PORTING       |
@@ -87,6 +122,9 @@ PortTag objects\weapons\rifle\grenade_launcher\shaders\item.shader
 PortTag objects\weapons\rifle\grenade_launcher\shaders\ones.shader
 PortTag objects\weapons\rifle\grenade_launcher\shaders\skull_switch.shader
 PortTag objects\weapons\rifle\grenade_launcher\shaders\tens.shader
+
+# HUD
+PortTag ui\chud\v_falcon.chud_definition
 
 Exit
 
@@ -232,6 +270,7 @@ NameBlamTag objects\vehicles\warthog\turrets\rocket\fx\firing.effect dw3\r3ach\o
 
 // HUD (Remove this when the grenade launcher crosshair is done mine)
 IgnoreBlamTag objects\vehicles\falcon\v_falcon_gl.chud_definition
+NameBlamTag objects\vehicles\falcon\v_falcon_turret.chud_definition ui\chud\v_falcon_chingun
 
 # Vehicles
 NameBlamTag objects\vehicles\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon
@@ -365,6 +404,189 @@ SetField MaterialEffects dw3\r3ach\objects\weapons\rifle\grenade_launcher\projec
 SetField AirborneDetonationEffect dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\secondary\airborne_detonation.effect
 SetField GroundDetonationEffect dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\secondary\detonation.effect
 SetField ImpactDamage dw3\r3ach\objects\weapons\rifle\grenade_launcher\projectiles\impact.damage_effect
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString English altitude "ALT"
+SetString English pitch "PTCH"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     HUD ANIMATION    |
+# ------------------------
+EditTag ui\chud\animations\falcon_pitch_slide.chud_animation_definition
+# SetField Texture[0].Keyframes[0].TextureOffset 0 -0.6
+SetField Texture[0].Keyframes[0].TextureScale 1 0.45
+SetField Texture[0].Keyframes[0].TextureOffset 0 -0.47
+
+SetField Texture[0].Keyframes[1].TimeOffset 1000
+SetField Texture[0].Keyframes[1].TextureScale 1 0.45
+SetField Texture[0].Keyframes[1].TextureOffset 0 1
+# SetField Texture[0].Keyframes[1].TextureOffset 0 0.6
+SetField RuntimePeriodMsec 1000
+SaveTagChanges
+Exit
+
+EditTag ui\chud\animations\falcon_altitude_slide.chud_animation_definition
+SetField Texture[0].Keyframes[0].TextureScale 1 0.45
+
+SetField Texture[0].Keyframes[1].TimeOffset 1000
+SetField Texture[0].Keyframes[1].TextureScale 1 0.45
+
+SetField RuntimePeriodMsec 1000
+SaveTagChanges
+Exit
+
+EditTag ui\chud\animations\rotate_90_degrees.chud_animation_definition
+SetField Rotation[0].Keyframes[1].FrameNumber 10
+SetField RuntimePeriodMsec 10
+SaveTagChanges
+Exit
+
+EditTag ui\chud\animations\dim_some.chud_animation_definition
+SetField Alpha[0].Keyframes[1].TimeOffset 10
+SetField RuntimePeriodMsec 10
+SaveTagChanges
+Exit
+
+EditTag ui\chud\animations\dim_delayed_pulse.chud_animation_definition
+SetField Alpha[0].Keyframes[1].TimeOffset 10000
+SetField Alpha[0].Keyframes[2].TimeOffset 10500
+SetField Alpha[0].Keyframes[3].TimeOffset 11000
+SetField Alpha[0].Keyframes[4].TimeOffset 11500
+
+SetField RuntimePeriodMsec 11500
+SaveTagChanges
+Exit
+
+# ------------------------
+# |          HUD         |
+# ------------------------
+EditTag ui\chud\v_falcon_chingun.chud_definition
+SetField HudWidgets[0].BitmapWidgets[0].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
+SetField HudWidgets[0].BitmapWidgets[0].BitmapSequenceIndex 3
+SaveTagChanges
+Exit
+
+EditTag ui\chud\v_driver.chud_definition
+CopyBlockElements HudWidgets 0 1
+Exit
+
+EditTag ui\chud\v_falcon.chud_definition
+RemoveBlockElements HudWidgets 1 *
+PasteBlockElements HudWidgets
+RemoveBlockElements HudWidgets[0].TextWidgets 2 *
+RemoveBlockElements HudWidgets[0].BitmapWidgets 7 1
+RemoveBlockElements HudWidgets[0].BitmapWidgets 5 1
+# Thank you mtn for adding this lol, without this the script would've fuckin long and annoying to debug
+SortRuntimeWidgetIndex
+
+# Driver
+SetField HudWidgets[1].BitmapWidgets[0].PlacementData[0].Offset 0 -8
+SetField HudWidgets[1].BitmapWidgets[0].PlacementData[0].Scale 0.425 0.85
+
+SetField HudWidgets[0].ScriptingClass Crosshair
+
+SetField HudWidgets[0].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].RenderData[0].ShaderType Meter
+SetField HudWidgets[0].RenderData[0].OutputColorA PrimaryBackground
+SetField HudWidgets[0].RenderData[0].OutputColorB SecondaryBackground
+SetField HudWidgets[0].RenderData[0].OutputColorC HighlightForeground
+SetField HudWidgets[0].RenderData[0].OutputColorD WarningFlash
+
+# Brackets
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Origin -31 1.019
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Scale 0.705 0.705
+
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputColorB CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[0].Flags MirrorHorizontally,MirrorVertically
+
+# Pitch Ruler
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Origin 13.8 0
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Scale 0.705 0.285
+# SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Scale 0.705 0.705
+
+SetField HudWidgets[0].BitmapWidgets[1].AnimationData[0].Active.InputType Extern1
+
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].ExternalInput CameraPitch
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorB CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorD CrosshairNormal
+# I fucking hate how the ScissorRect is resolution dependent it's so fucking bullshit
+# SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].ScissorRect 408 450 672 780
+SetField HudWidgets[0].BitmapWidgets[1].Flags UseWrapSampling
+
+# Pitch Triangle
+SetField HudWidgets[0].BitmapWidgets[2].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].BitmapWidgets[2].PlacementData[0].Origin 27.5 0
+SetField HudWidgets[0].BitmapWidgets[2].PlacementData[0].Scale 0.705 0.705
+
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputColorB CrosshairNormal
+
+# Horizontal Lines
+SetField HudWidgets[0].BitmapWidgets[3].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[3].PlacementData[0].Origin 0.5 2.2
+SetField HudWidgets[0].BitmapWidgets[3].PlacementData[0].Scale 0.705 0.97
+
+SetField HudWidgets[0].BitmapWidgets[3].AnimationData[0].Active.InputType Extern1
+
+SetField HudWidgets[0].BitmapWidgets[3].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[3].RenderData[0].OutputColorB CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[3].Flags MirrorVertically
+
+# Altitude Marker
+SetField HudWidgets[0].BitmapWidgets[4].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].BitmapWidgets[4].PlacementData[0].Origin -7.7 0.125
+SetField HudWidgets[0].BitmapWidgets[4].PlacementData[0].Scale 0.705 0.705
+
+SetField HudWidgets[0].BitmapWidgets[4].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[4].RenderData[0].OutputColorB CrosshairNormal
+
+# Altitude Ruler
+SetField HudWidgets[0].BitmapWidgets[5].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].BitmapWidgets[5].PlacementData[0].Origin -13.6 0
+SetField HudWidgets[0].BitmapWidgets[5].PlacementData[0].Scale 3 0.6
+SetField HudWidgets[0].BitmapWidgets[5].AnimationData[0].Active.InputType Extern1
+SetField HudWidgets[0].BitmapWidgets[5].RenderData[0].ExternalInput CameraPitch
+SetField HudWidgets[0].BitmapWidgets[5].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[5].RenderData[0].OutputColorB CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[5].RenderData[0].OutputColorD CrosshairNormal
+SetField HudWidgets[0].BitmapWidgets[5].Flags UseWrapSampling
+
+# Text Message
+# PITCH TEXT
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Offset -323 -153
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Scale 0.5 0.5
+
+SetField HudWidgets[0].TextWidgets[0].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[0].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].TextWidgets[0].Font SplitscreenHudMessage
+
+# ALTITUDE TEXT
+SetField HudWidgets[0].TextWidgets[1].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[1].PlacementData[0].Scale 0.5 0.5
+SetField HudWidgets[0].TextWidgets[1].PlacementData[0].Offset 338 -153
+
+SetField HudWidgets[0].TextWidgets[1].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[1].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[0].TextWidgets[1].Font SplitscreenHudMessage
+
+SaveTagChanges
+Exit
+
+DuplicateTag ui\chud\v_falcon.chud_definition ui\chud\v_falcon_nose_gun
+EditTag ui\chud\v_falcon_nose_gun.chud_definition
+RemoveBlockElements HudWidgets 1 *
 SaveTagChanges
 Exit
 
@@ -521,6 +743,12 @@ SetField ChangeColors[*].InitialPermutations[*].ColorLowerBound 1 1 1
 SetField ChangeColors[*].InitialPermutations[*].ColorUpperBound 1 1 1
 SetField ChangeColors[*].InitialPermutations[*].VariantName default
 
+# HUD
+# SetField HudInterfaces[0].UnitHudInterface ui\chud\v_falcon.chud_definition
+
+AddBlockElements Seats[0].UnitHudInterface
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon.chud_definition
+
 SaveTagChanges
 Exit
 
@@ -663,6 +891,7 @@ Exit
 DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_nose_gun
 EditTag objects\vehicles\human\falcon\falcon_nose_gun.vehicle
 SetField DefaultModelVariant nose_gun
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_nose_gun.chud_definition
 SaveTagChanges
 Exit
 
@@ -675,6 +904,7 @@ Exit
 DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_grenadier_nose_gun
 EditTag objects\vehicles\human\falcon\falcon_grenadier_nose_gun.vehicle
 SetField DefaultModelVariant grenadier_nose_gun
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_nose_gun.chud_definition
 SaveTagChanges
 Exit
 
@@ -687,6 +917,7 @@ Exit
 DuplicateTag objects\vehicles\human\falcon\falcon.vehicle objects\vehicles\human\falcon\falcon_transport_nose_gun
 EditTag objects\vehicles\human\falcon\falcon_transport_nose_gun.vehicle
 SetField DefaultModelVariant transport_nose_gun
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_falcon_nose_gun.chud_definition
 SaveTagChanges
 Exit
 
