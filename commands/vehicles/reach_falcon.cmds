@@ -504,7 +504,7 @@ SetField HudWidgets[0].RenderData[0].OutputColorD WarningFlash
 
 # Brackets
 SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Anchor Crosshair
-SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Origin -31 1.019
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Origin -31 1.0189
 SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Scale 0.705 0.705
 
 SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputColorA CrosshairNormal
