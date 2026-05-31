@@ -1,6 +1,14 @@
 # RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS RENDER MODELS  
 # THANK YOU FLOG THE GOAT, FOR REDUCING THE SCRIPT SIZE BY OVER HALF XDDDD
 EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.render_model
+SetField Geometry.RuntimeFlags None
+SetField Geometry.Resource.HaloOnlinePageableResource null
+SetField Geometry.Resource.DefinitionAddress 0
+SetField Geometry.Resource.XSyncState null
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.render_model
 RemoveBlockElements Regions 0 *
 RemoveBlockElements Materials 0 *
 AddBlockElements Materials 176
@@ -275,6 +283,14 @@ SaveTagChanges
 Exit
 
 EditTag objects\characters\masterchief\mp_masterchief\fp_body\fp_body.render_model
+SetField Geometry.RuntimeFlags None
+SetField Geometry.Resource.HaloOnlinePageableResource null
+SetField Geometry.Resource.DefinitionAddress 0
+SetField Geometry.Resource.XSyncState null
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\fp_body\fp_body.render_model
 RemoveBlockElements Regions 0 *
 RemoveBlockElements Materials 0 *
 AddBlockElements Materials 25
@@ -318,6 +334,14 @@ SetField Regions[3].Permutations[*].MeshIndex -1
 # DO NOT DISPLAY ARMOR LIGHT IN FP
 # Using the invisible shader broke active camo
 SetField Materials[1].RenderMethod null
+SaveTagChanges
+Exit
+
+EditTag objects\characters\masterchief\mp_masterchief\fp\fp.render_model
+SetField Geometry.RuntimeFlags None
+SetField Geometry.Resource.HaloOnlinePageableResource null
+SetField Geometry.Resource.DefinitionAddress 0
+SetField Geometry.Resource.XSyncState null
 SaveTagChanges
 Exit
 

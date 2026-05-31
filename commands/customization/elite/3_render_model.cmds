@@ -1,4 +1,12 @@
 EditTag objects\characters\elite\mp_elite\mp_elite.render_model
+SetField Geometry.RuntimeFlags None
+SetField Geometry.Resource.HaloOnlinePageableResource null
+SetField Geometry.Resource.DefinitionAddress 0
+SetField Geometry.Resource.XSyncState null
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\mp_elite\mp_elite.render_model
 RemoveBlockElements Regions 0 *
 RemoveBlockElements Materials 0 *
 AddBlockElements Materials 93
@@ -124,6 +132,14 @@ SaveTagChanges
 Exit
 
 EditTag objects\characters\elite\mp_elite\fp_body\fp_body.render_model
+SetField Geometry.RuntimeFlags None
+SetField Geometry.Resource.HaloOnlinePageableResource null
+SetField Geometry.Resource.DefinitionAddress 0
+SetField Geometry.Resource.XSyncState null
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\mp_elite\fp_body\fp_body.render_model
 RemoveBlockElements Regions 0 *
 RemoveBLockElements Materials 0 *
 AddBlockElements Materials 26
@@ -165,6 +181,14 @@ SetField Materials[21].RenderMethod null
 AddBlockElements Regions[3].Permutations 1
 SetField Regions[3].Permutations[*].Name none
 SetField Regions[3].Permutations[*].MeshIndex -1
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\fp_arms\fp_arms.render_model
+SetField Geometry.RuntimeFlags None
+SetField Geometry.Resource.HaloOnlinePageableResource null
+SetField Geometry.Resource.DefinitionAddress 0
+SetField Geometry.Resource.XSyncState null
 SaveTagChanges
 Exit
 
