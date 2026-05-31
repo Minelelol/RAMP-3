@@ -433,10 +433,13 @@ SaveTagChanges
 Exit
 
 EditTag ui\chud\animations\falcon_altitude_slide.chud_animation_definition
-SetField Texture[0].Keyframes[0].TextureScale 1 0.45
+SetField Texture[0].Keyframes[0].TextureScale 1 0.415
+SetField Texture[0].Keyframes[0].TextureOffset 0 0
 
 SetField Texture[0].Keyframes[1].TimeOffset 1000
-SetField Texture[0].Keyframes[1].TextureScale 1 0.45
+SetField Texture[0].Keyframes[1].TextureScale 1 0.415
+SetField Texture[0].Keyframes[1].TextureOffset 0 0
+# SetField Texture[0].Keyframes[1].TextureOffset 0 1
 
 SetField RuntimePeriodMsec 1000
 SaveTagChanges

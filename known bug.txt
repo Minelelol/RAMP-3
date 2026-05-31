@@ -22,4 +22,3 @@ Falcon; please someone make a CC mask for this, the color change is ass for this
 # --------------------------
 # |        WEAPONS         |
 # --------------------------
-Assault Rifle Variants model has meshes that gets culled immediately if the wielder is in Active Camo state
