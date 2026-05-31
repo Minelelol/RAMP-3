@@ -1,11 +1,3 @@
-# I realllllly do want to put 2k diffuse texture but unfortnuately optimization goes brrr first
-# GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_diffuse workingdir\bitmaps\Weapons\VKMT\AR\assault_rifle_diffuse.dds
-# ForEach bitm named: objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_diffuse GenerateMipmaps
-
-# While the visual difference between 1k diffuse and 2k diffuse are noticeable, 2k normals are not. like legit I could not find a difference AT ALL
-# GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_normal workingdir\bitmaps\Weapons\VKMT\AR\assault_rifle_normal.dds linear
-# ForEach bitm named: objects\weapons\rifle\assault_rifle\bitmaps\assault_rifle_normal GenerateMipmaps
-
 # ------------------------
 # |        PORTING       |
 # ------------------------

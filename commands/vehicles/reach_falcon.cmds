@@ -57,10 +57,6 @@ OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
 
-# Use ED normal texture instead
-NameBlamTag objects\vehicles\human\turrets\machinegun\bitmaps\mg_turret_zbump.bitmap objects\weapons\turret\machinegun_turret\machinegun_turret_vehicle\garbage\machinegun_turret_tripod_mp\machinegun_turret_tripod_mp\material_1\bump_map
-NameBlamTag objects\vehicles\human\warthog\bitmaps\glass_damage_normal.bitmap objects\vehicles\warthog\warthog_snow\material_15\bump_map
-
 # Render model shaders
 PortTag objects\vehicles\human\falcon\shaders\falcon_hull_2.shader
 PortTag objects\vehicles\human\falcon\shaders\falcon_glass.shader

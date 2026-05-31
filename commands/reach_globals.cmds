@@ -1,4 +1,5 @@
 # Run this script everytime you port from a reach map
+# Used the forge halo tags name as a base, theres probably more in other map
 SuppressErrors True
 
 # Texture with same tagnames but the texture are different between reach and base cache
@@ -93,5 +94,14 @@ NameBlamTag fx\bitmaps\weapon_fire\muzzle_flash_long_soft.bitmap fx\particles\fl
 NameBlamTag fx\particles\models\debris\concrete_chunks_small\concrete_chunks_small.bitmap fx\particles\models\debris\concrete_chunks_small\_bitmaps\concrete_chunks_small
 
 NameBlamTag objects\vehicles\covenant\banshee\bitmaps\banshee_detail.bitmap objects\vehicles\banshee\bitmaps\banshee_detail
+
+# Texture that already exist in base cache but with different tagnames [WEAPONS]
+NameBlamTag objects\weapons\rifle\plasma_rifle\bitmaps\plasma_rifle_normal.bitmap 			objects\weapons\rifle\plasma_rifle\plasma_rifle_v6\material_10\bump_map
+NameBlamTag objects\weapons\melee\gravity_hammer\bitmaps\gravity_hammer_bump.bitmap 		objects\weapons\melee\gravity_hammer\shaders\hammer_dull\bump_map
+NameBlamTag objects\weapons\rifle\spike_rifle\bitmaps\spike_rifle_illum.bitmap 				ms23\objects\weapons\rifle\spike_rifle\bitmaps\brute_bolter_illum
+NameBlamTag objects\vehicles\human\turrets\machinegun\bitmaps\mg_turret_zbump.bitmap 		objects\weapons\turret\machinegun_turret\machinegun_turret_vehicle\garbage\machinegun_turret_tripod_mp\machinegun_turret_tripod_mp\material_1\bump_map
+
+# Texture that already exist in base cache but with different tagnames [VEHICLES]
+NameBlamTag objects\vehicles\human\warthog\bitmaps\glass_damage_normal.bitmap 				objects\vehicles\warthog\warthog_snow\material_15\bump_map
 
 SuppressErrors False

@@ -13,8 +13,6 @@
 OpenCacheFile "MCCdir\haloreach\maps\condemned.map"
 RunCommands workingdir\commands\reach_globals.cmds
 
-PortTag objects\characters\spartans\fp\bitmaps\spartan_arms_diffuse.bitmap
-
 NameBlamTag objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_helmet_1.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned
 NameBlamTag objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_helmet_2.shader objects\characters\spartans\shaders\spartan_helmets\spartan_helmet_condemned_2
 NameBlamTag objects\ca_dev\dlc_armorsets\shaders\spartan_dlc_condemned_helmet_2_visor.shader objects\characters\spartans\shaders\spartan_helmets\spartan_visor_condemned_2
