@@ -1,6 +1,7 @@
 # Run this script everytime you port from a reach map
 # Used the forge halo tags name as a base, theres probably more in other map
 SuppressErrors True
+CS < workingdir\cs\PauseErrorWarningCount.cs
 
 # Texture with same tagnames but the texture are different between reach and base cache
 NameBlamTag shaders\default_bitmaps\bitmaps\default_detail.bitmap reach\shaders\default_bitmaps\bitmaps\default_detail
@@ -104,4 +105,5 @@ NameBlamTag objects\vehicles\human\turrets\machinegun\bitmaps\mg_turret_zbump.bi
 # Texture that already exist in base cache but with different tagnames [VEHICLES]
 NameBlamTag objects\vehicles\human\warthog\bitmaps\glass_damage_normal.bitmap 				objects\vehicles\warthog\warthog_snow\material_15\bump_map
 
+CS < workingdir\cs\ResumeErrorWarningCount.cs
 SuppressErrors False
