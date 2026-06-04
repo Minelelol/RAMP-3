@@ -16,6 +16,12 @@ Exit
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\vehicles\covenant\revenant\bitmaps\revenant_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
@@ -33,11 +39,6 @@ NameBlamTag fx\material_effects\weapons\wraith_mortar.material_effects fx\materi
 NameBlamTag globals\damage_effects\trans_damage_large.damage_effect objects\vehicles\damage_effects\large_trans_damage
 NameBlamTag globals\damage_effects\trans_damage_medium.damage_effect objects\vehicles\damage_effects\med_trans_damage
 NameBlamTag globals\damage_effects\trans_damage_tiny.damage_effect objects\vehicles\damage_effects\small_trans_damage
-
-# High Quality Normal to fix checkerboarded effect
-SetPortingOption HqNormalMapConversion True
-PortTag objects\vehicles\covenant\revenant\bitmaps\revenant_normal.bitmap
-SetPortingOption HqNormalMapConversion False
 
 PortTag objects\vehicles\covenant\revenant\revenant.vehicle
 PortTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle

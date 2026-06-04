@@ -1,7 +1,6 @@
 # --------------------------
 # |      CUSTOMIZATION     |
 # --------------------------
-
 Spartan is missing some vertices for illum light in the back
 Spartan is missing emblem
 Spartan new armor permutation has inconsistent lighting with the default armor 
@@ -22,3 +21,9 @@ Falcon; please someone make a CC mask for this, the color change is ass for this
 # --------------------------
 # |        WEAPONS         |
 # --------------------------
+
+# --------------------------
+# |          MISC          |
+# --------------------------
+Redo m30_grass_plate bitmap to remove dithering
+Put all generate shader commannd into one script and make them as a setvariable to reduce build time (could potentially save up to 30s up to this point)

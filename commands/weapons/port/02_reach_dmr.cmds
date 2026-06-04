@@ -1,6 +1,12 @@
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\dmr\bitmaps\dmr_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 
@@ -63,12 +69,17 @@ SaveTagChanges
 Exit
 
 EditTag objects\weapons\rifle\dmr\shaders\dmr_composite.shader
-SetArgument env_tint_color 0.375 0.375 0.375
+SetArgument env_tint_color 0.5 0.5 0.5
 SaveTagChanges
 Exit
 
 EditTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader
-SetArgument env_tint_color 0.375 0.375 0.375
+SetArgument specular_tint 0.454902 0.4431373 0.40784317
+SetArgument fresnel_color 0.2392157 0.2392157 0.2392157
+SetArgument area_specular_contribution 0.2
+SetArgument analytical_specular_contribution 0.5
+SetArgument environment_map_specular_contribution 0.25
+SetArgument env_tint_color 0.75 0.75 0.75
 SaveTagChanges
 Exit
 
@@ -79,7 +90,6 @@ Exit
 
 EditTag objects\weapons\rifle\dmr\shaders\dmr_lens_glass.shader
 SetArgument diffuse_coefficient 0.5
-SetArgument env_tint_color 0.375 0.375 0.375
 SaveTagChanges
 Exit
 
@@ -102,7 +112,7 @@ PortTag Replace Single objects\weapons\rifle\dmr\dmr.weapon
 Exit
 
 # ------------------------
-# |       LOD FIRE       |
+# |        EFFECT        |
 # ------------------------
 EditTag objects\weapons\rifle\dmr\fx\firing.effect
 CopyBlockElements Events[0].Parts 0 *
@@ -112,6 +122,7 @@ EditTag dw3\r3ach\objects\weapons\rifle\dmr\firing.effect
 RemoveBlockElements Events[0].Parts 0 *
 PasteBlockElements Events[0].Parts
 SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\marksman_rifle\marksman_rifle_fire.sound
+SetField Events[2].ParticleSystems[0].Particle fx\particles\models\weapons\bullet_casings\battle_rifle\battle_rifle.particle
 SaveTagChanges
 Exit
 

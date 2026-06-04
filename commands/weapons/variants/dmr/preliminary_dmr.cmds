@@ -1,0 +1,21 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_cc workingdir\bitmaps\Weapons\Variants\DMR\dmr_diffuse_cc.dds
+GenerateBitmap Linear objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_color_mask workingdir\bitmaps\Weapons\Variants\DMR\dmr_diffuse_color_mask.dds
+# GenerateBitmap Sequence objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc workingdir\bitmaps\Weapons\Variants\AR\numbers_plate
+
+# ------------------------
+# |    SHARED SHADER     |
+# ------------------------
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal_shiny.shader objects\weapons\rifle\dmr_variants\shaders\dmr_metal_shiny
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_metal_shiny.shader
+SetBitmap base_map objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_cc.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_rubber.shader objects\weapons\rifle\dmr_variants\shaders\dmr_rubber
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_rubber.shader
+SetBitmap base_map objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_cc.bitmap
+SaveTagChanges
+Exit

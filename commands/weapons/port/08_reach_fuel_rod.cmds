@@ -1,6 +1,12 @@
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\support_high\flak_cannon\bitmaps\fuel_rod_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
@@ -25,11 +31,6 @@ NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_ext.sound sound\
 NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\effe\flakcannon_refl_int_01
 
 NameBlamTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha
-
-# High Quality Normal to fix checkerboarded effect
-SetPortingOption HqNormalMapConversion True
-PortTag objects\weapons\support_high\flak_cannon\bitmaps\fuel_rod_normal.bitmap
-SetPortingOption HqNormalMapConversion False
 
 PortTag reach\objects\weapons\support_high\flak_cannon\shaders\fuel_rod_scope_alpha.shader_halogram
 PortTag objects\weapons\support_high\flak_cannon\shaders\fuel_rod_glass.shader

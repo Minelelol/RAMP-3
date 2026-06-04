@@ -83,6 +83,14 @@ RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_dam
 RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_rof.cmds
 RunCommands workingdir\commands\weapons\variants\assault_rifle\assault_rifle_power.cmds
 
+# DMR Variants
+RunCommands workingdir\commands\weapons\variants\dmr\preliminary_dmr.cmds
+RunCommands workingdir\commands\weapons\variants\dmr\dmr_accuracy.cmds
+RunCommands workingdir\commands\weapons\variants\dmr\dmr_ammo.cmds
+RunCommands workingdir\commands\weapons\variants\dmr\dmr_damage.cmds
+RunCommands workingdir\commands\weapons\variants\dmr\dmr_power.cmds
+RunCommands workingdir\commands\weapons\variants\dmr\dmr_rof.cmds
+
 # -----------------------------------------
 # |           WEAPONS ANIMATION           |
 # -----------------------------------------

@@ -1,6 +1,12 @@
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\pistol\needler\bitmaps\needler_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
@@ -16,11 +22,6 @@ NameBlamTag objects\weapons\pistol\needler\fx\particles\muzzle_flash_long_soft.p
 NameBlamTag sound\weapons\needler\needler_lod_far.sound sound\effe\needler_fire_lod_01
 NameBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_ext.sound sound\effe\needler_refl_ext_01
 NameBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_int.sound sound\effe\needler_refl_int_01
-
-# High Quality Normal to fix checkerboarded effect
-SetPortingOption HqNormalMapConversion True
-PortTag objects\weapons\pistol\needler\bitmaps\needler_normal.bitmap
-SetPortingOption HqNormalMapConversion False
 
 PortTag reach\objects\weapons\pistol\needler\fx\firing.effect
 

@@ -18,7 +18,7 @@ GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assau
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_shiny
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_shiny.shader
 SetBitmap base_map objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_diffuse_cc.bitmap
-saveTagChanges
+SaveTagChanges
 Exit
 
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_reflex_composite

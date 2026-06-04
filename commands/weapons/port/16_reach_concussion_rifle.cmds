@@ -6,6 +6,12 @@ DuplicateTag ui\chud\brute_shot.chud_definition ui\chud\concussion_rifle
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\concussion_rifle\bitmaps\concussion_rifle_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
@@ -15,11 +21,6 @@ NameBlamTag sound\weapons\brute_shot\brute_shot_tails_ext.sound sound\effe\brute
 
 IgnoreBlamTag sound\weapons\concussion_rifle\concussion_rifle_fire.sound
 IgnoreBlamTag sound\weapons\concussion_rifle\concussion_rifle_lod_far.sound
-
-# High Quality Normal to fix checkerboarded effect
-SetPortingOption HqNormalMapConversion True
-PortTag objects\weapons\rifle\concussion_rifle\bitmaps\concussion_rifle_normal.bitmap
-SetPortingOption HqNormalMapConversion False
 
 PortTag objects\weapons\rifle\concussion_rifle\fx\firing.effect
 # The vkmt one looks better imo

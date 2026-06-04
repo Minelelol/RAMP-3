@@ -1,0 +1,282 @@
+# ------------------------
+# |        SHADER        |
+# ------------------------
+GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_composite.shader objects\weapons\rifle\dmr_variants\shaders\dmr_composite_blue
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_composite_blue.shader
+
+SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
+SetField Options[0].OptionIndex 8
+
+RemoveBlockElements ShaderProperties[0].TextureConstants 0 *
+AddBlockElements ShaderProperties[0].TextureConstants 7
+AddBlockElements ShaderProperties[0].RealConstants 4
+
+SetBitmap base_map 				objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_cc.bitmap
+SetBitmap detail_map 			reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap color_mask_map 		objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_color_mask.bitmap
+SetBitmap bump_map 				objects\weapons\rifle\dmr\bitmaps\dmr_normal.bitmap
+SetBitmap bump_detail_map 		objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump.bitmap
+SetBitmap material_texture 		shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap environment_map 		levels\reference\material_samples\bitmaps\cubemaps\d_cubemap_vertical_noise.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 4
+SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 16
+SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -1
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 60 60 0 0
+SetArgument color_mask_map 1 1 0 0
+SetArgument albedo_color 0 0.25 1 0.5
+SetArgument albedo_color2 1 1 1 0.5
+SetArgument albedo_color3 1 1 1 0.5
+SetArgument neutral_gray 1 1 1
+SetArgument bump_map 1 1 0 0
+SetArgument bump_detail_map 120 120 0 0
+SetArgument bump_detail_coefficient 1 1 1 1
+SetArgument diffuse_coefficient 1 1 1 1
+SetArgument specular_color_by_angle 0 0 0 0
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 1 1 1 1
+SetArgument fresnel_color 0 0 0 1
+SetArgument fresnel_curve_steepness 4 4 4 4
+SetArgument area_specular_contribution 0.1 0.1 0.1 0.1
+SetArgument analytical_specular_contribution 0.1 0.1 0.1 0.1
+SetArgument environment_map_specular_contribution 0.25 0.25 0.25 0.25
+SetArgument roughness 0.5 0.5 0.5 0.5
+SetArgument analytical_roughness 0.3 0.3 0.3 0.3
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument material_texture_black_specular_multiplier 1 1 1 1
+SetArgument material_texture_black_roughness 1 1 1 1
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.5 0.5 0.5 0.5
+SetArgument approximate_specular_type 0.66 0.66 0.66 0.66
+SetArgument env_tint_color 0.5 0.5 0.5 0
+SetArgument env_roughness_scale 1 1 1 1
+SetArgument wet_material_dim_tint 0.8470589 0.8470589 0.9215687 1
+SetArgument wet_material_dim_coefficient 1 1 1 1
+SaveTagChanges
+Exit
+
+GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader objects\weapons\rifle\dmr_variants\shaders\dmr_metal_blue
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_metal_blue.shader
+
+SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
+SetField Options[0].OptionIndex 8
+
+RemoveBlockElements ShaderProperties[0].TextureConstants 0 *
+AddBlockElements ShaderProperties[0].TextureConstants 7
+AddBlockElements ShaderProperties[0].RealConstants 4
+
+SetBitmap base_map 				objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_cc.bitmap
+SetBitmap detail_map 			reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap color_mask_map 		objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_color_mask.bitmap
+SetBitmap bump_map 				objects\weapons\rifle\dmr\bitmaps\dmr_normal.bitmap
+SetBitmap bump_detail_map 		objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump.bitmap
+SetBitmap material_texture 		shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap environment_map 		levels\reference\material_samples\bitmaps\cubemaps\d_cubemap_vertical_noise.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 4
+SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 16
+SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -1
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 60 60 0 0
+SetArgument color_mask_map 1 1 0 0
+SetArgument albedo_color 0 0.5 2 0.5
+SetArgument albedo_color2 1 1 1 0.5
+SetArgument albedo_color3 1 1 1 0.5
+SetArgument neutral_gray 1 1 1
+SetArgument bump_map 1 1 0 0
+SetArgument bump_detail_map 120 120 0 0
+SetArgument bump_detail_coefficient 1 1 1 1
+SetArgument diffuse_coefficient 0.3647059 0.3647059 0.3647059 0.3647059
+SetArgument specular_color_by_angle 0 0 0 0
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.454902 0.4431373 0.40784317 0
+SetArgument fresnel_color 0.2392157 0.2392157 0.2392157 0
+SetArgument fresnel_curve_steepness 0.1 0.1 0.1 0.1
+SetArgument area_specular_contribution 0.2 0 0 0
+SetArgument analytical_specular_contribution 0.5 0 0 0
+SetArgument environment_map_specular_contribution 0.25 0 0 0
+SetArgument roughness 0.5 0.5 0.5 0.5
+SetArgument analytical_roughness 0.25 0.25 0.25 0.25
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument material_texture_black_specular_multiplier 1 1 1 1
+SetArgument material_texture_black_roughness 1 1 1 1
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.5 0.5 0.5 0.5
+SetArgument approximate_specular_type 0.66 0.66 0.66 0.66
+SetArgument env_tint_color 0.75 0.75 0.75 0
+SetArgument env_roughness_scale 1 1 1 1
+SetArgument wet_material_dim_tint 0.8470589 0.8470589 0.9215687 1
+SetArgument wet_material_dim_coefficient 1 1 1 1
+SaveTagChanges
+Exit
+
+GenerateShader shader color_mask standard none specular_mask_from_diffuse cook_torrance_reach dynamic off opaque off default off off off default from_albedo_alpha_without_fresnel
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_lens.shader objects\weapons\rifle\dmr_variants\shaders\dmr_lens_blue
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_lens_blue.shader
+
+SetField ShaderProperties[0].Template shaders\shader_templates\_8_1_0_1_13_2_0_0_0_5_0_0_0_0_0.render_method_template
+SetField Options[0].OptionIndex 8
+
+RemoveBlockElements ShaderProperties[0].TextureConstants 0 *
+AddBlockElements ShaderProperties[0].TextureConstants 5
+AddBlockElements ShaderProperties[0].RealConstants 4
+
+SetBitmap base_map 				objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_cc.bitmap
+SetBitmap detail_map 			reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap color_mask_map 		objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_color_mask.bitmap
+SetBitmap bump_map 				shaders\default_bitmaps\bitmaps\default_vector.bitmap
+SetBitmap material_texture 		shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 15
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 1 1 0 0
+SetArgument color_mask_map 1 1 0 0
+SetArgument albedo_color 0 0.25 1 0.5
+SetArgument albedo_color2 1 1 1 0.5
+SetArgument albedo_color3 1 1 1 0.5
+SetArgument neutral_gray 1 1 1
+SetArgument bump_map 1 1 0 0
+SetArgument diffuse_coefficient 1 1 1 1
+SetArgument specular_color_by_angle 0 0 0 0
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0 0.25 1
+SetArgument fresnel_color 0.039215688 0.039215688 0.08235294
+SetArgument fresnel_curve_steepness 0.1 0.1 0.1 0.1
+SetArgument area_specular_contribution 0.5 0.5 0.5 0.5
+SetArgument analytical_specular_contribution 1 1 1 1
+SetArgument environment_map_specular_contribution 1 1 1 1
+SetArgument roughness 0.1 0.1 0.1 0.1
+SetArgument analytical_roughness 0.1 0.1 0.1 0.1
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument material_texture_black_specular_multiplier 1 1 1 1
+SetArgument material_texture_black_roughness 1 1 1 1
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0 0 0 0
+SetArgument approximate_specular_type 0.66 0.66 0.66 0.66
+SetArgument env_tint_color 0.3372549 0.44705886 0.2509804 1
+SetArgument env_roughness_scale 1 1 1 1
+SetArgument env_roughness_offset 0 0 0 0
+SetArgument wet_material_dim_tint 0.8470589 0.8470589 0.9215687 1
+SetArgument wet_material_dim_coefficient 1 1 1 1
+SaveTagChanges
+Exit
+# -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\ones_dmr.shader objects\weapons\rifle\dmr_variants\shaders\ones_dmr_blue
+EditTag objects\weapons\rifle\dmr_variants\shaders\ones_dmr_blue.shader
+SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc.bitmap
+
+SetArgument self_illum_color 0 0.25 1 1
+SetArgument self_illum_intensity 6
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\dmr\shaders\tens_dmr.shader objects\weapons\rifle\dmr_variants\shaders\tens_dmr_blue
+EditTag objects\weapons\rifle\dmr_variants\shaders\tens_dmr_blue.shader
+SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc.bitmap
+
+SetArgument self_illum_color 0 0.25 1 1
+SetArgument self_illum_intensity 6
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo
+ImportTag dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.render_model workingdir\tags\weapons\VKMT\dmr.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.render_model
+
+SetField MarkerGroups[8].Name right_hand_spartan
+
+SetField Materials[0].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_composite_blue.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_lens_blue.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_metal_blue.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_metal_shiny.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_rubber.shader
+SetField Materials[5].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+# INTENDED
+SetField Materials[6].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_lens_glass.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\dmr_variants\shaders\ones_dmr_blue.shader
+SetField Materials[8].RenderMethod objects\weapons\rifle\dmr_variants\shaders\tens_dmr_blue.shader
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\DMR\dmr_ammo.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.096 -0.0048 0.024
+SetField MarkerGroups[*].Markers[*].Rotation -0.62 0.185 -0.44 0.625
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.079 -0.0001 0.0182
+SetField MarkerGroups[*].Markers[*].Rotation -0.598 0.1255 -0.49 0.6
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\dmr.model dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo
+EditTag dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.model
+SetField RenderModel dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.render_model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\firing.effect dw3\r3ach\objects\weapons\rifle\dmr_ammo\firing
+
+EditTag objects\weapons\rifle\dmr_ammo\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\dmr_ammo\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\dmr_ammo\dmr_ammo.weapon
+SetField Model dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.model
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_ammo\dmr_ammo.render_model
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\dmr_ammo\firing.effect
+SaveTagChanges
+Exit

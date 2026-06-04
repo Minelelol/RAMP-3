@@ -6,6 +6,12 @@ DuplicateTag ui\chud\spartan_laser.chud_definition ui\chud\plasma_launcher
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
@@ -17,11 +23,6 @@ NameBlamTag objects\weapons\support_high\plasma_launcher\fx\projectile.contrail_
 NameBlamTag sound\weapons\plasma_grenade\plasma_expl_lod_far.sound sound\effe\plasgrenade_explode_lod_01
 NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_ext.sound sound\effe\rocket_proj_refl_ext_01
 NameBlamTag sound\weapons\rocket_launcher\rocket_launcher_tails_int.sound sound\effe\rocketlauncher_refl_int_01
-
-# High Quality Normal to fix checkerboarded effect
-SetPortingOption HqNormalMapConversion True
-PortTag objects\weapons\support_high\plasma_launcher\bitmaps\plasma_launcher_normal.bitmap
-SetPortingOption HqNormalMapConversion False
 
 PortTag objects\weapons\support_high\plasma_launcher\fx\attached.effect
 PortTag objects\weapons\support_high\plasma_launcher\fx\charging.effect
