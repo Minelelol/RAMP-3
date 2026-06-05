@@ -15,6 +15,12 @@ GenerateBitmap objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_diffus
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
@@ -57,11 +63,6 @@ IgnoreBlamTag sound\weapons\plasma_pistol\plasma_pistol_tails_int.sound
 # Too quiet
 IgnoreBlamTag sound\weapons\plasma_pistol\charge_fire_reach.sound
 IgnoreBlamTag sound\weapons\plasma_pistol\plas_pistol_fire_reach.sound
-
-# High Quality Normal to fix checkerboarded effect
-SetPortingOption HqNormalMapConversion True
-PortTag objects\weapons\pistol\plasma_pistol\bitmaps\plasma_pistol_normal.bitmap
-SetPortingOption HqNormalMapConversion False
 
 PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_illum.shader
 PortTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_metal.shader
