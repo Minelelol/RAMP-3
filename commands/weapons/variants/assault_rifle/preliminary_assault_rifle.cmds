@@ -13,6 +13,12 @@ GenerateBitmap objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifl
 GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assault_rifle_sight_normal workingdir\bitmaps\Weapons\Variants\AR\reflex_sight\assault_rifle_reflex_normal.dds
 
 # ------------------------
+# |   SHARED TEMPLATE    |
+# ------------------------
+GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach none off opaque off default off off off default from_albedo_alpha_without_fresnel
+
+# ------------------------
 # |    SHARED SHADER     |
 # ------------------------
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal_shiny.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_metal_shiny

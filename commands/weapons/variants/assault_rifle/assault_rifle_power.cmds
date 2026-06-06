@@ -9,7 +9,7 @@ GenerateBitmap Linear objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_norma
 # |        SHADER        |
 # ------------------------
 # This is pain
-GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
 
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_gold
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_gold.shader
@@ -133,7 +133,7 @@ SetArgument wet_material_dim_coefficient 1 1 1 1
 SaveTagChanges
 Exit
 
-GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach none off opaque off default off off off default from_albedo_alpha_without_fresnel
+# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach none off opaque off default off off off default from_albedo_alpha_without_fresnel
 
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_gold
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_gold.shader

@@ -9,7 +9,7 @@ GenerateBitmap Linear objects\weapons\rifle\assault_rifle_variants\bitmaps\assau
 # |        SHADER        |
 # ------------------------
 # This is pain
-GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
 
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_composite.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_orange
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_composite_orange.shader
@@ -133,7 +133,7 @@ SetArgument wet_material_dim_coefficient 1 1 1 1
 SaveTagChanges
 Exit
 
-GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach none off opaque off default off off off default from_albedo_alpha_without_fresnel
+# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach none off opaque off default off off off default from_albedo_alpha_without_fresnel
 
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_rubber.shader objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_orange
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_orange.shader
@@ -216,6 +216,7 @@ Exit
 
 DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader objects\weapons\rifle\assault_rifle_variants\shaders\display2_orange
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\display2_orange.shader
+SetArgument base_map 0.01 14 0 1
 SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\display2_plate_cc.bitmap
 
 SetArgument albedo_color 0.24 0.075 0.015 1

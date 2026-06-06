@@ -1,10 +1,8 @@
 # ------------------------
 # |        SHADER        |
 # ------------------------
-# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
-
-DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_composite.shader objects\weapons\rifle\dmr_variants\shaders\dmr_composite_gold
-EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_composite_gold.shader
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_composite.shader objects\weapons\rifle\dmr_variants\shaders\dmr_composite_purple
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_composite_purple.shader
 
 SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
 SetField Options[0].OptionIndex 8
@@ -32,7 +30,7 @@ SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -
 SetArgument base_map 1 1 0 0
 SetArgument detail_map 60 60 0 0
 SetArgument color_mask_map 1 1 0 0
-SetArgument albedo_color 1 1 0 0.5
+SetArgument albedo_color 0.75 0 1 0.5
 SetArgument albedo_color2 1 1 1 0.5
 SetArgument albedo_color3 1 1 1 0.5
 SetArgument neutral_gray 1 1 1
@@ -64,10 +62,8 @@ SetArgument wet_material_dim_coefficient 1 1 1 1
 SaveTagChanges
 Exit
 
-# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
-
-DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader objects\weapons\rifle\dmr_variants\shaders\dmr_metal_gold
-EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_metal_gold.shader
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader objects\weapons\rifle\dmr_variants\shaders\dmr_metal_purple
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_metal_purple.shader
 
 SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
 SetField Options[0].OptionIndex 8
@@ -95,7 +91,7 @@ SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -
 SetArgument base_map 1 1 0 0
 SetArgument detail_map 60 60 0 0
 SetArgument color_mask_map 1 1 0 0
-SetArgument albedo_color 1 1 0 0.5
+SetArgument albedo_color 0.75 0 1 0.5
 SetArgument albedo_color2 1 1 1 0.5
 SetArgument albedo_color3 1 1 1 0.5
 SetArgument neutral_gray 1 1 1
@@ -127,10 +123,8 @@ SetArgument wet_material_dim_coefficient 1 1 1 1
 SaveTagChanges
 Exit
 
-# GenerateShader shader color_mask standard none specular_mask_from_diffuse cook_torrance_reach dynamic off opaque off default off off off default from_albedo_alpha_without_fresnel
-
-DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_lens.shader objects\weapons\rifle\dmr_variants\shaders\dmr_lens_gold
-EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_lens_gold.shader
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_lens.shader objects\weapons\rifle\dmr_variants\shaders\dmr_lens_purple
+EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_lens_purple.shader
 
 SetField ShaderProperties[0].Template shaders\shader_templates\_8_1_0_1_13_2_0_0_0_5_0_0_0_0_0.render_method_template
 SetField Options[0].OptionIndex 8
@@ -153,7 +147,7 @@ SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 1
 SetArgument base_map 1 1 0 0
 SetArgument detail_map 1 1 0 0
 SetArgument color_mask_map 1 1 0 0
-SetArgument albedo_color 1 1 0 0.5
+SetArgument albedo_color 0.75 0 1 0.5
 SetArgument albedo_color2 1 1 1 0.5
 SetArgument albedo_color3 1 1 1 0.5
 SetArgument neutral_gray 1 1 1
@@ -161,8 +155,8 @@ SetArgument bump_map 1 1 0 0
 SetArgument diffuse_coefficient 1 1 1 1
 SetArgument specular_color_by_angle 0 0 0 0
 SetArgument specular_coefficient 1 1 1 1
-SetArgument specular_tint 1 1 0
-SetArgument fresnel_color 0.08235294 0.08235294 0.039215688
+SetArgument specular_tint 0.25 0 1
+SetArgument fresnel_color 0.08235294 0.039215688 0.08235294
 SetArgument fresnel_curve_steepness 0.1 0.1 0.1 0.1
 SetArgument area_specular_contribution 0.5 0.5 0.5 0.5
 SetArgument analytical_specular_contribution 1 1 1 1
@@ -185,20 +179,16 @@ SaveTagChanges
 Exit
 # -<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<-<
 
-DuplicateTag objects\weapons\rifle\dmr\shaders\ones_dmr.shader objects\weapons\rifle\dmr_variants\shaders\ones_dmr_gold
-EditTag objects\weapons\rifle\dmr_variants\shaders\ones_dmr_gold.shader
-SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc.bitmap
-
-SetArgument self_illum_color 1 1 0 1
+DuplicateTag objects\weapons\rifle\battle_rifle\shaders\ones_br.shader objects\weapons\rifle\battle_rifle_variants\shaders\ones_br_purple
+EditTag objects\weapons\rifle\battle_rifle_variants\shaders\ones_br_purple.shader
+SetArgument self_illum_color 0.75 0 0.4
 SetArgument self_illum_intensity 6
 SaveTagChanges
 Exit
 
-DuplicateTag objects\weapons\rifle\dmr\shaders\tens_dmr.shader objects\weapons\rifle\dmr_variants\shaders\tens_dmr_gold
-EditTag objects\weapons\rifle\dmr_variants\shaders\tens_dmr_gold.shader
-SetBitmap self_illum_map objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc.bitmap
-
-SetArgument self_illum_color 1 1 0 1
+DuplicateTag objects\weapons\rifle\battle_rifle\shaders\tens_br.shader objects\weapons\rifle\battle_rifle_variants\shaders\tens_br_purple
+EditTag objects\weapons\rifle\battle_rifle_variants\shaders\tens_br_purple.shader
+SetArgument self_illum_color 0.75 0 0.4
 SetArgument self_illum_intensity 6
 SaveTagChanges
 Exit
@@ -206,28 +196,28 @@ Exit
 # ------------------------
 # |     RENDER MODEL     |
 # ------------------------
-DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\dmr.render_model dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power
-EditTag dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.render_model
-
-SetField Materials[0].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_composite_gold.shader
-SetField Materials[1].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_lens_gold.shader
-SetField Materials[2].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_metal_gold.shader
+DuplicateTag dw3\r3ach\objects\weapons\rifle\battle_rifle_accuracy\battle_rifle_accuracy.render_model dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range.render_model
+SetField Regions[2].Permutations[0].MeshIndex 2
+SetField Materials[0].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_metal_purple.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_composite_purple.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_lens_purple.shader
 SetField Materials[3].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_metal_shiny.shader
 SetField Materials[4].RenderMethod objects\weapons\rifle\dmr_variants\shaders\dmr_rubber.shader
-SetField Materials[5].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
-# INTENDED
-SetField Materials[6].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_lens_glass.shader
-SetField Materials[7].RenderMethod objects\weapons\rifle\dmr_variants\shaders\ones_dmr_gold.shader
-SetField Materials[8].RenderMethod objects\weapons\rifle\dmr_variants\shaders\tens_dmr_gold.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\dmr\shaders\dmr_lens_glass.shader
+SetField Materials[6].RenderMethod objects\weapons\rifle\battle_rifle\shaders\br_carry.shader
+SetField Materials[7].RenderMethod objects\weapons\rifle\battle_rifle_variants\shaders\ones_br_purple.shader
+SetField Materials[8].RenderMethod objects\weapons\rifle\battle_rifle_variants\shaders\tens_br_purple.shader
+SetField Materials[9].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
 SaveTagChanges
 Exit
 
 # ------------------------
 # |         MODEL        |
 # ------------------------
-DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\dmr.model dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power
-EditTag dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.model
-SetField RenderModel dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.render_model
+DuplicateTag dw3\r3ach\objects\weapons\rifle\battle_rifle\battle_rifle.model dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range.model
+SetField RenderModel dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range.render_model
 UpdateModelRegions phmo coll
 SaveTagChanges
 Exit
@@ -235,13 +225,13 @@ Exit
 # ------------------------
 # |        EFFECT        |
 # ------------------------
-DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\firing.effect dw3\r3ach\objects\weapons\rifle\dmr_power\firing
+DuplicateTag dw3\r3ach\objects\weapons\rifle\dmr\firing.effect dw3\r3ach\objects\weapons\rifle\battle_rifle_range\firing
 
-EditTag objects\weapons\rifle\dmr_power\fx\firing.effect
+EditTag objects\weapons\rifle\battle_rifle_range\fx\firing.effect
 CopyBlockElements Events[0].Parts 0 *
 Exit
 
-EditTag dw3\r3ach\objects\weapons\rifle\dmr_power\firing.effect
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle_range\firing.effect
 RemoveBlockElements Events[0].Parts 0 *
 PasteBlockElements Events[0].Parts
 SaveTagChanges
@@ -250,12 +240,13 @@ Exit
 # ------------------------
 # |        WEAPON        |
 # ------------------------
-EditTag objects\weapons\rifle\dmr_power\dmr_power.weapon
-SetField Model dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.model
-SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.render_model
-SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
-SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.render_model
+EditTag objects\weapons\rifle\battle_rifle_range\battle_rifle_range.weapon
+RemoveBlockElements ChangeColors 0 *
+SetField Model dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range.model
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\battle_rifle_range\battle_rifle_range.render_model
 SetField FirstPerson[1].FirstPersonAnimations objects\characters\dervish\fp\weapons\rifle\fp_battle_rifle\fp_battle_rifle.model_animation_graph
-SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\dmr_power\firing.effect
+SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\battle_rifle_range\firing.effect
 SaveTagChanges
 Exit

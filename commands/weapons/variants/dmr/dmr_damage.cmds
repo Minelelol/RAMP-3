@@ -7,7 +7,7 @@ GenerateBitmap Linear objects\weapons\rifle\dmr_variants\bitmaps\dmr_iron_sight_
 # ------------------------
 # |        SHADER        |
 # ------------------------
-GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
 
 DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_composite.shader objects\weapons\rifle\dmr_variants\shaders\dmr_composite_red
 EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_composite_red.shader
@@ -70,7 +70,7 @@ SetArgument wet_material_dim_coefficient 1 1 1 1
 SaveTagChanges
 Exit
 
-GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+# GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
 
 DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader objects\weapons\rifle\dmr_variants\shaders\dmr_metal_red
 EditTag objects\weapons\rifle\dmr_variants\shaders\dmr_metal_red.shader
@@ -232,7 +232,7 @@ SetField Model dw3\r3ach\objects\weapons\rifle\dmr_damage\dmr_damage.model
 SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_damage\dmr_damage.render_model
 SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
 SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_damage\dmr_damage.render_model
-SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField FirstPerson[1].FirstPersonAnimations objects\characters\dervish\fp\weapons\rifle\fp_battle_rifle\fp_battle_rifle.model_animation_graph
 SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\dmr_damage\firing.effect
 SaveTagChanges
 Exit

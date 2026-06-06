@@ -6,6 +6,12 @@ GenerateBitmap Linear objects\weapons\rifle\dmr_variants\bitmaps\dmr_diffuse_col
 # GenerateBitmap Sequence objects\weapons\rifle\assault_rifle_variants\bitmaps\numbers_plate_cc workingdir\bitmaps\Weapons\Variants\AR\numbers_plate
 
 # ------------------------
+# |   SHARED TEMPLATE    |
+# ------------------------
+GenerateShader shader color_mask detail none specular_mask_from_diffuse cook_torrance_reach per_pixel off opaque off default off off off default from_albedo_alpha_without_fresnel
+GenerateShader shader color_mask standard none specular_mask_from_diffuse cook_torrance_reach dynamic off opaque off default off off off default from_albedo_alpha_without_fresnel
+
+# ------------------------
 # |    SHARED SHADER     |
 # ------------------------
 DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal_shiny.shader objects\weapons\rifle\dmr_variants\shaders\dmr_metal_shiny

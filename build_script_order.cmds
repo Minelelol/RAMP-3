@@ -91,6 +91,14 @@ RunCommands workingdir\commands\weapons\variants\dmr\dmr_damage.cmds
 RunCommands workingdir\commands\weapons\variants\dmr\dmr_power.cmds
 RunCommands workingdir\commands\weapons\variants\dmr\dmr_rof.cmds
 
+# Battle Rifle Variants
+RunCommands workingdir\commands\weapons\variants\battle_rifle\1_battle_rifle_accuracy.cmds
+RunCommands workingdir\commands\weapons\variants\battle_rifle\2_battle_rifle_range.cmds
+RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_ammo.cmds
+RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_damage.cmds
+RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_power.cmds
+RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_rof.cmds
+
 # -----------------------------------------
 # |           WEAPONS ANIMATION           |
 # -----------------------------------------
