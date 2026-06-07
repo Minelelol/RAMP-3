@@ -64,7 +64,8 @@ Exit
 # |        SHADER        |
 # ------------------------
 EditTag objects\weapons\rifle\dmr\shaders\dmr_lens.shader
-SetArgument albedo_color 1 1 1 0.25
+SetArgument albedo_color 0.5 0.5 0.5 0.5
+SetArgument area_specular_contribution 0.05
 SaveTagChanges
 Exit
 

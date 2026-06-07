@@ -156,10 +156,10 @@ SetArgument bump_map 1 1 0 0
 SetArgument diffuse_coefficient 1 1 1 1
 SetArgument specular_color_by_angle 0 0 0 0
 SetArgument specular_coefficient 1 1 1 1
-SetArgument specular_tint 0 0.25 1
+SetArgument specular_tint 0 0.5 2
 SetArgument fresnel_color 0.039215688 0.039215688 0.08235294
 SetArgument fresnel_curve_steepness 0.1 0.1 0.1 0.1
-SetArgument area_specular_contribution 0.5 0.5 0.5 0.5
+SetArgument area_specular_contribution 0.05
 SetArgument analytical_specular_contribution 1 1 1 1
 SetArgument environment_map_specular_contribution 1 1 1 1
 SetArgument roughness 0.1 0.1 0.1 0.1
@@ -171,7 +171,7 @@ SetArgument material_texture_black_roughness 1 1 1 1
 SetArgument no_dynamic_lights 0 0 0 0
 SetArgument albedo_blend 0 0 0 0
 SetArgument approximate_specular_type 0.66 0.66 0.66 0.66
-SetArgument env_tint_color 0.3372549 0.44705886 0.2509804 1
+SetArgument env_tint_color 0.2509804 0.3372549 0.44705886 1
 SetArgument env_roughness_scale 1 1 1 1
 SetArgument env_roughness_offset 0 0 0 0
 SetArgument wet_material_dim_tint 0.8470589 0.8470589 0.9215687 1
