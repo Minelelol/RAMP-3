@@ -1,0 +1,78 @@
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power
+ImportTag dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.render_model workingdir\tags\weapons\VKMT\magnum.render_model
+EditTag dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.render_model
+SetField MarkerGroups[2].Name magazine_marker
+SetField MarkerGroups[8].Name right_hand_spartan
+
+SetField MarkerGroups[4].Markers[0].Translation 0.095 0 0.036659997
+
+SetField Materials[0].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_metal_shiny.shader
+SetField Materials[3].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_engraving.shader
+SetField Materials[4].RenderMethod objects\weapons\pistol\magnum\shaders\magnum_illum.shader
+
+AddBlockElements Materials 2
+SetField Materials[5].RenderMethod objects\weapons\pistol\magnum\magnum_v6\material_3.shader
+SetField Materials[6].RenderMethod objects\weapons\pistol\magnum\magnum_v6\material_1.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\MAG\magnum_power.fbx TriangleStrip
+SetField Geometry.Meshes[1].Parts[0].FlagsNew PreventBackfaceCulling
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.004 -0.00277 -0.0188
+SetField MarkerGroups[*].Markers[*].Rotation -0.473 -0.02672 -0.3264 0.8179152
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\pistol\magnum_power\fx\firing.effect
+CopyBlockElements Events[0].Parts 0 *
+Exit
+
+DuplicateTag dw3\r3ach\objects\weapons\pistol\magnum\firing.effect dw3\r3ach\objects\weapons\pistol\magnum_power\firing
+EditTag dw3\r3ach\objects\weapons\pistol\magnum_power\firing.effect
+RemoveBlockElements Events[0].Parts 0 *
+PasteBlockElements Events[0].Parts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power
+EditTag dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.model
+SetField RenderModel dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.render_model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\pistol\magnum\magnum_power.weapon
+SetField Model dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.model
+
+AddBlockElements Functions
+SetField Functions[0].ImportName primary_ammunition
+SetField Functions[0].ExportName slide_lock_open
+SetField Functions[0].TurnOffWith ready
+SetField Functions[0].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000002400000002000000040000CD6F12833AFFFF79C40000803F04000000FFFF7F7F0000000000000000
+
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\pistol\magnum_power\magnum_power.render_model
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_elite\fp_elite.model_animation_graph
+SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\pistol\magnum_power\firing.effect
+SaveTagChanges
+Exit

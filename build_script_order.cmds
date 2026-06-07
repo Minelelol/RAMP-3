@@ -99,6 +99,10 @@ RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_damag
 RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_power.cmds
 RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_rof.cmds
 
+# Magnum Variants
+RunCommands workingdir\commands\weapons\variants\magnum\magnum_damage.cmds
+RunCommands workingdir\commands\weapons\variants\magnum\magnum_power.cmds
+
 # -----------------------------------------
 # |           WEAPONS ANIMATION           |
 # -----------------------------------------
