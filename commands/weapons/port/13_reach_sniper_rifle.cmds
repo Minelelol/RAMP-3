@@ -24,6 +24,7 @@ SaveTagChanges
 Exit
 
 EditTag objects\weapons\rifle\sniper_rifle\shaders\sniper_metal.shader
+SetArgument specular_tint 0.454902 0.4431373 0.40784317
 SetArgument fresnel_color 0.2392157 0.2392157 0.2392157
 SetArgument area_specular_contribution 0.2
 SetArgument environment_map_specular_contribution 0.25
