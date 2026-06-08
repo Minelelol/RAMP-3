@@ -1,6 +1,12 @@
 # ------------------------
 # |        PORTING       |
 # ------------------------
+# High Quality Normal to fix checkerboarded effect
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\sniper_rifle\bitmaps\sniper_rifle_normal.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 
