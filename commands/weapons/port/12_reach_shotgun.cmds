@@ -77,7 +77,7 @@ SetField MarkerGroups[*].Markers[*].PermutationIndex -1
 SetField MarkerGroups[*].Markers[*].NodeIndex 0
 # SetField MarkerGroups[*].Markers[*].Translation 0.02 0 0.085
 # SetField MarkerGroups[*].Markers[*].Translation 0.01 0 0.09
-SetField MarkerGroups[*].Markers[*].Translation 0.0065 0.004 0.09
+SetField MarkerGroups[*].Markers[*].Translation 0.004 0.0065 0.0935
 SetField MarkerGroups[*].Markers[*].Rotation 0.8070744 -0.44536874 0.15166372 0.3567572
 
 AddBlockElements MarkerGroups
@@ -127,7 +127,7 @@ SaveTagChanges
 Exit
 
 # ------------------------
-# |        EFFECT        |
+# | BULLET CASING EFFECT |
 # ------------------------
 EditTag reach\fx\particles\models\weapons\bullet_casings\shotgun\shotgun.particle
 SetField AppearanceFlags TintFromLightmap,Fogged,IsParticleModel,Opaque
@@ -140,17 +140,58 @@ SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\shotgun\fire.sound
 SetField Events[0].Parts[1].Type sound\weapons\shotgun\shotgun_lod_far.sound
 SetField Events[0].Parts[2].Type sound\effe\shotgun_fire_lod_01.sound
 
+SetField Events[2].ParticleSystems[0].CameraMode ThirdPersonOnly
+SaveTagChanges
+Exit
+
+DuplicateTag reach\objects\weapons\rifle\shotgun\fx\firing.effect reach\objects\weapons\rifle\shotgun\fx\fp_shell
+EditTag reach\objects\weapons\rifle\shotgun\fx\fp_shell.effect
 AddBlockElements Locations
 SetField Locations[*].MarkerName primary_ejection_fp
 
-CopyBlockElements Events 2 1
-PasteBlockElements Events
+RemoveBlockElements Events 0 2
+SetField Events[0].DelayBounds 0.033 0.033
+SetField Events[0].ParticleSystems[0].LocationIndex 2
+SetField Events[0].ParticleSystems[0].CameraMode FirstPersonOnly
+SetField Events[0].ParticleSystems[0].Flags ParticlesContinueAsUsualWhenOffscreen,RenderWhenZoomed
+SaveTagChanges
+Exit
 
-SetField Events[2].ParticleSystems[0].CameraMode ThirdPersonOnly
+EditTag dw3\r3ach\objects\weapons\rifle\shotgun\animations\fp_spartan\fp_spartan.model_animation_graph
+AddBlockElements EffectReferences
+SetField EffectReferences[0].Reference reach\objects\weapons\rifle\shotgun\fx\fp_shell.effect
+SetField EffectReferences[0].Flags FirstPersonOnly
 
-SetField Events[3].ParticleSystems[0].LocationIndex 2
-SetField Events[3].ParticleSystems[0].CameraMode FirstPersonOnly
-SetField Events[3].ParticleSystems[0].Flags ParticlesContinueAsUsualWhenOffscreen,RenderWhenZoomed
+AddBlockElements Animations[1].AnimationData.EffectEvents
+SetField Animations[1].AnimationData.EffectEvents[0].Frame 17
+SetField Animations[1].AnimationData.EffectEvents[0].MarkerName primary_ejection_fp
+
+AddBlockElements Animations[2].AnimationData.EffectEvents
+SetField Animations[2].AnimationData.EffectEvents[0].Frame 17
+SetField Animations[2].AnimationData.EffectEvents[0].MarkerName primary_ejection_fp
+
+AddBlockElements Animations[3].AnimationData.EffectEvents
+SetField Animations[3].AnimationData.EffectEvents[0].Frame 17
+SetField Animations[3].AnimationData.EffectEvents[0].MarkerName primary_ejection_fp
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\shotgun\animations\fp_elite\fp_elite.model_animation_graph
+AddBlockElements EffectReferences
+SetField EffectReferences[0].Reference reach\objects\weapons\rifle\shotgun\fx\fp_shell.effect
+SetField EffectReferences[0].Flags FirstPersonOnly
+
+AddBlockElements Animations[1].AnimationData.EffectEvents
+SetField Animations[1].AnimationData.EffectEvents[0].Frame 17
+SetField Animations[1].AnimationData.EffectEvents[0].MarkerName primary_ejection_fp
+
+AddBlockElements Animations[2].AnimationData.EffectEvents
+SetField Animations[2].AnimationData.EffectEvents[0].Frame 17
+SetField Animations[2].AnimationData.EffectEvents[0].MarkerName primary_ejection_fp
+
+AddBlockElements Animations[3].AnimationData.EffectEvents
+SetField Animations[3].AnimationData.EffectEvents[0].Frame 17
+SetField Animations[3].AnimationData.EffectEvents[0].MarkerName primary_ejection_fp
 SaveTagChanges
 Exit
 

@@ -3,7 +3,7 @@
 # ------------------------
 GenerateBitmap sequence objects\weapons\rifle\battle_rifle\bitmaps\vkmt_numbers_plate workingdir\bitmaps\Weapons\VKMT\BR\numbers
 GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_diffuse workingdir\bitmaps\Weapons\VKMT\BR\br_carry_diffuse.dds
-GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal workingdir\bitmaps\Weapons\VKMT\BR\br_carry_normal.dds linear DXN 7
+GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal workingdir\bitmaps\Weapons\VKMT\BR\br_carry_normal.dds linear DXN 8
 
 # ------------------------
 # |        SHADER        |

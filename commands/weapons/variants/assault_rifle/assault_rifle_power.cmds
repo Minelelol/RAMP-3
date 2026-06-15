@@ -1,9 +1,9 @@
 # ------------------------
 # |        BITMAP        |
 # ------------------------
-GenerateBitmap objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_diffuse workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_diffuse.dds
-GenerateBitmap Linear objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_color_mask workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_color_mask.dds
-GenerateBitmap Linear objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_normal workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_normal.dds
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_diffuse workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_diffuse.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_color_mask workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_color_mask.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_normal workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_normal.dds
 
 # ------------------------
 # |        SHADER        |
@@ -198,9 +198,9 @@ Exit
 DuplicateTag objects\weapons\rifle\assault_rifle_variants\shaders\assault_rifle_rubber_gold.shader objects\weapons\rifle\assault_rifle_variants\shaders\reach_smg_silencer
 EditTag objects\weapons\rifle\assault_rifle_variants\shaders\reach_smg_silencer.shader
 
-SetBitmap base_map objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_diffuse.bitmap
-SetBitmap color_mask_map objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_color_mask.bitmap
-SetBitmap bump_map objects\weapons\rifle\smg\bitmaps\reach_smg_silencer_normal.bitmap
+SetBitmap base_map ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_diffuse.bitmap
+SetBitmap color_mask_map ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_color_mask.bitmap
+SetBitmap bump_map ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_normal.bitmap
 
 SetArgument diffuse_coefficient 1.8
 SaveTagChanges

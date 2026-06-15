@@ -1,0 +1,83 @@
+# ------------------------
+# |          HUD         |
+# ------------------------
+DuplicateTag ui\chud\smg_power.chud_definition ui\chud\smg_silenced
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag ramp\objects\weapons\rifle\smg\smg.render_model ramp\objects\weapons\rifle\smg_silenced\smg_silenced
+EditTag ramp\objects\weapons\rifle\smg_silenced\smg_silenced.render_model
+
+# Primary Trigger
+SetField MarkerGroups[2].Markers[0].Translation 0.1412042 1.371E-09 0.027029905
+
+SetField Materials[4].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_sight_metal.shader
+SetField Materials[5].RenderMethod ramp\objects\weapons\rifle\smg\shaders\display.shader
+SetField Materials[6].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_silencer_metal.shader
+SetField Materials[7].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_laser_metal.shader
+
+SetField Regions[1].Permutations[0].MeshIndex 1
+SetField Regions[2].Permutations[0].MeshIndex 2
+SetField Regions[3].Permutations[0].MeshIndex -1
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+SaveTagChanges
+Exit
+
+DuplicateTag ramp\objects\weapons\rifle\tp_smg\tp_smg.render_model ramp\objects\weapons\rifle\tp_smg_silenced\tp_smg_silenced
+EditTag ramp\objects\weapons\rifle\tp_smg_silenced\tp_smg_silenced.render_model
+
+# Primary Trigger
+SetField MarkerGroups[2].Markers[0].Translation 0.16548955 0 0.024093285
+
+SetField Materials[4].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_sight_metal.shader
+SetField Materials[5].RenderMethod ramp\objects\weapons\rifle\smg\shaders\display.shader
+SetField Materials[6].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_silencer_metal.shader
+SetField Materials[7].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_laser_metal.shader
+
+SetField Regions[1].Permutations[0].MeshIndex 1
+SetField Regions[2].Permutations[0].MeshIndex 2
+SetField Regions[3].Permutations[0].MeshIndex -1
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\smg\smg.model ramp\objects\weapons\rifle\smg_silenced\smg_silenced
+EditTag ramp\objects\weapons\rifle\smg_silenced\smg_silenced.model
+SetField RenderModel ramp\objects\weapons\rifle\tp_smg_silenced\tp_smg_silenced.render_model
+SetField LodModel null
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       PORTING        |
+# ------------------------
+OpenCacheFile MCCdir\halo3odst\maps\c200.map
+NameBlamTag objects\weapons\rifle\smg_silenced\smg_silenced.model ramp\objects\weapons\rifle\smg_silenced\smg_silenced
+NameBlamTag objects\weapons\rifle\smg_silenced\fp_smg_silenced\fp_smg_silenced.render_model ramp\objects\weapons\rifle\smg_silenced\smg_silenced
+IgnoreBlamTag objects\characters\odst_recon\fp\weapons\rifle\fp_smg_silenced\fp_smg_silenced.model_animation_graph
+
+PortTag objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+SetField FirstPerson[0].FirstPersonAnimations objects\characters\masterchief\fp\weapons\rifle\fp_smg\fp_smg.model_animation_graph
+SetField FirstPerson[1].FirstPersonAnimations objects\characters\dervish\fp\weapons\rifle\fp_smg\fp_smg.model_animation_graph
+
+SetField WeaponSprintExitSpeedup 1.1
+SetField SupportThirdPersonCameraRange 0 0
+SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
+SetField WeaponTypeName offset_smg
+SaveTagChanges
+Exit
+
+AddForgeItem "SMG, SILENCED" 1 objects\weapons\rifle\smg_silenced\smg_silenced.weapon

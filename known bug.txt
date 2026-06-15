@@ -27,3 +27,8 @@ Falcon; please someone make a CC mask for this, the color change is ass for this
 # --------------------------
 Redo m30_grass_plate bitmap to remove dithering
 Put all generate shader commannd into one script and make them as a setvariable to reduce build time (could potentially save up to 30s up to this point)
+
+# --------------------------
+# |          TODO          |
+# --------------------------
+Put all of the variants model into one model (could save another 6-8mb of compressed resource)

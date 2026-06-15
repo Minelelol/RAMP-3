@@ -1,0 +1,35 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+
+# BASE
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_diffuse                workingdir\bitmaps\Weapons\Variants\SMG\gun\reach_smg_diffuse.dds
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_normal                 workingdir\bitmaps\Weapons\Variants\SMG\gun\reach_smg_normal.dds Linear DXN 9
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_color_mask      workingdir\bitmaps\Weapons\Variants\SMG\gun\reach_smg_color_mask.dds
+# GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_self_illum_mask workingdir\bitmaps\Weapons\Variants\SMG\gun\reach_smg_self_illum_mask.dds
+
+# MAGAZINE
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_magazine_diffuse       workingdir\bitmaps\Weapons\Variants\SMG\mag\reach_smg_mag_diffuse.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_magazine_normal workingdir\bitmaps\Weapons\Variants\SMG\mag\reach_smg_mag_normal.dds
+
+# SIGHT
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_diffuse                workingdir\bitmaps\Weapons\Variants\SMG\sight\reach_smg_sight_diffuse.dds
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_display                workingdir\bitmaps\Weapons\Variants\SMG\sight\reticle\reach_smg_reticle.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_normal          workingdir\bitmaps\Weapons\Variants\SMG\sight\reach_smg_sight_normal.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_color_mask      workingdir\bitmaps\Weapons\Variants\SMG\sight\reach_smg_sight_color_mask.dds
+# GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_self_illum_mask workingdir\bitmaps\Weapons\Variants\SMG\sight\reach_smg_sight_self_illum_mask.dds
+
+# SILENCER (ALREADY GENERATED IN THE ASSAULT RIFLE POWER CMDS)
+# GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_diffuse           workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_diffuse.dds
+# GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_normal     workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_normal.dds
+# GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_color_mask workingdir\bitmaps\Weapons\Variants\SMG\silencer\reach_smg_silencer_color_mask.dds
+
+# SILENCER LASER
+GenerateBitmap ramp\objects\weapons\rifle\smg\bitmaps\smg_laser_diffuse           workingdir\bitmaps\Weapons\Variants\SMG\laser\reach_smg_laser_diffuse.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_laser_normal     workingdir\bitmaps\Weapons\Variants\SMG\laser\reach_smg_laser_normal.dds
+GenerateBitmap Linear ramp\objects\weapons\rifle\smg\bitmaps\smg_laser_color_mask workingdir\bitmaps\Weapons\Variants\SMG\laser\reach_smg_laser_color_mask.dds
+
+# ------------------------
+# |   SHARED TEMPLATE    |
+# ------------------------
+# The one that the dmr_metal use

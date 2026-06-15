@@ -1,0 +1,300 @@
+# ------------------------
+# |        SHADER        |
+# ------------------------
+# BASE
+DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_metal.shader ramp\objects\weapons\rifle\smg\shaders\smg_metal
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader
+SetField ShaderProperties[0].Template shaders\shader_templates\_8_2_0_1_13_1_0_0_0_5_0_0_0_0_0.render_method_template
+SetField Options[0].OptionIndex 8
+
+RemoveBlockElements ShaderProperties[0].TextureConstants 0 *
+AddBlockElements ShaderProperties[0].TextureConstants 7
+AddBlockElements ShaderProperties[0].RealConstants 4
+
+SetBitmap base_map         ramp\objects\weapons\rifle\smg\bitmaps\smg_diffuse.bitmap
+SetBitmap detail_map       reach\shaders\default_bitmaps\bitmaps\default_detail.bitmap
+SetBitmap color_mask_map   ramp\objects\weapons\rifle\smg\bitmaps\smg_color_mask.bitmap
+SetBitmap bump_map         ramp\objects\weapons\rifle\smg\bitmaps\smg_normal.bitmap
+SetBitmap bump_detail_map  objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump.bitmap
+SetBitmap material_texture shaders\default_bitmaps\bitmaps\gray_50_percent.bitmap
+SetBitmap environment_map  levels\reference\material_samples\bitmaps\cubemaps\d_cubemap_vertical_noise.bitmap
+# SetBitmap self_illum_map   ramp\objects\weapons\rifle\smg\bitmaps\smg_self_illum_mask.bitmap
+
+SetField ShaderProperties[0].TextureConstants[0].FilterMode Anisotropic2Expensive
+SetField ShaderProperties[0].TextureConstants[1].TextureTransformConstantIndex 1
+SetField ShaderProperties[0].TextureConstants[2].TextureTransformConstantIndex 2
+SetField ShaderProperties[0].TextureConstants[3].TextureTransformConstantIndex 3
+SetField ShaderProperties[0].TextureConstants[4].TextureTransformConstantIndex 4
+SetField ShaderProperties[0].TextureConstants[5].TextureTransformConstantIndex 16
+SetField ShaderProperties[0].TextureConstants[6].TextureTransformConstantIndex -1
+# SetField ShaderProperties[0].TextureConstants[7].TextureTransformConstantIndex 28
+
+SetArgument base_map 1 1 0 0
+SetArgument detail_map 60 60 0 0
+SetArgument color_mask_map 1 1 0 0
+SetArgument albedo_color 1 1 0 1
+SetArgument albedo_color2 1 1 1 1
+SetArgument albedo_color3 1 1 1 1
+SetArgument neutral_gray 1 1 1
+SetArgument bump_map 1 1 0 0
+SetArgument bump_detail_map 120 120 0 0
+SetArgument bump_detail_coefficient 1 1 1 1
+SetArgument diffuse_coefficient 0.5 0.5 0.5 0.5
+SetArgument specular_color_by_angle 0 0 0 0
+SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_tint 0.254902 0.2431373 0.20784317 0
+SetArgument fresnel_color 0.11960785 0.11960785 0.11960785
+SetArgument fresnel_curve_steepness 0.1 0.1 0.1 0.1
+SetArgument area_specular_contribution 0.05
+SetArgument analytical_specular_contribution 0.05 0 0 0
+SetArgument environment_map_specular_contribution 0.05
+SetArgument roughness 0.5 0.5 0.5 0.5
+SetArgument analytical_roughness 0.25 0.25 0.25 0.25
+SetArgument use_material_texture 0 0 0 0
+SetArgument material_texture 1 1 0 0
+SetArgument material_texture_black_specular_multiplier 1 1 1 1
+SetArgument material_texture_black_roughness 1 1 1 1
+SetArgument no_dynamic_lights 0 0 0 0
+SetArgument albedo_blend 0.75 0.75 0.75 0.75
+SetArgument approximate_specular_type 0.66 0.66 0.66 0.66
+SetArgument env_tint_color 0.75 0.75 0.75 0
+SetArgument env_roughness_scale 1 1 1 1
+# SetArgument self_illum_map 1 1 0 0
+# SetArgument self_illum_color 1 0 0
+# SetArgument self_illum_intensity 1.5
+SetArgument wet_material_dim_tint 0.8470589 0.8470589 0.9215687 1
+SetArgument wet_material_dim_coefficient 1 1 1 1
+SaveTagChanges
+Exit
+
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg\shaders\smg_rubber
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_rubber.shader
+SetBitmap base_map ramp\objects\weapons\rifle\smg\bitmaps\smg_diffuse.bitmap
+SetBitmap bump_map ramp\objects\weapons\rifle\smg\bitmaps\smg_normal.bitmap
+
+SetBitmap detail_map      reach\objects\bitmaps\detail_maps\rubber.bitmap
+SetBitmap bump_detail_map objects\weapons\rifle\assault_rifle\bitmaps\rubber_microbump.bitmap
+
+SetBitmap color_mask_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+# SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+
+SetArgument albedo_color 1 1 1 1
+SetArgument bump_detail_map 60 60 0 0
+SetArgument diffuse_coefficient 1 1 1 1
+SetArgument specular_tint 0.7254902 0.7843138 0.91372555
+# SetArgument fresnel_color 0.08627451 0.12941177 0.22352943
+SetArgument fresnel_curve_steepness 3
+SetArgument area_specular_contribution 0.2
+SetArgument analytical_specular_contribution 0.1
+SetArgument environment_map_specular_contribution 0
+# SetArgument roughness 0.5
+SetArgument analytical_roughness 0.5
+# SetArgument albedo_blend 0.75
+SaveTagChanges
+Exit
+
+# ILLUM
+DuplicateTag objects\weapons\pistol\magnum\shaders\magnum_illum.rmsh ramp\objects\weapons\rifle\smg\shaders\smg_illum
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_illum.shader
+SetBitmap base_map       shaders\default_bitmaps\bitmaps\color_white.bitmap
+SetBitmap alpha_test_map shaders\default_bitmaps\bitmaps\color_white.bitmap
+SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\color_white.bitmap
+
+SetArgument albedo_color 1 0 0 1
+SetArgument self_illum_color 0.25 0 0
+
+SetField ShaderProperties[0].BlendMode Opaque
+SaveTagChanges
+Exit
+
+# MAGAZINE
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg\shaders\smg_magazine_metal
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_magazine_metal.shader
+SetBitmap base_map ramp\objects\weapons\rifle\smg\bitmaps\smg_magazine_diffuse.bitmap
+SetBitmap bump_map ramp\objects\weapons\rifle\smg\bitmaps\smg_magazine_normal.bitmap
+
+SetBitmap color_mask_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+# SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+SaveTagChanges
+Exit
+
+# SIGHT
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg\shaders\smg_sight_metal
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_sight_metal.shader
+SetBitmap base_map ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_diffuse.bitmap
+SetBitmap bump_map ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_normal.bitmap
+
+SetBitmap color_mask_map ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_color_mask.bitmap
+# SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader ramp\objects\weapons\rifle\smg\shaders\display
+EditTag ramp\objects\weapons\rifle\smg\shaders\display.shader
+SetBitmap self_illum_map ramp\objects\weapons\rifle\smg\bitmaps\smg_sight_display.bitmap
+
+SetArgument base_map 0.01 17 0 1
+SetArgument albedo_color 0.16078432 0 0 1
+SetArgument self_illum_color 1 0 0 1
+SaveTagChanges
+Exit
+
+# SILENCER
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg\shaders\smg_silencer_metal
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_silencer_metal.shader
+SetBitmap base_map ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_diffuse.bitmap
+SetBitmap bump_map ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_normal.bitmap
+
+SetBitmap color_mask_map ramp\objects\weapons\rifle\smg\bitmaps\smg_silencer_color_mask.bitmap
+# SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+SaveTagChanges
+Exit
+
+# LASER
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg\shaders\smg_laser_metal
+EditTag ramp\objects\weapons\rifle\smg\shaders\smg_laser_metal.shader
+SetBitmap base_map ramp\objects\weapons\rifle\smg\bitmaps\smg_laser_diffuse.bitmap
+SetBitmap bump_map ramp\objects\weapons\rifle\smg\bitmaps\smg_laser_normal.bitmap
+
+SetBitmap color_mask_map ramp\objects\weapons\rifle\smg\bitmaps\smg_laser_color_mask.bitmap
+# SetBitmap self_illum_map shaders\default_bitmaps\bitmaps\color_black.bitmap
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode ramp\objects\weapons\rifle\smg\smg
+ImportTag ramp\objects\weapons\rifle\smg\smg.render_model workingdir\tags\weapons\ED\smg.render_model
+EditTag ramp\objects\weapons\rifle\smg\smg.render_model
+
+RemoveBlockElements MarkerGroups 0 *
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name flashlight
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[*].Markers[0].Translation 0.081204206 1.2060001E-09 0.027028613
+SetField MarkerGroups[*].Markers[0].Rotation -1.39E-08 -4.62E-08 7.41E-08 1
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name left_hand
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.018288217 0.00091953407 -0.01404753
+SetField MarkerGroups[*].Markers[*].Rotation -0.13416998 -0.068389356 -0.3859059 0.9101637
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name primary_trigger
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[*].Markers[0].Translation 0.0612042 1.371E-09 0.027029905
+SetField MarkerGroups[*].Markers[0].Rotation 0 0 0 1
+
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 8
+SetField Materials[0].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader
+SetField Materials[1].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_illum.shader
+SetField Materials[2].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_rubber.shader
+SetField Materials[3].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_magazine_metal.shader
+SetField Materials[4].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_sight_metal.shader
+SetField Materials[5].RenderMethod ramp\objects\weapons\rifle\smg\shaders\display.shader
+SetField Materials[6].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_silencer_metal.shader
+SetField Materials[7].RenderMethod ramp\objects\weapons\rifle\smg\shaders\smg_laser_metal.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\SMG\smg.fbx
+
+SetField Regions[1].Permutations[0].MeshIndex -1
+SetField Regions[2].Permutations[0].MeshIndex -1
+SetField Regions[3].Permutations[0].MeshIndex -1
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+
+SetField Materials[4].RenderMethod null
+SetField Materials[5].RenderMethod null
+SetField Materials[6].RenderMethod null
+SetField Materials[7].RenderMethod null
+SaveTagChanges
+Exit
+
+DuplicateTag ramp\objects\weapons\rifle\smg\smg.render_model ramp\objects\weapons\rifle\tp_smg\tp_smg
+EditTag ramp\objects\weapons\rifle\tp_smg\tp_smg.render_model
+SetField Nodes[0].DefaultTranslation -0.0015970385 0 0.010283961
+SetField Nodes[0].Inverse 1 0 0 	0 1 0 	0 0 1 	0.0015970385 0 -0.010283961
+
+SetField Nodes[1].DefaultTranslation 0.035346743 -0.0059126853 0.030212607
+SetField Nodes[1].Inverse 1 0 0 	0 0.9135454 0.40673673 		0 -0.40673673 0.9135454 	-0.033749703 0.021872949 -0.03459055
+SetField Nodes[1].DistanceFromParent 0.046873804
+
+SetField Nodes[2].DefaultTranslation 0.03223827 0.013173585 0.023797784
+SetField Nodes[2].Inverse 1 0 0 	0 1 0 	0 0 1 	-0.030641232 -0.013173585 -0.034081746
+SetField Nodes[2].DistanceFromParent 0.042180374
+
+SetField Nodes[3].DefaultTranslation -0.0949543 0 0.02858872
+SetField Nodes[3].Inverse 1 0 0 	0 1 0 	0 0 1 	0.09655134 0 -0.03887268
+SetField Nodes[3].DistanceFromParent 0.09916468
+
+SetField RuntimeNodeOrientations[0].Translation -0.0015970385 0 0.010283961
+SetField RuntimeNodeOrientations[1].Translation 0.035346743 -0.0059126853 0.030212607
+SetField RuntimeNodeOrientations[2].Translation 0.03223827 0.013173585 0.023797784
+SetField RuntimeNodeOrientations[3].Translation -0.0949543 0 0.02858872
+
+RemoveBlockElements MarkerGroups 0 *
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name flashlight
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[*].Markers[0].Translation 0.11294709 -1.1069999E-09 0.02809199
+SetField MarkerGroups[*].Markers[0].Rotation -1.39E-08 -4.62E-08 7.41E-08 1
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name left_hand
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[1].Markers[0].Translation 0.063901655 0.0020532475 -0.012292219
+SetField MarkerGroups[*].Markers[0].Rotation -0.13416576 -0.068390585 -0.38590294 0.9101655
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name primary_trigger
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[*].Markers[0].Translation 0.10948955 0 0.028093286
+SetField MarkerGroups[*].Markers[0].Rotation 0 0 0 1
+
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name weapon_stow_anchor
+AddBlockElements MarkerGroups[*].Markers 1
+SetField MarkerGroups[*].Markers[0].RegionIndex -1
+SetField MarkerGroups[*].Markers[0].PermutationIndex -1
+SetField MarkerGroups[*].Markers[0].Translation -0.034800775 -0.009601063 0.001836636
+SetField MarkerGroups[*].Markers[0].Rotation -0.69824207 -0.01886405 -0.08508978 0.7105364
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\smg\smg.model ramp\objects\weapons\rifle\smg\smg
+EditTag ramp\objects\weapons\rifle\smg\smg.model
+SetField RenderModel ramp\objects\weapons\rifle\tp_smg\tp_smg.render_model
+SetField LodModel null
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\smg\smg.weapon
+SetField Model ramp\objects\weapons\rifle\smg\smg.model
+ForEach FirstPerson SetField FirstPersonModel ramp\objects\weapons\rifle\smg\smg.render_model
+SaveTagChanges
+Exit

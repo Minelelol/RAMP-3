@@ -177,6 +177,7 @@ AddBlockElements UsageOverrides
 SetField UsageOverrides[0].SourceGamma 1
 SetField UsageOverrides[0].BitmapCurve Linear
 SetField UsageOverrides[0].MipmapLimit 256
+SetField UsageOverrides[0].DownsampleFlags 0
 SaveTagChanges
 Exit
 
@@ -184,7 +185,8 @@ GenerateBitmap shaders\default_bitmaps\bitmaps\color_blue "workingdir\bitmaps\Re
 EditTag shaders\default_bitmaps\bitmaps\color_blue.bitmap
 AddBlockElements Sequences
 SetField Sequences[0].BitmapCount 1
-SetField Images[0].Curve Unknown
+// This duplicate the resource, but honestly not much I can do unless the GenerateBitmap support more curve flag
+CS < workingdir\cs\SetBitmapResourceCurve.cs 0 Unknown
 SaveTagChanges
 Exit
 

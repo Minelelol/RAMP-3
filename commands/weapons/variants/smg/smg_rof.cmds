@@ -1,0 +1,78 @@
+# ------------------------
+# |        SHADER        |
+# ------------------------
+
+# BASE
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_orange
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_orange.shader
+SetArgument albedo_color 2.5 0.5 0 1
+SaveTagChanges
+Exit
+
+# LASER
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_laser_metal.shader ramp\objects\weapons\rifle\smg_variants\shaders\smg_laser_metal_orange
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\smg_laser_metal_orange.shader
+SetArgument albedo_color 2.5 0.5 0 1
+SaveTagChanges
+Exit
+
+# ILUM
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_illum.shader ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_orange
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_orange.shader
+SetArgument albedo_color 0.1 0.005 0 1
+SetArgument self_illum_color 1 0.05 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag ramp\objects\weapons\rifle\smg\smg.render_model ramp\objects\weapons\rifle\smg_rof\smg_rof
+EditTag ramp\objects\weapons\rifle\smg_rof\smg_rof.render_model
+
+SetField Materials[0].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_orange.shader
+SetField Materials[1].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_orange.shader
+SetField Materials[7].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_laser_metal_orange.shader
+
+SetField Regions[1].Permutations[0].MeshIndex -1
+SetField Regions[2].Permutations[0].MeshIndex -1
+SetField Regions[3].Permutations[0].MeshIndex 3
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+SaveTagChanges
+Exit
+
+DuplicateTag ramp\objects\weapons\rifle\tp_smg\tp_smg.render_model ramp\objects\weapons\rifle\tp_smg_rof\tp_smg_rof
+EditTag ramp\objects\weapons\rifle\tp_smg_rof\tp_smg_rof.render_model
+
+SetField Materials[0].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_orange.shader
+SetField Materials[1].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_orange.shader
+SetField Materials[7].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_laser_metal_orange.shader
+
+SetField Regions[1].Permutations[0].MeshIndex -1
+SetField Regions[2].Permutations[0].MeshIndex -1
+SetField Regions[3].Permutations[0].MeshIndex 3
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\smg\smg.model ramp\objects\weapons\rifle\smg_rof\smg_rof
+EditTag ramp\objects\weapons\rifle\smg_rof\smg_rof.model
+SetField RenderModel ramp\objects\weapons\rifle\tp_smg_rof\tp_smg_rof.render_model
+SetField LodModel null
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\smg\smg_rof.weapon
+SetField Model ramp\objects\weapons\rifle\smg_rof\smg_rof.model
+ForEach FirstPerson SetField FirstPersonModel ramp\objects\weapons\rifle\smg_rof\smg_rof.render_model
+SaveTagChanges
+Exit

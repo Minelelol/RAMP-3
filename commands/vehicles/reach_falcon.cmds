@@ -626,6 +626,9 @@ AddBlockElements Variants[0].Regions[1].Permutations[0].States
 SetField Variants[0].Regions[1].Permutations[0].States[1].Name destroyed
 SetField Variants[0].Regions[1].Permutations[0].States[1].State2 Destroyed
 
+# Fix half of the collision model dissapearing once the falcon is damaged
+SetField CollisionRegions[1].Permutations[0].CollisionPermutationIndex 1
+
 SetField NewDamageInfo[0].MaximumVitality 500
 SetField NewDamageInfo[0].StunTime 0
 SetField NewDamageInfo[0].RechargeTime 1

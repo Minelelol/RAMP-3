@@ -45,6 +45,13 @@ RunCommands workingdir\commands\mainmenu\3_UI.cmds
 # -----------------------------------------
 # |             REACH WEAPONS             |
 # -----------------------------------------
+# Fix checkerboarded effect on the most used bitmap
+GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump workingdir\bitmaps\Weapons\gun_microbump.dds Linear DXN 7
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+SetPortingOption HqNormalMapConversion True
+PortTag objects\weapons\rifle\assault_rifle\bitmaps\rubber_microbump.bitmap
+Exit
+
 # PEAKED AT 2.2Gb OF DEDICATED WAM
 StringId Add mineleloldabest_left_hand_spartan_fp
 StringId Add mineleloldabest_left_hand_elite_fp
@@ -102,6 +109,15 @@ RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_rof.c
 # Magnum Variants
 RunCommands workingdir\commands\weapons\variants\magnum\magnum_damage.cmds
 RunCommands workingdir\commands\weapons\variants\magnum\magnum_power.cmds
+
+# SMG RAMP Variants
+RunCommands workingdir\commands\weapons\variants\smg\smg_preliminary.cmds
+RunCommands workingdir\commands\weapons\variants\smg\smg_base.cmds
+RunCommands workingdir\commands\weapons\variants\smg\smg_accuracy.cmds
+RunCommands workingdir\commands\weapons\variants\smg\smg_damage.cmds
+RunCommands workingdir\commands\weapons\variants\smg\smg_power.cmds
+RunCommands workingdir\commands\weapons\variants\smg\smg_rof.cmds
+RunCommands workingdir\commands\weapons\variants\smg\smg_silenced.cmds
 
 # -----------------------------------------
 # |           WEAPONS ANIMATION           |

@@ -1,0 +1,87 @@
+# ------------------------
+# |        SHADER        |
+# ------------------------
+
+# BASE
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_metal.shader ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_green
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_green.shader
+SetArgument albedo_color 0 2 0 1
+SaveTagChanges
+Exit
+
+# SIGHT
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_sight_metal.shader ramp\objects\weapons\rifle\smg_variants\shaders\smg_sight_metal_green
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\smg_sight_metal_green.shader
+SetArgument albedo_color 0 2 0 1
+SaveTagChanges
+Exit
+
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\display.shader ramp\objects\weapons\rifle\smg_variants\shaders\display_green
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\display_green.shader
+SetArgument albedo_color 0 0.16078432  0 1
+SetArgument self_illum_color 0 1 0 1
+SaveTagChanges
+Exit
+
+# ILUM
+DuplicateTag ramp\objects\weapons\rifle\smg\shaders\smg_illum.shader ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_green
+EditTag ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_green.shader
+SetArgument albedo_color 0 1 0 1
+SetArgument self_illum_color 0 0.1 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag ramp\objects\weapons\rifle\smg\smg.render_model ramp\objects\weapons\rifle\smg_accuracy\smg_accuracy
+EditTag ramp\objects\weapons\rifle\smg_accuracy\smg_accuracy.render_model
+
+SetField Materials[0].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_green.shader
+SetField Materials[1].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_green.shader
+SetField Materials[4].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_sight_metal_green.shader
+SetField Materials[5].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\display_green.shader
+
+SetField Regions[1].Permutations[0].MeshIndex 1
+SetField Regions[2].Permutations[0].MeshIndex -1
+SetField Regions[3].Permutations[0].MeshIndex -1
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+SaveTagChanges
+Exit
+
+DuplicateTag ramp\objects\weapons\rifle\tp_smg\tp_smg.render_model ramp\objects\weapons\rifle\tp_smg_accuracy\tp_smg_accuracy
+EditTag ramp\objects\weapons\rifle\tp_smg_accuracy\tp_smg_accuracy.render_model
+
+SetField Materials[0].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_metal_green.shader
+SetField Materials[1].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_illum_green.shader
+SetField Materials[4].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\smg_sight_metal_green.shader
+SetField Materials[5].RenderMethod ramp\objects\weapons\rifle\smg_variants\shaders\display_green.shader
+
+SetField Regions[1].Permutations[0].MeshIndex 1
+SetField Regions[2].Permutations[0].MeshIndex -1
+SetField Regions[3].Permutations[0].MeshIndex -1
+SetField Regions[4].Permutations[0].MeshIndex 4
+SetField Regions[5].Permutations[0].MeshIndex -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\smg\smg.model ramp\objects\weapons\rifle\smg_accuracy\smg_accuracy
+EditTag ramp\objects\weapons\rifle\smg_accuracy\smg_accuracy.model
+SetField RenderModel ramp\objects\weapons\rifle\tp_smg_accuracy\tp_smg_accuracy.render_model
+SetField LodModel null
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\smg\smg_accuracy.weapon
+SetField Model ramp\objects\weapons\rifle\smg_accuracy\smg_accuracy.model
+ForEach FirstPerson SetField FirstPersonModel ramp\objects\weapons\rifle\smg_accuracy\smg_accuracy.render_model
+SaveTagChanges
+Exit
