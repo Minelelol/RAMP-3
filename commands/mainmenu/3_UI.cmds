@@ -19,13 +19,13 @@ SaveTagChanges
 Exit
 
 EditTag ui\halox\common\common_bitmaps\third_column.bitmap
-ImportBitmap 0 workingdir\bitmaps\MainMenu\third_column.dds
+ImportBitmap 0 workingdir\bitmaps\MainMenu\third_column.dds Linear
 SaveTagChanges
 Exit
 
 # SETTINGS MENU UI
-ForEach bitm named: ui\halox\start_menu\common\arrow_ui ImportBitmap 0 workingdir\bitmaps\SettingsMenu\arrow_ui.dds
-ForEach bitm named: ui\halox\start_menu\common\arrow2_ui ImportBitmap 0 workingdir\bitmaps\SettingsMenu\arrow2_ui.dds
+ForEach bitm named: ui\halox\start_menu\common\arrow_ui ImportBitmap 0 workingdir\bitmaps\SettingsMenu\arrow_ui.dds Linear
+ForEach bitm named: ui\halox\start_menu\common\arrow2_ui ImportBitmap 0 workingdir\bitmaps\SettingsMenu\arrow2_ui.dds Linear
 
 ForEach bitm named: start_menu_background ImportBitmap 0 workingdir\bitmaps\SettingsMenu\start_menu_background.dds
 ForEach bitm named: start_menu_top ImportBitmap 0 workingdir\bitmaps\SettingsMenu\start_menu_top.dds

@@ -217,7 +217,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\concussion_rifle\concussion_round_lod_far.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.DontPlayDistance 15
 SetField Playback.DistanceParameters.MinimumDistance 30
 SetField Playback.DistanceParameters.MaximumDistance 250
@@ -226,7 +226,7 @@ Exit
 
 EditTag dw3\r3ach\sound\weapons\concussion_rifle\concussion_rifle_fire.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 2
 SetField Playback.DistanceParameters.MaximumDistance 30
 SaveTagChanges

@@ -69,7 +69,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\spike_rifle\spike_rifle_fire.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 1
 SetField Playback.DistanceParameters.MaximumDistance 15
 SaveTagChanges

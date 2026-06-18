@@ -200,7 +200,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\shotgun\fire.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,DirectionalAttenuation
 SetField Playback.DistanceParameters.MaximumDistance 7
 SaveTagChanges
 Exit

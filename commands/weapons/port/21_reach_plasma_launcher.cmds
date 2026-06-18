@@ -230,7 +230,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\plasma_launcher\plas_launcher_fire.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 2
 SetField Playback.DistanceParameters.MaximumDistance 35
 SaveTagChanges
@@ -238,7 +238,7 @@ Exit
 
 EditTag dw3\r3ach\sound\weapons\plasma_launcher\pl_lod_far.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.DontPlayDistance 10
 SetField Playback.DistanceParameters.MinimumDistance 15
 SetField Playback.DistanceParameters.MaximumDistance 250

@@ -130,7 +130,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\sniper_rifle\sniper_fire_reach.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 6
 SetField Playback.DistanceParameters.MaximumDistance 65
 SetField Playback.GainBase -1

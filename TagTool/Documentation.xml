@@ -295,7 +295,7 @@
             the gain to use when the sound is directed away from the listener
             </summary>
         </member>
-        <member name="F:TagTool.Audio.PlaybackParameter.Flags">
+        <member name="F:TagTool.Audio.PlaybackParameter.GainOverrideFlags">
             <summary>
             NOTE: this will only apply when the sound is started via script
             azimuth:
@@ -726,7 +726,7 @@
             Serializer is responsible for properly reading/writing to file.
             </summary>
         </member>
-        <member name="M:TagTool.Cache.CacheVersionDetection.DetectFromTimestamp(System.String)">
+        <member name="M:TagTool.Cache.CacheVersionDetection.DetectFromTimestamp(System.Int64)">
             <summary>
             Detects the engine that a tags.dat was built for based on its timestamp.
             </summary>

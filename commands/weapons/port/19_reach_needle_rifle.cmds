@@ -243,7 +243,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\needle_rifle\needle_rifle_fire.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 3
 SetField Playback.DistanceParameters.MaximumDistance 30
 SaveTagChanges
@@ -251,7 +251,7 @@ Exit
 
 EditTag dw3\r3ach\sound\weapons\needle_rifle\n_rifle_lod_far.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceB,DistanceC,Bit4
+SetField Playback.FieldDisableFlags DistanceB,DistanceC,DirectionalAttenuation
 SetField Playback.DistanceParameters.DontPlayDistance 10
 SetField Playback.DistanceParameters.MaximumDistance 200
 SaveTagChanges
@@ -259,14 +259,14 @@ Exit
 
 EditTag sound\weapons\needle_rifle\n_rifle_tails_ext.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,DirectionalAttenuation
 SetField Playback.DistanceParameters.MaximumDistance 200
 SaveTagChanges
 Exit
 
 EditTag sound\weapons\needle_rifle\n_rifle_tails_int.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceC,DirectionalAttenuation
 SetField Playback.DistanceParameters.MaximumDistance 200
 SaveTagChanges
 Exit

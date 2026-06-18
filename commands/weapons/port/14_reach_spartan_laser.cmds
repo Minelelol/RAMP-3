@@ -99,7 +99,7 @@ Exit
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\spartan_laser\spartan_laser_overheat.sound
 SetField ImportType SingleLayer
-SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceD,Bit4
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DistanceD,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 3
 SaveTagChanges
 Exit
