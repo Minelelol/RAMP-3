@@ -12,5 +12,11 @@ var handlersEnumerable = (System.Collections.Generic.IEnumerable<ILogHandler>)ha
 foreach (var handler in handlersEnumerable.Where(h => h.GetType().Name == "RunMetricsLogHandler").ToList())
 {
     Log.RemoveHandler(handler);
-    Console.WriteLine("Please god let this shit fucking work I'm so done please pelase");
 }
+
+foreach (var handler in handlersEnumerable.Where(h => h.GetType().Name == "ConsoleLogHandler").ToList())
+{
+    Log.RemoveHandler(handler);
+}
+
+Console.WriteLine("Error count paused");
