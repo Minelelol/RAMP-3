@@ -109,6 +109,7 @@ RunCommands workingdir\commands\weapons\variants\battle_rifle\battle_rifle_rof.c
 # Magnum Variants
 RunCommands workingdir\commands\weapons\variants\magnum\magnum_damage.cmds
 RunCommands workingdir\commands\weapons\variants\magnum\magnum_power.cmds
+RunCommands workingdir\commands\weapons\variants\magnum\automag.cmds
 
 # SMG RAMP Variants
 RunCommands workingdir\commands\weapons\variants\smg\smg_preliminary.cmds

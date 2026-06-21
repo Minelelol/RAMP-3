@@ -1,0 +1,117 @@
+# ------------------------
+# |       ANIMATION      |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_spartan\fp_spartan.model_animation_graph dw3\r3ach\objects\weapons\pistol\automag\animations\fp_spartan\fp_spartan
+DuplicateTag dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_elite\fp_elite.model_animation_graph dw3\r3ach\objects\weapons\pistol\automag\animations\fp_elite\fp_elite
+
+# ------------------------
+# |         HUD          |
+# ------------------------
+DuplicateTag ui\chud\magnum_power.chud_definition ui\chud\automag
+
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\weapons\pistol\automag\bitmaps\automag_diffuse workingdir\bitmaps\Weapons\Variants\AUTOMAG\automag_diffuse.dds
+GenerateBitmap objects\weapons\pistol\automag\bitmaps\automag_illum workingdir\bitmaps\Weapons\Variants\AUTOMAG\automag_illum.dds Linear
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+DuplicateTag objects\weapons\pistol\magnum\shaders\magnum_composite.shader objects\weapons\pistol\automag\shaders\automag_composite
+EditTag objects\weapons\pistol\automag\shaders\automag_composite.shader
+SetBitmap base_map objects\weapons\pistol\automag\bitmaps\automag_diffuse.bitmap
+SetArgument albedo_color 0.15 0.15 0.15 0.15
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\pistol\magnum\shaders\magnum_engraving.shader objects\weapons\pistol\automag\shaders\automag_engraving
+EditTag objects\weapons\pistol\automag\shaders\automag_engraving.shader
+SetBitmap base_map objects\weapons\pistol\automag\bitmaps\automag_diffuse.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\pistol\magnum\shaders\magnum_metal.shader objects\weapons\pistol\automag\shaders\automag_metal
+EditTag objects\weapons\pistol\automag\shaders\automag_metal.shader
+SetBitmap base_map objects\weapons\pistol\automag\bitmaps\automag_diffuse.bitmap
+
+SetArgument analytical_specular_contribution 0.1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\pistol\magnum\shaders\magnum_illum.shader objects\weapons\pistol\automag\shaders\automag_illum
+EditTag objects\weapons\pistol\automag\shaders\automag_illum.shader
+SetBitmap base_map objects\weapons\pistol\automag\bitmaps\automag_illum.bitmap
+SetBitmap alpha_test_map objects\weapons\pistol\automag\bitmaps\automag_illum.bitmap
+SetBitmap self_illum_map objects\weapons\pistol\automag\bitmaps\automag_illum.bitmap
+SetArgument self_illum_color 0.2039216 0.91372555 0.2039216
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\weapons\pistol\automag\automag
+ImportTag dw3\r3ach\objects\weapons\pistol\automag\automag.render_model workingdir\tags\weapons\VKMT\magnum.render_model
+EditTag dw3\r3ach\objects\weapons\pistol\automag\automag.render_model
+SetField MarkerGroups[2].Name magazine_marker
+SetField MarkerGroups[8].Name right_hand_spartan
+
+# Primary Trigger
+SetField MarkerGroups[4].Markers[0].Translation 0.09 0 0.0375
+
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 4
+
+SetField Materials[0].RenderMethod objects\weapons\pistol\automag\shaders\automag_composite.shader
+SetField Materials[1].RenderMethod objects\weapons\pistol\automag\shaders\automag_metal.shader
+SetField Materials[2].RenderMethod objects\weapons\pistol\automag\shaders\automag_engraving.shader
+SetField Materials[3].RenderMethod objects\weapons\pistol\automag\shaders\automag_illum.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\MAG\automag.fbx TriangleStrip
+SetField Geometry.Meshes[0].Parts[0].FlagsNew PreventBackfaceCulling
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.004 -0.00277 -0.0188
+SetField MarkerGroups[*].Markers[*].Rotation -0.473 -0.02672 -0.3264 0.8179152
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.model dw3\r3ach\objects\weapons\pistol\automag\automag
+EditTag dw3\r3ach\objects\weapons\pistol\automag\automag.model
+SetField RenderModel dw3\r3ach\objects\weapons\pistol\automag\automag.render_model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       PORTING        |
+# ------------------------
+OpenCacheFile MCCdir\halo3odst\maps\sc150.map
+NameBlamTag objects\weapons\pistol\automag\automag.model dw3\r3ach\objects\weapons\pistol\automag\automag
+NameBlamTag objects\weapons\pistol\automag\fp_automag\fp_automag.render_model dw3\r3ach\objects\weapons\pistol\automag\automag
+IgnoreBlamTag objects\characters\odst_recon\fp\weapons\pistol\fp_automag\fp_automag.model_animation_graph
+
+PortTag objects\weapons\pistol\automag\automag.weapon
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\pistol\automag\automag.weapon
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\automag\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\automag\animations\fp_elite\fp_elite.model_animation_graph
+
+SetField WeaponSprintExitSpeedup 0
+SaveTagChanges
+Exit
+
+AddForgeItem "AUTOMAG" 1 objects\weapons\pistol\automag\automag.weapon

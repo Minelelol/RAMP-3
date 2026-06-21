@@ -1,5 +1,5 @@
 # ------------------------
-# |          HUD         |
+# |         HUD          |
 # ------------------------
 DuplicateTag ui\chud\smg_power.chud_definition ui\chud\smg_silenced
 
@@ -58,7 +58,7 @@ Exit
 # ------------------------
 # |       PORTING        |
 # ------------------------
-OpenCacheFile MCCdir\halo3odst\maps\c200.map
+OpenCacheFile MCCdir\halo3odst\maps\sc150.map
 NameBlamTag objects\weapons\rifle\smg_silenced\smg_silenced.model ramp\objects\weapons\rifle\smg_silenced\smg_silenced
 NameBlamTag objects\weapons\rifle\smg_silenced\fp_smg_silenced\fp_smg_silenced.render_model ramp\objects\weapons\rifle\smg_silenced\smg_silenced
 IgnoreBlamTag objects\characters\odst_recon\fp\weapons\rifle\fp_smg_silenced\fp_smg_silenced.model_animation_graph

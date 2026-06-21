@@ -22,42 +22,6 @@ SaveTagChanges
 Exit
 
 # ------------------------------------
-# |           BATTLE RIFLE           |
-# ------------------------------------
-EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
-AddAnimation workingdir\animations\spartan_fp\dmr
-SortModes
-
-SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
-SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
-SetField Animations[23].PlaybackFlags DisableWeaponIk
-
-SetField Animations[12].Weight 0.6
-SetField Animations[12].AnimationData.NextAnimation 13
-SetField Animations[13].Weight 1
-SetField Animations[13].AnimationData.ParentAnimation 12
-SetField Animations[13].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
-
-AddAnimation workingdir\animations\spartan_fp\battlerifle
-
-SetField Animations[0].Weight 0.34
-SetField Animations[0].AnimationData.NextAnimation 1
-
-SetField Animations[1].Weight 0.67
-SetField Animations[1].AnimationData.NextAnimation 2
-SetField Animations[1].AnimationData.ParentAnimation 0
-
-SetField Animations[2].Weight 1
-SetField Animations[2].AnimationData.ParentAnimation 0
-SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
-
-AddBlockElements Modes[0].WeaponClass[0].WeaponIk
-SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
-SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
-SaveTagChanges
-Exit
-
-# ------------------------------------
 # |                DMR               |
 # ------------------------------------
 EditTag dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
@@ -726,6 +690,71 @@ SetField Animations[15].AnimationData.FrameEvents[2].TypeED AllowInterruption
 
 SetField Animations[16].AnimationData.FrameEvents[1].TypeED SecondaryKeyframe
 SetField Animations[16].AnimationData.FrameEvents[2].TypeED AllowInterruption
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# -----------------------------------------------
+# |          SET INHERITANCE ANIMATION          |
+# -----------------------------------------------
+
+# ------------------------------------
+# |           BATTLE RIFLE           |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\battle_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+RemoveBlockElements Animations 0 *
+RemoveBlockElements ResourceGroups 0 *
+RemoveBlockElements Modes 0 *
+SetInheritance MCC dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
+
+AddAnimation workingdir\animations\spartan_fp\battlerifle
+
+SetField Animations[0].Weight 0.34
+SetField Animations[0].AnimationData.NextAnimation 1
+
+SetField Animations[1].Weight 0.67
+SetField Animations[1].AnimationData.NextAnimation 2
+SetField Animations[1].AnimationData.ParentAnimation 0
+
+SetField Animations[2].Weight 1
+SetField Animations[2].AnimationData.ParentAnimation 0
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |             AUTOMAG              |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\pistol\automag\animations\fp_spartan\fp_spartan.model_animation_graph
+RemoveBlockElements Animations 0 *
+RemoveBlockElements ResourceGroups 0 *
+RemoveBlockElements Modes 0 *
+SetInheritance MCC dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_spartan\fp_spartan.model_animation_graph
+
+AddAnimation workingdir\animations\spartan_fp\automag
+
+SetField Animations[0].Weight 0.34
+SetField Animations[0].AnimationData.NextAnimation 1
+
+SetField Animations[1].Weight 0.67
+SetField Animations[1].AnimationData.NextAnimation 2
+SetField Animations[1].AnimationData.ParentAnimation 0
+
+SetField Animations[2].Weight 1
+SetField Animations[2].AnimationData.ParentAnimation 0
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
+
+SetField Animations[3].PlaybackFlags DisableWeaponIk
+SetField Animations[4].PlaybackFlags DisableWeaponIk
+SetField Animations[5].PlaybackFlags DisableWeaponIk
+SetField Animations[6].PlaybackFlags DisableWeaponIk
 
 AddBlockElements Modes[0].WeaponClass[0].WeaponIk
 SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
