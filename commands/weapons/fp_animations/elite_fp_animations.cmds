@@ -641,3 +641,16 @@ SetInheritance MCC dw3\r3ach\objects\weapons\pistol\magnum\animations\fp_elite\f
 AddAnimation workingdir\animations\elite_fp\automag
 SaveTagChanges
 Exit
+
+# ------------------------------------
+# |          STANCHION RIFLE         |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\stanchion_rifle\animations\fp_elite\fp_elite.model_animation_graph
+RemoveBlockElements Animations 0 *
+RemoveBlockElements ResourceGroups 0 *
+RemoveBlockElements Modes 0 *
+SetInheritance MCC dw3\r3ach\objects\weapons\rifle\sniper_rifle\animations\fp_elite\fp_elite.model_animation_graph
+
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Label fire_2
+SaveTagChanges
+Exit

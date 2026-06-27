@@ -80,6 +80,11 @@ RunCommands workingdir\commands\weapons\port\21_reach_plasma_launcher.cmds
 RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
 
 # -----------------------------------------
+# |             OTHER WEAPONS             |
+# -----------------------------------------
+RunCommands workingdir\commands\weapons\port\23_rs_stanchion.cmds
+
+# -----------------------------------------
 # |           WEAPONS VARIANTS            |
 # -----------------------------------------
 
