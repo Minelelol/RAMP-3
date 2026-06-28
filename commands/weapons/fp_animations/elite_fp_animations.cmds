@@ -597,6 +597,64 @@ SetField Animations[16].AnimationData.FrameEvents[2].TypeED AllowInterruption
 SaveTagChanges
 Exit
 
+# ------------------------------------
+# |     LIGHT MACHINE GUN (LMG)      |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_elite\fp_elite.model_animation_graph
+SetField SoundReferences[5].Reference dw3\r3ach\sound\weapons\light_machine_gun\lmg_ready_hero.sound
+SetField SoundReferences[6].Reference dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_empty.sound
+SetField SoundReferences[7].Reference dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_full.sound
+AddAnimation Keep "workingdir\animations\elite_fp\lmg"
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_elite\fp_elite.model_animation_graph
+SortModes
+
+# MELEE STRIKE 2
+SetField Animations[6].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+
+# FIRE 1
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
+SetField Animations[0].AnimationData.NextAnimation 1
+SetField Animations[1].AnimationData.ParentAnimation 0
+SetField Animations[1].AnimationData.NextAnimation 2
+SetField Animations[2].AnimationData.ParentAnimation 0
+
+# POSING
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[6].Animation 10
+SetField Animations[10].AnimationData.NextAnimation 11
+SetField Animations[11].AnimationData.ParentAnimation 10
+SetField Animations[11].PlaybackFlags DisableWeaponIk
+
+# READY
+SetField Animations[13].Weight 0
+SetField Animations[13].AnimationData.NextAnimation -1
+
+# RELOAD EMPTY
+SetField Animations[15].AnimationData.InternalFlags CompressionDisabled
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[15].AnimationData.FrameEvents[0].TypeED PrimaryKeyframe
+SetField Animations[15].AnimationData.FrameEvents[0].Frame 97
+SetField Animations[15].AnimationData.FrameEvents[1].TypeED AllowInterruption
+SetField Animations[15].AnimationData.FrameEvents[1].Frame 110
+
+# RELOAD FULL
+SetField Animations[16].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[16].AnimationData.FrameEvents[0].TypeED PrimaryKeyframe
+SetField Animations[16].AnimationData.FrameEvents[0].Frame 77
+SetField Animations[16].AnimationData.FrameEvents[1].TypeED AllowInterruption
+SetField Animations[16].AnimationData.FrameEvents[1].Frame 90
+
+# SPRINT EXIT
+SetField Animations[24].PlaybackFlags DisableWeaponIk
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand_elite
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_elite_fp
+SaveTagChanges
+Exit
+
 # -----------------------------------------------
 # |          SET INHERITANCE ANIMATION          |
 # -----------------------------------------------

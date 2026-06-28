@@ -202,7 +202,7 @@ SetField Animations[3].PlaybackFlags DisableWeaponIk
 SetField Animations[6].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
 SetField Animations[7].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
 SetField Animations[10].PlaybackFlags DisableWeaponIk
-setfield Animations[11].PlaybackFlags ForceWeaponIkOn
+SetField Animations[11].PlaybackFlags ForceWeaponIkOn
 SetField Animations[12].PlaybackFlags DisableWeaponIk
 SetField Animations[13].PlaybackFlags DisableWeaponIk
 SetField Animations[16].PlaybackFlags DisableWeaponIk
@@ -690,6 +690,64 @@ SetField Animations[15].AnimationData.FrameEvents[2].TypeED AllowInterruption
 
 SetField Animations[16].AnimationData.FrameEvents[1].TypeED SecondaryKeyframe
 SetField Animations[16].AnimationData.FrameEvents[2].TypeED AllowInterruption
+
+AddBlockElements Modes[0].WeaponClass[0].WeaponIk
+SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand
+SetField Modes[0].WeaponClass[0].WeaponIk[0].AttachToMarker mineleloldabest_left_hand_spartan_fp
+SaveTagChanges
+Exit
+
+# ------------------------------------
+# |     LIGHT MACHINE GUN (LMG)      |
+# ------------------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField SoundReferences[5].Reference dw3\r3ach\sound\weapons\light_machine_gun\lmg_ready_hero.sound
+SetField SoundReferences[6].Reference dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_empty.sound
+SetField SoundReferences[7].Reference dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_full.sound
+AddAnimation Keep "workingdir\animations\spartan_fp\lmg"
+SaveTagChanges
+Exit
+
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_spartan\fp_spartan.model_animation_graph
+SortModes
+
+# FIRE 1
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[0].Animation 0
+SetField Animations[0].AnimationData.NextAnimation 1
+SetField Animations[1].AnimationData.ParentAnimation 0
+SetField Animations[1].AnimationData.NextAnimation 2
+SetField Animations[2].AnimationData.ParentAnimation 0
+
+# POSING
+SetField Modes[0].WeaponClass[0].WeaponType[0].Set.Actions[6].Animation 9
+SetField Animations[9].AnimationData.NextAnimation 10
+SetField Animations[10].AnimationData.ParentAnimation 9
+SetField Animations[10].PlaybackFlags DisableWeaponIk
+
+# READY INITIAL
+SetField Animations[12].Weight 0.6
+SetField Animations[12].AnimationData.NextAnimation 13
+
+SetField Animations[13].Weight 1
+SetField Animations[13].AnimationData.ParentAnimation 12
+SetField Animations[13].PlaybackFlags DisableWeaponAim1stPerson,ForceWeaponIkOn
+
+# RELOAD EMPTY-FULL
+SetField Animations[14].AnimationData.InternalFlags CompressionDisabled
+SetField Animations[14].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[14].AnimationData.FrameEvents[0].TypeED PrimaryKeyframe
+SetField Animations[14].AnimationData.FrameEvents[0].Frame 97
+SetField Animations[14].AnimationData.FrameEvents[1].TypeED AllowInterruption
+SetField Animations[14].AnimationData.FrameEvents[1].Frame 110
+
+SetField Animations[15].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
+SetField Animations[15].AnimationData.FrameEvents[0].TypeED PrimaryKeyframe
+SetField Animations[15].AnimationData.FrameEvents[0].Frame 77
+SetField Animations[15].AnimationData.FrameEvents[1].TypeED AllowInterruption
+SetField Animations[15].AnimationData.FrameEvents[1].Frame 90
+
+# SPRINT EXIT
+SetField Animations[23].PlaybackFlags DisableWeaponIk
 
 AddBlockElements Modes[0].WeaponClass[0].WeaponIk
 SetField Modes[0].WeaponClass[0].WeaponIk[0].Marker left_hand

@@ -8,6 +8,7 @@ SetString english offset_plasma_repeater "PLASMA REPEATER"
 SetString english offset_plasma_launcher "PLASMA LAUNCHER"
 SetString english offset_automag "AUTOMAG"
 SetString english offset_stanchion "STANCHION"
+SetString english offset_lmg "LMG"
 SaveTagChanges
 Exit
 
@@ -161,5 +162,13 @@ EditTag objects\weapons\support_high\stanchion\stanchion.weapon
 SetField FirstPersonWeaponOffset 0.0225 0 -0.008
 SetField CenteredFirstPersonWeaponOffset 0.025 0 -0.025
 SetField WeaponTypeName offset_stanchion
+SaveTagChanges
+Exit
+
+StringId Add offset_lmg
+EditTag potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun.weapon
+SetField FirstPersonWeaponOffset 0.04 0 -0.01
+SetField CenteredFirstPersonWeaponOffset 0.04 0 -0.015
+SetField WeaponTypeName offset_lmg
 SaveTagChanges
 Exit

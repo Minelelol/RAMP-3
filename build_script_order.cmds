@@ -83,6 +83,7 @@ RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
 # |             OTHER WEAPONS             |
 # -----------------------------------------
 RunCommands workingdir\commands\weapons\port\23_rs_stanchion.cmds
+RunCommands workingdir\commands\weapons\port\24_skaboodle_lmg.cmds
 
 # -----------------------------------------
 # |           WEAPONS VARIANTS            |
