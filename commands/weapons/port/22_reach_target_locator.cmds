@@ -246,8 +246,8 @@ Exit
 # ------------------------
 EditTag sound\dialog\target_laser\targeted.sound
 SetField SoundClass UnitDialog
-SetField Playback.DistanceParameters.MinimumDistance 1
-SetField Playback.DistanceParameters.MaximumDistance 75
+SetField Playback.DistanceParameters.MinimumDistance 1.5
+SetField Playback.DistanceParameters.MaximumDistance 90
 SaveTagChanges
 Exit
 

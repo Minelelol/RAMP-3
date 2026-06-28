@@ -164,4 +164,24 @@ NameBlamTag objects\weapons\support_high\stanchion\fp_stanchion\fp_stanchion_eli
 PortTag objects\weapons\support_high\stanchion\stanchion.weapon
 Exit
 
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag dw3\r3ach\sound\weapons\sniper_rifle\sniper_fire_reach.sound
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,Bit4
+SetField Playback.DistanceParameters.MinimumDistance 6
+SetField Playback.DistanceParameters.MaximumDistance 65
+SaveTagChanges
+Exit
+
+EditTag sound\weapons\stanchion\stanchion_fire_lod.sound
+SetField Playback.FieldDisableFlags Bit4
+SetField Playback.DistanceParameters.DontPlayDistance 6
+SetField Playback.DistanceParameters.AttackDistance 45
+SetField Playback.DistanceParameters.MinimumDistance 50
+SetField Playback.DistanceParameters.MaximumDistance 250
+SetField Playback.GainBase 5
+SaveTagChanges
+Exit
+
 AddForgeItem stanchion 1 objects\weapons\support_high\stanchion\stanchion.weapon
