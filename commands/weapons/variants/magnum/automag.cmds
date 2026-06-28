@@ -44,7 +44,7 @@ EditTag objects\weapons\pistol\automag\shaders\automag_illum.shader
 SetBitmap base_map objects\weapons\pistol\automag\bitmaps\automag_illum.bitmap
 SetBitmap alpha_test_map objects\weapons\pistol\automag\bitmaps\automag_illum.bitmap
 SetBitmap self_illum_map objects\weapons\pistol\automag\bitmaps\automag_illum.bitmap
-SetArgument self_illum_color 0.2039216 0.91372555 0.2039216
+SetArgument self_illum_color 0.1039216 0.45137256 0.1039216
 SaveTagChanges
 Exit
 
