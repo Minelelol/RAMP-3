@@ -376,6 +376,9 @@ SetField Boost.BoostDeadTime 0.1
 ###############
 # PHYSICS TYPE
 ###############
+SetField PhysicsTypes.AlienScout[0].VelocityControl.MaximumLeftSlide 2.6
+SetField PhysicsTypes.AlienScout[0].VelocityControl.MaximumRightSlide 2.6
+
 SetField PhysicsTypes.AlienScout[0].SpecificType Ghost
 # SetField PhysicsTypes.AlienScout[0].TorqueScale 1
 
