@@ -255,7 +255,7 @@ SetField Model dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.model
 SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.render_model
 SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_spartan\fp_spartan.model_animation_graph
 SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\dmr_power\dmr_power.render_model
-SetField FirstPerson[1].FirstPersonAnimations objects\characters\dervish\fp\weapons\rifle\fp_battle_rifle\fp_battle_rifle.model_animation_graph
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\dmr\animations\fp_elite\fp_elite.model_animation_graph
 SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\dmr_power\firing.effect
 SaveTagChanges
 Exit
