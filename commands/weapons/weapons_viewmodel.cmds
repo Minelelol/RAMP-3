@@ -9,6 +9,7 @@ SetString english offset_plasma_launcher "PLASMA LAUNCHER"
 SetString english offset_automag "AUTOMAG"
 SetString english offset_stanchion "STANCHION"
 SetString english offset_lmg "LMG"
+SetString english offset_golf_club "GOLF CLUB"
 SaveTagChanges
 Exit
 
@@ -99,56 +100,56 @@ SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
 SaveTagChanges
 Exit
 
-StringId Add offset_target_laser
+# StringId Add offset_target_laser
 EditTag objects\weapons\pistol\target_laser\target_laser.weapon
 SetField WeaponTypeName offset_target_laser
 SetField CenteredFirstPersonWeaponOffset 0 0 -0.02
 SaveTagChanges
 Exit
 
-StringId Add offset_concussion_rifle
+# StringId Add offset_concussion_rifle
 EditTag objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
 SetField WeaponTypeName offset_concussion_rifle
 SetField CenteredFirstPersonWeaponOffset -0.01 0 -0.01
 SaveTagChanges
 Exit
 
-StringId Add offset_focus_rifle
+# StringId Add offset_focus_rifle
 EditTag objects\weapons\rifle\focus_rifle\focus_rifle.weapon
 SetField WeaponTypeName offset_focus_rifle
 SetField CenteredFirstPersonWeaponOffset -0.02 0 -0.01
 SaveTagChanges
 Exit
 
-StringId Add offset_grenade_launcher
+# StringId Add offset_grenade_launcher
 EditTag objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
 SetField WeaponTypeName offset_grenade_launcher
 SetField CenteredFirstPersonWeaponOffset -0.01 0 -0.01
 SaveTagChanges
 Exit
 
-StringId Add offset_needle_rifle
+# StringId Add offset_needle_rifle
 EditTag objects\weapons\rifle\needle_rifle\needle_rifle.weapon
 SetField WeaponTypeName offset_needle_rifle
 SetField CenteredFirstPersonWeaponOffset -0.015 -0.003 -0.01
 SaveTagChanges
 Exit
 
-StringId Add offset_plasma_repeater
+# StringId Add offset_plasma_repeater
 EditTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
 SetField WeaponTypeName offset_plasma_repeater
 SetField CenteredFirstPersonWeaponOffset 0 -0.005 -0.01
 SaveTagChanges
 Exit
 
-StringId Add offset_plasma_launcher
+# StringId Add offset_plasma_launcher
 EditTag objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
 SetField WeaponTypeName offset_plasma_launcher
 SetField CenteredFirstPersonWeaponOffset 0 0 -0.005
 SaveTagChanges
 Exit
 
-StringId Add offset_automag
+# StringId Add offset_automag
 EditTag objects\weapons\pistol\automag\automag.weapon
 SetField FirstPersonWeaponOffset -0.04 0 -0.0075
 SetField SupportThirdPersonCameraRange 0 0
@@ -157,7 +158,7 @@ SetField WeaponTypeName offset_automag
 SaveTagChanges
 Exit
 
-StringId Add offset_stanchion
+# StringId Add offset_stanchion
 EditTag objects\weapons\support_high\stanchion\stanchion.weapon
 SetField FirstPersonWeaponOffset 0.0225 0 -0.008
 SetField CenteredFirstPersonWeaponOffset 0.025 0 -0.025
@@ -165,10 +166,16 @@ SetField WeaponTypeName offset_stanchion
 SaveTagChanges
 Exit
 
-StringId Add offset_lmg
+# StringId Add offset_lmg
 EditTag potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun.weapon
 SetField FirstPersonWeaponOffset 0.04 0 -0.01
 SetField CenteredFirstPersonWeaponOffset 0.04 0 -0.015
 SetField WeaponTypeName offset_lmg
+SaveTagChanges
+Exit
+
+EditTag objects\levels\shared\golf_club\golf_club.weapon
+SetField WeaponTypeName offset_golf_club
+SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
 SaveTagChanges
 Exit

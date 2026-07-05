@@ -11,6 +11,7 @@ GenerateBitmap objects\weapons\rifle\battle_rifle\bitmaps\br_carry_normal workin
 DuplicateTag objects\weapons\rifle\dmr\shaders\dmr_lens.shader objects\weapons\rifle\battle_rifle\shaders\br_lens
 EditTag objects\weapons\rifle\battle_rifle\shaders\br_lens.shader
 SetArgument albedo_color 0.09411765 0.09411765 0.5921569 0.5
+SetArgument specular_coefficient 0.5
 SetArgument specular_tint 0.41560864 0.53735644 1
 SetArgument fresnel_color 0.0627451 0.15294118 0.48627454
 SetArgument area_specular_contribution 0.05

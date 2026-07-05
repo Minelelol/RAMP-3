@@ -160,7 +160,7 @@ SetArgument neutral_gray 1 1 1
 SetArgument bump_map 1 1 0 0
 SetArgument diffuse_coefficient 1 1 1 1
 SetArgument specular_color_by_angle 0 0 0 0
-SetArgument specular_coefficient 1 1 1 1
+SetArgument specular_coefficient 0.75 0.75 0.75 0.75
 SetArgument specular_tint 2 2 0
 SetArgument fresnel_color 0.08235294 0.08235294 0.039215688
 SetArgument fresnel_curve_steepness 0.1 0.1 0.1 0.1

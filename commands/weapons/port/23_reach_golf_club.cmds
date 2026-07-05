@@ -1,0 +1,95 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\hammer.chud_definition ui\chud\golf_club
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+# Porting this from base xbox 360 leads to invalid dimension warning thus increasing the resource size
+OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
+PortTag objects\levels\shared\bitmaps\gpga_logo.bitmap
+Exit
+
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+RunCommands workingdir\commands\reach_particles_physics.cmds
+
+PortTag objects\levels\shared\golf_club\shaders\golf_club_leather.shader
+PortTag objects\levels\shared\golf_club\shaders\golf_club_metal.shader
+PortTag objects\levels\shared\shaders\decal.shader
+
+PortTag objects\levels\shared\golf_club\golf_club.physics_model
+PortTag objects\levels\shared\golf_club\golf_club.collision_model
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode dw3\r3ach\objects\levels\shared\golf_club\golf_club
+ImportTag dw3\r3ach\objects\levels\shared\golf_club\golf_club.render_model workingdir\tags\weapons\VKMT\gravity_hammer.render_model
+EditTag dw3\r3ach\objects\levels\shared\golf_club\golf_club.render_model
+
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 3
+SetField Materials[0].RenderMethod objects\levels\shared\golf_club\shaders\golf_club_leather.shader
+SetField Materials[1].RenderMethod objects\levels\shared\golf_club\shaders\golf_club_metal.shader
+SetField Materials[2].RenderMethod objects\levels\shared\shaders\decal.shader
+
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\GOLF\golf_club.fbx TriangleStrip
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation -0.005 0.003 -0.10795
+SetField MarkerGroups[*].Markers[*].Rotation 0.085 0.1152 0.4 -0.763
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation -0.0075 0.0075 -0.1118
+SetField MarkerGroups[*].Markers[*].Rotation 0.05 0.08 0.38 -0.91
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      COLL n PHMO     |
+# ------------------------
+ForEach coll named: objects\levels\shared\golf_club\golf_club SetField Nodes[0].Name hammer
+ForEach phmo named: objects\levels\shared\golf_club\golf_club SetField Nodes[0].Name hammer
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\melee\gravity_hammer\gravity_hammer.model dw3\r3ach\objects\levels\shared\golf_club\golf_club
+EditTag dw3\r3ach\objects\levels\shared\golf_club\golf_club.model
+SetField RenderModel dw3\r3ach\objects\levels\shared\golf_club\golf_club.render_model
+SetField CollisionModel objects\levels\shared\golf_club\golf_club.collision_model
+SetField PhysicsModel objects\levels\shared\golf_club\golf_club.physics_model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+DuplicateTag objects\weapons\melee\gravity_hammer\gravity_hammer.weapon objects\levels\shared\golf_club\golf_club
+
+EditTag objects\levels\shared\golf_club\golf_club.weapon
+RemoveBlockElements Attachments 0 *
+
+SetField Model dw3\r3ach\objects\levels\shared\golf_club\golf_club.model
+ForEach FirstPerson SetField FirstPersonModel dw3\r3ach\objects\levels\shared\golf_club\golf_club.render_model
+SetField HudInterface ui\chud\golf_club.chud_definition
+
+# Damage lunge (Don't actually know what this do)
+SetField MeleeDamageParameters.LungeMeleeResponse globals\trigger_lunge.damage_effect
+SaveTagChanges
+Exit
+
+AddForgeItem "GOLF CLUB" 1 objects\levels\shared\golf_club\golf_club.weapon

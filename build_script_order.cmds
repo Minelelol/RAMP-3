@@ -78,12 +78,13 @@ RunCommands workingdir\commands\weapons\port\19_reach_needle_rifle.cmds
 RunCommands workingdir\commands\weapons\port\20_reach_plasma_repeater.cmds
 RunCommands workingdir\commands\weapons\port\21_reach_plasma_launcher.cmds
 RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
+RunCommands workingdir\commands\weapons\port\23_reach_golf_club.cmds
 
 # -----------------------------------------
 # |             OTHER WEAPONS             |
 # -----------------------------------------
-RunCommands workingdir\commands\weapons\port\23_rs_stanchion.cmds
-RunCommands workingdir\commands\weapons\port\24_skaboodle_lmg.cmds
+RunCommands workingdir\commands\weapons\port\24_rs_stanchion.cmds
+RunCommands workingdir\commands\weapons\port\25_skaboodle_lmg.cmds
 
 # -----------------------------------------
 # |           WEAPONS VARIANTS            |

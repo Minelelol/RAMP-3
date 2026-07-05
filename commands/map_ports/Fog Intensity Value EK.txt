@@ -1,0 +1,259 @@
+FOG INTENSITY VALUE FROM THE EK
+To apply the intensity value to the skya tag, multiply the intensity type from below by 3.3
+Example forge halo sky intensity = 1.5 * 3.3 = 4.95
+
+20_sword_slayer
+Sky		= 0.5
+Ground	= 0.4
+
+30_settlement_level
+Sky		= 0.75
+Ground	= 1.0
+
+35_island_level
+Sky		= 0.3
+Ground	= 0.8
+
+50_panopticon_light_rain
+Sky		= 0.5
+Ground	= 1.0
+
+52_ivory
+Sky		= 0.5
+Ground	= 0.6
+
+70_boneyard_heavy_rain
+Sky		= 0.15
+Ground	= 1.1
+
+ca_headlong
+Sky		= 0.7
+Ground	= 1.0
+
+cex_beaver_creek
+Sky		= 1.
+Ground	= 0.5
+
+cex_damnation
+Sky		= 0.5
+Ground	= 40.0
+
+cex_ff_halo
+Sky		= 0.6
+Ground	= 0.6
+
+cex_headlong
+Sky		= 0.5
+Ground	= 1.0
+
+cex_prisoner
+Sky		= 1.0
+Ground	= 1.0
+
+cin_50_landing
+Sky		= 0.2
+Ground	= 0.3
+
+condemned_fog
+Sky		= 0.5
+Ground	= 2.0
+
+dlc_invasion_interiors
+Sky		= 0.1
+Ground	= 1.0
+
+dlc_invasion_light_rain
+Sky		= 0.3
+Ground	= 5.0
+
+dlc_medium
+Sky		= 0.3
+Ground	= 1.0
+
+dlc_medium_interior
+Sky		= 1.5
+Ground	= 2.0
+
+dlc_slayer
+Sky		= 0.3
+Ground	= 0.0
+
+dlc_slayer_exterior
+Sky		= 0.3
+Ground	= 0.0
+
+ff30
+Sky		= 0.1
+Ground	= 1.0
+
+forge_halo
+Sky		= 1.5
+Ground	= 2.0
+
+m10_cinematic_opening
+Sky		= 0.1
+Ground	= 0.7
+
+m10_level
+Sky		= 0.2
+Ground	= 0.1
+
+m10_outpost_interior
+Sky		= 0.1
+Ground	= 0.07
+
+m10_waterfall_fog
+Sky		= 0.3
+Ground	= 3.0
+
+m20_light_rain
+Sky		= 0.3
+Ground	= 0.5
+
+m30_45_night
+Sky		= 0.1
+Ground	= 0.2
+
+m30_night
+Sky		= 0.1
+Ground	= 0.3
+
+m35_level
+Sky		= 0.15
+Ground	= 0.4
+
+m45_aftship
+Sky		= 0.5
+Ground	= 0.3
+
+m45_bridge
+Sky		= 0.3
+Ground	= 0.01
+
+m45_gunroom
+Sky		= 0.5
+Ground	= 0.3
+
+m45_hall
+Sky		= 0.5
+Ground	= 0.3
+
+m45_hanger
+Sky		= 0.5
+Ground	= 0.3
+
+m45_sky_black_ship
+Sky		= 0.3
+Ground	= 1.0
+
+m45_sky_clouds
+Sky		= 0.5
+Ground	= 0.3
+
+m45_sky_corvette
+Sky		= 0.3
+Ground	= 0.0
+
+m45_sky_crater
+Sky		= 1.0
+Ground	= 1.0
+
+m45_sky_mission (multi)
+Sky		= 0.3
+Ground	= 0.0
+
+m45_sky_mission (solo)
+Sky		= 0.3
+Ground	= 0.4
+
+m45_sky_mission_multiplayer
+Sky		= 0.3
+Ground	= 1.0
+
+m45_sky_orbit
+Sky		= 0.2
+Ground	= 0.7
+
+m45_sky_wafer
+Sky		= 0.3
+Ground	= 0.0
+
+m60_forerunner
+Sky		= 0.25
+Ground	= 0.05
+
+m60_glacier_explosion
+Sky		= 0.6
+Ground	= 1.0
+
+m60_ice
+Sky		= 0.5
+Ground	= 0.5
+
+m60_inferno
+Sky		= 0.05
+Ground	= 0.1
+
+m60_interior
+Sky		= 0.05
+Ground	= 0.1
+
+m60_interior_tunnel
+Sky		= 0.1
+Ground	= 0.0
+
+m70_bonus
+Sky		= 0.5
+Ground	= 0.7
+
+m70_credits
+Sky		= 1.0
+Ground	= 0.5
+
+m70_epilogue
+Sky		= 1.0
+Ground	= 1.0
+
+m70_game_over
+Sky		= 0.1
+Ground	= 0.1
+
+m70_heavy_rain
+Sky		= 0.14
+Ground	= 0.1
+
+m70_interior
+Sky		= 0.14
+Ground	= 0.1
+
+mission_50_light_rain
+Sky		= 0.2
+Ground	= 0.5
+
+mission_52_cine_bunker
+Sky		= 0.25
+Ground	= 0.2
+
+mission_52_club
+Sky		= 0.5
+Ground	= 0.3
+
+mission_52_light_rain
+Sky		= 0.25
+Ground	= 0.2
+
+preserve_fog
+Sky		= 5
+Ground	= 0.2
+
+timberland_atmosphere_fog
+Sky		= 0.5
+Ground	= 1.0
+
+unearthed_sky_mid_day
+Sky		= 1.0
+Ground	= 1.0
+
+unearthed_sky_mid_day_none
+Sky		= 0.5
+Ground	= 1.0
