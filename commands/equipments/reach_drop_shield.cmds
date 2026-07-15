@@ -1,0 +1,161 @@
+GenerateBitmap fx\particles\models\equipment\drop_shield\bitmaps\drop_shield_distortion workingdir\bitmaps\Equipments\drop_shield_distortion.dds Unknown
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+PortTag objects\equipment\equipment_pack\bitmaps\unsc_equipment_drop_holo_icon_dropshield.bitmap
+PortTag camera\biped_drop_shield_camera.camera_track
+PortTag objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.equipment
+PortTag sound\weapons\equipment\drop_shield\shield_deploy.effect
+PortTag objects\equipment\drop_shield\fx\active_rumble.effect
+
+PortTag objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.equipment
+PortTag fx\shield_impacts\drop_shield.shield_impact
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\equipment\drop_shield\drop_shield_shield\shaders\drop_shield.shader_halogram
+SetField ShaderProperties[0].Functions[4].Function.Data 08340000000000009A99193E00000000000000006F12833A6F12033B28000000010000000A0000CDFFFF7F7FEC51F8BE7B14BE3F0000000000000000000000000000803F5FDEC33F
+SetField SortLayer PostPass
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      LENS FLARE      |
+# ------------------------
+DuplicateTag objects\equipment\concussiveblast_equipment\fx\concussiveblast_equipment_lens_flare.lens_flare objects\equipment\drop_shield_equipment\fx\drop_shield_equipment_lens_flare
+EditTag objects\equipment\drop_shield_equipment\fx\drop_shield_equipment_lens_flare.lens_flare
+SetField Bitmap objects\equipment\equipment_pack\bitmaps\unsc_equipment_drop_holo_icon_dropshield.bitmap
+SetField Reflections[0].TintColor 0.29 0.5 0.99
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag sound\weapons\equipment\drop_shield\shield_deploy.effect
+SetField Flags Deterministic,UnknownHO
+SetField Locations[0].MarkerName left_foot
+SetField Locations[0].Priority Essential
+
+SetField Events[0].DelayBounds 0.6 0.6
+
+SetField Events[0].Parts[0].Priority Essential
+SetField Events[0].Parts[0].SecondaryLocation -1
+SetField Events[0].Parts[0].RuntimeBaseGroupTag obje
+SetField Events[0].Parts[0].Type objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.equipment
+
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\drop_shield\fx\activate.effect
+AddBlockElements Events[0].Parts
+SetField Events[0].Parts[4].SecondaryLocation -1
+SetField Events[0].Parts[4].RuntimeBaseGroupTag shit
+SetField Events[0].Parts[4].Type fx\shield_impacts\drop_shield.shield_impact
+
+# Fade in/out effect for the interior particle
+CopyBlockElements Events[1].ParticleSystems 1 1
+RemoveBlockElements Events[1].ParticleSystems 2 *
+PasteBlockElements Events[1].ParticleSystems
+
+SetField Events[1].ParticleSystems[2].Particle objects\equipment\drop_shield\fx\particles\drop_shield_distortion_interior.particle
+SetField Events[1].ParticleSystems[2].NearCutoff -5
+SetField Events[1].ParticleSystems[2].NearFadeOverride -5
+SetField Events[1].ParticleSystems[2].LodInDistance 0
+SetField Events[1].ParticleSystems[2].LodOutDistance 2.1
+SetField Events[1].ParticleSystems[2].LodFeatherOutDelta 0.1
+SetField Events[1].ParticleSystems[2].InverseLodFeatherOut 10
+
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\drop_shield\fx\active.effect
+AddBlockElements Events[1].Parts
+SetField Events[1].Parts[1].SecondaryLocation -1
+SetField Events[1].Parts[1].Flags CreateEvenWhenEventLoopsBackToSelf
+SetField Events[1].Parts[1].Priority Essential
+SetField Events[1].Parts[1].RuntimeBaseGroupTag shit
+SetField Events[1].Parts[1].Type fx\shield_impacts\drop_shield.shield_impact
+
+SetField Events[1].ParticleSystems[2].LodOutDistance 2.1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     PHYSICS MODEL    |
+# ------------------------
+DuplicateTag objects\equipment\regenerator\regenerator.physics_model objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield
+EditTag objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.physics_model
+SetField RigidBodies[0].MotionType Fixed
+SetField Spheres[0].ShapeBase.Radius 1.1
+SetField Spheres[0].ConvexBase.Radius 1.1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.model
+SetField PhysicsModel objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.physics_model
+
+SetField NewDamageInfo[0].MaximumVitality 1
+SetField NewDamageInfo[0].RechargeFraction 1
+SetField NewDamageInfo[0].MaxShieldVitality 300
+SetField NewDamageInfo[0].DamageSections[0].Flags AbsorbsBodyDamage,TakesFullDamageWhenObjectDies,TakesFullDamageWhenShieldDepleted,AllowDamageResponseOverflow
+# SetField ShieldImpactThirdPerson fx\shield_impacts\drop_shield.shield_impact
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       EQUIPMENT      |
+# ------------------------
+DuplicateTag objects\equipment\concussiveblast_equipment\concussiveblast_equipment.equipment objects\equipment\drop_shield\drop_shield
+EditTag objects\equipment\drop_shield\drop_shield.equipment
+SetField Attachments[0].Type objects\equipment\drop_shield_equipment\fx\drop_shield_equipment_lens_flare.lens_flare
+
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.29 0.5 0.99
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.29 0.5 0.99
+
+SetField Duration 0.6
+SetField EquipmentFlags ThirdPersonCameraAlways,HidesWeaponOnActivation,CannotActivateWhileAirborne
+
+RemoveBlockElements ConcussiveBlast 0 *
+AddBlockElements TankMode
+
+SetField ActivateSound sound\weapons\equipment\drop_shield\deploy_shield.sound
+SetField ActivateEffect sound\weapons\equipment\drop_shield\shield_deploy.effect
+SetField RunningEffect objects\equipment\drop_shield\fx\active_rumble.effect
+
+SetField ActivationAnimation armor_lock_enter
+SetField DeactivateAnimation armor_lock_exit
+
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.equipment
+SetField ItemFlags.Flags CrateStyleCollisionFilter
+SetField Duration 15
+SetField Charges 0
+SetField EquipmentFlags ProtectsParentFromAoe
+SaveTagChanges
+Exit
+
+# ------------------------
+# |          HUD         |
+# ------------------------
+StringId Add drop_shield
+EditTag multiplayer\multiplayer_globals.multiplayer_globals
+AddBlockElements Universal[0].Equipment
+SetField Universal[0].Equipment[*].Name drop_shield
+SetField Universal[0].Equipment[*].Object objects\equipment\drop_shield\drop_shield.equipment
+SetField Universal[0].Equipment[*].Type 29
+SaveTagChanges
+Exit
+
+AddForgeItem "DROP SHIELD" 1 objects\equipment\drop_shield\drop_shield.equipment

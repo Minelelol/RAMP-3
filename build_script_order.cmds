@@ -135,6 +135,32 @@ RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds
 RunCommands workingdir\commands\weapons\weapons_viewmodel.cmds
 
 # -----------------------------------------
+# |           REACH EQUIPMENTS            |
+# -----------------------------------------
+EditTag ui\chud\bitmaps\consumable_scematics.bitmap
+
+# Has to be ARGB8 otherwise the drop shield will have horrible blocking effect
+ImportBitmap 1 workingdir\bitmaps\HUD\consumable\consumable_scematics.dds
+
+# Vision
+SetField Sequences[15].Sprites[0].BitmapIndex 1
+
+# Drop Shield (Index 29)
+AddBlockElements Sequences
+AddBlockElements Sequences[*].Sprites
+SetField Sequences[*].Sprites[0].BitmapIndex 1
+SetField Sequences[*].Sprites[0].Left 0
+SetField Sequences[*].Sprites[0].Right 0.15625
+SetField Sequences[*].Sprites[0].Top 0.46875
+SetField Sequences[*].Sprites[0].Bottom 0.625
+SetField Sequences[*].Sprites[0].RegistrationPoint 0.078125 0.15625
+SaveTagChanges
+Exit
+
+RunCommands workingdir\commands\equipments\reach_health_pack.cmds
+RunCommands workingdir\commands\equipments\reach_drop_shield.cmds
+
+# -----------------------------------------
 # |            REACH VEHICLES             |
 # -----------------------------------------
 GenerateBitmap sequence reach\ui\chud\bitmaps\hud_vehicle_reticles workingdir\bitmaps\HUD\reach_vehicle_hud

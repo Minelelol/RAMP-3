@@ -11,10 +11,6 @@ RunCommands workingdir\commands\reach_globals.cmds
 RunCommands workingdir\commands\reach_particles_physics.cmds
 
 CS < workingdir\commands\map_ports\ignorescriptsource.cs
-
-NameBlamTag levels\shared\decals\signage\human\industrial\macro\stripe_single_factory_yellow.decal_system BEGONEYELLOWSTRIPE
-IgnoreBlamTag BEGONEYELLOWSTRIPE.decal_system
-
 PortTag !Scripts !UpdateMapFiles *.scnr
 Exit
 
@@ -44,37 +40,7 @@ Exit
 # |        FOG/FX        |
 # ------------------------
 EditTag levels\multi\50_panopticon\50_panopticon.sky_atm_parameters
-SetField AtmosphereSettings[0].Color 0.6784314 0.521058 0.36862746
-SetField AtmosphereSettings[0].Intensity 1.5
-SetField AtmosphereSettings[0].SeaLevel 60
-SetField AtmosphereSettings[0].DistanceBias -41
-SetField AtmosphereSettings[0].MaxFogThickness 6000
-SetField AtmosphereSettings[0].BetaM 0.015 0.015 0.015
-SetField AtmosphereSettings[0].BetaP 0.010214623 0.011460077 0.013795268
-SetField AtmosphereSettings[0].BetaMThetaPrefix 0.0001 0.0001 0.0001
-# SetField AtmosphereSettings[0].BetaPThetaPrefix 0.000334733 0.0004336488 0.0006244543
-SaveTagChanges
-Exit
-
-# ------------------------
-# |        DECALS        |
-# ------------------------
-# Decals Location = sbsp Decals Runtime
-# Decals Index = scnr Decals Palette
-# Decals Scale = decs Radius
-
-EditTag levels\shared\decals\signage\human\urban\macro\m50_sign_logotext_city_small.decal_system
-SetField Decal[0].Radius 0.14779955 0.14779955
-SaveTagChanges
-Exit
-
-EditTag levels\shared\decals\weathering\damage\melted\melted_plasmasword.decal_system
-SetField Decal[0].Radius 0.91409314 0.91409314
-SaveTagChanges
-Exit
-
-EditTag levels\multi\50_panopticon\bsp01.scenario_structure_bsp
-SetField RuntimeDecals[217].PaletteIndex 97
+SetField AtmosphereSettings[0].Intensity 0.75
 SaveTagChanges
 Exit
 

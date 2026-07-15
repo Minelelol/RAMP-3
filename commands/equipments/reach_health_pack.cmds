@@ -1,0 +1,53 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+PortTag objects\levels\shared\device_controls\health_station\health_station.device_control
+Exit
+
+OpenCacheFile MCCdir\halo3odst\maps\c100.map
+PortTag objects\powerups\health_pack\fx\activate_large.effect
+PortTag single objects\powerups\health_pack\health_pack_large.equipment
+Exit
+
+# ------------------------
+# |       EQUIPMENT      |
+# ------------------------
+EditTag objects\powerups\health_pack\health_pack_large.equipment
+SetField ObjectFlags DoesNotCollideWithCamera
+SetField BoundingRadius 0.25
+SetField BoundingOffset 0 0 0.075
+SetField AccelerationScale 0
+
+SetField Model objects\equipment\health_pack\health_pack.model
+
+AddBlockElements MultiplayerObject
+SetField MultiplayerObject[0].SpawnTimerType StartsOnDisturbance
+SetField MultiplayerObject[0].DefaultSpawnTime 15
+SetField MultiplayerObject[0].DefaultAbandonTime 60
+
+SetField HealthPack[0].ShieldAmount 0
+
+SetField ActivateSound sound\game_sfx\multiplayer\pickup_health.sound
+SetField ActivateEffect objects\powerups\health_pack\fx\activate_large.effect
+SetField RunningEffect null
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        BIPEDS        |
+# ------------------------
+EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.biped
+AddBlockElements HealthPacks
+SetField HealthPacks[0].Instance objects\powerups\health_pack\health_pack_large.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\characters\elite\mp_elite\mp_elite.biped
+AddBlockElements HealthPacks
+SetField HealthPacks[0].Instance objects\powerups\health_pack\health_pack_large.equipment
+SaveTagChanges
+Exit
+
+AddForgeItem "HEALTH PACK" 1 objects\powerups\health_pack\health_pack_large.equipment
