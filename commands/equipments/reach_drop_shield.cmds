@@ -59,6 +59,18 @@ SetField Events[0].Parts[4].SecondaryLocation -1
 SetField Events[0].Parts[4].RuntimeBaseGroupTag shit
 SetField Events[0].Parts[4].Type fx\shield_impacts\drop_shield.shield_impact
 
+SetField Events[0].ParticleSystems[2].LodOutDistance 2.1
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\drop_shield\fx\active.effect
+AddBlockElements Events[1].Parts
+SetField Events[1].Parts[1].SecondaryLocation -1
+SetField Events[1].Parts[1].Flags CreateEvenWhenEventLoopsBackToSelf
+SetField Events[1].Parts[1].Priority Essential
+SetField Events[1].Parts[1].RuntimeBaseGroupTag shit
+SetField Events[1].Parts[1].Type fx\shield_impacts\drop_shield.shield_impact
+
 # Fade in/out effect for the interior particle
 CopyBlockElements Events[1].ParticleSystems 1 1
 RemoveBlockElements Events[1].ParticleSystems 2 *
@@ -71,19 +83,6 @@ SetField Events[1].ParticleSystems[2].LodInDistance 0
 SetField Events[1].ParticleSystems[2].LodOutDistance 2.1
 SetField Events[1].ParticleSystems[2].LodFeatherOutDelta 0.1
 SetField Events[1].ParticleSystems[2].InverseLodFeatherOut 10
-
-SaveTagChanges
-Exit
-
-EditTag objects\equipment\drop_shield\fx\active.effect
-AddBlockElements Events[1].Parts
-SetField Events[1].Parts[1].SecondaryLocation -1
-SetField Events[1].Parts[1].Flags CreateEvenWhenEventLoopsBackToSelf
-SetField Events[1].Parts[1].Priority Essential
-SetField Events[1].Parts[1].RuntimeBaseGroupTag shit
-SetField Events[1].Parts[1].Type fx\shield_impacts\drop_shield.shield_impact
-
-SetField Events[1].ParticleSystems[2].LodOutDistance 2.1
 SaveTagChanges
 Exit
 

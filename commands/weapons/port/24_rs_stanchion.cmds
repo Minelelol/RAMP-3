@@ -167,7 +167,7 @@ Exit
 # ------------------------
 # |         SOUND        |
 # ------------------------
-EditTag dw3\r3ach\sound\weapons\sniper_rifle\sniper_fire_reach.sound
+EditTag sound\weapons\stanchion\stanchion_fire.sound
 SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 6
 SetField Playback.DistanceParameters.MaximumDistance 65

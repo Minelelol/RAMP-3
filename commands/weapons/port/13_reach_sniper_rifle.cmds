@@ -10,6 +10,8 @@ Exit
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 
+PortTag sound\weapons\sniper_rifle\sniper_fire_reach.sound
+
 PortTag objects\weapons\rifle\sniper_rifle\shaders\sniper_composite.shader
 PortTag objects\weapons\rifle\sniper_rifle\shaders\sniper_metal.shader
 PortTag objects\weapons\rifle\sniper_rifle\shaders\sniper_rubber.shader
@@ -100,9 +102,11 @@ IgnoreBlamTag dw3\r3ach\sound\weapons\sniper_rifle\fire_lod_far.sound
 NameBlamTag objects\weapons\rifle\sniper_rifle\sniper_rifle.weapon ifeignobsession
 NameBlamTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\sniper_rifle.weapon objects\weapons\rifle\sniper_rifle\sniper_rifle
 NameBlamTag dw3\r3ach\ui\chud\sniper_rifle.chud_definition ui\chud\sniper_rifle
-NameBlamTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\projectiles\sniper_rifle_bullet.projectile objects\weapons\rifle\sniper_rifle\projectiles\sniper_bullet
+# NameBlamTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\projectiles\sniper_rifle_bullet.projectile objects\weapons\rifle\sniper_rifle\projectiles\sniper_bullet
 NameBlamTag sound\weapons\sniper_rifle\sniper_eject.sound sound\effe\sniper_eject1
+NameBlamTag dw3\r3ach\sound\weapons\sniper_rifle\sniper_fire_reach.sound sound\weapons\sniper_rifle\sniper_fire_reach
 
+PortTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\projectiles\sniper_rifle_bullet.projectile
 PortTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\sniper_rifle.model
 PortTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
 PortTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\animations\fp_elite\fp_elite.model_animation_graph
@@ -121,19 +125,32 @@ Exit
 EditTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\firing.effect
 RemoveBlockElements Events[0].Parts 0 *
 PasteBlockElements Events[0].Parts
-SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\sniper_rifle\sniper_fire_reach.sound
+SetField Events[0].Parts[0].Type sound\weapons\sniper_rifle\sniper_fire_reach.sound
 SaveTagChanges
 Exit
 
 # ------------------------
 # |         SOUND        |
 # ------------------------
-EditTag dw3\r3ach\sound\weapons\sniper_rifle\sniper_fire_reach.sound
+EditTag sound\weapons\sniper_rifle\sniper_fire_reach.sound
 SetField ImportType SingleLayer
 SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
 SetField Playback.DistanceParameters.MinimumDistance 6
 SetField Playback.DistanceParameters.MaximumDistance 65
 SetField Playback.GainBase -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      PROJECTILE      |
+# ------------------------
+# Fix over penetration on reforge block default collision
+EditTag dw3\r3ach\objects\weapons\rifle\sniper_rifle\projectiles\sniper_rifle_bullet.projectile
+SetField Flags TravelsInstantaneously,RC1OverpenetrationFixes
+SetField MaterialResponses[5].DefaultResponse ImpactDetonate
+SetField MaterialResponses[5].PotentialResponse Overpenetrate
+SetField MaterialResponses[5].ResponseFlags OnlyAgainstUnits
+SetField MaterialResponses[5].ChanceFraction 1
 SaveTagChanges
 Exit
 
