@@ -31,5 +31,5 @@ Put all generate shader commannd into one script and make them as a setvariable 
 # |          TODO          |
 # --------------------------
 Put all of the variants model into one model (could save another 6-8mb of compressed resource)
-Reconvert all of the lightmap caches 
-|-> trainingpreserve DONE
+Put Shade prize; Hayabusa helmet (Armor or Plushie) with the decal that says "Shade sucks" on the back
+Put Dirk easter egg; A can Dr. Pepper creamy coconut as plushie
