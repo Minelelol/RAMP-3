@@ -7,7 +7,7 @@ OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 
 PortTag objects\equipment\equipment_pack\bitmaps\unsc_equipment_drop_holo_icon_dropshield.bitmap
-PortTag camera\biped_drop_shield_camera.camera_track
+# PortTag camera\biped_drop_shield_camera.camera_track
 PortTag objects\equipment\drop_shield\drop_shield_shield\drop_shield_shield.equipment
 PortTag sound\weapons\equipment\drop_shield\shield_deploy.effect
 PortTag objects\equipment\drop_shield\fx\active_rumble.effect

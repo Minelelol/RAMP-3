@@ -1,0 +1,188 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+# PortTag globals\collision_damage\armor_lock.collision_damage
+# PortTag objects\equipment\armor_lockup\damage_effects\player_armor_lockup_melee_reflect.damage_effect
+PortTag sound\weapons\equipment\armor_lock\armor_lock_loop\armor_lock_loop.sound_looping
+PortTag objects\equipment\armor_lockup\fx\looping.light
+# Used for copying particle systems
+PortTag objects\equipment\armor_lockup\fx\looping.effect
+PortTag objects\equipment\armor_lockup\fx\discharge_large.effect
+
+PortTag fx\shield_impacts\spartan_armor_lock_3p.shield_impact
+
+PortTag objects\equipment\armor_lockup\fx\activate.effect
+PortTag objects\equipment\armor_lockup\fx\active_rumble.effect
+
+PortTag objects\equipment\equipment_pack\bitmaps\unsc_equipment_drop_holo_icon_armorlock.bitmap
+Exit
+
+# ------------------------
+# |      LENS FLARE      |
+# ------------------------
+DuplicateTag objects\equipment\concussiveblast_equipment\fx\concussiveblast_equipment_lens_flare.lens_flare objects\equipment\armor_lockup_equipment\fx\armor_lockup_equipment_lens_flare
+EditTag objects\equipment\armor_lockup_equipment\fx\armor_lockup_equipment_lens_flare.lens_flare
+SetField Bitmap objects\equipment\equipment_pack\bitmaps\unsc_equipment_drop_holo_icon_armorlock.bitmap
+SetField Reflections[0].TintColor 1.25 0.49 0.29
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    SHIELD IMPACT     |
+# ------------------------
+EditTag fx\shield_impacts\spartan_armor_lock_3p.shield_impact
+SetField ShieldEdge.EdgeGlowColor.InputVariable shield_vitality
+SetField Plasma.PlasmaCenterColor.InputVariable shield_vitality
+SetField Plasma.PlasmaEdgeColor.InputVariable shield_vitality
+SetField ExtrusionOscillation.ExtrusionAmount.InputVariable shield_vitality
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         LIGHT        |
+# ------------------------
+EditTag objects\equipment\armor_lockup\fx\looping.light
+SetField Intensity.Function.Data 01340000000040400000404000000000000000006F12833A6F12033B00000000
+SetField DistanceDiffusion 1
+SetField DestroyLightAfter 5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\equipment\armor_lockup\fx\looping.effect
+CopyBlockElements Events[1].ParticleSystems 0 2
+Exit
+
+EditTag objects\equipment\armor_lockup\fx\activate.effect
+PasteBlockElements Events[0].ParticleSystems
+SetField Events[0].ParticleSystems[0].LocationIndex 1
+SetField Events[0].ParticleSystems[1].LocationIndex 1
+SaveTagChanges
+Exit
+
+EditTag objects\equipment\armor_lockup\fx\discharge_large.effect
+SetField Events[0].DelayBounds 5 5
+SetField Events[0].Parts[0].PrimaryLocation 1
+SetField Events[0].Parts[1].PrimaryLocation 1
+SetField Events[0].Parts[2].PrimaryLocation 1
+SetField Events[0].Parts[3].PrimaryLocation 1
+SetField Events[0].ParticleSystems[0].LocationIndex 1
+SetField Events[0].ParticleSystems[1].LocationIndex 1
+SetField Events[1].DelayBounds 5 5
+SetField Events[1].Parts[0].PrimaryLocation 1
+SetField Events[1].Parts[1].PrimaryLocation 0
+SetField Events[1].Parts[2].PrimaryLocation 0
+
+CopyBlockElements Events 0 2
+Exit
+
+EditTag objects\equipment\armor_lockup\fx\activate.effect
+SetField Flags RunEventsInParallel,Deterministic
+AddBlockElements Locations
+SetField Locations[1].MarkerName body
+
+PasteBlockElements Events
+
+SetField Events[0].DurationBounds 5 5
+
+AddBlockElements Events[0].Parts
+SetField Events[0].Parts[2].PrimaryLocation 0
+SetField Events[0].Parts[2].SecondaryLocation -1
+SetField Events[0].Parts[2].Flags CreateEvenWhenEventLoopsBackToSelf
+# SetField Events[0].Parts[2].Priority Essential
+SetField Events[0].Parts[2].RuntimeBaseGroupTag ligh
+SetField Events[0].Parts[2].Type objects\equipment\armor_lockup\fx\looping.light
+
+AddBlockElements Events[0].Parts
+SetField Events[0].Parts[3].PrimaryLocation 1
+SetField Events[0].Parts[3].SecondaryLocation -1
+SetField Events[0].Parts[3].Flags CreateEvenWhenEventLoopsBackToSelf
+SetField Events[0].Parts[3].Priority Essential
+SetField Events[0].Parts[3].RuntimeBaseGroupTag shit
+SetField Events[0].Parts[3].Type fx\shield_impacts\spartan_armor_lock_3p.shield_impact
+
+AddBlockElements Events[0].Parts
+SetField Events[0].Parts[4].PrimaryLocation 1
+SetField Events[0].Parts[4].SecondaryLocation -1
+SetField Events[0].Parts[4].Flags CreateEvenWhenEventLoopsBackToSelf
+# SetField Events[0].Parts[4].Priority Essential
+SetField Events[0].Parts[4].RuntimeBaseGroupTag rwrd
+SetField Events[0].Parts[4].Type fx\water\character_jump_land.render_water_ripple
+
+SetField LoopingSound sound\weapons\equipment\armor_lock\armor_lock_loop\armor_lock_loop.sound_looping
+SaveTagChanges
+Exit
+
+# ------------------------
+# |   COLLISION DAMAGE   |
+# ------------------------
+EditTag globals\collision_damage\road_block.collision_damage
+SetField ApplyAbsoluteCollisionDamageScale 3.5
+SaveTagChanges
+Exit
+
+# We don't want it to insta kill vehicles now do we :skulls:
+EditTag globals\collision_damage\road_block_vehicles.collision_damage
+SetField GameDamageScaleBounds 0.1 15
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       EQUIPMENT      |
+# ------------------------
+DuplicateTag objects\equipment\concussiveblast_equipment\concussiveblast_equipment.equipment objects\equipment\armor_lockup\armor_lockup
+EditTag objects\equipment\armor_lockup\armor_lockup.equipment
+SetField Attachments[0].Type objects\equipment\armor_lockup_equipment\fx\armor_lockup_equipment_lens_flare.lens_flare
+
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.99 0.39 0.29
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.99 0.39 0.29
+
+SetField Duration 5
+SetField EquipmentFlags ThirdPersonCameraAlways,HidesWeaponOnActivation,CannotActivateWhileAirborne
+
+RemoveBlockElements ConcussiveBlast 0 *
+
+AddBlockElements Invincibility
+SetField Invincibility[0].InvincibilityMaterial energy_shield_invincible
+SetField Invincibility[0].InvincibilityMaterialType 178
+# SetField Invincibility[0].ShieldRechargeRate 1
+
+AddBlockElements TankMode
+SetField TankMode[0].TankModeMaterial energy_shield_invincible
+SetField TankMode[0].TimeTankModeIsGrantedFor 5
+SetField TankMode[0].MeleeDamageBoost 100
+
+AddBlockElements ReactiveArmor
+SetField ReactiveArmor[0].EffectDuration 5
+SetField ReactiveArmor[0].ReflectEffect objects\equipment\armor_lockup\fx\active_rumble.effect
+
+AddBlockElements ArmorLock
+SetField ArmorLock[0].OverrideCollisionDamage globals\collision_damage\road_block.collision_damage
+SetField ArmorLock[0].VehicleOverrideCollisionDamage globals\collision_damage\road_block_vehicles.collision_damage
+
+SetField ActivateSound null
+SetField ActivateEffect objects\equipment\armor_lockup\fx\activate.effect
+SetField RunningEffect objects\equipment\armor_lockup\fx\active_rumble.effect
+# Stupid that it doesn't play the effect :/
+# SetField DeactivateEffect objects\equipment\armor_lockup\fx\discharge_large.effect
+
+SetField ActivationAnimation armor_lock_enter
+SetField ActiveAnimation armor_lock_idle
+SetField DeactivateAnimation armor_lock_exit
+SaveTagChanges
+Exit
+
+# ------------------------
+# |          HUD         |
+# ------------------------
+EditTag multiplayer\multiplayer_globals.multiplayer_globals
+SetField Universal[0].Equipment[18].Object objects\equipment\armor_lockup\armor_lockup.equipment
+SaveTagChanges
+Exit
+
+AddForgeItem "ARMOR LOCK" 1 objects\equipment\armor_lockup\armor_lockup.equipment

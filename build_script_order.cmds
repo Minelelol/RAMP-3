@@ -159,6 +159,7 @@ Exit
 
 RunCommands workingdir\commands\equipments\reach_health_pack.cmds
 RunCommands workingdir\commands\equipments\reach_drop_shield.cmds
+RunCommands workingdir\commands\equipments\reach_armor_lock.cmds
 
 # -----------------------------------------
 # |            REACH VEHICLES             |
