@@ -102,3 +102,36 @@ AddAnimation Keep workingdir\animations\weapons\magnum
 SetField Animations[0].AnimationData.AnimationType Replacement
 SaveTagChanges
 Exit
+
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag objects\weapons\pistol\magnum\magnum.weapon
+SetField Barrels[0].ProjectileMinimumError 0.05
+# SetField Barrels[0].ProjectileErrorAngle 0.15 1
+SetField Barrels[0].ProjectileErrorAngle 0.15 4
+SetField Barrels[0].FiringError.AccelerationTime 0
+SetField Barrels[0].FiringError.DecelerationTime 0
+SetField Barrels[0].VerticalRecoil.AngleChangeAccelerationRate 1000
+SetField Barrels[0].VerticalRecoil.AngleChangeDecelerationRate 1000
+SetField Barrels[0].EjectionPortRecoveryRate 1000
+SetField Barrels[0].RateOfFireAccelerationTime 1000
+SetField Barrels[0].RateOfFireDecelerationTime 1000
+# SetField Barrels[0].ErrorAccelerationRate 1000
+# SetField Barrels[0].ErrorDecelerationRate 2.5
+SetField Barrels[0].ErrorAccelerationRate 30
+SetField Barrels[0].ErrorDecelerationRate 1.538462
+SetField Barrels[0].VerticalRecoil.AngleChangePerShot 0 0
+SetField Barrels[0].DualWeaponError.RuntimeDecelerationRate 1000
+SetField Barrels[0].DualWeaponError.RuntimeAccelerationRate 1000
+# 0.5 1
+SetField Barrels[0].DualWeaponError.ErrorAngle 0.8 2.8
+# 0.7
+SetField Barrels[0].DualWeaponError.DualWieldDamageScale 0.55
+
+AddBlockElements Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringPenaltyFunction
+SetField Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringPenaltyFunction[0].Function.Data 08340000000000000000803F00000000000000006F12833A6F12033B3400000003000000040000CD295C8F3D704189409A99193F040000009A99993E00ACDB3D808A643F04000000FFFF7F7FE76C85BFBF6A9E3F
+AddBlockElements Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringCrouchedPenaltyFunction
+SetField Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringCrouchedPenaltyFunction[0].Function.Data 08340000000000000000803F00000000000000006F12833A6F12033B3400000003000000040000CD295C8F3D354D13401111113F04000000EC51983E560996BDBA9F3B3F04000000FFFF7F7FD4FC3BBF84F86D3F
+SaveTagChanges
+Exit

@@ -1,0 +1,84 @@
+# ------------------------
+# |        SHADER        |
+# ------------------------
+DuplicateTag objects\weapons\pistol\plasma_pistol\shaders\plasma_pistol_shell.shader objects\weapons\pistol\plasma_pistol_variants\shaders\plasma_pistol_shell_gold
+EditTag objects\weapons\pistol\plasma_pistol_variants\shaders\plasma_pistol_shell_gold.shader
+SetArgument albedo_color 1.25 0.5 0 1
+SetArgument fresnel_color 1 0.4 0 1
+# SetArgument specular_tint 0.2070588 0.2872549 0.2588235 1
+SetArgument specular_tint 0.4570588 0.2872549 0.1588235
+SetArgument environment_map_specular_contribution 1
+# SetArgument env_tint_color 0.7254902 0.9058824 0 1
+SetArgument env_tint_color 0.7254902 0.6058824 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.render_model dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power
+EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power.render_model
+SetField Materials[3].RenderMethod objects\weapons\pistol\plasma_pistol_variants\shaders\plasma_pistol_shell_gold.shader
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.model dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power
+EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power.model
+SetField RenderModel dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power.render_model
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\pistol\plasma_pistol\fx\overheated.effect
+SetField Locations[1].MarkerName fx_vent
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon
+CopyBlockElements Functions 0 *
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol\plasma_pistol_power.weapon
+RemoveBlockElements Functions 0 *
+PasteBlockElements Functions
+
+SetField Model dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power.model
+
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_spartan\fp_spartan.model_animation_graph
+
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\pistol\plasma_pistol_variants\plasma_pistol_power.render_model
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_elite\fp_elite.model_animation_graph
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag objects\weapons\pistol\plasma_pistol_power\projectiles\plasma_pistol_charged_bolt.projectile
+SetField AirborneDetonationEffect reach\objects\weapons\pistol\plasma_pistol\fx\charged\impact.effect
+SetField GroundDetonationEffect reach\objects\weapons\pistol\plasma_pistol\fx\charged\impact.effect
+SetField DetonationDamage objects\weapons\pistol\plasma_pistol\projectiles\damage_effects\plasma_pistol_charged_bolt_aoe.damage_effect
+
+SetField MaterialResponses[0].DefaultResponse ImpactDetonate
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol_power\damage_effects\plasma_pistol_charged_bolt.damage_effect
+SetField CustomResponseLabel emp_damage
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\plasma_pistol\damage_effects\plasma_pistol_bolt.damage_effect
+SetField DamageLowerBound 20
+SetField DamageUpperBound 20 20
+SaveTagChanges
+Exit

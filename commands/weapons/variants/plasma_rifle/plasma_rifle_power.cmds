@@ -1,0 +1,57 @@
+# ------------------------
+# |        SHADER        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\plasma_rifle\shaders\plasma_rifle_shell.shader objects\weapons\rifle\plasma_rifle_variants\shaders\plasma_rifle_shell_gold
+EditTag objects\weapons\rifle\plasma_rifle_variants\shaders\plasma_rifle_shell_gold.shader
+SetArgument albedo_color 2.5 1 0 1
+# SetArgument specular_tint 0.6570588 0.4272549 0.1588235
+SetArgument specular_tint 0.6070588 0.4872549 0.3588235
+SetArgument fresnel_color 1 0.4 0 1
+SetArgument environment_map_specular_contribution 0.5
+SetArgument env_tint_color 1.288235 0.866667 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.render_model dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power.render_model
+SetField Materials[2].RenderMethod objects\weapons\rifle\plasma_rifle_variants\shaders\plasma_rifle_shell_gold.shader
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\plasma_rifle\plasma_rifle.model dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power
+EditTag dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power.model
+SetField RenderModel dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power.render_model
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\plasma_rifle\plasma_rifle.weapon
+CopyBlockElements Functions 0 *
+Exit
+
+EditTag objects\weapons\rifle\plasma_rifle\plasma_rifle_power.weapon
+RemoveBlockElements Functions 0 *
+PasteBlockElements Functions
+
+AddBlockElements Attachments
+SetField Attachments[1].Type dw3\r3ach\sound\weapons\plasma_rifle\prifle_heat_loop\prifle_heat_loop.sound_looping
+SetField Attachments[1].Marker primary_trigger
+SetField Attachments[1].PrimaryScale heat_warning
+
+SetField Model dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power.model
+
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\plasma_rifle\animations\fp_spartan\fp_spartan.model_animation_graph
+
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\rifle\plasma_rifle_power\plasma_rifle_power.render_model
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\plasma_rifle\animations\fp_elite\fp_elite.model_animation_graph
+SaveTagChanges
+Exit

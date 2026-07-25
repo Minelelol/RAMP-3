@@ -38,6 +38,11 @@ SetField ShieldEdge.EdgeGlowColor.InputVariable shield_vitality
 SetField Plasma.PlasmaCenterColor.InputVariable shield_vitality
 SetField Plasma.PlasmaEdgeColor.InputVariable shield_vitality
 SetField ExtrusionOscillation.ExtrusionAmount.InputVariable shield_vitality
+
+# We don't want it to display no armor lock shield when the player shield are low right?
+SetField ShieldEdge.EdgeGlowColor.Function.Data 00340200F77861000000803F00000000F77861FF6F12833A6F12033B00000000
+SetField Plasma.PlasmaEdgeColor.Function.Data 00340200F0FF6B000000803F00000000F0FF6BFF6F12833A6F12033B00000000
+SetField ExtrusionOscillation.ExtrusionAmount.Function.Data 083400008FC2753C295C0F3D000000000000000000000000000000001C00000001000000070000CDFFFF7F7FA0B5BD3E3025213F0000000000000000
 SaveTagChanges
 Exit
 

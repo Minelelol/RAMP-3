@@ -114,4 +114,15 @@ SetField WeaponSprintExitSpeedup 0
 SaveTagChanges
 Exit
 
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag objects\weapons\pistol\automag\automag.weapon
+SetField Barrels[0].DualWeaponError.ErrorAngle 0.5 1
+SetField Barrels[0].DualWeaponError.RuntimeDecelerationRate 1000
+SetField Barrels[0].DualWeaponError.RuntimeAccelerationRate 1000
+SetField Barrels[0].DualWeaponError.DualWieldDamageScale 0.6
+SaveTagChanges
+Exit
+
 AddForgeItem "AUTOMAG" 1 objects\weapons\pistol\automag\automag.weapon

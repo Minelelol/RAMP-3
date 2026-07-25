@@ -80,4 +80,18 @@ SetField WeaponTypeName offset_smg
 SaveTagChanges
 Exit
 
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+SetField Barrels[0].DualWeaponError.DualWieldDamageScale 0.9
+SetField Barrels[0].DualWeaponError.ErrorAngle 1.5 3
+SetField Barrels[0].DualWeaponError.AccelerationTime 1
+SetField Barrels[0].DualWeaponError.DecelerationTime 0.2
+SetField Barrels[0].DualWeaponError.MinimumError 0.5
+SetField Barrels[0].DualWeaponError.RuntimeAccelerationRate 1
+SetField Barrels[0].DualWeaponError.RuntimeDecelerationRate 5
+SaveTagChanges
+Exit
+
 AddForgeItem "SMG, SILENCED" 1 objects\weapons\rifle\smg_silenced\smg_silenced.weapon

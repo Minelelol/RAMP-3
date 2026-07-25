@@ -103,3 +103,11 @@ SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\ba
 SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\battle_rifle_rof\firing.effect
 SaveTagChanges
 Exit
+
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag objects\weapons\rifle\battle_rifle_rof\battle_rifle_rof.weapon
+SetField Barrels[0].AccuracyPenalties.JumpPenalty 0
+SaveTagChanges
+Exit

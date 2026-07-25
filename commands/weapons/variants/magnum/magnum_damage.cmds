@@ -70,3 +70,11 @@ SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\m
 SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\pistol\magnum_damage\firing.effect
 SaveTagChanges
 Exit
+
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag objects\weapons\pistol\magnum\magnum_damage.weapon
+SetField Barrels[0].Firing.FireRecoveryTime 0.33
+SaveTagChanges
+Exit

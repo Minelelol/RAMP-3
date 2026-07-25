@@ -118,6 +118,12 @@ RunCommands workingdir\commands\weapons\variants\magnum\magnum_damage.cmds
 RunCommands workingdir\commands\weapons\variants\magnum\magnum_power.cmds
 RunCommands workingdir\commands\weapons\variants\magnum\automag.cmds
 
+# Plasma Pistol Variant
+RunCommands workingdir\commands\weapons\variants\plasma_pistol\plasma_pistol_power.cmds
+
+# Plasma Rifle Variant
+RunCommands workingdir\commands\weapons\variants\plasma_rifle\plasma_rifle_power.cmds
+
 # SMG RAMP Variants
 RunCommands workingdir\commands\weapons\variants\smg\smg_preliminary.cmds
 RunCommands workingdir\commands\weapons\variants\smg\smg_base.cmds
