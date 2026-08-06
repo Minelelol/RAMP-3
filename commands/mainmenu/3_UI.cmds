@@ -37,7 +37,7 @@ ForEach bitm named: start_menu_top ImportBitmap 0 workingdir\bitmaps\SettingsMen
 EditTag ui\halox\main_menu\main_menu.gui_screen_widget_definition
 SetField ScriptIndex 10
 SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.Bitmap ui\cui\main_menu\halo3_logo_ui.bitmap
-SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds720p 410 450 475 1150
+SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds720p 410 430 475 1130
 SetField GroupWidgets[1].Definition.BitmapWidgets[0].Definition.GuiRenderBlock.Bounds480i 323 253 367 646
 SetField GroupWidgets[0].Definition.BitmapWidgets[0].Definition.Bitmap null
 SetField GroupWidgets[0].Definition.BitmapWidgets[2].Definition.Flags DoNotApplyOldContentUpscaling,ScaleToFitBounds
