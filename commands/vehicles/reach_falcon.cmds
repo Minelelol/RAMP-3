@@ -407,8 +407,14 @@ Exit
 # |      HUD MESSAGE     |
 # ------------------------
 EditTag ui\hud\hud_messages.multilingual_unicode_string_list
-SetString English altitude "ALT"
-SetString English pitch "PTCH"
+SetString english altitude "ALT"
+SetString english pitch "PTCH"
+
+SetString english falcon_drive "\uE461\uE45F to drive Falcon"
+SetString english falcon_enter_passenger "\uE461\uE45F to ride in Falcon"
+SetString english falcon_board "\uE461\uE45F to board Falcon"
+SetString english falcon_flip "\uE461\uE45F to flip Falcon"
+SetString english falcon_enter_gunner "\uE461\uE45F to operate Falcon turret"
 SaveTagChanges
 Exit
 
@@ -634,8 +640,8 @@ StringId Add nose_gun
 PasteBlockElements Variants
 SetField Variants[*].Name nose_gun
 SetField Variants[*].Objects[0].ChildObject objects\vehicles\human\falcon\turrets\falcon_chin_gun\falcon_chin_gun.vehicle
-SetField Variants[0].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left.vehicle
-SetField Variants[0].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right.vehicle
+SetField Variants[*].Objects[1].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_left\falcon_side_gun_left.vehicle
+SetField Variants[*].Objects[2].ChildObject objects\vehicles\human\falcon\turrets\falcon_side_gun_right\falcon_side_gun_right.vehicle
 
 # Grenadier
 StringId Add grenadier
@@ -909,11 +915,11 @@ SetField DefaultModelVariant infinite_mg_gl
 SaveTagChanges
 Exit
 
-AddForgeItem "FALCON" 1 							objects\vehicles\human\falcon\falcon.vehicle
-AddForgeItem "FALCON, NOSE GUN" 1 					objects\vehicles\human\falcon\falcon_nose_gun.vehicle
-AddForgeItem "FALCON, GRENADIER" 1 					objects\vehicles\human\falcon\falcon_grenadier.vehicle
-AddForgeItem "FALCON, GRENADIER, NOSE GUN" 1 		objects\vehicles\human\falcon\falcon_grenadier_nose_gun.vehicle
-AddForgeItem "FALCON, TRANSPORT" 1 					objects\vehicles\human\falcon\falcon_transport.vehicle
-AddForgeItem "FALCON, TRANSPORT, NOSE GUN" 1 		objects\vehicles\human\falcon\falcon_transport_nose_gun.vehicle
-AddForgeItem "FALCON, INFINITE #1 [GL/MG]" 1 		objects\vehicles\human\falcon\falcon_infinite_gl_mg.vehicle
-AddForgeItem "FALCON, INFINITE #2 [MG/GL]" 1 		objects\vehicles\human\falcon\falcon_infinite_mg_gl.vehicle
+# AddForgeItem "FALCON" "VEHICLES" 						objects\vehicles\human\falcon\falcon.vehicle
+# AddForgeItem "FALCON, NOSE GUN" "VEHICLES" 				objects\vehicles\human\falcon\falcon_nose_gun.vehicle
+# AddForgeItem "FALCON, GRENADIER" "VEHICLES" 			objects\vehicles\human\falcon\falcon_grenadier.vehicle
+# AddForgeItem "FALCON, GRENADIER, NOSE GUN" "VEHICLES" 	objects\vehicles\human\falcon\falcon_grenadier_nose_gun.vehicle
+# AddForgeItem "FALCON, TRANSPORT" "VEHICLES" 			objects\vehicles\human\falcon\falcon_transport.vehicle
+# AddForgeItem "FALCON, TRANSPORT, NOSE GUN" "VEHICLES" 	objects\vehicles\human\falcon\falcon_transport_nose_gun.vehicle
+# AddForgeItem "FALCON, INFINITE #1 [GL/MG]" "VEHICLES" 	objects\vehicles\human\falcon\falcon_infinite_gl_mg.vehicle
+# AddForgeItem "FALCON, INFINITE #2 [MG/GL]" "VEHICLES" 	objects\vehicles\human\falcon\falcon_infinite_mg_gl.vehicle

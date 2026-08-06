@@ -171,5 +171,55 @@ SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\grenade_launcher\grenad
 SaveTagChanges
 Exit
 
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english gl_picked_up "Picked up a Grenade Launcher"
+SetString english gl_pickup "\uE461\uE45F to pick up|n|r\uE171"
+SetString english gl_swap "\uE461\uE45F to swap for|n|r\uE171"
+SetString english gl_swap_ai "\uE461\uE45F to take ally's|n|r\uE171"
+SetString english gl_switch_to "Out of ammo|nPress \uE446 to switch to|n|r\uE171"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
+SetField PickupMessage gl_pickup
+SetField SwapMessage gl_swap
+SetField PickedUpMessage gl_picked_up
+SetField SwitchToMessage gl_switch_to
+SetField SwitchToFromAiMessage gl_swap_ai
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                AMMO PACK                |
+# -------------------------------------------
+EditTag objects\equipment\ammo_pack\ammo_pack.equipment
+AddBlockElements AmmoPack[0].AdditionalAmmo
+SetField AmmoPack[0].AdditionalAmmo[*].Weapon objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
+SetField AmmoPack[0].AdditionalAmmo[*].AmmoCount 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English grenade_launcher "GRENADE LAUNCHER"
+
+SetVariable MULG_WEAPONSTRING_VAR 					grenade_launcher
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	magnum
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	magnum
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		grenade_launcher
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		grenade_launcher
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
 # Remove ts once we're done with the weapons port
-AddForgeItem "GRENADE LAUNCHER" 1 objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon
+# AddForgeItem "GRENADE LAUNCHER" "POWER WEAPONS" objects\weapons\rifle\grenade_launcher\grenade_launcher.weapon

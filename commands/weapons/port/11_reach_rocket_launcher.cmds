@@ -83,6 +83,8 @@ Exit
 # |        PORTING       |
 # ------------------------
 OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag objects\weapons\lod\lod_rocket_launcher\lod_rocket_launcher.render_model
+
 NameBlamTag objects\weapons\support_high\rocket_launcher\rocket_launcher.weapon answerseekedyetconflictunsure
 NameBlamTag dw3\r3ach\objects\weapons\support_high\rocket_launcher\rocket_launcher.weapon objects\weapons\support_high\rocket_launcher\rocket_launcher
 NameBlamTag dw3\r3ach\ui\chud\rocket_launcher.chud_definition ui\chud\rocket

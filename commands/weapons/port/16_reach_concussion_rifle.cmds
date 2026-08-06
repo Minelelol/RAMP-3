@@ -233,6 +233,18 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english cr_picked_up "Picked up a Concussion Rifle"
+SetString english cr_pickup "\uE461\uE45F to pick up|n|r\uE173"
+SetString english cr_swap "\uE461\uE45F to swap for|n|r\uE173"
+SetString english cr_swap_ai "\uE461\uE45F to take ally's|n|r\uE173"
+SetString english cr_switch_to "Out of ammo|nPress \uE446 to switch to|n|r\uE173"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
@@ -240,8 +252,40 @@ AddBlockElements Functions
 SetField Functions[*].ImportName active_camouflage
 SetField Functions[*].ExportName camo
 SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+
+SetField PickupMessage cr_pickup
+SetField SwapMessage cr_swap
+SetField PickedUpMessage cr_picked_up
+SetField SwitchToMessage cr_switch_to
+SetField SwitchToFromAiMessage cr_swap_ai
 SaveTagChanges
 Exit
 
+# -------------------------------------------
+# |                AMMO PACK                |
+# -------------------------------------------
+EditTag objects\equipment\ammo_pack\ammo_pack.equipment
+AddBlockElements AmmoPack[0].AdditionalAmmo
+SetField AmmoPack[0].AdditionalAmmo[*].Weapon objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
+SetField AmmoPack[0].AdditionalAmmo[*].AmmoCount 6
+SaveTagChanges
+Exit
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English concussion_rifle "CONCUSSION RIFLE"
+
+SetVariable MULG_WEAPONSTRING_VAR 					concussion_rifle
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	plasma_pistol
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	concussion_rifle
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		concussion_rifle
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		concussion_rifle
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
 # Remove ts once we're done with the weapons port
-AddForgeItem "CONCUSSION RIFLE" 1 objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon
+# AddForgeItem "CONCUSSION RIFLE" "POWER WEAPONS" objects\weapons\rifle\concussion_rifle\concussion_rifle.weapon

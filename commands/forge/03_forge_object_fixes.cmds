@@ -1,0 +1,320 @@
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString English device_jammer "\uE461\uE45F to activate touch screen"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     EMPTY MODEL      |
+# ------------------------
+# This will be used for Sound and Effect objects
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.render_model objects\levels\shared\empty\empty
+EditTag objects\levels\shared\empty\empty.render_model
+SetField Materials[0].RenderMethod null
+SaveTagChanges
+Exit
+
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.collision_model objects\levels\shared\empty\empty
+EditTag objects\levels\shared\empty\empty.collision_model
+ForEach Regions[0].Permutations[0].Bsps[0].Geometry.Surfaces SetField Flags Invisible
+SaveTagChanges
+Exit
+
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.physics_model objects\levels\shared\empty\empty
+EditTag objects\levels\shared\empty\empty.physics_model
+SetField RigidBodies[0].MotionType Keyframed
+SaveTagChanges
+Exit
+
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.model objects\levels\shared\empty\empty
+EditTag objects\levels\shared\empty\empty.model
+SetField RenderModel objects\levels\shared\empty\empty.render_model
+SetField CollisionModel objects\levels\shared\empty\empty.collision_model
+SetField PhysicsModel objects\levels\shared\empty\empty.physics_model
+# SetField DisappearDistance 32
+# SetField BeginFadeDistance 8
+SaveTagChanges
+Exit
+
+# ------------------------
+# |   DUPE BASE OBJECT   |
+# ------------------------
+DuplicateTag objects\levels\multi\cyberdyne\brute_target\brute_target.device_machine objects\levels\multi\cyberdyne\brute_target_ramp\brute_target_ramp
+EditTag objects\levels\multi\cyberdyne\brute_target\brute_target.physics_model
+SetField RigidBodies[0].Node 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\levels\multi\cyberdyne\jackal_target\jackal_target.device_machine objects\levels\multi\cyberdyne\jackal_target\jackal_target_ramp
+DuplicateTag objects\levels\multi\cyberdyne\brute_target\brute_target.physics_model objects\levels\multi\cyberdyne\jackal_target\jackal_target
+EditTag objects\levels\multi\cyberdyne\jackal_target\jackal_target.physics_model
+SetField Boxes[0].HalfExtents 0.4 0.025 0.35
+SetField Boxes[0].Translation 0 2.784E-09 0.35
+SaveTagChanges
+Exit
+
+EditTag objects\levels\multi\cyberdyne\jackal_target\jackal_target.model
+SetField PhysicsModel objects\levels\multi\cyberdyne\jackal_target\jackal_target.physics_model
+SaveTagChanges
+Exit
+
+DuplicateTag objects\levels\multi\s3d_reactor\rod\rod.device_machine objects\levels\multi\s3d_reactor\rod\rod_ramp
+
+# ------------------------
+# |  DUPE REACH OBJECTS  |
+# ------------------------
+# DuplicateTag levels\dlc\cex_beaver_creek\scenery\frunner_wheel\frunner_wheel.scenery levels\dlc\cex_beaver_creek\scenery\frunner_wheel\frunner_wheel_ramp
+# DuplicateTag levels\dlc\cex_ff_halo\scenery\cannonengine2\cannonengine2.scenery levels\dlc\cex_ff_halo\scenery\cannonengine2\cannonengine2_ramp
+# DuplicateTag objects\gear\human\military\weapon_rack\weapon_rack.scenery objects\gear\human\military\weapon_rack\weapon_rack_mp
+# DuplicateTag objects\levels\solo\m45\m45_silo_int_shutter\m45_silo_int_shutter.device_machine objects\levels\solo\m45\m45_silo_int_shutter\m45_silo_int_shutter_ramp
+# DuplicateTag objects\levels\shared\device_machines\m70_door_small\m70_door_small.device_machine objects\levels\shared\device_machines\m70_door_small\m70_door_small_ramp
+# DuplicateTag objects\levels\shared\device_machines\m70_door_ff\m70_door_ff.device_machine objects\levels\shared\device_machines\m70_door_ff\m70_door_ff_ramp
+# DuplicateTag objects\levels\solo\m20\door_interior_large_logo\door_interior_large_logo.device_machine objects\levels\solo\m20\door_interior_large_logo\door_interior_large_logo_ramp
+# DuplicateTag objects\levels\solo\m20\door_interior_large\door_interior_large.device_machine objects\levels\solo\m20\door_interior_large\door_interior_large_ramp
+# # DuplicateTag objects\levels\shared\device_machines\m45_hall_door_small01\m45_hall_door_small01.device_machine objects\levels\shared\device_machines\m45_hall_door_small01\m45_hall_door_small01_forge_ramp (.device_machine)
+# DuplicateTag objects\levels\shared\m60_unsc_door_a\m60_unsc_door_a.device_machine objects\levels\shared\m60_unsc_door_a\m60_unsc_door_a_mp
+# DuplicateTag objects\levels\solo\m20\door_interior_large\door_interior_large.device_machine objects\levels\solo\m20\door_interior_large\door_interior_large_mp
+DuplicateTag objects\levels\solo\m50\door_urban_gen_small_a\door_urban_gen_small_a.device_machine objects\levels\solo\m50\door_urban_gen_small_a\door_urban_gen_small_a_mp
+DuplicateTag objects\levels\solo\m50\door_urban_gen_small_b\door_urban_gen_small_b.device_machine objects\levels\solo\m50\door_urban_gen_small_b\door_urban_gen_small_b_mp
+DuplicateTag objects\levels\solo\m50\door_urban_gen_small_c\door_urban_gen_small_c.device_machine objects\levels\solo\m50\door_urban_gen_small_c\door_urban_gen_small_c_mp
+# DuplicateTag objects\levels\solo\m50\door_urban_large_a\door_urban_large_a.device_machine objects\levels\solo\m50\door_urban_large_a\door_urban_large_a_mp
+
+# ------------------------
+# |     SOUND OBJECT     |
+# ------------------------
+CreateTag bloc sound\levels\solo\m52\sound_scenery\disco_music_alt\disco_music_alt
+EditTag sound\levels\solo\m52\sound_scenery\disco_music_alt\disco_music_alt.crate
+SetField ObjectType.Halo3ODST Crate
+SetField Model objects\levels\shared\empty\empty.model
+SetField BoundingRadius 1
+SetField SweetenerSize Medium
+AddBlockElements Attachments
+SetField Attachments[0].Type sound\levels\solo\m52\sound_scenery\disco_music_alt\disco_music_alt.sound_looping
+SaveTagChanges
+Exit
+
+CreateTag bloc sound\levels\solo\m52\sound_scenery\disco_music_loop\disco_music_loop
+EditTag sound\levels\solo\m52\sound_scenery\disco_music_loop\disco_music_loop.crate
+SetField ObjectType.Halo3ODST Crate
+SetField Model objects\levels\shared\empty\empty.model
+SetField BoundingRadius 1
+SetField SweetenerSize Medium
+AddBlockElements Attachments
+SetField Attachments[0].Type sound\levels\solo\m52\sound_scenery\disco_music_loop\disco_music_loop.sound_looping
+SaveTagChanges
+Exit
+
+# ------------------------
+# | CRATEPACK EASTER FIX |
+# ------------------------
+EditTag objects\cex\cex_timberland\crate_packing_easter\crate_packing_easter.model
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[1].Flags None
+SaveTagChanges
+Exit
+
+# ------------------------
+# |   DISCO BALL ANIMS   |
+# ------------------------
+EditTag objects\levels\solo\m52\m52_club_hologram\m52_club_hologram.model_animation_graph
+SetField Animations[0].AnimationData.AnimationType Replacement
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     DUMPSTER LID     |
+# ------------------------
+EditTag objects\props\human\urban\dumpster\dumpster.physics_model
+SetField LimitedHingeConstraints[0].LimitAngleBounds 0 -90
+SaveTagChanges
+Exit
+
+# ------------------------
+# |  LANDMINE EXPLOSION  |
+# ------------------------
+EditTag objects\multi\land_mine\land_mine.model
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].EffectMarkerName up
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].DamageEffectMarkerName up
+SaveTagChanges
+Exit
+
+# ------------------------
+# |ORBS SCREEN SPECIAL FX|
+# ------------------------
+ForEach crate startingwith: objects\levels\shared\screen_fx_orb\fx SetField Attachments[0].Marker fx_01
+ForEach sefc startingwith: objects\levels\shared\screen_effects SetField ScreenEffects[0].Flags_ODST None
+ForEach sefc startingwith: objects\levels\shared\screen_effects SetField ScreenEffects[0].DistanceFalloffFunction.Data 08340000000000000000803F000000000000000000000000000000002C00000002000000040000CDF6284C3F000000000000803F07000000FFFF7F7FDB6976424F3F38C384553043B0C256C2
+
+EditTag objects\levels\shared\screen_effects\eerie.shader_screen
+SetArgument tint_color 0.1 0.4 0.1 0.8
+SetArgument add_color 0 0 0 0.2
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    REACH LIGHT FIX   |
+# ------------------------
+ForEach light startingwith: objects\levels\forge\ff_light_ SetField Flags ElDewritoForgeLight
+ForEach light startingwith: objects\levels\forge\ff_light_flash SetField Flags None
+
+# ------------------------
+# |PENANCE SUCKERS PLANT |
+# ------------------------
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.collision_model levels\dlc\cex_damnation\scenery\cex_damnation_plant\cex_damnation_plant
+EditTag levels\dlc\cex_damnation\scenery\cex_damnation_plant\cex_damnation_plant.collision_model
+GenerateBspPhysics
+SetField Regions[0].Permutations[0].BspPhysics[0].GeometryShape.Model levels\dlc\cex_damnation\scenery\cex_damnation_plant\cex_damnation_plant.model
+SaveTagChanges
+Exit
+
+EditTag levels\dlc\cex_damnation\scenery\cex_damnation_plant\cex_damnation_plant.model
+SetField CollisionModel levels\dlc\cex_damnation\scenery\cex_damnation_plant\cex_damnation_plant.collision_model
+AddBlockElements Materials
+SetField Materials[0].DamageSectionIndex -1
+SetField Materials[0].RuntimeDamagerMaterialIndex -1
+SetField CollisionRegions[0].CollisionRegionIndex 0
+SetField CollisionRegions[0].Permutations[0].CollisionPermutationIndex 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    TELEPORTERS FIX   |
+# ------------------------
+# EditTag objects\ca_dev\dlc_preserve\crates\teleporter_sender\teleporter_2way.crate
+# SetField MultiplayerObject[0].Type TeleporterTwoWay
+# SetField MultiplayerObject[0].BoundaryShaders[0].StandardShader objects\multi\shaders\multiplayer_object_plasma.shader
+# SetField MultiplayerObject[0].BoundaryShaders[0].OpaqueShader objects\multi\shaders\multiplayer_object_plasma.shader
+# SaveTagChanges
+# Exit
+
+# ForEach phmo startingwith: objects\ca_dev\dlc_preserve\crates\teleporter_receiver\teleporter_receiver SetField RigidBodies[0].MotionType Keyframed
+# EditTag objects\ca_dev\dlc_preserve\crates\teleporter_receiver\teleporter_receiver.crate
+# SetField MultiplayerObject[0].BoundaryShaders[0].StandardShader objects\multi\shaders\multiplayer_object_plasma.shader
+# SetField MultiplayerObject[0].BoundaryShaders[0].OpaqueShader objects\multi\shaders\multiplayer_object_plasma.shader
+# SaveTagChanges
+# Exit
+
+# ForEach phmo startingwith: objects\ca_dev\dlc_preserve\crates\teleporter_sender\teleporter_sender SetField RigidBodies[0].MotionType Keyframed
+# EditTag objects\ca_dev\dlc_preserve\crates\teleporter_sender\teleporter_sender.crate
+# SetField MultiplayerObject[0].BoundaryShaders[0].StandardShader objects\multi\shaders\multiplayer_object_plasma.shader
+# SetField MultiplayerObject[0].BoundaryShaders[0].OpaqueShader objects\multi\shaders\multiplayer_object_plasma.shader
+# SaveTagChanges
+# Exit
+
+EditTag objects\levels\forge\ff_teleporter_2_way\ff_teleporter_2_way.crate
+SetField MultiplayerObject[0].BoundaryShaders[0].StandardShader objects\multi\shaders\multiplayer_object_plasma.shader
+SetField MultiplayerObject[0].BoundaryShaders[0].OpaqueShader objects\multi\shaders\multiplayer_object_plasma.shader
+SaveTagChanges
+Exit
+
+ForEach phmo startingwith: objects\levels\forge\ff_teleporter_receiver\ff_teleporter_receiver SetField RigidBodies[0].MotionType Keyframed
+EditTag objects\levels\forge\ff_teleporter_receiver\ff_teleporter_receiver.crate
+SetField MultiplayerObject[0].BoundaryShaders[0].StandardShader objects\multi\shaders\multiplayer_object_plasma.shader
+SetField MultiplayerObject[0].BoundaryShaders[0].OpaqueShader objects\multi\shaders\multiplayer_object_plasma.shader
+SaveTagChanges
+Exit
+
+EditTag objects\levels\forge\ff_teleporter_sender\ff_teleporter_sender.crate
+SetField MultiplayerObject[0].BoundaryShaders[0].StandardShader objects\multi\shaders\multiplayer_object_plasma.shader
+SetField MultiplayerObject[0].BoundaryShaders[0].OpaqueShader objects\multi\shaders\multiplayer_object_plasma.shader
+SaveTagChanges
+Exit
+
+# ------------------------
+# |  PORTABLE SHIELD FIX |
+# ------------------------
+EditTag objects\props\covenant\cov_portable_shield\cov_portable_shield.model
+SetField Variants[0].Regions[1].Permutations[0].States[1].State2 MinorDamage
+SetField Variants[0].Regions[1].Permutations[0].States[0].State2 MinorDamage
+
+RemoveBlockElements NewDamageInfo 0 *
+AddBlockElements NewDamageInfo 1
+SetField NewDamageInfo[0].GlobalIndirectMaterialName hard_metal_thin_cov_equipment
+SetField NewDamageInfo[0].IndirectDamageSection 1
+SetField NewDamageInfo[0].CollisionDamageReportingType.HaloOnline Guardians
+SetField NewDamageInfo[0].ResponseDamageReportingType.HaloOnline Guardians
+SetField NewDamageInfo[0].MaximumVitality 45
+SetField NewDamageInfo[0].RechargeFraction 1
+SetField NewDamageInfo[0].MaxShieldVitality 100
+SetField NewDamageInfo[0].GlobalShieldMaterialName energy_shield_thick_cov_instantcover_out
+SetField NewDamageInfo[0].ShieldStunTime 5
+SetField NewDamageInfo[0].ShieldRechargeTime 0.1
+SetField NewDamageInfo[0].ShieldDepletedEffect objects\props\covenant\cov_portable_shield\fx\shield_depletion.effect
+SetField NewDamageInfo[0].ShieldRechargingEffect objects\props\covenant\cov_portable_shield\fx\shield_recharge.effect
+
+AddBlockElements NewDamageInfo[0].DamageSections 3
+SetField NewDamageInfo[0].DamageSections[0].Name shield
+SetField NewDamageInfo[0].DamageSections[0].Flags AbsorbsBodyDamage
+SetField NewDamageInfo[0].DamageSections[0].VitalityPercentage 1
+AddBlockElements NewDamageInfo[0].DamageSections[0].InstantResponses 1
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].RuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].SecondaryRuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].DestroyInstanceGroup -1
+SetField NewDamageInfo[0].DamageSections[0].RechargeTime 0.1
+SetField NewDamageInfo[0].DamageSections[0].RuntimeRechargeVelocity 10
+SetField NewDamageInfo[0].DamageSections[0].ResurrectionRegionRuntimeIndex -1
+
+SetField NewDamageInfo[0].DamageSections[1].Name generator
+SetField NewDamageInfo[0].DamageSections[1].Flags AbsorbsBodyDamage
+SetField NewDamageInfo[0].DamageSections[1].VitalityPercentage 1
+AddBlockElements NewDamageInfo[0].DamageSections[1].InstantResponses 1
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[0].PrimaryTransitionEffect fx\scenery_fx\destruction\covenant_mech_break_small\covenant_mech_break_small.effect
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[0].SecondaryTransitionEffect objects\equipment\instantcover\fx\destruction\garbage_spawn.effect
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[0].RuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[0].SecondaryRuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[0].DestroyInstanceGroup -1
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[0].EffectMarkerName fx_damage
+SetField NewDamageInfo[0].DamageSections[1].ResurrectionRegionRuntimeIndex -1
+
+SetField NewDamageInfo[0].DamageSections[2].Name deploy
+AddBlockElements NewDamageInfo[0].DamageSections[2].InstantResponses 1
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].Flags FiresOnCreation
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].PrimaryTransitionEffect fx\scenery_fx\destruction\covenant_mech_break_small\covenant_mech_break_small_2.effect
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].Region shield
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].NewState MinorDamage
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].RuntimeRegionIndex 1
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].SecondaryRuntimeRegionIndex -1
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].DestroyInstanceGroup -1
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].ResponseDelay 0.5
+SetField NewDamageInfo[0].DamageSections[2].InstantResponses[0].DelayEffect objects\equipment\instantcover\fx\delay_effect_for_sound.effect
+SetField NewDamageInfo[0].DamageSections[2].ResurrectionRegionRuntimeIndex -1
+
+AddBlockElements NewDamageInfo[0].Nodes 7
+SetField NewDamageInfo[0].Nodes[0].RuntimeDamagePart -1
+SetField NewDamageInfo[0].Nodes[1].RuntimeDamagePart -1
+SetField NewDamageInfo[0].Nodes[2].RuntimeDamagePart -1
+SetField NewDamageInfo[0].Nodes[3].RuntimeDamagePart -1
+SetField NewDamageInfo[0].Nodes[4].RuntimeDamagePart -1
+SetField NewDamageInfo[0].Nodes[5].RuntimeDamagePart -1
+SetField NewDamageInfo[0].Nodes[6].RuntimeDamagePart -1
+SetField NewDamageInfo[0].GlobalShieldMaterialIndex 146
+SetField NewDamageInfo[0].GlobalIndirectMaterialIndex 222
+SetField NewDamageInfo[0].RuntimeShieldRechargeVelocity 0.2
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     SHIELD DOORS     |
+# ------------------------
+ForEach phmo startingwith: objects\levels\forge\ff_one_way_door_garage\ff_one_way_door_garage SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_one_way_door_large\ff_one_way_door_large SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_one_way_door_medium\ff_one_way_door_medium SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_one_way_door_small\ff_one_way_door_small SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_one_way_door_xsmall\ff_one_way_door_xsmall SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_two_way_door_large\ff_two_way_door_large SetField PhantomTypes[0].Flags.Halo3ODST IgnoresPlayers,IgnoresBipeds,IgnoresVehicles,IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresDeadBipeds,MirroredAxis
+ForEach phmo startingwith: objects\levels\forge\ff_two_way_door_medium\ff_two_way_door_medium SetField PhantomTypes[0].Flags.Halo3ODST IgnoresPlayers,IgnoresBipeds,IgnoresVehicles,IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresDeadBipeds,MirroredAxis
+ForEach phmo startingwith: objects\levels\forge\ff_two_way_door_small\ff_two_way_door_small SetField PhantomTypes[0].Flags.Halo3ODST IgnoresPlayers,IgnoresBipeds,IgnoresVehicles,IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresDeadBipeds,MirroredAxis
+ForEach phmo startingwith: levels\multi\dlc\objects\dlc_vehicle_bay_shield_door_large\dlc_vehicle_bay_shield_door_large SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: levels\multi\dlc\objects\dlc_vehicle_bay_shield_door_small\dlc_vehicle_bay_shield_door_small SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\props\human\unsc\laser_field_huge\laser_field_huge SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_shield_door_large\ff_shield_door_large SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_shield_door_medium\ff_shield_door_medium SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\levels\forge\ff_shield_door_small\ff_shield_door_small SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\props\covenant\shield_door_medium\shield_door_medium SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+ForEach phmo startingwith: objects\props\covenant\shield_door_large\shield_door_large SetField PhantomTypes[0].Flags.Halo3ODST IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCrates,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery,IgnoresDeadBipeds
+
+# ------------------------
+# |        TIN CUP       |
+# ------------------------
+ForEach phmo startingwith: objects\levels\shared\golf_cup\golf_cup SetField PhantomTypes[0].Flags.Halo3ODST IgnoresPlayers,IgnoresBipeds,IgnoresVehicles,IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery

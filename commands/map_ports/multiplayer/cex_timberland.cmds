@@ -1,0 +1,106 @@
+# RIDGELINE
+# RIDGELINE
+# RIDGELINE
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\cex_timberland.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
+IgnoreBlamTag sound\levels\dlc\cex_timberland\sound_scenery\ca_water_light_lapping\ca_water_light_lapping.sound_scenery
+IgnoreBlamTag levels\dlc\cex_timberland\effects\ca_timberland_particulates.effect_scenery
+IgnoreBlamTag levels\dlc\cex_timberland\effects\ca_timberland_particulates_red.effect_scenery
+IgnoreBlamTag levels\dlc\cex_timberland\effects\ca_timberland_mountain_mist.effect_scenery
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\dlc\cex_timberland\cex_timberland.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position -0.885 -1.264 -19.647
+SetField CutsceneCameraPoints[0].Orientation -65.812 4.073 -8.987
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position -16.209 48.962 -12.887
+SetField CutsceneCameraPoints[1].Orientation -90 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     KILL TRIGGER     |
+# ------------------------
+EditTag levels\dlc\cex_timberland\cex_timberland.scenario
+SetField ScenarioKillTriggers[25].TriggerVolume -1
+SetField ScenarioKillTriggers[26].TriggerVolume -1
+SetField ScenarioKillTriggers[27].TriggerVolume -1
+SetField ScenarioKillTriggers[28].TriggerVolume -1
+SetField ScenarioKillTriggers[29].TriggerVolume -1
+SetField ScenarioKillTriggers[30].TriggerVolume -1
+SetField ScenarioKillTriggers[31].TriggerVolume -1
+SetField ScenarioKillTriggers[32].TriggerVolume -1
+SetField ScenarioKillTriggers[34].TriggerVolume -1
+SetField ScenarioKillTriggers[35].TriggerVolume -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\dlc\cex_timberland\cex_timberland.sky_atm_parameters
+SetField AtmosphereSettings[0].Intensity 0.5
+SaveTagChanges
+Exit
+
+EditTag levels\dlc\cex_timberland\post_fx\cex_timberland.area_screen_effect
+SetField ScreenEffects[0].GammaEnhance 0
+# SetField ScreenEffects[0].ColorFilter 0.9137255 0.8860743 0.9
+SaveTagChanges
+Exit
+
+EditTag levels\dlc\cex_timberland\post_fx\cex_timberland.camera_fx_settings
+# SetField Exposure.ExposureRange -0.25 0.5
+SetField Exposure.AutoBrightness -3.5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag sound\levels\dlc\cex_timberland\halo_ext\details\long_stereo_cicadas.sound
+SetField SoundClass AmbientNature
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+EditTag levels\dlc\cex_timberland\cex_timberland.scenario_structure_bsp
+SetField WorldBoundsX -1200 800
+SetField WorldBoundsY -900 250
+SetField WorldBoundsZ -150 300
+SetField Clusters[0].BoundsX -1200 800
+SetField Clusters[0].BoundsY -900 250
+SetField Clusters[0].BoundsZ -150 300
+SetField Physics.MoppBoundsMin -1200 -900 -150
+SetField Physics.MoppBoundsMax 800 250 300
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\dlc\cex_timberland\cex_timberland.scenario

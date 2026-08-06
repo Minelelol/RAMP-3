@@ -210,6 +210,8 @@ Exit
 # |        PORTING       |
 # ------------------------
 OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag objects\weapons\lod\lod_plasma_pistol\lod_plasma_pistol.render_model
+
 NameBlamTag objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon objects\weapons\pistol\plasma_pistol\plasma_pistol_stupiddupe
 NameBlamTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\plasma_pistol.weapon objects\weapons\pistol\plasma_pistol\plasma_pistol
 NameBlamTag dw3\r3ach\ui\chud\plasma_pistol.chud_definition ui\chud\plasma_pistol
@@ -273,6 +275,11 @@ SetField Playback.DistanceParameters.MaximumDistance 30
 SaveTagChanges
 Exit
 
+EditTag dw3\r3ach\sound\weapons\plasma_pistol\plasmapistol_charging_reach\plasmapistol_charging_reach.sound_looping
+SetField Tracks[0].Gain 0
+SaveTagChanges
+Exit
+
 # ------------------------
 # |         MODEL        |
 # ------------------------
@@ -291,6 +298,11 @@ AddBlockElements Functions
 SetField Functions[*].ImportName active_camouflage
 SetField Functions[*].ExportName camo
 SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+
+# Remove duplicated sound
+RemoveBlockElements Attachments 4 *
+
+SetField WeaponFlags.NewFlags CannotFireAtMaximumAge,CanBeDualWielded
 SaveTagChanges
 Exit
 

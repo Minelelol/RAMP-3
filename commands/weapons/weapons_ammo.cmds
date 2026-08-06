@@ -1,0 +1,177 @@
+# -------------------------------------------
+# |                 MAGNUM                  |
+# -------------------------------------------
+EditTag objects\weapons\pistol\automag\automag.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 48
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_large\unsc_ammo_large.equipment
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 24
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_small\unsc_ammo_small.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\magnum\magnum.weapon
+SetField Magazines[0].MagazineEquipment[0].Rounds 40
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 32
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_large\unsc_ammo_large.equipment
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 16
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_small\unsc_ammo_small.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\magnum\magnum_damage.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 18
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\pistol_ammo\pistol_ammo.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\pistol\magnum\magnum_power.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 40
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\pistol_ammo\pistol_ammo.equipment
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                   AR                    |
+# -------------------------------------------
+EditTag objects\weapons\rifle\assault_rifle\assault_rifle.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 96
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_large\unsc_ammo_large.equipment
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 48
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_small\unsc_ammo_small.equipment
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                   BR                    |
+# -------------------------------------------
+EditTag objects\weapons\rifle\battle_rifle\battle_rifle.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 108
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_large\unsc_ammo_large.equipment
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 54
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_small\unsc_ammo_small.equipment
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                  DMR                    |
+# -------------------------------------------
+EditTag objects\weapons\rifle\dmr\dmr.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 45
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_large\unsc_ammo_large.equipment
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 20
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_small\unsc_ammo_small.equipment
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                  SMG                    |
+# -------------------------------------------
+EditTag objects\weapons\rifle\smg\smg.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 148
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\smg_ammo\smg_ammo.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\smg\smg_accuracy.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 148
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\smg_ammo\smg_ammo.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\smg\smg_damage.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 118
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\smg_ammo\smg_ammo.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\smg\smg_power.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 148
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\smg_ammo\smg_ammo.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\smg\smg_rof.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 128
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\smg_ammo\smg_ammo.equipment
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 192
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_large\unsc_ammo_large.equipment
+
+AddBlockElements Magazines[0].MagazineEquipment 1
+SetField Magazines[0].MagazineEquipment[*].Rounds 96
+SetField Magazines[0].MagazineEquipment[*].Equipment objects\powerups\unsc_ammo_small\unsc_ammo_small.equipment
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |              PHYSICS MODEL              |
+# -------------------------------------------
+DuplicateTag objects\powerups\rocket_launcher_ammo\rocket_launcher_ammo.physics_model objects\powerups\shotgun_ammo\shotgun_ammo
+EditTag objects\powerups\shotgun_ammo\shotgun_ammo.physics_model
+SetField Boxes[0].HalfExtents 0.06490061 0.02838534 0.046450395
+SetField Boxes[0].Translation 0 0 0.01343384
+SaveTagChanges
+Exit
+
+EditTag objects\powerups\shotgun_ammo\shotgun_ammo.model
+SetField PhysicsModel objects\powerups\shotgun_ammo\shotgun_ammo.physics_model
+SaveTagChanges
+Exit
+
+
+DuplicateTag objects\powerups\shotgun_ammo\shotgun_ammo.physics_model objects\powerups\sniper_rifle_ammo\sniper_rifle_ammo
+EditTag objects\powerups\sniper_rifle_ammo\sniper_rifle_ammo.physics_model
+SetField Boxes[0].HalfExtents 0.03490061 0.0138534 0.0384504
+SetField Boxes[0].Translation 0 0 0.00243384
+SaveTagChanges
+Exit
+
+EditTag objects\powerups\sniper_rifle_ammo\sniper_rifle_ammo.model
+SetField PhysicsModel objects\powerups\sniper_rifle_ammo\sniper_rifle_ammo.physics_model
+SaveTagChanges
+Exit
+
+
+DuplicateTag objects\powerups\shotgun_ammo\shotgun_ammo.physics_model objects\powerups\pistol_ammo\pistol_ammo
+EditTag objects\powerups\pistol_ammo\pistol_ammo.physics_model
+SetField Boxes[0].HalfExtents 0.06990061 0.02838534 0.010450394
+SetField Boxes[0].Translation -0.03 0 0.0008
+SaveTagChanges
+Exit
+
+EditTag objects\powerups\pistol_ammo\pistol_ammo.model
+SetField PhysicsModel objects\powerups\pistol_ammo\pistol_ammo.physics_model
+SaveTagChanges
+Exit
+
+EditTag objects\powerups\smg_ammo\smg_ammo.model
+SetField PhysicsModel objects\powerups\pistol_ammo\pistol_ammo.physics_model
+SaveTagChanges
+Exit

@@ -1,0 +1,19 @@
+SuppressErrors True
+CS < workingdir\cs\PauseErrorWarningCount.cs
+
+ForEach rmsh StartingWith: levels\solo\m52\sky_dusky_city\shaders\duel_tether SetField RenderFlags None
+
+ForEach rmsh StartingWith: levels\solo\m52\shaders\exterior_buildings\metal_skyscraper_white_a SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m52\shaders\exterior_buildings\metal_skyscraper_white_b SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m52\shaders\exterior_buildings\metal_skyscraper_white_e SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m52\shaders\exterior_buildings\metal_skyscraper_grey_a SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m52\shaders\exterior_buildings\metal_skyscraper_red_e SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\solo\m52\shaders\exterior_buildings\metal_skyscraper_blue_e SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m52\shaders\metal\metal_aluminum_a SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m52\shaders\marble\marble_volcanic_reach_rock SetArgument environment_map_specular_contribution 4
+
+CS < workingdir\cs\ResumeErrorWarningCount.cs
+SuppressErrors False

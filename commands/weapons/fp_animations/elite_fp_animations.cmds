@@ -168,6 +168,10 @@ Exit
 EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_elite\fp_elite.model_animation_graph
 AddAnimation workingdir\animations\elite_fp\plasmapistol
 
+AddBlockElements Animations[3].AnimationData.SoundEvents
+SetField Animations[3].AnimationData.SoundEvents[0].Sound 8
+SetField Animations[3].AnimationData.SoundEvents[0].Frame 2
+
 SetField Animations[19].Weight 0.6
 SetField Animations[19].AnimationData.NextAnimation 20
 SetField Animations[20].Weight 1

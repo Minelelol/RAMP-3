@@ -92,4 +92,20 @@ SetField MeleeDamageParameters.LungeMeleeResponse globals\trigger_lunge.damage_e
 SaveTagChanges
 Exit
 
-AddForgeItem "GOLF CLUB" 1 objects\levels\shared\golf_club\golf_club.weapon
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English golf_club "GOLF CLUB"
+
+SetVariable MULG_WEAPONSTRING_VAR 					golf_club
+SetVariable MULG_RANDOMCHANCE_VAR 					0
+SetVariable MULG_WEAPONTAG_VAR 						objects\levels\shared\golf_club\golf_club.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	magnum
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		golf_club
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	assault_rifle
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		golf_club
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		golf_club
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
+# AddForgeItem "GOLF CLUB" 1 objects\levels\shared\golf_club\golf_club.weapon

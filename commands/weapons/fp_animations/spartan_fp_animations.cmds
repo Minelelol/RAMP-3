@@ -198,7 +198,6 @@ EditTag dw3\r3ach\objects\weapons\pistol\plasma_pistol\animations\fp_spartan\fp_
 AddAnimation workingdir\animations\spartan_fp\plasmapistol
 SortModes
 
-SetField Animations[3].PlaybackFlags DisableWeaponIk
 SetField Animations[6].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
 SetField Animations[7].PlaybackFlags DisableWeaponIk,DisableWeaponAim1stPerson
 SetField Animations[10].PlaybackFlags DisableWeaponIk
@@ -213,6 +212,11 @@ SetField Animations[29].PlaybackFlags DisableWeaponIk
 SetField Animations[30].PlaybackFlags DisableWeaponIk
 SetField Animations[31].PlaybackFlags DisableWeaponIk
 SetField Animations[32].PlaybackFlags DisableWeaponIk
+
+SetField Animations[3].PlaybackFlags DisableWeaponIk
+AddBlockElements Animations[3].AnimationData.SoundEvents
+SetField Animations[3].AnimationData.SoundEvents[0].Sound 8
+SetField Animations[3].AnimationData.SoundEvents[0].Frame 1
 
 SetField Animations[19].Weight 0.6
 SetField Animations[19].AnimationData.NextAnimation 20

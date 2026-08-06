@@ -147,6 +147,8 @@ Exit
 # |        PORTING       |
 # ------------------------
 OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+IgnoreBlamTag objects\weapons\lod\lod_needler\lod_needler.render_model
+
 NameBlamTag objects\weapons\pistol\needler\needler.weapon youregivingorderfromthebackseat
 NameBlamTag dw3\r3ach\objects\weapons\pistol\needler\needler.weapon objects\weapons\pistol\needler\needler
 NameBlamTag dw3\r3ach\ui\chud\needler.chud_definition ui\chud\needler

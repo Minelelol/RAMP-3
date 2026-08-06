@@ -1,0 +1,43 @@
+GenerateBitmap levels\shared\bitmaps\human\metal\metal_pioneer_scratches_detail_bump workingdir\bitmaps\Bitmap_Fixes\metal_pioneer_scratches_detail_bump.dds Linear 7
+
+# Fix checkerboarded effect on ALOT of shaders, some are shared some are standalone, I'm not sure which one is which so I'm clumping them all here.
+OpenCacheFile MCCdir\haloreach\maps\cex_headlong.map
+RunCommands workingdir\commands\reach_globals.cmds
+SetPortingOption HqNormalMapConversion True
+SetPortingOption BitmapFormatOptimization False
+PortTag levels\dlc\cex_headlong\bitmaps\metal_dark_strip_horiz_bump.bitmap
+PortTag levels\dlc\cex_headlong\bitmaps\ca_headlong_concrete_moulded_bump.bitmap
+PortTag levels\dlc\cex_headlong\bitmaps\ca_headlong_concrete_detail_bump.bitmap
+PortTag levels\solo\m50\bitmaps\paneling\floor_tile_grouty_goodness_a_zbump.bitmap
+# PortTag levels\shared\bitmaps\human\metal\metal_pioneer_scratches_detail_bump.bitmap
+PortTag levels\dlc\cex_headlong\bitmaps\metal_dark_01_bump.bitmap
+PortTag levels\dlc\cex_headlong\bitmaps\ca_headlong_concrete_bump.bitmap
+Exit
+
+OpenCacheFile MCCdir\haloreach\maps\m52.map
+RunCommands workingdir\commands\reach_globals.cmds
+SetPortingOption HqNormalMapConversion True
+SetPortingOption BitmapFormatOptimization False
+PortTag levels\solo\m52\bitmaps\metal\metal_wall_interior_a_zbump.bitmap
+PortTag levels\solo\m52\bitmaps\metal\metal_wall_interior_b_zbump.bitmap
+PortTag levels\solo\m52\bitmaps\metal\metal_wall_interior_c_zbump.bitmap
+PortTag levels\solo\m52\bitmaps\metal\metal_wall_interior_d_zbump.bitmap
+PortTag levels\solo\m52\bitmaps\metal\metal_wall_interior_trim_a_zbump.bitmap
+PortTag levels\solo\m52\bitmaps\metal\metal_white_panels_e_zbump.bitmap
+PortTag levels\solo\m50\bitmaps\metal\metal_artsy_specbump.bitmap
+PortTag levels\solo\m20\bitmaps\metal_scratched_detail_zbump.bitmap
+
+PortTag levels\shared\bitmaps\oni\metal\metal_oni_int_panel_e_zbump.bitmap
+PortTag levels\shared\bitmaps\oni\metal\metal_oni_int_panel_e_detail_bump.bitmap
+PortTag levels\shared\bitmaps\oni\metal\metal_oni_ext_panel_b_simple_specbump.bitmap
+
+PortTag levels\shared\bitmaps\water\water_tiling_zbump.bitmap
+PortTag levels\solo\m30\bitmaps\night\plastic_crystaline_detailnormal.bitmap
+PortTag levels\solo\m52\bitmaps\concrete\fountain_carvings__normal.bitmap
+
+# Glass
+PortTag levels\solo\m50\bitmaps\glass\park_bridge_glass_detail_normal.bitmap
+PortTag levels\solo\m50\bitmaps\fx\cube_atrium_bump.bitmap
+
+PortTag levels\solo\m52\bitmaps\exterior_buildings\skyscraper_grime_a_zbump.bitmap
+Exit

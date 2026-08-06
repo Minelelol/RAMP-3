@@ -1,0 +1,1 @@
+ForEach rmsh StartingWith: levels\solo\m52\sky_dusky_city\shaders\duel_tether SetField RenderFlags None

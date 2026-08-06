@@ -1,5 +1,5 @@
 CreateModPackage 1 Large
-ReachTest
+RAMP-3 August Playtest
 Welcome to RAMP, a community effort to transform Eldewrito into Halo Reach while keeping ED main features and adding new ones. Featuring extensive bug fixes, quality of life improvements, and plenty of new content to play with. We hope you enjoy this labor of love.
 AMP Collective
 0.95
@@ -22,6 +22,7 @@ RunCommands workingdir\commands\customization\spartan\4_render_model.cmds
 RunCommands workingdir\commands\customization\spartan\5_customization_globals.cmds
 RunCommands workingdir\commands\customization\spartan\6_noble_dialogue_voice.cmds
 RunCommands workingdir\commands\customization\spartan\7_animation.cmds
+RunCommands workingdir\commands\customization\spartan\8_movement.cmds
 
 # -----------------------------------------
 # |              REACH ELITE              |
@@ -33,6 +34,7 @@ RunCommands workingdir\commands\customization\elite\3_render_model.cmds
 RunCommands workingdir\commands\customization\elite\4_customization_globals.cmds
 RunCommands workingdir\commands\customization\elite\5_reach_elite_dialogue_voice.cmds
 RunCommands workingdir\commands\customization\elite\6_animation.cmds
+RunCommands workingdir\commands\customization\elite\7_movement.cmds
 
 # -----------------------------------------
 # |              REACH MENU               |
@@ -79,12 +81,13 @@ RunCommands workingdir\commands\weapons\port\20_reach_plasma_repeater.cmds
 RunCommands workingdir\commands\weapons\port\21_reach_plasma_launcher.cmds
 RunCommands workingdir\commands\weapons\port\22_reach_target_locator.cmds
 RunCommands workingdir\commands\weapons\port\23_reach_golf_club.cmds
+RunCommands workingdir\commands\weapons\port\24_reach_jorges_machine_gun_turret.cmds
 
 # -----------------------------------------
 # |             OTHER WEAPONS             |
 # -----------------------------------------
-RunCommands workingdir\commands\weapons\port\24_rs_stanchion.cmds
-RunCommands workingdir\commands\weapons\port\25_skaboodle_lmg.cmds
+RunCommands workingdir\commands\weapons\port\25_rs_stanchion.cmds
+RunCommands workingdir\commands\weapons\port\26_skaboodle_lmg.cmds
 
 # -----------------------------------------
 # |           WEAPONS VARIANTS            |
@@ -118,6 +121,9 @@ RunCommands workingdir\commands\weapons\variants\magnum\magnum_damage.cmds
 RunCommands workingdir\commands\weapons\variants\magnum\magnum_power.cmds
 RunCommands workingdir\commands\weapons\variants\magnum\automag.cmds
 
+# Needler Variant
+RunCommands workingdir\commands\weapons\variants\needler\needler_dual_wieldable.cmds
+
 # Plasma Pistol Variant
 RunCommands workingdir\commands\weapons\variants\plasma_pistol\plasma_pistol_power.cmds
 
@@ -134,11 +140,22 @@ RunCommands workingdir\commands\weapons\variants\smg\smg_rof.cmds
 RunCommands workingdir\commands\weapons\variants\smg\smg_silenced.cmds
 
 # -----------------------------------------
-# |           WEAPONS ANIMATION           |
+# |         WEAPONS MISCELLANEOUS         |
 # -----------------------------------------
+# Weapons Animations
 RunCommands workingdir\commands\weapons\fp_animations\spartan_fp_animations.cmds
 RunCommands workingdir\commands\weapons\fp_animations\elite_fp_animations.cmds
+
+# Weapons Duals Animations
+RunCommands workingdir\commands\weapons\fp_animations\sounds_fp_duals_animations.cmds
+RunCommands workingdir\commands\weapons\fp_animations\spartan_fp_duals_animations.cmds
+RunCommands workingdir\commands\weapons\fp_animations\elite_fp_duals_animations.cmds
+
+# Weapons Viewmodel
 RunCommands workingdir\commands\weapons\weapons_viewmodel.cmds
+
+# Weapons Ammo Pick Up
+RunCommands workingdir\commands\weapons\weapons_ammo.cmds
 
 # -----------------------------------------
 # |           REACH EQUIPMENTS            |
@@ -173,6 +190,12 @@ RunCommands workingdir\commands\equipments\reach_armor_lock.cmds
 GenerateBitmap sequence reach\ui\chud\bitmaps\hud_vehicle_reticles workingdir\bitmaps\HUD\reach_vehicle_hud
 RunCommands workingdir\commands\vehicles\reach_revenant.cmds
 RunCommands workingdir\commands\vehicles\reach_falcon.cmds
+RunCommands workingdir\commands\vehicles\reach_sabre.cmds
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>
+# [        STAGE 1        ]
+# <<<<<<<<<<<<<<<<<<<<<<<<<
+SaveModPackage workingdir\paks\stages\stage_1.pak
 
 # -----------------------------------------
 # |      PRELIMINARY REACH MAP PORTS      |
@@ -185,19 +208,50 @@ CreateTag rmt2 shaders\shader_templates\_7_2_0_1_13_2_5_0_1_5_0_0_0_0_0
 CreateTag rmt2 shaders\shader_templates\_5_7_0_1_13_1_11_0_0_5_0_0_0_0_0
 SaveTagNames
 
+// Fix grass alpha on Noble Actual, Nightfall, and Waterfront
+GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitmaps\Decals\foliages\m30_grass_plate.dds
+
+// Fix grass on Powerhouse
+GenerateBitmap levels\shared\decorators\bitmaps\dry_weedy_grass_dec workingdir\bitmaps\Decals\foliages\dry_weedy_grass_dec.dds
+
+RunCommands workingdir\commands\map_ports\maps_bitmap_fixes.cmds
+RunCommands workingdir\commands\map_ports\maps_invalid_bitmap_fixes.cmds
+
+# -----------------------------------------
+# |              RAMP FORGE               |
+# -----------------------------------------
+RunCommands workingdir\commands\forge\01_forge_replace_ed_objects.cmds
+RunCommands workingdir\commands\forge\02_forge_object_port.cmds
+RunCommands workingdir\commands\forge\03_forge_object_fixes.cmds
+RunCommands workingdir\commands\forge\04_forge_object_palette.cmds
+
+# -----------------------------------------
+# |             EXTRA REFORGE             |
+# -----------------------------------------
+RunCommands workingdir\commands\forge\extra_reforge\01_extra_reforge_0.1.cmds
+RunCommands workingdir\commands\forge\extra_reforge\02_extra_reforge_0.5.cmds
+RunCommands workingdir\commands\forge\extra_reforge\03_extra_reforge_1.cmds
+RunCommands workingdir\commands\forge\extra_reforge\04_extra_reforge_materials.cmds
+
+# >>>>>>>>>>>>>>>>>>>>>>>>>
+# [        STAGE 2        ]
+# <<<<<<<<<<<<<<<<<<<<<<<<<
+SaveModPackage workingdir\paks\stages\stage_2.pak
+
 # -----------------------------------------
 # |          REACH MP MAP PORTS           |
 # -----------------------------------------
-# RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
 # RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
 # RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\cex_damnation.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\cex_headlong.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\cex_timberland.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\30_settlement.cmds
 
 # -----------------------------------------
 # |          REACH SP MAP PORTS           |
 # -----------------------------------------
-// Fix grass alpha in Noble Actual, Nightfall, and Waterfront
-GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitmaps\Decals\foliages\m30_grass_plate.dds
-
 # RunCommands workingdir\commands\map_ports\campaign\m05.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m10.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m20.cmds
@@ -205,7 +259,7 @@ GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitma
 # RunCommands workingdir\commands\map_ports\campaign\m35.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m45.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m50.cmds
-# RunCommands workingdir\commands\map_ports\campaign\m52.cmds
+RunCommands workingdir\commands\map_ports\campaign\m52.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m60.cmds
 # RunCommands workingdir\commands\map_ports\campaign\m70.cmds
 // Why not
@@ -213,11 +267,40 @@ GenerateBitmap levels\shared\decorators\bitmaps\m30_grass_plate workingdir\bitma
 # RunCommands workingdir\commands\map_ports\campaign\m70_bonus.cmds
 
 # -----------------------------------------
-# |            MISCELLANEOUS              |
+# |         SKYBOX PLAYTEST ONLY          |
+# -----------------------------------------
+AddSkyBox "BREAKNECK" levels\dlc\cex_headlong\cex_headlong.scenario 0
+AddSkyBox "FORGE WORLD" levels\multi\forge_halo\forge_halo.scenario 0
+AddSkyBox "NEW ALEXANDRIA" levels\solo\m52\m52.scenario 0
+AddSkyBox "PENANCE" levels\dlc\cex_damnation\cex_damnation.scenario 0
+AddSkyBox "POWERHOUSE" levels\multi\30_settlement\30_settlement.scenario 0
+AddSkyBox "RIDGELINE" levels\dlc\cex_timberland\cex_timberland.scenario 1
+
+# -----------------------------------------
+# |            PLAYTEST ONLY              |
+# -----------------------------------------
+RunCommands workingdir\commands\playtest_only\sonic_bottomless_pit_sign.cmds
+RunCommands workingdir\commands\playtest_only\Barusu.cmds
+
+# -----------------------------------------
+# |           UPDATE MAP FILES            |
 # -----------------------------------------
 UpdateMapFiles workingdir\mapsinfo
 MapFile Remove 270735729
 MapFile Remove 0
+
+# -----------------------------------------
+# |        MAXIMIZE FORGE BUDGETS         |
+# -----------------------------------------
+EditTag multiplayer\forge_globals.forge_globals_definition
+MaximizeBudget AllObjects
+SaveTagChanges
+Exit
+
+# -----------------------------------------
+# |            MISCELLANEOUS              |
+# -----------------------------------------
+RunCommands workingdir\commands\map_ports\shader_fixes\general_shaders.cmds
 
 # Fix reach particle effect lod
 CS < workingdir\cs\fix_inverse_lod_feather.cs
@@ -226,5 +309,6 @@ CS < workingdir\cs\fix_inverse_lod_feather.cs
 # VERY HACKY
 CS < workingdir\cs\fix_projectile_drop.cs
 
+ImportFonts workingdir\ramp_fonts_package.bin
 AddModFiles workingdir\assets
 SaveModPackage

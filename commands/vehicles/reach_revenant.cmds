@@ -262,6 +262,13 @@ SetField Materials[2].DamageSectionIndex 4
 SetField Materials[3].DamageSectionIndex 5
 SetField Materials[4].DamageSectionIndex 1
 
+# Civilian Variants
+StringId Add civilian
+CopyBlockElements Variants 0 1
+PasteBlockElements Variants
+SetField Variants[*].Name civilian
+SetField Variants[*].Objects[0].ChildObject null
+
 SaveTagChanges
 Exit
 
@@ -288,6 +295,17 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english revenant_enter "\uE461\uE45F to drive Revenant"
+SetString english revenant_enter_passenger "\uE461\uE45F to ride in Revenant"
+SetString english revenant_board "\uE461\uE45F to board Revenant"
+SetString english revenant_flip "\uE461\uE45F to flip Revenant"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |     MAIN VEHICLE     |
 # ------------------------
 EditTag objects\vehicles\wraith\wraith.vehicle
@@ -301,8 +319,8 @@ PasteBlockElements Functions
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 
 SetField BoundingRadius 1
@@ -415,14 +433,25 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |   VEHICLE VARIANTS   |
+# ------------------------
+DuplicateTag objects\vehicles\covenant\revenant\revenant.vehicle objects\vehicles\covenant\revenant\revenant_civilian
+EditTag objects\vehicles\covenant\revenant\revenant_civilian.vehicle
+SetField DefaultModelVariant civilian
+SetField ChangeColors[0].InitialPermutations[0].VariantName civilian
+SetField Seats[0].UnitHudInterface[0].UnitHudInterface ui\chud\v_driver.chud_definition
+SaveTagChanges
+Exit
+
+# ------------------------
 # |    MORTAR VEHICLE    |
 # ------------------------
 EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\revenant_plasma_turret.vehicle
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 
 SetField AccelerationScale 1.25
@@ -463,8 +492,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\hull_back_destroyed\hull_back
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -473,8 +502,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\front_right_destroyed\front_r
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -483,8 +512,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\front_left_destroyed\front_le
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -493,8 +522,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\wing_front_left\wing_front_le
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -503,8 +532,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\wing_front_right\wing_front_r
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -513,8 +542,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\wing_back_left\wing_back_left
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -523,8 +552,8 @@ EditTag objects\vehicles\covenant\revenant\garbage\wing_back_right\wing_back_rig
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -533,8 +562,8 @@ EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\garbag
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -543,8 +572,8 @@ EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\garbag
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
@@ -553,10 +582,11 @@ EditTag objects\vehicles\covenant\revenant\turrets\revenant_plasma_turret\garbag
 AddBlockElements ChangeColors
 AddBlockElements ChangeColors[0].InitialPermutations
 SetField ChangeColors[0].InitialPermutations[0].Weight 1
-SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.7882353 0.17254902 0.25882354
-SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.7882353 0.17254902 0.25882354
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 0.62352943 0.09411765 0.15686275
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 0.62352943 0.09411765 0.15686275
 SetField ChangeColors[0].InitialPermutations[0].VariantName default
 SaveTagChanges
 Exit
 
-AddForgeItem "REVENANT" 1 objects\vehicles\covenant\revenant\revenant.vehicle
+# AddForgeItem "REVENANT" "VEHICLES" objects\vehicles\covenant\revenant\revenant.vehicle
+# AddForgeItem "REVENANT, CIVILIAN" "VEHICLES" objects\vehicles\covenant\revenant\revenant_civilian.vehicle

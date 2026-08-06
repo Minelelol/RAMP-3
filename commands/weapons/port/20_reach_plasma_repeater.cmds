@@ -240,6 +240,18 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english prp_picked_up "Picked up a Plasma Repeater"
+SetString english prp_pickup "\uE461\uE45F to pick up|n|r\uE174"
+SetString english prp_swap "\uE461\uE45F to swap for|n|r\uE174"
+SetString english prp_swap_ai "\uE461\uE45F to take ally's|n|r\uE174"
+SetString english prp_switch_to "Out of ammo|nPress \uE446 to switch to|n|r\uE174"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
@@ -261,8 +273,30 @@ AddBlockElements Functions
 SetField Functions[*].ImportName active_camouflage
 SetField Functions[*].ExportName camo
 SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+
+SetField PickupMessage prp_pickup
+SetField SwapMessage prp_swap
+SetField PickedUpMessage prp_picked_up
+SetField SwitchToMessage prp_switch_to
+SetField SwitchToFromAiMessage prp_swap_ai
 SaveTagChanges
 Exit
 
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English plasma_repeater "PLASMA REPEATER"
+
+SetVariable MULG_WEAPONSTRING_VAR 					plasma_repeater
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	plasma_rifle
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	plasma_repeater
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		plasma_repeater
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		plasma_repeater
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
 # Remove ts once we're done with the weapons port
-AddForgeItem "PLASMA REPEATER" 1 objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon
+# AddForgeItem "PLASMA REPEATER" "POWER WEAPONS" objects\weapons\rifle\plasma_repeater\plasma_repeater.weapon

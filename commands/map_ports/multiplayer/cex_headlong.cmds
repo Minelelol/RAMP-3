@@ -1,0 +1,89 @@
+# BREAKNECK
+# BREAKNECK
+# BREAKNECK
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\cex_headlong.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
+NameBlamTag fx\fx_library\weather\falling_ash\falling_ash.sky_atm_parameters levels\dlc\cex_headlong\post_fx\ca_headlong_fog
+
+IgnoreBlamTag sound\levels\dlc\cex_headlong\sound_scenery\ca_pipe_high\ca_pipe_high.sound_scenery
+IgnoreBlamTag sound\levels\dlc\cex_headlong\sound_scenery\ca_pipe_med\ca_pipe_med.sound_scenery
+IgnoreBlamTag sound\levels\dlc\cex_headlong\sound_scenery\ca_fluorescent_light\ca_fluorescent_light.sound_scenery
+
+NameBlamTag objects\cex\cex_headlong\crates\physics_beam\physics_beam.crate dontputthisintheforgepalette
+IgnoreBlamTag dontputthisintheforgepalette.crate
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\dlc\cex_headlong\cex_headlong.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position 2.679 25.204 7.673
+SetField CutsceneCameraPoints[0].Orientation -90 0 0
+
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position 2.686 20.636 7.134
+SetField CutsceneCameraPoints[1].Orientation 90 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\dlc\cex_headlong\post_fx\ca_headlong_fog.sky_atm_parameters
+SetField AtmosphereSettings[0].Intensity 2.31
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       PARTICLE       |
+# ------------------------
+EditTag levels\dlc\cex_headlong\fx\flame30fps.particle
+SetField ParticleBillboardStyle CameraFacing
+SetField AppearanceFlags RandomUMirror,IntensityAffectsAlpha,DepthFadeActive
+SaveTagChanges
+Exit
+
+EditTag levels\dlc\cex_headlong\fx\flames_fall.particle
+SetField ParticleBillboardStyle CameraFacing
+SetField AppearanceFlags RandomUMirror,DepthFadeActive
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+EditTag levels\dlc\cex_headlong\cex_headlong.scenario_structure_bsp
+SetField WorldBoundsX -175 174
+SetField WorldBoundsY -318 90
+SetField WorldBoundsZ -25 300
+SetField Clusters[0].BoundsX -175 174
+SetField Clusters[0].BoundsY -318 90
+SetField Clusters[0].BoundsZ -25 300
+SetField Physics.MoppBoundsMin -175 -318 -25
+SetField Physics.MoppBoundsMax 174 90 300
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\dlc\cex_headlong\cex_headlong.scenario

@@ -193,7 +193,7 @@ SetArgument area_specular_contribution 0.1
 SetArgument roughness 0.2
 SetArgument fresnel_color 0.54509807 0.59607846 0.7411765
 SetArgument specular_tint 0.5372549 0.5411765 0.49411765
-SetArgument specular_coefficient 0.4
+SetArgument specular_coefficient 0.2
 
 SaveTagChanges
 Exit

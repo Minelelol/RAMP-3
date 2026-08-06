@@ -1,0 +1,91 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\m10.map
+RunCommands workingdir\commands\reach_globals.cmds
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_composite.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_jorge.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_jorge_composite.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_jorge_metal.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_metal.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_rubber.shader
+PortTag objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_shiny.shader
+PortTag objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+CreateTag mode objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge
+ImportTag objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.render_model workingdir\tags\weapons\ED\machinegun_turret_jorge.render_model
+EditTag objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.render_model
+
+# LEFT HAND SPARTAN
+# SetField MarkerGroups[4].Markers[0].Translation 0.03 0.01 0.14811544
+
+# RIGHT HAND SPARTAN
+SetField MarkerGroups[8].Markers[0].Translation -0.18062858 0.001318766 0.10463109
+
+SetField Materials[0].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_composite.shader
+SetField Materials[1].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_jorge.shader
+SetField Materials[2].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_jorge_composite.shader
+SetField Materials[3].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_jorge_metal.shader
+SetField Materials[4].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_metal.shader
+SetField Materials[5].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_rubber.shader
+SetField Materials[6].RenderMethod objects\vehicles\human\turrets\machinegun\shaders\machinegun_turret_shiny.shader
+SetField Materials[7].RenderMethod objects\bitmaps\decals\shaders\unsc_decals.shader_decal
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\MGT_JORGE\jorge_machine_gun_turret.fbx TriangleStrip
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag objects\weapons\turret\machinegun_turret\machinegun_turret_weapon\machinegun_turret_weapon.model objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge
+EditTag objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.model
+SetField RenderModel objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.render_model
+SetField LodModel null
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+DuplicateTag objects\weapons\turret\machinegun_turret\machinegun_turret.weapon objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge
+EditTag objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.weapon
+SetField Model objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.model
+SaveTagChanges
+Exit
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English mgt_jorge "JORGE'S MACHINE GUN TURRET"
+
+EditTag multiplayer\multiplayer_globals.multiplayer_globals
+AddBlockElements Universal[0].GameVariantWeapons 1
+SetField Universal[0].GameVariantWeapons[*].Name mgt_jorge
+SetField Universal[0].GameVariantWeapons[*].RandomChance 0
+SetField Universal[0].GameVariantWeapons[*].Weapon objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.weapon
+SaveTagChanges
+Exit
+
+EditTag multiplayer\game_variant_settings\player_traits_template\traits_weapons_initial_primary.text_value_pair_definition
+AddBlockElements TextValuePairs
+SetField TextValuePairs[*].ExpectedValueType StringidReference
+SetField TextValuePairs[*].StringidValue mgt_jorge
+SetField TextValuePairs[*].Name mgt_jorge
+SaveTagChanges
+Exit
+
+EditTag multiplayer\game_variant_settings\map_overrides\traits_weapons_initial_primary_untemplated.text_value_pair_definition
+AddBlockElements TextValuePairs
+SetField TextValuePairs[*].ExpectedValueType StringidReference
+SetField TextValuePairs[*].StringidValue mgt_jorge
+SetField TextValuePairs[*].Name mgt_jorge
+SaveTagChanges
+Exit
+
+# AddForgeItem "JORGE'S MACHINE GUN TURRET" 1 objects\weapons\turret\machinegun_turret_jorge\machinegun_turret_jorge.weapon

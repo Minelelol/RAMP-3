@@ -1,0 +1,20 @@
+EditTag objects\characters\elite\mp_elite\mp_elite.biped
+SetField JumpVelocity 2.7
+SetField MinimumSoftLandingVelocity 0.5
+SetField MinimumHardLandingVelocity 5.25
+SaveTagChanges
+Exit
+
+EditTag globals\globals.globals
+SetField PlayerControl[1].SprintFullSpeedMultiplier 0.623
+SetField PlayerControl[1].SprintPeggedMagnitude 0.85
+SetField PlayerControl[1].SprintPeggedAngularThreshold 60
+SetField PlayerInformation[1].RunForward 2.35
+SetField PlayerInformation[1].RunBackward 2.09
+SetField PlayerInformation[1].RunSideways 2.09
+SetField PlayerInformation[1].RunAcceleration 9.05
+SetField PlayerInformation[1].SneakBackward 0.81
+SetField PlayerInformation[1].SneakSideways 0.81
+SetField PlayerInformation[1].SneakAcceleration 6.1
+SaveTagChanges
+Exit

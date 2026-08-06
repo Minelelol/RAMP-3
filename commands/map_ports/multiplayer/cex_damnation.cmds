@@ -1,0 +1,81 @@
+# PENANCE
+# PENANCE
+# PENANCE
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\cex_damnation.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
+IgnoreBlamTag levels\dlc\cex_damnation\fx\ca_damnation_dripping_point.effect_scenery
+IgnoreBlamTag sound\levels\dlc\cex_damnation\sound_scenery\ca_dam_pipemed\ca_dam_pipemed.sound_scenery
+IgnoreBlamTag sound\levels\dlc\cex_damnation\sound_scenery\ca_dam_pipesml\ca_dam_pipesml.sound_scenery
+IgnoreBlamTag sound\levels\dlc\cex_damnation\sound_scenery\ca_dam_pipesml_alt\ca_dam_pipesml_alt.sound_scenery
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\dlc\cex_damnation\cex_damnation.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position 3.829 3.849 5.421
+SetField CutsceneCameraPoints[0].Orientation -154.903 9.690 4.507
+
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position -5.836 7.997 3.446
+SetField CutsceneCameraPoints[1].Orientation 90 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     KILL TRIGGER     |
+# ------------------------
+EditTag levels\dlc\cex_damnation\cex_damnation.scenario
+SetField ScenarioKillTriggers[16].TriggerVolume -1
+SetField ScenarioKillTriggers[17].TriggerVolume -1
+SetField ScenarioKillTriggers[25].TriggerVolume -1
+SetField ScenarioKillTriggers[26].TriggerVolume -1
+SetField ScenarioKillTriggers[27].TriggerVolume -1
+SetField ScenarioKillTriggers[28].TriggerVolume -1
+SetField ScenarioKillTriggers[29].TriggerVolume -1
+SetField ScenarioKillTriggers[30].TriggerVolume -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag levels\solo\m45\post_fx\m45_corvette_space_junk.effect
+SetField Events[0].ParticleSystems[0].Flags ParticlesContinueAsUsualWhenOffscreen,LodAlways10,GpuOcclusionWeatherOnly
+SetField Events[0].ParticleSystems[1].Flags ParticlesContinueAsUsualWhenOffscreen,LodAlways10,GpuOcclusionWeatherOnly
+SetField Events[0].ParticleSystems[2].Flags ParticlesContinueAsUsualWhenOffscreen,LodAlways10,GpuOcclusionWeatherOnly
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\dlc\cex_damnation\post_fx\cex_damnation.sky_atm_parameters
+SetField AtmosphereSettings[0].Intensity 1.65
+SetField AtmosphereSettings[0].DistanceBias -5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\dlc\cex_damnation\cex_damnation.scenario

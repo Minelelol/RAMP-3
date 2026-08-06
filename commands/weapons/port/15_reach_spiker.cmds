@@ -45,6 +45,7 @@ NameBlamTag objects\weapons\rifle\spike_rifle\spike_rifle.weapon saratemitakimiw
 NameBlamTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.weapon objects\weapons\rifle\spike_rifle\spike_rifle
 NameBlamTag dw3\r3ach\ui\chud\spiker.chud_definition ui\chud\spike_rifle
 
+IgnoreBlamTag objects\weapons\lod\lod_spike_rifle\lod_spike_rifle.render_model
 IgnoreBlamTag dw3\r3ach\sound\weapons\spike_rifle\spike_lod_far.sound
 
 PortTag dw3\r3ach\objects\weapons\rifle\spike_rifle\spike_rifle.model
@@ -87,5 +88,13 @@ RemoveBlockElements Events[0].Parts 0 *
 PasteBlockElements Events[0].Parts
 RemoveBlockElements Events[0].Parts 3 *
 SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\spike_rifle\spike_rifle_fire.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\spike_rifle\spike_rifle.weapon
+SetField WeaponFlags.NewFlags LoopFPFiringAnimation,CanBeDualWielded
 SaveTagChanges
 Exit

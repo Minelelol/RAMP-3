@@ -327,5 +327,45 @@ SetField Events[0].ParticleSystems[3].CameraMode BothFirstAndThird
 SaveTagChanges
 Exit
 
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english fr_picked_up "Picked up a Focus Rifle"
+SetString english fr_pickup "\uE461\uE45F to pick up|n|r\uE175"
+SetString english fr_swap "\uE461\uE45F to swap for|n|r\uE175"
+SetString english fr_swap_ai "\uE461\uE45F to take ally's|n|r\uE175"
+SetString english fr_switch_to "Out of ammo|nPress \uE446 to switch to|n|r\uE175"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\focus_rifle\focus_rifle.weapon
+SetField PickupMessage fr_pickup
+SetField SwapMessage fr_swap
+SetField PickedUpMessage fr_picked_up
+SetField SwitchToMessage fr_switch_to
+SetField SwitchToFromAiMessage fr_swap_ai
+SaveTagChanges
+Exit
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English focus_rifle "FOCUS RIFLE"
+
+SetVariable MULG_WEAPONSTRING_VAR 					focus_rifle
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\rifle\focus_rifle\focus_rifle.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	plasma_rifle
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	focus_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	focus_rifle
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		carbine
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		focus_rifle
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
 # Remove ts once we're done with the weapons port
-AddForgeItem "FOCUS RIFLE" 1 objects\weapons\rifle\focus_rifle\focus_rifle.weapon
+# AddForgeItem "FOCUS RIFLE" "POWER WEAPONS" objects\weapons\rifle\focus_rifle\focus_rifle.weapon

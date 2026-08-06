@@ -54,6 +54,7 @@ Exit
 # ------------------------
 OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
 IgnoreBlamTag dw3\r3ach\sound\weapons\magnum\magnum_lod_far.sound
+IgnoreBlamTag objects\weapons\lod\lod_magnum\lod_magnum.render_model
 
 NameBlamTag objects\weapons\pistol\magnum\magnum.weapon objects\weapons\pistol\magnum\magnum_stupiddupe
 NameBlamTag dw3\r3ach\objects\weapons\pistol\magnum\magnum.weapon objects\weapons\pistol\magnum\magnum
@@ -107,6 +108,8 @@ Exit
 # |      REBALANCE       |
 # ------------------------
 EditTag objects\weapons\pistol\magnum\magnum.weapon
+SetField WeaponFlags.NewFlags CanBeDualWielded
+
 SetField Barrels[0].ProjectileMinimumError 0.05
 # SetField Barrels[0].ProjectileErrorAngle 0.15 1
 SetField Barrels[0].ProjectileErrorAngle 0.15 4

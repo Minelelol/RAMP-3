@@ -1,0 +1,304 @@
+# ------------------------
+# |       DUPE HUD       |
+# ------------------------
+DuplicateTag ui\chud\assault_rifle_power.chud_definition ui\chud\light_machine_gun
+
+# ------------------------
+# |    DUPE ANIMATION    |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_spartan\fp_spartan.model_animation_graph dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_spartan\fp_spartan
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\animations\fp_elite\fp_elite.model_animation_graph dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_elite\fp_elite
+
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\weapons\rifle\light_machine_gun\bitmaps\lmg_diffuse workingdir\bitmaps\Weapons\Skaboodle\lmg\lmg_diffuse.dds
+GenerateBitmap objects\weapons\rifle\light_machine_gun\bitmaps\lmg_zbump workingdir\bitmaps\Weapons\Skaboodle\lmg\light_machine_gun_zbump.dds Linear DXN 9
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\assault_rifle_metal.shader objects\weapons\rifle\light_machine_gun\shaders\light_machine_gun_metal
+EditTag objects\weapons\rifle\light_machine_gun\shaders\light_machine_gun_metal.shader
+SetBitmap base_map objects\weapons\rifle\light_machine_gun\bitmaps\lmg_diffuse.bitmap
+SetBitmap bump_map objects\weapons\rifle\light_machine_gun\bitmaps\lmg_zbump.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\compass.shader objects\weapons\rifle\light_machine_gun\shaders\compass
+EditTag objects\weapons\rifle\light_machine_gun\shaders\compass.shader
+SetArgument self_illum_color 0 1 0 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\display.shader objects\weapons\rifle\light_machine_gun\shaders\display
+EditTag objects\weapons\rifle\light_machine_gun\shaders\display.shader
+SetArgument base_map 0.01 -40 0 1
+SetArgument albedo_color 0.06666667 0.17254902 0.06666667 1
+SetArgument self_illum_color 0 1 0 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\item.shader objects\weapons\rifle\light_machine_gun\shaders\item
+EditTag objects\weapons\rifle\light_machine_gun\shaders\item.shader
+SetArgument self_illum_color 0 1 0 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\ones.shader objects\weapons\rifle\light_machine_gun\shaders\ones
+EditTag objects\weapons\rifle\light_machine_gun\shaders\ones.shader
+SetArgument self_illum_color 0 1 0 1
+SaveTagChanges
+Exit
+
+DuplicateTag objects\weapons\rifle\assault_rifle\shaders\tens.shader objects\weapons\rifle\light_machine_gun\shaders\tens
+EditTag objects\weapons\rifle\light_machine_gun\shaders\tens.shader
+SetArgument self_illum_color 0 1 0 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+StringId Add fx_display_light
+
+CreateTag mode dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun
+ImportTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.render_model workingdir\tags\weapons\VKMT\assault_rifle.render_model
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.render_model
+
+SetField MarkerGroups[1].Name fx_display_light
+SetField MarkerGroups[9].Name right_hand_spartan
+
+# MUZZLE FLASH
+SetField MarkerGroups[3].Markers[0].Translation 0.29783565 -0.0019027138 0.04985857
+SetField MarkerGroups[3].Markers[1].Translation 0.29783565 -0.0030607223 0.046185832
+SetField MarkerGroups[3].Markers[2].Translation 0.29783565 0.0019026947 0.04985857
+SetField MarkerGroups[3].Markers[3].Translation 0.29783565 0 0.04400264
+SetField MarkerGroups[3].Markers[4].Translation 0.29783565 0.0030786323 0.04623941
+
+# PRIMARY EJECTION
+SetField MarkerGroups[4].Markers[0].Translation 0.04018056 -0.01220891 0.040438753
+
+# PRIMARY TRIGGER
+SetField MarkerGroups[5].Markers[0].Translation 0.30342695 1.9073486E-08 0.047285505
+
+# RIGHT HAND
+SetField MarkerGroups[6].Markers[0].Translation 0.004 0 -0.0022499997
+
+# RIGHT HAND ELITE
+SetField MarkerGroups[7].Markers[0].Translation -0.005 0 0.0022499997
+
+RemoveBlockElements Materials 0 *
+AddBlockElements Materials 7
+SetField Materials[0].RenderMethod objects\weapons\rifle\light_machine_gun\shaders\light_machine_gun_metal.shader
+SetField Materials[1].RenderMethod objects\weapons\rifle\light_machine_gun\shaders\compass.shader
+SetField Materials[2].RenderMethod objects\weapons\rifle\light_machine_gun\shaders\display.shader
+SetField Materials[3].RenderMethod objects\weapons\rifle\light_machine_gun\shaders\item.shader
+SetField Materials[4].RenderMethod objects\weapons\rifle\light_machine_gun\shaders\ones.shader
+SetField Materials[5].RenderMethod objects\weapons\rifle\light_machine_gun\shaders\tens.shader
+SetField Materials[6].RenderMethod objects\bitmaps\decals\shaders\unsc_decals_fp.shader
+RemoveBlockElements Regions 0 *
+ReplaceRenderGeometry workingdir\models\weapons\lmg\lmg.fbx TriangleStrip UpdateNodes
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_spartan_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.098 -0.00226 0.0147
+SetField MarkerGroups[*].Markers[*].Rotation -0.6241 0.16707 -0.45504 0.61277
+
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Name mineleloldabest_left_hand_elite_fp
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].Translation 0.106 0 0.0125
+SetField MarkerGroups[*].Markers[*].Rotation -0.67 0.208 -0.48 0.6
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    PHYSICS MODEL     |
+# ------------------------
+CreateTag phmo dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun
+ImportTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.physics_model workingdir\tags\physics\weapons\light_machine_gun.physics_model
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\assault_rifle.model dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.model
+SetField RenderModel dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.render_model
+SetField PhysicsModel dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.physics_model
+UpdateModelRegions phmo coll
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+DuplicateTag dw3\r3ach\sound\weapons\assault_rifle\ar_fire.sound dw3\r3ach\sound\weapons\light_machine_gun\lmg_fire
+EditTag dw3\r3ach\sound\weapons\light_machine_gun\lmg_fire.sound
+ImportSound "workingdir\sounds\weapons\Skaboodle\lmg\fire"
+SetField Playback.GainBase 1.5
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\assault_rifle\ar_reload_empty.sound dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_empty
+EditTag dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_empty.sound
+ImportSound "workingdir\sounds\weapons\Skaboodle\lmg\reload_empty"
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\assault_rifle\ar_reload_full.sound dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_full
+EditTag dw3\r3ach\sound\weapons\light_machine_gun\lmg_reload_full.sound
+ImportSound "workingdir\sounds\weapons\Skaboodle\lmg\reload_full"
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\assault_rifle\ar_ready_hero.sound dw3\r3ach\sound\weapons\light_machine_gun\lmg_ready_hero
+EditTag dw3\r3ach\sound\weapons\light_machine_gun\lmg_ready_hero.sound
+ImportSound "workingdir\sounds\weapons\Skaboodle\lmg\ready_initial"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\firing.effect dw3\r3ach\objects\weapons\rifle\light_machine_gun\firing
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\firing.effect
+SetField Events[0].Parts[0].Type dw3\r3ach\sound\weapons\light_machine_gun\lmg_fire.sound
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     DAMAGE EFFECT    |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\projectiles\assault_rifle_bullet.damage_effect dw3\r3ach\objects\weapons\rifle\light_machine_gun\projectiles\light_machine_gun_bullet
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\projectiles\light_machine_gun_bullet.damage_effect
+SetField DamageLowerBound 7
+SetField DamageUpperBound 7 7.4
+SetField ActiveCamoflageDamage 0.1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      PROJECTILE      |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\rifle\assault_rifle\projectiles\assault_rifle_bullet.projectile dw3\r3ach\objects\weapons\rifle\light_machine_gun\projectiles\light_machine_gun_bullet
+EditTag dw3\r3ach\objects\weapons\rifle\light_machine_gun\projectiles\light_machine_gun_bullet.projectile
+SetField ImpactDamage dw3\r3ach\objects\weapons\rifle\light_machine_gun\projectiles\light_machine_gun_bullet.damage_effect
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english lmg_picked_up "Picked up a LMG"
+SetString english lmg_pickup "\uE461\uE45F to pick up|n|r\uFB08"
+SetString english lmg_swap "\uE461\uE45F to swap for|n|r\uFB08"
+SetString english lmg_swap_ai "\uE461\uE45F to take ally's|n|r\uFB08"
+SetString english lmg_switch_to  "Out of ammo|nPress \uE446 to switch to|n|r\uFB08"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+# have to put in potterhalo prefix so it play nice with older ramp version map
+DuplicateTag objects\weapons\rifle\assault_rifle\assault_rifle.weapon potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun
+EditTag potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun.weapon
+
+# MELEE
+SetField MeleeDamageParameters.DamagePyramidAngles 12.512375 6.061675
+
+# AIM ASSIST
+SetField WeaponAimAssist.AutoaimRange 18
+SetField WeaponAimAssist.MagnetismRange 18
+
+SetField WeaponAimAssist.AutoaimFalloffRange 10
+SetField WeaponAimAssist.MagnetismFalloffRange 10
+
+# MISC
+SetField AiScariness 4
+SetField ActiveCamoDing 0.2
+
+# MAGAZINE
+SetField Magazines[0].RoundsTotalInitial 240
+SetField Magazines[0].RoundsTotalMaximum 360
+SetField Magazines[0].RoundsLoadedMaximum 60
+SetField Magazines[0].RoundsInventoryMaximum 300
+SetField Magazines[0].RoundsReloaded 60
+
+# BARREL (FIRING)
+SetField Barrels[0].Firing.RoundsPerSecond 2 15
+SetField Barrels[0].Firing.AccelerationTime 2
+SetField Barrels[0].Firing.DecelerationTime 4
+
+# BARREL (ERROR ANGLE)
+SetField Barrels[0].ProjectileMinimumError 0.1
+SetField Barrels[0].ProjectileErrorAngle 0.1 2.6
+
+# BARREL (ACCURACY PENALTIES)
+SetField Barrels[0].AccuracyPenalties.ReloadPenalty 2.5
+SetField Barrels[0].AccuracyPenalties.SwitchPenalty 1
+
+AddBlockElements Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringPenaltyFunction
+AddBlockElements Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringCrouchedPenaltyFunction
+SetField Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringPenaltyFunction[0].Function.Data 083400000AD7A33D0000803F0000000000000000000000000000000024000000020000000400003F713D8A3DCDB68C408BDB1C3E04000000FFFF7F7F5DEAC3BED19FF33E
+SetField Barrels[0].AccuracyPenalties.SingleWieldPenalties.FiringCrouchedPenaltyFunction[0].Function.Data 0834000000000000000000000000000000000000000000000000000024000000020000000400003F713D8A3D039D3A408BDB1C3E04000000FFFF7F7F64028DBED7B7BC3E
+
+# BARREL (RATE OF FIRE)
+SetField Barrels[0].RateOfFireAccelerationTime 1.25
+SetField Barrels[0].RateOfFireDecelerationTime 0.75
+SetField Barrels[0].ErrorAccelerationRate 1.25
+SetField Barrels[0].ErrorDecelerationRate 2
+
+# DEPENDECIES
+SetField Model dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.model
+SetField HudInterface ui\chud\light_machine_gun.chud_definition
+
+SetField Barrels[0].Projectile dw3\r3ach\objects\weapons\rifle\light_machine_gun\projectiles\light_machine_gun_bullet.projectile
+SetField Barrels[0].FiringEffects[0].FiringEffect dw3\r3ach\objects\weapons\rifle\light_machine_gun\firing.effect
+
+ForEach FirstPerson SetField FirstPersonModel dw3\r3ach\objects\weapons\rifle\light_machine_gun\light_machine_gun.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_spartan\fp_spartan.model_animation_graph
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\rifle\light_machine_gun\animations\fp_elite\fp_elite.model_animation_graph
+
+SetField PickupMessage lmg_pickup
+SetField SwapMessage lmg_swap
+SetField PickedUpMessage lmg_picked_up
+SetField SwitchToMessage lmg_switch_to
+SetField SwitchToFromAiMessage lmg_swap_ai
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                AMMO PACK                |
+# -------------------------------------------
+EditTag objects\equipment\ammo_pack\ammo_pack.equipment
+AddBlockElements AmmoPack[0].AdditionalAmmo
+SetField AmmoPack[0].AdditionalAmmo[*].Weapon potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun.weapon
+SetField AmmoPack[0].AdditionalAmmo[*].AmmoCount 60
+SaveTagChanges
+Exit
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English lmg "LMG"
+
+SetVariable MULG_WEAPONSTRING_VAR 					lmg
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	smg
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	smg
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		lmg
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		lmg
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
+# AddForgeItem "LMG" "POWER WEAPONS" potterhalo\objects\weapons\rifle\light_machine_gun\light_machine_gun.weapon

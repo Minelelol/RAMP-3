@@ -67,6 +67,20 @@ PortTag objects\weapons\rifle\smg_silenced\smg_silenced.weapon
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english ssmg_picked_up "Picked up a Silenced SMG"
+SetString english ssmg_pickup "\uE461\uE45F to pick up|n|r\uFB03"
+SetString english ssmg_swap "\uE461\uE45F to swap for|n|r\uFB03"
+SetString english ssmg_swap_ai "\uE461\uE45F to take ally's|n|r\uFB03"
+SetString english ssmg_switch_to  "Out of ammo|nPress \uE446 to switch to|n|r\uFB03"
+SetString english ssmg_dual "\uE461\uE45E to dual wield|n|r\uFB05"
+SetString english ssmg_dual_swap "\uE461\uE45E to swap for|n|r\uFB05"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\rifle\smg_silenced\smg_silenced.weapon
@@ -77,6 +91,26 @@ SetField WeaponSprintExitSpeedup 1.1
 SetField SupportThirdPersonCameraRange 0 0
 SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
 SetField WeaponTypeName offset_smg
+
+SetField PickupMessage ssmg_pickup
+SetField SwapMessage ssmg_swap
+SetField PickedUpMessage ssmg_picked_up
+SetField SwitchToMessage ssmg_switch_to
+SetField SwitchToFromAiMessage ssmg_swap_ai
+SetField PickupOrDualWieldMessage ssmg_dual
+SetField SwapOrDualWieldMessage ssmg_dual_swap
+
+SetField WeaponFlags.NewFlags LoopFPFiringAnimation,CanBeDualWielded
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                AMMO PACK                |
+# -------------------------------------------
+EditTag objects\equipment\ammo_pack\ammo_pack.equipment
+AddBlockElements AmmoPack[0].AdditionalAmmo
+SetField AmmoPack[0].AdditionalAmmo[*].Weapon objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+SetField AmmoPack[0].AdditionalAmmo[*].AmmoCount 48
 SaveTagChanges
 Exit
 
@@ -94,4 +128,20 @@ SetField Barrels[0].DualWeaponError.RuntimeDecelerationRate 5
 SaveTagChanges
 Exit
 
-AddForgeItem "SMG, SILENCED" 1 objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English ssmg "SILENCED SMG"
+
+SetVariable MULG_WEAPONSTRING_VAR 					ssmg
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\rifle\smg_silenced\smg_silenced.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	ssmg
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	ssmg
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		ssmg
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		smg
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
+# AddForgeItem "SMG, SILENCED" "POWER WEAPONS" objects\weapons\rifle\smg_silenced\smg_silenced.weapon

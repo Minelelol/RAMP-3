@@ -1,0 +1,92 @@
+# ------------------------
+# |    DUPE ANIMATION    |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\needler\animations\fp_spartan\fp_spartan.model_animation_graph dw3\r3ach\objects\weapons\pistol\needler_infinite\animations\fp_spartan\fp_spartan
+DuplicateTag dw3\r3ach\objects\weapons\pistol\needler\animations\fp_elite\fp_elite.model_animation_graph dw3\r3ach\objects\weapons\pistol\needler_infinite\animations\fp_elite\fp_elite
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+DuplicateTag objects\weapons\pistol\needler\shaders\needler_shell.shader objects\weapons\pistol\needler_variants\shaders\needler_shell_purple
+EditTag objects\weapons\pistol\needler_variants\shaders\needler_shell_purple.shader
+# SetArgument albedo_color 0.65 1 1 1
+SetArgument albedo_color 0.7 0.4 1.2 1
+SetArgument specular_tint 0.5941177 0.3333333 0.4139216 1
+SetArgument fresnel_color 0.3872549 0.256863 0.3364706 1
+SetArgument env_tint_color 1.522549 2.105882 4 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\needler\needler.render_model dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual
+EditTag dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual.render_model
+SetField Materials[1].RenderMethod objects\weapons\pistol\needler_variants\shaders\needler_shell_purple.shader
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag dw3\r3ach\objects\weapons\pistol\needler\needler.model dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual
+EditTag dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual.model
+SetField RenderModel dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual.render_model
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english nd_dual "\uE461\uE45E to dual wield|n|r\uFB07"
+SetString english nd_dual_swap "\uE461\uE45E to swap for|n|r\uFB07"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+DuplicateTag objects\weapons\pistol\needler\needler.weapon objects\weapons\pistol\needler\ramp_needler_purple
+EditTag objects\weapons\pistol\needler\ramp_needler_purple.weapon
+SetField Model dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual.model
+SetField FirstPerson[0].FirstPersonModel dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual.render_model
+SetField FirstPerson[0].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\needler_infinite\animations\fp_spartan\fp_spartan.model_animation_graph
+
+SetField FirstPerson[1].FirstPersonModel dw3\r3ach\objects\weapons\pistol\needler_variants\needler_dual.render_model
+SetField FirstPerson[1].FirstPersonAnimations dw3\r3ach\objects\weapons\pistol\needler_infinite\animations\fp_elite\fp_elite.model_animation_graph
+
+SetField WeaponAimAssist.AutoaimRange 19
+SetField WeaponFlags.NewFlags CanBeDualWielded
+SetField PickupOrDualWieldMessage nd_dual
+SetField SwapOrDualWieldMessage nd_dual_swap
+SaveTagChanges
+Exit
+
+# -------------------------------------------
+# |                AMMO PACK                |
+# -------------------------------------------
+EditTag objects\equipment\ammo_pack\ammo_pack.equipment
+AddBlockElements AmmoPack[0].AdditionalAmmo
+SetField AmmoPack[0].AdditionalAmmo[*].Weapon objects\weapons\pistol\needler\ramp_needler_purple.weapon
+SetField AmmoPack[0].AdditionalAmmo[*].AmmoCount 24
+SaveTagChanges
+Exit
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English needler_dual "NEEDLER (DUAL-WIELDABLE)"
+
+SetVariable MULG_WEAPONSTRING_VAR 					needler_dual
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\pistol\needler\ramp_needler_purple.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	needler_dual
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	needler_dual
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		needler_dual
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		needler
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
+# AddForgeItem "NEEDLER [DUAL-WIELDABLE]" "POWER WEAPONS" objects\weapons\pistol\needler\ramp_needler_purple.weapon

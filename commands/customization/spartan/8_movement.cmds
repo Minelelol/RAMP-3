@@ -1,0 +1,20 @@
+EditTag objects\characters\masterchief\mp_masterchief\mp_masterchief.biped
+SetField JumpVelocity 2.7
+SetField MinimumSoftLandingVelocity 0.5
+SetField MinimumHardLandingVelocity 5.25
+SaveTagChanges
+Exit
+
+EditTag globals\globals.globals
+SetField PlayerControl[0].SprintFullSpeedMultiplier 0.623
+SetField PlayerControl[0].SprintPeggedMagnitude 0.85
+SetField PlayerControl[0].SprintPeggedAngularThreshold 60
+SetField PlayerInformation[0].RunForward 2.35
+SetField PlayerInformation[0].RunBackward 2.09
+SetField PlayerInformation[0].RunSideways 2.09
+SetField PlayerInformation[0].RunAcceleration 9.05
+SetField PlayerInformation[0].SneakBackward 0.81
+SetField PlayerInformation[0].SneakSideways 0.81
+SetField PlayerInformation[0].SneakAcceleration 6.1
+SaveTagChanges
+Exit

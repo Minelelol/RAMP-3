@@ -1,0 +1,75 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap objects\ui\sonic_bottomless_pit\sonic_bottomless_pit workingdir\bitmaps\Playtest_ONLY\sonicwarningfallsign.dds
+
+# ------------------------
+# |      LENS FLARE      |
+# ------------------------
+DuplicateTag objects\equipment\concussiveblast_equipment\fx\concussiveblast_equipment_lens_flare.lens_flare objects\ui\sonic_bottomless_pit\sonic_bottomless_pit
+EditTag objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.lens_flare
+# SetField OcclusionInnerRadiusScale _18
+SetField Bitmap objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.bitmap
+SetField Reflections[0].Flags RadiusScaledByOcclusionFactor
+SetField Reflections[0].TintColor 1 1 1
+SetField Reflections[0].RadiusCurveFunction.Data 08340000000000000000403F000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+# SetField Reflections[0].ScaleCurveXFunction.Data 0834000000000000000060BF000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.render_model objects\ui\sonic_bottomless_pit\sonic_bottomless_pit
+EditTag objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.render_model
+AddBlockElements MarkerGroups
+AddBlockElements MarkerGroups[0].Markers
+SetField MarkerGroups[0].Name marker
+
+SetField Materials[0].RenderMethod null
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    COLLISION MODEL   |
+# ------------------------
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.collision_model objects\ui\sonic_bottomless_pit\sonic_bottomless_pit
+EditTag objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.collision_model
+ForEach Regions[0].Permutations[0].Bsps[0].Geometry.Surfaces SetField Flags Invisible
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.model objects\ui\sonic_bottomless_pit\sonic_bottomless_pit
+EditTag objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.model
+SetField RenderModel objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.render_model
+SetField CollisionModel objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.collision_model
+SetField PhysicsModel objects\ui\editor_gizmo\editor_gizmo.physics_model
+SetField DisappearDistance 32
+SetField BeginFadeDistance 8
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SCENERY       |
+# ------------------------
+DuplicateTag objects\ui\editor_gizmo\editor_gizmo.scenery objects\ui\sonic_bottomless_pit\sonic_bottomless_pit
+EditTag objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.scenery
+SetField LightmapShadowMode Never
+SetField SweetenerSize Small
+SetField WaterDensity None
+SetField RuntimeFlags 2
+
+SetField Model objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.model
+AddBlockElements Attachments
+SetField Attachments[0].Type objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.lens_flare
+SetField Attachments[0].Marker marker
+
+AddBlockElements MultiplayerObject
+SetField MultiplayerObject[0].Flags OnlyVisibleInEditor,CandyMonitorShouldIgnore
+SaveTagChanges
+Exit
+
+AddForgeItem "SONIC BOTTOMLESS PIT SIGN" 1 objects\ui\sonic_bottomless_pit\sonic_bottomless_pit.scenery

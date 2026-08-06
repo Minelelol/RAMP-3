@@ -1,21 +1,49 @@
+# NEW ALEXANDRIA
+# NEW ALEXANDRIA
+# NEW ALEXANDRIA
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
 OpenCacheFile reachmapsdir\m52.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 RunCommands workingdir\commands\reach_globals.cmds
-RunCommands workingdir\commands\reach_particles_physics.cmds
 
 CS < workingdir\commands\map_ports\ignorescriptsource.cs
-CS < workingdir\commands\map_ports\campaign\cs\ignorebiped.cs
-CS < workingdir\commands\map_ports\campaign\cs\ignorecharacter.cs
-CS < workingdir\commands\map_ports\campaign\cs\ignorecinema.cs
-CS < workingdir\commands\map_ports\campaign\cs\ignoresquadtemplate.cs
+CS < workingdir\cs\IgnoreBlamTagGroup.cs biped
+CS < workingdir\cs\IgnoreBlamTagGroup.cs character
+CS < workingdir\cs\IgnoreBlamTagGroup.cs creature
+CS < workingdir\cs\IgnoreBlamTagGroup.cs cinematic
+CS < workingdir\cs\IgnoreBlamTagGroup.cs squad_template
+CS < workingdir\cs\IgnoreBlamTagGroup.cs ai_mission_dialogue
+
+NameBlamTag objects\levels\solo\m50\door_urban_gen_small_a\door_urban_gen_small_a.device_machine objects\levels\solo\m50\door_urban_gen_small_a\door_urban_gen_small_a_mp
+NameBlamTag objects\levels\solo\m50\door_urban_gen_small_b\door_urban_gen_small_b.device_machine objects\levels\solo\m50\door_urban_gen_small_b\door_urban_gen_small_b_mp
+NameBlamTag objects\levels\solo\m50\door_urban_gen_small_c\door_urban_gen_small_c.device_machine objects\levels\solo\m50\door_urban_gen_small_c\door_urban_gen_small_c_mp
+NameBlamTag fx\fx_library\weather\rain\rain_angle\rain_angle.effect m52\fx\fx_library\weather\rain\rain_angle\rain_angle
+NameBlamTag objects\levels\shared\invisible_box\invisible_box.scenery fuckoff
+NameBlamTag objects\levels\solo\m30\fx_m30_screenfx_lightning\fx_m30_screenfx_lightning.crate lightingnoworkies
+NameBlamTag objects\vehicles\covenant\covenant_fleet\cruiser\cruiser.device_machine nuhuhcruiser
 
 IgnoreBlamTag objects\characters\marine\marine.scenery
-IgnoreBlamTag sound\dialog\levels\m52\m52.ai_mission_dialogue
+IgnoreBlamTag objects\levels\shared\ui\highlight\m52_jammer\m52_jammer.scenery
+IgnoreBlamTag objects\levels\shared\ui\highlight\m52_ivory_tower\m52_ivory_tower.scenery
+IgnoreBlamTag objects\levels\shared\ui\highlight\m52_hospital\m52_hospital.scenery
+IgnoreBlamTag objects\levels\shared\ui\highlight\m52_nightclub\m52_nightclub.scenery
+IgnoreBlamTag objects\levels\shared\ui\highlight\m52_oni\m52_oni.scenery
+IgnoreBlamTag objects\levels\shared\ui\highlight\m52_oni_landing_pad\m52_oni_landing_pad.scenery
+IgnoreBlamTag fuckoff.scenery
+IgnoreBlamTag lightingnoworkies.crate
+IgnoreBlamTag nuhuhcruiser.device_machine
 
 PortTag !UpdateMapFiles !Scripts *.scnr
 PortTag levels\solo\m52\m52_soft_ceiling_design.structure_design
+PortTag m52\fx\fx_library\weather\rain\rain_angle\rain_angle.effect
 Exit
 
+# ------------------------
+# |       SCENARIO       |
+# ------------------------
 EditTag levels\solo\m52\m52.scenario
 ForEach StructureBsps SetField Design levels\solo\m52\m52_soft_ceiling_design.structure_design
 SetField CampaignId -1
@@ -25,3 +53,108 @@ RemoveBlockElements CampaignPlayers 0 *
 MergePVS
 SaveTagChanges
 Exit
+
+# ------------------------
+# |     STRUCTURE BSP    |
+# ------------------------
+EditTag levels\solo\m52\m52_030.scenario_structure_bsp
+SetField InstancedGeometryInstances[900].DefinitionIndex 159
+SetField InstancedGeometryInstances[900].Matrix -3.5762787E-07 -1.5 0 			 1.22 -3.5762787E-07 0 			 0 0 1 			 -20.5 -184.10165 250.20789
+SaveTagChanges
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\solo\m52\m52.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[*].Name "prematch_camera"
+# SetField CutsceneCameraPoints[*].Position 192 -228.2 193.5
+SetField CutsceneCameraPoints[*].Position 208.7 -240.5 194.5
+SetField CutsceneCameraPoints[*].Orientation 104.8 2.5 -9.6
+SetField CutsceneCameraPoints[*].Flags PrematchCameraHack
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[*].Name "podium_camera"
+SetField CutsceneCameraPoints[*].Position 198.5 -201.5 178.5
+SetField CutsceneCameraPoints[*].Orientation -45 -0.075 -0.313
+SetField CutsceneCameraPoints[*].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     KILL TRIGGER     |
+# ------------------------
+EditTag levels\solo\m52\m52.scenario
+SetField ScenarioKillTriggers[8].TriggerVolume -1
+SetField ScenarioKillTriggers[11].TriggerVolume -1
+SetField ScenarioKillTriggers[12].TriggerVolume -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag m52\fx\fx_library\weather\rain\rain_angle\rain_angle.effect
+SetField Events[0].ParticleSystems[0].Flags OverrideNearFadeUseWithCaution,GpuOcclusionWeatherOnly
+SetField Events[0].ParticleSystems[1].Flags OverrideNearFadeUseWithCaution,GpuOcclusionWeatherOnly
+
+# Rain speed
+SetField Events[0].ParticleSystems[0].Emitters[0].ParticleInitialVelocity.Function.Data 01340000000000410000004100000000000000006F12833A6F12033B00000000
+SetField Events[0].ParticleSystems[0].Emitters[0].ParticleInitialVelocity.RuntimeMConstantValue 8
+
+# Rain blurred speed
+SetField Events[0].ParticleSystems[1].Emitters[0].ParticleInitialVelocity.Function.Data 013400000000C8410000C84100000000000000006F12833A6F12033B00000000
+SetField Events[0].ParticleSystems[1].Emitters[0].ParticleInitialVelocity.RuntimeMConstantValue 25
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\solo\m52\post_fx\mission_52.sky_atm_parameters
+SetField AtmosphereSettings[0].Intensity 0.1
+SetField AtmosphereSettings[0].SeaLevel 75
+SetField AtmosphereSettings[0].WeatherEffect m52\fx\fx_library\weather\rain\rain_angle\rain_angle.effect
+SaveTagChanges
+Exit
+
+EditTag levels\solo\m52\post_fx\m52.area_screen_effect
+SetField ScreenEffects[0].GammaEnhance 0.1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+RunCommands workingdir\commands\map_ports\shader_fixes\exodus_shaders.cmds
+RunCommands workingdir\commands\map_ports\shader_fixes\new_alexandria_shaders.cmds
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+# FIND THE RIGHT BSP
+# EditTag levels\solo\m52\m52_001.scenario_structure_bsp
+# SetField WorldBoundsX -1800 1800
+# SetField WorldBoundsY -1800 1800
+# SetField WorldBoundsZ -300 1800
+# SetField Clusters[0].BoundsX -1800 1800
+# SetField Clusters[0].BoundsY -1800 1800
+# SetField Clusters[0].BoundsZ -300 1800
+# SetField Physics.MoppBoundsMin -1800 -1800 -300
+# SetField Physics.MoppBoundsMax 1800 1800 1800
+# SaveTagChanges
+# Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\solo\m52\m52.scenario

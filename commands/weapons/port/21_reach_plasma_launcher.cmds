@@ -245,4 +245,45 @@ SetField Playback.DistanceParameters.MaximumDistance 250
 SaveTagChanges
 Exit
 
-AddForgeItem "PLASMA LAUNCHER" 1 objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english pl_picked_up "Picked up a Plasma Launcher"
+SetString english pl_pickup "\uE461\uE45F to pick up|n|r\uE176"
+SetString english pl_swap "\uE461\uE45F to swap for|n|r\uE176"
+SetString english pl_swap_ai "\uE461\uE45F to take ally's|n|r\uE176"
+SetString english pl_switch_to "Out of ammo|nPress \uE446 to switch to|n|r\uE176"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
+SetField PickupMessage pl_pickup
+SetField SwapMessage pl_swap
+SetField PickedUpMessage pl_picked_up
+SetField SwitchToMessage pl_switch_to
+SetField SwitchToFromAiMessage pl_swap_ai
+SaveTagChanges
+Exit
+
+
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English plasma_launcher "PLASMA LAUNCHER"
+
+SetVariable MULG_WEAPONSTRING_VAR 					plasma_launcher
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	plasma_rifle
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	plasma_rifle
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		plasma_launcher
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		plasma_launcher
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
+# AddForgeItem "PLASMA LAUNCHER" "POWER WEAPONS" objects\weapons\support_high\plasma_launcher\plasma_launcher.weapon

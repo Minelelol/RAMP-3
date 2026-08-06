@@ -12,10 +12,18 @@ PortTag single objects\powerups\health_pack\health_pack_large.equipment
 Exit
 
 # ------------------------
+# |     PHYSICS MODEL    |
+# ------------------------
+EditTag objects\equipment\health_pack\health_pack.physics_model
+SetField RigidBodies[0].MotionType Keyframed
+SaveTagChanges
+Exit
+
+# ------------------------
 # |       EQUIPMENT      |
 # ------------------------
 EditTag objects\powerups\health_pack\health_pack_large.equipment
-SetField ObjectFlags DoesNotCollideWithCamera
+# SetField ObjectFlags DoesNotCollideWithCamera
 SetField BoundingRadius 0.25
 SetField BoundingOffset 0 0 0.075
 SetField AccelerationScale 0
@@ -50,4 +58,4 @@ SetField HealthPacks[0].Instance objects\powerups\health_pack\health_pack_large.
 SaveTagChanges
 Exit
 
-AddForgeItem "HEALTH PACK" 1 objects\powerups\health_pack\health_pack_large.equipment
+# AddForgeItem "HEALTH PACK" "CLASSIC" objects\powerups\health_pack\health_pack_large.equipment

@@ -1,0 +1,8 @@
+SuppressErrors True
+CS < workingdir\cs\PauseErrorWarningCount.cs
+
+ForEach rmsh StartingWith: levels\shared\shaders\simple\black SetField RenderFlags None
+ForEach rmsh StartingWith: levels\shared\shaders\simple\white SetField RenderFlags None
+
+CS < workingdir\cs\ResumeErrorWarningCount.cs
+SuppressErrors False

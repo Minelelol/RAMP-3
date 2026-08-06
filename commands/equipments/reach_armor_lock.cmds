@@ -138,6 +138,15 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english armorlockup_picked_up "Picked up an Armor Lock"
+SetString english armorlockup_swap "\uE461\uE45F to swap for Armor Lock"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |       EQUIPMENT      |
 # ------------------------
 DuplicateTag objects\equipment\concussiveblast_equipment\concussiveblast_equipment.equipment objects\equipment\armor_lockup\armor_lockup
@@ -179,6 +188,9 @@ SetField RunningEffect objects\equipment\armor_lockup\fx\active_rumble.effect
 SetField ActivationAnimation armor_lock_enter
 SetField ActiveAnimation armor_lock_idle
 SetField DeactivateAnimation armor_lock_exit
+
+SetField SwapMessage armorlockup_swap
+SetField PickedUpMessage armorlockup_picked_up
 SaveTagChanges
 Exit
 
@@ -190,4 +202,4 @@ SetField Universal[0].Equipment[18].Object objects\equipment\armor_lockup\armor_
 SaveTagChanges
 Exit
 
-AddForgeItem "ARMOR LOCK" 1 objects\equipment\armor_lockup\armor_lockup.equipment
+# AddForgeItem "ARMOR LOCK" "ARMOR ABILITIES" objects\equipment\armor_lockup\armor_lockup.equipment

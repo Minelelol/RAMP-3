@@ -1,0 +1,901 @@
+# ------------------------
+# |        BITMAP        |
+# ------------------------
+GenerateBitmap Linear ui\chud\bitmaps\sabre\altitude     workingdir\bitmaps\HUD\sabre_hud\altitude.dds
+GenerateBitmap Linear ui\chud\bitmaps\sabre\bracket      workingdir\bitmaps\HUD\sabre_hud\bracket.dds
+GenerateBitmap Linear ui\chud\bitmaps\sabre\pitch        workingdir\bitmaps\HUD\sabre_hud\pitch.dds
+GenerateBitmap Linear ui\chud\bitmaps\sabre\shield_meter workingdir\bitmaps\HUD\sabre_hud\shield_meter.dds
+GenerateBitmap Linear ui\chud\bitmaps\sabre\thruster     workingdir\bitmaps\HUD\sabre_hud\thruster.dds
+
+EditTag ui\chud\bitmaps\sabre\altitude.bitmap
+AddBlockElements Sequences 5
+# SetField Sequences[0].Name "import #0"
+SetField Sequences[0].BitmapCount 1
+AddBlockElements Sequences[0].Sprites 1
+SetField Sequences[0].Sprites[0].Left 0.59
+SetField Sequences[0].Sprites[0].Right 0.9375
+SetField Sequences[0].Sprites[0].Bottom 0.3515625
+SetField Sequences[0].Sprites[0].RegistrationPoint 0.15625 0.17578125
+
+# SetField Sequences[1].Name "import #1"
+SetField Sequences[1].BitmapCount 1
+AddBlockElements Sequences[1].Sprites 1
+SetField Sequences[1].Sprites[0].Left 0.25
+SetField Sequences[1].Sprites[0].Right 0.890625
+SetField Sequences[1].Sprites[0].Top 0.375
+SetField Sequences[1].Sprites[0].Bottom 0.546875
+SetField Sequences[1].Sprites[0].RegistrationPoint 0.3203125 0.0859375
+
+# SetField Sequences[2].Name "import #2"
+SetField Sequences[2].BitmapCount 1
+AddBlockElements Sequences[2].Sprites 1
+SetField Sequences[2].Sprites[0].Right 0.6015625
+SetField Sequences[2].Sprites[0].Bottom 0.3671875
+SetField Sequences[2].Sprites[0].RegistrationPoint 0.30078125 0.18359375
+
+# SetField Sequences[3].Name "import #3"
+SetField Sequences[3].BitmapCount 1
+AddBlockElements Sequences[3].Sprites 1
+SetField Sequences[3].Sprites[0].Right 0.6484375
+SetField Sequences[3].Sprites[0].Top 0.625
+SetField Sequences[3].Sprites[0].Bottom 0.75
+SetField Sequences[3].Sprites[0].RegistrationPoint 0.32421875 0.0625
+
+# SetField Sequences[4].Name "import #4"
+SetField Sequences[4].BitmapCount 1
+AddBlockElements Sequences[4].Sprites 1
+SetField Sequences[4].Sprites[0].Right 0.2421875
+SetField Sequences[4].Sprites[0].Top 0.375
+SetField Sequences[4].Sprites[0].Bottom 0.609375
+SetField Sequences[4].Sprites[0].RegistrationPoint 0.12109375 0.1171875
+SaveTagChanges
+Exit
+
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+# Fix duplicated bitmap
+OpenCacheFile reachmapsdir\m45.map
+PortTag objects\vehicles\human\sabre\bitmaps\sabre_interior_diffuse.bitmap
+PortTag objects\vehicles\human\sabre\bitmaps\sabre_interior_normal.bitmap
+Exit
+
+DuplicateTag objects\vehicles\human\sabre\bitmaps\sabre_interior_diffuse.bitmap objects\vehicles\human\sabre\bitmaps\sabre_interior_diffuse_high
+DuplicateTag objects\vehicles\human\sabre\bitmaps\sabre_interior_normal.bitmap objects\vehicles\human\sabre\bitmaps\sabre_interior_normal_high
+
+OpenCacheFile reachmapsdir\m45.map
+RunCommands workingdir\commands\reach_globals.cmds
+NameBlamTag objects\vehicles\human\falcon\fx\weapon\grenade_launcher\detonation.effect objects\vehicles\human\sabre\fx\weapon\sabre_gun\detonation
+NameBlamTag objects\vehicles\human\falcon\turrets\falcon_side_gun_left\weapons\projectiles\damage_effect\grenade_launcher_tethered_grenade_explosion.damage_effect objects\vehicles\human\sabre\weapon\sabre_gatling_gun\projectiles\damage_effects\sabre_gatling_gun_bullet_explosion
+NameBlamTag camera\longsword_d_camera.camera_track camera\sabre_d_camera
+NameBlamTag objects\vehicles\human\sabre\shaders\sabre_frame_metal.shader objects\vehicles\human\sabre\shaders\sabre_frame_metal_cc
+NameBlamTag objects\vehicles\human\sabre\shaders\sabre_frame_metal_damage.shader objects\vehicles\human\sabre\shaders\sabre_frame_metal_damage_cc
+NameBlamTag objects\vehicles\human\sabre\shaders\sabre_glass_opaque.shader fuckoff
+NameBlamTag objects\vehicles\human\sabre\shaders\sabre_shield.shader fuckoff2
+
+IgnoreBlamTag ui\chud\bitmaps\objective_alert_icons.bitmap
+IgnoreBlamTag ui\cui\alert\toast_icons_reach.bitmap
+IgnoreBlamTag objects\vehicles\human\sabre\fx\running\wing_engine.light
+IgnoreBlamTag sound\vehicles\sabre\sabre_roll.sound
+IgnoreBlamTag ui\chud\animations\saber_roll.chud_animation_definition
+IgnoreBlamTag fuckoff.shader
+IgnoreBlamTag fuckoff2.shader
+
+PortTag objects\vehicles\human\sabre\attachments\cockpit\cockpit.scenery
+PortTag objects\vehicles\human\sabre\fx\weapon\sabre_gun\detonation.effect
+PortTag objects\vehicles\human\sabre\fx\shield\shield_recharge.effect
+PortTag objects\vehicles\human\sabre\fx\shield\shield_collapse.effect
+PortTag objects\vehicles\human\sabre\weapon\sabre_gatling_gun\projectiles\damage_effects\sabre_gatling_gun_bullet_explosion.damage_effect
+PortTag fx\shield_impacts\sabre.shield_impact
+
+# Porting the vehicle will gives like 6-7 errors, yes please fucking kill me
+SuppressErrors True
+CS < workingdir\cs\PauseErrorWarningCount.cs
+PortTag objects\vehicles\human\sabre\sabre.vehicle
+CS < workingdir\cs\ResumeErrorWarningCount.cs
+SuppressErrors False
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\vehicles\human\sabre\shaders\sabre_frame_metal_cc.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[1].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+SetField ShaderProperties[0].Functions[1].Type ChangeColorPrimary
+AddFunction albedo_color Real 1
+SetArgument albedo_blend 1
+SetArgument fresnel_color 0.09137256 0.07882354 0.06313726 1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\shaders\sabre_frame_metal_damage_cc.shader
+AddBlockElements ShaderProperties[0].Functions
+SetField ShaderProperties[0].Functions[1].Function.Data 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+SetField ShaderProperties[0].Functions[1].Type ChangeColorPrimary
+AddFunction albedo_color Real 1
+SetArgument albedo_blend 1
+SetArgument fresnel_color 0.09137256 0.07882354 0.06313726 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag sound\vehicles\sabre\sabre_engine_left\sabre_engine_left.sound_looping
+SetField SoundClass VehicleEngine
+SetField LoopTypeHO 1
+SetField Tracks[0].Gain -11
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_engine_right\sabre_engine_right.sound_looping
+SetField SoundClass VehicleEngine
+SetField LoopTypeHO 1
+SetField Tracks[0].Gain -11
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_boost_left\sabre_boost_left.sound_looping
+SetField SoundClass VehicleEngine
+SetField LoopTypeHO 1
+SetField Tracks[0].Gain 1
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_boost_right\sabre_boost_right.sound_looping
+SetField SoundClass VehicleEngine
+SetField LoopTypeHO 1
+SetField Tracks[0].Gain 1
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_missile_expl.sound
+SetField PitchRanges[0].Permutations[0].Gain 6
+SetField PitchRanges[0].Permutations[1].Gain 6
+SetField PitchRanges[0].Permutations[2].Gain 6
+SetField PitchRanges[0].Permutations[3].Gain 6
+SetField PitchRanges[0].Permutations[4].Gain 6
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_missile_burst.sound
+SetField PitchRanges[0].Permutations[0].Gain 6
+SetField PitchRanges[0].Permutations[1].Gain 6
+SetField PitchRanges[0].Permutations[2].Gain 6
+SetField PitchRanges[0].Permutations[3].Gain 6
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_missile_fire.sound
+SetField PitchRanges[0].Permutations[0].Gain 2
+SetField PitchRanges[0].Permutations[1].Gain 2
+SetField PitchRanges[0].Permutations[2].Gain 2
+SetField PitchRanges[0].Permutations[3].Gain 2
+SaveTagChanges
+Exit
+
+EditTag sound\vehicles\sabre\sabre_destroyed.sound
+SetField PitchRanges[0].Permutations[0].Gain 4
+SetField PitchRanges[0].Permutations[1].Gain 4
+SetField PitchRanges[0].Permutations[2].Gain 4
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       ANIMATION      |
+# ------------------------
+EditTag objects\vehicles\human\sabre\sabre.model_animation_graph
+AddAnimation workingdir\animations\vehicles\sabre
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\sabre.model_animation_graph
+SortModes
+AddBlockElements BlendScreens
+SetField BlendScreens[0].Label blend_screen_#0
+SetField BlendScreens[0].RightYawPerFrame 30
+SetField BlendScreens[0].LeftYawPerFrame 30
+SetField BlendScreens[0].RightFrameCount 1
+SetField BlendScreens[0].LeftFrameCount 1
+SetField Animations[9].AnimationData.BlendScreen 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+# Deversus with his 150 IQ on War Thunder knowledge has provided intel on how the fighter jets gattling round effect should look on ground impact
+EditTag objects\vehicles\human\sabre\fx\weapon\sabre_gun\detonation.effect
+RemoveBlockElements Events[0].Parts 0 *
+RemoveBlockElements Events[1].ParticleSystems 0 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DAMAGE EFFECT     |
+# ------------------------
+EditTag objects\vehicles\human\sabre\weapon\sabre_gatling_gun\projectiles\damage_effects\sabre_gatling_gun_bullet_explosion.damage_effect
+SetField Radius 0.5 1
+SetField Category Bullet
+SetField Flags DetonatesExplosives,TransferDamageAlwaysUsesMinimum
+SetField AreaOfEffectCoreRadius 0.6
+SetField DamageLowerBound 10
+SetField DamageUpperBound 20 20
+SetField InstantaneousAcceleration 1.5
+SetField CustomResponseLabel NULL
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\weapon\sabre_missile\projectile\damage_effects\sabre_missile_detonation.damage_effect
+SetField Radius 2.5 5
+SetField ShakeRadius 16
+SetField DamageLowerBound 250
+SetField DamageUpperBound 350 350
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\weapon\sabre_gatling_gun\projectiles\damage_effects\sabre_gatling_gun_bullet.damage_effect
+SetField DamageLowerBound 15
+SetField DamageUpperBound 15 15
+SaveTagChanges
+Exit
+
+# ------------------------
+# |   DAMAGE RESPONSES   |
+# ------------------------
+EditTag globals\damage_responses\vehicle_sabre_boost.damage_response_definition
+SetField Classes[0].CameraShake.CameraImpulse.FadeFunction VeryEarly
+SetField Classes[0].CameraShake.CameraImpulse.ImpulseDuration 0.55
+SetField Classes[0].CameraShake.CameraShakeData.RandomRotation 0.13
+SaveTagChanges
+Exit
+
+EditTag globals\damage_responses\explosion_space_lowpass.damage_response_definition
+SetField Classes[0].CameraShake.CameraImpulse.ImpulseDuration 0.4
+SetField Classes[0].CameraShake.CameraImpulse.Rotation 1.1
+SetField Classes[0].CameraShake.CameraImpulse.Pushback 0.18
+
+SetField Classes[0].CameraShake.CameraShakeData.ShakeDuration 1.25
+SetField Classes[0].CameraShake.CameraShakeData.RandomTranslation 0.1
+SetField Classes[0].CameraShake.CameraShakeData.RandomRotation 0
+SetField Classes[0].CameraShake.CameraShakeData.WobbleFunctionPeriod 1
+SetField Classes[0].CameraShake.CameraShakeData.WobbleWeight 0
+SaveTagChanges
+Exit
+
+EditTag globals\damage_responses\explosion_small_lowpass.damage_response_definition
+SetField Classes[0].CameraShake.CameraImpulse.ImpulseDuration 0.5
+SetField Classes[0].CameraShake.CameraImpulse.Rotation 0.35
+SetField Classes[0].CameraShake.CameraImpulse.Pushback 0.05
+SetField Classes[0].CameraShake.CameraShakeData.ShakeDuration 1
+SetField Classes[0].CameraShake.CameraShakeData.RandomTranslation 0.01
+SetField Classes[0].CameraShake.CameraShakeData.RandomRotation 0
+SetField Classes[0].CameraShake.CameraShakeData.WobbleFunctionPeriod 0.5
+SetField Classes[0].CameraShake.CameraShakeData.WobbleWeight 0
+
+SetField Classes[1].CameraShake.CameraImpulse.ImpulseDuration 0.5
+SetField Classes[1].CameraShake.CameraImpulse.Rotation 0.35
+SetField Classes[1].CameraShake.CameraImpulse.Pushback 0.058
+SetField Classes[1].CameraShake.CameraShakeData.ShakeDuration 1
+SetField Classes[1].CameraShake.CameraShakeData.RandomTranslation 0.02
+SetField Classes[1].CameraShake.CameraShakeData.RandomRotation 0
+SetField Classes[1].CameraShake.CameraShakeData.WobbleFunctionPeriod 0.5
+SetField Classes[1].CameraShake.CameraShakeData.WobbleWeight 0
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      PROJECTILE      |
+# ------------------------
+EditTag objects\vehicles\human\sabre\weapon\sabre_gatling_gun\projectiles\sabre_gatling_gun_bullet.projectile
+AddBlockElements Attachments
+SetField Attachments[2].Type objects\vehicles\hornet\fx\weapon\chain_gun\projectile.effect
+SetField AirborneDetonationEffect objects\vehicles\human\sabre\fx\weapon\sabre_gun\detonation.effect
+SetField GroundDetonationEffect objects\vehicles\human\sabre\fx\weapon\sabre_gun\detonation.effect
+SetField DetonationDamage objects\vehicles\human\sabre\weapon\sabre_gatling_gun\projectiles\damage_effects\sabre_gatling_gun_bullet_explosion.damage_effect
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\weapon\sabre_missile\projectile\sabre_missile.projectile
+SetField MaterialResponses[0].DefaultResponse Bounce
+SetField MaterialResponses[0].PotentialResponse Bounce
+SetField MaterialResponses[2].DefaultResponse Bounce
+SetField MaterialResponses[2].PotentialResponse Bounce
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     CAMERA TRAK      |
+# ------------------------
+EditTag camera\sabre_d_camera.camera_track
+RemoveBlockElements ControlPoints 0 *
+AddBlockElements ControlPoints 25
+SetField ControlPoints[0].Position -0.3838196 -2.4134E-07 9.910317
+SetField ControlPoints[0].Orientation -3.9000003E-09 -0.7071068 3.9000003E-09 -0.7071068
+SetField ControlPoints[1].Position -3.6435485 -6.8405996E-08 8.95217
+SetField ControlPoints[1].Orientation -2E-09 -0.49999994 -8E-10 -0.86602545
+SetField ControlPoints[2].Position -5.279507 -4.74E-10 8.10234
+SetField ControlPoints[2].Orientation -1.1E-09 -0.3826834 -4.8E-09 -0.92387956
+SetField ControlPoints[3].Position -6.707014 5.9726E-08 7.0114684
+SetField ControlPoints[3].Orientation 5.6700006E-08 -0.25881904 8.000001E-10 -0.96592593
+SetField ControlPoints[4].Position -7.852331 -6.8699E-08 5.700298
+SetField ControlPoints[4].Orientation 7.47E-08 -0.17364804 -1.04E-08 -0.9848078
+SetField ControlPoints[5].Position -8.884406 -1.41927E-07 4.126571
+SetField ControlPoints[5].Orientation 8.81E-08 -0.08715566 -2.2E-08 -0.9961947
+SetField ControlPoints[6].Position -9.587788 -1.1088E-08 2.4935205
+SetField ControlPoints[6].Orientation 4.402E-07 4.45E-08 9E-09 -1
+SetField ControlPoints[7].Position -9.813882 1.01224E-07 0.68321484
+SetField ControlPoints[7].Orientation 4.164E-07 0.087155394 -7.1E-09 -0.9961947
+SetField ControlPoints[8].Position -9.549855 -1.176621E-06 -1.4695092
+SetField ControlPoints[8].Orientation -1.2180001E-07 0.17364822 -4.7310004E-07 -0.98480785
+SetField ControlPoints[9].Position -8.899433 -1.7994439E-06 -3.2952588
+SetField ControlPoints[9].Orientation 1.15E-08 0.25881907 -9.291E-07 -0.9659258
+SetField ControlPoints[10].Position -7.399509 8.961082E-06 -5.3759284
+SetField ControlPoints[10].Orientation 2.8710006E-06 0.3826835 1.1717001E-06 -0.9238796
+SetField ControlPoints[11].Position -4.966384 1.0235593E-05 -6.761233
+SetField ControlPoints[11].Orientation 2.6935E-06 0.50000006 1.5364E-06 -0.8660254
+SetField ControlPoints[12].Position -1.280485 3.73721E-07 -7.316159
+SetField ControlPoints[12].Orientation 1.2600002E-08 0.70710677 -1.0300001E-08 -0.7071069
+SetField ControlPoints[13].Position 2.4054141 -1.0235593E-05 -6.761233
+SetField ControlPoints[13].Orientation -2.6935E-06 0.8660254 -1.5364E-06 -0.50000006
+SetField ControlPoints[14].Position 4.83853817 -8.961082E-06 -5.3759284
+SetField ControlPoints[14].Orientation -2.8710006E-06 0.9238796 -1.1717001E-06 -0.3826835
+SetField ControlPoints[15].Position 6.3384619 1.7994439E-06 -3.2952588
+SetField ControlPoints[15].Orientation -1.15E-08 0.9659258 9.291E-07 -0.25881907
+SetField ControlPoints[16].Position 6.9888844 1.176621E-06 -1.4695092
+SetField ControlPoints[16].Orientation 1.2180001E-07 0.98480785 4.7310004E-07 -0.17364822
+SetField ControlPoints[17].Position 7.2529116 -1.01224E-07 0.68321484
+SetField ControlPoints[17].Orientation -4.164E-07 0.9961947 7.1E-09 -0.087155394
+SetField ControlPoints[18].Position 7.0268176 1.1088E-08 2.4935205
+SetField ControlPoints[18].Orientation -4.402E-07 1 -9E-09 -4.45E-08
+SetField ControlPoints[19].Position 6.3234355 1.41927E-07 4.126571
+SetField ControlPoints[19].Orientation -8.81E-08 0.9961947 2.2E-08 0.08715566
+SetField ControlPoints[20].Position 5.2913609 6.8699E-08 5.700298
+SetField ControlPoints[20].Orientation -7.47E-08 0.9848078 1.04E-08 0.17364804
+SetField ControlPoints[21].Position 4.14604378 -5.9726E-08 7.0114684
+SetField ControlPoints[21].Orientation -5.6700006E-08 0.96592593 -8.000001E-10 0.25881904
+SetField ControlPoints[22].Position 2.7185364 4.74E-10 8.10234
+SetField ControlPoints[22].Orientation 1.1E-09 0.92387956 4.8E-09 0.3826834
+SetField ControlPoints[23].Position 1.0825777 6.8405996E-08 8.95217
+SetField ControlPoints[23].Orientation 2E-09 0.86602545 8E-10 0.49999994
+SetField ControlPoints[24].Position -0.3838196 2.4134E-07 9.910317
+SetField ControlPoints[24].Orientation 3.9000003E-09 0.7071068 -3.9000003E-09 0.7071068
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString English shields_at "SHIELDS:"
+SetString English hull_acceptable "HULL INTERGRITY:"
+SetString English thruster_heat "THRUSTER HEAT"
+SetString English gun_enabled "MACHINEGUN ENABLED|nSYSTEM ONLINE"
+SetString English sabre_enter "\uE461\uE45F to pilot Sabre"
+SetString English sabre_flip "\uE461\uE45F to flip Sabre"
+SetString English sabre_gunner_enter "\uE461\uE45F to ride in Sabre"
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     HUD ANIMATION    |
+# ------------------------
+EditTag ui\chud\animations\sabre_pitch_slide.chud_animation_definition
+SetField Texture[0].Keyframes[0].TextureScale 1 0.32
+SetField Texture[0].Keyframes[0].TextureOffset 0 0.5
+
+SetField Texture[0].Keyframes[1].TextureScale 1 0.32
+SetField Texture[0].Keyframes[1].TextureOffset 0 0.25
+SaveTagChanges
+Exit
+
+# ------------------------
+# |          HUD         |
+# ------------------------
+EditTag ui\chud\v_sabre.chud_definition
+SetField HudWidgets[0].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].PlacementData[0].Offset 0 -45
+SetField HudWidgets[0].PlacementData[0].Scale 1.5 1.5
+
+# Brackets
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Origin 2.2 12
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Scale 0.6 0.65
+SetField HudWidgets[0].BitmapWidgets[0].Flags MirrorHorizontally,MirrorVertically
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputColorC HighlightForeground
+
+# Sabre Schematic
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Anchor Parent
+# SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Offset 282 -141
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Offset 282.15 -140.8
+# SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Scale 0.48 0.48
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Scale 0.485 0.485
+SetField HudWidgets[0].BitmapWidgets[1].AnimationData[0].Active.InputType Extern1
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].ShaderType MeterGradient
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].ExternalInput BodyVitality
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].LocalScalarA 20
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].LocalScalarB 5
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].LocalScalarC 1
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].LocalScalarD 270
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorA HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorB HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorD WarningFlash
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputScalarB LocalA
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputScalarC LocalB
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputScalarD LocalC
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputScalarE LocalD
+
+# Vehicle Meter
+SetField HudWidgets[0].BitmapWidgets[2].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[2].PlacementData[0].Scale 0.45 0.45
+SetField HudWidgets[0].BitmapWidgets[2].AnimationData[0].Active.InputType Extern1
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].ShaderType Meter
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].ExternalInput ShieldAmount
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].LocalScalarA 0.8
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].LocalScalarB 0.8
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputColorA HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputColorB HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputColorD WarningFlash
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputScalarB LocalA
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputScalarC LocalB
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputScalarD LocalC
+SetField HudWidgets[0].BitmapWidgets[2].RenderData[0].OutputScalarE LocalD
+
+# Thruster Meter
+SetField HudWidgets[0].BitmapWidgets[3].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[3].PlacementData[0].Origin -0.5 -3
+SetField HudWidgets[0].BitmapWidgets[3].PlacementData[0].Scale 0.45 0.45
+SetField HudWidgets[0].BitmapWidgets[3].RenderData[0].OutputColorA SecondaryBackground
+SetField HudWidgets[0].BitmapWidgets[3].RenderData[0].OutputColorB HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[3].RenderData[0].OutputColorC HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[3].RenderData[0].OutputColorD HighlightForeground
+
+# Thruster Background
+SetField HudWidgets[0].BitmapWidgets[4].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[4].PlacementData[0].Origin -0.5 -3
+SetField HudWidgets[0].BitmapWidgets[4].PlacementData[0].Scale 0.45 0.45
+SetField HudWidgets[0].BitmapWidgets[4].RenderData[0].OutputColorA HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[4].RenderData[0].OutputColorB HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[4].RenderData[0].OutputColorC HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[4].RenderData[0].OutputColorD HighlightForeground
+
+# Shields at
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Scale 0.5 0.5
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Offset 205 -154
+SetField HudWidgets[0].TextWidgets[0].Font FullscreenHudMessage
+SetField HudWidgets[0].TextWidgets[0].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[0].RenderData[0].OutputColorA HighlightForeground
+
+# Hull Acceptable
+SetField HudWidgets[0].TextWidgets[1].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[1].PlacementData[0].Scale 0.5 0.5
+SetField HudWidgets[0].TextWidgets[1].PlacementData[0].Offset 205 -138
+SetField HudWidgets[0].TextWidgets[1].Font FullscreenHudMessage
+SetField HudWidgets[0].TextWidgets[1].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[1].RenderData[0].OutputColorA HighlightForeground
+
+# Shield Percentage
+SetField HudWidgets[0].TextWidgets[2].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[2].PlacementData[0].Offset 229 -154
+SetField HudWidgets[0].TextWidgets[2].PlacementData[0].Scale 0.27 0.27
+SetField HudWidgets[0].TextWidgets[2].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[2].RenderData[0].ExternalInput ShieldAmount
+SetField HudWidgets[0].TextWidgets[2].TextFlags StringIsANumber
+SetField HudWidgets[0].TextWidgets[2].Font SplitscreenHudMessage
+SetField HudWidgets[0].TextWidgets[2].RenderData[0].OutputColorA HighlightForeground
+SetField HudWidgets[0].TextWidgets[2].RenderData[0].OutputColorB HighlightForeground
+
+# Percent (Shield)
+SetField HudWidgets[0].TextWidgets[3].PlacementData[0].Anchor Parent
+
+# Health Percentage
+SetField HudWidgets[0].TextWidgets[4].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[4].PlacementData[0].Offset 229 -138
+SetField HudWidgets[0].TextWidgets[4].PlacementData[0].Scale 0.27 0.27
+SetField HudWidgets[0].TextWidgets[4].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[4].RenderData[0].ExternalInput BodyVitality
+SetField HudWidgets[0].TextWidgets[4].TextFlags StringIsANumber
+SetField HudWidgets[0].TextWidgets[4].Font SplitscreenHudMessage
+SetField HudWidgets[0].TextWidgets[4].RenderData[0].OutputColorA HighlightForeground
+SetField HudWidgets[0].TextWidgets[4].RenderData[0].OutputColorB HighlightForeground
+
+# Thuster Heat
+SetField HudWidgets[0].TextWidgets[5].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[5].PlacementData[0].Origin 1.3 0.5
+SetField HudWidgets[0].TextWidgets[5].PlacementData[0].Offset 243 147
+SetField HudWidgets[0].TextWidgets[5].PlacementData[0].Scale 0.5 0.5
+SetField HudWidgets[0].TextWidgets[5].Font FullscreenHudMessage
+SetField HudWidgets[0].TextWidgets[5].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[5].RenderData[0].OutputColorA HighlightForeground
+
+# Percent (Health)
+SetField HudWidgets[0].TextWidgets[6].PlacementData[0].Anchor Parent
+
+RemoveBlockElements HudWidgets 1 *
+SortRuntimeWidgetIndex
+SaveTagChanges
+Exit
+
+EditTag ui\chud\v_sabre_turret.chud_definition
+SetField HudWidgets[0].ParallaxData ui\chud\parallax\weapons_3.chud_widget_parallax_data
+SetField HudWidgets[0].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[0].PlacementData[0].Offset 0 -45
+SetField HudWidgets[0].PlacementData[0].Scale 1.5 1.5
+
+# Pitch
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Origin 13.5 0
+SetField HudWidgets[0].BitmapWidgets[0].PlacementData[0].Scale 0.75 0.225
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].ExternalInput CameraPitch
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputColorC HighlightForeground
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].LocalScalarA 0.5
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].LocalScalarB 0.5
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].LocalScalarC 0.5
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].LocalScalarD 0.5
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputScalarB RangeInput
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputScalarD RangeInput
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].OutputScalarE LocalC
+SetField HudWidgets[0].BitmapWidgets[0].RenderData[0].ScissorRect 0 0 0 0
+SetField HudWidgets[0].BitmapWidgets[0].AnimationData[0].Active.InputType Extern1
+SetField HudWidgets[0].BitmapWidgets[0].Flags MirrorHorizontally
+
+# Machinegun Schematic
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Offset -255 -142
+SetField HudWidgets[0].BitmapWidgets[1].PlacementData[0].Scale 0.48 0.48
+SetField HudWidgets[0].BitmapWidgets[1].RenderData[0].OutputColorC HighlightForeground
+
+# Machinegun Online
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Anchor Parent
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Offset -162 -142
+SetField HudWidgets[0].TextWidgets[0].PlacementData[0].Scale 0.5 0.5
+SetField HudWidgets[0].TextWidgets[0].RenderData[0].ShaderType TextSimple
+SetField HudWidgets[0].TextWidgets[0].Font FullscreenHudMessage
+SetField HudWidgets[0].TextWidgets[0].RenderData[0].OutputColorA HighlightForeground
+
+# Crosshair <-<-<
+SetField HudWidgets[1].ParallaxData ui\chud\parallax\vehicles.chud_widget_parallax_data
+
+# Crosshair
+SetField HudWidgets[1].BitmapWidgets[0].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[1].BitmapWidgets[0].PlacementData[0].Origin 0 0
+SetField HudWidgets[1].BitmapWidgets[0].PlacementData[0].Offset 0 -45
+SetField HudWidgets[1].BitmapWidgets[0].PlacementData[0].Scale 0.4 0.4
+SetField HudWidgets[1].BitmapWidgets[0].StateData[0].WeaponArmedStateHO RightHand
+SetField HudWidgets[1].BitmapWidgets[0].RenderData[0].ShaderType Crosshair
+SetField HudWidgets[1].BitmapWidgets[0].RenderData[0].ExternalInput Autoaim
+SetField HudWidgets[1].BitmapWidgets[0].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[1].BitmapWidgets[0].RenderData[0].OutputColorB CrosshairEnemy
+SetField HudWidgets[1].BitmapWidgets[0].RenderData[0].OutputColorC CrosshairFriendly
+SetField HudWidgets[1].BitmapWidgets[0].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
+SetField HudWidgets[1].BitmapWidgets[0].BitmapSequenceIndex 2
+
+# Crosshair Trackable
+SetField HudWidgets[1].BitmapWidgets[1].PlacementData[0].Anchor WeaponTarget
+SetField HudWidgets[1].BitmapWidgets[1].PlacementData[0].Origin 0 0
+SetField HudWidgets[1].BitmapWidgets[1].PlacementData[0].Offset 0 -45
+SetField HudWidgets[1].BitmapWidgets[1].PlacementData[0].Scale -0.22 0.22
+SetField HudWidgets[1].BitmapWidgets[1].StateData[0].WeaponMiscState LockedOnAvailable
+SetField HudWidgets[1].BitmapWidgets[1].StateData[0].WeaponArmedStateHO RightHand
+SetField HudWidgets[1].BitmapWidgets[1].RenderData[0].ShaderType Crosshair
+SetField HudWidgets[1].BitmapWidgets[1].RenderData[0].ExternalInput Autoaim
+SetField HudWidgets[1].BitmapWidgets[1].RenderData[0].OutputColorA CrosshairEnemy
+SetField HudWidgets[1].BitmapWidgets[1].RenderData[0].OutputColorB CrosshairEnemy
+SetField HudWidgets[1].BitmapWidgets[1].RenderData[0].OutputColorC CrosshairEnemy
+SetField HudWidgets[1].BitmapWidgets[1].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
+SetField HudWidgets[1].BitmapWidgets[1].BitmapSequenceIndex 2
+
+# Crosshair not Trackable
+SetField HudWidgets[1].BitmapWidgets[2].PlacementData[0].Anchor Crosshair
+SetField HudWidgets[1].BitmapWidgets[2].PlacementData[0].Origin 0 0
+SetField HudWidgets[1].BitmapWidgets[2].PlacementData[0].Offset 0 -45
+SetField HudWidgets[1].BitmapWidgets[2].PlacementData[0].Scale -0.22 0.22
+SetField HudWidgets[1].BitmapWidgets[2].StateData[0].WeaponMiscState LockedOnUnavailable
+SetField HudWidgets[1].BitmapWidgets[2].StateData[0].WeaponArmedStateHO RightHand
+SetField HudWidgets[1].BitmapWidgets[2].RenderData[0].ShaderType Crosshair
+SetField HudWidgets[1].BitmapWidgets[2].RenderData[0].ExternalInput Autoaim
+SetField HudWidgets[1].BitmapWidgets[2].RenderData[0].OutputColorA CrosshairNormal
+SetField HudWidgets[1].BitmapWidgets[2].RenderData[0].OutputColorB CrosshairEnemy
+SetField HudWidgets[1].BitmapWidgets[2].RenderData[0].OutputColorC CrosshairFriendly
+SetField HudWidgets[1].BitmapWidgets[2].Bitmap reach\ui\chud\bitmaps\hud_vehicle_reticles.bitmap
+SetField HudWidgets[1].BitmapWidgets[2].BitmapSequenceIndex 2
+SortRuntimeWidgetIndex
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     RENDER MODEL     |
+# ------------------------
+EditTag objects\vehicles\human\sabre\sabre.render_model
+SetField Geometry.Meshes[2].Parts[0].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[2].Parts[1].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[0].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[1].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[2].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[3].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[4].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[5].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[6].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[7].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[8].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[9].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[10].FlagsNew DrawCullRenderingShields,PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[11].FlagsNew DrawCullRenderingShields,PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[12].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[13].FlagsNew PreventBackfaceCulling
+SetField Geometry.Meshes[3].Parts[14].FlagsNew PreventBackfaceCulling
+
+# Target Hull Indicator
+SetField MarkerGroups[46].Markers[0].Translation 2.2990158 2.2888182E-06 -1.5443493
+
+StringId Add fx_main_engine_light_right
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name fx_main_engine_light_right
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].NodeIndex 4
+SetField MarkerGroups[*].Markers[*].Flags HasNodeRelativeDirection
+SetField MarkerGroups[*].Markers[*].Translation -4.585308 -0.8355177 0.8768046
+SetField MarkerGroups[*].Markers[*].Rotation 1.831851E-06 -1.410484E-07 -1 8.865198E-06
+SetField MarkerGroups[*].Markers[*].Scale 0.01
+
+StringId Add fx_wing_engine_light_right
+AddBlockElements MarkerGroups
+SetField MarkerGroups[*].Name fx_wing_engine_light_right
+AddBlockElements MarkerGroups[*].Markers
+SetField MarkerGroups[*].Markers[*].RegionIndex -1
+SetField MarkerGroups[*].Markers[*].PermutationIndex -1
+SetField MarkerGroups[*].Markers[*].NodeIndex 4
+SetField MarkerGroups[*].Markers[*].Flags HasNodeRelativeDirection
+SetField MarkerGroups[*].Markers[*].Translation -3.718178 -2.400001 0.7800004
+SetField MarkerGroups[*].Markers[*].Rotation 1.831851E-06 -1.410484E-07 -1 8.865198E-06
+SetField MarkerGroups[*].Markers[*].Scale 0.01
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag objects\vehicles\human\sabre\sabre.model
+SetField AnimationDistance 100
+SetField Variants[0].Objects[0].ChildObject objects\vehicles\human\sabre\attachments\cockpit\cockpit.scenery
+SetField Targets[0].Flags ShowsTrackingReticle
+SetField Targets[0].LockOnData.TrackingType flying_vehicles
+SetField Targets[0].LockOnData.LockOnDistance 65
+
+SetField NewDamageInfo[0].MaximumVitality 500
+SetField NewDamageInfo[0].ShieldDepletedEffect objects\vehicles\human\sabre\fx\shield\shield_collapse.effect
+SetField NewDamageInfo[0].ShieldRechargingEffect objects\vehicles\human\sabre\fx\shield\shield_recharge.effect
+SetField NewDamageInfo[0].RechargeTime 5
+SetField NewDamageInfo[0].RechargeFraction 0.5
+SetField NewDamageInfo[0].MaxShieldVitality 500
+SetField NewDamageInfo[0].ShieldRechargeTime 2
+SetField NewDamageInfo[0].ShieldStunTime 5
+SetField NewDamageInfo[0].GlobalShieldMaterialName energy_shield_thick
+SetField NewDamageInfo[0].GlobalShieldMaterialIndex 152
+SetField NewDamageInfo[0].RuntimeShieldRechargeVelocity 0.5
+SetField NewDamageInfo[0].RuntimeHealthRechargeVelocity 0.2
+SetField ShieldImpactThirdPerson fx\shield_impacts\sabre.shield_impact
+
+AddBlockElements NewDamageInfo[0].DamageSeats 2
+SetField NewDamageInfo[0].DamageSeats[0].SeatLabel warthog_d
+SetField NewDamageInfo[0].DamageSeats[0].DamageTransferFallOffRadius 0.1
+SetField NewDamageInfo[0].DamageSeats[0].MaximumTransferDamageScale 0.1
+SetField NewDamageInfo[0].DamageSeats[0].MinimumTransferDamageScale 0.1
+
+SetField NewDamageInfo[0].DamageSeats[1].SeatLabel warthog_p
+SetField NewDamageInfo[0].DamageSeats[1].DamageTransferFallOffRadius 0.1
+SetField NewDamageInfo[0].DamageSeats[1].MaximumTransferDamageScale 0.1
+SetField NewDamageInfo[0].DamageSeats[1].MinimumTransferDamageScale 0.1
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         LIGHT        |
+# ------------------------
+EditTag objects\vehicles\human\sabre\fx\running\main_engine.light
+SetField Intensity.Function.Data 03340000000000410000204100000000000000006F12833A6F12033B14000000090000000000C03F00000000000000BF0000803F
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      LENS FLARE      |
+# ------------------------
+EditTag objects\vehicles\human\sabre\fx\running\main_engine_glow.lens_flare
+SetField Reflections[0].ScaleCurveXFunction.Data 0834000000000000CDCCCC3E000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SetField Reflections[0].ScaleCurveYFunction.Data 0834000000000000CDCCCC3E000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\fx\running\wing_engine_glow.lens_flare
+SetField Reflections[0].ScaleCurveXFunction.Data 0834000000000000CDCCCC3E000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SetField Reflections[0].ScaleCurveYFunction.Data 0834000000000000CDCCCC3E000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\fx\running\wing_engine_anamorphic.lens_flare
+SetField Reflections[0].ScaleCurveXFunction.Data 083400000000000000000000000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SetField Reflections[0].ScaleCurveYFunction.Data 083400000000000000000000000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\vehicles\human\sabre\weapon\sabre_gatling_gun\sabre_gatling_gun.weapon
+
+RemoveBlockElements TargetTracking 0 *
+AddBlockElements TargetTracking
+AddBlockElements TargetTracking[0].TrackingTypes 2
+SetField TargetTracking[0].TrackingTypes[0].TrackingType2 flying_vehicles
+SetField TargetTracking[0].TrackingTypes[1].TrackingType2 ground_vehicles
+SetField TargetTracking[0].GraceTime 0.1
+
+SetField WeaponAimAssist.AutoaimAngle 7
+SetField WeaponAimAssist.AutoaimRange 500
+SetField WeaponAimAssist.AutoaimFalloffRange 250
+SetField WeaponAimAssist.MagnetismAngle 13
+SetField WeaponAimAssist.MagnetismRange 500
+SetField WeaponAimAssist.MagnetismFalloffRange 150
+
+SetField Tracking HumanTracking
+SetField Triggers[0].LockonHoldTime 15
+SetField Triggers[0].LockonGraceTime 0.5
+SetField Triggers[1].LockonHoldTime 1.5
+SetField Triggers[1].LockonGraceTime 0.5
+
+SetField Barrels[0].Flags.HaloOnline TracksFiredProjectile,ProjectilesUseWeaponOrigin,StaggerFireAcrossMultipleMarkers,ProjectileFiresInMarkerDirection
+SetField Barrels[1].Flags.HaloOnline TracksFiredProjectile,ProjectilesUseWeaponOrigin,ProjectilesFireParallel,StaggerFireAcrossMultipleMarkers
+SetField Barrels[1].Firing.FireRecoveryTime 4
+
+SetField WeaponFlags.NewFlags SecondaryTriggerOverridesGrenades,SupportWeapon,CannotFireWhileBoosting
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        VEHICLE       |
+# ------------------------
+EditTag objects\vehicles\human\sabre\sabre.vehicle
+SetField AccelerationScale 0.25
+SetField VehicleFlags NoFrictionWithDriver,AiDoesNotRequireDriver,AiDriverEnable
+SetField UnitFlags.Flags ImpactMeleeDiesOnShields,UnitHasBoost
+
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+
+AddBlockElements MultiplayerObject
+SetField MultiplayerObject[0].Type FlyingVehicle
+SetField MultiplayerObject[0].DefaultSpawnTime 30
+SetField MultiplayerObject[0].DefaultAbandonTime 60
+
+SetField Boost.BoostDeadTime 0
+SetField Boost.BoostPeakTime 30000
+SetField Boost.BoostFallPower 0.005
+
+AddBlockElements PhysicsTypes.AlienFighter
+SetField PhysicsTypes.AlienFighter[0].Steering.OverdampenCuspAngle 0.5
+SetField PhysicsTypes.AlienFighter[0].Steering.OverdampenExponent 1.2
+
+SetField PhysicsTypes.AlienFighter[0].Turning.MaximumLeftTurn 1.534464
+SetField PhysicsTypes.AlienFighter[0].Turning.MaximumRightTurn -1.534464
+SetField PhysicsTypes.AlienFighter[0].Turning.TurnRate 6.424778
+
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.MaximumForwardSpeed 30
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.SpeedAcceleration 40
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.SpeedDeceleration 60
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.MaximumLeftSlide 6
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.MaximumRightSlide 6
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.SlideAcceleration 17
+SetField PhysicsTypes.AlienFighter[0].VelocityControl.SlideDeceleration 15
+
+SetField PhysicsTypes.AlienFighter[0].FlyingTorqueScale 1
+SetField PhysicsTypes.AlienFighter[0].FixedGunOffset 0 0
+SetField PhysicsTypes.AlienFighter[0].MaximumTrickFrequency 2.2
+SetField PhysicsTypes.AlienFighter[0].LoopTrickDuration 1.8
+SetField PhysicsTypes.AlienFighter[0].RollTrickDuration 1.8
+SetField PhysicsTypes.AlienFighter[0].ZeroGravitySpeed 4
+SetField PhysicsTypes.AlienFighter[0].FullGravitySpeed 3.7
+SetField PhysicsTypes.AlienFighter[0].StrafeBoostScale 7.5
+SetField PhysicsTypes.AlienFighter[0].OffStickDecelerationScale 0.1
+
+SetField HavokVehiclePhysics.GroundFriction 1
+SetField HavokVehiclePhysics.GroundDampFactor 1
+SetField HavokVehiclePhysics.GroundMovingFriction 0.5
+SetField HavokVehiclePhysics.GravityScale 0.5
+
+SetField Seats[0].Flags Driver,Gunner,ThirdPersonCamera,ControlsOpenAndClose,ForwardFromAttachment
+SetField Seats[0].Label warthog_d
+
+SetField Seats[1].Flags ThirdPersonCamera,AllowsWeapons,BoardingNeedAnyPassenger,ForwardFromAttachment
+SetField Seats[1].Label warthog_p
+SetField Seats[1].AiSeatType Passenger
+
+AddBlockElements Seats[0].UnitCamera.CameraTracks
+SetField Seats[0].UnitCamera.CameraTracks[0].Track camera\sabre_d_camera.camera_track
+
+AddBlockElements Attachments
+SetField Attachments[*].Type objects\vehicles\human\sabre\fx\running\main_engine.light
+SetField Attachments[*].Marker fx_main_engine_light_right
+SetField Attachments[*].PrimaryScale main_engine_fx
+
+# AddBlockElements Attachments
+# SetField Attachments[*].Type objects\vehicles\human\sabre\fx\running\wing_engine.light
+# SetField Attachments[*].Marker fx_wing_engine_light_right
+# SetField Attachments[*].PrimaryScale boost_fx
+SaveTagChanges
+Exit
+
+// Color Change for Destroyed Objects
+// These don't actually work since they're not attached to revenant color change vehicles properties
+// But if you don't do this, the destroyed object would be black instead of the usual white color
+EditTag objects\vehicles\human\sabre\garbage\engine_left\engine_left.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\garbage\engine_right\engine_right.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\garbage\front_hull\front_hull.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\garbage\rear_hull_left\rear_hull_left.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\garbage\rear_hull_right\rear_hull_right.crate
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+SaveTagChanges
+Exit
+
+EditTag objects\vehicles\human\sabre\weapon\sabre_missile\projectile\sabre_missile.projectile
+AddBlockElements ChangeColors
+AddBlockElements ChangeColors[0].InitialPermutations
+SetField ChangeColors[0].InitialPermutations[0].VariantName default
+SetField ChangeColors[0].InitialPermutations[0].ColorLowerBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].ColorUpperBound 1 1 1
+SetField ChangeColors[0].InitialPermutations[0].Weight 0.1
+SaveTagChanges
+Exit
+
+# AddForgeItem "SABRE" "VEHICLES" objects\vehicles\human\sabre\sabre.vehicle

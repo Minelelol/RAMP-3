@@ -8,7 +8,6 @@
 OpenCacheFile reachmapsdir\50_panopticon.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 RunCommands workingdir\commands\reach_globals.cmds
-RunCommands workingdir\commands\reach_particles_physics.cmds
 
 CS < workingdir\commands\map_ports\ignorescriptsource.cs
 PortTag !Scripts !UpdateMapFiles *.scnr
@@ -47,6 +46,8 @@ Exit
 # ------------------------
 # |        SHADER        |
 # ------------------------
+RunCommands workingdir\commands\map_ports\shader_fixes\exodus_shaders.cmds
+
 GenerateShader Shader default detail_blend none specular_mask_from_diffuse cook_torrance_reach dynamic off alpha_blend interpolated first_person_sometimes off off off default from_opacity_map_alpha
 EditTag levels\solo\m50\shaders\paneling\wall_panel_r_waterfall.shader
 SetField Options[9].OptionIndex 1
@@ -108,35 +109,3 @@ AddFunction bump_detail_map Real 0
 AddFunction bump_detail_map2 Real 1
 SaveTagChanges
 Exit
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a SetArgument specular_coefficient 0.1
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_trims_a_grimey_red SetArgument environment_map_specular_contribution 2.5
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_b SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_c SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_d SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_f SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_g SetArgument environment_map_specular_contribution 3
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_b SetArgument specular_coefficient 0.1
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_c SetArgument specular_coefficient 0.1
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_d SetArgument specular_coefficient 0.1
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_f SetArgument specular_coefficient 0.1
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_g SetArgument specular_coefficient 0.1
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h SetArgument specular_coefficient 0.1
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_ SetArgument environment_map_specular_contribution 1
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_red SetArgument environment_map_specular_contribution 2.5
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_panel_h_grimey_test SetArgument environment_map_specular_contribution 0.5
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_flat_grimey SetArgument environment_map_specular_contribution 3
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\wall_flat_grimey SetArgument specular_coefficient 0.1
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\glass\glass_rail_wall SetArgument environment_map_specular_contribution 1
-
-ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\metal_bldg SetArgument specular_coefficient 0.1
-ForEach rmcs StartingWith: levels\solo\m50\shaders\glass\windowbox_traxus_hq_on SetArgument specular_coefficient 0.1

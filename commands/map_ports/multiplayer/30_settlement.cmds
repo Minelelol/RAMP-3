@@ -1,0 +1,99 @@
+# POWERHOUSE
+# POWERHOUSE
+# POWERHOUSE
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\30_settlement.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
+NameBlamTag levels\shared\decals\weathering\stains\drips\drip_stain_1.decal_system fuckoff
+NameBlamTag levels\shared\decals\weathering\stains\corrosion\docks_rust_edge.decal_system fuckoff2
+
+IgnoreBlamTag objects\levels\multi\10_settlement\settlement_elev\settlement_elev.device_machine
+IgnoreBlamTag objects\props\human\pioneer\furniture\drawers_inset\drawers_inset.scenery
+IgnoreBlamTag objects\props\human\pioneer\furniture\decor_gun_rack_wall_c\decor_gun_rack_wall_c.scenery
+IgnoreBlamTag objects\props\human\pioneer\farm\pickup_disabled\pickup_disabled.scenery
+IgnoreBlamTag objects\scenery\nature\boulder_a\boulder_a.scenery
+IgnoreBlamTag objects\scenery\nature\boulder_b\boulder_b.scenery
+IgnoreBlamTag objects\levels\multi\spartanland\unsc_door\unsc_door.scenery
+
+IgnoreBlamTag fuckoff.decal_system
+IgnoreBlamTag fuckoff2.decal_system
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\multi\30_settlement\30_settlement.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position 156.137 252.949 42.462
+SetField CutsceneCameraPoints[0].Orientation -161.739 6.928 -0.079
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position 130.287 246.321 41.337
+SetField CutsceneCameraPoints[1].Orientation 60 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\multi\30_settlement\post_fx\30_settlement.sky_atm_parameters
+SetField AtmosphereSettings[0].Intensity 2
+SaveTagChanges
+Exit
+
+EditTag levels\multi\30_settlement\post_fx\30_settlement.area_screen_effect
+# SetField ScreenEffects[0].ExposureBoost 0.25
+SetField ScreenEffects[0].GammaEnhance 0
+# With the gamma reduce it's actually making it more inaccurate however due to the horrible lightmap we need to do this
+SetField ScreenEffects[0].GammaReduce 0.1
+SaveTagChanges
+Exit
+
+EditTag levels\multi\30_settlement\post_fx\30_settlement.camera_fx_settings
+SetField Exposure.ExposureRange 0 0.5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+EditTag levels\multi\30_settlement\30_settlement.scenario_structure_bsp
+SetField WorldBoundsX -30 500
+SetField WorldBoundsY 0 500
+SetField WorldBoundsZ -50 250
+SetField Clusters[0].BoundsX -30 500
+SetField Clusters[0].BoundsY 0 500
+SetField Clusters[0].BoundsZ -50 250
+SetField Physics.MoppBoundsMin -30 0 -50
+SetField Physics.MoppBoundsMax 500 500 250
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+EditTag levels\multi\30_settlement\30_settlement.scenario_structure_bsp
+SetField RuntimeDecals[463].PaletteIndex -1
+SetField RuntimeDecals[175].PaletteIndex -1
+SetField RuntimeDecals[174].PaletteIndex -1
+SetField RuntimeDecals[105].PaletteIndex -1
+SaveTagChanges
+Exit
+
+CS < workingdir\cs\ReachDecalScaling.cs levels\multi\30_settlement\30_settlement.scenario

@@ -1,0 +1,94 @@
+# PP
+DuplicateTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_overheat.sound dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_l
+EditTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_l.sound
+ImportSound workingdir\sounds\weapons\duals\pp\overheating\left
+SetField Playback.GainBase 0
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_overheat.sound dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_r
+EditTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_r.sound
+ImportSound workingdir\sounds\weapons\duals\pp\overheating\right
+SetField Playback.GainBase 0
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plasma_pistol_overheat_exit.sound dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_exit_l
+EditTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_exit_l.sound
+ImportSound workingdir\sounds\weapons\duals\pp\overheat_exit\left
+SetField Playback.GainBase 0
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plasma_pistol_overheat_exit.sound dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_exit_r
+EditTag dw3\r3ach\sound\weapons\plasma_pistol\plaspistol_fp\plaspistol_dual_overheat_exit_r.sound
+ImportSound workingdir\sounds\weapons\duals\pp\overheat_exit\right
+SetField Playback.GainBase 0
+SaveTagChanges
+Exit
+
+# PR
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle_oh_exit.sound dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ohexit_l
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ohexit_l.sound
+ImportSound workingdir\sounds\weapons\duals\pr\overheat_exit\left
+SetField Playback.GainBase -1
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle_oh_exit.sound dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ohexit_r
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ohexit_r.sound
+ImportSound workingdir\sounds\weapons\duals\pr\overheat_exit\right
+SetField Playback.GainBase -1
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle_overheat.sound dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_oh_l
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_oh_l.sound
+ImportSound workingdir\sounds\weapons\duals\pr\overheating\left
+SetField Playback.GainBase 4
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle_overheat.sound dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_oh_r
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_oh_r.sound
+ImportSound workingdir\sounds\weapons\duals\pr\overheating\right
+SetField Playback.GainBase 4
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle_ready.sound dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ready_l
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ready_l.sound
+ImportSound workingdir\sounds\weapons\duals\pr\ready\left
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle_ready.sound dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ready_r
+EditTag dw3\r3ach\sound\weapons\plasma_rifle\plasrifle\plasmarifle_dual_ready_r.sound
+ImportSound workingdir\sounds\weapons\duals\pr\ready\right
+SaveTagChanges
+Exit
+
+# NEEDLER
+DuplicateTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_ready.sound dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_ready_l
+EditTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_ready_l.sound
+ImportSound workingdir\sounds\weapons\duals\needler\ready\left
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_ready.sound dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_ready_r
+EditTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_ready_r.sound
+ImportSound workingdir\sounds\weapons\duals\needler\ready\right
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_reload.sound dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_reload_l
+EditTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_reload_l.sound
+ImportSound workingdir\sounds\weapons\duals\needler\reload\left
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_reload.sound dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_reload_r
+EditTag dw3\r3ach\sound\weapons\needler\needler_fp\needler_dual_reload_r.sound
+ImportSound workingdir\sounds\weapons\duals\needler\reload\right
+SaveTagChanges
+Exit

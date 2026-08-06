@@ -212,6 +212,14 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |         SOUND        |
+# ------------------------
+EditTag sound\weapons\flak_cannon\flak_projectile_loop2_h3\flak_projectile_loop2_h3.sound_looping
+SetField Tracks[0].Flags None
+SaveTagChanges
+Exit
+
+# ------------------------
 # |         LIGHT        |
 # ------------------------
 EditTag objects\weapons\support_high\flak_cannon\fx\detonation.light

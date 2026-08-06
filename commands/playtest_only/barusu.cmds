@@ -1,0 +1,46 @@
+GenerateBitmap levels\multi\another_world\subaru_emilia barusudir\stay_alive.dds
+DuplicateTag levels\multi\s3d_turf\shaders\checker.shader levels\multi\another_world\subaru_emilia
+EditTag levels\multi\another_world\subaru_emilia.shader
+SetBitmap base_map levels\multi\another_world\subaru_emilia.bitmap
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\prifle_heat_loop\prifle_heat_loop\loop.sound levels\multi\another_world\subaru_emilia
+EditTag levels\multi\another_world\subaru_emilia.sound
+ImportSound barusudir\~STAY_ALIVE~.mp3
+SetField Flags FitToAdpcmBlocksize,NeverObstruct,InternalDontTouch,FakeSpatializationWithDistance
+SetField SoundClass DeviceStationary
+AddBlockElements ExtraInfo
+SetField Playback.FieldDisableFlags DistanceA,DistanceB,DirectionalAttenuation
+SetField Playback.DistanceParameters.MinimumDistance 3
+SetField Playback.DistanceParameters.MaximumDistance 22
+SetField Playback.GainBase 0
+SetField Scale.GainModifierBounds 0 0
+SetField Scale.PitchModifierBounds 0 0
+SetField MaximumPlayTime 0
+SetField PitchRanges[0].Permutations[0].Gain 15
+SetField PitchRanges[0].Permutations[0].SkipFraction 1
+SetField PitchRanges[0].Permutations[0].SampleCount 0
+SaveTagChanges
+Exit
+
+DuplicateTag dw3\r3ach\sound\weapons\plasma_rifle\prifle_heat_loop\prifle_heat_loop.sound_looping levels\multi\another_world\subaru_emilia
+EditTag levels\multi\another_world\subaru_emilia.sound_looping
+SetField SoundClass DeviceStationary
+SetField Flags 0
+SetField DistanceBounds 3 22
+SetField Tracks[0].Gain 0
+SetField Tracks[0].Loop levels\multi\another_world\subaru_emilia.sound
+SaveTagChanges
+Exit
+
+DuplicateTag sound\levels\solo\m52\sound_scenery\disco_music_alt\disco_music_alt.crate levels\multi\another_world\subaru_emilia
+EditTag levels\multi\another_world\subaru_emilia.crate
+SetField Attachments[0].Type levels\multi\another_world\subaru_emilia.sound_looping
+SaveTagChanges
+Exit
+
+Foreach mode startingwith: objects\eldewrito\reforge\ AddBlockElements Materials
+Foreach mode startingwith: objects\eldewrito\reforge\ SetField Materials[*].RenderMethod levels\multi\another_world\subaru_emilia.shader
+
+AddForgeItem "SUBARU NATSUKI WAS HERE" 1 levels\multi\another_world\subaru_emilia.crate

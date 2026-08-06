@@ -137,6 +137,18 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |        WEAPON        |
+# ------------------------
+EditTag objects\weapons\rifle\dmr\dmr.weapon
+SetField PickupMessage mr_pickup
+SetField SwapMessage mr_swap
+SetField PickedUpMessage mr_picked_up
+SetField SwitchToMessage mr_switch_to
+SetField SwitchToFromAiMessage mr_swap_ai
+SaveTagChanges
+Exit
+
+# ------------------------
 # |      REBALANCE       |
 # ------------------------
 EditTag objects\weapons\rifle\dmr\dmr.weapon

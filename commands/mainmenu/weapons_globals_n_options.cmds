@@ -1,0 +1,127 @@
+# SetVariable MULG_WEAPONSTRING_VAR
+# SetVariable MULG_WEAPONTAG_VAR
+# SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR
+# SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR
+# SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR
+# SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR
+# SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR
+# SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR
+
+# ------------------------
+# |  MULTIPLAYER GLOBAL  |
+# ------------------------
+EditTag multiplayer\multiplayer_globals.multiplayer_globals
+
+# FIESTA
+AddBlockElements Universal[0].GameVariantWeapons 1
+SetField Universal[0].GameVariantWeapons[*].Name MULG_WEAPONSTRING_VAR
+SetField Universal[0].GameVariantWeapons[*].RandomChance MULG_RANDOMCHANCE_VAR
+SetField Universal[0].GameVariantWeapons[*].Weapon MULG_WEAPONTAG_VAR
+
+# WEAPON SETS (DEFAULT)
+AddBlockElements Universal[0].WeaponSets[0].Substitutions
+SetField Universal[0].WeaponSets[0].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[0].Substitutions[*].SubstitutedWeapon MULG_WEAPONSTRING_VAR
+
+# WEAPON SETS (ASSAULT RIFLE)
+AddBlockElements Universal[0].WeaponSets[1].Substitutions
+SetField Universal[0].WeaponSets[1].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[1].Substitutions[*].SubstitutedWeapon assault_rifle
+
+# WEAPON SETS (DUALS)
+AddBlockElements Universal[0].WeaponSets[2].Substitutions
+SetField Universal[0].WeaponSets[2].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[2].Substitutions[*].SubstitutedWeapon MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR
+
+# WEAPON SETS (GRAVITY HAMMER)
+AddBlockElements Universal[0].WeaponSets[3].Substitutions
+SetField Universal[0].WeaponSets[3].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[3].Substitutions[*].SubstitutedWeapon MULG_WEAPONSETSTRING_HAMMER_VAR
+
+# WEAPON SETS (SPARTAN LASER)
+AddBlockElements Universal[0].WeaponSets[4].Substitutions
+SetField Universal[0].WeaponSets[4].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[4].Substitutions[*].SubstitutedWeapon spartan_laser
+
+# WEAPON SETS (ROCKET LAUNCHER)
+AddBlockElements Universal[0].WeaponSets[5].Substitutions
+SetField Universal[0].WeaponSets[5].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[5].Substitutions[*].SubstitutedWeapon rocket_launcher
+
+# WEAPON SETS (SHOTGUN)
+AddBlockElements Universal[0].WeaponSets[6].Substitutions
+SetField Universal[0].WeaponSets[6].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[6].Substitutions[*].SubstitutedWeapon shotgun
+
+# WEAPON SETS (SNIPER RIFLE)
+AddBlockElements Universal[0].WeaponSets[7].Substitutions
+SetField Universal[0].WeaponSets[7].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[7].Substitutions[*].SubstitutedWeapon MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR
+
+# WEAPON SETS (ENERGY SWORD)
+AddBlockElements Universal[0].WeaponSets[8].Substitutions
+SetField Universal[0].WeaponSets[8].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[8].Substitutions[*].SubstitutedWeapon energy_sword
+
+# WEAPON SETS (NO POWER WEAPONS)
+AddBlockElements Universal[0].WeaponSets[9].Substitutions
+SetField Universal[0].WeaponSets[9].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[9].Substitutions[*].SubstitutedWeapon MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR
+
+# WEAPON SETS (NO SNIPERS)
+AddBlockElements Universal[0].WeaponSets[10].Substitutions
+SetField Universal[0].WeaponSets[10].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[10].Substitutions[*].SubstitutedWeapon MULG_WEAPONSETSTRING_NOSNIPERS_VAR
+
+# WEAPON SETS (NO WEAPONS)
+AddBlockElements Universal[0].WeaponSets[11].Substitutions
+SetField Universal[0].WeaponSets[11].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+# SetField Universal[0].WeaponSets[11].Substitutions[*].SubstitutedWeapon
+
+# WEAPON SETS (RANDOM)
+AddBlockElements Universal[0].WeaponSets[12].Substitutions
+SetField Universal[0].WeaponSets[12].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[12].Substitutions[*].SubstitutedWeapon random
+
+# WEAPON SETS (BASE)
+AddBlockElements Universal[0].WeaponSets[13].Substitutions
+SetField Universal[0].WeaponSets[13].Substitutions[*].OriginalWeapon MULG_WEAPONSTRING_VAR
+SetField Universal[0].WeaponSets[13].Substitutions[*].SubstitutedWeapon MULG_WEAPONSETSTRING_BASEWEAP_VAR
+
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     GAME OPTIONS     |
+# ------------------------
+EditTag multiplayer\game_variant_settings\player_traits_template\traits_weapons_initial_primary.text_value_pair_definition
+AddBlockElements TextValuePairs
+SetField TextValuePairs[*].ExpectedValueType StringidReference
+SetField TextValuePairs[*].StringidValue MULG_WEAPONSTRING_VAR
+SetField TextValuePairs[*].Name MULG_WEAPONSTRING_VAR
+SaveTagChanges
+Exit
+
+EditTag multiplayer\game_variant_settings\map_overrides\traits_weapons_initial_primary_untemplated.text_value_pair_definition
+AddBlockElements TextValuePairs
+SetField TextValuePairs[*].ExpectedValueType StringidReference
+SetField TextValuePairs[*].StringidValue MULG_WEAPONSTRING_VAR
+SetField TextValuePairs[*].Name MULG_WEAPONSTRING_VAR
+SaveTagChanges
+Exit
+
+EditTag multiplayer\game_variant_settings\player_traits_template\traits_weapons_initial_secondary.text_value_pair_definition
+AddBlockElements TextValuePairs
+SetField TextValuePairs[*].ExpectedValueType StringidReference
+SetField TextValuePairs[*].StringidValue MULG_WEAPONSTRING_VAR
+SetField TextValuePairs[*].Name MULG_WEAPONSTRING_VAR
+SaveTagChanges
+Exit
+
+EditTag multiplayer\game_variant_settings\map_overrides\traits_weapons_initial_secondary_untemplated.text_value_pair_definition
+AddBlockElements TextValuePairs
+SetField TextValuePairs[*].ExpectedValueType StringidReference
+SetField TextValuePairs[*].StringidValue MULG_WEAPONSTRING_VAR
+SetField TextValuePairs[*].Name MULG_WEAPONSTRING_VAR
+SaveTagChanges
+Exit

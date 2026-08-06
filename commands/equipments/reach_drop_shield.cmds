@@ -20,7 +20,7 @@ Exit
 # |        SHADER        |
 # ------------------------
 EditTag objects\equipment\drop_shield\drop_shield_shield\shaders\drop_shield.shader_halogram
-SetField ShaderProperties[0].Functions[4].Function.Data 08340000000000009A99193E00000000000000006F12833A6F12033B28000000010000000A0000CDFFFF7F7FEC51F8BE7B14BE3F0000000000000000000000000000803F5FDEC33F
+SetField ShaderProperties[0].Functions[4].Function.Data 08340000000000009A99993E00000000000000006F12833A6F12033B28000000010000000A0000CDFFFF7F7FEC51F8BE7B14BE3F0000000000000000000000000000803F5FDEC33F
 SetField SortLayer PostPass
 SaveTagChanges
 Exit
@@ -112,6 +112,15 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english dropshield_picked_up "Picked up a Drop Shield"
+SetString english dropshield_swap "\uE461\uE445 to swap for Drop Shield"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |       EQUIPMENT      |
 # ------------------------
 DuplicateTag objects\equipment\concussiveblast_equipment\concussiveblast_equipment.equipment objects\equipment\drop_shield\drop_shield
@@ -134,6 +143,8 @@ SetField RunningEffect objects\equipment\drop_shield\fx\active_rumble.effect
 SetField ActivationAnimation armor_lock_enter
 SetField DeactivateAnimation armor_lock_exit
 
+SetField SwapMessage dropshield_swap
+SetField PickedUpMessage dropshield_picked_up
 SaveTagChanges
 Exit
 
@@ -157,4 +168,4 @@ SetField Universal[0].Equipment[*].Type 29
 SaveTagChanges
 Exit
 
-AddForgeItem "DROP SHIELD" 1 objects\equipment\drop_shield\drop_shield.equipment
+# AddForgeItem "DROP SHIELD" "ARMOR ABILITIES" objects\equipment\drop_shield\drop_shield.equipment

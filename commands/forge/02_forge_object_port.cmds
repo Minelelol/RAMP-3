@@ -1,0 +1,136 @@
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+CS < workingdir\cs\PortMapVariantPalettes.cs
+# PortTag objects\multi\invisible_cube_of_derek\invisible_cube_of_derek.scenery
+PortTag objects\props\human\unsc\health_cabinet\health_cabinet.scenery
+PortTag objects\levels\forge\ff_plat_1x1\ff_plat_1x1.crate
+Exit
+
+OpenCacheFile reachmapsdir\cex_damnation.map
+RunCommands workingdir\commands\reach_globals.cmds
+CS < workingdir\cs\PortMapVariantPalettes.cs
+PortTag levels\dlc\cex_damnation\scenery\cex_damnation_plant\cex_damnation_plant.scenery
+PortTag objects\cex\cex_damnation\crates\tall_grav_lift\tall_grav_lift.crate
+PortTag objects\props\fifthspartan\5thspartan\5thspartan.crate
+PortTag levels\dlc\cex_damnation\scenery\cex_damnation_grunt_crate\cex_damnation_grunt_crate.crate
+# PortTag objects\multi\2way_teleporter\2way_teleporter.crate
+Exit
+
+OpenCacheFile reachmapsdir\cex_headlong.map
+RunCommands workingdir\commands\reach_globals.cmds
+CS < workingdir\cs\PortMapVariantPalettes.cs
+PortTag objects\scenery\human\industrial\construction_plates_bundle\construction_plates_bundle.scenery
+PortTag objects\vehicles\human\civilian\truck_cab_large\attachments\container_long_military\container_long_military.crate
+PortTag objects\cex\cex_headlong\crates\physics_beam\physics_beam.crate
+PortTag objects\cex\cex_headlong\forge\ff_shoring\ff_shoring.crate
+PortTag levels\dlc\cex_headlong\crates\headlong_dbl_crate\headlong_dbl_crate.crate
+Exit
+
+OpenCacheFile reachmapsdir\cex_timberland.map
+RunCommands workingdir\commands\reach_globals.cmds
+CS < workingdir\cs\PortMapVariantPalettes.cs
+PortTag objects\cex\cex_timberland\props\blue_beacon\blue_beacon.scenery
+PortTag objects\cex\cex_timberland\props\red_beacon\red_beacon.scenery
+PortTag objects\cex\cex_timberland\crate_packing_easter\crate_packing_easter.crate
+Exit
+
+OpenCacheFile reachmapsdir\30_settlement.map
+RunCommands workingdir\commands\reach_globals.cmds
+CS < workingdir\cs\PortMapVariantPalettes.cs
+# PortTag objects\levels\multi\spartanland\unsc_door\unsc_door.scenery
+# PortTag objects\scenery\nature\boulder_a\boulder_a.scenery
+# PortTag objects\scenery\nature\boulder_b\boulder_b.scenery
+PortTag objects\props\human\pioneer\farm\com_antennae\com_antennae.scenery
+# PortTag objects\props\human\pioneer\farm\pickup_disabled\pickup_disabled.scenery
+PortTag objects\props\human\pioneer\farm\water_filtration\water_filtration.scenery
+PortTag objects\props\human\pioneer\farm\water_tank_horizontal\water_tank_horizontal.scenery
+PortTag objects\props\human\pioneer\farm\hvac\hvac.scenery
+PortTag objects\props\human\pioneer\office\pioneer_storage_lockers\pioneer_storage_lockers.scenery
+PortTag objects\props\human\pioneer\office\pioneer_storage_lockers_open\pioneer_storage_lockers_open.scenery
+PortTag objects\props\human\pioneer\garage\propane_tank\propane_tank.scenery
+PortTag objects\levels\solo\m30\central_monitor_bank_01\central_monitor_bank_01.scenery
+PortTag objects\props\human\pioneer\tech\control_box\control_box.scenery
+PortTag objects\levels\solo\m30\crane\crane.scenery
+PortTag objects\props\human\pioneer\bathrooms\pioneer_shower_stall\pioneer_shower_stall.scenery
+PortTag objects\props\human\pioneer\bathrooms\toilet_01\toilet_01.scenery
+PortTag objects\levels\solo\m30\central_monitor_bank_02\central_monitor_bank_02.scenery
+PortTag objects\levels\solo\m30\central_monitor_bank_03\central_monitor_bank_03.scenery
+PortTag objects\props\human\pioneer\locker_room\chemical_shower\chemical_shower.scenery
+# PortTag objects\props\human\pioneer\furniture\decor_gun_rack_wall_c\decor_gun_rack_wall_c.scenery
+# PortTag objects\props\human\pioneer\furniture\drawers_inset\drawers_inset.scenery
+PortTag objects\props\human\pioneer\locker_room\eye_wash\eye_wash.scenery
+PortTag objects\props\human\pioneer\furniture\garage_storage_rack\garage_storage_rack.scenery
+PortTag objects\props\human\pioneer\furniture\garage_storage_rack_short\garage_storage_rack_short.scenery
+PortTag objects\props\human\pioneer\water\hose_rack\hose_rack.scenery
+PortTag objects\props\human\pioneer\furniture\shelving_tall_01\shelving_tall_01.scenery
+PortTag objects\props\human\pioneer\furniture\shelving_tall_05\shelving_tall_05.scenery
+PortTag objects\props\human\pioneer\scientific\vet_computer\vet_computer.scenery
+PortTag objects\props\human\pioneer\office\pioneer_whiteboard_a\pioneer_whiteboard_a.scenery
+PortTag objects\levels\shared\lights\y_set_fan_small_a\y_set_fan_small_a.scenery
+PortTag objects\props\human\pioneer\kitchenware\oven\oven.scenery
+PortTag objects\props\human\pioneer\furniture\kitchen_stove\stove\stove.scenery
+PortTag objects\props\human\pioneer\furniture\kitchen_dishwasher\kitchen_dishwasher.scenery
+PortTag objects\props\human\pioneer\furniture\kitchen_sink\kitchen_sink.scenery
+PortTag objects\levels\solo\m35\m35_bridge_intro\m35_bridge_intro.scenery
+PortTag objects\props\human\pioneer\lighting\light_hanging_long\light_hanging_long.crate
+PortTag objects\props\human\pioneer\lighting\light_hanging_medium\light_hanging_medium.crate
+PortTag objects\props\human\oni\office_chair\office_chair.crate
+PortTag objects\props\human\pioneer\furniture\work_bench_2_short\work_bench_2_short.crate
+PortTag objects\props\human\pioneer\furniture\central_work_table_2\central_work_table_2.crate
+PortTag objects\props\human\pioneer\garage\garage_stool2\garage_stool2.crate
+PortTag objects\props\human\pioneer\kitchenware\storage_containers\domestic_storage_xlarge\domestic_storage_xlarge.crate
+PortTag objects\levels\solo\m35\bridge_slab_1\bridge_slab_1.crate
+PortTag objects\levels\solo\m35\bridge_slab_2\bridge_slab_2.crate
+PortTag objects\levels\solo\m35\bridge_slab_3\bridge_slab_3.crate
+PortTag objects\levels\solo\m35\bridge_slab_4\bridge_slab_4.crate
+PortTag objects\gear\human\military\hu_mil_radio_big\hu_mil_radio_big_sound_m30.crate
+# PortTag objects\levels\multi\10_settlement\settlement_elev\settlement_elev.device_machine
+PortTag objects\levels\shared\device_machines\metal_gate\metal_gate.device_machine
+PortTag objects\props\human\pioneer\farm\wind_turbine_small\wind_turbine_small.device_machine
+Exit
+
+OpenCacheFile reachmapsdir\m52.map
+RunCommands workingdir\commands\reach_globals.cmds
+PortTag objects\props\covenant\cov_portable_shield\cov_portable_shield.scenery
+PortTag objects\props\covenant\cov_portable_shield\fx\shield_recharge.effect
+PortTag objects\levels\solo\m52\m52_club_hologram\m52_club_hologram.scenery
+# PortTag objects\levels\shared\invisible_box\invisible_box.scenery
+PortTag objects\levels\shared\lights\y_m52_club_stage_a\y_m52_club_stage_a.scenery
+PortTag objects\gear\human\military\equipment_case\equipment_case.scenery
+PortTag objects\levels\solo\m52\m52_doorframe_hunters\m52_doorframe_hunters.scenery
+PortTag objects\levels\solo\m52\m52_elevator_ivory_tower\m52_elevator_ivory_tower.device_machine
+PortTag objects\levels\shared\device_machines\m52_oni_hangar_doors\m52_oni_hangar_doors.device_machine
+PortTag objects\levels\shared\device_machines\m52_oni_platform\m52_oni_platform.device_machine
+PortTag objects\levels\shared\device_machines\m52_doors_elevator_01\m52_doors_elevator_01.device_machine
+PortTag objects\levels\solo\m52\collapsing_building\collapsing_building.device_machine
+PortTag objects\levels\solo\m52\m52_door_hospital_glass\m52_door_hospital_glass.device_machine
+PortTag objects\props\covenant\cov_signal_jammer\cov_signal_jammer.device_machine
+# PortTag objects\levels\solo\m50\door_urban_gen_medium_a\door_urban_gen_medium_a.device_machine
+PortTag objects\levels\solo\m50\door_urban_gen_small_a\door_urban_gen_small_a.device_machine
+PortTag objects\levels\solo\m50\door_urban_gen_small_b\door_urban_gen_small_b.device_machine
+PortTag objects\levels\solo\m50\door_urban_club_medium_a\door_urban_club_medium_a.device_machine
+PortTag objects\levels\solo\m50\door_urban_gen_small_c\door_urban_gen_small_c.device_machine
+PortTag objects\levels\solo\m50\door_urban_hospital_entrance\door_urban_hospital_entrance.device_machine
+PortTag objects\levels\solo\m50\club_door_single\club_door_single.device_machine
+PortTag objects\levels\shared\device_controls\switches\hum_keypad_01\hum_keypad_01.device_control
+PortTag objects\levels\shared\device_controls\switches\hum_single_button_1\hum_single_button_1.device_control
+PortTag objects\levels\shared\device_controls\switches\cov_touchscreen_02\cov_touchscreen_jammer.device_control
+PortTag objects\levels\shared\device_controls\switches\hum_keypad_01\hum_keypad_elev.device_control
+PortTag objects\levels\shared\device_controls\switches\hum_single_button_1\hum_single_button_elev1.device_control
+# PortTag objects\levels\solo\m30\fx_m30_screenfx_lightning\fx_m30_screenfx_lightning.crate
+PortTag objects\props\human\urban\bar_stool\bar_stool.crate
+PortTag objects\props\human\urban\bar_table\bar_table.crate
+PortTag objects\gear\human\medical\iv_drip\iv_drip.crate
+PortTag objects\props\human\urban\wheelchair\wheelchair.crate
+PortTag objects\levels\shared\invis_wall_small\invis_wall_small.crate
+PortTag objects\props\human\urban\bottle_beer\bottle_beer.crate
+PortTag objects\props\human\urban\bottle_hum_liquor\bottle_hum_liquor.crate
+PortTag objects\props\human\urban\glass_bar_short\glass_bar_short.crate
+PortTag objects\props\human\urban\glass_bar_tall\glass_bar_tall.crate
+PortTag objects\props\human\urban\club_couch_03\club_couch_03\club_couch_03.crate
+# PortTag objects\gear\human\industrial\garbage_can\garbage_can.crate
+PortTag objects\props\human\pioneer\scientific\rolling_cart\rolling_cart.crate
+PortTag objects\multi\nut_blockers\wall_xxxl\wall_xxxl.crate
+PortTag sound\levels\solo\m52\sound_scenery\disco_music_alt\disco_music_alt.sound_looping
+PortTag sound\levels\solo\m52\sound_scenery\disco_music_loop\disco_music_loop.sound_looping
+Exit

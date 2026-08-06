@@ -224,5 +224,7 @@ AddBlockElements Functions
 SetField Functions[*].ImportName active_camouflage
 SetField Functions[*].ExportName camo
 SetField Functions[*].DefaultFunction.Data 08340000000000000000803F000000000000000000000000000000001400000001000000040000CDFFFF7F7F000080BF0000803F
+
+SetField WeaponFlags.NewFlags CannotFireAtMaximumAge,LoopFPFiringAnimation,CanBeDualWielded
 SaveTagChanges
 Exit

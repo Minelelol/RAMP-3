@@ -35,12 +35,9 @@ ForEach weap contains: objects\weapons\pistol\magnum SetField WeaponTypeName off
 ForEach weap contains: objects\weapons\pistol\magnum SetField FirstPersonWeaponOffset 0 0 0
 ForEach weap contains: objects\weapons\pistol\magnum SetField CenteredFirstPersonWeaponOffset 0 0 -0.04
 
-EditTag objects\weapons\pistol\needler\needler.weapon
-SetField WeaponTypeName offset_needler
-SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
-SetField FirstPersonWeaponOffset 0.01 0 0
-SaveTagChanges
-Exit
+ForEach weap contains: objects\weapons\pistol\needler SetField WeaponTypeName offset_needler
+ForEach weap contains: objects\weapons\pistol\needler SetField CenteredFirstPersonWeaponOffset 0 0 -0.01
+ForEach weap contains: objects\weapons\pistol\needler SetField FirstPersonWeaponOffset 0.01 0 0
 
 ForEach weap contains: objects\weapons\pistol\plasma_pistol SetField WeaponTypeName offset_plasma_pistol
 ForEach weap contains: objects\weapons\pistol\plasma_pistol SetField FirstPersonWeaponOffset 0 0 0

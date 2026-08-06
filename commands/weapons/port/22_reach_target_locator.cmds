@@ -252,6 +252,18 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |      HUD MESSAGE     |
+# ------------------------
+EditTag ui\hud\hud_messages.multilingual_unicode_string_list
+SetString english tl_picked_up "Picked up a Target Locator"
+SetString english tl_pickup "\uE461\uE45F to pick up|n|r\uE177"
+SetString english tl_swap "\uE461\uE45F to swap for|n|r\uE177"
+SetString english tl_swap_ai "\uE461\uE45F to take ally's|n|r\uE177"
+SetString english tl_switch_to "Out of ammo|nPress \uE446 to switch to|n|r\uE177"
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        WEAPON        |
 # ------------------------
 EditTag objects\weapons\pistol\target_laser\target_laser.weapon
@@ -268,8 +280,30 @@ SetField Functions[*].DefaultFunction.Data 083400000000803F000000000000000000000
 
 SetField WeaponName hp
 SetField Triggers[0].Charging.ChargedDrainRate 0.0001
+
+SetField PickupMessage tl_pickup
+SetField SwapMessage tl_swap
+SetField PickedUpMessage tl_picked_up
+SetField SwitchToMessage tl_switch_to
+SetField SwitchToFromAiMessage tl_swap_ai
 SaveTagChanges
 Exit
 
+# ------------------------
+# | MP GLOBALS n OPTIONS |
+# ------------------------
+ForEach unic named: ui\halox\game_options\strings SetString English target_laser "TARGET LOCATOR"
+
+SetVariable MULG_WEAPONSTRING_VAR 					target_laser
+SetVariable MULG_RANDOMCHANCE_VAR 					0.1
+SetVariable MULG_WEAPONTAG_VAR 						objects\weapons\pistol\target_laser\target_laser.weapon
+SetVariable MULG_WEAPONSETSTRING_DUALSOVERRIDE_VAR 	magnum
+SetVariable MULG_WEAPONSETSTRING_HAMMER_VAR 		gravity_hammer
+SetVariable MULG_WEAPONSETSTRING_SNIPERRIFLE_VAR 	sniper_rifle
+SetVariable MULG_WEAPONSETSTRING_NOPOWERWEAPON_VAR 	magnum
+SetVariable MULG_WEAPONSETSTRING_NOSNIPERS_VAR 		target_laser
+SetVariable MULG_WEAPONSETSTRING_BASEWEAP_VAR 		target_laser
+RunCommands workingdir\commands\mainmenu\weapons_globals_n_options.cmds
+
 # Remove ts once we're done with weapon port
-AddForgeItem "TARGET LOCATOR" 1 objects\weapons\pistol\target_laser\target_laser.weapon
+# AddForgeItem "TARGET LOCATOR" "POWER WEAPONS" objects\weapons\pistol\target_laser\target_laser.weapon

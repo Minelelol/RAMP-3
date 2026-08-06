@@ -1,0 +1,60 @@
+# -----------------------------------------
+# |         CRATE, SINGLE PACKING         |
+# -----------------------------------------
+OpenCacheFile reachmapsdir\cex_timberland.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+NameBlamTag objects\gear\human\military\crate_packing\crate_packing.model reach\objects\gear\human\military\crate_packing\crate_packing
+NameBlamTag objects\gear\human\military\crate_packing\crate_packing.render_model reach\objects\gear\human\military\crate_packing\crate_packing
+NameBlamTag objects\gear\human\military\crate_packing\crate_packing.collision_model reach\objects\gear\human\military\crate_packing\crate_packing
+NameBlamTag objects\gear\human\military\crate_packing\crate_packing.physics_model reach\objects\gear\human\military\crate_packing\crate_packing
+NameBlamTag objects\gear\human\military\crate_packing\lid_spawn.effect reach\objects\gear\human\military\crate_packing\lid_spawn
+
+NameBlamTag objects\gear\human\military\crate_packing_lid\crate_packing_lid.model reach\objects\gear\human\military\crate_packing_lid\crate_packing_lid
+NameBlamTag objects\gear\human\military\crate_packing_lid\crate_packing_lid.render_model reach\objects\gear\human\military\crate_packing_lid\crate_packing_lid
+NameBlamTag objects\gear\human\military\crate_packing_lid\crate_packing_lid.collision_model reach\objects\gear\human\military\crate_packing_lid\crate_packing_lid
+NameBlamTag objects\gear\human\military\crate_packing_lid\crate_packing_lid.physics_model reach\objects\gear\human\military\crate_packing_lid\crate_packing_lid
+
+PortTag reach\objects\gear\human\military\crate_packing\crate_packing.model
+PortTag Replace Single objects\gear\human\military\crate_packing\crate_packing.crate
+
+PortTag reach\objects\gear\human\military\crate_packing_lid\crate_packing_lid.model
+PortTag Replace Single objects\gear\human\military\crate_packing_lid\crate_packing_lid.crate
+
+Exit
+
+# -----------------------------------------
+# |              FUSION COIL              |
+# -----------------------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+NameBlamTag objects\gear\human\military\fusion_coil\fusion_coil.model reach\objects\gear\human\military\fusion_coil\fusion_coil
+NameBlamTag objects\gear\human\military\fusion_coil\fusion_coil.render_model reach\objects\gear\human\military\fusion_coil\fusion_coil
+NameBlamTag objects\gear\human\military\fusion_coil\fusion_coil.collision_model reach\objects\gear\human\military\fusion_coil\fusion_coil
+NameBlamTag objects\gear\human\military\fusion_coil\fusion_coil.physics_model reach\objects\gear\human\military\fusion_coil\fusion_coil
+NameBlamTag objects\gear\human\military\shaders\fusion_coil_plasma.shader reach\objects\gear\human\military\shaders\fusion_coil_plasma
+
+NameBlamTag sound\materials\gear\fusion_coil_loop\fusion_coil_loop.sound_looping reach\sound\materials\gear\fusion_coil_loop\fusion_coil_loop
+NameBlamTag sound\materials\gear\fusion_coil_loop\track1\loop.sound reach\sound\materials\gear\fusion_coil_loop\track1\loop
+
+PortTag reach\objects\gear\human\military\fusion_coil\fusion_coil.model
+PortTag reach\sound\materials\gear\fusion_coil_loop\fusion_coil_loop.sound_looping
+PortTag Replace Single objects\gear\human\military\fusion_coil\fusion_coil.crate
+Exit
+
+EditTag reach\objects\gear\human\military\fusion_coil\fusion_coil.model
+SetField NewDamageInfo[0].MaximumVitality 35
+SetField NewDamageInfo[0].StunTime 5
+SetField NewDamageInfo[0].RechargeTime 7
+SetField NewDamageInfo[0].RechargeFraction 1
+SetField NewDamageInfo[0].RuntimeShieldRechargeVelocity 1000
+SetField NewDamageInfo[0].RuntimeHealthRechargeVelocity 0.14285715
+SetField NewDamageInfo[0].DamageSections[0].Flags Headshotable,TakesFullDamageWhenShieldDepleted,AllowDamageResponseOverflow
+SaveTagChanges
+Exit
+
+EditTag objects\gear\human\military\fusion_coil\fusion_coil.crate
+SetField CollisionDamage globals\collision_damage\object_fragile.collision_damage
+SaveTagChanges
+Exit
