@@ -278,8 +278,8 @@ AddSkyBox "RIDGELINE" levels\dlc\cex_timberland\cex_timberland.scenario 1
 
 EditTag multiplayer\forge_globals.forge_globals_definition
 AddBlockElements WeatherEffects
-SetField WeatherEffects[9].Name "Rain, Reach"
-SetField WeatherEffects[9].Effect m52\fx\fx_library\weather\rain\rain_angle\rain_angle.effect
+SetField WeatherEffects[*].Name "Rain, Reach"
+SetField WeatherEffects[*].Effect m52\fx\fx_library\weather\rain\rain_angle\rain_angle.effect
 SaveTagChanges
 Exit
 
