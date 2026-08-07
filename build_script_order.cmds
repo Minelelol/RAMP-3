@@ -289,6 +289,12 @@ Exit
 RunCommands workingdir\commands\playtest_only\sonic_bottomless_pit_sign.cmds
 RunCommands workingdir\commands\playtest_only\Barusu.cmds
 
+# Fix teleporters
+EditTag objects\vehicles\human\sabre\sabre.vehicle
+SetField MultiplayerObject[0].Type LightLandVehicle
+SaveTagChanges
+Exit
+
 # -----------------------------------------
 # |           UPDATE MAP FILES            |
 # -----------------------------------------
