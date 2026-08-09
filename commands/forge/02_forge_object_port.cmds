@@ -4,6 +4,9 @@ CS < workingdir\cs\PortMapVariantPalettes.cs
 # PortTag objects\multi\invisible_cube_of_derek\invisible_cube_of_derek.scenery
 PortTag objects\props\human\unsc\health_cabinet\health_cabinet.scenery
 PortTag objects\levels\forge\ff_plat_1x1\ff_plat_1x1.crate
+
+PortInstancedGeometryObject 0 1475 objects\ramp\shared\forge_island\forge_island
+PortInstancedGeometryObject 0 1403 objects\ramp\shared\forge_halo_pine_tree\forge_halo_pine_tree
 Exit
 
 OpenCacheFile reachmapsdir\cex_damnation.map
@@ -24,6 +27,16 @@ PortTag objects\vehicles\human\civilian\truck_cab_large\attachments\container_lo
 PortTag objects\cex\cex_headlong\crates\physics_beam\physics_beam.crate
 PortTag objects\cex\cex_headlong\forge\ff_shoring\ff_shoring.crate
 PortTag levels\dlc\cex_headlong\crates\headlong_dbl_crate\headlong_dbl_crate.crate
+
+PortInstancedGeometryObject 0 2383 objects\ramp\shared\superintendant_evacuate_sign\superintendant_evacuate_sign
+# PortInstancedGeometryObject 0 173 objects\ramp\shared\overpass\overpass
+PortInstancedGeometryObject 0 1813 objects\ramp\shared\street\street
+PortInstancedGeometryObject 0 897 objects\ramp\shared\street_wide_half\street_wide_half
+# PortInstancedGeometryObject 0 1672 objects\ramp\shared\street_light_a\street_light_a
+PortInstancedGeometryObject 0 1907 objects\ramp\shared\street_ramp\street_ramp
+# PortInstancedGeometryObject 0 1888 objects\ramp\shared\tree_pot_destroyed\tree_pot_destroyed
+# PortInstancedGeometryObject 0 454 objects\ramp\shared\tree_pot\tree_pot
+PortInstancedGeometryObject 0 90 objects\ramp\shared\stakugoldenwarthog\stakugoldenwarthog
 Exit
 
 OpenCacheFile reachmapsdir\cex_timberland.map
@@ -32,6 +45,11 @@ CS < workingdir\cs\PortMapVariantPalettes.cs
 PortTag objects\cex\cex_timberland\props\blue_beacon\blue_beacon.scenery
 PortTag objects\cex\cex_timberland\props\red_beacon\red_beacon.scenery
 PortTag objects\cex\cex_timberland\crate_packing_easter\crate_packing_easter.crate
+
+PortInstancedGeometryObject 0 796 objects\ramp\shared\blue_base_tower\blue_base_tower
+PortInstancedGeometryObject 0 603 objects\ramp\shared\red_base_tower\red_base_tower
+PortInstancedGeometryObject 0 74 objects\ramp\shared\birch_tree\birch_tree
+PortInstancedGeometryObject 0 132 objects\ramp\shared\spruce_tree\spruce_tree
 Exit
 
 OpenCacheFile reachmapsdir\30_settlement.map

@@ -300,8 +300,50 @@ General_Physics Integer 1
 AddForgeItem "ROCK MOSSY, ARCH" 87 Setters objects\cex\cex_timberland\ff_timberland_rock_arch\ff_timberland_rock_arch.crate
 General_Physics Integer 1
 
+# AddForgeItem "ROCK MOSSY, CAVEBLOCKER" 87 setters objects\levels\solo\m10\030_rock_blocker\030_rock_blocker.scenery
+# General_Physics Integer 1
+
+# AddForgeItem "ROCK ORANGE, LARGE" 87 setters objects\cex\cex_beaver_creek\forge\ff_redbase_rocks02\ff_redbase_rocks02\ff_redbase_rocks02.crate
+# General_Physics Integer 1
+
+# AddForgeItem "ROCK ORANGE, CLUSTER" 87 setters objects\cex\cex_beaver_creek\forge\ff_bluebase_rocks01\ff_bluebase_rocks01.crate
+# General_Physics Integer 1
+
 AddForgeItem "TREE, DEAD" 87 Setters objects\cex\cex_timberland\ca_timberland_treeoflife\ca_timberland_treeoflife.crate
 General_Physics Integer 1
+
+# AddForgeItem "BOULDER, LIGHT GRAY [SCALEABLE]" 87 setters objects\scenery\nature\boulder_scale\boulder_scale.scenery
+# General_Physics Integer 1
+
+# AddForgeItem "BAMBOO, CLUSTER" 87 setters objects\levels\solo\m20\bamboo\bamboo.crate
+# General_Physics Integer 1
+
+# AddForgeItem "ICE CHUNK 1" 87 setters objects\levels\shared\ice_chunk_large_a\ice_chunk_large_a.crate
+# General_Physics Integer 1
+
+# AddForgeItem "ICE CHUNK 2" 87 setters objects\levels\shared\ice_chunk_large_b\ice_chunk_large_b.crate
+# General_Physics Integer 1
+
+# AddForgeItem "ICE CHUNK 3" 87 setters objects\levels\shared\ice_chunk_small_a\ice_chunk_small_a.crate
+# General_Physics Integer 1
+
+# AddForgeItem "PLANT BED, LARGE" 87 objects\ramp\shared\plant_bed_large\plant_bed_large.scenery
+# AddForgeItem "PLANT BED, MEDIUM" 87 objects\ramp\shared\plant_bed_medium\plant_bed_medium.scenery
+# AddForgeItem "TREE, BARK" 87 objects\ramp\shared\tree_dead\tree_dead.scenery
+AddForgeItem "TREE, BIRCH" 87 objects\ramp\shared\birch_tree\birch_tree.scenery
+# AddForgeItem "TREE, CANOPY" 87 objects\ramp\shared\canopy_tree\canopy_tree.scenery
+# AddForgeItem "TREE, COLUMNAR" 87 objects\ramp\shared\columnar_tree\columnar_tree.scenery
+AddForgeItem "TREE, PINE FORGEWORLD" 87 objects\ramp\shared\forge_halo_pine_tree\forge_halo_pine_tree.scenery
+AddForgeItem "TREE, SPRUCE" 87 objects\ramp\shared\spruce_tree\spruce_tree.scenery
+
+# AddForgeItem "DRIFTWOOD 1" 87 objects\levels\solo\m20\driftwood_a\driftwood_a.crate
+# AddForgeItem "DRIFTWOOD 2" 87 objects\levels\solo\m20\driftwood_b\driftwood_b.crate
+# AddForgeItem "DRIFTWOOD 3" 87 objects\levels\solo\m20\driftwood_c\driftwood_c.crate
+# AddForgeItem "LOG, SMALL 1" 87 objects\props\human\pioneer\farm\logs\log_a\log_a.crate
+# AddForgeItem "LOG, SMALL 2" 87 objects\props\human\pioneer\farm\logs\log_b\log_b.crate
+
+# AddForgeItem "TREE POT" 87 objects\ramp\shared\tree_pot\tree_pot.scenery
+# AddForgeItem "TREE POT, DESTROYED" 87 objects\ramp\shared\tree_pot_destroyed\tree_pot_destroyed.scenery
 
 # ------------------------
 # |         COVER        |
@@ -1033,12 +1075,12 @@ AddForgeItem "BLUE BEACON" 99 objects\cex\cex_timberland\props\blue_beacon\blue_
 # AddForgeItem "SIGNAGE TEAL TILLING" 99 objects\ramp\shared\signage_teal_tilling\signage_teal_tilling.scenery
 # AddForgeItem "SIGNAGE GREEN TILLING" 99 objects\ramp\shared\signage_green_tilling\signage_green_tilling.scenery
 
-# AddForgeItem "SUPERINTENDANT EVACUATE SIGN" 99 objects\ramp\shared\superintendant_evacuate_sign\superintendant_evacuate_sign.scenery
-# AddForgeItem "BANNER, GOLDEN HOG" 99 objects\ramp\shared\stakugoldenwarthog\stakugoldenwarthog.scenery
+AddForgeItem "SUPERINTENDANT EVACUATE SIGN" 99 objects\ramp\shared\superintendant_evacuate_sign\superintendant_evacuate_sign.scenery
+AddForgeItem "AD BANNER, GOLDEN HOG" 99 objects\ramp\shared\stakugoldenwarthog\stakugoldenwarthog.scenery
 
-# AddForgeItem "STREET" 99 objects\ramp\shared\street\street.scenery
-# AddForgeItem "STREET, RAMP" 99 objects\ramp\shared\street_ramp\street_ramp.scenery
-# AddForgeItem "STREET WIDE, HALF" 99 objects\ramp\shared\street_wide_half\street_wide_half.scenery
+AddForgeItem "STREET" 99 objects\ramp\shared\street\street.scenery
+AddForgeItem "STREET, RAMP" 99 objects\ramp\shared\street_ramp\street_ramp.scenery
+AddForgeItem "STREET WIDE, HALF" 99 objects\ramp\shared\street_wide_half\street_wide_half.scenery
 # AddForgeItem "STREET, OVERPASS" 99 objects\ramp\shared\overpass\overpass.scenery
 # AddForgeItem "STREET LIGHT, TALL" 99 objects\ramp\shared\street_light_a\street_light_a.scenery
 # AddForgeItem "STREET LIGHT, SLIM" 99 objects\ramp\shared\street_light_b\street_light_b.scenery
@@ -1504,8 +1546,8 @@ AddForgeItem "[PENANCE] PLATFORM" 107 objects\cex\cex_damnation\forge\ff_damnati
 
 # AddForgeItem "[CORVETTE] HANGAR WALL" 107 objects\levels\solo\m45\hanger_cover01\hanger_cover01.scenery
 
-# AddForgeItem "[FORGE WORLD] ISLAND" 107 objects\ramp\shared\forge_island\forge_island.scenery
-# AddForgeItem "[FORGE WORLD] ISLAND, CAVERN" 107 objects\ramp\shared\twistedflog_island_inside\twistedflog_island_inside.scenery
+AddForgeItem "[FORGE WORLD] ISLAND" 107 objects\ramp\shared\forge_island\forge_island.scenery
+AddForgeItem "[FORGE WORLD] ISLAND, CAVERN" 107 objects\ramp\shared\twistedflog_island_inside\twistedflog_island_inside.scenery
 
 # AddForgeItem "[HIGH NOON] BLOCK" 107 objects\cex\cex_hangemhigh\forge\heh_bigblock\heh_bigblock\heh_bigblock.crate
 # AddForgeItem "[HIGH NOON] BLOCK, LONG" 107 objects\cex\cex_hangemhigh\forge\heh_large_hallway_blocker\heh_large_hallway_blocker.crate
@@ -1536,8 +1578,8 @@ AddForgeItem "[PENANCE] PLATFORM" 107 objects\cex\cex_damnation\forge\ff_damnati
 AddForgeItem "[RIDGELINE] BUNKER" 107 objects\cex\cex_timberland\ca_timberland_bunker\ca_timberland_bunker\ca_timberland_bunker.crate
 AddForgeItem "[RIDGELINE] TOOF" 107 objects\cex\cex_timberland\ca_timberland_toof\ca_timberland_toof.crate
 AddForgeItem "[RIDGELINE] TURRET BASE" 107 objects\cex\cex_timberland\ca_timberland_turret\ca_timberland_turret_base\ca_timberland_turret_base.crate
-# AddForgeItem "[RIDGELINE] TOWER, BLUE BASE" 107 objects\ramp\shared\blue_base_tower\blue_base_tower.scenery
-# AddForgeItem "[RIDGELINE] TOWER, RED BASE" 107 objects\ramp\shared\red_base_tower\red_base_tower.scenery
+AddForgeItem "[RIDGELINE] TOWER, BLUE BASE" 107 objects\ramp\shared\blue_base_tower\blue_base_tower.scenery
+AddForgeItem "[RIDGELINE] TOWER, RED BASE" 107 objects\ramp\shared\red_base_tower\red_base_tower.scenery
 
 # AddForgeItem "[SOLITARY] BRIDGE LEFT" 107 objects\cex\cex_prisoner\forge\ff_prisoner_bridge_l\ff_prisoner_bridge_l.crate
 # AddForgeItem "[SOLITARY] BRIDGE RIGHT" 107 objects\cex\cex_prisoner\forge\ff_prisoner_bridge_r\ff_prisoner_bridge_r.crate

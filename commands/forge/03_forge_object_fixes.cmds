@@ -318,3 +318,86 @@ ForEach phmo startingwith: objects\props\covenant\shield_door_large\shield_door_
 # |        TIN CUP       |
 # ------------------------
 ForEach phmo startingwith: objects\levels\shared\golf_cup\golf_cup SetField PhantomTypes[0].Flags.Halo3ODST IgnoresPlayers,IgnoresBipeds,IgnoresVehicles,IgnoresWeapons,IgnoresEquipment,IgnoresProjectiles,IgnoresScenery,IgnoresMachines,IgnoresControls,IgnoresSoundScenery,IgnoresCreatures,IgnoresGiants,IgnoresEffectScenery
+
+# ---------------------------
+# |    INSTANCES GEO FIX    |
+# ---------------------------
+
+# ------------------------
+# |      FORGE WORLD     |
+# ------------------------
+# Pine Tree
+ForEach hlmt contains: objects\ramp\shared\forge_halo_pine_tree\forge_halo_pine_tree SetField Materials[0].GlobalMaterialIndex 46
+ForEach mode contains: objects\ramp\shared\forge_halo_pine_tree\forge_halo_pine_tree SetField Geometry.Meshes[0].Parts[0].FlagsNew PreventBackfaceCulling
+
+# The Island
+EditTag objects\ramp\shared\forge_island\forge_island.model
+SetField DisappearDistance 1165
+SetField BeginFadeDistance 9319
+SetField Materials[0].GlobalMaterialIndex 102
+SaveTagChanges
+Exit
+
+DuplicateTag objects\ramp\shared\forge_island\forge_island.render_model objects\ramp\shared\forge_island_inside\forge_island_inside
+EditTag objects\ramp\shared\forge_island_inside\forge_island_inside.render_model
+ReplaceRenderGeometry "workingdir\models\instanced_geo\forge_island_inside_render.fbx"
+SaveTagChanges
+Exit
+
+DuplicateTag objects\ramp\shared\forge_island\forge_island.model objects\ramp\shared\forge_island_inside\forge_island_inside
+ImportCollisionGeometry mopp "workingdir\models\instanced_geo\forge_island_inside_collision.dae" objects\ramp\shared\forge_island_inside\forge_island_inside
+EditTag objects\ramp\shared\forge_island_inside\forge_island_inside.collision_model
+SetField Regions[0].Permutations[0].BspPhysics[0].GeometryShape.Model objects\ramp\shared\forge_island_inside\forge_island_inside.model
+SaveTagChanges
+Exit
+
+EditTag objects\ramp\shared\forge_island_inside\forge_island_inside.model
+SetField CollisionModel objects\ramp\shared\forge_island_inside\forge_island_inside.collision_model
+SetField RenderModel objects\ramp\shared\forge_island_inside\forge_island_inside.render_model
+SaveTagChanges
+Exit
+
+DuplicateTag objects\ramp\shared\forge_island\forge_island.scenery objects\ramp\shared\twistedflog_island_inside\twistedflog_island_inside
+EditTag objects\ramp\shared\twistedflog_island_inside\twistedflog_island_inside.scenery
+SetField Model objects\ramp\shared\forge_island_inside\forge_island_inside.model
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       BREAKNECK      |
+# ------------------------
+ForEach hlmt contains: objects\ramp\shared\superintendant_evacuate_sign\superintendant_evacuate_sign SetField Materials[0].GlobalMaterialIndex 70
+# ForEach hlmt contains: objects\ramp\shared\overpass\overpass SetField Materials[0].GlobalMaterialIndex 104
+ForEach hlmt contains: objects\ramp\shared\street\street SetField Materials[0].GlobalMaterialIndex 104
+ForEach hlmt contains: objects\ramp\shared\street_ramp\street_ramp SetField Materials[0].GlobalMaterialIndex 104
+# ForEach hlmt contains: objects\ramp\shared\tree_pot_destroyed\tree_pot_destroyed SetField Materials[0].GlobalMaterialIndex 141
+# ForEach mode contains: objects\ramp\shared\tree_pot_destroyed\tree_pot_destroyed SetField Geometry.Meshes[0].Parts[2].FlagsNew PreventBackfaceCulling
+# ForEach hlmt contains: objects\ramp\shared\street_light_a\street_light_a SetField Materials[0].GlobalMaterialIndex 55
+
+# Golden Warthog Banner
+ImportCollisionGeometry mopp "workingdir\models\instanced_geo\golden_warthog.dae" objects\ramp\shared\stakugoldenwarthog_fixup\stakugoldenwarthog_fixup
+EditTag objects\ramp\shared\stakugoldenwarthog_fixup\stakugoldenwarthog_fixup.collision_model
+SetField Regions[0].Permutations[0].BspPhysics[0].GeometryShape.Model objects\ramp\shared\stakugoldenwarthog\stakugoldenwarthog.model
+SaveTagChanges
+Exit
+
+EditTag objects\ramp\shared\stakugoldenwarthog\stakugoldenwarthog.model
+SetField CollisionModel objects\ramp\shared\stakugoldenwarthog_fixup\stakugoldenwarthog_fixup.collision_model
+SetField CollisionRegions[0].Permutations[0].CollisionPermutationIndex 0
+SetField CollisionRegions[0].CollisionRegionIndex 0
+AddBlockElements Materials
+SetField Materials[0].DamageSectionIndex -1
+SetField Materials[0].RuntimeDamagerMaterialIndex -1
+SetField Materials[0].GlobalMaterialIndex 54
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       RIDGELINE      |
+# ------------------------
+ForEach hlmt contains: objects\ramp\shared\blue_base_tower\blue_base_tower SetField Materials[0].GlobalMaterialIndex 69
+ForEach hlmt contains: objects\ramp\shared\red_base_tower\red_base_tower SetField Materials[0].GlobalMaterialIndex 69
+ForEach hlmt contains: objects\ramp\shared\birch_tree\birch_tree SetField Materials[0].GlobalMaterialIndex 46
+ForEach hlmt contains: objects\ramp\shared\spruce_tree\spruce_tree SetField Materials[0].GlobalMaterialIndex 46
+ForEach mode contains: objects\ramp\shared\birch_tree\birch_tree SetField Geometry.Meshes[0].Parts[0].FlagsNew PreventBackfaceCulling
+ForEach mode contains: objects\ramp\shared\spruce_tree\spruce_tree SetField Geometry.Meshes[0].Parts[1].FlagsNew PreventBackfaceCulling
