@@ -142,16 +142,16 @@ RunCommands workingdir\commands\map_ports\shader_fixes\new_alexandria_shaders.cm
 # |     WORLD BOUND      |
 # ------------------------
 # FIND THE RIGHT BSP
-ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsX -1800 1800
-ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsY -1800 1800
-ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsZ -300 1800
+ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsX -1000 1200
+ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsY -1000 1200
+ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsZ -280 1200
 
 EditTag levels\solo\m52\m52_000.scenario_structure_bsp
-ForEach Clusters SetField BoundsX -1800 1800
-ForEach Clusters SetField BoundsY -1800 1800
-ForEach Clusters SetField BoundsZ -300 1800
-SetField Physics.MoppBoundsMin -1800 -1800 -300
-SetField Physics.MoppBoundsMax 1800 1800 1800
+ForEach Clusters SetField BoundsX -1000 1200
+ForEach Clusters SetField BoundsY -1000 1200
+ForEach Clusters SetField BoundsZ -280 1200
+SetField Physics.MoppBoundsMin -1000 -1000 -280
+SetField Physics.MoppBoundsMax 1200 1200 1200
 SaveTagChanges
 Exit
 
