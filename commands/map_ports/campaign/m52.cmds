@@ -142,17 +142,18 @@ RunCommands workingdir\commands\map_ports\shader_fixes\new_alexandria_shaders.cm
 # |     WORLD BOUND      |
 # ------------------------
 # FIND THE RIGHT BSP
-# EditTag levels\solo\m52\m52_001.scenario_structure_bsp
-# SetField WorldBoundsX -1800 1800
-# SetField WorldBoundsY -1800 1800
-# SetField WorldBoundsZ -300 1800
-# SetField Clusters[0].BoundsX -1800 1800
-# SetField Clusters[0].BoundsY -1800 1800
-# SetField Clusters[0].BoundsZ -300 1800
-# SetField Physics.MoppBoundsMin -1800 -1800 -300
-# SetField Physics.MoppBoundsMax 1800 1800 1800
-# SaveTagChanges
-# Exit
+ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsX -1800 1800
+ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsY -1800 1800
+ForEach sbsp startingwith: levels\solo\m52\m52 SetField WorldBoundsZ -300 1800
+
+EditTag levels\solo\m52\m52_000.scenario_structure_bsp
+ForEach Clusters SetField BoundsX -1800 1800
+ForEach Clusters SetField BoundsY -1800 1800
+ForEach Clusters SetField BoundsZ -300 1800
+SetField Physics.MoppBoundsMin -1800 -1800 -300
+SetField Physics.MoppBoundsMax 1800 1800 1800
+SaveTagChanges
+Exit
 
 # ------------------------
 # |    DECALS SCALING    |

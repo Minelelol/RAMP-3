@@ -1,6 +1,11 @@
 # ------------------------
 # |        PORTING       |
 # ------------------------
+OpenCacheFile Workshopdir\3372578060\maps\070_waste.map
+NameBlamTag dw3\r3ach\objects\weapons\rifle\assault_rifle\bitmaps\compass.bitmap reach\objects\weapons\rifle\assault_rifle\bitmaps\compass
+PortTag reach\objects\weapons\rifle\assault_rifle\bitmaps\compass.bitmap
+Exit
+
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 

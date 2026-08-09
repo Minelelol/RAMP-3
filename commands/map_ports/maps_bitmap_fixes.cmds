@@ -1,4 +1,5 @@
-GenerateBitmap levels\shared\bitmaps\human\metal\metal_pioneer_scratches_detail_bump workingdir\bitmaps\Bitmap_Fixes\metal_pioneer_scratches_detail_bump.dds Linear 7
+# Yeah uhm whatever you do, DO NOT UNCOMMENT THIS SCRIPT, WILL LITERALLY DESTROY THE ENTIRE UNIVERSE
+# GenerateBitmap levels\shared\bitmaps\human\metal\metal_pioneer_scratches_detail_bump workingdir\bitmaps\Bitmap_Fixes\metal_pioneer_scratches_detail_bump.dds Linear 7
 
 # Fix checkerboarded effect on ALOT of shaders, some are shared some are standalone, I'm not sure which one is which so I'm clumping them all here.
 OpenCacheFile MCCdir\haloreach\maps\cex_headlong.map

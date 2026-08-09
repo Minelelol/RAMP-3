@@ -48,7 +48,10 @@ RunCommands workingdir\commands\mainmenu\3_UI.cmds
 # |             REACH WEAPONS             |
 # -----------------------------------------
 # Fix checkerboarded effect on the most used bitmap
-GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump workingdir\bitmaps\Weapons\gun_microbump.dds Linear DXN 7
+# Yeah uhm whatever you do, DO NOT UNCOMMENT THIS SCRIPT, WILL LITERALLY CAUSE A BLACK HOLE TO EMERGE
+# NEVER GenerateBitmap with the format DXN if the resolution is not the power of 2, will cause alot of issue for non DXVK players.
+# GenerateBitmap objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump workingdir\bitmaps\Weapons\gun_microbump.dds Linear DXN 7
+DuplicateTag objects\multi\shaders\spawn_point_disc\bump_detail_map.bitmap objects\weapons\rifle\assault_rifle\bitmaps\gun_microbump
 OpenCacheFile MCCdir\haloreach\maps\forge_halo.map
 SetPortingOption HqNormalMapConversion True
 PortTag objects\weapons\rifle\assault_rifle\bitmaps\rubber_microbump.bitmap
