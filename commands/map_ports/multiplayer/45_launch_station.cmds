@@ -1,0 +1,91 @@
+# COUNTDOWN
+# COUNTDOWN
+# COUNTDOWN
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\45_launch_station.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# |     STRUCTURE BSP    |
+# ------------------------
+EditTag levels\multi\45_launch_station\45_launch_station.scenario_structure_bsp
+SetField InstancedGeometryInstances[1282].Matrix 0.7071068 -0.7071067 8.742276E-08 0.7071067 0.7071068 8.7422784E-08 -1.2363446E-07 -2.842171E-14 -1 -144.45734 2.4000063 6.085458
+SetField InstancedGeometryInstances[1284].Matrix 0.7071068 -0.7071067 8.742276E-08 0.7071067 0.7071068 8.7422784E-08 -1.2363446E-07 -2.842171E-14 -1 -146.27193 4.2146044 6.2802134
+SaveTagChanges
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\multi\45_launch_station\45_launch_station.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position -143.249 3.482 6.900
+SetField CutsceneCameraPoints[0].Orientation -93.103 0 0
+
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position -154.219 -13.627 5.214
+SetField CutsceneCameraPoints[1].Orientation 90 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\multi\45_launch_station\post_fx\45_launch_station.area_screen_effect
+SetField ScreenEffects[0].GammaEnhance 0.1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+ForEach rmsh StartingWith: levels\solo\m45\shaders\silo_floor SetArgument specular_coefficient 0.15
+ForEach rmsh StartingWith: levels\solo\m45\shaders\silo_floor_exterior SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m45\shaders\unsc_vent_port SetArgument analytical_specular_contribution 0.1
+ForEach rmsh StartingWith: levels\solo\m45\shaders\unsc_vent_port SetArgument specular_coefficient 0.1
+
+ForEach rmsh StartingWith: levels\solo\m45\shaders\metal\ext_metal_unsc_ext_panel_b SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\solo\m45\shaders\unsc_concrete SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\solo\m45\shaders\unsc_silo_steps_concrete SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\solo\m45\shaders\m45_panel_gantry_simple SetArgument diffuse_coefficient 0.5
+ForEach rmsh StartingWith: levels\solo\m45\shaders\m45_panel_gantry_simple SetArgument specular_coefficient 0.5
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+EditTag levels\multi\45_launch_station\45_launch_station.scenario_structure_bsp
+SetField WorldBoundsX -250 -110
+SetField WorldBoundsY -22 250
+SetField WorldBoundsZ -100 100
+SetField Clusters[0].BoundsX -250 -110
+SetField Clusters[0].BoundsY -22 250
+SetField Clusters[0].BoundsZ -100 100
+SetField Physics.MoppBoundsMin -250 -22 -100
+SetField Physics.MoppBoundsMax -110 250 100
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\multi\45_launch_station\45_launch_station.scenario

@@ -1,3 +1,6 @@
+# ------------------------
+# |      FORGE WORLD     |
+# ------------------------
 OpenCacheFile reachmapsdir\forge_halo.map
 RunCommands workingdir\commands\reach_globals.cmds
 CS < workingdir\cs\PortMapVariantPalettes.cs
@@ -9,6 +12,9 @@ PortInstancedGeometryObject 0 1475 objects\ramp\shared\forge_island\forge_island
 PortInstancedGeometryObject 0 1403 objects\ramp\shared\forge_halo_pine_tree\forge_halo_pine_tree
 Exit
 
+# ------------------------
+# |        PENANCE       |
+# ------------------------
 OpenCacheFile reachmapsdir\cex_damnation.map
 RunCommands workingdir\commands\reach_globals.cmds
 CS < workingdir\cs\PortMapVariantPalettes.cs
@@ -19,6 +25,9 @@ PortTag levels\dlc\cex_damnation\scenery\cex_damnation_grunt_crate\cex_damnation
 # PortTag objects\multi\2way_teleporter\2way_teleporter.crate
 Exit
 
+# ------------------------
+# |       BREAKNECK      |
+# ------------------------
 OpenCacheFile reachmapsdir\cex_headlong.map
 RunCommands workingdir\commands\reach_globals.cmds
 CS < workingdir\cs\PortMapVariantPalettes.cs
@@ -39,6 +48,43 @@ PortInstancedGeometryObject 0 1907 objects\ramp\shared\street_ramp\street_ramp
 PortInstancedGeometryObject 0 90 objects\ramp\shared\stakugoldenwarthog\stakugoldenwarthog
 Exit
 
+# ------------------------
+# |       BOARDWALK      |
+# ------------------------
+OpenCacheFile reachmapsdir\50_panopticon.map
+RunCommands workingdir\commands\reach_globals.cmds
+CS < workingdir\cs\PortMapVariantPalettes.cs
+PortTag objects\props\human\oni\table_short\table_short.scenery
+PortTag objects\props\human\oni\table_long\table_long.scenery
+PortTag objects\props\human\urban\phone_booth\phone_booth.scenery
+PortTag objects\props\human\urban\streets\trash_pile_large\trash_pile_large.scenery
+# PortTag objects\levels\solo\m50\m50_planter_thin_n_tall\m50_planter_thin_n_tall.scenery
+PortTag objects\props\human\urban\vending_machine\vending_machine.crate
+PortTag objects\vehicles\human\civilian\truck_cab_large\attachments\container_long\container_long.crate
+PortTag objects\vehicles\human\civilian\truck_cab_large\attachments\container_small\container_small.crate
+PortTag objects\gear\human\industrial\crate_tech_semi_closed\crate_tech_semi_closed.crate
+PortTag objects\gear\human\military\hu_mil_radio_big\hu_mil_radio_big_sound_m50.crate
+Exit
+
+# ------------------------
+# |       COUNTDOWN      |
+# ------------------------
+OpenCacheFile reachmapsdir\45_launch_station.map
+RunCommands workingdir\commands\reach_globals.cmds
+IgnoreBlamTag objects\props\human\unsc\container_unsc_small_open\container_unsc_small_open.crate
+CS < workingdir\cs\PortMapVariantPalettes.cs
+NameBlamTag objects\levels\solo\m45\m45_silo_int_shutter\m45_silo_int_shutter.device_machine objects\levels\solo\m45\m45_silo_int_shutter\m45_silo_int_shutter_ramp
+PortTag objects\props\human\unsc\sabre_mp\sabre_mp.scenery
+PortTag objects\levels\solo\m45\gantry_steps\gantry_steps.scenery
+PortTag objects\gear\human\military\hu_mil_radio_big\hu_mil_radio_big_sound_m45.crate
+# PortTag objects\props\human\unsc\container_unsc_small_open\container_unsc_small_open.crate
+PortTag objects\props\human\unsc\concrete_guard_rail\concrete_guard_rail.crate
+PortTag objects\levels\solo\m45\m45_silo_int_shutter\m45_silo_int_shutter_ramp.device_machine
+Exit
+
+# ------------------------
+# |       RIDGELINE      |
+# ------------------------
 OpenCacheFile reachmapsdir\cex_timberland.map
 RunCommands workingdir\commands\reach_globals.cmds
 CS < workingdir\cs\PortMapVariantPalettes.cs
@@ -52,6 +98,9 @@ PortInstancedGeometryObject 0 74 objects\ramp\shared\birch_tree\birch_tree
 PortInstancedGeometryObject 0 132 objects\ramp\shared\spruce_tree\spruce_tree
 Exit
 
+# ------------------------
+# |      POWERHOUSE      |
+# ------------------------
 OpenCacheFile reachmapsdir\30_settlement.map
 RunCommands workingdir\commands\reach_globals.cmds
 CS < workingdir\cs\PortMapVariantPalettes.cs
@@ -107,6 +156,21 @@ PortTag objects\levels\shared\device_machines\metal_gate\metal_gate.device_machi
 PortTag objects\props\human\pioneer\farm\wind_turbine_small\wind_turbine_small.device_machine
 Exit
 
+# ------------------------
+# |        TEMPEST       |
+# ------------------------
+OpenCacheFile reachmapsdir\dlc_medium.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+IgnoreBlamTag objects\multi\spawning\danger_zone.crate
+CS < workingdir\cs\PortMapVariantPalettes.cs
+
+PortTag objects\gear\human\military\hu_mil_radio_big\hu_mil_radio_big_sound_dlc3.crate
+Exit
+
+# ------------------------
+# |    NEW ALEXANDRIA    |
+# ------------------------
 OpenCacheFile reachmapsdir\m52.map
 RunCommands workingdir\commands\reach_globals.cmds
 PortTag objects\props\covenant\cov_portable_shield\cov_portable_shield.scenery

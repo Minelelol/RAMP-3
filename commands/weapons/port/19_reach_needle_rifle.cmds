@@ -239,6 +239,14 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |     DAMAGE EFFECT    |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\needle_rifle\projectiles\needle_rifle_shard.damage_effect
+SetField CustomResponseLabel headshot
+SaveTagChanges
+Exit
+
+# ------------------------
 # |         SOUND        |
 # ------------------------
 EditTag dw3\r3ach\sound\weapons\needle_rifle\needle_rifle_fire.sound

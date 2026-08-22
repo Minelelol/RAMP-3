@@ -462,7 +462,7 @@ PortTag levels\solo\m10\bitmaps\new_rock\m10_rock_diff.bitmap
 PortTag levels\solo\m10\bitmaps\new_rock\m10_rock_detail.bitmap
 PortTag levels\solo\m10\bitmaps\new_rock\m10_rock_zbump.bitmap
 PortTag levels\solo\m50\bitmaps\fx\cube_atrium.bitmap
-PortTag objects\scenery\human\bitmaps\fabric_detail.bitmap
+# PortTag objects\scenery\human\bitmaps\fabric_detail.bitmap
 PortTag objects\props\human\urban\urban_couch_1\bitmaps\leatherstitching_normal.bitmap
 PortTag levels\shared\decals\structural\human\urban\utility_cap_c_diffuse.bitmap
 PortTag levels\shared\decals\structural\human\urban\utility_cap_c_normal.bitmap

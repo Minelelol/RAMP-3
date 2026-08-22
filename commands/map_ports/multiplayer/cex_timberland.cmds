@@ -44,6 +44,17 @@ Exit
 # |     KILL TRIGGER     |
 # ------------------------
 EditTag levels\dlc\cex_timberland\cex_timberland.scenario
+SetField TriggerVolumes[9].Position -95.921394 -106.32035 -2.7054815
+
+SetField TriggerVolumes[13].Position 9.212839 -53.151756 -11.2086315
+SetField TriggerVolumes[13].Extents 5.15614 11.98343 9.717902
+
+SetField TriggerVolumes[15].Position -18.75 42.1 -11.257502
+SetField TriggerVolumes[15].Extents 5 12.298309 17.13578
+
+SetField TriggerVolumes[35].Position 26.25 19.42931 -12.901494
+SetField TriggerVolumes[35].Extents 5 7.1 7.2261467
+
 SetField ScenarioKillTriggers[25].TriggerVolume -1
 SetField ScenarioKillTriggers[26].TriggerVolume -1
 SetField ScenarioKillTriggers[27].TriggerVolume -1

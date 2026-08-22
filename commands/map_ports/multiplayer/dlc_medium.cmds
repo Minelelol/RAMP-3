@@ -1,0 +1,100 @@
+# TEMPEST
+# TEMPEST
+# TEMPEST
+
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\dlc_medium.map
+SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
+RunCommands workingdir\commands\reach_globals.cmds
+
+IgnoreBlamTag levels\multi\dlc\dlc_medium\fx\waterfall_sheets_down_right.effect_scenery
+IgnoreBlamTag objects\characters\spartans\spartans.biped
+IgnoreBlamTag objects\characters\elite\elite.biped
+
+CS < workingdir\commands\map_ports\ignorescriptsource.cs
+PortTag !Scripts !UpdateMapFiles *.scnr
+Exit
+
+# ------------------------
+# |   OBJECT PLACEMENT   |
+# ------------------------
+EditTag levels\multi\dlc\dlc_medium\dlc_medium.scenario
+SetField EffectSceneryPalette[9].Object levels\multi\dlc\dlc_medium\fx\waterfall_sheets_down_center.effect_scenery
+# Unwanted kill volume
+SetField Crates[78].PaletteIndex -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# | PODIUM/PREMATCH CAMS |
+# ------------------------
+EditTag levels\multi\dlc\dlc_medium\dlc_medium.scenario
+RemoveBlockElements ScriptSourceFileReferences 0 *
+AddBlockElements ScriptSourceFileReferences 4
+SetField ScriptSourceFileReferences[0].Instance sound\ui\scoreboard\appear_whoosh.sound
+SetField ScriptSourceFileReferences[1].Instance sound\podium\third_place.sound
+SetField ScriptSourceFileReferences[2].Instance sound\podium\second_place.sound
+SetField ScriptSourceFileReferences[3].Instance sound\podium\first_place.sound
+
+AddBlockElements CutsceneCameraPoints
+SetField CutsceneCameraPoints[0].Position 18.803 41.545 11.074
+SetField CutsceneCameraPoints[0].Orientation -116.288 1.300 3.976
+
+SetField CutsceneCameraPoints[1].Name "podium_camera"
+SetField CutsceneCameraPoints[1].Position 18.296 14.199 3.116
+SetField CutsceneCameraPoints[1].Orientation 90 0 0
+SetField CutsceneCameraPoints[1].Flags PodiumCameraHack
+CompilePodiumScripts
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        FOG/FX        |
+# ------------------------
+EditTag levels\multi\dlc\dlc_medium\post_fx\dlc_medium.area_screen_effect
+SetField ScreenEffects[0].ExposureBoost 0.75
+SetField ScreenEffects[0].GammaReduce 0.15
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+ForEach rmsh StartingWith: levels\multi\dlc\dlc_medium\dlc_medium_beachhead_sky\shaders\dlc_medium_blue_sky_dome SetField RenderFlags None
+
+ForEach rmw StartingWith: levels\multi\dlc\dlc_medium\shaders\water\dlc_medium_ocean_water SetArgument reflection_coefficient 0.05
+ForEach rmw StartingWith: levels\multi\dlc\dlc_medium\shaders\water\dlc_medium_ocean_water SetArgument water_diffuse 0 0.005843138 0.008843137
+
+ForEach rmw StartingWith: levels\multi\dlc\dlc_medium\shaders\water\dlc_medium_river_water SetArgument reflection_coefficient 0.05
+ForEach rmw StartingWith: levels\multi\dlc\dlc_medium\shaders\water\dlc_medium_river_water SetArgument water_diffuse 0 0.003921569 0.007
+
+# ------------------------
+# |       CREATURE       |
+# ------------------------
+EditTag levels\multi\dlc\objects\dlc_fish_tilapia\dlc_fish_tilapia.creature
+SetField WaterDensity Default
+SetField Flags3 CenteredAtOrigin,ShapeSpherical,NotPhysical,DeadCharacterCollisionGroup
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+EditTag levels\multi\dlc\dlc_medium\dlc_medium_main.scenario_structure_bsp
+SetField WorldBoundsX -500 120
+SetField WorldBoundsY -1300 250
+SetField WorldBoundsZ -20 500
+SetField Clusters[0].BoundsX -500 120
+SetField Clusters[0].BoundsY -1300 250
+SetField Clusters[0].BoundsZ -20 500
+SetField Physics.MoppBoundsMin -500 -1300 -20
+SetField Physics.MoppBoundsMax 120 250 500
+SaveTagChanges
+Exit
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\multi\dlc\dlc_medium\dlc_medium.scenario

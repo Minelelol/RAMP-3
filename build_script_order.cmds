@@ -2,7 +2,7 @@ CreateModPackage 1 Large
 RAMP-3 August Playtest
 Welcome to RAMP, a community effort to transform Eldewrito into Halo Reach while keeping ED main features and adding new ones. Featuring extensive bug fixes, quality of life improvements, and plenty of new content to play with. We hope you enjoy this labor of love.
 AMP Collective
-0.95
+0.941
 MainMenu Multiplayer Character
 
 # Run build_shader_updates.bat if this errors out
@@ -188,6 +188,21 @@ RunCommands workingdir\commands\equipments\reach_drop_shield.cmds
 RunCommands workingdir\commands\equipments\reach_armor_lock.cmds
 
 # -----------------------------------------
+# |            REACH GRENADES             |
+# -----------------------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+PortTag fx\screen_fx\grenade_explosion.area_screen_effect
+Exit
+
+EditTag fx\screen_fx\grenade_explosion.area_screen_effect
+SetField ScreenEffects[3].ScreenShake 0.05
+SaveTagChanges
+Exit
+
+RunCommands workingdir\commands\equipments\reach_frag_grenade.cmds
+RunCommands workingdir\commands\equipments\reach_plasma_grenade.cmds
+
+# -----------------------------------------
 # |            REACH VEHICLES             |
 # -----------------------------------------
 GenerateBitmap sequence reach\ui\chud\bitmaps\hud_vehicle_reticles workingdir\bitmaps\HUD\reach_vehicle_hud
@@ -245,12 +260,14 @@ SaveModPackage workingdir\paks\stages\stage_2.pak
 # |          REACH MP MAP PORTS           |
 # -----------------------------------------
 RunCommands workingdir\commands\map_ports\multiplayer\forge_halo.cmds
-# RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\30_settlement.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\45_launch_station.cmds
 # RunCommands workingdir\commands\map_ports\multiplayer\45_aftship.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\50_panopticon.cmds
 RunCommands workingdir\commands\map_ports\multiplayer\cex_damnation.cmds
 RunCommands workingdir\commands\map_ports\multiplayer\cex_headlong.cmds
 RunCommands workingdir\commands\map_ports\multiplayer\cex_timberland.cmds
-RunCommands workingdir\commands\map_ports\multiplayer\30_settlement.cmds
+RunCommands workingdir\commands\map_ports\multiplayer\dlc_medium.cmds
 
 # -----------------------------------------
 # |          REACH SP MAP PORTS           |
@@ -272,12 +289,15 @@ RunCommands workingdir\commands\map_ports\campaign\m52.cmds
 # -----------------------------------------
 # |         SKYBOX PLAYTEST ONLY          |
 # -----------------------------------------
+AddSkyBox "BOARDWALK" levels\multi\50_panopticon\50_panopticon.scenario 0
 AddSkyBox "BREAKNECK" levels\dlc\cex_headlong\cex_headlong.scenario 0
+AddSkyBox "COUNTDOWN" levels\multi\45_launch_station\45_launch_station.scenario 7
 AddSkyBox "FORGE WORLD" levels\multi\forge_halo\forge_halo.scenario 0
 AddSkyBox "NEW ALEXANDRIA" levels\solo\m52\m52.scenario 0
 AddSkyBox "PENANCE" levels\dlc\cex_damnation\cex_damnation.scenario 0
 AddSkyBox "POWERHOUSE" levels\multi\30_settlement\30_settlement.scenario 0
 AddSkyBox "RIDGELINE" levels\dlc\cex_timberland\cex_timberland.scenario 1
+AddSkyBox "TEMPEST" levels\multi\dlc\dlc_medium\dlc_medium.scenario 0
 
 EditTag multiplayer\forge_globals.forge_globals_definition
 AddBlockElements WeatherEffects
@@ -291,6 +311,7 @@ Exit
 # -----------------------------------------
 RunCommands workingdir\commands\playtest_only\sonic_bottomless_pit_sign.cmds
 RunCommands workingdir\commands\playtest_only\Barusu.cmds
+RunCommands workingdir\commands\playtest_only\applepie.cmds
 
 # Fix teleporters
 EditTag objects\vehicles\human\sabre\sabre.vehicle

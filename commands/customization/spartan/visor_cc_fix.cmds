@@ -17,7 +17,7 @@ SetArgument specular_tint 1 1 1 0
 SetArgument fresnel_color 0.5019608 0.5019608 0.5019608 0.003921569
 SetArgument use_fresnel_color_environment 0 0 0 0
 SetArgument fresnel_color_environment 0.5019608 0.5019608 0.5019608 0
-SetArgument fresnel_power 1 1 1 1
+SetArgument fresnel_power 2.5 2.5 2.5 2.5
 SetArgument roughness 0.04 0.04 0.04 0.04
 SetArgument area_specular_contribution 0.2 0.2 0.2 0.2
 SetArgument analytical_specular_contribution 0.3 0.3 0.3 0.3

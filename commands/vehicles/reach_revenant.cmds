@@ -186,6 +186,12 @@ SetField MarkerGroups[35].Name right_foot
 SetField MarkerGroups[35].Markers[0].Translation -0.04486303 0.10538457 -0.08449876
 SetField MarkerGroups[35].Markers[0].Rotation 0 -0.13052619 0 0.9914449
 SetField MarkerGroups[36].Name right_hand
+
+# Driver boarding
+SetField MarkerGroups[26].Markers[0].Translation -0.17 0.6 0.05
+
+# Passenger boarding
+SetField MarkerGroups[28].Markers[0].Translation -0.3 -0.6 0.05
 SaveTagChanges
 Exit
 

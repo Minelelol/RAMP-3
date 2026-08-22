@@ -15,5 +15,7 @@ ForEach rmsh StartingWith: levels\solo\m52\shaders\metal\metal_aluminum_a SetArg
 
 ForEach rmsh StartingWith: levels\solo\m52\shaders\marble\marble_volcanic_reach_rock SetArgument environment_map_specular_contribution 4
 
+ForEach rmsh StartingWith: levels\solo\m50\shaders\fabric_m50_brown SetArgument specular_coefficient 0.1
+
 CS < workingdir\cs\ResumeErrorWarningCount.cs
 SuppressErrors False

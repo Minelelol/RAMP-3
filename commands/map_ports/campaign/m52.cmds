@@ -50,6 +50,7 @@ SetField CampaignId -1
 SetField MapType Multiplayer
 SetField MapSubType none
 RemoveBlockElements CampaignPlayers 0 *
+RemoveBlockElements ZonesetSwitchTriggerVolumes 0 *
 MergePVS
 SaveTagChanges
 Exit

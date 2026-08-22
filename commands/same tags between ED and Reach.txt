@@ -392,7 +392,9 @@ ui\chud\bitmaps\variant_items\infection_icon.bitmap
 ui\chud\bitmaps\vox.bitmap
 ui\chud\bitmaps\waypoints.bitmap
 
-.breakable_surfaceglobals\glass.breakable_surfaceglobals\glass_thick.breakable_surface
+.breakable_surfaceglobals\glass.breakable_surface
+globals\glass_thick.breakable_surface
+
 .camo
 objects\equipment\hologram\fx\hologram_pop.camo
 objects\equipment\hologram\fx\hologram_spawn.camo
@@ -818,7 +820,9 @@ sound\weapons\needler\dryfire.effect
 sound\weapons\plasma_grenade\throwgren.effect
 sound\weapons\plasma_pistol\dryfire.effect
 
-.effect_globalsglobals\effect_globals.effect_globals
+.effect_globals
+globals\effect_globals.effect_globals
+
 .equipment
 objects\multi\powerups\powerup_blue\powerup_blue.equipment
 objects\multi\powerups\powerup_red\powerup_red.equipment

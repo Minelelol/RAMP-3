@@ -1,0 +1,9 @@
+GenerateBitmap applepie barusudir\I_CAN_FINALLY_KILL_MYSELF.dds
+DuplicateTag levels\multi\s3d_turf\shaders\checker.shader applepie
+EditTag applepie.shader
+SetBitmap base_map applepie.bitmap
+SaveTagChanges
+Exit
+
+Foreach mode startingwith: objects\eldewrito\reforge\ AddBlockElements Materials
+Foreach mode startingwith: objects\eldewrito\reforge\ SetField Materials[*].RenderMethod applepie.shader

@@ -9,6 +9,13 @@ OpenCacheFile reachmapsdir\50_panopticon.map
 SetPortingOption ReachLightmapCache "workingdir\caches\lightmapcache"
 RunCommands workingdir\commands\reach_globals.cmds
 
+NameBlamTag levels\solo\m50\fx\ambient\m50_smoke_huge_outer_courtyard_01.effect_scenery begone1
+NameBlamTag levels\solo\m50\fx\ambient\m50_smoke_huge_outer_courtyard_02.effect_scenery begone2
+
+IgnoreBlamTag objects\levels\solo\m50\m50_planter_thin_n_tall\m50_planter_thin_n_tall.scenery
+IgnoreBlamTag begone1.effect_scenery
+IgnoreBlamTag begone2.effect_scenery
+
 CS < workingdir\commands\map_ports\ignorescriptsource.cs
 PortTag !Scripts !UpdateMapFiles *.scnr
 Exit
@@ -36,23 +43,51 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag fx\fx_library\weather\rain\rain_angle\rain_angle.effect
+SetField Events[0].ParticleSystems[0].Flags OverrideNearFadeUseWithCaution,GpuOcclusionWeatherOnly
+SetField Events[0].ParticleSystems[1].Flags OverrideNearFadeUseWithCaution,GpuOcclusionWeatherOnly
+SaveTagChanges
+Exit
+
+# ------------------------
 # |        FOG/FX        |
 # ------------------------
 EditTag levels\multi\50_panopticon\50_panopticon.sky_atm_parameters
-SetField AtmosphereSettings[0].Intensity 0.75
+SetField AtmosphereSettings[0].Intensity 0.7
+SaveTagChanges
+Exit
+
+EditTag levels\multi\50_panopticon\post_fx\50_panopticon.area_screen_effect
+SetField ScreenEffects[0].GammaEnhance 0.05
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      SAFE ZONE       |
+# ------------------------
+EditTag levels\multi\50_panopticon\50_panopticon.scenario
+CopyBlockElements TriggerVolumes 6 1
+PasteBlockElements TriggerVolumes
+SetField TriggerVolumes[11].Name safe_zone
+SetField TriggerVolumes[11].Extents 78.95344 40.35 26.569353
+
+AddBlockElements ScenarioSafeTriggers
+SetField ScenarioSafeTriggers[0].TriggerVolume 11
 SaveTagChanges
 Exit
 
 # ------------------------
 # |        SHADER        |
 # ------------------------
-RunCommands workingdir\commands\map_ports\shader_fixes\exodus_shaders.cmds
-
 GenerateShader Shader default detail_blend none specular_mask_from_diffuse cook_torrance_reach dynamic off alpha_blend interpolated first_person_sometimes off off off default from_opacity_map_alpha
 EditTag levels\solo\m50\shaders\paneling\wall_panel_r_waterfall.shader
 SetField Options[9].OptionIndex 1
 SetField ShaderProperties[0].Template shaders\shader_templates\_0_6_0_1_13_2_0_3_2_1_0_0_0_0_2.render_method_template
 
+RemoveBlockElements ShaderProperties[0].TextureConstants 0 *
+RemoveBlockElements ShaderProperties[0].RealConstants 0 *
 AddBlockElements ShaderProperties[0].TextureConstants 8
 AddBlockElements ShaderProperties[0].RealConstants 36
 SetBitmap base_map levels\solo\m50\bitmaps\paneling\wall_panel_r_dif.bitmap
@@ -87,7 +122,8 @@ SetArgument specular_coefficient 1
 SetArgument specular_tint 0.10196079 0.10196079 0.10196079
 SetArgument fresnel_color 1 1 1
 SetArgument fresnel_curve_steepness 2
-SetArgument analytical_specular_contribution 4
+SetArgument analytical_specular_contribution 0.4
+# SetArgument analytical_specular_contribution 4
 SetArgument environment_map_specular_contribution 0.7
 SetArgument roughness 0.01
 SetArgument analytical_roughness 0.1
@@ -109,3 +145,26 @@ AddFunction bump_detail_map Real 0
 AddFunction bump_detail_map2 Real 1
 SaveTagChanges
 Exit
+
+RunCommands workingdir\commands\map_ports\shader_fixes\exodus_shaders.cmds
+
+# ------------------------
+# |     WORLD BOUND      |
+# ------------------------
+EditTag levels\multi\50_panopticon\bsp01.scenario_structure_bsp
+SetField WorldBoundsX -100 500
+SetField WorldBoundsY -500 300
+SetField WorldBoundsZ -100 200
+SetField Clusters[0].BoundsX -100 500
+SetField Clusters[0].BoundsY -500 300
+SetField Clusters[0].BoundsZ -100 200
+SetField Physics.MoppBoundsMin -100 -500 -100
+SetField Physics.MoppBoundsMax 500 300 200
+SaveTagChanges
+Exit
+
+
+# ------------------------
+# |    DECALS SCALING    |
+# ------------------------
+CS < workingdir\cs\ReachDecalScaling.cs levels\multi\50_panopticon\50_panopticon.scenario

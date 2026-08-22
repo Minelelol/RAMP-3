@@ -23,6 +23,44 @@ PortTag !Scripts !UpdateMapFiles *.scnr
 Exit
 
 # ------------------------
+# |     KILL TRIGGER     |
+# ------------------------
+EditTag levels\dlc\cex_headlong\cex_headlong.scenario
+SetField TriggerVolumes[1].Position -48.7387 -68.416275 25
+
+SetField TriggerVolumes[5].Extents 14.7 21.057383 16.803665
+
+SetField TriggerVolumes[7].Forward 1 -0.05 0
+SetField TriggerVolumes[7].Extents 14.265989 5.48325 10.150548
+
+SetField TriggerVolumes[31].Position 26.754196 -25.178934 13.504095
+
+SetField ScenarioKillTriggers[7].TriggerVolume -1
+SetField ScenarioKillTriggers[11].TriggerVolume -1
+SetField ScenarioKillTriggers[12].TriggerVolume -1
+SetField ScenarioKillTriggers[13].TriggerVolume -1
+SetField ScenarioKillTriggers[14].TriggerVolume -1
+SetField ScenarioKillTriggers[31].TriggerVolume -1
+SetField ScenarioKillTriggers[32].TriggerVolume -1
+SetField ScenarioKillTriggers[33].TriggerVolume -1
+SetField ScenarioKillTriggers[34].TriggerVolume -1
+SetField ScenarioKillTriggers[35].TriggerVolume -1
+SetField ScenarioKillTriggers[39].TriggerVolume -1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |   OBJECT PLACEMENT   |
+# ------------------------
+EditTag levels\dlc\cex_headlong\cex_headlong.scenario
+
+# Fix frag grenade being sent into outer space
+SetField Equipment[12].Position -9.229223 6.830332 8.955
+SetField Equipment[13].Position -9.423258 6.72173 8.955
+SaveTagChanges
+Exit
+
+# ------------------------
 # | PODIUM/PREMATCH CAMS |
 # ------------------------
 EditTag levels\dlc\cex_headlong\cex_headlong.scenario
@@ -50,6 +88,79 @@ Exit
 # ------------------------
 EditTag levels\dlc\cex_headlong\post_fx\ca_headlong_fog.sky_atm_parameters
 SetField AtmosphereSettings[0].Intensity 2.31
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_metal_copper SetArgument specular_coefficient 0.15
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_clean_metal SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_clean_metal1_light SetArgument analytical_specular_contribution 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_concrete_tile_1 SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_concrete SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_concrete_moulded SetArgument albedo_color 0.5 0.5 0.5 1
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_concrete_moulded SetArgument specular_coefficient 1
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_concrete_moulded SetArgument normal_specular_tint 0.23529413 0.2117647 0.1803922
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_floor_tile SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_yellow SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_stripes SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_stripes SetArgument analytical_specular_contribution 0.5
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_trim SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_trim SetArgument analytical_specular_contribution 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_wall_trim1 SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_wall_trim1 SetArgument analytical_specular_contribution 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\wall_panel_d SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_panels_2 SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_metal_panel_trims_b_light SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\hub_street SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_hub_crosswalk SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\ca_headlong_gate_west SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_m50_carpet_a SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_marble_tile_black SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_marble_tile_black SetArgument analytical_specular_contribution 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\bitmaps\ca_billboard_hog SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\metal_dark_01 SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_chainlink SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_panel_metal_worn SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_metal_panel_dark SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_metal_panel_dark SetArgument analytical_specular_contribution 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_diamondplate SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\hub_stair_construction SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_panel_single_ SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_clean_trim SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_panel_red SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_garage_door SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_dumpster SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_dumpster SetArgument analytical_specular_contribution 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_nm_construction_poster SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_nm_red_alert_poster SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\headlong_monitor SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_nm_tv_screen_tech SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_nm_tv_screen_tech SetArgument analytical_specular_contribution 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_fence_safety SetArgument specular_coefficient 0.25
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_grate SetArgument specular_coefficient 0.25
+
+ForEach rmsh StartingWith: levels\dlc\cex_headlong\shaders\ca_headlong_pipe SetArgument specular_coefficient 0.25
+
+EditTag levels\dlc\cex_headlong\shaders\road_closed_illum_a.shader
+SetArgument specular_coefficient 0.25
+SaveTagChanges
+Exit
+
+EditTag levels\dlc\cex_headlong\shaders\ca_headlong_windowbox_office.shader_custom
+SetArgument specular_coefficient 0
+SetArgument self_illum_intensity 2.5
+SetArgument distance_fade_scale 0.5
 SaveTagChanges
 Exit
 

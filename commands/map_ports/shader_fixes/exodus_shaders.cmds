@@ -33,5 +33,7 @@ ForEach rmsh StartingWith: levels\solo\m50\shaders\glass\glass_rail_wall SetArgu
 ForEach rmsh StartingWith: levels\solo\m50\shaders\paneling\metal_bldg SetArgument specular_coefficient 0.1
 ForEach rmcs StartingWith: levels\solo\m50\shaders\glass\windowbox_traxus_hq_on SetArgument specular_coefficient 0.1
 
+ForEach rmsh StartingWith: levels\solo\m50\shaders\m50_fabric SetArgument specular_coefficient 0.1
+
 CS < workingdir\cs\ResumeErrorWarningCount.cs
 SuppressErrors False

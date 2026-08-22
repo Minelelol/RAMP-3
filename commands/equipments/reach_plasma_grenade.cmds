@@ -1,0 +1,215 @@
+# ------------------------
+# |        PORTING       |
+# ------------------------
+OpenCacheFile reachmapsdir\forge_halo.map
+RunCommands workingdir\commands\reach_globals.cmds
+
+NameBlamTag fx\material_effects\weapons\plasma_grenade.material_effects fx\material_effects\objects\weapons\plasma_grenade
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\projectile.effect reach\objects\weapons\grenade\plasma_grenade\fx\projectile
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\detonation_start.effect reach\objects\weapons\grenade\plasma_grenade\fx\detonation_start
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation
+NameBlamTag objects\weapons\grenade\plasma_grenade\fx\detonation.effect reach\objects\weapons\grenade\plasma_grenade\fx\detonation
+
+NameBlamTag sound\weapons\plasma_grenade\plasma_detonation_start.sound reach\sound\weapons\plasma_grenade\plasma_detonation_start
+# yeah THIS IS NOT HALO 3
+NameBlamTag sound\weapons\plasma_grenade\plasma_expl_h3.sound reach\sound\weapons\plasma_grenade\plasma_expl_h3
+
+NameBlamTag sound\weapons\plasma_grenade\plasma_expl_lod_far.sound sound\effe\plasgrenade_explode_lod_01
+NameBlamTag sound\weapons\surround_tails\indoor\expl_tail_indoor.sound sound\effe\plasgrenade_refl_ext_01
+NameBlamTag sound\weapons\surround_tails\outdoor\expl_tail_outdoor.sound sound\effe\plasgrenade_refl_int_01
+
+NameBlamTag objects\weapons\grenade\plasma_grenade\plasma_grenade_equipment.model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade_equipment
+NameBlamTag objects\weapons\grenade\plasma_grenade\plasma_grenade.model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade
+NameBlamTag objects\weapons\grenade\plasma_grenade\plasma_grenade.collision_model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade
+NameBlamTag objects\weapons\grenade\plasma_grenade\plasma_grenade.render_model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade
+NameBlamTag objects\weapons\grenade\plasma_grenade\plasma_grenade.physics_model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade
+
+PortTag reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+# Honestly the HO effect looks better
+# PortTag reach\objects\weapons\grenade\plasma_grenade\fx\projectile.effect
+PortTag reach\objects\weapons\grenade\plasma_grenade\fx\detonation_start.effect
+PortTag reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+PortTag reach\objects\weapons\grenade\plasma_grenade\fx\detonation.effect
+PortTag sound\weapons\plasma_grenade\plasma_grenade_loop\plasma_grenade_loop.sound_looping
+PortTag objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_impact.damage_effect
+
+PortTag reach\objects\weapons\grenade\plasma_grenade\plasma_grenade_equipment.model
+PortTag reach\objects\weapons\grenade\plasma_grenade\plasma_grenade.model
+Exit
+
+# ------------------------
+# |        SHADER        |
+# ------------------------
+EditTag objects\weapons\grenade\plasma_grenade\shaders\plasma_nade_shell.shader
+SetArgument environment_map_specular_contribution 0.15
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\grenade\plasma_grenade\shaders\plasma_nade_metal.shader
+SetArgument environment_map_specular_contribution 0.15
+SaveTagChanges
+Exit
+
+# ------------------------
+# |        EFFECT        |
+# ------------------------
+EditTag objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+CopyBlockElements Events[0].ParticleSystems 1 4
+Exit
+
+EditTag reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+PasteBlockElements Events[0].ParticleSystems
+RemoveBlockElements Events[0].ParticleSystems 5 1
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\grenade\plasma_grenade\fx\detonation.effect
+# Only use 1 spark ember 3, otherwise it will cause lag issues
+CopyBlockElements Events[0].ParticleSystems 1 4
+Exit
+
+EditTag reach\objects\weapons\grenade\plasma_grenade\fx\detonation.effect
+PasteBlockElements Events[0].ParticleSystems
+RemoveBlockElements Events[0].ParticleSystems 6 1
+SaveTagChanges
+Exit
+
+# ------------------------
+# |         MODEL        |
+# ------------------------
+EditTag reach\objects\weapons\grenade\plasma_grenade\plasma_grenade_equipment.model
+SetField Materials[0].GlobalMaterialName tough
+SetField Materials[0].GlobalMaterialIndex 27
+
+SetField NewDamageInfo[0].DamageSections[1].InstantResponses[1].CustomResponseLabel headshot
+SaveTagChanges
+Exit
+
+# ------------------------
+# |       EQUIPMENT      |
+# ------------------------
+EditTag objects\weapons\grenade\plasma_grenade\plasma_grenade.equipment
+SetField BoundingRadius 0.05369012
+# SetField BoundingOffset 0.00010542013 -0.0001503136 -0.00085507147
+SetField Model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade_equipment.model
+
+SetField DetonationDelay 0.034 0.1
+SetField DetonationEffect reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+
+SetField CampaignOnGroundScale 1.1
+SetField MultiplayerOnGroundScale 1.1
+
+SetField ItemUnitScales.SmallUnit.Armed 0.9
+SetField ItemUnitScales.SmallUnit.Stowed 0.9
+SetField ItemUnitScales.MediumUnit.Armed 1
+SetField ItemUnitScales.MediumUnit.Stowed 1
+SetField ItemUnitScales.LargeUnit.Armed 1.3
+SetField ItemUnitScales.LargeUnit.Stowed 1.3
+SaveTagChanges
+Exit
+
+# ------------------------
+# |      PROJECTILE      |
+# ------------------------
+EditTag objects\weapons\grenade\plasma_grenade\plasma_grenade.projectile
+SetField BoundingRadius 0.05369012
+# SetField BoundingOffset 0.00010542013 -0.0001503136 -0.00085507147
+SetField SweetenerSize Medium
+SetField Model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade.model
+
+# SetField Attachments[0].Type reach\objects\weapons\grenade\plasma_grenade\fx\projectile.effect
+SetField Attachments[2].Type sound\weapons\plasma_grenade\plasma_grenade_loop\plasma_grenade_loop.sound_looping
+SetField ArmingTime 1.4
+SetField DangerRadius 2
+SetField Timer 0.9 0.95
+
+SetField DetonationStarted reach\objects\weapons\grenade\plasma_grenade\fx\detonation_start.effect
+SetField AirborneDetonationEffect reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+SetField GroundDetonationEffect reach\objects\weapons\grenade\plasma_grenade\fx\detonation.effect
+
+SetField ImpactDamage objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_impact.damage_effect
+SetField BoardingDetonationTime 2.5
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\grenade\plasma_grenade\plasma_grenade2.projectile
+SetField BoundingRadius 0.05369012
+# SetField BoundingOffset 0.00010542013 -0.0001503136 -0.00085507147
+SetField SweetenerSize Medium
+SetField Model reach\objects\weapons\grenade\plasma_grenade\plasma_grenade.model
+
+# SetField Attachments[0].Type reach\objects\weapons\grenade\plasma_grenade\fx\projectile.effect
+SetField Attachments[2].Type sound\weapons\plasma_grenade\plasma_grenade_loop\plasma_grenade_loop.sound_looping
+SetField ArmingTime 1.4
+SetField DangerRadius 2
+
+SetField DetonationStarted reach\objects\weapons\grenade\plasma_grenade\fx\detonation_start.effect
+SetField AirborneDetonationEffect reach\objects\weapons\grenade\plasma_grenade\fx\airborne_detonation.effect
+SetField GroundDetonationEffect reach\objects\weapons\grenade\plasma_grenade\fx\detonation.effect
+
+SetField ImpactDamage objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_impact.damage_effect
+SetField BoardingDetonationTime 2.5
+SaveTagChanges
+Exit
+
+# ------------------------
+# |     DAMAGE EFFECT    |
+# ------------------------
+StringId Add detonates_grenades
+EditTag objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_equipment_explosion.damage_effect
+SetField Radius 0.54 1.8
+SetField Flags DetonatesExplosives,EnablesSpecialDeath
+SetField AreaOfEffectCoreRadius 0.432
+SetField DamageLowerBound 12.5
+SetField DamageUpperBound 125 125
+SetField ActiveCamoflageDamage 1
+# SetField CustomResponseLabel detonates_grenades
+SetField InstantaneousAcceleration 2
+SetField RiderMinTransferDamageScale 0
+SetField ShakeRadius 7.2
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_explosion.damage_effect
+SetField Radius 0.54 1.8
+SetField Flags DetonatesExplosives,EnablesSpecialDeath
+SetField AreaOfEffectCoreRadius 0.432
+SetField DamageLowerBound 25
+SetField DamageUpperBound 250 250
+SetField ActiveCamoflageDamage 1
+# SetField CustomResponseLabel detonates_grenades
+SetField InstantaneousAcceleration 2
+SetField RiderMinTransferDamageScale 0
+SetField ShakeRadius 7.2
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_attached_explosion.damage_effect
+SetField Radius 0.54 1.8
+SetField EffectFlags AffectsModelTargets
+SetField Flags DetonatesExplosives,CausesFlamingDeath,ForcesHardPing,EnablesSpecialDeath
+SetField AreaOfEffectCoreRadius 0.432
+SetField DamageLowerBound 35
+SetField DamageUpperBound 350 350
+SetField ActiveCamoflageDamage 1
+# SetField CustomResponseLabel detonates_grenades
+SetField InstantaneousAcceleration 2.5
+SetField RiderMinTransferDamageScale 0
+SetField ShakeRadius 0
+SaveTagChanges
+Exit
+
+EditTag objects\weapons\grenade\plasma_grenade\damage_effects\plasma_grenade_boarding_explosion.damage_effect
+SetField Radius 0.075 0.3
+SetField EffectFlags AffectsModelTargets
+SetField Flags DoesNotHurtOwner,DetonatesExplosives,EnablesSpecialDeath
+SetField AreaOfEffectCoreRadius 0.1
+SetField DamageLowerBound 0
+SetField DamageUpperBound 3000 3000
+SetField ActiveCamoflageDamage 1
+# SetField CustomResponseLabel detonates_grenades
+SetField InstantaneousAcceleration 2.75
+SetField RiderMinTransferDamageScale 0
+SetField ShakeRadius 7.2
+SaveTagChanges
+Exit

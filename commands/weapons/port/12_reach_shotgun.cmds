@@ -221,3 +221,12 @@ SetField Barrels[0].IlluminationRecoveryTime 0.04
 SetField Barrels[0].IlluminationRecoveryRate 25
 SaveTagChanges
 Exit
+
+# ------------------------
+# |      REBALANCE       |
+# ------------------------
+EditTag dw3\r3ach\objects\weapons\rifle\shotgun\projectiles\shotgun_pellet.damage_effect
+SetField DamageLowerBound 3.3
+SetField DamageUpperBound 10.15 10.15
+SaveTagChanges
+Exit

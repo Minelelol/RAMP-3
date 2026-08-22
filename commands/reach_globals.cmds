@@ -99,6 +99,16 @@ NameBlamTag objects\props\human\unsc\bitmaps\dlc_panel_crate_diff.bitmap        
 NameBlamTag objects\props\human\unsc\bitmaps\dlc_panel_crate_bump.bitmap                              objects\levels\dlc\warehouse\bitmaps\dlc_panel_crate_bump
 NameBlamTag objects\props\human\unsc\bitmaps\dlc_panel_crate_shipping.bitmap                          objects\levels\dlc\warehouse\bitmaps\dlc_panel_crate_shipping
 
+NameBlamTag objects\props\covenant\battery\bitmaps\airlock_field.bitmap                               levels\multi\snowbound\bitmaps\airlock_field
+NameBlamTag objects\props\covenant\battery\bitmaps\airlock_field2.bitmap                              levels\multi\snowbound\bitmaps\airlock_field2
+NameBlamTag objects\props\covenant\battery\bitmaps\battery_illum.bitmap                               objects\gear\covenant\military\bitmaps\cov_battery_illum
+NameBlamTag levels\solo\m45\bitmaps\cov\cov_battery_cap_bump.bitmap                                   
+NameBlamTag levels\solo\m45\bitmaps\cov\cov_battery_cap_illum.bitmap                                  levels\dlc\descent\bitmaps\battery_cap_illum
+NameBlamTag levels\solo\m45\bitmaps\cov\cov_battery_glass.bitmap                                      levels\dlc\descent\bitmaps\battery_glass
+
+NameBlamTag objects\gear\human\military\pallet\bitmaps\pallet_diffuse.bitmap                          objects\gear\human\military\crate_packing_giant\crate_packing_giant\material_2\base_map
+NameBlamTag objects\gear\human\military\pallet\bitmaps\pallet_zbump.bitmap                            objects\gear\human\military\crate_packing_giant\crate_packing_giant\material_2\bump_map
+
 # One in reach has alot of mips
 # NameBlamTag fx\bitmaps\newticles\spark_ember.bitmap                                                   fx\particles\energy\_bitmaps\spark_ember
 
@@ -174,6 +184,15 @@ NameBlamTag levels\multi\archive\deadlock\decals\decal_dirt_patch.bitmap        
 NameBlamTag levels\multi\archive\shrine\bitmaps\forerunner\panel_wallsection_dif.bitmap               levels\multi\shrine\bitmaps\forerunner\panel_wallsection_dif
 NameBlamTag levels\multi\archive\bunkerwold_dlc\bitmaps\bunker_tech_wirebundle_dif.bitmap             levels\dlc\bunkerworld\bitmaps\bunker_tech_wirebundle_dif
 NameBlamTag levels\multi\archive\bunkerwold_dlc\bitmaps\bunker_tech_wirebundle_bump.bitmap            levels\dlc\bunkerworld\bitmaps\bunker_tech_wirebundle_bump
+# NameBlamTag levels\shared\decals\archive\stains\drip_stain_1_diffuse.bitmap                           levels\shared\decals\weathering\stains\drips\drip_stain_1_diff
+
+NameBlamTag levels\multi\archive\blackout_nwo\bitmaps\metal_ramp.bitmap                               levels\dlc\lockout\bitmaps\metal_ramp
+NameBlamTag levels\multi\archive\blackout_nwo\bitmaps\metal_ramp_bump.bitmap                          levels\dlc\lockout\bitmaps\metal_ramp_bump
+NameBlamTag levels\solo\m45\bitmaps\metal_ramp.bitmap                                                 levels\dlc\lockout\bitmaps\metal_ramp
+NameBlamTag levels\solo\m45\bitmaps\metal_ramp_bump.bitmap                                            levels\dlc\lockout\bitmaps\metal_ramp_bump
+
+NameBlamTag objects\characters\marine\old\bitmaps\fabric_detail.bitmap                                objects\characters\marine\bitmaps\fabric_detail
+NameBlamTag objects\scenery\human\bitmaps\fabric_detail.bitmap                                        objects\characters\marine\bitmaps\fabric_detail
 
 # ------------------------
 # |DIFF PARTICLES PHYSICS|
@@ -204,16 +223,39 @@ NameBlamTag fx\physics_templates\sparks.particle_physics                        
 # ------------------------
 # |    DIFF PARTICLES    |
 # ------------------------
-NameBlamTag fx\particles\atmospheric\soft_smoke\covenant_explosion_soft_smoke_large.particle          reach\fx\particles\atmospheric\soft_smoke\covenant_explosion_soft_smoke_large
+NameBlamTag fx\particles\atmospheric\fiery_smoke\smoke_fiery_large.particle                           reach\fx\particles\atmospheric\fiery_smoke\smoke_fiery_large
 NameBlamTag fx\particles\atmospheric\fiery_smoke\smoke_fiery_small.particle                           reach\fx\particles\atmospheric\fiery_smoke\smoke_fiery_small
+NameBlamTag fx\particles\atmospheric\fiery_smoke\smoke_fiery_small_impact.particle                    reach\fx\particles\atmospheric\fiery_smoke\smoke_fiery_small_impact
+NameBlamTag fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_large.particle    reach\fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_large
+NameBlamTag fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_medium.particle   reach\fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_medium
+NameBlamTag fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_large.particle       reach\fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_large
+NameBlamTag fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_medium.particle      reach\fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_medium
+NameBlamTag fx\particles\atmospheric\rolling_smoke\rolling_smoke_large.particle                       reach\fx\particles\atmospheric\rolling_smoke\rolling_smoke_large
+NameBlamTag fx\particles\atmospheric\rolling_smoke\rolling_smoke_medium.particle                      reach\fx\particles\atmospheric\rolling_smoke\rolling_smoke_medium
+NameBlamTag fx\particles\atmospheric\rolling_smoke\rolling_smoke_small.particle                       reach\fx\particles\atmospheric\rolling_smoke\rolling_smoke_small
+NameBlamTag fx\particles\atmospheric\soft_smoke\covenant_explosion_soft_smoke_large.particle          reach\fx\particles\atmospheric\soft_smoke\covenant_explosion_soft_smoke_large
+NameBlamTag fx\particles\atmospheric\soft_smoke\human_explosion_soft_smoke_large.particle             reach\fx\particles\atmospheric\soft_smoke\human_explosion_soft_smoke_large
+NameBlamTag fx\particles\atmospheric\soft_smoke\muzzle_smoke.particle                                 reach\fx\particles\atmospheric\soft_smoke\muzzle_smoke
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_large.particle                             reach\fx\particles\atmospheric\soft_smoke\soft_smoke_large
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_large_additive.particle                    reach\fx\particles\atmospheric\soft_smoke\soft_smoke_large_additive
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_large_dark.particle                        reach\fx\particles\atmospheric\soft_smoke\soft_smoke_large_dark
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_small.particle                             reach\fx\particles\atmospheric\soft_smoke\soft_smoke_small
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_small_additive.particle                    reach\fx\particles\atmospheric\soft_smoke\soft_smoke_small_additive
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_small_impact.particle                      reach\fx\particles\atmospheric\soft_smoke\soft_smoke_small_impact
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_small_melee_impact.particle                reach\fx\particles\atmospheric\soft_smoke\soft_smoke_small_melee_impact
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_smoke_small_projectile_lighting.particle         reach\fx\particles\atmospheric\soft_smoke\soft_smoke_small_projectile_lighting
+NameBlamTag fx\particles\atmospheric\soft_smoke\soft_steam_fast.particle                              reach\fx\particles\atmospheric\soft_smoke\soft_steam_fast
+NameBlamTag fx\particles\atmospheric\soft_smoke\vehicle_smoke_covenant.particle                       reach\fx\particles\atmospheric\soft_smoke\vehicle_smoke_covenant
+NameBlamTag fx\particles\atmospheric\soft_smoke\vehicle_smoke_human.particle                          reach\fx\particles\atmospheric\soft_smoke\vehicle_smoke_human
+NameBlamTag fx\particles\atmospheric\wispy_smoke\wispy_smoke_small.particle                           reach\fx\particles\atmospheric\wispy_smoke\wispy_smoke_small
+NameBlamTag fx\particles\atmospheric\wispy_smoke\wispy_smoke_small_additive.particle                  reach\fx\particles\atmospheric\wispy_smoke\wispy_smoke_small_additive
 NameBlamTag fx\particles\atmospheric\fireballs\fireball_fuel_rod_large.particle                       reach\fx\particles\atmospheric\fireballs\fireball_fuel_rod_large
 NameBlamTag fx\particles\atmospheric\fireballs\glowing_smoke_fuel_rod.particle                        reach\fx\particles\atmospheric\fireballs\glowing_smoke_fuel_rod
-NameBlamTag fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_large.particle    reach\fx\particles\atmospheric\rolling_smoke\covenant_explosion_rolling_smoke_large
-NameBlamTag fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_large.particle       reach\fx\particles\atmospheric\rolling_smoke\human_explosion_rolling_smoke_large
 
 NameBlamTag fx\particles\models\mesh_fx\blast_radius\blast_radius.particle                            reach\fx\particles\models\mesh_fx\blast_radius\blast_radius
 NameBlamTag fx\particles\models\mesh_fx\blast_radius\blast_radius.particle_model                      reach\fx\particles\models\mesh_fx\blast_radius\blast_radius
 
+NameBlamTag fx\particles\flare\light_spike.particle                                                   reach\fx\particles\flare\light_spike
 NameBlamTag fx\particles\flare\explosive_flash.particle                                               reach\fx\particles\flare\explosive_flash
 NameBlamTag fx\particles\flare\flash_large.particle                                                   reach\fx\particles\flare\flash_large
 NameBlamTag fx\particles\flare\glow_soft.particle                                                     reach\fx\particles\flare\glow_soft
@@ -247,9 +289,19 @@ NameBlamTag fx\water_ripples\vehicle_rolling.render_water_ripple                
 NameBlamTag fx\water_ripples\vehicle_rolling_small.render_water_ripple                                fx\water\vehicle_rolling_small
 
 # ------------------------
-# |     SAME SHADERS     |
+# |     DIFF SHADERS     |
 # ------------------------
 NameBlamTag shaders\invalid.shader                                                                    reach\shaders\invalid
+
+# ------------------------
+# |      DIFF FLOCKS     |
+# ------------------------
+NameBlamTag objects\characters\ambient_life\butterfly.flock                                           reach\objects\characters\ambient_life\butterfly
+NameBlamTag objects\characters\ambient_life\fly_to_sink.flock                                         reach\objects\characters\ambient_life\fly_to_sink
+NameBlamTag objects\characters\ambient_life\generic_flock.flock                                       reach\objects\characters\ambient_life\generic_flock
+NameBlamTag objects\characters\ambient_life\migrating_birds_flock.flock                               reach\objects\characters\ambient_life\migrating_birds_flock
+NameBlamTag objects\characters\ambient_life\school_of_fish.flock                                      reach\objects\characters\ambient_life\school_of_fish
+NameBlamTag objects\characters\ambient_life\seagull_flock.flock                                       reach\objects\characters\ambient_life\seagull_flock
 
 # ------------------------
 # |    SAME SP AND MP    |

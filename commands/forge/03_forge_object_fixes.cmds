@@ -115,6 +115,31 @@ SaveTagChanges
 Exit
 
 # ------------------------
+# | CONTAINER SHADER FIX |
+# ------------------------
+ForEach rmsh StartingWith: objects\vehicles\human\civilian\truck_cab_large\shaders\metal_hardware_truck SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: objects\vehicles\human\civilian\truck_cab_large\shaders\military_container SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: objects\vehicles\human\civilian\truck_cab_large\shaders\military_container_crate SetArgument specular_coefficient 0.1
+ForEach rmsh StartingWith: objects\vehicles\human\civilian\truck_cab_large\shaders\military_container_tiled SetArgument specular_coefficient 0.1
+
+# ------------------------
+# |  PLASMA BATTERY FIX  |
+# ------------------------
+EditTag objects\props\covenant\battery\battery.crate
+AddBlockElements Functions
+SetField Functions[1].ImportName body_vitality
+SetField Functions[1].ExportName health
+SetField Functions[1].DefaultFunction.Data 083400000000803F00000000000000000000000000000000000000001400000001000000040000CDFFFF7F7F0000803F00000000
+SaveTagChanges
+Exit
+
+EditTag objects\props\covenant\battery\battery.model
+SetField NewDamageInfo[0].DamageSections[0].Flags Headshotable,TakesFullDamageWhenShieldDepleted
+SetField NewDamageInfo[0].DamageSections[0].InstantResponses[0].ResponseDelay 0.2
+SaveTagChanges
+Exit
+
+# ------------------------
 # |   DISCO BALL ANIMS   |
 # ------------------------
 EditTag objects\levels\solo\m52\m52_club_hologram\m52_club_hologram.model_animation_graph
@@ -157,6 +182,7 @@ Exit
 # ------------------------
 ForEach light startingwith: objects\levels\forge\ff_light_ SetField Flags ElDewritoForgeLight
 ForEach light startingwith: objects\levels\forge\ff_light_flash SetField Flags None
+ForEach light startingwith: levels\multi\dlc\objects\dlc_medium_mancannon\fx\gravlift SetField Intensity.Function.Data 01300000000000400000004000000000000000006F12833A6F12033B00000000
 
 # ------------------------
 # |PENANCE SUCKERS PLANT |

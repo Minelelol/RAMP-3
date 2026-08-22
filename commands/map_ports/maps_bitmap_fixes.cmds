@@ -15,6 +15,22 @@ PortTag levels\dlc\cex_headlong\bitmaps\metal_dark_01_bump.bitmap
 PortTag levels\dlc\cex_headlong\bitmaps\ca_headlong_concrete_bump.bitmap
 Exit
 
+OpenCacheFile MCCdir\haloreach\maps\m50.map
+RunCommands workingdir\commands\reach_globals.cmds
+SetPortingOption HqNormalMapConversion True
+SetPortingOption BitmapFormatOptimization False
+
+# Fabric
+PortTag objects\gear\human\military\bitmaps\h_metal_aluminum.bitmap
+Exit
+
+OpenCacheFile MCCdir\haloreach\maps\45_launch_station.map
+RunCommands workingdir\commands\reach_globals.cmds
+SetPortingOption HqNormalMapConversion True
+SetPortingOption BitmapFormatOptimization False
+PortTag levels\solo\m45\bitmaps\m45_concrete_formed_detail_b_bump.bitmap
+Exit
+
 OpenCacheFile MCCdir\haloreach\maps\m52.map
 RunCommands workingdir\commands\reach_globals.cmds
 SetPortingOption HqNormalMapConversion True
